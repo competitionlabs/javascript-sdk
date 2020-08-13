@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.CompetitionLabsApplicationServices);
+    factory(root.expect, root.@CompetitionlabsJavascriptSdk);
   }
-}(this, function(expect, CompetitionLabsApplicationServices) {
+}(this, function(expect, @CompetitionlabsJavascriptSdk) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new CompetitionLabsApplicationServices.EventMetadata();
+    instance = new @CompetitionlabsJavascriptSdk.EventMetadata();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,25 +50,25 @@
   describe('EventMetadata', function() {
     it('should create an instance of EventMetadata', function() {
       // uncomment below and update the code to test EventMetadata
-      //var instane = new CompetitionLabsApplicationServices.EventMetadata();
-      //expect(instance).to.be.a(CompetitionLabsApplicationServices.EventMetadata);
+      //var instane = new @CompetitionlabsJavascriptSdk.EventMetadata();
+      //expect(instance).to.be.a(@CompetitionlabsJavascriptSdk.EventMetadata);
     });
 
     it('should have the property key (base name: "key")', function() {
       // uncomment below and update the code to test the property key
-      //var instane = new CompetitionLabsApplicationServices.EventMetadata();
+      //var instane = new @CompetitionlabsJavascriptSdk.EventMetadata();
       //expect(instance).to.be();
     });
 
     it('should have the property text (base name: "text")', function() {
       // uncomment below and update the code to test the property text
-      //var instane = new CompetitionLabsApplicationServices.EventMetadata();
+      //var instane = new @CompetitionlabsJavascriptSdk.EventMetadata();
       //expect(instance).to.be();
     });
 
     it('should have the property _number (base name: "number")', function() {
       // uncomment below and update the code to test the property _number
-      //var instane = new CompetitionLabsApplicationServices.EventMetadata();
+      //var instane = new @CompetitionlabsJavascriptSdk.EventMetadata();
       //expect(instance).to.be();
     });
 

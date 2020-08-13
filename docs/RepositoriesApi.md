@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.RepositoriesApi
+# @CompetitionlabsJavascriptSdk.RepositoriesApi
 
 All URIs are relative to *https://api.competitionlabs.com*
 
@@ -24,17 +24,17 @@ Create a new file object repository in your CompetitionLabs space
 ### Example
 
 ```javascript
-import CompetitionLabsApplicationServices from '@competitionlabs/javascript-sdk';
-let defaultClient = CompetitionLabsApplicationServices.ApiClient.instance;
+import @CompetitionlabsJavascriptSdk from '@competitionlabs/javascript-sdk';
+let defaultClient = @CompetitionlabsJavascriptSdk.ApiClient.instance;
 // Configure API key authorization: adminApiKey
 let adminApiKey = defaultClient.authentications['adminApiKey'];
 adminApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //adminApiKey.apiKeyPrefix = 'Token';
 
-let apiInstance = new CompetitionLabsApplicationServices.RepositoriesApi();
+let apiInstance = new @CompetitionlabsJavascriptSdk.RepositoriesApi();
 let spaceName = "spaceName_example"; // String | This is the space name which is linked to the account
-let body = [new CompetitionLabsApplicationServices.CreateRepositoryRequest()]; // [CreateRepositoryRequest] | Create a new file object repository in your CompetitionLabs space
+let body = [new @CompetitionlabsJavascriptSdk.CreateRepositoryRequest()]; // [CreateRepositoryRequest] | Create a new file object repository in your CompetitionLabs space
 let opts = {
   'X_API_KEY': "X_API_KEY_example" // String | The admin API Key generated from CompetitionLabs back office
 };
@@ -81,19 +81,19 @@ Delete repositories nby query. Delete repositories by query and/or unique reposi
 ### Example
 
 ```javascript
-import CompetitionLabsApplicationServices from '@competitionlabs/javascript-sdk';
-let defaultClient = CompetitionLabsApplicationServices.ApiClient.instance;
+import @CompetitionlabsJavascriptSdk from '@competitionlabs/javascript-sdk';
+let defaultClient = @CompetitionlabsJavascriptSdk.ApiClient.instance;
 // Configure API key authorization: adminApiKey
 let adminApiKey = defaultClient.authentications['adminApiKey'];
 adminApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //adminApiKey.apiKeyPrefix = 'Token';
 
-let apiInstance = new CompetitionLabsApplicationServices.RepositoriesApi();
+let apiInstance = new @CompetitionlabsJavascriptSdk.RepositoriesApi();
 let spaceName = "spaceName_example"; // String | This is the space name which is linked to the account
 let opts = {
   'X_API_KEY': "X_API_KEY_example", // String | The admin API Key generated from CompetitionLabs back office
-  'body': new CompetitionLabsApplicationServices.QueryRequest() // QueryRequest | Delete repositories from a CompetitionLabs space by unique repository ID's or any other POST body parameters using the POST method
+  'body': new @CompetitionlabsJavascriptSdk.QueryRequest() // QueryRequest | Delete repositories from a CompetitionLabs space by unique repository ID's or any other POST body parameters using the POST method
 };
 apiInstance.deleteFileObjectRepositoriesByQuery(spaceName, opts, (error, data, response) => {
   if (error) {
@@ -138,15 +138,15 @@ Delete the file repository for a given identifier specified
 ### Example
 
 ```javascript
-import CompetitionLabsApplicationServices from '@competitionlabs/javascript-sdk';
-let defaultClient = CompetitionLabsApplicationServices.ApiClient.instance;
+import @CompetitionlabsJavascriptSdk from '@competitionlabs/javascript-sdk';
+let defaultClient = @CompetitionlabsJavascriptSdk.ApiClient.instance;
 // Configure API key authorization: adminApiKey
 let adminApiKey = defaultClient.authentications['adminApiKey'];
 adminApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //adminApiKey.apiKeyPrefix = 'Token';
 
-let apiInstance = new CompetitionLabsApplicationServices.RepositoriesApi();
+let apiInstance = new @CompetitionlabsJavascriptSdk.RepositoriesApi();
 let spaceName = "spaceName_example"; // String | This is the space name which is linked to the account
 let opts = {
   'X_API_KEY': "X_API_KEY_example", // String | The admin API Key generated from CompetitionLabs back office
@@ -197,19 +197,19 @@ Find file object repositories by query
 ### Example
 
 ```javascript
-import CompetitionLabsApplicationServices from '@competitionlabs/javascript-sdk';
-let defaultClient = CompetitionLabsApplicationServices.ApiClient.instance;
+import @CompetitionlabsJavascriptSdk from '@competitionlabs/javascript-sdk';
+let defaultClient = @CompetitionlabsJavascriptSdk.ApiClient.instance;
 // Configure API key authorization: adminApiKey
 let adminApiKey = defaultClient.authentications['adminApiKey'];
 adminApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //adminApiKey.apiKeyPrefix = 'Token';
 
-let apiInstance = new CompetitionLabsApplicationServices.RepositoriesApi();
+let apiInstance = new @CompetitionlabsJavascriptSdk.RepositoriesApi();
 let spaceName = "spaceName_example"; // String | This is the space name which is linked to the account
 let opts = {
   'X_API_KEY': "X_API_KEY_example", // String | The admin API Key generated from CompetitionLabs back office
-  'body': new CompetitionLabsApplicationServices.QueryRequest() // QueryRequest | Retrieve file object repositories from CompetitionLabs by unique repository ID's or any other POST body parameters using the POST method
+  'body': new @CompetitionlabsJavascriptSdk.QueryRequest() // QueryRequest | Retrieve file object repositories from CompetitionLabs by unique repository ID's or any other POST body parameters using the POST method
 };
 apiInstance.getFileObjectRepositoriesByQuery(spaceName, opts, (error, data, response) => {
   if (error) {
@@ -254,15 +254,15 @@ Returns a list of file object repositories. This assumes that repositories have 
 ### Example
 
 ```javascript
-import CompetitionLabsApplicationServices from '@competitionlabs/javascript-sdk';
-let defaultClient = CompetitionLabsApplicationServices.ApiClient.instance;
+import @CompetitionlabsJavascriptSdk from '@competitionlabs/javascript-sdk';
+let defaultClient = @CompetitionlabsJavascriptSdk.ApiClient.instance;
 // Configure API key authorization: adminApiKey
 let adminApiKey = defaultClient.authentications['adminApiKey'];
 adminApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //adminApiKey.apiKeyPrefix = 'Token';
 
-let apiInstance = new CompetitionLabsApplicationServices.RepositoriesApi();
+let apiInstance = new @CompetitionlabsJavascriptSdk.RepositoriesApi();
 let spaceName = "spaceName_example"; // String | This is the space name which is linked to the account
 let opts = {
   'X_API_KEY': "X_API_KEY_example", // String | The admin API Key generated from CompetitionLabs back office
@@ -315,17 +315,17 @@ Update a file object repository in your CompetitionLabs space.
 ### Example
 
 ```javascript
-import CompetitionLabsApplicationServices from '@competitionlabs/javascript-sdk';
-let defaultClient = CompetitionLabsApplicationServices.ApiClient.instance;
+import @CompetitionlabsJavascriptSdk from '@competitionlabs/javascript-sdk';
+let defaultClient = @CompetitionlabsJavascriptSdk.ApiClient.instance;
 // Configure API key authorization: adminApiKey
 let adminApiKey = defaultClient.authentications['adminApiKey'];
 adminApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //adminApiKey.apiKeyPrefix = 'Token';
 
-let apiInstance = new CompetitionLabsApplicationServices.RepositoriesApi();
+let apiInstance = new @CompetitionlabsJavascriptSdk.RepositoriesApi();
 let spaceName = "spaceName_example"; // String | This is the space name which is linked to the account
-let body = [new CompetitionLabsApplicationServices.UpdateRepositoryRequest()]; // [UpdateRepositoryRequest] | Update a file object repository in your CompetitionLabs space.
+let body = [new @CompetitionlabsJavascriptSdk.UpdateRepositoryRequest()]; // [UpdateRepositoryRequest] | Update a file object repository in your CompetitionLabs space.
 let opts = {
   'X_API_KEY': "X_API_KEY_example" // String | The admin API Key generated from CompetitionLabs back office
 };

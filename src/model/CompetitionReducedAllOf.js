@@ -20,7 +20,7 @@ import ProductReduced from './ProductReduced';
 /**
  * The CompetitionReducedAllOf model module.
  * @module model/CompetitionReducedAllOf
- * @version 1.0.0
+ * @version 1.0.1
  */
 class CompetitionReducedAllOf {
     /**

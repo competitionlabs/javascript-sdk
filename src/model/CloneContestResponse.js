@@ -19,7 +19,7 @@ import MetaExtended from './MetaExtended';
 /**
  * The CloneContestResponse model module.
  * @module model/CloneContestResponse
- * @version 1.0.0
+ * @version 1.0.1
  */
 class CloneContestResponse {
     /**

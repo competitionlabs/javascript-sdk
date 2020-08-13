@@ -17,7 +17,7 @@ import EventMetadata from './EventMetadata';
 /**
  * The CreateEventRequest model module.
  * @module model/CreateEventRequest
- * @version 1.0.0
+ * @version 1.0.1
  */
 class CreateEventRequest {
     /**

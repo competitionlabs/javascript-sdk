@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.UpdateLanguageRequest
+# @CompetitionlabsJavascriptSdk.UpdateLanguageRequest
 
 ## Properties
 

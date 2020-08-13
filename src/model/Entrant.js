@@ -19,7 +19,7 @@ import EntrantStatus from './EntrantStatus';
 /**
  * The Entrant model module.
  * @module model/Entrant
- * @version 1.0.0
+ * @version 1.0.1
  */
 class Entrant {
     /**

@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.CompetitionLabsApplicationServices);
+    factory(root.expect, root.@CompetitionlabsJavascriptSdk);
   }
-}(this, function(expect, CompetitionLabsApplicationServices) {
+}(this, function(expect, @CompetitionlabsJavascriptSdk) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new CompetitionLabsApplicationServices.RangeQuery();
+    instance = new @CompetitionlabsJavascriptSdk.RangeQuery();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,31 +50,31 @@
   describe('RangeQuery', function() {
     it('should create an instance of RangeQuery', function() {
       // uncomment below and update the code to test RangeQuery
-      //var instane = new CompetitionLabsApplicationServices.RangeQuery();
-      //expect(instance).to.be.a(CompetitionLabsApplicationServices.RangeQuery);
+      //var instane = new @CompetitionlabsJavascriptSdk.RangeQuery();
+      //expect(instance).to.be.a(@CompetitionlabsJavascriptSdk.RangeQuery);
     });
 
     it('should have the property queryField (base name: "queryField")', function() {
       // uncomment below and update the code to test the property queryField
-      //var instane = new CompetitionLabsApplicationServices.RangeQuery();
+      //var instane = new @CompetitionlabsJavascriptSdk.RangeQuery();
       //expect(instance).to.be();
     });
 
     it('should have the property gt (base name: "gt")', function() {
       // uncomment below and update the code to test the property gt
-      //var instane = new CompetitionLabsApplicationServices.RangeQuery();
+      //var instane = new @CompetitionlabsJavascriptSdk.RangeQuery();
       //expect(instance).to.be();
     });
 
     it('should have the property lt (base name: "lt")', function() {
       // uncomment below and update the code to test the property lt
-      //var instane = new CompetitionLabsApplicationServices.RangeQuery();
+      //var instane = new @CompetitionlabsJavascriptSdk.RangeQuery();
       //expect(instance).to.be();
     });
 
     it('should have the property includeBounds (base name: "includeBounds")', function() {
       // uncomment below and update the code to test the property includeBounds
-      //var instane = new CompetitionLabsApplicationServices.RangeQuery();
+      //var instane = new @CompetitionlabsJavascriptSdk.RangeQuery();
       //expect(instance).to.be();
     });
 

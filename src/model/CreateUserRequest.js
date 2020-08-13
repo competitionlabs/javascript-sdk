@@ -17,7 +17,7 @@ import Contact from './Contact';
 /**
  * The CreateUserRequest model module.
  * @module model/CreateUserRequest
- * @version 1.0.0
+ * @version 1.0.1
  */
 class CreateUserRequest {
     /**

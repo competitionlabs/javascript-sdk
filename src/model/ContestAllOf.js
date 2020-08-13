@@ -23,7 +23,7 @@ import Translation from './Translation';
 /**
  * The ContestAllOf model module.
  * @module model/ContestAllOf
- * @version 1.0.0
+ * @version 1.0.1
  */
 class ContestAllOf {
     /**

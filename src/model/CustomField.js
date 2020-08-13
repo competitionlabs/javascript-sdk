@@ -20,7 +20,7 @@ import ModelDefault from './ModelDefault';
 /**
  * The CustomField model module.
  * @module model/CustomField
- * @version 1.0.0
+ * @version 1.0.1
  */
 class CustomField {
     /**

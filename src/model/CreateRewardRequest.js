@@ -18,7 +18,7 @@ import Translation from './Translation';
 /**
  * The CreateRewardRequest model module.
  * @module model/CreateRewardRequest
- * @version 1.0.0
+ * @version 1.0.1
  */
 class CreateRewardRequest {
     /**

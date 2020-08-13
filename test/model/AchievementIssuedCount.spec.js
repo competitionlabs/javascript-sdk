@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.CompetitionLabsApplicationServices);
+    factory(root.expect, root.@CompetitionlabsJavascriptSdk);
   }
-}(this, function(expect, CompetitionLabsApplicationServices) {
+}(this, function(expect, @CompetitionlabsJavascriptSdk) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new CompetitionLabsApplicationServices.AchievementIssuedCount();
+    instance = new @CompetitionlabsJavascriptSdk.AchievementIssuedCount();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,8 +50,8 @@
   describe('AchievementIssuedCount', function() {
     it('should create an instance of AchievementIssuedCount', function() {
       // uncomment below and update the code to test AchievementIssuedCount
-      //var instane = new CompetitionLabsApplicationServices.AchievementIssuedCount();
-      //expect(instance).to.be.a(CompetitionLabsApplicationServices.AchievementIssuedCount);
+      //var instane = new @CompetitionlabsJavascriptSdk.AchievementIssuedCount();
+      //expect(instance).to.be.a(@CompetitionlabsJavascriptSdk.AchievementIssuedCount);
     });
 
   });

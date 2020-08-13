@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.CreateMemberRequest
+# @CompetitionlabsJavascriptSdk.CreateMemberRequest
 
 ## Properties
 

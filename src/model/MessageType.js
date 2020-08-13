@@ -70,6 +70,63 @@ export default class MessageType {
     
 
     /**
+    * Constructs a full object with all available fields.
+    */
+    list(){
+        var obj = {};
+
+        
+        obj['Achievement'] = "Achievement";
+        
+        obj['Ticket'] = "Ticket";
+        
+        obj['Reward'] = "Reward";
+        
+        obj['Text'] = "Text";
+        
+        obj['Notification'] = "Notification";
+        
+        obj['InboxItem'] = "InboxItem";
+        
+        obj['NotificationInboxItem'] = "NotificationInboxItem";
+        
+
+        return obj;
+    }
+
+    /**
+    * Constructs a full object with all available fields.
+    */
+    model(){
+        var obj = {};
+
+        
+        obj['Achievement'] = null;
+        
+        obj['Ticket'] = null;
+        
+        obj['Reward'] = null;
+        
+        obj['Text'] = null;
+        
+        obj['Notification'] = null;
+        
+        obj['InboxItem'] = null;
+        
+        obj['NotificationInboxItem'] = null;
+        
+
+        return obj;
+    }
+
+    /**
+    * Constructs a full object Map for all available fields.
+    */
+    modelMap(){
+        return {"type": 'String'};
+    }
+
+    /**
     * Returns a <code>MessageType</code> enum value from a Javascript object name.
     * @param {Object} data The plain JavaScript object containing the name of the enum value.
     * @return {module:model/MessageType} The enum <code>MessageType</code> value.

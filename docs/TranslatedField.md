@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.TranslatedField
+# @CompetitionlabsJavascriptSdk.TranslatedField
 
 ## Properties
 

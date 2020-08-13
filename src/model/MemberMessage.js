@@ -21,7 +21,7 @@ import ModelDefault from './ModelDefault';
 /**
  * The MemberMessage model module.
  * @module model/MemberMessage
- * @version 1.0.0
+ * @version 1.0.1
  */
 class MemberMessage {
     /**

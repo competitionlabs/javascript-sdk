@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.CompetitionLabsApplicationServices);
+    factory(root.expect, root.@CompetitionlabsJavascriptSdk);
   }
-}(this, function(expect, CompetitionLabsApplicationServices) {
+}(this, function(expect, @CompetitionlabsJavascriptSdk) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new CompetitionLabsApplicationServices.QuerySortBy();
+    instance = new @CompetitionlabsJavascriptSdk.QuerySortBy();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,19 +50,19 @@
   describe('QuerySortBy', function() {
     it('should create an instance of QuerySortBy', function() {
       // uncomment below and update the code to test QuerySortBy
-      //var instane = new CompetitionLabsApplicationServices.QuerySortBy();
-      //expect(instance).to.be.a(CompetitionLabsApplicationServices.QuerySortBy);
+      //var instane = new @CompetitionlabsJavascriptSdk.QuerySortBy();
+      //expect(instance).to.be.a(@CompetitionlabsJavascriptSdk.QuerySortBy);
     });
 
     it('should have the property queryField (base name: "queryField")', function() {
       // uncomment below and update the code to test the property queryField
-      //var instane = new CompetitionLabsApplicationServices.QuerySortBy();
+      //var instane = new @CompetitionlabsJavascriptSdk.QuerySortBy();
       //expect(instance).to.be();
     });
 
     it('should have the property order (base name: "order")', function() {
       // uncomment below and update the code to test the property order
-      //var instane = new CompetitionLabsApplicationServices.QuerySortBy();
+      //var instane = new @CompetitionlabsJavascriptSdk.QuerySortBy();
       //expect(instance).to.be();
     });
 

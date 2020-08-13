@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.RulesApi
+# @CompetitionlabsJavascriptSdk.RulesApi
 
 All URIs are relative to *https://api.competitionlabs.com*
 
@@ -20,15 +20,15 @@ Returns a list of either Achievement, Competition or Contest rules.
 ### Example
 
 ```javascript
-import CompetitionLabsApplicationServices from '@competitionlabs/javascript-sdk';
-let defaultClient = CompetitionLabsApplicationServices.ApiClient.instance;
+import @CompetitionlabsJavascriptSdk from '@competitionlabs/javascript-sdk';
+let defaultClient = @CompetitionlabsJavascriptSdk.ApiClient.instance;
 // Configure API key authorization: adminApiKey
 let adminApiKey = defaultClient.authentications['adminApiKey'];
 adminApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //adminApiKey.apiKeyPrefix = 'Token';
 
-let apiInstance = new CompetitionLabsApplicationServices.RulesApi();
+let apiInstance = new @CompetitionlabsJavascriptSdk.RulesApi();
 let spaceName = "spaceName_example"; // String | This is the space name which is linked to the account
 let ruleScope = "ruleScope_example"; // String | The rule scope to assess the ruleset against
 let opts = {
@@ -77,20 +77,20 @@ Validates either Achievement, Competition or Contest Rules.
 ### Example
 
 ```javascript
-import CompetitionLabsApplicationServices from '@competitionlabs/javascript-sdk';
-let defaultClient = CompetitionLabsApplicationServices.ApiClient.instance;
+import @CompetitionlabsJavascriptSdk from '@competitionlabs/javascript-sdk';
+let defaultClient = @CompetitionlabsJavascriptSdk.ApiClient.instance;
 // Configure API key authorization: adminApiKey
 let adminApiKey = defaultClient.authentications['adminApiKey'];
 adminApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //adminApiKey.apiKeyPrefix = 'Token';
 
-let apiInstance = new CompetitionLabsApplicationServices.RulesApi();
+let apiInstance = new @CompetitionlabsJavascriptSdk.RulesApi();
 let spaceName = "spaceName_example"; // String | This is the space name which is linked to the account
 let ruleScope = "ruleScope_example"; // String | The rule scope to assess the ruleset against
 let opts = {
   'X_API_KEY': "X_API_KEY_example", // String | The admin API Key generated from CompetitionLabs back office
-  'body': [new CompetitionLabsApplicationServices.RuleSet()] // [RuleSet] | Post a Rules Set to validate if the contest rules are valid
+  'body': [new @CompetitionlabsJavascriptSdk.RuleSet()] // [RuleSet] | Post a Rules Set to validate if the contest rules are valid
 };
 apiInstance.validateRulesByRuleScope(spaceName, ruleScope, opts, (error, data, response) => {
   if (error) {

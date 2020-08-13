@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.AchievementLiveStatus
+# @CompetitionlabsJavascriptSdk.AchievementLiveStatus
 
 ## Enum
 

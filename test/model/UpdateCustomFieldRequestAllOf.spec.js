@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.CompetitionLabsApplicationServices);
+    factory(root.expect, root.@CompetitionlabsJavascriptSdk);
   }
-}(this, function(expect, CompetitionLabsApplicationServices) {
+}(this, function(expect, @CompetitionlabsJavascriptSdk) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new CompetitionLabsApplicationServices.UpdateCustomFieldRequestAllOf();
+    instance = new @CompetitionlabsJavascriptSdk.UpdateCustomFieldRequestAllOf();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,19 +50,19 @@
   describe('UpdateCustomFieldRequestAllOf', function() {
     it('should create an instance of UpdateCustomFieldRequestAllOf', function() {
       // uncomment below and update the code to test UpdateCustomFieldRequestAllOf
-      //var instane = new CompetitionLabsApplicationServices.UpdateCustomFieldRequestAllOf();
-      //expect(instance).to.be.a(CompetitionLabsApplicationServices.UpdateCustomFieldRequestAllOf);
+      //var instane = new @CompetitionlabsJavascriptSdk.UpdateCustomFieldRequestAllOf();
+      //expect(instance).to.be.a(@CompetitionlabsJavascriptSdk.UpdateCustomFieldRequestAllOf);
     });
 
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
-      //var instane = new CompetitionLabsApplicationServices.UpdateCustomFieldRequestAllOf();
+      //var instane = new @CompetitionlabsJavascriptSdk.UpdateCustomFieldRequestAllOf();
       //expect(instance).to.be();
     });
 
     it('should have the property description (base name: "description")', function() {
       // uncomment below and update the code to test the property description
-      //var instane = new CompetitionLabsApplicationServices.UpdateCustomFieldRequestAllOf();
+      //var instane = new @CompetitionlabsJavascriptSdk.UpdateCustomFieldRequestAllOf();
       //expect(instance).to.be();
     });
 

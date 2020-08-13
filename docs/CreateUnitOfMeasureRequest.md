@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.CreateUnitOfMeasureRequest
+# @CompetitionlabsJavascriptSdk.CreateUnitOfMeasureRequest
 
 ## Properties
 

@@ -25,7 +25,7 @@ import Translation from './Translation';
 /**
  * The CompetitionAllOf model module.
  * @module model/CompetitionAllOf
- * @version 1.0.0
+ * @version 1.0.1
  */
 class CompetitionAllOf {
     /**

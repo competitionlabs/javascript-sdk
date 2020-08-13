@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.CompetitionLabsApplicationServices);
+    factory(root.expect, root.@CompetitionlabsJavascriptSdk);
   }
-}(this, function(expect, CompetitionLabsApplicationServices) {
+}(this, function(expect, @CompetitionlabsJavascriptSdk) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new CompetitionLabsApplicationServices.Space();
+    instance = new @CompetitionlabsJavascriptSdk.Space();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,37 +50,37 @@
   describe('Space', function() {
     it('should create an instance of Space', function() {
       // uncomment below and update the code to test Space
-      //var instane = new CompetitionLabsApplicationServices.Space();
-      //expect(instance).to.be.a(CompetitionLabsApplicationServices.Space);
+      //var instane = new @CompetitionlabsJavascriptSdk.Space();
+      //expect(instance).to.be.a(@CompetitionlabsJavascriptSdk.Space);
     });
 
     it('should have the property id (base name: "id")', function() {
       // uncomment below and update the code to test the property id
-      //var instane = new CompetitionLabsApplicationServices.Space();
+      //var instane = new @CompetitionlabsJavascriptSdk.Space();
       //expect(instance).to.be();
     });
 
     it('should have the property spaceName (base name: "spaceName")', function() {
       // uncomment below and update the code to test the property spaceName
-      //var instane = new CompetitionLabsApplicationServices.Space();
+      //var instane = new @CompetitionlabsJavascriptSdk.Space();
       //expect(instance).to.be();
     });
 
     it('should have the property created (base name: "created")', function() {
       // uncomment below and update the code to test the property created
-      //var instane = new CompetitionLabsApplicationServices.Space();
+      //var instane = new @CompetitionlabsJavascriptSdk.Space();
       //expect(instance).to.be();
     });
 
     it('should have the property accountType (base name: "accountType")', function() {
       // uncomment below and update the code to test the property accountType
-      //var instane = new CompetitionLabsApplicationServices.Space();
+      //var instane = new @CompetitionlabsJavascriptSdk.Space();
       //expect(instance).to.be();
     });
 
     it('should have the property masterSpace (base name: "masterSpace")', function() {
       // uncomment below and update the code to test the property masterSpace
-      //var instane = new CompetitionLabsApplicationServices.Space();
+      //var instane = new @CompetitionlabsJavascriptSdk.Space();
       //expect(instance).to.be();
     });
 

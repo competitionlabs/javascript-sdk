@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.TestMessageRequest
+# @CompetitionlabsJavascriptSdk.TestMessageRequest
 
 ## Properties
 

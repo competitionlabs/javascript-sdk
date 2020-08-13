@@ -19,7 +19,7 @@ import RabbitMqConnectionAllOf from './RabbitMqConnectionAllOf';
 /**
  * The RabbitMqConnection model module.
  * @module model/RabbitMqConnection
- * @version 1.0.0
+ * @version 1.0.1
  */
 class RabbitMqConnection {
     /**

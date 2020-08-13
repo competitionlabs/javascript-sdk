@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.UpdateConsumerStateRequest
+# @CompetitionlabsJavascriptSdk.UpdateConsumerStateRequest
 
 ## Properties
 

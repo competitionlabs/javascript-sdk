@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.WebhookAllOf
+# @CompetitionlabsJavascriptSdk.WebhookAllOf
 
 ## Properties
 

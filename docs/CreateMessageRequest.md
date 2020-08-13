@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.CreateMessageRequest
+# @CompetitionlabsJavascriptSdk.CreateMessageRequest
 
 ## Properties
 

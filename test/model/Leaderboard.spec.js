@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.CompetitionLabsApplicationServices);
+    factory(root.expect, root.@CompetitionlabsJavascriptSdk);
   }
-}(this, function(expect, CompetitionLabsApplicationServices) {
+}(this, function(expect, @CompetitionlabsJavascriptSdk) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new CompetitionLabsApplicationServices.Leaderboard();
+    instance = new @CompetitionlabsJavascriptSdk.Leaderboard();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,37 +50,37 @@
   describe('Leaderboard', function() {
     it('should create an instance of Leaderboard', function() {
       // uncomment below and update the code to test Leaderboard
-      //var instane = new CompetitionLabsApplicationServices.Leaderboard();
-      //expect(instance).to.be.a(CompetitionLabsApplicationServices.Leaderboard);
+      //var instane = new @CompetitionlabsJavascriptSdk.Leaderboard();
+      //expect(instance).to.be.a(@CompetitionlabsJavascriptSdk.Leaderboard);
     });
 
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
-      //var instane = new CompetitionLabsApplicationServices.Leaderboard();
+      //var instane = new @CompetitionlabsJavascriptSdk.Leaderboard();
       //expect(instance).to.be();
     });
 
     it('should have the property rank (base name: "rank")', function() {
       // uncomment below and update the code to test the property rank
-      //var instane = new CompetitionLabsApplicationServices.Leaderboard();
+      //var instane = new @CompetitionlabsJavascriptSdk.Leaderboard();
       //expect(instance).to.be();
     });
 
     it('should have the property points (base name: "points")', function() {
       // uncomment below and update the code to test the property points
-      //var instane = new CompetitionLabsApplicationServices.Leaderboard();
+      //var instane = new @CompetitionlabsJavascriptSdk.Leaderboard();
       //expect(instance).to.be();
     });
 
     it('should have the property memberId (base name: "memberId")', function() {
       // uncomment below and update the code to test the property memberId
-      //var instane = new CompetitionLabsApplicationServices.Leaderboard();
+      //var instane = new @CompetitionlabsJavascriptSdk.Leaderboard();
       //expect(instance).to.be();
     });
 
     it('should have the property memberRefId (base name: "memberRefId")', function() {
       // uncomment below and update the code to test the property memberRefId
-      //var instane = new CompetitionLabsApplicationServices.Leaderboard();
+      //var instane = new @CompetitionlabsJavascriptSdk.Leaderboard();
       //expect(instance).to.be();
     });
 

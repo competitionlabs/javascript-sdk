@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.CompetitionLabsApplicationServices);
+    factory(root.expect, root.@CompetitionlabsJavascriptSdk);
   }
-}(this, function(expect, CompetitionLabsApplicationServices) {
+}(this, function(expect, @CompetitionlabsJavascriptSdk) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new CompetitionLabsApplicationServices.Location();
+    instance = new @CompetitionlabsJavascriptSdk.Location();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,19 +50,19 @@
   describe('Location', function() {
     it('should create an instance of Location', function() {
       // uncomment below and update the code to test Location
-      //var instane = new CompetitionLabsApplicationServices.Location();
-      //expect(instance).to.be.a(CompetitionLabsApplicationServices.Location);
+      //var instane = new @CompetitionlabsJavascriptSdk.Location();
+      //expect(instance).to.be.a(@CompetitionlabsJavascriptSdk.Location);
     });
 
     it('should have the property lat (base name: "lat")', function() {
       // uncomment below and update the code to test the property lat
-      //var instane = new CompetitionLabsApplicationServices.Location();
+      //var instane = new @CompetitionlabsJavascriptSdk.Location();
       //expect(instance).to.be();
     });
 
     it('should have the property lon (base name: "lon")', function() {
       // uncomment below and update the code to test the property lon
-      //var instane = new CompetitionLabsApplicationServices.Location();
+      //var instane = new @CompetitionlabsJavascriptSdk.Location();
       //expect(instance).to.be();
     });
 

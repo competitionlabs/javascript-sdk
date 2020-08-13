@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.ChangePasswordRequest
+# @CompetitionlabsJavascriptSdk.ChangePasswordRequest
 
 ## Properties
 

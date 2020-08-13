@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.CompetitionLabsApplicationServices);
+    factory(root.expect, root.@CompetitionlabsJavascriptSdk);
   }
-}(this, function(expect, CompetitionLabsApplicationServices) {
+}(this, function(expect, @CompetitionlabsJavascriptSdk) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new CompetitionLabsApplicationServices.CreateConnectionRequest();
+    instance = new @CompetitionlabsJavascriptSdk.CreateConnectionRequest();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,13 +50,13 @@
   describe('CreateConnectionRequest', function() {
     it('should create an instance of CreateConnectionRequest', function() {
       // uncomment below and update the code to test CreateConnectionRequest
-      //var instane = new CompetitionLabsApplicationServices.CreateConnectionRequest();
-      //expect(instance).to.be.a(CompetitionLabsApplicationServices.CreateConnectionRequest);
+      //var instane = new @CompetitionlabsJavascriptSdk.CreateConnectionRequest();
+      //expect(instance).to.be.a(@CompetitionlabsJavascriptSdk.CreateConnectionRequest);
     });
 
     it('should have the property objectType (base name: "objectType")', function() {
       // uncomment below and update the code to test the property objectType
-      //var instane = new CompetitionLabsApplicationServices.CreateConnectionRequest();
+      //var instane = new @CompetitionlabsJavascriptSdk.CreateConnectionRequest();
       //expect(instance).to.be();
     });
 

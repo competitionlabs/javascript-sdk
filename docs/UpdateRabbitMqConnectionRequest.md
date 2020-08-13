@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.UpdateRabbitMqConnectionRequest
+# @CompetitionlabsJavascriptSdk.UpdateRabbitMqConnectionRequest
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.ApiKeyResponse
+# @CompetitionlabsJavascriptSdk.ApiKeyResponse
 
 ## Properties
 

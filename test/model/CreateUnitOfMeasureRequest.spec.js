@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.CompetitionLabsApplicationServices);
+    factory(root.expect, root.@CompetitionlabsJavascriptSdk);
   }
-}(this, function(expect, CompetitionLabsApplicationServices) {
+}(this, function(expect, @CompetitionlabsJavascriptSdk) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new CompetitionLabsApplicationServices.CreateUnitOfMeasureRequest();
+    instance = new @CompetitionlabsJavascriptSdk.CreateUnitOfMeasureRequest();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,55 +50,55 @@
   describe('CreateUnitOfMeasureRequest', function() {
     it('should create an instance of CreateUnitOfMeasureRequest', function() {
       // uncomment below and update the code to test CreateUnitOfMeasureRequest
-      //var instane = new CompetitionLabsApplicationServices.CreateUnitOfMeasureRequest();
-      //expect(instance).to.be.a(CompetitionLabsApplicationServices.CreateUnitOfMeasureRequest);
+      //var instane = new @CompetitionlabsJavascriptSdk.CreateUnitOfMeasureRequest();
+      //expect(instance).to.be.a(@CompetitionlabsJavascriptSdk.CreateUnitOfMeasureRequest);
     });
 
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
-      //var instane = new CompetitionLabsApplicationServices.CreateUnitOfMeasureRequest();
+      //var instane = new @CompetitionlabsJavascriptSdk.CreateUnitOfMeasureRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property key (base name: "key")', function() {
       // uncomment below and update the code to test the property key
-      //var instane = new CompetitionLabsApplicationServices.CreateUnitOfMeasureRequest();
+      //var instane = new @CompetitionlabsJavascriptSdk.CreateUnitOfMeasureRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property description (base name: "description")', function() {
       // uncomment below and update the code to test the property description
-      //var instane = new CompetitionLabsApplicationServices.CreateUnitOfMeasureRequest();
+      //var instane = new @CompetitionlabsJavascriptSdk.CreateUnitOfMeasureRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property isoCode (base name: "isoCode")', function() {
       // uncomment below and update the code to test the property isoCode
-      //var instane = new CompetitionLabsApplicationServices.CreateUnitOfMeasureRequest();
+      //var instane = new @CompetitionlabsJavascriptSdk.CreateUnitOfMeasureRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property symbol (base name: "symbol")', function() {
       // uncomment below and update the code to test the property symbol
-      //var instane = new CompetitionLabsApplicationServices.CreateUnitOfMeasureRequest();
+      //var instane = new @CompetitionlabsJavascriptSdk.CreateUnitOfMeasureRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property multiplier (base name: "multiplier")', function() {
       // uncomment below and update the code to test the property multiplier
-      //var instane = new CompetitionLabsApplicationServices.CreateUnitOfMeasureRequest();
+      //var instane = new @CompetitionlabsJavascriptSdk.CreateUnitOfMeasureRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property unitOfMeasureType (base name: "unitOfMeasureType")', function() {
       // uncomment below and update the code to test the property unitOfMeasureType
-      //var instane = new CompetitionLabsApplicationServices.CreateUnitOfMeasureRequest();
+      //var instane = new @CompetitionlabsJavascriptSdk.CreateUnitOfMeasureRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property metadata (base name: "metadata")', function() {
       // uncomment below and update the code to test the property metadata
-      //var instane = new CompetitionLabsApplicationServices.CreateUnitOfMeasureRequest();
+      //var instane = new @CompetitionlabsJavascriptSdk.CreateUnitOfMeasureRequest();
       //expect(instance).to.be();
     });
 

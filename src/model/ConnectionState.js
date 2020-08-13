@@ -35,6 +35,43 @@ export default class ConnectionState {
     
 
     /**
+    * Constructs a full object with all available fields.
+    */
+    list(){
+        var obj = {};
+
+        
+        obj['Start'] = "Start";
+        
+        obj['Stop'] = "Stop";
+        
+
+        return obj;
+    }
+
+    /**
+    * Constructs a full object with all available fields.
+    */
+    model(){
+        var obj = {};
+
+        
+        obj['Start'] = null;
+        
+        obj['Stop'] = null;
+        
+
+        return obj;
+    }
+
+    /**
+    * Constructs a full object Map for all available fields.
+    */
+    modelMap(){
+        return {"type": 'String'};
+    }
+
+    /**
     * Returns a <code>ConnectionState</code> enum value from a Javascript object name.
     * @param {Object} data The plain JavaScript object containing the name of the enum value.
     * @return {module:model/ConnectionState} The enum <code>ConnectionState</code> value.

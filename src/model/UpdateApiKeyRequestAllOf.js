@@ -17,7 +17,7 @@ import Role from './Role';
 /**
  * The UpdateApiKeyRequestAllOf model module.
  * @module model/UpdateApiKeyRequestAllOf
- * @version 1.0.0
+ * @version 1.0.1
  */
 class UpdateApiKeyRequestAllOf {
     /**

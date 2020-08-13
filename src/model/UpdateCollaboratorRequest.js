@@ -19,7 +19,7 @@ import UpdateModelDefault from './UpdateModelDefault';
 /**
  * The UpdateCollaboratorRequest model module.
  * @module model/UpdateCollaboratorRequest
- * @version 1.0.0
+ * @version 1.0.1
  */
 class UpdateCollaboratorRequest {
     /**

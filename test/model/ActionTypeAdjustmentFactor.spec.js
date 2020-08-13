@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.CompetitionLabsApplicationServices);
+    factory(root.expect, root.@CompetitionlabsJavascriptSdk);
   }
-}(this, function(expect, CompetitionLabsApplicationServices) {
+}(this, function(expect, @CompetitionlabsJavascriptSdk) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new CompetitionLabsApplicationServices.ActionTypeAdjustmentFactor();
+    instance = new @CompetitionlabsJavascriptSdk.ActionTypeAdjustmentFactor();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,19 +50,19 @@
   describe('ActionTypeAdjustmentFactor', function() {
     it('should create an instance of ActionTypeAdjustmentFactor', function() {
       // uncomment below and update the code to test ActionTypeAdjustmentFactor
-      //var instane = new CompetitionLabsApplicationServices.ActionTypeAdjustmentFactor();
-      //expect(instance).to.be.a(CompetitionLabsApplicationServices.ActionTypeAdjustmentFactor);
+      //var instane = new @CompetitionlabsJavascriptSdk.ActionTypeAdjustmentFactor();
+      //expect(instance).to.be.a(@CompetitionlabsJavascriptSdk.ActionTypeAdjustmentFactor);
     });
 
     it('should have the property adjustmentFactor (base name: "adjustmentFactor")', function() {
       // uncomment below and update the code to test the property adjustmentFactor
-      //var instane = new CompetitionLabsApplicationServices.ActionTypeAdjustmentFactor();
+      //var instane = new @CompetitionlabsJavascriptSdk.ActionTypeAdjustmentFactor();
       //expect(instance).to.be();
     });
 
     it('should have the property actionTypeId (base name: "actionTypeId")', function() {
       // uncomment below and update the code to test the property actionTypeId
-      //var instane = new CompetitionLabsApplicationServices.ActionTypeAdjustmentFactor();
+      //var instane = new @CompetitionlabsJavascriptSdk.ActionTypeAdjustmentFactor();
       //expect(instance).to.be();
     });
 

@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.CompetitionLabsApplicationServices);
+    factory(root.expect, root.@CompetitionlabsJavascriptSdk);
   }
-}(this, function(expect, CompetitionLabsApplicationServices) {
+}(this, function(expect, @CompetitionlabsJavascriptSdk) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new CompetitionLabsApplicationServices.UpdateConsumerStateRequest();
+    instance = new @CompetitionlabsJavascriptSdk.UpdateConsumerStateRequest();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,19 +50,19 @@
   describe('UpdateConsumerStateRequest', function() {
     it('should create an instance of UpdateConsumerStateRequest', function() {
       // uncomment below and update the code to test UpdateConsumerStateRequest
-      //var instane = new CompetitionLabsApplicationServices.UpdateConsumerStateRequest();
-      //expect(instance).to.be.a(CompetitionLabsApplicationServices.UpdateConsumerStateRequest);
+      //var instane = new @CompetitionlabsJavascriptSdk.UpdateConsumerStateRequest();
+      //expect(instance).to.be.a(@CompetitionlabsJavascriptSdk.UpdateConsumerStateRequest);
     });
 
     it('should have the property connectionId (base name: "connectionId")', function() {
       // uncomment below and update the code to test the property connectionId
-      //var instane = new CompetitionLabsApplicationServices.UpdateConsumerStateRequest();
+      //var instane = new @CompetitionlabsJavascriptSdk.UpdateConsumerStateRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property status (base name: "status")', function() {
       // uncomment below and update the code to test the property status
-      //var instane = new CompetitionLabsApplicationServices.UpdateConsumerStateRequest();
+      //var instane = new @CompetitionlabsJavascriptSdk.UpdateConsumerStateRequest();
       //expect(instance).to.be();
     });
 

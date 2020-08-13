@@ -23,7 +23,7 @@ import UpdateRewardRequest from './UpdateRewardRequest';
 /**
  * The UpdateAchievementRequestAllOf model module.
  * @module model/UpdateAchievementRequestAllOf
- * @version 1.0.0
+ * @version 1.0.1
  */
 class UpdateAchievementRequestAllOf {
     /**

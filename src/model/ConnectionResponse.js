@@ -19,7 +19,7 @@ import MetaExtended from './MetaExtended';
 /**
  * The ConnectionResponse model module.
  * @module model/ConnectionResponse
- * @version 1.0.0
+ * @version 1.0.1
  */
 class ConnectionResponse {
     /**

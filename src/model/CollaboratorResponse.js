@@ -19,7 +19,7 @@ import MetaExtended from './MetaExtended';
 /**
  * The CollaboratorResponse model module.
  * @module model/CollaboratorResponse
- * @version 1.0.0
+ * @version 1.0.1
  */
 class CollaboratorResponse {
     /**

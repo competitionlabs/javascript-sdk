@@ -18,7 +18,7 @@ import RuleScope from './RuleScope';
 /**
  * The RuleSet model module.
  * @module model/RuleSet
- * @version 1.0.0
+ * @version 1.0.1
  */
 class RuleSet {
     /**

@@ -21,7 +21,7 @@ import UpdateModelDefault from './UpdateModelDefault';
 /**
  * The UpdateMessageRequest model module.
  * @module model/UpdateMessageRequest
- * @version 1.0.0
+ * @version 1.0.1
  */
 class UpdateMessageRequest {
     /**

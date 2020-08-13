@@ -20,7 +20,7 @@ import RuleDescriptorSubCondition from './RuleDescriptorSubCondition';
 /**
  * The RuleDescriptorFact model module.
  * @module model/RuleDescriptorFact
- * @version 1.0.0
+ * @version 1.0.1
  */
 class RuleDescriptorFact {
     /**

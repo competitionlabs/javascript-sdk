@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.CompetitionLabsApplicationServices);
+    factory(root.expect, root.@CompetitionlabsJavascriptSdk);
   }
-}(this, function(expect, CompetitionLabsApplicationServices) {
+}(this, function(expect, @CompetitionlabsJavascriptSdk) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new CompetitionLabsApplicationServices.ConnectionResponse();
+    instance = new @CompetitionlabsJavascriptSdk.ConnectionResponse();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,25 +50,25 @@
   describe('ConnectionResponse', function() {
     it('should create an instance of ConnectionResponse', function() {
       // uncomment below and update the code to test ConnectionResponse
-      //var instane = new CompetitionLabsApplicationServices.ConnectionResponse();
-      //expect(instance).to.be.a(CompetitionLabsApplicationServices.ConnectionResponse);
+      //var instane = new @CompetitionlabsJavascriptSdk.ConnectionResponse();
+      //expect(instance).to.be.a(@CompetitionlabsJavascriptSdk.ConnectionResponse);
     });
 
     it('should have the property meta (base name: "meta")', function() {
       // uncomment below and update the code to test the property meta
-      //var instane = new CompetitionLabsApplicationServices.ConnectionResponse();
+      //var instane = new @CompetitionlabsJavascriptSdk.ConnectionResponse();
       //expect(instance).to.be();
     });
 
     it('should have the property results (base name: "results")', function() {
       // uncomment below and update the code to test the property results
-      //var instane = new CompetitionLabsApplicationServices.ConnectionResponse();
+      //var instane = new @CompetitionlabsJavascriptSdk.ConnectionResponse();
       //expect(instance).to.be();
     });
 
     it('should have the property errors (base name: "errors")', function() {
       // uncomment below and update the code to test the property errors
-      //var instane = new CompetitionLabsApplicationServices.ConnectionResponse();
+      //var instane = new @CompetitionlabsJavascriptSdk.ConnectionResponse();
       //expect(instance).to.be();
     });
 

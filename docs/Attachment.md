@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.Attachment
+# @CompetitionlabsJavascriptSdk.Attachment
 
 ## Properties
 

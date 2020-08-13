@@ -17,7 +17,7 @@ import EntityType from './EntityType';
 /**
  * The AwardAllOf model module.
  * @module model/AwardAllOf
- * @version 1.0.0
+ * @version 1.0.1
  */
 class AwardAllOf {
     /**

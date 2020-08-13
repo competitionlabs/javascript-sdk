@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The QueryMultipleFields model module.
  * @module model/QueryMultipleFields
- * @version 1.0.0
+ * @version 1.0.1
  */
 class QueryMultipleFields {
     /**

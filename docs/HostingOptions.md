@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.HostingOptions
+# @CompetitionlabsJavascriptSdk.HostingOptions
 
 ## Properties
 

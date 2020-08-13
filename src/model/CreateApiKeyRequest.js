@@ -17,7 +17,7 @@ import Role from './Role';
 /**
  * The CreateApiKeyRequest model module.
  * @module model/CreateApiKeyRequest
- * @version 1.0.0
+ * @version 1.0.1
  */
 class CreateApiKeyRequest {
     /**

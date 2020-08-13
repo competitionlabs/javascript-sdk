@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.Contact
+# @CompetitionlabsJavascriptSdk.Contact
 
 ## Properties
 

@@ -17,7 +17,7 @@ import Location from './Location';
 /**
  * The ContactAllOf model module.
  * @module model/ContactAllOf
- * @version 1.0.0
+ * @version 1.0.1
  */
 class ContactAllOf {
     /**

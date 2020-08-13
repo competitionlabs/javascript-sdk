@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.CompetitionLabsApplicationServices);
+    factory(root.expect, root.@CompetitionlabsJavascriptSdk);
   }
-}(this, function(expect, CompetitionLabsApplicationServices) {
+}(this, function(expect, @CompetitionlabsJavascriptSdk) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new CompetitionLabsApplicationServices.HostingOptions();
+    instance = new @CompetitionlabsJavascriptSdk.HostingOptions();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,19 +50,19 @@
   describe('HostingOptions', function() {
     it('should create an instance of HostingOptions', function() {
       // uncomment below and update the code to test HostingOptions
-      //var instane = new CompetitionLabsApplicationServices.HostingOptions();
-      //expect(instance).to.be.a(CompetitionLabsApplicationServices.HostingOptions);
+      //var instane = new @CompetitionlabsJavascriptSdk.HostingOptions();
+      //expect(instance).to.be.a(@CompetitionlabsJavascriptSdk.HostingOptions);
     });
 
     it('should have the property indexFileName (base name: "indexFileName")', function() {
       // uncomment below and update the code to test the property indexFileName
-      //var instane = new CompetitionLabsApplicationServices.HostingOptions();
+      //var instane = new @CompetitionlabsJavascriptSdk.HostingOptions();
       //expect(instance).to.be();
     });
 
     it('should have the property errorFileName (base name: "errorFileName")', function() {
       // uncomment below and update the code to test the property errorFileName
-      //var instane = new CompetitionLabsApplicationServices.HostingOptions();
+      //var instane = new @CompetitionlabsJavascriptSdk.HostingOptions();
       //expect(instance).to.be();
     });
 

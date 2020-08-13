@@ -18,7 +18,7 @@ import UpdateSqsConnectionRequestAllOf from './UpdateSqsConnectionRequestAllOf';
 /**
  * The UpdateSqsConnectionRequest model module.
  * @module model/UpdateSqsConnectionRequest
- * @version 1.0.0
+ * @version 1.0.1
  */
 class UpdateSqsConnectionRequest {
     /**

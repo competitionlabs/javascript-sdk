@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.UserApi
+# @CompetitionlabsJavascriptSdk.UserApi
 
 All URIs are relative to *https://api.competitionlabs.com*
 
@@ -25,16 +25,16 @@ Execute password change operation
 ### Example
 
 ```javascript
-import CompetitionLabsApplicationServices from '@competitionlabs/javascript-sdk';
-let defaultClient = CompetitionLabsApplicationServices.ApiClient.instance;
+import @CompetitionlabsJavascriptSdk from '@competitionlabs/javascript-sdk';
+let defaultClient = @CompetitionlabsJavascriptSdk.ApiClient.instance;
 // Configure API key authorization: adminApiKey
 let adminApiKey = defaultClient.authentications['adminApiKey'];
 adminApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //adminApiKey.apiKeyPrefix = 'Token';
 
-let apiInstance = new CompetitionLabsApplicationServices.UserApi();
-let body = new CompetitionLabsApplicationServices.ChangePasswordRequest(); // ChangePasswordRequest | Change the users password
+let apiInstance = new @CompetitionlabsJavascriptSdk.UserApi();
+let body = new @CompetitionlabsJavascriptSdk.ChangePasswordRequest(); // ChangePasswordRequest | Change the users password
 apiInstance.changePassword(body, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -76,15 +76,15 @@ Delete the current user from the CompetitionLabs
 ### Example
 
 ```javascript
-import CompetitionLabsApplicationServices from '@competitionlabs/javascript-sdk';
-let defaultClient = CompetitionLabsApplicationServices.ApiClient.instance;
+import @CompetitionlabsJavascriptSdk from '@competitionlabs/javascript-sdk';
+let defaultClient = @CompetitionlabsJavascriptSdk.ApiClient.instance;
 // Configure API key authorization: adminApiKey
 let adminApiKey = defaultClient.authentications['adminApiKey'];
 adminApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //adminApiKey.apiKeyPrefix = 'Token';
 
-let apiInstance = new CompetitionLabsApplicationServices.UserApi();
+let apiInstance = new @CompetitionlabsJavascriptSdk.UserApi();
 let opts = {
   'X_API_KEY': "X_API_KEY_example" // String | The admin API Key generated from CompetitionLabs back office
 };
@@ -129,15 +129,15 @@ Returns the current users user. This assumes that a user has first been uploaded
 ### Example
 
 ```javascript
-import CompetitionLabsApplicationServices from '@competitionlabs/javascript-sdk';
-let defaultClient = CompetitionLabsApplicationServices.ApiClient.instance;
+import @CompetitionlabsJavascriptSdk from '@competitionlabs/javascript-sdk';
+let defaultClient = @CompetitionlabsJavascriptSdk.ApiClient.instance;
 // Configure API key authorization: adminApiKey
 let adminApiKey = defaultClient.authentications['adminApiKey'];
 adminApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //adminApiKey.apiKeyPrefix = 'Token';
 
-let apiInstance = new CompetitionLabsApplicationServices.UserApi();
+let apiInstance = new @CompetitionlabsJavascriptSdk.UserApi();
 let opts = {
   'X_API_KEY': "X_API_KEY_example", // String | The admin API Key generated from CompetitionLabs back office
   'includeSpaces': true // Boolean | Include Spaces
@@ -184,15 +184,15 @@ Returns a list of the Users messages
 ### Example
 
 ```javascript
-import CompetitionLabsApplicationServices from '@competitionlabs/javascript-sdk';
-let defaultClient = CompetitionLabsApplicationServices.ApiClient.instance;
+import @CompetitionlabsJavascriptSdk from '@competitionlabs/javascript-sdk';
+let defaultClient = @CompetitionlabsJavascriptSdk.ApiClient.instance;
 // Configure API key authorization: adminApiKey
 let adminApiKey = defaultClient.authentications['adminApiKey'];
 adminApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //adminApiKey.apiKeyPrefix = 'Token';
 
-let apiInstance = new CompetitionLabsApplicationServices.UserApi();
+let apiInstance = new @CompetitionlabsJavascriptSdk.UserApi();
 let opts = {
   'X_API_KEY': "X_API_KEY_example", // String | The admin API Key generated from CompetitionLabs back office
   'limit': 20, // Number | Limit the returned total records found
@@ -241,15 +241,15 @@ Returns a Users message for the identifier provided
 ### Example
 
 ```javascript
-import CompetitionLabsApplicationServices from '@competitionlabs/javascript-sdk';
-let defaultClient = CompetitionLabsApplicationServices.ApiClient.instance;
+import @CompetitionlabsJavascriptSdk from '@competitionlabs/javascript-sdk';
+let defaultClient = @CompetitionlabsJavascriptSdk.ApiClient.instance;
 // Configure API key authorization: adminApiKey
 let adminApiKey = defaultClient.authentications['adminApiKey'];
 adminApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //adminApiKey.apiKeyPrefix = 'Token';
 
-let apiInstance = new CompetitionLabsApplicationServices.UserApi();
+let apiInstance = new @CompetitionlabsJavascriptSdk.UserApi();
 let id = "id_example"; // String | Unique identifier of the resource
 let opts = {
   'X_API_KEY': "X_API_KEY_example" // String | The admin API Key generated from CompetitionLabs back office
@@ -296,16 +296,16 @@ Mark User messages as read
 ### Example
 
 ```javascript
-import CompetitionLabsApplicationServices from '@competitionlabs/javascript-sdk';
-let defaultClient = CompetitionLabsApplicationServices.ApiClient.instance;
+import @CompetitionlabsJavascriptSdk from '@competitionlabs/javascript-sdk';
+let defaultClient = @CompetitionlabsJavascriptSdk.ApiClient.instance;
 // Configure API key authorization: adminApiKey
 let adminApiKey = defaultClient.authentications['adminApiKey'];
 adminApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //adminApiKey.apiKeyPrefix = 'Token';
 
-let apiInstance = new CompetitionLabsApplicationServices.UserApi();
-let body = new CompetitionLabsApplicationServices.CreateMessageRequest(); // CreateMessageRequest | Mark User messages as read
+let apiInstance = new @CompetitionlabsJavascriptSdk.UserApi();
+let body = new @CompetitionlabsJavascriptSdk.CreateMessageRequest(); // CreateMessageRequest | Mark User messages as read
 let opts = {
   'X_API_KEY': "X_API_KEY_example" // String | The admin API Key generated from CompetitionLabs back office
 };
@@ -351,16 +351,16 @@ Update the current user in the CompetitionLabs system
 ### Example
 
 ```javascript
-import CompetitionLabsApplicationServices from '@competitionlabs/javascript-sdk';
-let defaultClient = CompetitionLabsApplicationServices.ApiClient.instance;
+import @CompetitionlabsJavascriptSdk from '@competitionlabs/javascript-sdk';
+let defaultClient = @CompetitionlabsJavascriptSdk.ApiClient.instance;
 // Configure API key authorization: adminApiKey
 let adminApiKey = defaultClient.authentications['adminApiKey'];
 adminApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //adminApiKey.apiKeyPrefix = 'Token';
 
-let apiInstance = new CompetitionLabsApplicationServices.UserApi();
-let body = new CompetitionLabsApplicationServices.UpdateUserRequest(); // UpdateUserRequest | Update a User in the CompetitionLabs system. * Any Put body Parameters that are excluded in the Request body field will be considered as empty and updated with an empty field
+let apiInstance = new @CompetitionlabsJavascriptSdk.UserApi();
+let body = new @CompetitionlabsJavascriptSdk.UpdateUserRequest(); // UpdateUserRequest | Update a User in the CompetitionLabs system. * Any Put body Parameters that are excluded in the Request body field will be considered as empty and updated with an empty field
 let opts = {
   'X_API_KEY': "X_API_KEY_example" // String | The admin API Key generated from CompetitionLabs back office
 };

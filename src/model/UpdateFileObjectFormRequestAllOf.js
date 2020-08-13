@@ -17,7 +17,7 @@ import Metadata from './Metadata';
 /**
  * The UpdateFileObjectFormRequestAllOf model module.
  * @module model/UpdateFileObjectFormRequestAllOf
- * @version 1.0.0
+ * @version 1.0.1
  */
 class UpdateFileObjectFormRequestAllOf {
     /**

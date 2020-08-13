@@ -22,7 +22,7 @@ import Translation from './Translation';
 /**
  * The CreateContestForCompetitionRequest model module.
  * @module model/CreateContestForCompetitionRequest
- * @version 1.0.0
+ * @version 1.0.1
  */
 class CreateContestForCompetitionRequest {
     /**

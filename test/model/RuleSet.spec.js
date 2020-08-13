@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.CompetitionLabsApplicationServices);
+    factory(root.expect, root.@CompetitionlabsJavascriptSdk);
   }
-}(this, function(expect, CompetitionLabsApplicationServices) {
+}(this, function(expect, @CompetitionlabsJavascriptSdk) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new CompetitionLabsApplicationServices.RuleSet();
+    instance = new @CompetitionlabsJavascriptSdk.RuleSet();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,43 +50,43 @@
   describe('RuleSet', function() {
     it('should create an instance of RuleSet', function() {
       // uncomment below and update the code to test RuleSet
-      //var instane = new CompetitionLabsApplicationServices.RuleSet();
-      //expect(instance).to.be.a(CompetitionLabsApplicationServices.RuleSet);
+      //var instane = new @CompetitionlabsJavascriptSdk.RuleSet();
+      //expect(instance).to.be.a(@CompetitionlabsJavascriptSdk.RuleSet);
     });
 
     it('should have the property priority (base name: "priority")', function() {
       // uncomment below and update the code to test the property priority
-      //var instane = new CompetitionLabsApplicationServices.RuleSet();
+      //var instane = new @CompetitionlabsJavascriptSdk.RuleSet();
       //expect(instance).to.be();
     });
 
     it('should have the property scope (base name: "scope")', function() {
       // uncomment below and update the code to test the property scope
-      //var instane = new CompetitionLabsApplicationServices.RuleSet();
+      //var instane = new @CompetitionlabsJavascriptSdk.RuleSet();
       //expect(instance).to.be();
     });
 
     it('should have the property action (base name: "action")', function() {
       // uncomment below and update the code to test the property action
-      //var instane = new CompetitionLabsApplicationServices.RuleSet();
+      //var instane = new @CompetitionlabsJavascriptSdk.RuleSet();
       //expect(instance).to.be();
     });
 
     it('should have the property conditions (base name: "conditions")', function() {
       // uncomment below and update the code to test the property conditions
-      //var instane = new CompetitionLabsApplicationServices.RuleSet();
+      //var instane = new @CompetitionlabsJavascriptSdk.RuleSet();
       //expect(instance).to.be();
     });
 
     it('should have the property onMatchThen (base name: "onMatchThen")', function() {
       // uncomment below and update the code to test the property onMatchThen
-      //var instane = new CompetitionLabsApplicationServices.RuleSet();
+      //var instane = new @CompetitionlabsJavascriptSdk.RuleSet();
       //expect(instance).to.be();
     });
 
     it('should have the property onMatchConstant (base name: "onMatchConstant")', function() {
       // uncomment below and update the code to test the property onMatchConstant
-      //var instane = new CompetitionLabsApplicationServices.RuleSet();
+      //var instane = new @CompetitionlabsJavascriptSdk.RuleSet();
       //expect(instance).to.be();
     });
 

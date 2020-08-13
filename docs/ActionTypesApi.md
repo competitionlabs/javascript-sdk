@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.ActionTypesApi
+# @CompetitionlabsJavascriptSdk.ActionTypesApi
 
 All URIs are relative to *https://api.competitionlabs.com*
 
@@ -24,17 +24,17 @@ Create new Action types in the CompetitionLabs database
 ### Example
 
 ```javascript
-import CompetitionLabsApplicationServices from '@competitionlabs/javascript-sdk';
-let defaultClient = CompetitionLabsApplicationServices.ApiClient.instance;
+import @CompetitionlabsJavascriptSdk from '@competitionlabs/javascript-sdk';
+let defaultClient = @CompetitionlabsJavascriptSdk.ApiClient.instance;
 // Configure API key authorization: adminApiKey
 let adminApiKey = defaultClient.authentications['adminApiKey'];
 adminApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //adminApiKey.apiKeyPrefix = 'Token';
 
-let apiInstance = new CompetitionLabsApplicationServices.ActionTypesApi();
+let apiInstance = new @CompetitionlabsJavascriptSdk.ActionTypesApi();
 let spaceName = "spaceName_example"; // String | This is the space name which is linked to the account
-let body = [new CompetitionLabsApplicationServices.CreateActionTypeRequest()]; // [CreateActionTypeRequest] | Create Action Types in the CompetitionLabs database
+let body = [new @CompetitionlabsJavascriptSdk.CreateActionTypeRequest()]; // [CreateActionTypeRequest] | Create Action Types in the CompetitionLabs database
 let opts = {
   'X_API_KEY': "X_API_KEY_example" // String | The admin API Key generated from CompetitionLabs back office
 };
@@ -81,15 +81,15 @@ Delete Action types for a given identifier specified
 ### Example
 
 ```javascript
-import CompetitionLabsApplicationServices from '@competitionlabs/javascript-sdk';
-let defaultClient = CompetitionLabsApplicationServices.ApiClient.instance;
+import @CompetitionlabsJavascriptSdk from '@competitionlabs/javascript-sdk';
+let defaultClient = @CompetitionlabsJavascriptSdk.ApiClient.instance;
 // Configure API key authorization: adminApiKey
 let adminApiKey = defaultClient.authentications['adminApiKey'];
 adminApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //adminApiKey.apiKeyPrefix = 'Token';
 
-let apiInstance = new CompetitionLabsApplicationServices.ActionTypesApi();
+let apiInstance = new @CompetitionlabsJavascriptSdk.ActionTypesApi();
 let spaceName = "spaceName_example"; // String | This is the space name which is linked to the account
 let opts = {
   'X_API_KEY': "X_API_KEY_example", // String | The admin API Key generated from CompetitionLabs back office
@@ -138,19 +138,19 @@ Delete Action types from CompetitionLabs database by unique Action types ID&#39;
 ### Example
 
 ```javascript
-import CompetitionLabsApplicationServices from '@competitionlabs/javascript-sdk';
-let defaultClient = CompetitionLabsApplicationServices.ApiClient.instance;
+import @CompetitionlabsJavascriptSdk from '@competitionlabs/javascript-sdk';
+let defaultClient = @CompetitionlabsJavascriptSdk.ApiClient.instance;
 // Configure API key authorization: adminApiKey
 let adminApiKey = defaultClient.authentications['adminApiKey'];
 adminApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //adminApiKey.apiKeyPrefix = 'Token';
 
-let apiInstance = new CompetitionLabsApplicationServices.ActionTypesApi();
+let apiInstance = new @CompetitionlabsJavascriptSdk.ActionTypesApi();
 let spaceName = "spaceName_example"; // String | This is the space name which is linked to the account
 let opts = {
   'X_API_KEY': "X_API_KEY_example", // String | The admin API Key generated from CompetitionLabs back office
-  'body': new CompetitionLabsApplicationServices.QueryRequest() // QueryRequest | Delete Action types from CompetitionLabs database by unique Action types ID's or any other POST body parameters using the POST method
+  'body': new @CompetitionlabsJavascriptSdk.QueryRequest() // QueryRequest | Delete Action types from CompetitionLabs database by unique Action types ID's or any other POST body parameters using the POST method
 };
 apiInstance.deleteActionTypesByQuery(spaceName, opts, (error, data, response) => {
   if (error) {
@@ -195,15 +195,15 @@ Returns a list of Action Types. This assumes that action types have first been u
 ### Example
 
 ```javascript
-import CompetitionLabsApplicationServices from '@competitionlabs/javascript-sdk';
-let defaultClient = CompetitionLabsApplicationServices.ApiClient.instance;
+import @CompetitionlabsJavascriptSdk from '@competitionlabs/javascript-sdk';
+let defaultClient = @CompetitionlabsJavascriptSdk.ApiClient.instance;
 // Configure API key authorization: adminApiKey
 let adminApiKey = defaultClient.authentications['adminApiKey'];
 adminApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //adminApiKey.apiKeyPrefix = 'Token';
 
-let apiInstance = new CompetitionLabsApplicationServices.ActionTypesApi();
+let apiInstance = new @CompetitionlabsJavascriptSdk.ActionTypesApi();
 let spaceName = "spaceName_example"; // String | This is the space name which is linked to the account
 let opts = {
   'X_API_KEY': "X_API_KEY_example", // String | The admin API Key generated from CompetitionLabs back office
@@ -256,19 +256,19 @@ Retrieve Action types from CompetitionLabs database by unique Action type ID&#39
 ### Example
 
 ```javascript
-import CompetitionLabsApplicationServices from '@competitionlabs/javascript-sdk';
-let defaultClient = CompetitionLabsApplicationServices.ApiClient.instance;
+import @CompetitionlabsJavascriptSdk from '@competitionlabs/javascript-sdk';
+let defaultClient = @CompetitionlabsJavascriptSdk.ApiClient.instance;
 // Configure API key authorization: adminApiKey
 let adminApiKey = defaultClient.authentications['adminApiKey'];
 adminApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //adminApiKey.apiKeyPrefix = 'Token';
 
-let apiInstance = new CompetitionLabsApplicationServices.ActionTypesApi();
+let apiInstance = new @CompetitionlabsJavascriptSdk.ActionTypesApi();
 let spaceName = "spaceName_example"; // String | This is the space name which is linked to the account
 let opts = {
   'X_API_KEY': "X_API_KEY_example", // String | The admin API Key generated from CompetitionLabs back office
-  'body': new CompetitionLabsApplicationServices.QueryRequest() // QueryRequest | Retrieve Action types from CompetitionLabs database by unique Action type ID's or any other POST body parameters using the POST method
+  'body': new @CompetitionlabsJavascriptSdk.QueryRequest() // QueryRequest | Retrieve Action types from CompetitionLabs database by unique Action type ID's or any other POST body parameters using the POST method
 };
 apiInstance.getActionTypesByQuery(spaceName, opts, (error, data, response) => {
   if (error) {
@@ -313,17 +313,17 @@ Update existing Action types in the CompetitionLabs database
 ### Example
 
 ```javascript
-import CompetitionLabsApplicationServices from '@competitionlabs/javascript-sdk';
-let defaultClient = CompetitionLabsApplicationServices.ApiClient.instance;
+import @CompetitionlabsJavascriptSdk from '@competitionlabs/javascript-sdk';
+let defaultClient = @CompetitionlabsJavascriptSdk.ApiClient.instance;
 // Configure API key authorization: adminApiKey
 let adminApiKey = defaultClient.authentications['adminApiKey'];
 adminApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //adminApiKey.apiKeyPrefix = 'Token';
 
-let apiInstance = new CompetitionLabsApplicationServices.ActionTypesApi();
+let apiInstance = new @CompetitionlabsJavascriptSdk.ActionTypesApi();
 let spaceName = "spaceName_example"; // String | This is the space name which is linked to the account
-let body = [new CompetitionLabsApplicationServices.UpdateActionTypeRequest()]; // [UpdateActionTypeRequest] | Update Action types in the CompetitionLabs database.
+let body = [new @CompetitionlabsJavascriptSdk.UpdateActionTypeRequest()]; // [UpdateActionTypeRequest] | Update Action types in the CompetitionLabs database.
 let opts = {
   'X_API_KEY': "X_API_KEY_example" // String | The admin API Key generated from CompetitionLabs back office
 };

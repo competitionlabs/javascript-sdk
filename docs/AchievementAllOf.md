@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.AchievementAllOf
+# @CompetitionlabsJavascriptSdk.AchievementAllOf
 
 ## Properties
 

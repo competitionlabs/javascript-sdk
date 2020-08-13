@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.CompetitionLabsApplicationServices);
+    factory(root.expect, root.@CompetitionlabsJavascriptSdk);
   }
-}(this, function(expect, CompetitionLabsApplicationServices) {
+}(this, function(expect, @CompetitionlabsJavascriptSdk) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new CompetitionLabsApplicationServices.UpdateContestStateRequest();
+    instance = new @CompetitionlabsJavascriptSdk.UpdateContestStateRequest();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,19 +50,19 @@
   describe('UpdateContestStateRequest', function() {
     it('should create an instance of UpdateContestStateRequest', function() {
       // uncomment below and update the code to test UpdateContestStateRequest
-      //var instane = new CompetitionLabsApplicationServices.UpdateContestStateRequest();
-      //expect(instance).to.be.a(CompetitionLabsApplicationServices.UpdateContestStateRequest);
+      //var instane = new @CompetitionlabsJavascriptSdk.UpdateContestStateRequest();
+      //expect(instance).to.be.a(@CompetitionlabsJavascriptSdk.UpdateContestStateRequest);
     });
 
     it('should have the property contestId (base name: "contestId")', function() {
       // uncomment below and update the code to test the property contestId
-      //var instane = new CompetitionLabsApplicationServices.UpdateContestStateRequest();
+      //var instane = new @CompetitionlabsJavascriptSdk.UpdateContestStateRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property status (base name: "status")', function() {
       // uncomment below and update the code to test the property status
-      //var instane = new CompetitionLabsApplicationServices.UpdateContestStateRequest();
+      //var instane = new @CompetitionlabsJavascriptSdk.UpdateContestStateRequest();
       //expect(instance).to.be();
     });
 

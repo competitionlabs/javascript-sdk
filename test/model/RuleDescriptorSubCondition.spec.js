@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.CompetitionLabsApplicationServices);
+    factory(root.expect, root.@CompetitionlabsJavascriptSdk);
   }
-}(this, function(expect, CompetitionLabsApplicationServices) {
+}(this, function(expect, @CompetitionlabsJavascriptSdk) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new CompetitionLabsApplicationServices.RuleDescriptorSubCondition();
+    instance = new @CompetitionlabsJavascriptSdk.RuleDescriptorSubCondition();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,25 +50,25 @@
   describe('RuleDescriptorSubCondition', function() {
     it('should create an instance of RuleDescriptorSubCondition', function() {
       // uncomment below and update the code to test RuleDescriptorSubCondition
-      //var instane = new CompetitionLabsApplicationServices.RuleDescriptorSubCondition();
-      //expect(instance).to.be.a(CompetitionLabsApplicationServices.RuleDescriptorSubCondition);
+      //var instane = new @CompetitionlabsJavascriptSdk.RuleDescriptorSubCondition();
+      //expect(instance).to.be.a(@CompetitionlabsJavascriptSdk.RuleDescriptorSubCondition);
     });
 
     it('should have the property constraints (base name: "constraints")', function() {
       // uncomment below and update the code to test the property constraints
-      //var instane = new CompetitionLabsApplicationServices.RuleDescriptorSubCondition();
+      //var instane = new @CompetitionlabsJavascriptSdk.RuleDescriptorSubCondition();
       //expect(instance).to.be();
     });
 
     it('should have the property matchCondition (base name: "matchCondition")', function() {
       // uncomment below and update the code to test the property matchCondition
-      //var instane = new CompetitionLabsApplicationServices.RuleDescriptorSubCondition();
+      //var instane = new @CompetitionlabsJavascriptSdk.RuleDescriptorSubCondition();
       //expect(instance).to.be();
     });
 
     it('should have the property subFacts (base name: "subFacts")', function() {
       // uncomment below and update the code to test the property subFacts
-      //var instane = new CompetitionLabsApplicationServices.RuleDescriptorSubCondition();
+      //var instane = new @CompetitionlabsJavascriptSdk.RuleDescriptorSubCondition();
       //expect(instance).to.be();
     });
 

@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.CreateRewardTypeRequest
+# @CompetitionlabsJavascriptSdk.CreateRewardTypeRequest
 
 ## Properties
 

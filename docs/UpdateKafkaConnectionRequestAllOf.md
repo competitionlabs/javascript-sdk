@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.UpdateKafkaConnectionRequestAllOf
+# @CompetitionlabsJavascriptSdk.UpdateKafkaConnectionRequestAllOf
 
 ## Properties
 

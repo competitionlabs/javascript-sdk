@@ -19,7 +19,7 @@ import Translation from './Translation';
 /**
  * The RewardAllOf model module.
  * @module model/RewardAllOf
- * @version 1.0.0
+ * @version 1.0.1
  */
 class RewardAllOf {
     /**

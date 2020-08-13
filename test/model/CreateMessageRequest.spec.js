@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.CompetitionLabsApplicationServices);
+    factory(root.expect, root.@CompetitionlabsJavascriptSdk);
   }
-}(this, function(expect, CompetitionLabsApplicationServices) {
+}(this, function(expect, @CompetitionlabsJavascriptSdk) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new CompetitionLabsApplicationServices.CreateMessageRequest();
+    instance = new @CompetitionlabsJavascriptSdk.CreateMessageRequest();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,49 +50,49 @@
   describe('CreateMessageRequest', function() {
     it('should create an instance of CreateMessageRequest', function() {
       // uncomment below and update the code to test CreateMessageRequest
-      //var instane = new CompetitionLabsApplicationServices.CreateMessageRequest();
-      //expect(instance).to.be.a(CompetitionLabsApplicationServices.CreateMessageRequest);
+      //var instane = new @CompetitionlabsJavascriptSdk.CreateMessageRequest();
+      //expect(instance).to.be.a(@CompetitionlabsJavascriptSdk.CreateMessageRequest);
     });
 
     it('should have the property memberGroup (base name: "memberGroup")', function() {
       // uncomment below and update the code to test the property memberGroup
-      //var instane = new CompetitionLabsApplicationServices.CreateMessageRequest();
+      //var instane = new @CompetitionlabsJavascriptSdk.CreateMessageRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property members (base name: "members")', function() {
       // uncomment below and update the code to test the property members
-      //var instane = new CompetitionLabsApplicationServices.CreateMessageRequest();
+      //var instane = new @CompetitionlabsJavascriptSdk.CreateMessageRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property messageType (base name: "messageType")', function() {
       // uncomment below and update the code to test the property messageType
-      //var instane = new CompetitionLabsApplicationServices.CreateMessageRequest();
+      //var instane = new @CompetitionlabsJavascriptSdk.CreateMessageRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property subject (base name: "subject")', function() {
       // uncomment below and update the code to test the property subject
-      //var instane = new CompetitionLabsApplicationServices.CreateMessageRequest();
+      //var instane = new @CompetitionlabsJavascriptSdk.CreateMessageRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property body (base name: "body")', function() {
       // uncomment below and update the code to test the property body
-      //var instane = new CompetitionLabsApplicationServices.CreateMessageRequest();
+      //var instane = new @CompetitionlabsJavascriptSdk.CreateMessageRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property scheduling (base name: "scheduling")', function() {
       // uncomment below and update the code to test the property scheduling
-      //var instane = new CompetitionLabsApplicationServices.CreateMessageRequest();
+      //var instane = new @CompetitionlabsJavascriptSdk.CreateMessageRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property metadata (base name: "metadata")', function() {
       // uncomment below and update the code to test the property metadata
-      //var instane = new CompetitionLabsApplicationServices.CreateMessageRequest();
+      //var instane = new @CompetitionlabsJavascriptSdk.CreateMessageRequest();
       //expect(instance).to.be();
     });
 

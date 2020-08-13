@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.CreateEntityRewardRequest
+# @CompetitionlabsJavascriptSdk.CreateEntityRewardRequest
 
 ## Properties
 

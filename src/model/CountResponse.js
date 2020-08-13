@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CountResponse model module.
  * @module model/CountResponse
- * @version 1.0.0
+ * @version 1.0.1
  */
 class CountResponse {
     /**

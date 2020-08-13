@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.CompetitionLabsApplicationServices);
+    factory(root.expect, root.@CompetitionlabsJavascriptSdk);
   }
-}(this, function(expect, CompetitionLabsApplicationServices) {
+}(this, function(expect, @CompetitionlabsJavascriptSdk) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new CompetitionLabsApplicationServices.UpdateCollaboratorRequest();
+    instance = new @CompetitionlabsJavascriptSdk.UpdateCollaboratorRequest();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,19 +50,19 @@
   describe('UpdateCollaboratorRequest', function() {
     it('should create an instance of UpdateCollaboratorRequest', function() {
       // uncomment below and update the code to test UpdateCollaboratorRequest
-      //var instane = new CompetitionLabsApplicationServices.UpdateCollaboratorRequest();
-      //expect(instance).to.be.a(CompetitionLabsApplicationServices.UpdateCollaboratorRequest);
+      //var instane = new @CompetitionlabsJavascriptSdk.UpdateCollaboratorRequest();
+      //expect(instance).to.be.a(@CompetitionlabsJavascriptSdk.UpdateCollaboratorRequest);
     });
 
     it('should have the property id (base name: "id")', function() {
       // uncomment below and update the code to test the property id
-      //var instane = new CompetitionLabsApplicationServices.UpdateCollaboratorRequest();
+      //var instane = new @CompetitionlabsJavascriptSdk.UpdateCollaboratorRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property role (base name: "role")', function() {
       // uncomment below and update the code to test the property role
-      //var instane = new CompetitionLabsApplicationServices.UpdateCollaboratorRequest();
+      //var instane = new @CompetitionlabsJavascriptSdk.UpdateCollaboratorRequest();
       //expect(instance).to.be();
     });
 

@@ -17,7 +17,7 @@ import Metadata from './Metadata';
 /**
  * The CreateAttachmentRequest model module.
  * @module model/CreateAttachmentRequest
- * @version 1.0.0
+ * @version 1.0.1
  */
 class CreateAttachmentRequest {
     /**

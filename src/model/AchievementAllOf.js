@@ -23,7 +23,7 @@ import Translation from './Translation';
 /**
  * The AchievementAllOf model module.
  * @module model/AchievementAllOf
- * @version 1.0.0
+ * @version 1.0.1
  */
 class AchievementAllOf {
     /**

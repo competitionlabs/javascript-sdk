@@ -35,6 +35,43 @@ export default class SortOrder {
     
 
     /**
+    * Constructs a full object with all available fields.
+    */
+    list(){
+        var obj = {};
+
+        
+        obj['Asc'] = "Asc";
+        
+        obj['Desc'] = "Desc";
+        
+
+        return obj;
+    }
+
+    /**
+    * Constructs a full object with all available fields.
+    */
+    model(){
+        var obj = {};
+
+        
+        obj['Asc'] = null;
+        
+        obj['Desc'] = null;
+        
+
+        return obj;
+    }
+
+    /**
+    * Constructs a full object Map for all available fields.
+    */
+    modelMap(){
+        return {"type": 'String'};
+    }
+
+    /**
     * Returns a <code>SortOrder</code> enum value from a Javascript object name.
     * @param {Object} data The plain JavaScript object containing the name of the enum value.
     * @return {module:model/SortOrder} The enum <code>SortOrder</code> value.

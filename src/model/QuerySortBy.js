@@ -17,7 +17,7 @@ import SortOrder from './SortOrder';
 /**
  * The QuerySortBy model module.
  * @module model/QuerySortBy
- * @version 1.0.0
+ * @version 1.0.1
  */
 class QuerySortBy {
     /**

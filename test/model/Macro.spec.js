@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.CompetitionLabsApplicationServices);
+    factory(root.expect, root.@CompetitionlabsJavascriptSdk);
   }
-}(this, function(expect, CompetitionLabsApplicationServices) {
+}(this, function(expect, @CompetitionlabsJavascriptSdk) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new CompetitionLabsApplicationServices.Macro();
+    instance = new @CompetitionlabsJavascriptSdk.Macro();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,19 +50,19 @@
   describe('Macro', function() {
     it('should create an instance of Macro', function() {
       // uncomment below and update the code to test Macro
-      //var instane = new CompetitionLabsApplicationServices.Macro();
-      //expect(instance).to.be.a(CompetitionLabsApplicationServices.Macro);
+      //var instane = new @CompetitionlabsJavascriptSdk.Macro();
+      //expect(instance).to.be.a(@CompetitionlabsJavascriptSdk.Macro);
     });
 
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
-      //var instane = new CompetitionLabsApplicationServices.Macro();
+      //var instane = new @CompetitionlabsJavascriptSdk.Macro();
       //expect(instance).to.be();
     });
 
     it('should have the property macroValue (base name: "macroValue")', function() {
       // uncomment below and update the code to test the property macroValue
-      //var instane = new CompetitionLabsApplicationServices.Macro();
+      //var instane = new @CompetitionlabsJavascriptSdk.Macro();
       //expect(instance).to.be();
     });
 

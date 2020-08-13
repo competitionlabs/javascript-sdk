@@ -21,7 +21,7 @@ import Translation from './Translation';
 /**
  * The Reward model module.
  * @module model/Reward
- * @version 1.0.0
+ * @version 1.0.1
  */
 class Reward {
     /**

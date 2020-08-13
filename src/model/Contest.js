@@ -25,7 +25,7 @@ import Translation from './Translation';
 /**
  * The Contest model module.
  * @module model/Contest
- * @version 1.0.0
+ * @version 1.0.1
  */
 class Contest {
     /**

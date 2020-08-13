@@ -19,7 +19,7 @@ import MetaExtended from './MetaExtended';
 /**
  * The ContestReducedResponse model module.
  * @module model/ContestReducedResponse
- * @version 1.0.0
+ * @version 1.0.1
  */
 class ContestReducedResponse {
     /**

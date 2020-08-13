@@ -19,7 +19,7 @@ import MetaExtended from './MetaExtended';
 /**
  * The CompetitionResponse model module.
  * @module model/CompetitionResponse
- * @version 1.0.0
+ * @version 1.0.1
  */
 class CompetitionResponse {
     /**

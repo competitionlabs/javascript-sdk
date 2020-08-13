@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Macro model module.
  * @module model/Macro
- * @version 1.0.0
+ * @version 1.0.1
  */
 class Macro {
     /**

@@ -18,7 +18,7 @@ import UpdateModelDefault from './UpdateModelDefault';
 /**
  * The UpdateLanguageRequest model module.
  * @module model/UpdateLanguageRequest
- * @version 1.0.0
+ * @version 1.0.1
  */
 class UpdateLanguageRequest {
     /**

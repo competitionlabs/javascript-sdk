@@ -19,7 +19,7 @@ import Scheduling from './Scheduling';
 /**
  * The CreateMessageRequest model module.
  * @module model/CreateMessageRequest
- * @version 1.0.0
+ * @version 1.0.1
  */
 class CreateMessageRequest {
     /**

@@ -19,7 +19,7 @@ import ModelDefault from './ModelDefault';
 /**
  * The AchievementReduced model module.
  * @module model/AchievementReduced
- * @version 1.0.0
+ * @version 1.0.1
  */
 class AchievementReduced {
     /**

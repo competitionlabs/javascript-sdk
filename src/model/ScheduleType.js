@@ -56,6 +56,55 @@ export default class ScheduleType {
     
 
     /**
+    * Constructs a full object with all available fields.
+    */
+    list(){
+        var obj = {};
+
+        
+        obj['Once'] = "Once";
+        
+        obj['Repeatedly'] = "Repeatedly";
+        
+        obj['Daily'] = "Daily";
+        
+        obj['Weekly'] = "Weekly";
+        
+        obj['Monthly'] = "Monthly";
+        
+
+        return obj;
+    }
+
+    /**
+    * Constructs a full object with all available fields.
+    */
+    model(){
+        var obj = {};
+
+        
+        obj['Once'] = null;
+        
+        obj['Repeatedly'] = null;
+        
+        obj['Daily'] = null;
+        
+        obj['Weekly'] = null;
+        
+        obj['Monthly'] = null;
+        
+
+        return obj;
+    }
+
+    /**
+    * Constructs a full object Map for all available fields.
+    */
+    modelMap(){
+        return {"type": 'String'};
+    }
+
+    /**
     * Returns a <code>ScheduleType</code> enum value from a Javascript object name.
     * @param {Object} data The plain JavaScript object containing the name of the enum value.
     * @return {module:model/ScheduleType} The enum <code>ScheduleType</code> value.

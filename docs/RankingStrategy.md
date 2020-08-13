@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.RankingStrategy
+# @CompetitionlabsJavascriptSdk.RankingStrategy
 
 ## Properties
 

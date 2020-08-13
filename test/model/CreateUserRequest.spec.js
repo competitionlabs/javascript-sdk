@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.CompetitionLabsApplicationServices);
+    factory(root.expect, root.@CompetitionlabsJavascriptSdk);
   }
-}(this, function(expect, CompetitionLabsApplicationServices) {
+}(this, function(expect, @CompetitionlabsJavascriptSdk) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new CompetitionLabsApplicationServices.CreateUserRequest();
+    instance = new @CompetitionlabsJavascriptSdk.CreateUserRequest();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,37 +50,37 @@
   describe('CreateUserRequest', function() {
     it('should create an instance of CreateUserRequest', function() {
       // uncomment below and update the code to test CreateUserRequest
-      //var instane = new CompetitionLabsApplicationServices.CreateUserRequest();
-      //expect(instance).to.be.a(CompetitionLabsApplicationServices.CreateUserRequest);
+      //var instane = new @CompetitionlabsJavascriptSdk.CreateUserRequest();
+      //expect(instance).to.be.a(@CompetitionlabsJavascriptSdk.CreateUserRequest);
     });
 
     it('should have the property firstName (base name: "firstName")', function() {
       // uncomment below and update the code to test the property firstName
-      //var instane = new CompetitionLabsApplicationServices.CreateUserRequest();
+      //var instane = new @CompetitionlabsJavascriptSdk.CreateUserRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property lastName (base name: "lastName")', function() {
       // uncomment below and update the code to test the property lastName
-      //var instane = new CompetitionLabsApplicationServices.CreateUserRequest();
+      //var instane = new @CompetitionlabsJavascriptSdk.CreateUserRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property password (base name: "password")', function() {
       // uncomment below and update the code to test the property password
-      //var instane = new CompetitionLabsApplicationServices.CreateUserRequest();
+      //var instane = new @CompetitionlabsJavascriptSdk.CreateUserRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property email (base name: "email")', function() {
       // uncomment below and update the code to test the property email
-      //var instane = new CompetitionLabsApplicationServices.CreateUserRequest();
+      //var instane = new @CompetitionlabsJavascriptSdk.CreateUserRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property contact (base name: "contact")', function() {
       // uncomment below and update the code to test the property contact
-      //var instane = new CompetitionLabsApplicationServices.CreateUserRequest();
+      //var instane = new @CompetitionlabsJavascriptSdk.CreateUserRequest();
       //expect(instance).to.be();
     });
 

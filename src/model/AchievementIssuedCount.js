@@ -17,7 +17,7 @@ import CountResponse from './CountResponse';
 /**
  * The AchievementIssuedCount model module.
  * @module model/AchievementIssuedCount
- * @version 1.0.0
+ * @version 1.0.1
  */
 class AchievementIssuedCount {
     /**

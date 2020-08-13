@@ -18,7 +18,7 @@ import EntrantStatus from './EntrantStatus';
 /**
  * The EntrantRequest model module.
  * @module model/EntrantRequest
- * @version 1.0.0
+ * @version 1.0.1
  */
 class EntrantRequest {
     /**

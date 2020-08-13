@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.CompetitionLabsApplicationServices);
+    factory(root.expect, root.@CompetitionlabsJavascriptSdk);
   }
-}(this, function(expect, CompetitionLabsApplicationServices) {
+}(this, function(expect, @CompetitionlabsJavascriptSdk) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new CompetitionLabsApplicationServices.Condition();
+    instance = new @CompetitionlabsJavascriptSdk.Condition();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,25 +50,25 @@
   describe('Condition', function() {
     it('should create an instance of Condition', function() {
       // uncomment below and update the code to test Condition
-      //var instane = new CompetitionLabsApplicationServices.Condition();
-      //expect(instance).to.be.a(CompetitionLabsApplicationServices.Condition);
+      //var instane = new @CompetitionlabsJavascriptSdk.Condition();
+      //expect(instance).to.be.a(@CompetitionlabsJavascriptSdk.Condition);
     });
 
     it('should have the property matchCondition (base name: "matchCondition")', function() {
       // uncomment below and update the code to test the property matchCondition
-      //var instane = new CompetitionLabsApplicationServices.Condition();
+      //var instane = new @CompetitionlabsJavascriptSdk.Condition();
       //expect(instance).to.be();
     });
 
     it('should have the property mustEvaluateTo (base name: "mustEvaluateTo")', function() {
       // uncomment below and update the code to test the property mustEvaluateTo
-      //var instane = new CompetitionLabsApplicationServices.Condition();
+      //var instane = new @CompetitionlabsJavascriptSdk.Condition();
       //expect(instance).to.be();
     });
 
     it('should have the property rules (base name: "rules")', function() {
       // uncomment below and update the code to test the property rules
-      //var instane = new CompetitionLabsApplicationServices.Condition();
+      //var instane = new @CompetitionlabsJavascriptSdk.Condition();
       //expect(instance).to.be();
     });
 

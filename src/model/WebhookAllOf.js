@@ -17,7 +17,7 @@ import Metadata from './Metadata';
 /**
  * The WebhookAllOf model module.
  * @module model/WebhookAllOf
- * @version 1.0.0
+ * @version 1.0.1
  */
 class WebhookAllOf {
     /**

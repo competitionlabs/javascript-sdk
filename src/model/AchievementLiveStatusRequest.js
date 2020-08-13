@@ -17,7 +17,7 @@ import AchievementLiveStatus from './AchievementLiveStatus';
 /**
  * The AchievementLiveStatusRequest model module.
  * @module model/AchievementLiveStatusRequest
- * @version 1.0.0
+ * @version 1.0.1
  */
 class AchievementLiveStatusRequest {
     /**

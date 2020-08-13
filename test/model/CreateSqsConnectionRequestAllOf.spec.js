@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.CompetitionLabsApplicationServices);
+    factory(root.expect, root.@CompetitionlabsJavascriptSdk);
   }
-}(this, function(expect, CompetitionLabsApplicationServices) {
+}(this, function(expect, @CompetitionlabsJavascriptSdk) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new CompetitionLabsApplicationServices.CreateSqsConnectionRequestAllOf();
+    instance = new @CompetitionlabsJavascriptSdk.CreateSqsConnectionRequestAllOf();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,37 +50,37 @@
   describe('CreateSqsConnectionRequestAllOf', function() {
     it('should create an instance of CreateSqsConnectionRequestAllOf', function() {
       // uncomment below and update the code to test CreateSqsConnectionRequestAllOf
-      //var instane = new CompetitionLabsApplicationServices.CreateSqsConnectionRequestAllOf();
-      //expect(instance).to.be.a(CompetitionLabsApplicationServices.CreateSqsConnectionRequestAllOf);
+      //var instane = new @CompetitionlabsJavascriptSdk.CreateSqsConnectionRequestAllOf();
+      //expect(instance).to.be.a(@CompetitionlabsJavascriptSdk.CreateSqsConnectionRequestAllOf);
     });
 
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
-      //var instane = new CompetitionLabsApplicationServices.CreateSqsConnectionRequestAllOf();
+      //var instane = new @CompetitionlabsJavascriptSdk.CreateSqsConnectionRequestAllOf();
       //expect(instance).to.be();
     });
 
     it('should have the property uri (base name: "uri")', function() {
       // uncomment below and update the code to test the property uri
-      //var instane = new CompetitionLabsApplicationServices.CreateSqsConnectionRequestAllOf();
+      //var instane = new @CompetitionlabsJavascriptSdk.CreateSqsConnectionRequestAllOf();
       //expect(instance).to.be();
     });
 
     it('should have the property acessKey (base name: "acessKey")', function() {
       // uncomment below and update the code to test the property acessKey
-      //var instane = new CompetitionLabsApplicationServices.CreateSqsConnectionRequestAllOf();
+      //var instane = new @CompetitionlabsJavascriptSdk.CreateSqsConnectionRequestAllOf();
       //expect(instance).to.be();
     });
 
     it('should have the property secretKey (base name: "secretKey")', function() {
       // uncomment below and update the code to test the property secretKey
-      //var instane = new CompetitionLabsApplicationServices.CreateSqsConnectionRequestAllOf();
+      //var instane = new @CompetitionlabsJavascriptSdk.CreateSqsConnectionRequestAllOf();
       //expect(instance).to.be();
     });
 
     it('should have the property transformerId (base name: "transformerId")', function() {
       // uncomment below and update the code to test the property transformerId
-      //var instane = new CompetitionLabsApplicationServices.CreateSqsConnectionRequestAllOf();
+      //var instane = new @CompetitionlabsJavascriptSdk.CreateSqsConnectionRequestAllOf();
       //expect(instance).to.be();
     });
 

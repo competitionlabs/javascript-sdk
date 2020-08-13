@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ActionTypeAdjustmentFactor model module.
  * @module model/ActionTypeAdjustmentFactor
- * @version 1.0.0
+ * @version 1.0.1
  */
 class ActionTypeAdjustmentFactor {
     /**

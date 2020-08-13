@@ -35,6 +35,43 @@ export default class MatchCondition {
     
 
     /**
+    * Constructs a full object with all available fields.
+    */
+    list(){
+        var obj = {};
+
+        
+        obj['All'] = "All";
+        
+        obj['Any'] = "Any";
+        
+
+        return obj;
+    }
+
+    /**
+    * Constructs a full object with all available fields.
+    */
+    model(){
+        var obj = {};
+
+        
+        obj['All'] = null;
+        
+        obj['Any'] = null;
+        
+
+        return obj;
+    }
+
+    /**
+    * Constructs a full object Map for all available fields.
+    */
+    modelMap(){
+        return {"type": 'String'};
+    }
+
+    /**
     * Returns a <code>MatchCondition</code> enum value from a Javascript object name.
     * @param {Object} data The plain JavaScript object containing the name of the enum value.
     * @return {module:model/MatchCondition} The enum <code>MatchCondition</code> value.

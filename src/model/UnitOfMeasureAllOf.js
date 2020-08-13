@@ -18,7 +18,7 @@ import UnitOfMeasureType from './UnitOfMeasureType';
 /**
  * The UnitOfMeasureAllOf model module.
  * @module model/UnitOfMeasureAllOf
- * @version 1.0.0
+ * @version 1.0.1
  */
 class UnitOfMeasureAllOf {
     /**

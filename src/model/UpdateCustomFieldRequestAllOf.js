@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateCustomFieldRequestAllOf model module.
  * @module model/UpdateCustomFieldRequestAllOf
- * @version 1.0.0
+ * @version 1.0.1
  */
 class UpdateCustomFieldRequestAllOf {
     /**

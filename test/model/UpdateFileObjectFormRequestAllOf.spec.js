@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.CompetitionLabsApplicationServices);
+    factory(root.expect, root.@CompetitionlabsJavascriptSdk);
   }
-}(this, function(expect, CompetitionLabsApplicationServices) {
+}(this, function(expect, @CompetitionlabsJavascriptSdk) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new CompetitionLabsApplicationServices.UpdateFileObjectFormRequestAllOf();
+    instance = new @CompetitionlabsJavascriptSdk.UpdateFileObjectFormRequestAllOf();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,31 +50,31 @@
   describe('UpdateFileObjectFormRequestAllOf', function() {
     it('should create an instance of UpdateFileObjectFormRequestAllOf', function() {
       // uncomment below and update the code to test UpdateFileObjectFormRequestAllOf
-      //var instane = new CompetitionLabsApplicationServices.UpdateFileObjectFormRequestAllOf();
-      //expect(instance).to.be.a(CompetitionLabsApplicationServices.UpdateFileObjectFormRequestAllOf);
+      //var instane = new @CompetitionlabsJavascriptSdk.UpdateFileObjectFormRequestAllOf();
+      //expect(instance).to.be.a(@CompetitionlabsJavascriptSdk.UpdateFileObjectFormRequestAllOf);
     });
 
     it('should have the property tags (base name: "tags")', function() {
       // uncomment below and update the code to test the property tags
-      //var instane = new CompetitionLabsApplicationServices.UpdateFileObjectFormRequestAllOf();
+      //var instane = new @CompetitionlabsJavascriptSdk.UpdateFileObjectFormRequestAllOf();
       //expect(instance).to.be();
     });
 
     it('should have the property parentFolderPath (base name: "parentFolderPath")', function() {
       // uncomment below and update the code to test the property parentFolderPath
-      //var instane = new CompetitionLabsApplicationServices.UpdateFileObjectFormRequestAllOf();
+      //var instane = new @CompetitionlabsJavascriptSdk.UpdateFileObjectFormRequestAllOf();
       //expect(instance).to.be();
     });
 
     it('should have the property metadata (base name: "metadata")', function() {
       // uncomment below and update the code to test the property metadata
-      //var instane = new CompetitionLabsApplicationServices.UpdateFileObjectFormRequestAllOf();
+      //var instane = new @CompetitionlabsJavascriptSdk.UpdateFileObjectFormRequestAllOf();
       //expect(instance).to.be();
     });
 
     it('should have the property file (base name: "file")', function() {
       // uncomment below and update the code to test the property file
-      //var instane = new CompetitionLabsApplicationServices.UpdateFileObjectFormRequestAllOf();
+      //var instane = new @CompetitionlabsJavascriptSdk.UpdateFileObjectFormRequestAllOf();
       //expect(instance).to.be();
     });
 

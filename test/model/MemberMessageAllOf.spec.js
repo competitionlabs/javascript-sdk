@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.CompetitionLabsApplicationServices);
+    factory(root.expect, root.@CompetitionlabsJavascriptSdk);
   }
-}(this, function(expect, CompetitionLabsApplicationServices) {
+}(this, function(expect, @CompetitionlabsJavascriptSdk) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new CompetitionLabsApplicationServices.MemberMessageAllOf();
+    instance = new @CompetitionlabsJavascriptSdk.MemberMessageAllOf();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,55 +50,55 @@
   describe('MemberMessageAllOf', function() {
     it('should create an instance of MemberMessageAllOf', function() {
       // uncomment below and update the code to test MemberMessageAllOf
-      //var instane = new CompetitionLabsApplicationServices.MemberMessageAllOf();
-      //expect(instance).to.be.a(CompetitionLabsApplicationServices.MemberMessageAllOf);
+      //var instane = new @CompetitionlabsJavascriptSdk.MemberMessageAllOf();
+      //expect(instance).to.be.a(@CompetitionlabsJavascriptSdk.MemberMessageAllOf);
     });
 
     it('should have the property eventRefType (base name: "eventRefType")', function() {
       // uncomment below and update the code to test the property eventRefType
-      //var instane = new CompetitionLabsApplicationServices.MemberMessageAllOf();
+      //var instane = new @CompetitionlabsJavascriptSdk.MemberMessageAllOf();
       //expect(instance).to.be();
     });
 
     it('should have the property eventReferenceId (base name: "eventReferenceId")', function() {
       // uncomment below and update the code to test the property eventReferenceId
-      //var instane = new CompetitionLabsApplicationServices.MemberMessageAllOf();
+      //var instane = new @CompetitionlabsJavascriptSdk.MemberMessageAllOf();
       //expect(instance).to.be();
     });
 
     it('should have the property messageType (base name: "messageType")', function() {
       // uncomment below and update the code to test the property messageType
-      //var instane = new CompetitionLabsApplicationServices.MemberMessageAllOf();
+      //var instane = new @CompetitionlabsJavascriptSdk.MemberMessageAllOf();
       //expect(instance).to.be();
     });
 
     it('should have the property subject (base name: "subject")', function() {
       // uncomment below and update the code to test the property subject
-      //var instane = new CompetitionLabsApplicationServices.MemberMessageAllOf();
+      //var instane = new @CompetitionlabsJavascriptSdk.MemberMessageAllOf();
       //expect(instance).to.be();
     });
 
     it('should have the property body (base name: "body")', function() {
       // uncomment below and update the code to test the property body
-      //var instane = new CompetitionLabsApplicationServices.MemberMessageAllOf();
+      //var instane = new @CompetitionlabsJavascriptSdk.MemberMessageAllOf();
       //expect(instance).to.be();
     });
 
     it('should have the property prize (base name: "prize")', function() {
       // uncomment below and update the code to test the property prize
-      //var instane = new CompetitionLabsApplicationServices.MemberMessageAllOf();
+      //var instane = new @CompetitionlabsJavascriptSdk.MemberMessageAllOf();
       //expect(instance).to.be();
     });
 
     it('should have the property status (base name: "status")', function() {
       // uncomment below and update the code to test the property status
-      //var instane = new CompetitionLabsApplicationServices.MemberMessageAllOf();
+      //var instane = new @CompetitionlabsJavascriptSdk.MemberMessageAllOf();
       //expect(instance).to.be();
     });
 
     it('should have the property expiry (base name: "expiry")', function() {
       // uncomment below and update the code to test the property expiry
-      //var instane = new CompetitionLabsApplicationServices.MemberMessageAllOf();
+      //var instane = new @CompetitionlabsJavascriptSdk.MemberMessageAllOf();
       //expect(instance).to.be();
     });
 

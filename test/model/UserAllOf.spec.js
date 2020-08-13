@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.CompetitionLabsApplicationServices);
+    factory(root.expect, root.@CompetitionlabsJavascriptSdk);
   }
-}(this, function(expect, CompetitionLabsApplicationServices) {
+}(this, function(expect, @CompetitionlabsJavascriptSdk) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new CompetitionLabsApplicationServices.UserAllOf();
+    instance = new @CompetitionlabsJavascriptSdk.UserAllOf();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,43 +50,43 @@
   describe('UserAllOf', function() {
     it('should create an instance of UserAllOf', function() {
       // uncomment below and update the code to test UserAllOf
-      //var instane = new CompetitionLabsApplicationServices.UserAllOf();
-      //expect(instance).to.be.a(CompetitionLabsApplicationServices.UserAllOf);
+      //var instane = new @CompetitionlabsJavascriptSdk.UserAllOf();
+      //expect(instance).to.be.a(@CompetitionlabsJavascriptSdk.UserAllOf);
     });
 
     it('should have the property firstName (base name: "firstName")', function() {
       // uncomment below and update the code to test the property firstName
-      //var instane = new CompetitionLabsApplicationServices.UserAllOf();
+      //var instane = new @CompetitionlabsJavascriptSdk.UserAllOf();
       //expect(instance).to.be();
     });
 
     it('should have the property lastName (base name: "lastName")', function() {
       // uncomment below and update the code to test the property lastName
-      //var instane = new CompetitionLabsApplicationServices.UserAllOf();
+      //var instane = new @CompetitionlabsJavascriptSdk.UserAllOf();
       //expect(instance).to.be();
     });
 
     it('should have the property tfaEnabled (base name: "tfaEnabled")', function() {
       // uncomment below and update the code to test the property tfaEnabled
-      //var instane = new CompetitionLabsApplicationServices.UserAllOf();
+      //var instane = new @CompetitionlabsJavascriptSdk.UserAllOf();
       //expect(instance).to.be();
     });
 
     it('should have the property email (base name: "email")', function() {
       // uncomment below and update the code to test the property email
-      //var instane = new CompetitionLabsApplicationServices.UserAllOf();
+      //var instane = new @CompetitionlabsJavascriptSdk.UserAllOf();
       //expect(instance).to.be();
     });
 
     it('should have the property contact (base name: "contact")', function() {
       // uncomment below and update the code to test the property contact
-      //var instane = new CompetitionLabsApplicationServices.UserAllOf();
+      //var instane = new @CompetitionlabsJavascriptSdk.UserAllOf();
       //expect(instance).to.be();
     });
 
     it('should have the property emailVerified (base name: "emailVerified")', function() {
       // uncomment below and update the code to test the property emailVerified
-      //var instane = new CompetitionLabsApplicationServices.UserAllOf();
+      //var instane = new @CompetitionlabsJavascriptSdk.UserAllOf();
       //expect(instance).to.be();
     });
 

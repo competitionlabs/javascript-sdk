@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.CompetitionLabsApplicationServices);
+    factory(root.expect, root.@CompetitionlabsJavascriptSdk);
   }
-}(this, function(expect, CompetitionLabsApplicationServices) {
+}(this, function(expect, @CompetitionlabsJavascriptSdk) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new CompetitionLabsApplicationServices.AchievementReducedAllOf();
+    instance = new @CompetitionlabsJavascriptSdk.AchievementReducedAllOf();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,31 +50,31 @@
   describe('AchievementReducedAllOf', function() {
     it('should create an instance of AchievementReducedAllOf', function() {
       // uncomment below and update the code to test AchievementReducedAllOf
-      //var instane = new CompetitionLabsApplicationServices.AchievementReducedAllOf();
-      //expect(instance).to.be.a(CompetitionLabsApplicationServices.AchievementReducedAllOf);
+      //var instane = new @CompetitionlabsJavascriptSdk.AchievementReducedAllOf();
+      //expect(instance).to.be.a(@CompetitionlabsJavascriptSdk.AchievementReducedAllOf);
     });
 
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
-      //var instane = new CompetitionLabsApplicationServices.AchievementReducedAllOf();
+      //var instane = new @CompetitionlabsJavascriptSdk.AchievementReducedAllOf();
       //expect(instance).to.be();
     });
 
     it('should have the property achievementLiveStatus (base name: "achievementLiveStatus")', function() {
       // uncomment below and update the code to test the property achievementLiveStatus
-      //var instane = new CompetitionLabsApplicationServices.AchievementReducedAllOf();
+      //var instane = new @CompetitionlabsJavascriptSdk.AchievementReducedAllOf();
       //expect(instance).to.be();
     });
 
     it('should have the property category (base name: "category")', function() {
       // uncomment below and update the code to test the property category
-      //var instane = new CompetitionLabsApplicationServices.AchievementReducedAllOf();
+      //var instane = new @CompetitionlabsJavascriptSdk.AchievementReducedAllOf();
       //expect(instance).to.be();
     });
 
     it('should have the property memberGroups (base name: "memberGroups")', function() {
       // uncomment below and update the code to test the property memberGroups
-      //var instane = new CompetitionLabsApplicationServices.AchievementReducedAllOf();
+      //var instane = new @CompetitionlabsJavascriptSdk.AchievementReducedAllOf();
       //expect(instance).to.be();
     });
 

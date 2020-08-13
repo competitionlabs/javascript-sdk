@@ -19,7 +19,7 @@ import ModelDefault from './ModelDefault';
 /**
  * The ContestReduced model module.
  * @module model/ContestReduced
- * @version 1.0.0
+ * @version 1.0.1
  */
 class ContestReduced {
     /**

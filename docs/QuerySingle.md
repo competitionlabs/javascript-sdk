@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.QuerySingle
+# @CompetitionlabsJavascriptSdk.QuerySingle
 
 ## Properties
 

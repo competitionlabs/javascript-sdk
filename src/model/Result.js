@@ -17,7 +17,7 @@ import Relation from './Relation';
 /**
  * The Result model module.
  * @module model/Result
- * @version 1.0.0
+ * @version 1.0.1
  */
 class Result {
     /**

@@ -17,7 +17,7 @@ import Metadata from './Metadata';
 /**
  * The AttachmentAllOf model module.
  * @module model/AttachmentAllOf
- * @version 1.0.0
+ * @version 1.0.1
  */
 class AttachmentAllOf {
     /**

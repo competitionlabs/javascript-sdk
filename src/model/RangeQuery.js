@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RangeQuery model module.
  * @module model/RangeQuery
- * @version 1.0.0
+ * @version 1.0.1
  */
 class RangeQuery {
     /**

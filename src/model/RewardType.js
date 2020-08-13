@@ -20,7 +20,7 @@ import UnitOfMeasureType from './UnitOfMeasureType';
 /**
  * The RewardType model module.
  * @module model/RewardType
- * @version 1.0.0
+ * @version 1.0.1
  */
 class RewardType {
     /**

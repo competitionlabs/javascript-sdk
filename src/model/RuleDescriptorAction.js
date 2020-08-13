@@ -19,7 +19,7 @@ import RuleDescriptorFact from './RuleDescriptorFact';
 /**
  * The RuleDescriptorAction model module.
  * @module model/RuleDescriptorAction
- * @version 1.0.0
+ * @version 1.0.1
  */
 class RuleDescriptorAction {
     /**

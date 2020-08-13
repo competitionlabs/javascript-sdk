@@ -26,7 +26,7 @@ import UpdateContestStateRequest from '../model/UpdateContestStateRequest';
 /**
 * Contests service.
 * @module api/ContestsApi
-* @version 1.0.0
+* @version 1.0.1
 */
 export default class ContestsApi {
 

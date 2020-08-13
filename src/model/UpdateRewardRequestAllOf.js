@@ -18,7 +18,7 @@ import Translation from './Translation';
 /**
  * The UpdateRewardRequestAllOf model module.
  * @module model/UpdateRewardRequestAllOf
- * @version 1.0.0
+ * @version 1.0.1
  */
 class UpdateRewardRequestAllOf {
     /**

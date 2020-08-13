@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.CompetitionLabsApplicationServices);
+    factory(root.expect, root.@CompetitionlabsJavascriptSdk);
   }
-}(this, function(expect, CompetitionLabsApplicationServices) {
+}(this, function(expect, @CompetitionlabsJavascriptSdk) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new CompetitionLabsApplicationServices.ProfileResponse();
+    instance = new @CompetitionlabsJavascriptSdk.ProfileResponse();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,25 +50,25 @@
   describe('ProfileResponse', function() {
     it('should create an instance of ProfileResponse', function() {
       // uncomment below and update the code to test ProfileResponse
-      //var instane = new CompetitionLabsApplicationServices.ProfileResponse();
-      //expect(instance).to.be.a(CompetitionLabsApplicationServices.ProfileResponse);
+      //var instane = new @CompetitionlabsJavascriptSdk.ProfileResponse();
+      //expect(instance).to.be.a(@CompetitionlabsJavascriptSdk.ProfileResponse);
     });
 
     it('should have the property meta (base name: "meta")', function() {
       // uncomment below and update the code to test the property meta
-      //var instane = new CompetitionLabsApplicationServices.ProfileResponse();
+      //var instane = new @CompetitionlabsJavascriptSdk.ProfileResponse();
       //expect(instance).to.be();
     });
 
     it('should have the property result (base name: "result")', function() {
       // uncomment below and update the code to test the property result
-      //var instane = new CompetitionLabsApplicationServices.ProfileResponse();
+      //var instane = new @CompetitionlabsJavascriptSdk.ProfileResponse();
       //expect(instance).to.be();
     });
 
     it('should have the property errors (base name: "errors")', function() {
       // uncomment below and update the code to test the property errors
-      //var instane = new CompetitionLabsApplicationServices.ProfileResponse();
+      //var instane = new @CompetitionlabsJavascriptSdk.ProfileResponse();
       //expect(instance).to.be();
     });
 

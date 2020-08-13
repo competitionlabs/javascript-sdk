@@ -19,7 +19,7 @@ import ModelDefault from './ModelDefault';
 /**
  * The Event model module.
  * @module model/Event
- * @version 1.0.0
+ * @version 1.0.1
  */
 class Event {
     /**

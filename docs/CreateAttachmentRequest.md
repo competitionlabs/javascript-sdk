@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.CreateAttachmentRequest
+# @CompetitionlabsJavascriptSdk.CreateAttachmentRequest
 
 ## Properties
 

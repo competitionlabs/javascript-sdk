@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.CompetitionLabsApplicationServices);
+    factory(root.expect, root.@CompetitionlabsJavascriptSdk);
   }
-}(this, function(expect, CompetitionLabsApplicationServices) {
+}(this, function(expect, @CompetitionlabsJavascriptSdk) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new CompetitionLabsApplicationServices.Attachment();
+    instance = new @CompetitionlabsJavascriptSdk.Attachment();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,79 +50,79 @@
   describe('Attachment', function() {
     it('should create an instance of Attachment', function() {
       // uncomment below and update the code to test Attachment
-      //var instane = new CompetitionLabsApplicationServices.Attachment();
-      //expect(instance).to.be.a(CompetitionLabsApplicationServices.Attachment);
+      //var instane = new @CompetitionlabsJavascriptSdk.Attachment();
+      //expect(instance).to.be.a(@CompetitionlabsJavascriptSdk.Attachment);
     });
 
     it('should have the property id (base name: "id")', function() {
       // uncomment below and update the code to test the property id
-      //var instane = new CompetitionLabsApplicationServices.Attachment();
+      //var instane = new @CompetitionlabsJavascriptSdk.Attachment();
       //expect(instance).to.be();
     });
 
     it('should have the property spaceName (base name: "spaceName")', function() {
       // uncomment below and update the code to test the property spaceName
-      //var instane = new CompetitionLabsApplicationServices.Attachment();
+      //var instane = new @CompetitionlabsJavascriptSdk.Attachment();
       //expect(instance).to.be();
     });
 
     it('should have the property created (base name: "created")', function() {
       // uncomment below and update the code to test the property created
-      //var instane = new CompetitionLabsApplicationServices.Attachment();
+      //var instane = new @CompetitionlabsJavascriptSdk.Attachment();
       //expect(instance).to.be();
     });
 
     it('should have the property attachmentType (base name: "attachmentType")', function() {
       // uncomment below and update the code to test the property attachmentType
-      //var instane = new CompetitionLabsApplicationServices.Attachment();
+      //var instane = new @CompetitionlabsJavascriptSdk.Attachment();
       //expect(instance).to.be();
     });
 
     it('should have the property md5Hash (base name: "md5Hash")', function() {
       // uncomment below and update the code to test the property md5Hash
-      //var instane = new CompetitionLabsApplicationServices.Attachment();
+      //var instane = new @CompetitionlabsJavascriptSdk.Attachment();
       //expect(instance).to.be();
     });
 
     it('should have the property fileName (base name: "fileName")', function() {
       // uncomment below and update the code to test the property fileName
-      //var instane = new CompetitionLabsApplicationServices.Attachment();
+      //var instane = new @CompetitionlabsJavascriptSdk.Attachment();
       //expect(instance).to.be();
     });
 
     it('should have the property mimeType (base name: "mimeType")', function() {
       // uncomment below and update the code to test the property mimeType
-      //var instane = new CompetitionLabsApplicationServices.Attachment();
+      //var instane = new @CompetitionlabsJavascriptSdk.Attachment();
       //expect(instance).to.be();
     });
 
     it('should have the property extension (base name: "extension")', function() {
       // uncomment below and update the code to test the property extension
-      //var instane = new CompetitionLabsApplicationServices.Attachment();
+      //var instane = new @CompetitionlabsJavascriptSdk.Attachment();
       //expect(instance).to.be();
     });
 
     it('should have the property locationKey (base name: "locationKey")', function() {
       // uncomment below and update the code to test the property locationKey
-      //var instane = new CompetitionLabsApplicationServices.Attachment();
+      //var instane = new @CompetitionlabsJavascriptSdk.Attachment();
       //expect(instance).to.be();
     });
 
     it('should have the property locationFolder (base name: "locationFolder")', function() {
       // uncomment below and update the code to test the property locationFolder
-      //var instane = new CompetitionLabsApplicationServices.Attachment();
+      //var instane = new @CompetitionlabsJavascriptSdk.Attachment();
       //expect(instance).to.be();
     });
 
     it('should have the property permission (base name: "permission")', function() {
       // uncomment below and update the code to test the property permission
-      //var instane = new CompetitionLabsApplicationServices.Attachment();
+      //var instane = new @CompetitionlabsJavascriptSdk.Attachment();
       //expect(instance).to.be();
     });
 
     it('should have the property metadata (base name: "metadata")', function() {
       // uncomment below and update the code to test the property metadata
-      //var instane = new CompetitionLabsApplicationServices.Attachment();
+      //var instane = new @CompetitionlabsJavascriptSdk.Attachment();
       //expect(instance).to.be();
     });
 

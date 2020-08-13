@@ -18,7 +18,7 @@ import UnitOfMeasureType from './UnitOfMeasureType';
 /**
  * The RewardTypeAllOf model module.
  * @module model/RewardTypeAllOf
- * @version 1.0.0
+ * @version 1.0.1
  */
 class RewardTypeAllOf {
     /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TwoFactorAuthQrCode model module.
  * @module model/TwoFactorAuthQrCode
- * @version 1.0.0
+ * @version 1.0.1
  */
 class TwoFactorAuthQrCode {
     /**

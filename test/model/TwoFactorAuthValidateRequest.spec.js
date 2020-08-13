@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.CompetitionLabsApplicationServices);
+    factory(root.expect, root.@CompetitionlabsJavascriptSdk);
   }
-}(this, function(expect, CompetitionLabsApplicationServices) {
+}(this, function(expect, @CompetitionlabsJavascriptSdk) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new CompetitionLabsApplicationServices.TwoFactorAuthValidateRequest();
+    instance = new @CompetitionlabsJavascriptSdk.TwoFactorAuthValidateRequest();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,19 +50,19 @@
   describe('TwoFactorAuthValidateRequest', function() {
     it('should create an instance of TwoFactorAuthValidateRequest', function() {
       // uncomment below and update the code to test TwoFactorAuthValidateRequest
-      //var instane = new CompetitionLabsApplicationServices.TwoFactorAuthValidateRequest();
-      //expect(instance).to.be.a(CompetitionLabsApplicationServices.TwoFactorAuthValidateRequest);
+      //var instane = new @CompetitionlabsJavascriptSdk.TwoFactorAuthValidateRequest();
+      //expect(instance).to.be.a(@CompetitionlabsJavascriptSdk.TwoFactorAuthValidateRequest);
     });
 
     it('should have the property secretKey (base name: "secretKey")', function() {
       // uncomment below and update the code to test the property secretKey
-      //var instane = new CompetitionLabsApplicationServices.TwoFactorAuthValidateRequest();
+      //var instane = new @CompetitionlabsJavascriptSdk.TwoFactorAuthValidateRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property twoFactorAccessCode (base name: "twoFactorAccessCode")', function() {
       // uncomment below and update the code to test the property twoFactorAccessCode
-      //var instane = new CompetitionLabsApplicationServices.TwoFactorAuthValidateRequest();
+      //var instane = new @CompetitionlabsJavascriptSdk.TwoFactorAuthValidateRequest();
       //expect(instance).to.be();
     });
 

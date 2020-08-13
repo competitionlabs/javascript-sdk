@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.UserAllOf
+# @CompetitionlabsJavascriptSdk.UserAllOf
 
 ## Properties
 

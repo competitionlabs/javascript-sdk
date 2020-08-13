@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.CompetitionLabsApplicationServices);
+    factory(root.expect, root.@CompetitionlabsJavascriptSdk);
   }
-}(this, function(expect, CompetitionLabsApplicationServices) {
+}(this, function(expect, @CompetitionlabsJavascriptSdk) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new CompetitionLabsApplicationServices.MemberAllOf();
+    instance = new @CompetitionlabsJavascriptSdk.MemberAllOf();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,43 +50,43 @@
   describe('MemberAllOf', function() {
     it('should create an instance of MemberAllOf', function() {
       // uncomment below and update the code to test MemberAllOf
-      //var instane = new CompetitionLabsApplicationServices.MemberAllOf();
-      //expect(instance).to.be.a(CompetitionLabsApplicationServices.MemberAllOf);
+      //var instane = new @CompetitionlabsJavascriptSdk.MemberAllOf();
+      //expect(instance).to.be.a(@CompetitionlabsJavascriptSdk.MemberAllOf);
     });
 
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
-      //var instane = new CompetitionLabsApplicationServices.MemberAllOf();
+      //var instane = new @CompetitionlabsJavascriptSdk.MemberAllOf();
       //expect(instance).to.be();
     });
 
     it('should have the property memberRefId (base name: "memberRefId")', function() {
       // uncomment below and update the code to test the property memberRefId
-      //var instane = new CompetitionLabsApplicationServices.MemberAllOf();
+      //var instane = new @CompetitionlabsJavascriptSdk.MemberAllOf();
       //expect(instance).to.be();
     });
 
     it('should have the property memberType (base name: "memberType")', function() {
       // uncomment below and update the code to test the property memberType
-      //var instane = new CompetitionLabsApplicationServices.MemberAllOf();
+      //var instane = new @CompetitionlabsJavascriptSdk.MemberAllOf();
       //expect(instance).to.be();
     });
 
     it('should have the property teamMembers (base name: "teamMembers")', function() {
       // uncomment below and update the code to test the property teamMembers
-      //var instane = new CompetitionLabsApplicationServices.MemberAllOf();
+      //var instane = new @CompetitionlabsJavascriptSdk.MemberAllOf();
       //expect(instance).to.be();
     });
 
     it('should have the property groups (base name: "groups")', function() {
       // uncomment below and update the code to test the property groups
-      //var instane = new CompetitionLabsApplicationServices.MemberAllOf();
+      //var instane = new @CompetitionlabsJavascriptSdk.MemberAllOf();
       //expect(instance).to.be();
     });
 
     it('should have the property metadata (base name: "metadata")', function() {
       // uncomment below and update the code to test the property metadata
-      //var instane = new CompetitionLabsApplicationServices.MemberAllOf();
+      //var instane = new @CompetitionlabsJavascriptSdk.MemberAllOf();
       //expect(instance).to.be();
     });
 

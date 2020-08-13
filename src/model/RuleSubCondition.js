@@ -18,7 +18,7 @@ import SubRule from './SubRule';
 /**
  * The RuleSubCondition model module.
  * @module model/RuleSubCondition
- * @version 1.0.0
+ * @version 1.0.1
  */
 class RuleSubCondition {
     /**

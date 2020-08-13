@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.UpdateUnitOfMeasureRequestAllOf
+# @CompetitionlabsJavascriptSdk.UpdateUnitOfMeasureRequestAllOf
 
 ## Properties
 

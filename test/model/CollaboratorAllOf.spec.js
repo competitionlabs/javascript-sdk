@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.CompetitionLabsApplicationServices);
+    factory(root.expect, root.@CompetitionlabsJavascriptSdk);
   }
-}(this, function(expect, CompetitionLabsApplicationServices) {
+}(this, function(expect, @CompetitionlabsJavascriptSdk) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new CompetitionLabsApplicationServices.CollaboratorAllOf();
+    instance = new @CompetitionlabsJavascriptSdk.CollaboratorAllOf();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,31 +50,31 @@
   describe('CollaboratorAllOf', function() {
     it('should create an instance of CollaboratorAllOf', function() {
       // uncomment below and update the code to test CollaboratorAllOf
-      //var instane = new CompetitionLabsApplicationServices.CollaboratorAllOf();
-      //expect(instance).to.be.a(CompetitionLabsApplicationServices.CollaboratorAllOf);
+      //var instane = new @CompetitionlabsJavascriptSdk.CollaboratorAllOf();
+      //expect(instance).to.be.a(@CompetitionlabsJavascriptSdk.CollaboratorAllOf);
     });
 
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
-      //var instane = new CompetitionLabsApplicationServices.CollaboratorAllOf();
+      //var instane = new @CompetitionlabsJavascriptSdk.CollaboratorAllOf();
       //expect(instance).to.be();
     });
 
     it('should have the property surname (base name: "surname")', function() {
       // uncomment below and update the code to test the property surname
-      //var instane = new CompetitionLabsApplicationServices.CollaboratorAllOf();
+      //var instane = new @CompetitionlabsJavascriptSdk.CollaboratorAllOf();
       //expect(instance).to.be();
     });
 
     it('should have the property email (base name: "email")', function() {
       // uncomment below and update the code to test the property email
-      //var instane = new CompetitionLabsApplicationServices.CollaboratorAllOf();
+      //var instane = new @CompetitionlabsJavascriptSdk.CollaboratorAllOf();
       //expect(instance).to.be();
     });
 
     it('should have the property role (base name: "role")', function() {
       // uncomment below and update the code to test the property role
-      //var instane = new CompetitionLabsApplicationServices.CollaboratorAllOf();
+      //var instane = new @CompetitionlabsJavascriptSdk.CollaboratorAllOf();
       //expect(instance).to.be();
     });
 

@@ -18,7 +18,7 @@ import FieldType from './FieldType';
 /**
  * The CreateCustomFieldRequest model module.
  * @module model/CreateCustomFieldRequest
- * @version 1.0.0
+ * @version 1.0.1
  */
 class CreateCustomFieldRequest {
     /**

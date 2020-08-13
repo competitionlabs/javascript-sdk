@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.CreateFileObjectRequest
+# @CompetitionlabsJavascriptSdk.CreateFileObjectRequest
 
 ## Properties
 

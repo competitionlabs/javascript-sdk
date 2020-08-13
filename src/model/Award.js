@@ -19,7 +19,7 @@ import ModelDefault from './ModelDefault';
 /**
  * The Award model module.
  * @module model/Award
- * @version 1.0.0
+ * @version 1.0.1
  */
 class Award {
     /**

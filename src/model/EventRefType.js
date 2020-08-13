@@ -56,6 +56,55 @@ export default class EventRefType {
     
 
     /**
+    * Constructs a full object with all available fields.
+    */
+    list(){
+        var obj = {};
+
+        
+        obj['CompetitionType'] = "CompetitionType";
+        
+        obj['ContestType'] = "ContestType";
+        
+        obj['AchievementType'] = "AchievementType";
+        
+        obj['UserTypeType'] = "UserTypeType";
+        
+        obj['MemberMessageType'] = "MemberMessageType";
+        
+
+        return obj;
+    }
+
+    /**
+    * Constructs a full object with all available fields.
+    */
+    model(){
+        var obj = {};
+
+        
+        obj['CompetitionType'] = null;
+        
+        obj['ContestType'] = null;
+        
+        obj['AchievementType'] = null;
+        
+        obj['UserTypeType'] = null;
+        
+        obj['MemberMessageType'] = null;
+        
+
+        return obj;
+    }
+
+    /**
+    * Constructs a full object Map for all available fields.
+    */
+    modelMap(){
+        return {"type": 'String'};
+    }
+
+    /**
     * Returns a <code>EventRefType</code> enum value from a Javascript object name.
     * @param {Object} data The plain JavaScript object containing the name of the enum value.
     * @return {module:model/EventRefType} The enum <code>EventRefType</code> value.

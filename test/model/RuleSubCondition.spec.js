@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.CompetitionLabsApplicationServices);
+    factory(root.expect, root.@CompetitionlabsJavascriptSdk);
   }
-}(this, function(expect, CompetitionLabsApplicationServices) {
+}(this, function(expect, @CompetitionlabsJavascriptSdk) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new CompetitionLabsApplicationServices.RuleSubCondition();
+    instance = new @CompetitionlabsJavascriptSdk.RuleSubCondition();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,25 +50,25 @@
   describe('RuleSubCondition', function() {
     it('should create an instance of RuleSubCondition', function() {
       // uncomment below and update the code to test RuleSubCondition
-      //var instane = new CompetitionLabsApplicationServices.RuleSubCondition();
-      //expect(instance).to.be.a(CompetitionLabsApplicationServices.RuleSubCondition);
+      //var instane = new @CompetitionlabsJavascriptSdk.RuleSubCondition();
+      //expect(instance).to.be.a(@CompetitionlabsJavascriptSdk.RuleSubCondition);
     });
 
     it('should have the property matchCondition (base name: "matchCondition")', function() {
       // uncomment below and update the code to test the property matchCondition
-      //var instane = new CompetitionLabsApplicationServices.RuleSubCondition();
+      //var instane = new @CompetitionlabsJavascriptSdk.RuleSubCondition();
       //expect(instance).to.be();
     });
 
     it('should have the property mustEvaluateTo (base name: "mustEvaluateTo")', function() {
       // uncomment below and update the code to test the property mustEvaluateTo
-      //var instane = new CompetitionLabsApplicationServices.RuleSubCondition();
+      //var instane = new @CompetitionlabsJavascriptSdk.RuleSubCondition();
       //expect(instance).to.be();
     });
 
     it('should have the property subRules (base name: "subRules")', function() {
       // uncomment below and update the code to test the property subRules
-      //var instane = new CompetitionLabsApplicationServices.RuleSubCondition();
+      //var instane = new @CompetitionlabsJavascriptSdk.RuleSubCondition();
       //expect(instance).to.be();
     });
 

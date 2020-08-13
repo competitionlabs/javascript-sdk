@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.CompetitionLabsApplicationServices);
+    factory(root.expect, root.@CompetitionlabsJavascriptSdk);
   }
-}(this, function(expect, CompetitionLabsApplicationServices) {
+}(this, function(expect, @CompetitionlabsJavascriptSdk) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new CompetitionLabsApplicationServices.Relation();
+    instance = new @CompetitionlabsJavascriptSdk.Relation();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,19 +50,19 @@
   describe('Relation', function() {
     it('should create an instance of Relation', function() {
       // uncomment below and update the code to test Relation
-      //var instane = new CompetitionLabsApplicationServices.Relation();
-      //expect(instance).to.be.a(CompetitionLabsApplicationServices.Relation);
+      //var instane = new @CompetitionlabsJavascriptSdk.Relation();
+      //expect(instance).to.be.a(@CompetitionlabsJavascriptSdk.Relation);
     });
 
     it('should have the property id (base name: "id")', function() {
       // uncomment below and update the code to test the property id
-      //var instane = new CompetitionLabsApplicationServices.Relation();
+      //var instane = new @CompetitionlabsJavascriptSdk.Relation();
       //expect(instance).to.be();
     });
 
     it('should have the property relationType (base name: "relationType")', function() {
       // uncomment below and update the code to test the property relationType
-      //var instane = new CompetitionLabsApplicationServices.Relation();
+      //var instane = new @CompetitionlabsJavascriptSdk.Relation();
       //expect(instance).to.be();
     });
 

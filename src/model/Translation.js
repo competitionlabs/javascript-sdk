@@ -17,7 +17,7 @@ import TranslatedField from './TranslatedField';
 /**
  * The Translation model module.
  * @module model/Translation
- * @version 1.0.0
+ * @version 1.0.1
  */
 class Translation {
     /**

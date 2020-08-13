@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RewardReducedAllOf model module.
  * @module model/RewardReducedAllOf
- * @version 1.0.0
+ * @version 1.0.1
  */
 class RewardReducedAllOf {
     /**

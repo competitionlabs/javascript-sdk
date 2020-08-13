@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.Relation
+# @CompetitionlabsJavascriptSdk.Relation
 
 ## Properties
 

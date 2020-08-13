@@ -17,7 +17,7 @@ import Leaderboard from './Leaderboard';
 /**
  * The LeaderboardResponseByContest model module.
  * @module model/LeaderboardResponseByContest
- * @version 1.0.0
+ * @version 1.0.1
  */
 class LeaderboardResponseByContest {
     /**

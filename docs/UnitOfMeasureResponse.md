@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.UnitOfMeasureResponse
+# @CompetitionlabsJavascriptSdk.UnitOfMeasureResponse
 
 ## Properties
 

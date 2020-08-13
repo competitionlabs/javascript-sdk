@@ -19,7 +19,7 @@ import UpdateUserRequestAllOf from './UpdateUserRequestAllOf';
 /**
  * The UpdateUserRequest model module.
  * @module model/UpdateUserRequest
- * @version 1.0.0
+ * @version 1.0.1
  */
 class UpdateUserRequest {
     /**

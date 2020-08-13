@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.UpdateCollaboratorRequest
+# @CompetitionlabsJavascriptSdk.UpdateCollaboratorRequest
 
 ## Properties
 

@@ -19,7 +19,7 @@ import MessageType from './MessageType';
 /**
  * The MemberMessageAllOf model module.
  * @module model/MemberMessageAllOf
- * @version 1.0.0
+ * @version 1.0.1
  */
 class MemberMessageAllOf {
     /**

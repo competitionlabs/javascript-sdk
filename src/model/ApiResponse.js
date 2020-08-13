@@ -19,7 +19,7 @@ import Result from './Result';
 /**
  * The ApiResponse model module.
  * @module model/ApiResponse
- * @version 1.0.0
+ * @version 1.0.1
  */
 class ApiResponse {
     /**

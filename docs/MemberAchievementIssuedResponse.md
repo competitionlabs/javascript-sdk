@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.MemberAchievementIssuedResponse
+# @CompetitionlabsJavascriptSdk.MemberAchievementIssuedResponse
 
 ## Properties
 

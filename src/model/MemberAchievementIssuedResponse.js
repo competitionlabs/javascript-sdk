@@ -19,7 +19,7 @@ import MetaExtended from './MetaExtended';
 /**
  * The MemberAchievementIssuedResponse model module.
  * @module model/MemberAchievementIssuedResponse
- * @version 1.0.0
+ * @version 1.0.1
  */
 class MemberAchievementIssuedResponse {
     /**

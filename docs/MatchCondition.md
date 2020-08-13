@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.MatchCondition
+# @CompetitionlabsJavascriptSdk.MatchCondition
 
 ## Enum
 

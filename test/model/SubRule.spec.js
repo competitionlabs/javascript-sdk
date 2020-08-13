@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.CompetitionLabsApplicationServices);
+    factory(root.expect, root.@CompetitionlabsJavascriptSdk);
   }
-}(this, function(expect, CompetitionLabsApplicationServices) {
+}(this, function(expect, @CompetitionlabsJavascriptSdk) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new CompetitionLabsApplicationServices.SubRule();
+    instance = new @CompetitionlabsJavascriptSdk.SubRule();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,25 +50,25 @@
   describe('SubRule', function() {
     it('should create an instance of SubRule', function() {
       // uncomment below and update the code to test SubRule
-      //var instane = new CompetitionLabsApplicationServices.SubRule();
-      //expect(instance).to.be.a(CompetitionLabsApplicationServices.SubRule);
+      //var instane = new @CompetitionlabsJavascriptSdk.SubRule();
+      //expect(instance).to.be.a(@CompetitionlabsJavascriptSdk.SubRule);
     });
 
     it('should have the property fact (base name: "fact")', function() {
       // uncomment below and update the code to test the property fact
-      //var instane = new CompetitionLabsApplicationServices.SubRule();
+      //var instane = new @CompetitionlabsJavascriptSdk.SubRule();
       //expect(instance).to.be();
     });
 
     it('should have the property operator (base name: "operator")', function() {
       // uncomment below and update the code to test the property operator
-      //var instane = new CompetitionLabsApplicationServices.SubRule();
+      //var instane = new @CompetitionlabsJavascriptSdk.SubRule();
       //expect(instance).to.be();
     });
 
     it('should have the property constant (base name: "constant")', function() {
       // uncomment below and update the code to test the property constant
-      //var instane = new CompetitionLabsApplicationServices.SubRule();
+      //var instane = new @CompetitionlabsJavascriptSdk.SubRule();
       //expect(instance).to.be();
     });
 

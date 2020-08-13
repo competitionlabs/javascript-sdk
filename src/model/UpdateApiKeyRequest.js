@@ -19,7 +19,7 @@ import UpdateModelDefault from './UpdateModelDefault';
 /**
  * The UpdateApiKeyRequest model module.
  * @module model/UpdateApiKeyRequest
- * @version 1.0.0
+ * @version 1.0.1
  */
 class UpdateApiKeyRequest {
     /**

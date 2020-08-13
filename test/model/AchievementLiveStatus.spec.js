@@ -20,9 +20,9 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.CompetitionLabsApplicationServices);
+    factory(root.expect, root.@CompetitionlabsJavascriptSdk);
   }
-}(this, function(expect, CompetitionLabsApplicationServices) {
+}(this, function(expect, @CompetitionlabsJavascriptSdk) {
   'use strict';
 
   var instance;
@@ -49,8 +49,8 @@
   describe('AchievementLiveStatus', function() {
     it('should create an instance of AchievementLiveStatus', function() {
       // uncomment below and update the code to test AchievementLiveStatus
-      //var instane = new CompetitionLabsApplicationServices.AchievementLiveStatus();
-      //expect(instance).to.be.a(CompetitionLabsApplicationServices.AchievementLiveStatus);
+      //var instane = new @CompetitionlabsJavascriptSdk.AchievementLiveStatus();
+      //expect(instance).to.be.a(@CompetitionlabsJavascriptSdk.AchievementLiveStatus);
     });
 
   });

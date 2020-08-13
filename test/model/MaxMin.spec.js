@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.CompetitionLabsApplicationServices);
+    factory(root.expect, root.@CompetitionlabsJavascriptSdk);
   }
-}(this, function(expect, CompetitionLabsApplicationServices) {
+}(this, function(expect, @CompetitionlabsJavascriptSdk) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new CompetitionLabsApplicationServices.MaxMin();
+    instance = new @CompetitionlabsJavascriptSdk.MaxMin();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,19 +50,19 @@
   describe('MaxMin', function() {
     it('should create an instance of MaxMin', function() {
       // uncomment below and update the code to test MaxMin
-      //var instane = new CompetitionLabsApplicationServices.MaxMin();
-      //expect(instance).to.be.a(CompetitionLabsApplicationServices.MaxMin);
+      //var instane = new @CompetitionlabsJavascriptSdk.MaxMin();
+      //expect(instance).to.be.a(@CompetitionlabsJavascriptSdk.MaxMin);
     });
 
     it('should have the property maximum (base name: "maximum")', function() {
       // uncomment below and update the code to test the property maximum
-      //var instane = new CompetitionLabsApplicationServices.MaxMin();
+      //var instane = new @CompetitionlabsJavascriptSdk.MaxMin();
       //expect(instance).to.be();
     });
 
     it('should have the property minimum (base name: "minimum")', function() {
       // uncomment below and update the code to test the property minimum
-      //var instane = new CompetitionLabsApplicationServices.MaxMin();
+      //var instane = new @CompetitionlabsJavascriptSdk.MaxMin();
       //expect(instance).to.be();
     });
 

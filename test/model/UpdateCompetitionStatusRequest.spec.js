@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.CompetitionLabsApplicationServices);
+    factory(root.expect, root.@CompetitionlabsJavascriptSdk);
   }
-}(this, function(expect, CompetitionLabsApplicationServices) {
+}(this, function(expect, @CompetitionlabsJavascriptSdk) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new CompetitionLabsApplicationServices.UpdateCompetitionStatusRequest();
+    instance = new @CompetitionlabsJavascriptSdk.UpdateCompetitionStatusRequest();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,19 +50,19 @@
   describe('UpdateCompetitionStatusRequest', function() {
     it('should create an instance of UpdateCompetitionStatusRequest', function() {
       // uncomment below and update the code to test UpdateCompetitionStatusRequest
-      //var instane = new CompetitionLabsApplicationServices.UpdateCompetitionStatusRequest();
-      //expect(instance).to.be.a(CompetitionLabsApplicationServices.UpdateCompetitionStatusRequest);
+      //var instane = new @CompetitionlabsJavascriptSdk.UpdateCompetitionStatusRequest();
+      //expect(instance).to.be.a(@CompetitionlabsJavascriptSdk.UpdateCompetitionStatusRequest);
     });
 
     it('should have the property competitionId (base name: "competitionId")', function() {
       // uncomment below and update the code to test the property competitionId
-      //var instane = new CompetitionLabsApplicationServices.UpdateCompetitionStatusRequest();
+      //var instane = new @CompetitionlabsJavascriptSdk.UpdateCompetitionStatusRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property status (base name: "status")', function() {
       // uncomment below and update the code to test the property status
-      //var instane = new CompetitionLabsApplicationServices.UpdateCompetitionStatusRequest();
+      //var instane = new @CompetitionlabsJavascriptSdk.UpdateCompetitionStatusRequest();
       //expect(instance).to.be();
     });
 

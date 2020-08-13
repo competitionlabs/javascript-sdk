@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.EventAllOf
+# @CompetitionlabsJavascriptSdk.EventAllOf
 
 ## Properties
 

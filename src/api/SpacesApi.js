@@ -20,7 +20,7 @@ import SpaceResponse from '../model/SpaceResponse';
 /**
 * Spaces service.
 * @module api/SpacesApi
-* @version 1.0.0
+* @version 1.0.1
 */
 export default class SpacesApi {
 

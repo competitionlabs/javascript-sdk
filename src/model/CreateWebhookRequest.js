@@ -17,7 +17,7 @@ import Metadata from './Metadata';
 /**
  * The CreateWebhookRequest model module.
  * @module model/CreateWebhookRequest
- * @version 1.0.0
+ * @version 1.0.1
  */
 class CreateWebhookRequest {
     /**

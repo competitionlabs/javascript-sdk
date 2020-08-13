@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.Scheduling
+# @CompetitionlabsJavascriptSdk.Scheduling
 
 ## Properties
 

@@ -1,5 +1,4 @@
 .babelrc
-.openapi-generator-ignore
 .travis.yml
 README.md
 docs/Achievement.md

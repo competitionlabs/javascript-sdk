@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.CompetitionLabsApplicationServices);
+    factory(root.expect, root.@CompetitionlabsJavascriptSdk);
   }
-}(this, function(expect, CompetitionLabsApplicationServices) {
+}(this, function(expect, @CompetitionlabsJavascriptSdk) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new CompetitionLabsApplicationServices.ApiKeyAllOf();
+    instance = new @CompetitionlabsJavascriptSdk.ApiKeyAllOf();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,43 +50,43 @@
   describe('ApiKeyAllOf', function() {
     it('should create an instance of ApiKeyAllOf', function() {
       // uncomment below and update the code to test ApiKeyAllOf
-      //var instane = new CompetitionLabsApplicationServices.ApiKeyAllOf();
-      //expect(instance).to.be.a(CompetitionLabsApplicationServices.ApiKeyAllOf);
+      //var instane = new @CompetitionlabsJavascriptSdk.ApiKeyAllOf();
+      //expect(instance).to.be.a(@CompetitionlabsJavascriptSdk.ApiKeyAllOf);
     });
 
     it('should have the property active (base name: "active")', function() {
       // uncomment below and update the code to test the property active
-      //var instane = new CompetitionLabsApplicationServices.ApiKeyAllOf();
+      //var instane = new @CompetitionlabsJavascriptSdk.ApiKeyAllOf();
       //expect(instance).to.be();
     });
 
     it('should have the property description (base name: "description")', function() {
       // uncomment below and update the code to test the property description
-      //var instane = new CompetitionLabsApplicationServices.ApiKeyAllOf();
+      //var instane = new @CompetitionlabsJavascriptSdk.ApiKeyAllOf();
       //expect(instance).to.be();
     });
 
     it('should have the property whiteListIPs (base name: "whiteListIPs")', function() {
       // uncomment below and update the code to test the property whiteListIPs
-      //var instane = new CompetitionLabsApplicationServices.ApiKeyAllOf();
+      //var instane = new @CompetitionlabsJavascriptSdk.ApiKeyAllOf();
       //expect(instance).to.be();
     });
 
     it('should have the property key (base name: "key")', function() {
       // uncomment below and update the code to test the property key
-      //var instane = new CompetitionLabsApplicationServices.ApiKeyAllOf();
+      //var instane = new @CompetitionlabsJavascriptSdk.ApiKeyAllOf();
       //expect(instance).to.be();
     });
 
     it('should have the property role (base name: "role")', function() {
       // uncomment below and update the code to test the property role
-      //var instane = new CompetitionLabsApplicationServices.ApiKeyAllOf();
+      //var instane = new @CompetitionlabsJavascriptSdk.ApiKeyAllOf();
       //expect(instance).to.be();
     });
 
     it('should have the property _default (base name: "default")', function() {
       // uncomment below and update the code to test the property _default
-      //var instane = new CompetitionLabsApplicationServices.ApiKeyAllOf();
+      //var instane = new @CompetitionlabsJavascriptSdk.ApiKeyAllOf();
       //expect(instance).to.be();
     });
 

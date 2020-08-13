@@ -18,7 +18,7 @@ import ModelDefault from './ModelDefault';
 /**
  * The Connection model module.
  * @module model/Connection
- * @version 1.0.0
+ * @version 1.0.1
  */
 class Connection {
     /**

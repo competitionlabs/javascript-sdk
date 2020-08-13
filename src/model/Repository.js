@@ -19,7 +19,7 @@ import RepositoryAllOf from './RepositoryAllOf';
 /**
  * The Repository model module.
  * @module model/Repository
- * @version 1.0.0
+ * @version 1.0.1
  */
 class Repository {
     /**

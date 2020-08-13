@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.CompetitionLabsApplicationServices);
+    factory(root.expect, root.@CompetitionlabsJavascriptSdk);
   }
-}(this, function(expect, CompetitionLabsApplicationServices) {
+}(this, function(expect, @CompetitionlabsJavascriptSdk) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new CompetitionLabsApplicationServices.SpaceTokenRequest();
+    instance = new @CompetitionlabsJavascriptSdk.SpaceTokenRequest();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,19 +50,19 @@
   describe('SpaceTokenRequest', function() {
     it('should create an instance of SpaceTokenRequest', function() {
       // uncomment below and update the code to test SpaceTokenRequest
-      //var instane = new CompetitionLabsApplicationServices.SpaceTokenRequest();
-      //expect(instance).to.be.a(CompetitionLabsApplicationServices.SpaceTokenRequest);
+      //var instane = new @CompetitionlabsJavascriptSdk.SpaceTokenRequest();
+      //expect(instance).to.be.a(@CompetitionlabsJavascriptSdk.SpaceTokenRequest);
     });
 
     it('should have the property userToken (base name: "userToken")', function() {
       // uncomment below and update the code to test the property userToken
-      //var instane = new CompetitionLabsApplicationServices.SpaceTokenRequest();
+      //var instane = new @CompetitionlabsJavascriptSdk.SpaceTokenRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property spaceName (base name: "spaceName")', function() {
       // uncomment below and update the code to test the property spaceName
-      //var instane = new CompetitionLabsApplicationServices.SpaceTokenRequest();
+      //var instane = new @CompetitionlabsJavascriptSdk.SpaceTokenRequest();
       //expect(instance).to.be();
     });
 

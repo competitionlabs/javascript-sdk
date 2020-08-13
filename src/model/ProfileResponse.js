@@ -19,7 +19,7 @@ import User from './User';
 /**
  * The ProfileResponse model module.
  * @module model/ProfileResponse
- * @version 1.0.0
+ * @version 1.0.1
  */
 class ProfileResponse {
     /**

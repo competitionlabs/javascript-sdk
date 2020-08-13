@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.MemberAchievementCount
+# @CompetitionlabsJavascriptSdk.MemberAchievementCount
 
 ## Properties
 

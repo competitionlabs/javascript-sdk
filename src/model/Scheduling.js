@@ -17,7 +17,7 @@ import ScheduleType from './ScheduleType';
 /**
  * The Scheduling model module.
  * @module model/Scheduling
- * @version 1.0.0
+ * @version 1.0.1
  */
 class Scheduling {
     /**

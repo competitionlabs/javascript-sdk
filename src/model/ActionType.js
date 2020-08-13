@@ -20,7 +20,7 @@ import UnitOfMeasureType from './UnitOfMeasureType';
 /**
  * The ActionType model module.
  * @module model/ActionType
- * @version 1.0.0
+ * @version 1.0.1
  */
 class ActionType {
     /**

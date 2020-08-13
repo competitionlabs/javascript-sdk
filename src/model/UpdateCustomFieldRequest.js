@@ -18,7 +18,7 @@ import UpdateModelDefault from './UpdateModelDefault';
 /**
  * The UpdateCustomFieldRequest model module.
  * @module model/UpdateCustomFieldRequest
- * @version 1.0.0
+ * @version 1.0.1
  */
 class UpdateCustomFieldRequest {
     /**

@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.CustomFieldAllOf
+# @CompetitionlabsJavascriptSdk.CustomFieldAllOf
 
 ## Properties
 

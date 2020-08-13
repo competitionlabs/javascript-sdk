@@ -21,7 +21,7 @@ import RangeQuery from './RangeQuery';
 /**
  * The QueryRequest model module.
  * @module model/QueryRequest
- * @version 1.0.0
+ * @version 1.0.1
  */
 class QueryRequest {
     /**

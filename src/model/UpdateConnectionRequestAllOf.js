@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateConnectionRequestAllOf model module.
  * @module model/UpdateConnectionRequestAllOf
- * @version 1.0.0
+ * @version 1.0.1
  */
 class UpdateConnectionRequestAllOf {
     /**

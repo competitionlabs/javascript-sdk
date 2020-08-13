@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.CompetitionLabsApplicationServices);
+    factory(root.expect, root.@CompetitionlabsJavascriptSdk);
   }
-}(this, function(expect, CompetitionLabsApplicationServices) {
+}(this, function(expect, @CompetitionlabsJavascriptSdk) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new CompetitionLabsApplicationServices.StartEndDate();
+    instance = new @CompetitionlabsJavascriptSdk.StartEndDate();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,19 +50,19 @@
   describe('StartEndDate', function() {
     it('should create an instance of StartEndDate', function() {
       // uncomment below and update the code to test StartEndDate
-      //var instane = new CompetitionLabsApplicationServices.StartEndDate();
-      //expect(instance).to.be.a(CompetitionLabsApplicationServices.StartEndDate);
+      //var instane = new @CompetitionlabsJavascriptSdk.StartEndDate();
+      //expect(instance).to.be.a(@CompetitionlabsJavascriptSdk.StartEndDate);
     });
 
     it('should have the property start (base name: "start")', function() {
       // uncomment below and update the code to test the property start
-      //var instane = new CompetitionLabsApplicationServices.StartEndDate();
+      //var instane = new @CompetitionlabsJavascriptSdk.StartEndDate();
       //expect(instance).to.be();
     });
 
     it('should have the property end (base name: "end")', function() {
       // uncomment below and update the code to test the property end
-      //var instane = new CompetitionLabsApplicationServices.StartEndDate();
+      //var instane = new @CompetitionlabsJavascriptSdk.StartEndDate();
       //expect(instance).to.be();
     });
 

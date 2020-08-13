@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.MaxMin
+# @CompetitionlabsJavascriptSdk.MaxMin
 
 ## Properties
 

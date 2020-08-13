@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.CompetitionLabsApplicationServices);
+    factory(root.expect, root.@CompetitionlabsJavascriptSdk);
   }
-}(this, function(expect, CompetitionLabsApplicationServices) {
+}(this, function(expect, @CompetitionlabsJavascriptSdk) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new CompetitionLabsApplicationServices.UpdateRepositoryRequestAllOf();
+    instance = new @CompetitionlabsJavascriptSdk.UpdateRepositoryRequestAllOf();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,31 +50,31 @@
   describe('UpdateRepositoryRequestAllOf', function() {
     it('should create an instance of UpdateRepositoryRequestAllOf', function() {
       // uncomment below and update the code to test UpdateRepositoryRequestAllOf
-      //var instane = new CompetitionLabsApplicationServices.UpdateRepositoryRequestAllOf();
-      //expect(instance).to.be.a(CompetitionLabsApplicationServices.UpdateRepositoryRequestAllOf);
+      //var instane = new @CompetitionlabsJavascriptSdk.UpdateRepositoryRequestAllOf();
+      //expect(instance).to.be.a(@CompetitionlabsJavascriptSdk.UpdateRepositoryRequestAllOf);
     });
 
     it('should have the property description (base name: "description")', function() {
       // uncomment below and update the code to test the property description
-      //var instane = new CompetitionLabsApplicationServices.UpdateRepositoryRequestAllOf();
+      //var instane = new @CompetitionlabsJavascriptSdk.UpdateRepositoryRequestAllOf();
       //expect(instance).to.be();
     });
 
     it('should have the property tags (base name: "tags")', function() {
       // uncomment below and update the code to test the property tags
-      //var instane = new CompetitionLabsApplicationServices.UpdateRepositoryRequestAllOf();
+      //var instane = new @CompetitionlabsJavascriptSdk.UpdateRepositoryRequestAllOf();
       //expect(instance).to.be();
     });
 
     it('should have the property constraints (base name: "constraints")', function() {
       // uncomment below and update the code to test the property constraints
-      //var instane = new CompetitionLabsApplicationServices.UpdateRepositoryRequestAllOf();
+      //var instane = new @CompetitionlabsJavascriptSdk.UpdateRepositoryRequestAllOf();
       //expect(instance).to.be();
     });
 
     it('should have the property hostingOptions (base name: "hostingOptions")', function() {
       // uncomment below and update the code to test the property hostingOptions
-      //var instane = new CompetitionLabsApplicationServices.UpdateRepositoryRequestAllOf();
+      //var instane = new @CompetitionlabsJavascriptSdk.UpdateRepositoryRequestAllOf();
       //expect(instance).to.be();
     });
 

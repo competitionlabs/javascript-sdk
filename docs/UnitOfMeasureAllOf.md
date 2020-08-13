@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.UnitOfMeasureAllOf
+# @CompetitionlabsJavascriptSdk.UnitOfMeasureAllOf
 
 ## Properties
 

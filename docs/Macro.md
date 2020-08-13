@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.Macro
+# @CompetitionlabsJavascriptSdk.Macro
 
 ## Properties
 

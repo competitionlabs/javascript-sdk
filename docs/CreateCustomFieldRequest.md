@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.CreateCustomFieldRequest
+# @CompetitionlabsJavascriptSdk.CreateCustomFieldRequest
 
 ## Properties
 

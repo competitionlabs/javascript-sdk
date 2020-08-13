@@ -27,7 +27,7 @@ import UpdateAchievementRequest from '../model/UpdateAchievementRequest';
 /**
 * Achievements service.
 * @module api/AchievementsApi
-* @version 1.0.0
+* @version 1.0.1
 */
 export default class AchievementsApi {
 

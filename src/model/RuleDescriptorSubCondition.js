@@ -18,7 +18,7 @@ import RuleDescriptorSubFact from './RuleDescriptorSubFact';
 /**
  * The RuleDescriptorSubCondition model module.
  * @module model/RuleDescriptorSubCondition
- * @version 1.0.0
+ * @version 1.0.1
  */
 class RuleDescriptorSubCondition {
     /**

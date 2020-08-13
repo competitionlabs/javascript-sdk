@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ChangePasswordRequest model module.
  * @module model/ChangePasswordRequest
- * @version 1.0.0
+ * @version 1.0.1
  */
 class ChangePasswordRequest {
     /**

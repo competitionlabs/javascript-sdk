@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.LogoutApi
+# @CompetitionlabsJavascriptSdk.LogoutApi
 
 All URIs are relative to *https://api.competitionlabs.com*
 
@@ -19,15 +19,15 @@ Logout of CompetitionLabs
 ### Example
 
 ```javascript
-import CompetitionLabsApplicationServices from '@competitionlabs/javascript-sdk';
-let defaultClient = CompetitionLabsApplicationServices.ApiClient.instance;
+import @CompetitionlabsJavascriptSdk from '@competitionlabs/javascript-sdk';
+let defaultClient = @CompetitionlabsJavascriptSdk.ApiClient.instance;
 // Configure API key authorization: adminApiKey
 let adminApiKey = defaultClient.authentications['adminApiKey'];
 adminApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //adminApiKey.apiKeyPrefix = 'Token';
 
-let apiInstance = new CompetitionLabsApplicationServices.LogoutApi();
+let apiInstance = new @CompetitionlabsJavascriptSdk.LogoutApi();
 let opts = {
   'returnPath': "returnPath_example" // String | Return path of the request
 };

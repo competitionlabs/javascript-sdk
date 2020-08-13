@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.CompetitionLabsApplicationServices);
+    factory(root.expect, root.@CompetitionlabsJavascriptSdk);
   }
-}(this, function(expect, CompetitionLabsApplicationServices) {
+}(this, function(expect, @CompetitionlabsJavascriptSdk) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new CompetitionLabsApplicationServices.CountResponse();
+    instance = new @CompetitionlabsJavascriptSdk.CountResponse();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,19 +50,19 @@
   describe('CountResponse', function() {
     it('should create an instance of CountResponse', function() {
       // uncomment below and update the code to test CountResponse
-      //var instane = new CompetitionLabsApplicationServices.CountResponse();
-      //expect(instance).to.be.a(CompetitionLabsApplicationServices.CountResponse);
+      //var instane = new @CompetitionlabsJavascriptSdk.CountResponse();
+      //expect(instance).to.be.a(@CompetitionlabsJavascriptSdk.CountResponse);
     });
 
     it('should have the property entityId (base name: "entityId")', function() {
       // uncomment below and update the code to test the property entityId
-      //var instane = new CompetitionLabsApplicationServices.CountResponse();
+      //var instane = new @CompetitionlabsJavascriptSdk.CountResponse();
       //expect(instance).to.be();
     });
 
     it('should have the property countValue (base name: "countValue")', function() {
       // uncomment below and update the code to test the property countValue
-      //var instane = new CompetitionLabsApplicationServices.CountResponse();
+      //var instane = new @CompetitionlabsJavascriptSdk.CountResponse();
       //expect(instance).to.be();
     });
 

@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.QueryMultiple
+# @CompetitionlabsJavascriptSdk.QueryMultiple
 
 ## Properties
 

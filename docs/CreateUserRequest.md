@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.CreateUserRequest
+# @CompetitionlabsJavascriptSdk.CreateUserRequest
 
 ## Properties
 

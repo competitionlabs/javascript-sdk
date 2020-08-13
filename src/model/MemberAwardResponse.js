@@ -19,7 +19,7 @@ import MetaExtended from './MetaExtended';
 /**
  * The MemberAwardResponse model module.
  * @module model/MemberAwardResponse
- * @version 1.0.0
+ * @version 1.0.1
  */
 class MemberAwardResponse {
     /**

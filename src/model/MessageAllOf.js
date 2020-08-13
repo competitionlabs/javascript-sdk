@@ -20,7 +20,7 @@ import Scheduling from './Scheduling';
 /**
  * The MessageAllOf model module.
  * @module model/MessageAllOf
- * @version 1.0.0
+ * @version 1.0.1
  */
 class MessageAllOf {
     /**

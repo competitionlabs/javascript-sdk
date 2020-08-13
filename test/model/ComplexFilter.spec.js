@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.CompetitionLabsApplicationServices);
+    factory(root.expect, root.@CompetitionlabsJavascriptSdk);
   }
-}(this, function(expect, CompetitionLabsApplicationServices) {
+}(this, function(expect, @CompetitionlabsJavascriptSdk) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new CompetitionLabsApplicationServices.ComplexFilter();
+    instance = new @CompetitionlabsJavascriptSdk.ComplexFilter();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,31 +50,31 @@
   describe('ComplexFilter', function() {
     it('should create an instance of ComplexFilter', function() {
       // uncomment below and update the code to test ComplexFilter
-      //var instane = new CompetitionLabsApplicationServices.ComplexFilter();
-      //expect(instance).to.be.a(CompetitionLabsApplicationServices.ComplexFilter);
+      //var instane = new @CompetitionlabsJavascriptSdk.ComplexFilter();
+      //expect(instance).to.be.a(@CompetitionlabsJavascriptSdk.ComplexFilter);
     });
 
     it('should have the property must (base name: "must")', function() {
       // uncomment below and update the code to test the property must
-      //var instane = new CompetitionLabsApplicationServices.ComplexFilter();
+      //var instane = new @CompetitionlabsJavascriptSdk.ComplexFilter();
       //expect(instance).to.be();
     });
 
     it('should have the property mustNot (base name: "mustNot")', function() {
       // uncomment below and update the code to test the property mustNot
-      //var instane = new CompetitionLabsApplicationServices.ComplexFilter();
+      //var instane = new @CompetitionlabsJavascriptSdk.ComplexFilter();
       //expect(instance).to.be();
     });
 
     it('should have the property should (base name: "should")', function() {
       // uncomment below and update the code to test the property should
-      //var instane = new CompetitionLabsApplicationServices.ComplexFilter();
+      //var instane = new @CompetitionlabsJavascriptSdk.ComplexFilter();
       //expect(instance).to.be();
     });
 
     it('should have the property shouldMatchAtLeast (base name: "shouldMatchAtLeast")', function() {
       // uncomment below and update the code to test the property shouldMatchAtLeast
-      //var instane = new CompetitionLabsApplicationServices.ComplexFilter();
+      //var instane = new @CompetitionlabsJavascriptSdk.ComplexFilter();
       //expect(instance).to.be();
     });
 

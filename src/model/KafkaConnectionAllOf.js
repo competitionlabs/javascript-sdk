@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The KafkaConnectionAllOf model module.
  * @module model/KafkaConnectionAllOf
- * @version 1.0.0
+ * @version 1.0.1
  */
 class KafkaConnectionAllOf {
     /**

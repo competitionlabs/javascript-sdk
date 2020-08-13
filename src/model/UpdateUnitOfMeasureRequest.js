@@ -20,7 +20,7 @@ import UpdateUnitOfMeasureRequestAllOf from './UpdateUnitOfMeasureRequestAllOf';
 /**
  * The UpdateUnitOfMeasureRequest model module.
  * @module model/UpdateUnitOfMeasureRequest
- * @version 1.0.0
+ * @version 1.0.1
  */
 class UpdateUnitOfMeasureRequest {
     /**

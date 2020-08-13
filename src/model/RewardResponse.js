@@ -19,7 +19,7 @@ import Reward from './Reward';
 /**
  * The RewardResponse model module.
  * @module model/RewardResponse
- * @version 1.0.0
+ * @version 1.0.1
  */
 class RewardResponse {
     /**

@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.TransformersApi
+# @CompetitionlabsJavascriptSdk.TransformersApi
 
 All URIs are relative to *https://api.competitionlabs.com*
 
@@ -24,17 +24,17 @@ Create a new Transformer in the CompetitionLabs system
 ### Example
 
 ```javascript
-import CompetitionLabsApplicationServices from '@competitionlabs/javascript-sdk';
-let defaultClient = CompetitionLabsApplicationServices.ApiClient.instance;
+import @CompetitionlabsJavascriptSdk from '@competitionlabs/javascript-sdk';
+let defaultClient = @CompetitionlabsJavascriptSdk.ApiClient.instance;
 // Configure API key authorization: adminApiKey
 let adminApiKey = defaultClient.authentications['adminApiKey'];
 adminApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //adminApiKey.apiKeyPrefix = 'Token';
 
-let apiInstance = new CompetitionLabsApplicationServices.TransformersApi();
+let apiInstance = new @CompetitionlabsJavascriptSdk.TransformersApi();
 let spaceName = "spaceName_example"; // String | This is the space name which is linked to the account
-let body = new CompetitionLabsApplicationServices.CreateTransformerRequest(); // CreateTransformerRequest | Create a Transformer in the CompetitionLabs system
+let body = new @CompetitionlabsJavascriptSdk.CreateTransformerRequest(); // CreateTransformerRequest | Create a Transformer in the CompetitionLabs system
 let opts = {
   'X_API_KEY': "X_API_KEY_example" // String | The admin API Key generated from CompetitionLabs back office
 };
@@ -81,15 +81,15 @@ Delete the Transformers for a given identifier specified
 ### Example
 
 ```javascript
-import CompetitionLabsApplicationServices from '@competitionlabs/javascript-sdk';
-let defaultClient = CompetitionLabsApplicationServices.ApiClient.instance;
+import @CompetitionlabsJavascriptSdk from '@competitionlabs/javascript-sdk';
+let defaultClient = @CompetitionlabsJavascriptSdk.ApiClient.instance;
 // Configure API key authorization: adminApiKey
 let adminApiKey = defaultClient.authentications['adminApiKey'];
 adminApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //adminApiKey.apiKeyPrefix = 'Token';
 
-let apiInstance = new CompetitionLabsApplicationServices.TransformersApi();
+let apiInstance = new @CompetitionlabsJavascriptSdk.TransformersApi();
 let spaceName = "spaceName_example"; // String | This is the space name which is linked to the account
 let opts = {
   'X_API_KEY': "X_API_KEY_example", // String | The admin API Key generated from CompetitionLabs back office
@@ -138,19 +138,19 @@ Delete a Transformer or a list of Transformers from CompetitionLabs by unique Tr
 ### Example
 
 ```javascript
-import CompetitionLabsApplicationServices from '@competitionlabs/javascript-sdk';
-let defaultClient = CompetitionLabsApplicationServices.ApiClient.instance;
+import @CompetitionlabsJavascriptSdk from '@competitionlabs/javascript-sdk';
+let defaultClient = @CompetitionlabsJavascriptSdk.ApiClient.instance;
 // Configure API key authorization: adminApiKey
 let adminApiKey = defaultClient.authentications['adminApiKey'];
 adminApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //adminApiKey.apiKeyPrefix = 'Token';
 
-let apiInstance = new CompetitionLabsApplicationServices.TransformersApi();
+let apiInstance = new @CompetitionlabsJavascriptSdk.TransformersApi();
 let spaceName = "spaceName_example"; // String | This is the space name which is linked to the account
 let opts = {
   'X_API_KEY': "X_API_KEY_example", // String | The admin API Key generated from CompetitionLabs back office
-  'body': new CompetitionLabsApplicationServices.QueryRequest() // QueryRequest | Delete a Transformer or a list of Transformers from CompetitionLabs by unique Transformer ID's or any other POST body parameters using the POST method
+  'body': new @CompetitionlabsJavascriptSdk.QueryRequest() // QueryRequest | Delete a Transformer or a list of Transformers from CompetitionLabs by unique Transformer ID's or any other POST body parameters using the POST method
 };
 apiInstance.deleteTransformersByQuery(spaceName, opts, (error, data, response) => {
   if (error) {
@@ -195,15 +195,15 @@ Returns a list of Transformers. This assumes that transformers have first been u
 ### Example
 
 ```javascript
-import CompetitionLabsApplicationServices from '@competitionlabs/javascript-sdk';
-let defaultClient = CompetitionLabsApplicationServices.ApiClient.instance;
+import @CompetitionlabsJavascriptSdk from '@competitionlabs/javascript-sdk';
+let defaultClient = @CompetitionlabsJavascriptSdk.ApiClient.instance;
 // Configure API key authorization: adminApiKey
 let adminApiKey = defaultClient.authentications['adminApiKey'];
 adminApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //adminApiKey.apiKeyPrefix = 'Token';
 
-let apiInstance = new CompetitionLabsApplicationServices.TransformersApi();
+let apiInstance = new @CompetitionlabsJavascriptSdk.TransformersApi();
 let spaceName = "spaceName_example"; // String | This is the space name which is linked to the account
 let opts = {
   'X_API_KEY': "X_API_KEY_example", // String | The admin API Key generated from CompetitionLabs back office
@@ -256,19 +256,19 @@ Retrieve a Transformer or a list of Transformers from CompetitionLabs by unique 
 ### Example
 
 ```javascript
-import CompetitionLabsApplicationServices from '@competitionlabs/javascript-sdk';
-let defaultClient = CompetitionLabsApplicationServices.ApiClient.instance;
+import @CompetitionlabsJavascriptSdk from '@competitionlabs/javascript-sdk';
+let defaultClient = @CompetitionlabsJavascriptSdk.ApiClient.instance;
 // Configure API key authorization: adminApiKey
 let adminApiKey = defaultClient.authentications['adminApiKey'];
 adminApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //adminApiKey.apiKeyPrefix = 'Token';
 
-let apiInstance = new CompetitionLabsApplicationServices.TransformersApi();
+let apiInstance = new @CompetitionlabsJavascriptSdk.TransformersApi();
 let spaceName = "spaceName_example"; // String | This is the space name which is linked to the account
 let opts = {
   'X_API_KEY': "X_API_KEY_example", // String | The admin API Key generated from CompetitionLabs back office
-  'body': new CompetitionLabsApplicationServices.QueryRequest() // QueryRequest | Retrieve a Transformer or a list of Transformers from CompetitionLabs by unique Transformer ID's or any other Post body parameters using the POST method
+  'body': new @CompetitionlabsJavascriptSdk.QueryRequest() // QueryRequest | Retrieve a Transformer or a list of Transformers from CompetitionLabs by unique Transformer ID's or any other Post body parameters using the POST method
 };
 apiInstance.getTransformersByQuery(spaceName, opts, (error, data, response) => {
   if (error) {
@@ -313,17 +313,17 @@ Update an existing Transformer in the CompetitionLabs system
 ### Example
 
 ```javascript
-import CompetitionLabsApplicationServices from '@competitionlabs/javascript-sdk';
-let defaultClient = CompetitionLabsApplicationServices.ApiClient.instance;
+import @CompetitionlabsJavascriptSdk from '@competitionlabs/javascript-sdk';
+let defaultClient = @CompetitionlabsJavascriptSdk.ApiClient.instance;
 // Configure API key authorization: adminApiKey
 let adminApiKey = defaultClient.authentications['adminApiKey'];
 adminApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //adminApiKey.apiKeyPrefix = 'Token';
 
-let apiInstance = new CompetitionLabsApplicationServices.TransformersApi();
+let apiInstance = new @CompetitionlabsJavascriptSdk.TransformersApi();
 let spaceName = "spaceName_example"; // String | This is the space name which is linked to the account
-let body = new CompetitionLabsApplicationServices.UpdateTransformerRequest(); // UpdateTransformerRequest | Update Transformer details in the CompetitionLabs system
+let body = new @CompetitionlabsJavascriptSdk.UpdateTransformerRequest(); // UpdateTransformerRequest | Update Transformer details in the CompetitionLabs system
 let opts = {
   'X_API_KEY': "X_API_KEY_example" // String | The admin API Key generated from CompetitionLabs back office
 };

@@ -105,6 +105,83 @@ export default class EntrantStatus {
     
 
     /**
+    * Constructs a full object with all available fields.
+    */
+    list(){
+        var obj = {};
+
+        
+        obj['Unknown'] = "Unknown";
+        
+        obj['Deleted'] = "Deleted";
+        
+        obj['WrongGroups'] = "WrongGroups";
+        
+        obj['Disqualified'] = "Disqualified";
+        
+        obj['Substituted'] = "Substituted";
+        
+        obj['Injured'] = "Injured";
+        
+        obj['OptInRequired'] = "OptInRequired";
+        
+        obj['Registered'] = "Registered";
+        
+        obj['Entered'] = "Entered";
+        
+        obj['Playing'] = "Playing";
+        
+        obj['Finished'] = "Finished";
+        
+        obj['Finalised'] = "Finalised";
+        
+
+        return obj;
+    }
+
+    /**
+    * Constructs a full object with all available fields.
+    */
+    model(){
+        var obj = {};
+
+        
+        obj['Unknown'] = null;
+        
+        obj['Deleted'] = null;
+        
+        obj['WrongGroups'] = null;
+        
+        obj['Disqualified'] = null;
+        
+        obj['Substituted'] = null;
+        
+        obj['Injured'] = null;
+        
+        obj['OptInRequired'] = null;
+        
+        obj['Registered'] = null;
+        
+        obj['Entered'] = null;
+        
+        obj['Playing'] = null;
+        
+        obj['Finished'] = null;
+        
+        obj['Finalised'] = null;
+        
+
+        return obj;
+    }
+
+    /**
+    * Constructs a full object Map for all available fields.
+    */
+    modelMap(){
+        return {"type": 'String'};
+    }
+
+    /**
     * Returns a <code>EntrantStatus</code> enum value from a Javascript object name.
     * @param {Object} data The plain JavaScript object containing the name of the enum value.
     * @return {module:model/EntrantStatus} The enum <code>EntrantStatus</code> value.

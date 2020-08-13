@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.CompetitionLabsApplicationServices);
+    factory(root.expect, root.@CompetitionlabsJavascriptSdk);
   }
-}(this, function(expect, CompetitionLabsApplicationServices) {
+}(this, function(expect, @CompetitionlabsJavascriptSdk) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new CompetitionLabsApplicationServices.QueryMultiple();
+    instance = new @CompetitionlabsJavascriptSdk.QueryMultiple();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,19 +50,19 @@
   describe('QueryMultiple', function() {
     it('should create an instance of QueryMultiple', function() {
       // uncomment below and update the code to test QueryMultiple
-      //var instane = new CompetitionLabsApplicationServices.QueryMultiple();
-      //expect(instance).to.be.a(CompetitionLabsApplicationServices.QueryMultiple);
+      //var instane = new @CompetitionlabsJavascriptSdk.QueryMultiple();
+      //expect(instance).to.be.a(@CompetitionlabsJavascriptSdk.QueryMultiple);
     });
 
     it('should have the property queryField (base name: "queryField")', function() {
       // uncomment below and update the code to test the property queryField
-      //var instane = new CompetitionLabsApplicationServices.QueryMultiple();
+      //var instane = new @CompetitionlabsJavascriptSdk.QueryMultiple();
       //expect(instance).to.be();
     });
 
     it('should have the property queryValues (base name: "queryValues")', function() {
       // uncomment below and update the code to test the property queryValues
-      //var instane = new CompetitionLabsApplicationServices.QueryMultiple();
+      //var instane = new @CompetitionlabsJavascriptSdk.QueryMultiple();
       //expect(instance).to.be();
     });
 

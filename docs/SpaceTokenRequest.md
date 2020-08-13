@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.SpaceTokenRequest
+# @CompetitionlabsJavascriptSdk.SpaceTokenRequest
 
 ## Properties
 

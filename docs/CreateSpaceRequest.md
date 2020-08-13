@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.CreateSpaceRequest
+# @CompetitionlabsJavascriptSdk.CreateSpaceRequest
 
 ## Properties
 

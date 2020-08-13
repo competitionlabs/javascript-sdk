@@ -18,7 +18,7 @@ import SpaceAllOf from './SpaceAllOf';
 /**
  * The Space model module.
  * @module model/Space
- * @version 1.0.0
+ * @version 1.0.1
  */
 class Space {
     /**

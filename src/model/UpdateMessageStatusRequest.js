@@ -17,7 +17,7 @@ import MessagStatus from './MessagStatus';
 /**
  * The UpdateMessageStatusRequest model module.
  * @module model/UpdateMessageStatusRequest
- * @version 1.0.0
+ * @version 1.0.1
  */
 class UpdateMessageStatusRequest {
     /**

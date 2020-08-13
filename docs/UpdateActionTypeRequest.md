@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.UpdateActionTypeRequest
+# @CompetitionlabsJavascriptSdk.UpdateActionTypeRequest
 
 ## Properties
 

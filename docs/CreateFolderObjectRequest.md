@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.CreateFolderObjectRequest
+# @CompetitionlabsJavascriptSdk.CreateFolderObjectRequest
 
 ## Properties
 

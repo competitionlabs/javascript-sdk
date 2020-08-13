@@ -18,7 +18,7 @@ import UnitOfMeasureType from './UnitOfMeasureType';
 /**
  * The CreateRewardTypeRequest model module.
  * @module model/CreateRewardTypeRequest
- * @version 1.0.0
+ * @version 1.0.1
  */
 class CreateRewardTypeRequest {
     /**

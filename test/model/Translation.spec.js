@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.CompetitionLabsApplicationServices);
+    factory(root.expect, root.@CompetitionlabsJavascriptSdk);
   }
-}(this, function(expect, CompetitionLabsApplicationServices) {
+}(this, function(expect, @CompetitionlabsJavascriptSdk) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new CompetitionLabsApplicationServices.Translation();
+    instance = new @CompetitionlabsJavascriptSdk.Translation();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,19 +50,19 @@
   describe('Translation', function() {
     it('should create an instance of Translation', function() {
       // uncomment below and update the code to test Translation
-      //var instane = new CompetitionLabsApplicationServices.Translation();
-      //expect(instance).to.be.a(CompetitionLabsApplicationServices.Translation);
+      //var instane = new @CompetitionlabsJavascriptSdk.Translation();
+      //expect(instance).to.be.a(@CompetitionlabsJavascriptSdk.Translation);
     });
 
     it('should have the property languageKey (base name: "languageKey")', function() {
       // uncomment below and update the code to test the property languageKey
-      //var instane = new CompetitionLabsApplicationServices.Translation();
+      //var instane = new @CompetitionlabsJavascriptSdk.Translation();
       //expect(instance).to.be();
     });
 
     it('should have the property translatedFields (base name: "translatedFields")', function() {
       // uncomment below and update the code to test the property translatedFields
-      //var instane = new CompetitionLabsApplicationServices.Translation();
+      //var instane = new @CompetitionlabsJavascriptSdk.Translation();
       //expect(instance).to.be();
     });
 

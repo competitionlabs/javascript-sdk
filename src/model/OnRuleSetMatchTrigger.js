@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The OnRuleSetMatchTrigger model module.
  * @module model/OnRuleSetMatchTrigger
- * @version 1.0.0
+ * @version 1.0.1
  */
 class OnRuleSetMatchTrigger {
     /**

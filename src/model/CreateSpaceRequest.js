@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateSpaceRequest model module.
  * @module model/CreateSpaceRequest
- * @version 1.0.0
+ * @version 1.0.1
  */
 class CreateSpaceRequest {
     /**

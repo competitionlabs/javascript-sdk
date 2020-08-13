@@ -19,7 +19,7 @@ import TwoFactorAuthQrCode from './TwoFactorAuthQrCode';
 /**
  * The QrCodeResponse model module.
  * @module model/QrCodeResponse
- * @version 1.0.0
+ * @version 1.0.1
  */
 class QrCodeResponse {
     /**

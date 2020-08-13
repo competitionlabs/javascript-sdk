@@ -17,7 +17,7 @@ import SourceLanguage from './SourceLanguage';
 /**
  * The CreateTransformerRequest model module.
  * @module model/CreateTransformerRequest
- * @version 1.0.0
+ * @version 1.0.1
  */
 class CreateTransformerRequest {
     /**

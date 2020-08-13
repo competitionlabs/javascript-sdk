@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.Languages
+# @CompetitionlabsJavascriptSdk.Languages
 
 ## Properties
 

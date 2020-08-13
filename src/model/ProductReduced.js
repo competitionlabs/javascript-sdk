@@ -18,7 +18,7 @@ import ProductReducedAllOf from './ProductReducedAllOf';
 /**
  * The ProductReduced model module.
  * @module model/ProductReduced
- * @version 1.0.0
+ * @version 1.0.1
  */
 class ProductReduced {
     /**

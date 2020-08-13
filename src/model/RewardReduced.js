@@ -18,7 +18,7 @@ import RewardReducedAllOf from './RewardReducedAllOf';
 /**
  * The RewardReduced model module.
  * @module model/RewardReduced
- * @version 1.0.0
+ * @version 1.0.1
  */
 class RewardReduced {
     /**

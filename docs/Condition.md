@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.Condition
+# @CompetitionlabsJavascriptSdk.Condition
 
 ## Properties
 

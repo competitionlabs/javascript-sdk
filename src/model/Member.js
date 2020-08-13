@@ -20,7 +20,7 @@ import ModelDefault from './ModelDefault';
 /**
  * The Member model module.
  * @module model/Member
- * @version 1.0.0
+ * @version 1.0.1
  */
 class Member {
     /**

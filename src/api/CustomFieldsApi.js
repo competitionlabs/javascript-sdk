@@ -22,7 +22,7 @@ import UpdateCustomFieldRequest from '../model/UpdateCustomFieldRequest';
 /**
 * CustomFields service.
 * @module api/CustomFieldsApi
-* @version 1.0.0
+* @version 1.0.1
 */
 export default class CustomFieldsApi {
 

@@ -19,7 +19,7 @@ import MetaExtended from './MetaExtended';
 /**
  * The AttachmentResponse model module.
  * @module model/AttachmentResponse
- * @version 1.0.0
+ * @version 1.0.1
  */
 class AttachmentResponse {
     /**

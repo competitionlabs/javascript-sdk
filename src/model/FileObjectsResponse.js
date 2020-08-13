@@ -19,7 +19,7 @@ import MetaExtended from './MetaExtended';
 /**
  * The FileObjectsResponse model module.
  * @module model/FileObjectsResponse
- * @version 1.0.0
+ * @version 1.0.1
  */
 class FileObjectsResponse {
     /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The LanguageAllOf model module.
  * @module model/LanguageAllOf
- * @version 1.0.0
+ * @version 1.0.1
  */
 class LanguageAllOf {
     /**

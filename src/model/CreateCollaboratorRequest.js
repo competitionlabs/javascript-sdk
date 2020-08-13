@@ -17,7 +17,7 @@ import Role from './Role';
 /**
  * The CreateCollaboratorRequest model module.
  * @module model/CreateCollaboratorRequest
- * @version 1.0.0
+ * @version 1.0.1
  */
 class CreateCollaboratorRequest {
     /**

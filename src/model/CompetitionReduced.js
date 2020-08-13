@@ -22,7 +22,7 @@ import ProductReduced from './ProductReduced';
 /**
  * The CompetitionReduced model module.
  * @module model/CompetitionReduced
- * @version 1.0.0
+ * @version 1.0.1
  */
 class CompetitionReduced {
     /**

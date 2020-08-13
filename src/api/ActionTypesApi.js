@@ -22,7 +22,7 @@ import UpdateActionTypeRequest from '../model/UpdateActionTypeRequest';
 /**
 * ActionTypes service.
 * @module api/ActionTypesApi
-* @version 1.0.0
+* @version 1.0.1
 */
 export default class ActionTypesApi {
 

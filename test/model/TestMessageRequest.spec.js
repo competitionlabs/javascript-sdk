@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.CompetitionLabsApplicationServices);
+    factory(root.expect, root.@CompetitionlabsJavascriptSdk);
   }
-}(this, function(expect, CompetitionLabsApplicationServices) {
+}(this, function(expect, @CompetitionlabsJavascriptSdk) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new CompetitionLabsApplicationServices.TestMessageRequest();
+    instance = new @CompetitionlabsJavascriptSdk.TestMessageRequest();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,13 +50,13 @@
   describe('TestMessageRequest', function() {
     it('should create an instance of TestMessageRequest', function() {
       // uncomment below and update the code to test TestMessageRequest
-      //var instane = new CompetitionLabsApplicationServices.TestMessageRequest();
-      //expect(instance).to.be.a(CompetitionLabsApplicationServices.TestMessageRequest);
+      //var instane = new @CompetitionlabsJavascriptSdk.TestMessageRequest();
+      //expect(instance).to.be.a(@CompetitionlabsJavascriptSdk.TestMessageRequest);
     });
 
     it('should have the property members (base name: "members")', function() {
       // uncomment below and update the code to test the property members
-      //var instane = new CompetitionLabsApplicationServices.TestMessageRequest();
+      //var instane = new @CompetitionlabsJavascriptSdk.TestMessageRequest();
       //expect(instance).to.be();
     });
 

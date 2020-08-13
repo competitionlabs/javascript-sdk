@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.CreateEventRequest
+# @CompetitionlabsJavascriptSdk.CreateEventRequest
 
 ## Properties
 

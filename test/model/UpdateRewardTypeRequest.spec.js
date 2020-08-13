@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.CompetitionLabsApplicationServices);
+    factory(root.expect, root.@CompetitionlabsJavascriptSdk);
   }
-}(this, function(expect, CompetitionLabsApplicationServices) {
+}(this, function(expect, @CompetitionlabsJavascriptSdk) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new CompetitionLabsApplicationServices.UpdateRewardTypeRequest();
+    instance = new @CompetitionlabsJavascriptSdk.UpdateRewardTypeRequest();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,43 +50,43 @@
   describe('UpdateRewardTypeRequest', function() {
     it('should create an instance of UpdateRewardTypeRequest', function() {
       // uncomment below and update the code to test UpdateRewardTypeRequest
-      //var instane = new CompetitionLabsApplicationServices.UpdateRewardTypeRequest();
-      //expect(instance).to.be.a(CompetitionLabsApplicationServices.UpdateRewardTypeRequest);
+      //var instane = new @CompetitionlabsJavascriptSdk.UpdateRewardTypeRequest();
+      //expect(instance).to.be.a(@CompetitionlabsJavascriptSdk.UpdateRewardTypeRequest);
     });
 
     it('should have the property id (base name: "id")', function() {
       // uncomment below and update the code to test the property id
-      //var instane = new CompetitionLabsApplicationServices.UpdateRewardTypeRequest();
+      //var instane = new @CompetitionlabsJavascriptSdk.UpdateRewardTypeRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
-      //var instane = new CompetitionLabsApplicationServices.UpdateRewardTypeRequest();
+      //var instane = new @CompetitionlabsJavascriptSdk.UpdateRewardTypeRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property description (base name: "description")', function() {
       // uncomment below and update the code to test the property description
-      //var instane = new CompetitionLabsApplicationServices.UpdateRewardTypeRequest();
+      //var instane = new @CompetitionlabsJavascriptSdk.UpdateRewardTypeRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property unitOfMeasureType (base name: "unitOfMeasureType")', function() {
       // uncomment below and update the code to test the property unitOfMeasureType
-      //var instane = new CompetitionLabsApplicationServices.UpdateRewardTypeRequest();
+      //var instane = new @CompetitionlabsJavascriptSdk.UpdateRewardTypeRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property metadata (base name: "metadata")', function() {
       // uncomment below and update the code to test the property metadata
-      //var instane = new CompetitionLabsApplicationServices.UpdateRewardTypeRequest();
+      //var instane = new @CompetitionlabsJavascriptSdk.UpdateRewardTypeRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property providers (base name: "providers")', function() {
       // uncomment below and update the code to test the property providers
-      //var instane = new CompetitionLabsApplicationServices.UpdateRewardTypeRequest();
+      //var instane = new @CompetitionlabsJavascriptSdk.UpdateRewardTypeRequest();
       //expect(instance).to.be();
     });
 

@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.CompetitionLabsApplicationServices);
+    factory(root.expect, root.@CompetitionlabsJavascriptSdk);
   }
-}(this, function(expect, CompetitionLabsApplicationServices) {
+}(this, function(expect, @CompetitionlabsJavascriptSdk) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new CompetitionLabsApplicationServices.ProductReducedAllOf();
+    instance = new @CompetitionlabsJavascriptSdk.ProductReducedAllOf();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,19 +50,19 @@
   describe('ProductReducedAllOf', function() {
     it('should create an instance of ProductReducedAllOf', function() {
       // uncomment below and update the code to test ProductReducedAllOf
-      //var instane = new CompetitionLabsApplicationServices.ProductReducedAllOf();
-      //expect(instance).to.be.a(CompetitionLabsApplicationServices.ProductReducedAllOf);
+      //var instane = new @CompetitionlabsJavascriptSdk.ProductReducedAllOf();
+      //expect(instance).to.be.a(@CompetitionlabsJavascriptSdk.ProductReducedAllOf);
     });
 
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
-      //var instane = new CompetitionLabsApplicationServices.ProductReducedAllOf();
+      //var instane = new @CompetitionlabsJavascriptSdk.ProductReducedAllOf();
       //expect(instance).to.be();
     });
 
     it('should have the property productRefId (base name: "productRefId")', function() {
       // uncomment below and update the code to test the property productRefId
-      //var instane = new CompetitionLabsApplicationServices.ProductReducedAllOf();
+      //var instane = new @CompetitionlabsJavascriptSdk.ProductReducedAllOf();
       //expect(instance).to.be();
     });
 

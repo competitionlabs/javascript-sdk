@@ -22,7 +22,7 @@ import Scheduling from './Scheduling';
 /**
  * The Message model module.
  * @module model/Message
- * @version 1.0.0
+ * @version 1.0.1
  */
 class Message {
     /**

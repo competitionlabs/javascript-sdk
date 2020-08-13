@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.EventRefType
+# @CompetitionlabsJavascriptSdk.EventRefType
 
 ## Enum
 

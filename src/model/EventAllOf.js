@@ -17,7 +17,7 @@ import EventMetadata from './EventMetadata';
 /**
  * The EventAllOf model module.
  * @module model/EventAllOf
- * @version 1.0.0
+ * @version 1.0.1
  */
 class EventAllOf {
     /**

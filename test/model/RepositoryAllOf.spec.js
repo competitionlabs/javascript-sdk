@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.CompetitionLabsApplicationServices);
+    factory(root.expect, root.@CompetitionlabsJavascriptSdk);
   }
-}(this, function(expect, CompetitionLabsApplicationServices) {
+}(this, function(expect, @CompetitionlabsJavascriptSdk) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new CompetitionLabsApplicationServices.RepositoryAllOf();
+    instance = new @CompetitionlabsJavascriptSdk.RepositoryAllOf();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,37 +50,37 @@
   describe('RepositoryAllOf', function() {
     it('should create an instance of RepositoryAllOf', function() {
       // uncomment below and update the code to test RepositoryAllOf
-      //var instane = new CompetitionLabsApplicationServices.RepositoryAllOf();
-      //expect(instance).to.be.a(CompetitionLabsApplicationServices.RepositoryAllOf);
+      //var instane = new @CompetitionlabsJavascriptSdk.RepositoryAllOf();
+      //expect(instance).to.be.a(@CompetitionlabsJavascriptSdk.RepositoryAllOf);
     });
 
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
-      //var instane = new CompetitionLabsApplicationServices.RepositoryAllOf();
+      //var instane = new @CompetitionlabsJavascriptSdk.RepositoryAllOf();
       //expect(instance).to.be();
     });
 
     it('should have the property description (base name: "description")', function() {
       // uncomment below and update the code to test the property description
-      //var instane = new CompetitionLabsApplicationServices.RepositoryAllOf();
+      //var instane = new @CompetitionlabsJavascriptSdk.RepositoryAllOf();
       //expect(instance).to.be();
     });
 
     it('should have the property constraints (base name: "constraints")', function() {
       // uncomment below and update the code to test the property constraints
-      //var instane = new CompetitionLabsApplicationServices.RepositoryAllOf();
+      //var instane = new @CompetitionlabsJavascriptSdk.RepositoryAllOf();
       //expect(instance).to.be();
     });
 
     it('should have the property tags (base name: "tags")', function() {
       // uncomment below and update the code to test the property tags
-      //var instane = new CompetitionLabsApplicationServices.RepositoryAllOf();
+      //var instane = new @CompetitionlabsJavascriptSdk.RepositoryAllOf();
       //expect(instance).to.be();
     });
 
     it('should have the property hostingOptions (base name: "hostingOptions")', function() {
       // uncomment below and update the code to test the property hostingOptions
-      //var instane = new CompetitionLabsApplicationServices.RepositoryAllOf();
+      //var instane = new @CompetitionlabsJavascriptSdk.RepositoryAllOf();
       //expect(instance).to.be();
     });
 

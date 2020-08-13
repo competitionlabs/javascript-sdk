@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.CompetitionLabsApplicationServices);
+    factory(root.expect, root.@CompetitionlabsJavascriptSdk);
   }
-}(this, function(expect, CompetitionLabsApplicationServices) {
+}(this, function(expect, @CompetitionlabsJavascriptSdk) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new CompetitionLabsApplicationServices.RuleDescriptorSubFactAllOf();
+    instance = new @CompetitionlabsJavascriptSdk.RuleDescriptorSubFactAllOf();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,13 +50,13 @@
   describe('RuleDescriptorSubFactAllOf', function() {
     it('should create an instance of RuleDescriptorSubFactAllOf', function() {
       // uncomment below and update the code to test RuleDescriptorSubFactAllOf
-      //var instane = new CompetitionLabsApplicationServices.RuleDescriptorSubFactAllOf();
-      //expect(instance).to.be.a(CompetitionLabsApplicationServices.RuleDescriptorSubFactAllOf);
+      //var instane = new @CompetitionlabsJavascriptSdk.RuleDescriptorSubFactAllOf();
+      //expect(instance).to.be.a(@CompetitionlabsJavascriptSdk.RuleDescriptorSubFactAllOf);
     });
 
     it('should have the property subFact (base name: "subFact")', function() {
       // uncomment below and update the code to test the property subFact
-      //var instane = new CompetitionLabsApplicationServices.RuleDescriptorSubFactAllOf();
+      //var instane = new @CompetitionlabsJavascriptSdk.RuleDescriptorSubFactAllOf();
       //expect(instance).to.be();
     });
 

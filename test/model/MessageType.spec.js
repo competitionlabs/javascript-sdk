@@ -20,9 +20,9 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.CompetitionLabsApplicationServices);
+    factory(root.expect, root.@CompetitionlabsJavascriptSdk);
   }
-}(this, function(expect, CompetitionLabsApplicationServices) {
+}(this, function(expect, @CompetitionlabsJavascriptSdk) {
   'use strict';
 
   var instance;
@@ -49,8 +49,8 @@
   describe('MessageType', function() {
     it('should create an instance of MessageType', function() {
       // uncomment below and update the code to test MessageType
-      //var instane = new CompetitionLabsApplicationServices.MessageType();
-      //expect(instance).to.be.a(CompetitionLabsApplicationServices.MessageType);
+      //var instane = new @CompetitionlabsJavascriptSdk.MessageType();
+      //expect(instance).to.be.a(@CompetitionlabsJavascriptSdk.MessageType);
     });
 
   });

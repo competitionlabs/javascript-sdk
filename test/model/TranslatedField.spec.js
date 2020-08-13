@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.CompetitionLabsApplicationServices);
+    factory(root.expect, root.@CompetitionlabsJavascriptSdk);
   }
-}(this, function(expect, CompetitionLabsApplicationServices) {
+}(this, function(expect, @CompetitionlabsJavascriptSdk) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new CompetitionLabsApplicationServices.TranslatedField();
+    instance = new @CompetitionlabsJavascriptSdk.TranslatedField();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,19 +50,19 @@
   describe('TranslatedField', function() {
     it('should create an instance of TranslatedField', function() {
       // uncomment below and update the code to test TranslatedField
-      //var instane = new CompetitionLabsApplicationServices.TranslatedField();
-      //expect(instance).to.be.a(CompetitionLabsApplicationServices.TranslatedField);
+      //var instane = new @CompetitionlabsJavascriptSdk.TranslatedField();
+      //expect(instance).to.be.a(@CompetitionlabsJavascriptSdk.TranslatedField);
     });
 
     it('should have the property fieldName (base name: "fieldName")', function() {
       // uncomment below and update the code to test the property fieldName
-      //var instane = new CompetitionLabsApplicationServices.TranslatedField();
+      //var instane = new @CompetitionlabsJavascriptSdk.TranslatedField();
       //expect(instance).to.be();
     });
 
     it('should have the property text (base name: "text")', function() {
       // uncomment below and update the code to test the property text
-      //var instane = new CompetitionLabsApplicationServices.TranslatedField();
+      //var instane = new @CompetitionlabsJavascriptSdk.TranslatedField();
       //expect(instance).to.be();
     });
 

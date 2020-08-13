@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.CompetitionLabsApplicationServices);
+    factory(root.expect, root.@CompetitionlabsJavascriptSdk);
   }
-}(this, function(expect, CompetitionLabsApplicationServices) {
+}(this, function(expect, @CompetitionlabsJavascriptSdk) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new CompetitionLabsApplicationServices.TwoFactorAuthQrCode();
+    instance = new @CompetitionlabsJavascriptSdk.TwoFactorAuthQrCode();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,19 +50,19 @@
   describe('TwoFactorAuthQrCode', function() {
     it('should create an instance of TwoFactorAuthQrCode', function() {
       // uncomment below and update the code to test TwoFactorAuthQrCode
-      //var instane = new CompetitionLabsApplicationServices.TwoFactorAuthQrCode();
-      //expect(instance).to.be.a(CompetitionLabsApplicationServices.TwoFactorAuthQrCode);
+      //var instane = new @CompetitionlabsJavascriptSdk.TwoFactorAuthQrCode();
+      //expect(instance).to.be.a(@CompetitionlabsJavascriptSdk.TwoFactorAuthQrCode);
     });
 
     it('should have the property barcodeUrl (base name: "barcodeUrl")', function() {
       // uncomment below and update the code to test the property barcodeUrl
-      //var instane = new CompetitionLabsApplicationServices.TwoFactorAuthQrCode();
+      //var instane = new @CompetitionlabsJavascriptSdk.TwoFactorAuthQrCode();
       //expect(instance).to.be();
     });
 
     it('should have the property secretKey (base name: "secretKey")', function() {
       // uncomment below and update the code to test the property secretKey
-      //var instane = new CompetitionLabsApplicationServices.TwoFactorAuthQrCode();
+      //var instane = new @CompetitionlabsJavascriptSdk.TwoFactorAuthQrCode();
       //expect(instance).to.be();
     });
 

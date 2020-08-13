@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.CompetitionLabsApplicationServices);
+    factory(root.expect, root.@CompetitionlabsJavascriptSdk);
   }
-}(this, function(expect, CompetitionLabsApplicationServices) {
+}(this, function(expect, @CompetitionlabsJavascriptSdk) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new CompetitionLabsApplicationServices.UpdateModelDefault();
+    instance = new @CompetitionlabsJavascriptSdk.UpdateModelDefault();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,13 +50,13 @@
   describe('UpdateModelDefault', function() {
     it('should create an instance of UpdateModelDefault', function() {
       // uncomment below and update the code to test UpdateModelDefault
-      //var instane = new CompetitionLabsApplicationServices.UpdateModelDefault();
-      //expect(instance).to.be.a(CompetitionLabsApplicationServices.UpdateModelDefault);
+      //var instane = new @CompetitionlabsJavascriptSdk.UpdateModelDefault();
+      //expect(instance).to.be.a(@CompetitionlabsJavascriptSdk.UpdateModelDefault);
     });
 
     it('should have the property id (base name: "id")', function() {
       // uncomment below and update the code to test the property id
-      //var instane = new CompetitionLabsApplicationServices.UpdateModelDefault();
+      //var instane = new @CompetitionlabsJavascriptSdk.UpdateModelDefault();
       //expect(instance).to.be();
     });
 

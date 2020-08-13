@@ -20,7 +20,7 @@ import UpdateRewardRequestAllOf from './UpdateRewardRequestAllOf';
 /**
  * The UpdateRewardRequest model module.
  * @module model/UpdateRewardRequest
- * @version 1.0.0
+ * @version 1.0.1
  */
 class UpdateRewardRequest {
     /**

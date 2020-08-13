@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.CompetitionLabsApplicationServices);
+    factory(root.expect, root.@CompetitionlabsJavascriptSdk);
   }
-}(this, function(expect, CompetitionLabsApplicationServices) {
+}(this, function(expect, @CompetitionlabsJavascriptSdk) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new CompetitionLabsApplicationServices.LanguageAllOf();
+    instance = new @CompetitionlabsJavascriptSdk.LanguageAllOf();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,13 +50,13 @@
   describe('LanguageAllOf', function() {
     it('should create an instance of LanguageAllOf', function() {
       // uncomment below and update the code to test LanguageAllOf
-      //var instane = new CompetitionLabsApplicationServices.LanguageAllOf();
-      //expect(instance).to.be.a(CompetitionLabsApplicationServices.LanguageAllOf);
+      //var instane = new @CompetitionlabsJavascriptSdk.LanguageAllOf();
+      //expect(instance).to.be.a(@CompetitionlabsJavascriptSdk.LanguageAllOf);
     });
 
     it('should have the property references (base name: "references")', function() {
       // uncomment below and update the code to test the property references
-      //var instane = new CompetitionLabsApplicationServices.LanguageAllOf();
+      //var instane = new @CompetitionlabsJavascriptSdk.LanguageAllOf();
       //expect(instance).to.be();
     });
 

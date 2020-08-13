@@ -25,7 +25,7 @@ import UpdateRewardRequest from './UpdateRewardRequest';
 /**
  * The UpdateCompetitionRequest model module.
  * @module model/UpdateCompetitionRequest
- * @version 1.0.0
+ * @version 1.0.1
  */
 class UpdateCompetitionRequest {
     /**

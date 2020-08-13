@@ -21,7 +21,7 @@ import QueryRequest from '../model/QueryRequest';
 /**
 * Awards service.
 * @module api/AwardsApi
-* @version 1.0.0
+* @version 1.0.1
 */
 export default class AwardsApi {
 

@@ -56,6 +56,55 @@ export default class CompetitionStatusActions {
     
 
     /**
+    * Constructs a full object with all available fields.
+    */
+    list(){
+        var obj = {};
+
+        
+        obj['Deleted'] = "Deleted";
+        
+        obj['Ready'] = "Ready";
+        
+        obj['Active'] = "Active";
+        
+        obj['Finished'] = "Finished";
+        
+        obj['Cancelled'] = "Cancelled";
+        
+
+        return obj;
+    }
+
+    /**
+    * Constructs a full object with all available fields.
+    */
+    model(){
+        var obj = {};
+
+        
+        obj['Deleted'] = null;
+        
+        obj['Ready'] = null;
+        
+        obj['Active'] = null;
+        
+        obj['Finished'] = null;
+        
+        obj['Cancelled'] = null;
+        
+
+        return obj;
+    }
+
+    /**
+    * Constructs a full object Map for all available fields.
+    */
+    modelMap(){
+        return {"type": 'String'};
+    }
+
+    /**
     * Returns a <code>CompetitionStatusActions</code> enum value from a Javascript object name.
     * @param {Object} data The plain JavaScript object containing the name of the enum value.
     * @return {module:model/CompetitionStatusActions} The enum <code>CompetitionStatusActions</code> value.

@@ -21,7 +21,7 @@ import Translation from './Translation';
 /**
  * The Product model module.
  * @module model/Product
- * @version 1.0.0
+ * @version 1.0.1
  */
 class Product {
     /**

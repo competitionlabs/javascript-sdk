@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.RuleSubCondition
+# @CompetitionlabsJavascriptSdk.RuleSubCondition
 
 ## Properties
 

@@ -17,7 +17,7 @@ import HostingOptions from './HostingOptions';
 /**
  * The CreateRepositoryRequest model module.
  * @module model/CreateRepositoryRequest
- * @version 1.0.0
+ * @version 1.0.1
  */
 class CreateRepositoryRequest {
     /**

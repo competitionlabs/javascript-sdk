@@ -112,6 +112,87 @@ export default class CompetitionStatus {
     
 
     /**
+    * Constructs a full object with all available fields.
+    */
+    list(){
+        var obj = {};
+
+        
+        obj['Unknown'] = "Unknown";
+        
+        obj['Deleting'] = "Deleting";
+        
+        obj['Deleted'] = "Deleted";
+        
+        obj['Draft'] = "Draft";
+        
+        obj['Template'] = "Template";
+        
+        obj['Preparing'] = "Preparing";
+        
+        obj['Ready'] = "Ready";
+        
+        obj['Starting'] = "Starting";
+        
+        obj['Active'] = "Active";
+        
+        obj['Finishing'] = "Finishing";
+        
+        obj['Finished'] = "Finished";
+        
+        obj['Cancelling'] = "Cancelling";
+        
+        obj['Cancelled'] = "Cancelled";
+        
+
+        return obj;
+    }
+
+    /**
+    * Constructs a full object with all available fields.
+    */
+    model(){
+        var obj = {};
+
+        
+        obj['Unknown'] = null;
+        
+        obj['Deleting'] = null;
+        
+        obj['Deleted'] = null;
+        
+        obj['Draft'] = null;
+        
+        obj['Template'] = null;
+        
+        obj['Preparing'] = null;
+        
+        obj['Ready'] = null;
+        
+        obj['Starting'] = null;
+        
+        obj['Active'] = null;
+        
+        obj['Finishing'] = null;
+        
+        obj['Finished'] = null;
+        
+        obj['Cancelling'] = null;
+        
+        obj['Cancelled'] = null;
+        
+
+        return obj;
+    }
+
+    /**
+    * Constructs a full object Map for all available fields.
+    */
+    modelMap(){
+        return {"type": 'String'};
+    }
+
+    /**
     * Returns a <code>CompetitionStatus</code> enum value from a Javascript object name.
     * @param {Object} data The plain JavaScript object containing the name of the enum value.
     * @return {module:model/CompetitionStatus} The enum <code>CompetitionStatus</code> value.

@@ -19,7 +19,7 @@ import StrategyType from './StrategyType';
 /**
  * The Strategy model module.
  * @module model/Strategy
- * @version 1.0.0
+ * @version 1.0.1
  */
 class Strategy {
     /**

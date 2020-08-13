@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.CompetitionLabsApplicationServices);
+    factory(root.expect, root.@CompetitionlabsJavascriptSdk);
   }
-}(this, function(expect, CompetitionLabsApplicationServices) {
+}(this, function(expect, @CompetitionlabsJavascriptSdk) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new CompetitionLabsApplicationServices.UpdateLanguageRequest();
+    instance = new @CompetitionlabsJavascriptSdk.UpdateLanguageRequest();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,19 +50,19 @@
   describe('UpdateLanguageRequest', function() {
     it('should create an instance of UpdateLanguageRequest', function() {
       // uncomment below and update the code to test UpdateLanguageRequest
-      //var instane = new CompetitionLabsApplicationServices.UpdateLanguageRequest();
-      //expect(instance).to.be.a(CompetitionLabsApplicationServices.UpdateLanguageRequest);
+      //var instane = new @CompetitionlabsJavascriptSdk.UpdateLanguageRequest();
+      //expect(instance).to.be.a(@CompetitionlabsJavascriptSdk.UpdateLanguageRequest);
     });
 
     it('should have the property id (base name: "id")', function() {
       // uncomment below and update the code to test the property id
-      //var instane = new CompetitionLabsApplicationServices.UpdateLanguageRequest();
+      //var instane = new @CompetitionlabsJavascriptSdk.UpdateLanguageRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property references (base name: "references")', function() {
       // uncomment below and update the code to test the property references
-      //var instane = new CompetitionLabsApplicationServices.UpdateLanguageRequest();
+      //var instane = new @CompetitionlabsJavascriptSdk.UpdateLanguageRequest();
       //expect(instance).to.be();
     });
 

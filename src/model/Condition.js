@@ -18,7 +18,7 @@ import Rule from './Rule';
 /**
  * The Condition model module.
  * @module model/Condition
- * @version 1.0.0
+ * @version 1.0.1
  */
 class Condition {
     /**

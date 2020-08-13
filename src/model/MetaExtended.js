@@ -18,7 +18,7 @@ import MetaInfo from './MetaInfo';
 /**
  * The MetaExtended model module.
  * @module model/MetaExtended
- * @version 1.0.0
+ * @version 1.0.1
  */
 class MetaExtended {
     /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The QueryMultiple model module.
  * @module model/QueryMultiple
- * @version 1.0.0
+ * @version 1.0.1
  */
 class QueryMultiple {
     /**

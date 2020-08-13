@@ -18,7 +18,7 @@ import UpdateModelDefault from './UpdateModelDefault';
 /**
  * The UpdateConnectionRequest model module.
  * @module model/UpdateConnectionRequest
- * @version 1.0.0
+ * @version 1.0.1
  */
 class UpdateConnectionRequest {
     /**

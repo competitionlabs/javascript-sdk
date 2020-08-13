@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The QuerySingle model module.
  * @module model/QuerySingle
- * @version 1.0.0
+ * @version 1.0.1
  */
 class QuerySingle {
     /**

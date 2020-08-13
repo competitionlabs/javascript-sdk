@@ -19,7 +19,7 @@ import Repository from './Repository';
 /**
  * The RepositoryResponse model module.
  * @module model/RepositoryResponse
- * @version 1.0.0
+ * @version 1.0.1
  */
 class RepositoryResponse {
     /**

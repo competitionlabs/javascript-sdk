@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.QrCodeResponse
+# @CompetitionlabsJavascriptSdk.QrCodeResponse
 
 ## Properties
 

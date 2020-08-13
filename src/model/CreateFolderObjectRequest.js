@@ -17,7 +17,7 @@ import Metadata from './Metadata';
 /**
  * The CreateFolderObjectRequest model module.
  * @module model/CreateFolderObjectRequest
- * @version 1.0.0
+ * @version 1.0.1
  */
 class CreateFolderObjectRequest {
     /**

@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.CompetitionLabsApplicationServices);
+    factory(root.expect, root.@CompetitionlabsJavascriptSdk);
   }
-}(this, function(expect, CompetitionLabsApplicationServices) {
+}(this, function(expect, @CompetitionlabsJavascriptSdk) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new CompetitionLabsApplicationServices.Strategy();
+    instance = new @CompetitionlabsJavascriptSdk.Strategy();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,25 +50,25 @@
   describe('Strategy', function() {
     it('should create an instance of Strategy', function() {
       // uncomment below and update the code to test Strategy
-      //var instane = new CompetitionLabsApplicationServices.Strategy();
-      //expect(instance).to.be.a(CompetitionLabsApplicationServices.Strategy);
+      //var instane = new @CompetitionlabsJavascriptSdk.Strategy();
+      //expect(instance).to.be.a(@CompetitionlabsJavascriptSdk.Strategy);
     });
 
     it('should have the property strategyType (base name: "strategyType")', function() {
       // uncomment below and update the code to test the property strategyType
-      //var instane = new CompetitionLabsApplicationServices.Strategy();
+      //var instane = new @CompetitionlabsJavascriptSdk.Strategy();
       //expect(instance).to.be();
     });
 
     it('should have the property rankingStrategy (base name: "rankingStrategy")', function() {
       // uncomment below and update the code to test the property rankingStrategy
-      //var instane = new CompetitionLabsApplicationServices.Strategy();
+      //var instane = new @CompetitionlabsJavascriptSdk.Strategy();
       //expect(instance).to.be();
     });
 
     it('should have the property scoringStrategy (base name: "scoringStrategy")', function() {
       // uncomment below and update the code to test the property scoringStrategy
-      //var instane = new CompetitionLabsApplicationServices.Strategy();
+      //var instane = new @CompetitionlabsJavascriptSdk.Strategy();
       //expect(instance).to.be();
     });
 

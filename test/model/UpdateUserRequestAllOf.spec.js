@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.CompetitionLabsApplicationServices);
+    factory(root.expect, root.@CompetitionlabsJavascriptSdk);
   }
-}(this, function(expect, CompetitionLabsApplicationServices) {
+}(this, function(expect, @CompetitionlabsJavascriptSdk) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new CompetitionLabsApplicationServices.UpdateUserRequestAllOf();
+    instance = new @CompetitionlabsJavascriptSdk.UpdateUserRequestAllOf();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,31 +50,31 @@
   describe('UpdateUserRequestAllOf', function() {
     it('should create an instance of UpdateUserRequestAllOf', function() {
       // uncomment below and update the code to test UpdateUserRequestAllOf
-      //var instane = new CompetitionLabsApplicationServices.UpdateUserRequestAllOf();
-      //expect(instance).to.be.a(CompetitionLabsApplicationServices.UpdateUserRequestAllOf);
+      //var instane = new @CompetitionlabsJavascriptSdk.UpdateUserRequestAllOf();
+      //expect(instance).to.be.a(@CompetitionlabsJavascriptSdk.UpdateUserRequestAllOf);
     });
 
     it('should have the property firstName (base name: "firstName")', function() {
       // uncomment below and update the code to test the property firstName
-      //var instane = new CompetitionLabsApplicationServices.UpdateUserRequestAllOf();
+      //var instane = new @CompetitionlabsJavascriptSdk.UpdateUserRequestAllOf();
       //expect(instance).to.be();
     });
 
     it('should have the property lastName (base name: "lastName")', function() {
       // uncomment below and update the code to test the property lastName
-      //var instane = new CompetitionLabsApplicationServices.UpdateUserRequestAllOf();
+      //var instane = new @CompetitionlabsJavascriptSdk.UpdateUserRequestAllOf();
       //expect(instance).to.be();
     });
 
     it('should have the property email (base name: "email")', function() {
       // uncomment below and update the code to test the property email
-      //var instane = new CompetitionLabsApplicationServices.UpdateUserRequestAllOf();
+      //var instane = new @CompetitionlabsJavascriptSdk.UpdateUserRequestAllOf();
       //expect(instance).to.be();
     });
 
     it('should have the property contact (base name: "contact")', function() {
       // uncomment below and update the code to test the property contact
-      //var instane = new CompetitionLabsApplicationServices.UpdateUserRequestAllOf();
+      //var instane = new @CompetitionlabsJavascriptSdk.UpdateUserRequestAllOf();
       //expect(instance).to.be();
     });
 

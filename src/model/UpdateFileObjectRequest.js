@@ -19,7 +19,7 @@ import UpdateModelDefault from './UpdateModelDefault';
 /**
  * The UpdateFileObjectRequest model module.
  * @module model/UpdateFileObjectRequest
- * @version 1.0.0
+ * @version 1.0.1
  */
 class UpdateFileObjectRequest {
     /**

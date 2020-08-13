@@ -19,7 +19,7 @@ import ModelDefault from './ModelDefault';
 /**
  * The Attachment model module.
  * @module model/Attachment
- * @version 1.0.0
+ * @version 1.0.1
  */
 class Attachment {
     /**

@@ -17,7 +17,7 @@ import ContestReduced from './ContestReduced';
 /**
  * The Bracket model module.
  * @module model/Bracket
- * @version 1.0.0
+ * @version 1.0.1
  */
 class Bracket {
     /**

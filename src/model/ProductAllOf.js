@@ -19,7 +19,7 @@ import Translation from './Translation';
 /**
  * The ProductAllOf model module.
  * @module model/ProductAllOf
- * @version 1.0.0
+ * @version 1.0.1
  */
 class ProductAllOf {
     /**

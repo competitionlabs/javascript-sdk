@@ -21,7 +21,7 @@ import UpdateProductRequestAllOf from './UpdateProductRequestAllOf';
 /**
  * The UpdateProductRequest model module.
  * @module model/UpdateProductRequest
- * @version 1.0.0
+ * @version 1.0.1
  */
 class UpdateProductRequest {
     /**

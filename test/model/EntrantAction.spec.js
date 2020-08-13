@@ -20,9 +20,9 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.CompetitionLabsApplicationServices);
+    factory(root.expect, root.@CompetitionlabsJavascriptSdk);
   }
-}(this, function(expect, CompetitionLabsApplicationServices) {
+}(this, function(expect, @CompetitionlabsJavascriptSdk) {
   'use strict';
 
   var instance;
@@ -49,8 +49,8 @@
   describe('EntrantAction', function() {
     it('should create an instance of EntrantAction', function() {
       // uncomment below and update the code to test EntrantAction
-      //var instane = new CompetitionLabsApplicationServices.EntrantAction();
-      //expect(instance).to.be.a(CompetitionLabsApplicationServices.EntrantAction);
+      //var instane = new @CompetitionlabsJavascriptSdk.EntrantAction();
+      //expect(instance).to.be.a(@CompetitionlabsJavascriptSdk.EntrantAction);
     });
 
   });

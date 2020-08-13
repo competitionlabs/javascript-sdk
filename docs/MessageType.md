@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.MessageType
+# @CompetitionlabsJavascriptSdk.MessageType
 
 ## Enum
 

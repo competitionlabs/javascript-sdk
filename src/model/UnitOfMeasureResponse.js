@@ -19,7 +19,7 @@ import UnitOfMeasure from './UnitOfMeasure';
 /**
  * The UnitOfMeasureResponse model module.
  * @module model/UnitOfMeasureResponse
- * @version 1.0.0
+ * @version 1.0.1
  */
 class UnitOfMeasureResponse {
     /**

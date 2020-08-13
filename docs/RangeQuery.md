@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.RangeQuery
+# @CompetitionlabsJavascriptSdk.RangeQuery
 
 ## Properties
 

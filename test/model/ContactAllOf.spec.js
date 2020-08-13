@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.CompetitionLabsApplicationServices);
+    factory(root.expect, root.@CompetitionlabsJavascriptSdk);
   }
-}(this, function(expect, CompetitionLabsApplicationServices) {
+}(this, function(expect, @CompetitionlabsJavascriptSdk) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new CompetitionLabsApplicationServices.ContactAllOf();
+    instance = new @CompetitionlabsJavascriptSdk.ContactAllOf();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,61 +50,61 @@
   describe('ContactAllOf', function() {
     it('should create an instance of ContactAllOf', function() {
       // uncomment below and update the code to test ContactAllOf
-      //var instane = new CompetitionLabsApplicationServices.ContactAllOf();
-      //expect(instance).to.be.a(CompetitionLabsApplicationServices.ContactAllOf);
+      //var instane = new @CompetitionlabsJavascriptSdk.ContactAllOf();
+      //expect(instance).to.be.a(@CompetitionlabsJavascriptSdk.ContactAllOf);
     });
 
     it('should have the property addressLine1 (base name: "addressLine1")', function() {
       // uncomment below and update the code to test the property addressLine1
-      //var instane = new CompetitionLabsApplicationServices.ContactAllOf();
+      //var instane = new @CompetitionlabsJavascriptSdk.ContactAllOf();
       //expect(instance).to.be();
     });
 
     it('should have the property addressLine2 (base name: "addressLine2")', function() {
       // uncomment below and update the code to test the property addressLine2
-      //var instane = new CompetitionLabsApplicationServices.ContactAllOf();
+      //var instane = new @CompetitionlabsJavascriptSdk.ContactAllOf();
       //expect(instance).to.be();
     });
 
     it('should have the property city (base name: "city")', function() {
       // uncomment below and update the code to test the property city
-      //var instane = new CompetitionLabsApplicationServices.ContactAllOf();
+      //var instane = new @CompetitionlabsJavascriptSdk.ContactAllOf();
       //expect(instance).to.be();
     });
 
     it('should have the property state (base name: "state")', function() {
       // uncomment below and update the code to test the property state
-      //var instane = new CompetitionLabsApplicationServices.ContactAllOf();
+      //var instane = new @CompetitionlabsJavascriptSdk.ContactAllOf();
       //expect(instance).to.be();
     });
 
     it('should have the property zipPostalCode (base name: "zipPostalCode")', function() {
       // uncomment below and update the code to test the property zipPostalCode
-      //var instane = new CompetitionLabsApplicationServices.ContactAllOf();
+      //var instane = new @CompetitionlabsJavascriptSdk.ContactAllOf();
       //expect(instance).to.be();
     });
 
     it('should have the property country (base name: "country")', function() {
       // uncomment below and update the code to test the property country
-      //var instane = new CompetitionLabsApplicationServices.ContactAllOf();
+      //var instane = new @CompetitionlabsJavascriptSdk.ContactAllOf();
       //expect(instance).to.be();
     });
 
     it('should have the property mobileNumber (base name: "mobileNumber")', function() {
       // uncomment below and update the code to test the property mobileNumber
-      //var instane = new CompetitionLabsApplicationServices.ContactAllOf();
+      //var instane = new @CompetitionlabsJavascriptSdk.ContactAllOf();
       //expect(instance).to.be();
     });
 
     it('should have the property phoneNumber (base name: "phoneNumber")', function() {
       // uncomment below and update the code to test the property phoneNumber
-      //var instane = new CompetitionLabsApplicationServices.ContactAllOf();
+      //var instane = new @CompetitionlabsJavascriptSdk.ContactAllOf();
       //expect(instance).to.be();
     });
 
     it('should have the property geoLocation (base name: "geoLocation")', function() {
       // uncomment below and update the code to test the property geoLocation
-      //var instane = new CompetitionLabsApplicationServices.ContactAllOf();
+      //var instane = new @CompetitionlabsJavascriptSdk.ContactAllOf();
       //expect(instance).to.be();
     });
 

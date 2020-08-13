@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.ProfileResponse
+# @CompetitionlabsJavascriptSdk.ProfileResponse
 
 ## Properties
 

@@ -17,7 +17,7 @@ import CompetitionStatusActions from './CompetitionStatusActions';
 /**
  * The UpdateCompetitionStatusRequest model module.
  * @module model/UpdateCompetitionStatusRequest
- * @version 1.0.0
+ * @version 1.0.1
  */
 class UpdateCompetitionStatusRequest {
     /**

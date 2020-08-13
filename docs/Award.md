@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.Award
+# @CompetitionlabsJavascriptSdk.Award
 
 ## Properties
 

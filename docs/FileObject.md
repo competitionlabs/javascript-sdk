@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.FileObject
+# @CompetitionlabsJavascriptSdk.FileObject
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.UpdateFileObjectFormRequestAllOf
+# @CompetitionlabsJavascriptSdk.UpdateFileObjectFormRequestAllOf
 
 ## Properties
 

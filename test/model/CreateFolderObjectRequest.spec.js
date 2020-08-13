@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.CompetitionLabsApplicationServices);
+    factory(root.expect, root.@CompetitionlabsJavascriptSdk);
   }
-}(this, function(expect, CompetitionLabsApplicationServices) {
+}(this, function(expect, @CompetitionlabsJavascriptSdk) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new CompetitionLabsApplicationServices.CreateFolderObjectRequest();
+    instance = new @CompetitionlabsJavascriptSdk.CreateFolderObjectRequest();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,37 +50,37 @@
   describe('CreateFolderObjectRequest', function() {
     it('should create an instance of CreateFolderObjectRequest', function() {
       // uncomment below and update the code to test CreateFolderObjectRequest
-      //var instane = new CompetitionLabsApplicationServices.CreateFolderObjectRequest();
-      //expect(instance).to.be.a(CompetitionLabsApplicationServices.CreateFolderObjectRequest);
+      //var instane = new @CompetitionlabsJavascriptSdk.CreateFolderObjectRequest();
+      //expect(instance).to.be.a(@CompetitionlabsJavascriptSdk.CreateFolderObjectRequest);
     });
 
     it('should have the property tags (base name: "tags")', function() {
       // uncomment below and update the code to test the property tags
-      //var instane = new CompetitionLabsApplicationServices.CreateFolderObjectRequest();
+      //var instane = new @CompetitionlabsJavascriptSdk.CreateFolderObjectRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property repositoryId (base name: "repositoryId")', function() {
       // uncomment below and update the code to test the property repositoryId
-      //var instane = new CompetitionLabsApplicationServices.CreateFolderObjectRequest();
+      //var instane = new @CompetitionlabsJavascriptSdk.CreateFolderObjectRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property fileName (base name: "fileName")', function() {
       // uncomment below and update the code to test the property fileName
-      //var instane = new CompetitionLabsApplicationServices.CreateFolderObjectRequest();
+      //var instane = new @CompetitionlabsJavascriptSdk.CreateFolderObjectRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property parentFolderPath (base name: "parentFolderPath")', function() {
       // uncomment below and update the code to test the property parentFolderPath
-      //var instane = new CompetitionLabsApplicationServices.CreateFolderObjectRequest();
+      //var instane = new @CompetitionlabsJavascriptSdk.CreateFolderObjectRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property metadata (base name: "metadata")', function() {
       // uncomment below and update the code to test the property metadata
-      //var instane = new CompetitionLabsApplicationServices.CreateFolderObjectRequest();
+      //var instane = new @CompetitionlabsJavascriptSdk.CreateFolderObjectRequest();
       //expect(instance).to.be();
     });
 

@@ -324,14 +324,14 @@ import WebhooksApi from './api/WebhooksApi';
 
 
 /**
-* The_services_listed_below_are_referred_as_CompetitionLabs_Application_Services_.<br>
+* CompetitionLabs API JavaScript SDK.<br>
 * The <code>index</code> module provides access to constructors for all the classes which comprise the public API.
 * <p>
 * An AMD (recommended!) or CommonJS application will generally do something equivalent to the following:
 * <pre>
-* var CompetitionLabsApplicationServices = require('index'); // See note below*.
-* var xxxSvc = new CompetitionLabsApplicationServices.XxxApi(); // Allocate the API class we're going to use.
-* var yyyModel = new CompetitionLabsApplicationServices.Yyy(); // Construct a model instance.
+* var @CompetitionlabsJavascriptSdk = require('index'); // See note below*.
+* var xxxSvc = new @CompetitionlabsJavascriptSdk.XxxApi(); // Allocate the API class we're going to use.
+* var yyyModel = new @CompetitionlabsJavascriptSdk.Yyy(); // Construct a model instance.
 * yyyModel.someProperty = 'someValue';
 * ...
 * var zzz = xxxSvc.doSomething(yyyModel); // Invoke the service.
@@ -343,8 +343,8 @@ import WebhooksApi from './api/WebhooksApi';
 * <p>
 * A non-AMD browser application (discouraged) might do something like this:
 * <pre>
-* var xxxSvc = new CompetitionLabsApplicationServices.XxxApi(); // Allocate the API class we're going to use.
-* var yyy = new CompetitionLabsApplicationServices.Yyy(); // Construct a model instance.
+* var xxxSvc = new @CompetitionlabsJavascriptSdk.XxxApi(); // Allocate the API class we're going to use.
+* var yyy = new @CompetitionlabsJavascriptSdk.Yyy(); // Construct a model instance.
 * yyyModel.someProperty = 'someValue';
 * ...
 * var zzz = xxxSvc.doSomething(yyyModel); // Invoke the service.
@@ -352,7 +352,7 @@ import WebhooksApi from './api/WebhooksApi';
 * </pre>
 * </p>
 * @module index
-* @version 1.0.0
+* @version 1.0.1
 */
 export {
     /**

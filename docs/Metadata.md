@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.Metadata
+# @CompetitionlabsJavascriptSdk.Metadata
 
 ## Properties
 

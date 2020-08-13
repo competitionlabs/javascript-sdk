@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TranslatedField model module.
  * @module model/TranslatedField
- * @version 1.0.0
+ * @version 1.0.1
  */
 class TranslatedField {
     /**

@@ -20,7 +20,7 @@ import UpdateModelDefault from './UpdateModelDefault';
 /**
  * The UpdateActionTypeRequest model module.
  * @module model/UpdateActionTypeRequest
- * @version 1.0.0
+ * @version 1.0.1
  */
 class UpdateActionTypeRequest {
     /**

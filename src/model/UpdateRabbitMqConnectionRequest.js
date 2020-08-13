@@ -18,7 +18,7 @@ import UpdateRabbitMqConnectionRequestAllOf from './UpdateRabbitMqConnectionRequ
 /**
  * The UpdateRabbitMqConnectionRequest model module.
  * @module model/UpdateRabbitMqConnectionRequest
- * @version 1.0.0
+ * @version 1.0.1
  */
 class UpdateRabbitMqConnectionRequest {
     /**

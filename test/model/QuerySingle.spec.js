@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.CompetitionLabsApplicationServices);
+    factory(root.expect, root.@CompetitionlabsJavascriptSdk);
   }
-}(this, function(expect, CompetitionLabsApplicationServices) {
+}(this, function(expect, @CompetitionlabsJavascriptSdk) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new CompetitionLabsApplicationServices.QuerySingle();
+    instance = new @CompetitionlabsJavascriptSdk.QuerySingle();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,19 +50,19 @@
   describe('QuerySingle', function() {
     it('should create an instance of QuerySingle', function() {
       // uncomment below and update the code to test QuerySingle
-      //var instane = new CompetitionLabsApplicationServices.QuerySingle();
-      //expect(instance).to.be.a(CompetitionLabsApplicationServices.QuerySingle);
+      //var instane = new @CompetitionlabsJavascriptSdk.QuerySingle();
+      //expect(instance).to.be.a(@CompetitionlabsJavascriptSdk.QuerySingle);
     });
 
     it('should have the property queryField (base name: "queryField")', function() {
       // uncomment below and update the code to test the property queryField
-      //var instane = new CompetitionLabsApplicationServices.QuerySingle();
+      //var instane = new @CompetitionlabsJavascriptSdk.QuerySingle();
       //expect(instance).to.be();
     });
 
     it('should have the property queryValue (base name: "queryValue")', function() {
       // uncomment below and update the code to test the property queryValue
-      //var instane = new CompetitionLabsApplicationServices.QuerySingle();
+      //var instane = new @CompetitionlabsJavascriptSdk.QuerySingle();
       //expect(instance).to.be();
     });
 

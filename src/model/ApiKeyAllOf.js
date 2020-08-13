@@ -17,7 +17,7 @@ import Role from './Role';
 /**
  * The ApiKeyAllOf model module.
  * @module model/ApiKeyAllOf
- * @version 1.0.0
+ * @version 1.0.1
  */
 class ApiKeyAllOf {
     /**

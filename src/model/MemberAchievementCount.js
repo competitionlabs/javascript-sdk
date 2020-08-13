@@ -18,7 +18,7 @@ import MemberAchievementCountAllOf from './MemberAchievementCountAllOf';
 /**
  * The MemberAchievementCount model module.
  * @module model/MemberAchievementCount
- * @version 1.0.0
+ * @version 1.0.1
  */
 class MemberAchievementCount {
     /**

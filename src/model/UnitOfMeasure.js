@@ -20,7 +20,7 @@ import UnitOfMeasureType from './UnitOfMeasureType';
 /**
  * The UnitOfMeasure model module.
  * @module model/UnitOfMeasure
- * @version 1.0.0
+ * @version 1.0.1
  */
 class UnitOfMeasure {
     /**

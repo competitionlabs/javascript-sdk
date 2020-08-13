@@ -77,6 +77,67 @@ export default class MessagStatus {
     
 
     /**
+    * Constructs a full object with all available fields.
+    */
+    list(){
+        var obj = {};
+
+        
+        obj['New'] = "New";
+        
+        obj['Read'] = "Read";
+        
+        obj['CollaborationRequest'] = "CollaborationRequest";
+        
+        obj['Actioned'] = "Actioned";
+        
+        obj['Claimed'] = "Claimed";
+        
+        obj['Expired'] = "Expired";
+        
+        obj['Canceled'] = "Canceled";
+        
+        obj['Deprecated'] = "Deprecated";
+        
+
+        return obj;
+    }
+
+    /**
+    * Constructs a full object with all available fields.
+    */
+    model(){
+        var obj = {};
+
+        
+        obj['New'] = null;
+        
+        obj['Read'] = null;
+        
+        obj['CollaborationRequest'] = null;
+        
+        obj['Actioned'] = null;
+        
+        obj['Claimed'] = null;
+        
+        obj['Expired'] = null;
+        
+        obj['Canceled'] = null;
+        
+        obj['Deprecated'] = null;
+        
+
+        return obj;
+    }
+
+    /**
+    * Constructs a full object Map for all available fields.
+    */
+    modelMap(){
+        return {"type": 'String'};
+    }
+
+    /**
     * Returns a <code>MessagStatus</code> enum value from a Javascript object name.
     * @param {Object} data The plain JavaScript object containing the name of the enum value.
     * @return {module:model/MessagStatus} The enum <code>MessagStatus</code> value.

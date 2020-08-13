@@ -18,7 +18,7 @@ import CreateSqsConnectionRequestAllOf from './CreateSqsConnectionRequestAllOf';
 /**
  * The CreateSqsConnectionRequest model module.
  * @module model/CreateSqsConnectionRequest
- * @version 1.0.0
+ * @version 1.0.1
  */
 class CreateSqsConnectionRequest {
     /**

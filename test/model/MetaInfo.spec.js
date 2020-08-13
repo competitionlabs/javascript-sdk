@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.CompetitionLabsApplicationServices);
+    factory(root.expect, root.@CompetitionlabsJavascriptSdk);
   }
-}(this, function(expect, CompetitionLabsApplicationServices) {
+}(this, function(expect, @CompetitionlabsJavascriptSdk) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new CompetitionLabsApplicationServices.MetaInfo();
+    instance = new @CompetitionlabsJavascriptSdk.MetaInfo();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,25 +50,25 @@
   describe('MetaInfo', function() {
     it('should create an instance of MetaInfo', function() {
       // uncomment below and update the code to test MetaInfo
-      //var instane = new CompetitionLabsApplicationServices.MetaInfo();
-      //expect(instance).to.be.a(CompetitionLabsApplicationServices.MetaInfo);
+      //var instane = new @CompetitionlabsJavascriptSdk.MetaInfo();
+      //expect(instance).to.be.a(@CompetitionlabsJavascriptSdk.MetaInfo);
     });
 
     it('should have the property objectType (base name: "objectType")', function() {
       // uncomment below and update the code to test the property objectType
-      //var instane = new CompetitionLabsApplicationServices.MetaInfo();
+      //var instane = new @CompetitionlabsJavascriptSdk.MetaInfo();
       //expect(instance).to.be();
     });
 
     it('should have the property resultCount (base name: "resultCount")', function() {
       // uncomment below and update the code to test the property resultCount
-      //var instane = new CompetitionLabsApplicationServices.MetaInfo();
+      //var instane = new @CompetitionlabsJavascriptSdk.MetaInfo();
       //expect(instance).to.be();
     });
 
     it('should have the property errorCount (base name: "errorCount")', function() {
       // uncomment below and update the code to test the property errorCount
-      //var instane = new CompetitionLabsApplicationServices.MetaInfo();
+      //var instane = new @CompetitionlabsJavascriptSdk.MetaInfo();
       //expect(instance).to.be();
     });
 

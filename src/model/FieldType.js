@@ -49,6 +49,51 @@ export default class FieldType {
     
 
     /**
+    * Constructs a full object with all available fields.
+    */
+    list(){
+        var obj = {};
+
+        
+        obj['Text'] = "Text";
+        
+        obj['Number'] = "Number";
+        
+        obj['TextArray'] = "TextArray";
+        
+        obj['NumberArray'] = "NumberArray";
+        
+
+        return obj;
+    }
+
+    /**
+    * Constructs a full object with all available fields.
+    */
+    model(){
+        var obj = {};
+
+        
+        obj['Text'] = null;
+        
+        obj['Number'] = null;
+        
+        obj['TextArray'] = null;
+        
+        obj['NumberArray'] = null;
+        
+
+        return obj;
+    }
+
+    /**
+    * Constructs a full object Map for all available fields.
+    */
+    modelMap(){
+        return {"type": 'String'};
+    }
+
+    /**
     * Returns a <code>FieldType</code> enum value from a Javascript object name.
     * @param {Object} data The plain JavaScript object containing the name of the enum value.
     * @return {module:model/FieldType} The enum <code>FieldType</code> value.

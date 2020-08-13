@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.CompetitionLabsApplicationServices);
+    factory(root.expect, root.@CompetitionlabsJavascriptSdk);
   }
-}(this, function(expect, CompetitionLabsApplicationServices) {
+}(this, function(expect, @CompetitionlabsJavascriptSdk) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new CompetitionLabsApplicationServices.UpdateAchievementRequestAllOf();
+    instance = new @CompetitionlabsJavascriptSdk.UpdateAchievementRequestAllOf();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,91 +50,91 @@
   describe('UpdateAchievementRequestAllOf', function() {
     it('should create an instance of UpdateAchievementRequestAllOf', function() {
       // uncomment below and update the code to test UpdateAchievementRequestAllOf
-      //var instane = new CompetitionLabsApplicationServices.UpdateAchievementRequestAllOf();
-      //expect(instance).to.be.a(CompetitionLabsApplicationServices.UpdateAchievementRequestAllOf);
+      //var instane = new @CompetitionlabsJavascriptSdk.UpdateAchievementRequestAllOf();
+      //expect(instance).to.be.a(@CompetitionlabsJavascriptSdk.UpdateAchievementRequestAllOf);
     });
 
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
-      //var instane = new CompetitionLabsApplicationServices.UpdateAchievementRequestAllOf();
+      //var instane = new @CompetitionlabsJavascriptSdk.UpdateAchievementRequestAllOf();
       //expect(instance).to.be();
     });
 
     it('should have the property description (base name: "description")', function() {
       // uncomment below and update the code to test the property description
-      //var instane = new CompetitionLabsApplicationServices.UpdateAchievementRequestAllOf();
+      //var instane = new @CompetitionlabsJavascriptSdk.UpdateAchievementRequestAllOf();
       //expect(instance).to.be();
     });
 
     it('should have the property isHidden (base name: "isHidden")', function() {
       // uncomment below and update the code to test the property isHidden
-      //var instane = new CompetitionLabsApplicationServices.UpdateAchievementRequestAllOf();
+      //var instane = new @CompetitionlabsJavascriptSdk.UpdateAchievementRequestAllOf();
       //expect(instance).to.be();
     });
 
     it('should have the property icon (base name: "icon")', function() {
       // uncomment below and update the code to test the property icon
-      //var instane = new CompetitionLabsApplicationServices.UpdateAchievementRequestAllOf();
+      //var instane = new @CompetitionlabsJavascriptSdk.UpdateAchievementRequestAllOf();
       //expect(instance).to.be();
     });
 
     it('should have the property ruleSets (base name: "ruleSets")', function() {
       // uncomment below and update the code to test the property ruleSets
-      //var instane = new CompetitionLabsApplicationServices.UpdateAchievementRequestAllOf();
+      //var instane = new @CompetitionlabsJavascriptSdk.UpdateAchievementRequestAllOf();
       //expect(instance).to.be();
     });
 
     it('should have the property dependantOn (base name: "dependantOn")', function() {
       // uncomment below and update the code to test the property dependantOn
-      //var instane = new CompetitionLabsApplicationServices.UpdateAchievementRequestAllOf();
+      //var instane = new @CompetitionlabsJavascriptSdk.UpdateAchievementRequestAllOf();
       //expect(instance).to.be();
     });
 
     it('should have the property scheduling (base name: "scheduling")', function() {
       // uncomment below and update the code to test the property scheduling
-      //var instane = new CompetitionLabsApplicationServices.UpdateAchievementRequestAllOf();
+      //var instane = new @CompetitionlabsJavascriptSdk.UpdateAchievementRequestAllOf();
       //expect(instance).to.be();
     });
 
     it('should have the property achievementLiveStatus (base name: "achievementLiveStatus")', function() {
       // uncomment below and update the code to test the property achievementLiveStatus
-      //var instane = new CompetitionLabsApplicationServices.UpdateAchievementRequestAllOf();
+      //var instane = new @CompetitionlabsJavascriptSdk.UpdateAchievementRequestAllOf();
       //expect(instance).to.be();
     });
 
     it('should have the property category (base name: "category")', function() {
       // uncomment below and update the code to test the property category
-      //var instane = new CompetitionLabsApplicationServices.UpdateAchievementRequestAllOf();
+      //var instane = new @CompetitionlabsJavascriptSdk.UpdateAchievementRequestAllOf();
       //expect(instance).to.be();
     });
 
     it('should have the property memberGroups (base name: "memberGroups")', function() {
       // uncomment below and update the code to test the property memberGroups
-      //var instane = new CompetitionLabsApplicationServices.UpdateAchievementRequestAllOf();
+      //var instane = new @CompetitionlabsJavascriptSdk.UpdateAchievementRequestAllOf();
       //expect(instance).to.be();
     });
 
     it('should have the property metadata (base name: "metadata")', function() {
       // uncomment below and update the code to test the property metadata
-      //var instane = new CompetitionLabsApplicationServices.UpdateAchievementRequestAllOf();
+      //var instane = new @CompetitionlabsJavascriptSdk.UpdateAchievementRequestAllOf();
       //expect(instance).to.be();
     });
 
     it('should have the property translations (base name: "translations")', function() {
       // uncomment below and update the code to test the property translations
-      //var instane = new CompetitionLabsApplicationServices.UpdateAchievementRequestAllOf();
+      //var instane = new @CompetitionlabsJavascriptSdk.UpdateAchievementRequestAllOf();
       //expect(instance).to.be();
     });
 
     it('should have the property rewards (base name: "rewards")', function() {
       // uncomment below and update the code to test the property rewards
-      //var instane = new CompetitionLabsApplicationServices.UpdateAchievementRequestAllOf();
+      //var instane = new @CompetitionlabsJavascriptSdk.UpdateAchievementRequestAllOf();
       //expect(instance).to.be();
     });
 
     it('should have the property constraints (base name: "constraints")', function() {
       // uncomment below and update the code to test the property constraints
-      //var instane = new CompetitionLabsApplicationServices.UpdateAchievementRequestAllOf();
+      //var instane = new @CompetitionlabsJavascriptSdk.UpdateAchievementRequestAllOf();
       //expect(instance).to.be();
     });
 

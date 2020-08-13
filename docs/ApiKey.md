@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.ApiKey
+# @CompetitionlabsJavascriptSdk.ApiKey
 
 ## Properties
 

@@ -17,7 +17,7 @@ import Metadata from './Metadata';
 /**
  * The CreateFileObjectRequest model module.
  * @module model/CreateFileObjectRequest
- * @version 1.0.0
+ * @version 1.0.1
  */
 class CreateFileObjectRequest {
     /**

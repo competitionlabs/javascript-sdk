@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.CompetitionLabsApplicationServices);
+    factory(root.expect, root.@CompetitionlabsJavascriptSdk);
   }
-}(this, function(expect, CompetitionLabsApplicationServices) {
+}(this, function(expect, @CompetitionlabsJavascriptSdk) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new CompetitionLabsApplicationServices.CompetitionReduced();
+    instance = new @CompetitionlabsJavascriptSdk.CompetitionReduced();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,97 +50,97 @@
   describe('CompetitionReduced', function() {
     it('should create an instance of CompetitionReduced', function() {
       // uncomment below and update the code to test CompetitionReduced
-      //var instane = new CompetitionLabsApplicationServices.CompetitionReduced();
-      //expect(instance).to.be.a(CompetitionLabsApplicationServices.CompetitionReduced);
+      //var instane = new @CompetitionlabsJavascriptSdk.CompetitionReduced();
+      //expect(instance).to.be.a(@CompetitionlabsJavascriptSdk.CompetitionReduced);
     });
 
     it('should have the property id (base name: "id")', function() {
       // uncomment below and update the code to test the property id
-      //var instane = new CompetitionLabsApplicationServices.CompetitionReduced();
+      //var instane = new @CompetitionlabsJavascriptSdk.CompetitionReduced();
       //expect(instance).to.be();
     });
 
     it('should have the property spaceName (base name: "spaceName")', function() {
       // uncomment below and update the code to test the property spaceName
-      //var instane = new CompetitionLabsApplicationServices.CompetitionReduced();
+      //var instane = new @CompetitionlabsJavascriptSdk.CompetitionReduced();
       //expect(instance).to.be();
     });
 
     it('should have the property created (base name: "created")', function() {
       // uncomment below and update the code to test the property created
-      //var instane = new CompetitionLabsApplicationServices.CompetitionReduced();
+      //var instane = new @CompetitionlabsJavascriptSdk.CompetitionReduced();
       //expect(instance).to.be();
     });
 
     it('should have the property competitionType (base name: "competitionType")', function() {
       // uncomment below and update the code to test the property competitionType
-      //var instane = new CompetitionLabsApplicationServices.CompetitionReduced();
+      //var instane = new @CompetitionlabsJavascriptSdk.CompetitionReduced();
       //expect(instance).to.be();
     });
 
     it('should have the property numberOfRounds (base name: "numberOfRounds")', function() {
       // uncomment below and update the code to test the property numberOfRounds
-      //var instane = new CompetitionLabsApplicationServices.CompetitionReduced();
+      //var instane = new @CompetitionlabsJavascriptSdk.CompetitionReduced();
       //expect(instance).to.be();
     });
 
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
-      //var instane = new CompetitionLabsApplicationServices.CompetitionReduced();
+      //var instane = new @CompetitionlabsJavascriptSdk.CompetitionReduced();
       //expect(instance).to.be();
     });
 
     it('should have the property includeEntrantsWhere (base name: "includeEntrantsWhere")', function() {
       // uncomment below and update the code to test the property includeEntrantsWhere
-      //var instane = new CompetitionLabsApplicationServices.CompetitionReduced();
+      //var instane = new @CompetitionlabsJavascriptSdk.CompetitionReduced();
       //expect(instance).to.be();
     });
 
     it('should have the property optinRequiredForEntrants (base name: "optinRequiredForEntrants")', function() {
       // uncomment below and update the code to test the property optinRequiredForEntrants
-      //var instane = new CompetitionLabsApplicationServices.CompetitionReduced();
+      //var instane = new @CompetitionlabsJavascriptSdk.CompetitionReduced();
       //expect(instance).to.be();
     });
 
     it('should have the property status (base name: "status")', function() {
       // uncomment below and update the code to test the property status
-      //var instane = new CompetitionLabsApplicationServices.CompetitionReduced();
+      //var instane = new @CompetitionlabsJavascriptSdk.CompetitionReduced();
       //expect(instance).to.be();
     });
 
     it('should have the property statusCode (base name: "statusCode")', function() {
       // uncomment below and update the code to test the property statusCode
-      //var instane = new CompetitionLabsApplicationServices.CompetitionReduced();
+      //var instane = new @CompetitionlabsJavascriptSdk.CompetitionReduced();
       //expect(instance).to.be();
     });
 
     it('should have the property products (base name: "products")', function() {
       // uncomment below and update the code to test the property products
-      //var instane = new CompetitionLabsApplicationServices.CompetitionReduced();
+      //var instane = new @CompetitionlabsJavascriptSdk.CompetitionReduced();
       //expect(instance).to.be();
     });
 
     it('should have the property scheduledStartDate (base name: "scheduledStartDate")', function() {
       // uncomment below and update the code to test the property scheduledStartDate
-      //var instane = new CompetitionLabsApplicationServices.CompetitionReduced();
+      //var instane = new @CompetitionlabsJavascriptSdk.CompetitionReduced();
       //expect(instance).to.be();
     });
 
     it('should have the property scheduledEndDate (base name: "scheduledEndDate")', function() {
       // uncomment below and update the code to test the property scheduledEndDate
-      //var instane = new CompetitionLabsApplicationServices.CompetitionReduced();
+      //var instane = new @CompetitionlabsJavascriptSdk.CompetitionReduced();
       //expect(instance).to.be();
     });
 
     it('should have the property actualStartDate (base name: "actualStartDate")', function() {
       // uncomment below and update the code to test the property actualStartDate
-      //var instane = new CompetitionLabsApplicationServices.CompetitionReduced();
+      //var instane = new @CompetitionlabsJavascriptSdk.CompetitionReduced();
       //expect(instance).to.be();
     });
 
     it('should have the property actualEndDate (base name: "actualEndDate")', function() {
       // uncomment below and update the code to test the property actualEndDate
-      //var instane = new CompetitionLabsApplicationServices.CompetitionReduced();
+      //var instane = new @CompetitionlabsJavascriptSdk.CompetitionReduced();
       //expect(instance).to.be();
     });
 

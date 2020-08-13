@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SpaceTokenRequest model module.
  * @module model/SpaceTokenRequest
- * @version 1.0.0
+ * @version 1.0.1
  */
 class SpaceTokenRequest {
     /**

@@ -19,7 +19,7 @@ import SqsConnectionAllOf from './SqsConnectionAllOf';
 /**
  * The SqsConnection model module.
  * @module model/SqsConnection
- * @version 1.0.0
+ * @version 1.0.1
  */
 class SqsConnection {
     /**

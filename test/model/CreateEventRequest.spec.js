@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.CompetitionLabsApplicationServices);
+    factory(root.expect, root.@CompetitionlabsJavascriptSdk);
   }
-}(this, function(expect, CompetitionLabsApplicationServices) {
+}(this, function(expect, @CompetitionlabsJavascriptSdk) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new CompetitionLabsApplicationServices.CreateEventRequest();
+    instance = new @CompetitionlabsJavascriptSdk.CreateEventRequest();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,67 +50,67 @@
   describe('CreateEventRequest', function() {
     it('should create an instance of CreateEventRequest', function() {
       // uncomment below and update the code to test CreateEventRequest
-      //var instane = new CompetitionLabsApplicationServices.CreateEventRequest();
-      //expect(instance).to.be.a(CompetitionLabsApplicationServices.CreateEventRequest);
+      //var instane = new @CompetitionlabsJavascriptSdk.CreateEventRequest();
+      //expect(instance).to.be.a(@CompetitionlabsJavascriptSdk.CreateEventRequest);
     });
 
     it('should have the property memberId (base name: "memberId")', function() {
       // uncomment below and update the code to test the property memberId
-      //var instane = new CompetitionLabsApplicationServices.CreateEventRequest();
+      //var instane = new @CompetitionlabsJavascriptSdk.CreateEventRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property action (base name: "action")', function() {
       // uncomment below and update the code to test the property action
-      //var instane = new CompetitionLabsApplicationServices.CreateEventRequest();
+      //var instane = new @CompetitionlabsJavascriptSdk.CreateEventRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property batchId (base name: "batchId")', function() {
       // uncomment below and update the code to test the property batchId
-      //var instane = new CompetitionLabsApplicationServices.CreateEventRequest();
+      //var instane = new @CompetitionlabsJavascriptSdk.CreateEventRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property entityId (base name: "entityId")', function() {
       // uncomment below and update the code to test the property entityId
-      //var instane = new CompetitionLabsApplicationServices.CreateEventRequest();
+      //var instane = new @CompetitionlabsJavascriptSdk.CreateEventRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property sourceValue (base name: "sourceValue")', function() {
       // uncomment below and update the code to test the property sourceValue
-      //var instane = new CompetitionLabsApplicationServices.CreateEventRequest();
+      //var instane = new @CompetitionlabsJavascriptSdk.CreateEventRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property points (base name: "points")', function() {
       // uncomment below and update the code to test the property points
-      //var instane = new CompetitionLabsApplicationServices.CreateEventRequest();
+      //var instane = new @CompetitionlabsJavascriptSdk.CreateEventRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property transactionTimestamp (base name: "transactionTimestamp")', function() {
       // uncomment below and update the code to test the property transactionTimestamp
-      //var instane = new CompetitionLabsApplicationServices.CreateEventRequest();
+      //var instane = new @CompetitionlabsJavascriptSdk.CreateEventRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property relatesTo (base name: "relatesTo")', function() {
       // uncomment below and update the code to test the property relatesTo
-      //var instane = new CompetitionLabsApplicationServices.CreateEventRequest();
+      //var instane = new @CompetitionlabsJavascriptSdk.CreateEventRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property relatesToExternal (base name: "relatesToExternal")', function() {
       // uncomment below and update the code to test the property relatesToExternal
-      //var instane = new CompetitionLabsApplicationServices.CreateEventRequest();
+      //var instane = new @CompetitionlabsJavascriptSdk.CreateEventRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property metadata (base name: "metadata")', function() {
       // uncomment below and update the code to test the property metadata
-      //var instane = new CompetitionLabsApplicationServices.CreateEventRequest();
+      //var instane = new @CompetitionlabsJavascriptSdk.CreateEventRequest();
       //expect(instance).to.be();
     });
 

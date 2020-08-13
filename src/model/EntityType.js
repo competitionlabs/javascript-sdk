@@ -42,6 +42,47 @@ export default class EntityType {
     
 
     /**
+    * Constructs a full object with all available fields.
+    */
+    list(){
+        var obj = {};
+
+        
+        obj['Contest'] = "Contest";
+        
+        obj['Achievement'] = "Achievement";
+        
+        obj['Competition'] = "Competition";
+        
+
+        return obj;
+    }
+
+    /**
+    * Constructs a full object with all available fields.
+    */
+    model(){
+        var obj = {};
+
+        
+        obj['Contest'] = null;
+        
+        obj['Achievement'] = null;
+        
+        obj['Competition'] = null;
+        
+
+        return obj;
+    }
+
+    /**
+    * Constructs a full object Map for all available fields.
+    */
+    modelMap(){
+        return {"type": 'String'};
+    }
+
+    /**
     * Returns a <code>EntityType</code> enum value from a Javascript object name.
     * @param {Object} data The plain JavaScript object containing the name of the enum value.
     * @return {module:model/EntityType} The enum <code>EntityType</code> value.

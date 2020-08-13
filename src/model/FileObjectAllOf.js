@@ -17,7 +17,7 @@ import Metadata from './Metadata';
 /**
  * The FileObjectAllOf model module.
  * @module model/FileObjectAllOf
- * @version 1.0.0
+ * @version 1.0.1
  */
 class FileObjectAllOf {
     /**

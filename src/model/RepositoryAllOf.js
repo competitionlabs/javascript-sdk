@@ -17,7 +17,7 @@ import HostingOptions from './HostingOptions';
 /**
  * The RepositoryAllOf model module.
  * @module model/RepositoryAllOf
- * @version 1.0.0
+ * @version 1.0.1
  */
 class RepositoryAllOf {
     /**

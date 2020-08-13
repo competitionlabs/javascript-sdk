@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.CompetitionLabsApplicationServices);
+    factory(root.expect, root.@CompetitionlabsJavascriptSdk);
   }
-}(this, function(expect, CompetitionLabsApplicationServices) {
+}(this, function(expect, @CompetitionlabsJavascriptSdk) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new CompetitionLabsApplicationServices.MessageAllOf();
+    instance = new @CompetitionlabsJavascriptSdk.MessageAllOf();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,61 +50,61 @@
   describe('MessageAllOf', function() {
     it('should create an instance of MessageAllOf', function() {
       // uncomment below and update the code to test MessageAllOf
-      //var instane = new CompetitionLabsApplicationServices.MessageAllOf();
-      //expect(instance).to.be.a(CompetitionLabsApplicationServices.MessageAllOf);
+      //var instane = new @CompetitionlabsJavascriptSdk.MessageAllOf();
+      //expect(instance).to.be.a(@CompetitionlabsJavascriptSdk.MessageAllOf);
     });
 
     it('should have the property memberGroup (base name: "memberGroup")', function() {
       // uncomment below and update the code to test the property memberGroup
-      //var instane = new CompetitionLabsApplicationServices.MessageAllOf();
+      //var instane = new @CompetitionlabsJavascriptSdk.MessageAllOf();
       //expect(instance).to.be();
     });
 
     it('should have the property members (base name: "members")', function() {
       // uncomment below and update the code to test the property members
-      //var instane = new CompetitionLabsApplicationServices.MessageAllOf();
+      //var instane = new @CompetitionlabsJavascriptSdk.MessageAllOf();
       //expect(instance).to.be();
     });
 
     it('should have the property messageType (base name: "messageType")', function() {
       // uncomment below and update the code to test the property messageType
-      //var instane = new CompetitionLabsApplicationServices.MessageAllOf();
+      //var instane = new @CompetitionlabsJavascriptSdk.MessageAllOf();
       //expect(instance).to.be();
     });
 
     it('should have the property subject (base name: "subject")', function() {
       // uncomment below and update the code to test the property subject
-      //var instane = new CompetitionLabsApplicationServices.MessageAllOf();
+      //var instane = new @CompetitionlabsJavascriptSdk.MessageAllOf();
       //expect(instance).to.be();
     });
 
     it('should have the property body (base name: "body")', function() {
       // uncomment below and update the code to test the property body
-      //var instane = new CompetitionLabsApplicationServices.MessageAllOf();
+      //var instane = new @CompetitionlabsJavascriptSdk.MessageAllOf();
       //expect(instance).to.be();
     });
 
     it('should have the property status (base name: "status")', function() {
       // uncomment below and update the code to test the property status
-      //var instane = new CompetitionLabsApplicationServices.MessageAllOf();
+      //var instane = new @CompetitionlabsJavascriptSdk.MessageAllOf();
       //expect(instance).to.be();
     });
 
     it('should have the property scheduling (base name: "scheduling")', function() {
       // uncomment below and update the code to test the property scheduling
-      //var instane = new CompetitionLabsApplicationServices.MessageAllOf();
+      //var instane = new @CompetitionlabsJavascriptSdk.MessageAllOf();
       //expect(instance).to.be();
     });
 
     it('should have the property deprecated (base name: "deprecated")', function() {
       // uncomment below and update the code to test the property deprecated
-      //var instane = new CompetitionLabsApplicationServices.MessageAllOf();
+      //var instane = new @CompetitionlabsJavascriptSdk.MessageAllOf();
       //expect(instance).to.be();
     });
 
     it('should have the property metadata (base name: "metadata")', function() {
       // uncomment below and update the code to test the property metadata
-      //var instane = new CompetitionLabsApplicationServices.MessageAllOf();
+      //var instane = new @CompetitionlabsJavascriptSdk.MessageAllOf();
       //expect(instance).to.be();
     });
 

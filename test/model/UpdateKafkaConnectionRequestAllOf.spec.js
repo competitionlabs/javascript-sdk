@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.CompetitionLabsApplicationServices);
+    factory(root.expect, root.@CompetitionlabsJavascriptSdk);
   }
-}(this, function(expect, CompetitionLabsApplicationServices) {
+}(this, function(expect, @CompetitionlabsJavascriptSdk) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new CompetitionLabsApplicationServices.UpdateKafkaConnectionRequestAllOf();
+    instance = new @CompetitionlabsJavascriptSdk.UpdateKafkaConnectionRequestAllOf();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,37 +50,37 @@
   describe('UpdateKafkaConnectionRequestAllOf', function() {
     it('should create an instance of UpdateKafkaConnectionRequestAllOf', function() {
       // uncomment below and update the code to test UpdateKafkaConnectionRequestAllOf
-      //var instane = new CompetitionLabsApplicationServices.UpdateKafkaConnectionRequestAllOf();
-      //expect(instance).to.be.a(CompetitionLabsApplicationServices.UpdateKafkaConnectionRequestAllOf);
+      //var instane = new @CompetitionlabsJavascriptSdk.UpdateKafkaConnectionRequestAllOf();
+      //expect(instance).to.be.a(@CompetitionlabsJavascriptSdk.UpdateKafkaConnectionRequestAllOf);
     });
 
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
-      //var instane = new CompetitionLabsApplicationServices.UpdateKafkaConnectionRequestAllOf();
+      //var instane = new @CompetitionlabsJavascriptSdk.UpdateKafkaConnectionRequestAllOf();
       //expect(instance).to.be();
     });
 
     it('should have the property brokers (base name: "brokers")', function() {
       // uncomment below and update the code to test the property brokers
-      //var instane = new CompetitionLabsApplicationServices.UpdateKafkaConnectionRequestAllOf();
+      //var instane = new @CompetitionlabsJavascriptSdk.UpdateKafkaConnectionRequestAllOf();
       //expect(instance).to.be();
     });
 
     it('should have the property transformerId (base name: "transformerId")', function() {
       // uncomment below and update the code to test the property transformerId
-      //var instane = new CompetitionLabsApplicationServices.UpdateKafkaConnectionRequestAllOf();
+      //var instane = new @CompetitionlabsJavascriptSdk.UpdateKafkaConnectionRequestAllOf();
       //expect(instance).to.be();
     });
 
     it('should have the property groupId (base name: "groupId")', function() {
       // uncomment below and update the code to test the property groupId
-      //var instane = new CompetitionLabsApplicationServices.UpdateKafkaConnectionRequestAllOf();
+      //var instane = new @CompetitionlabsJavascriptSdk.UpdateKafkaConnectionRequestAllOf();
       //expect(instance).to.be();
     });
 
     it('should have the property topic (base name: "topic")', function() {
       // uncomment below and update the code to test the property topic
-      //var instane = new CompetitionLabsApplicationServices.UpdateKafkaConnectionRequestAllOf();
+      //var instane = new @CompetitionlabsJavascriptSdk.UpdateKafkaConnectionRequestAllOf();
       //expect(instance).to.be();
     });
 

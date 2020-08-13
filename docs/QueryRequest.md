@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.QueryRequest
+# @CompetitionlabsJavascriptSdk.QueryRequest
 
 ## Properties
 

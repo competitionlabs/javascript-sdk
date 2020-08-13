@@ -17,7 +17,7 @@ import Contact from './Contact';
 /**
  * The UpdateUserRequestAllOf model module.
  * @module model/UpdateUserRequestAllOf
- * @version 1.0.0
+ * @version 1.0.1
  */
 class UpdateUserRequestAllOf {
     /**

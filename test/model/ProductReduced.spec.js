@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.CompetitionLabsApplicationServices);
+    factory(root.expect, root.@CompetitionlabsJavascriptSdk);
   }
-}(this, function(expect, CompetitionLabsApplicationServices) {
+}(this, function(expect, @CompetitionlabsJavascriptSdk) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new CompetitionLabsApplicationServices.ProductReduced();
+    instance = new @CompetitionlabsJavascriptSdk.ProductReduced();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,37 +50,37 @@
   describe('ProductReduced', function() {
     it('should create an instance of ProductReduced', function() {
       // uncomment below and update the code to test ProductReduced
-      //var instane = new CompetitionLabsApplicationServices.ProductReduced();
-      //expect(instance).to.be.a(CompetitionLabsApplicationServices.ProductReduced);
+      //var instane = new @CompetitionlabsJavascriptSdk.ProductReduced();
+      //expect(instance).to.be.a(@CompetitionlabsJavascriptSdk.ProductReduced);
     });
 
     it('should have the property id (base name: "id")', function() {
       // uncomment below and update the code to test the property id
-      //var instane = new CompetitionLabsApplicationServices.ProductReduced();
+      //var instane = new @CompetitionlabsJavascriptSdk.ProductReduced();
       //expect(instance).to.be();
     });
 
     it('should have the property spaceName (base name: "spaceName")', function() {
       // uncomment below and update the code to test the property spaceName
-      //var instane = new CompetitionLabsApplicationServices.ProductReduced();
+      //var instane = new @CompetitionlabsJavascriptSdk.ProductReduced();
       //expect(instance).to.be();
     });
 
     it('should have the property created (base name: "created")', function() {
       // uncomment below and update the code to test the property created
-      //var instane = new CompetitionLabsApplicationServices.ProductReduced();
+      //var instane = new @CompetitionlabsJavascriptSdk.ProductReduced();
       //expect(instance).to.be();
     });
 
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
-      //var instane = new CompetitionLabsApplicationServices.ProductReduced();
+      //var instane = new @CompetitionlabsJavascriptSdk.ProductReduced();
       //expect(instance).to.be();
     });
 
     it('should have the property productRefId (base name: "productRefId")', function() {
       // uncomment below and update the code to test the property productRefId
-      //var instane = new CompetitionLabsApplicationServices.ProductReduced();
+      //var instane = new @CompetitionlabsJavascriptSdk.ProductReduced();
       //expect(instance).to.be();
     });
 

@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.CompetitionLabsApplicationServices);
+    factory(root.expect, root.@CompetitionlabsJavascriptSdk);
   }
-}(this, function(expect, CompetitionLabsApplicationServices) {
+}(this, function(expect, @CompetitionlabsJavascriptSdk) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new CompetitionLabsApplicationServices.UpdateFileObjectFormRequest();
+    instance = new @CompetitionlabsJavascriptSdk.UpdateFileObjectFormRequest();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,8 +50,8 @@
   describe('UpdateFileObjectFormRequest', function() {
     it('should create an instance of UpdateFileObjectFormRequest', function() {
       // uncomment below and update the code to test UpdateFileObjectFormRequest
-      //var instane = new CompetitionLabsApplicationServices.UpdateFileObjectFormRequest();
-      //expect(instance).to.be.a(CompetitionLabsApplicationServices.UpdateFileObjectFormRequest);
+      //var instane = new @CompetitionlabsJavascriptSdk.UpdateFileObjectFormRequest();
+      //expect(instance).to.be.a(@CompetitionlabsJavascriptSdk.UpdateFileObjectFormRequest);
     });
 
   });

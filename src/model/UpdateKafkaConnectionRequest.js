@@ -18,7 +18,7 @@ import UpdateKafkaConnectionRequestAllOf from './UpdateKafkaConnectionRequestAll
 /**
  * The UpdateKafkaConnectionRequest model module.
  * @module model/UpdateKafkaConnectionRequest
- * @version 1.0.0
+ * @version 1.0.1
  */
 class UpdateKafkaConnectionRequest {
     /**

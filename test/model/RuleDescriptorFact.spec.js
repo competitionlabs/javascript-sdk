@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.CompetitionLabsApplicationServices);
+    factory(root.expect, root.@CompetitionlabsJavascriptSdk);
   }
-}(this, function(expect, CompetitionLabsApplicationServices) {
+}(this, function(expect, @CompetitionlabsJavascriptSdk) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new CompetitionLabsApplicationServices.RuleDescriptorFact();
+    instance = new @CompetitionlabsJavascriptSdk.RuleDescriptorFact();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,55 +50,55 @@
   describe('RuleDescriptorFact', function() {
     it('should create an instance of RuleDescriptorFact', function() {
       // uncomment below and update the code to test RuleDescriptorFact
-      //var instane = new CompetitionLabsApplicationServices.RuleDescriptorFact();
-      //expect(instance).to.be.a(CompetitionLabsApplicationServices.RuleDescriptorFact);
+      //var instane = new @CompetitionlabsJavascriptSdk.RuleDescriptorFact();
+      //expect(instance).to.be.a(@CompetitionlabsJavascriptSdk.RuleDescriptorFact);
     });
 
     it('should have the property operators (base name: "operators")', function() {
       // uncomment below and update the code to test the property operators
-      //var instane = new CompetitionLabsApplicationServices.RuleDescriptorFact();
+      //var instane = new @CompetitionlabsJavascriptSdk.RuleDescriptorFact();
       //expect(instance).to.be();
     });
 
     it('should have the property constantType (base name: "constantType")', function() {
       // uncomment below and update the code to test the property constantType
-      //var instane = new CompetitionLabsApplicationServices.RuleDescriptorFact();
+      //var instane = new @CompetitionlabsJavascriptSdk.RuleDescriptorFact();
       //expect(instance).to.be();
     });
 
     it('should have the property constantExample (base name: "constantExample")', function() {
       // uncomment below and update the code to test the property constantExample
-      //var instane = new CompetitionLabsApplicationServices.RuleDescriptorFact();
+      //var instane = new @CompetitionlabsJavascriptSdk.RuleDescriptorFact();
       //expect(instance).to.be();
     });
 
     it('should have the property defaultVale (base name: "defaultVale")', function() {
       // uncomment below and update the code to test the property defaultVale
-      //var instane = new CompetitionLabsApplicationServices.RuleDescriptorFact();
+      //var instane = new @CompetitionlabsJavascriptSdk.RuleDescriptorFact();
       //expect(instance).to.be();
     });
 
     it('should have the property macros (base name: "macros")', function() {
       // uncomment below and update the code to test the property macros
-      //var instane = new CompetitionLabsApplicationServices.RuleDescriptorFact();
+      //var instane = new @CompetitionlabsJavascriptSdk.RuleDescriptorFact();
       //expect(instance).to.be();
     });
 
     it('should have the property constraints (base name: "constraints")', function() {
       // uncomment below and update the code to test the property constraints
-      //var instane = new CompetitionLabsApplicationServices.RuleDescriptorFact();
+      //var instane = new @CompetitionlabsJavascriptSdk.RuleDescriptorFact();
       //expect(instance).to.be();
     });
 
     it('should have the property fact (base name: "fact")', function() {
       // uncomment below and update the code to test the property fact
-      //var instane = new CompetitionLabsApplicationServices.RuleDescriptorFact();
+      //var instane = new @CompetitionlabsJavascriptSdk.RuleDescriptorFact();
       //expect(instance).to.be();
     });
 
     it('should have the property subConditions (base name: "subConditions")', function() {
       // uncomment below and update the code to test the property subConditions
-      //var instane = new CompetitionLabsApplicationServices.RuleDescriptorFact();
+      //var instane = new @CompetitionlabsJavascriptSdk.RuleDescriptorFact();
       //expect(instance).to.be();
     });
 

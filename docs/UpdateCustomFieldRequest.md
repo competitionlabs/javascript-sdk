@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.UpdateCustomFieldRequest
+# @CompetitionlabsJavascriptSdk.UpdateCustomFieldRequest
 
 ## Properties
 

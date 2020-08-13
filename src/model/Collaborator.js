@@ -18,7 +18,7 @@ import ModelDefault from './ModelDefault';
 /**
  * The Collaborator model module.
  * @module model/Collaborator
- * @version 1.0.0
+ * @version 1.0.1
  */
 class Collaborator {
     /**

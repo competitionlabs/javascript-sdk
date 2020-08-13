@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.CompetitionLabsApplicationServices);
+    factory(root.expect, root.@CompetitionlabsJavascriptSdk);
   }
-}(this, function(expect, CompetitionLabsApplicationServices) {
+}(this, function(expect, @CompetitionlabsJavascriptSdk) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new CompetitionLabsApplicationServices.UpdateWebhookRequest();
+    instance = new @CompetitionlabsJavascriptSdk.UpdateWebhookRequest();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,43 +50,43 @@
   describe('UpdateWebhookRequest', function() {
     it('should create an instance of UpdateWebhookRequest', function() {
       // uncomment below and update the code to test UpdateWebhookRequest
-      //var instane = new CompetitionLabsApplicationServices.UpdateWebhookRequest();
-      //expect(instance).to.be.a(CompetitionLabsApplicationServices.UpdateWebhookRequest);
+      //var instane = new @CompetitionlabsJavascriptSdk.UpdateWebhookRequest();
+      //expect(instance).to.be.a(@CompetitionlabsJavascriptSdk.UpdateWebhookRequest);
     });
 
     it('should have the property id (base name: "id")', function() {
       // uncomment below and update the code to test the property id
-      //var instane = new CompetitionLabsApplicationServices.UpdateWebhookRequest();
+      //var instane = new @CompetitionlabsJavascriptSdk.UpdateWebhookRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property postToUrl (base name: "postToUrl")', function() {
       // uncomment below and update the code to test the property postToUrl
-      //var instane = new CompetitionLabsApplicationServices.UpdateWebhookRequest();
+      //var instane = new @CompetitionlabsJavascriptSdk.UpdateWebhookRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property triggers (base name: "triggers")', function() {
       // uncomment below and update the code to test the property triggers
-      //var instane = new CompetitionLabsApplicationServices.UpdateWebhookRequest();
+      //var instane = new @CompetitionlabsJavascriptSdk.UpdateWebhookRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property description (base name: "description")', function() {
       // uncomment below and update the code to test the property description
-      //var instane = new CompetitionLabsApplicationServices.UpdateWebhookRequest();
+      //var instane = new @CompetitionlabsJavascriptSdk.UpdateWebhookRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property headers (base name: "headers")', function() {
       // uncomment below and update the code to test the property headers
-      //var instane = new CompetitionLabsApplicationServices.UpdateWebhookRequest();
+      //var instane = new @CompetitionlabsJavascriptSdk.UpdateWebhookRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property transformerId (base name: "transformerId")', function() {
       // uncomment below and update the code to test the property transformerId
-      //var instane = new CompetitionLabsApplicationServices.UpdateWebhookRequest();
+      //var instane = new @CompetitionlabsJavascriptSdk.UpdateWebhookRequest();
       //expect(instance).to.be();
     });
 

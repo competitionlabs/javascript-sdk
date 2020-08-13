@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.CompetitionLabsApplicationServices);
+    factory(root.expect, root.@CompetitionlabsJavascriptSdk);
   }
-}(this, function(expect, CompetitionLabsApplicationServices) {
+}(this, function(expect, @CompetitionlabsJavascriptSdk) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new CompetitionLabsApplicationServices.RuleDescriptor();
+    instance = new @CompetitionlabsJavascriptSdk.RuleDescriptor();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,19 +50,19 @@
   describe('RuleDescriptor', function() {
     it('should create an instance of RuleDescriptor', function() {
       // uncomment below and update the code to test RuleDescriptor
-      //var instane = new CompetitionLabsApplicationServices.RuleDescriptor();
-      //expect(instance).to.be.a(CompetitionLabsApplicationServices.RuleDescriptor);
+      //var instane = new @CompetitionlabsJavascriptSdk.RuleDescriptor();
+      //expect(instance).to.be.a(@CompetitionlabsJavascriptSdk.RuleDescriptor);
     });
 
     it('should have the property ruleScope (base name: "ruleScope")', function() {
       // uncomment below and update the code to test the property ruleScope
-      //var instane = new CompetitionLabsApplicationServices.RuleDescriptor();
+      //var instane = new @CompetitionlabsJavascriptSdk.RuleDescriptor();
       //expect(instance).to.be();
     });
 
     it('should have the property actions (base name: "actions")', function() {
       // uncomment below and update the code to test the property actions
-      //var instane = new CompetitionLabsApplicationServices.RuleDescriptor();
+      //var instane = new @CompetitionlabsJavascriptSdk.RuleDescriptor();
       //expect(instance).to.be();
     });
 

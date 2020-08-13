@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.Rule
+# @CompetitionlabsJavascriptSdk.Rule
 
 ## Properties
 

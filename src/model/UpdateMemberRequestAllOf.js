@@ -18,7 +18,7 @@ import Metadata from './Metadata';
 /**
  * The UpdateMemberRequestAllOf model module.
  * @module model/UpdateMemberRequestAllOf
- * @version 1.0.0
+ * @version 1.0.1
  */
 class UpdateMemberRequestAllOf {
     /**

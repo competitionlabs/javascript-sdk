@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.CreateAchievementRequest
+# @CompetitionlabsJavascriptSdk.CreateAchievementRequest
 
 ## Properties
 

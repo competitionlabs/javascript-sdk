@@ -17,7 +17,7 @@ import SourceLanguage from './SourceLanguage';
 /**
  * The TransformerAllOf model module.
  * @module model/TransformerAllOf
- * @version 1.0.0
+ * @version 1.0.1
  */
 class TransformerAllOf {
     /**

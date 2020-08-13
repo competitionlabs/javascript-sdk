@@ -20,9 +20,9 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.CompetitionLabsApplicationServices);
+    factory(root.expect, root.@CompetitionlabsJavascriptSdk);
   }
-}(this, function(expect, CompetitionLabsApplicationServices) {
+}(this, function(expect, @CompetitionlabsJavascriptSdk) {
   'use strict';
 
   var instance;
@@ -49,8 +49,8 @@
   describe('UnitOfMeasureType', function() {
     it('should create an instance of UnitOfMeasureType', function() {
       // uncomment below and update the code to test UnitOfMeasureType
-      //var instane = new CompetitionLabsApplicationServices.UnitOfMeasureType();
-      //expect(instance).to.be.a(CompetitionLabsApplicationServices.UnitOfMeasureType);
+      //var instane = new @CompetitionlabsJavascriptSdk.UnitOfMeasureType();
+      //expect(instance).to.be.a(@CompetitionlabsJavascriptSdk.UnitOfMeasureType);
     });
 
   });

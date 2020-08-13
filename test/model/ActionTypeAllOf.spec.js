@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.CompetitionLabsApplicationServices);
+    factory(root.expect, root.@CompetitionlabsJavascriptSdk);
   }
-}(this, function(expect, CompetitionLabsApplicationServices) {
+}(this, function(expect, @CompetitionlabsJavascriptSdk) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new CompetitionLabsApplicationServices.ActionTypeAllOf();
+    instance = new @CompetitionlabsJavascriptSdk.ActionTypeAllOf();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,43 +50,43 @@
   describe('ActionTypeAllOf', function() {
     it('should create an instance of ActionTypeAllOf', function() {
       // uncomment below and update the code to test ActionTypeAllOf
-      //var instane = new CompetitionLabsApplicationServices.ActionTypeAllOf();
-      //expect(instance).to.be.a(CompetitionLabsApplicationServices.ActionTypeAllOf);
+      //var instane = new @CompetitionlabsJavascriptSdk.ActionTypeAllOf();
+      //expect(instance).to.be.a(@CompetitionlabsJavascriptSdk.ActionTypeAllOf);
     });
 
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
-      //var instane = new CompetitionLabsApplicationServices.ActionTypeAllOf();
+      //var instane = new @CompetitionlabsJavascriptSdk.ActionTypeAllOf();
       //expect(instance).to.be();
     });
 
     it('should have the property key (base name: "key")', function() {
       // uncomment below and update the code to test the property key
-      //var instane = new CompetitionLabsApplicationServices.ActionTypeAllOf();
+      //var instane = new @CompetitionlabsJavascriptSdk.ActionTypeAllOf();
       //expect(instance).to.be();
     });
 
     it('should have the property description (base name: "description")', function() {
       // uncomment below and update the code to test the property description
-      //var instane = new CompetitionLabsApplicationServices.ActionTypeAllOf();
+      //var instane = new @CompetitionlabsJavascriptSdk.ActionTypeAllOf();
       //expect(instance).to.be();
     });
 
     it('should have the property system (base name: "system")', function() {
       // uncomment below and update the code to test the property system
-      //var instane = new CompetitionLabsApplicationServices.ActionTypeAllOf();
+      //var instane = new @CompetitionlabsJavascriptSdk.ActionTypeAllOf();
       //expect(instance).to.be();
     });
 
     it('should have the property unitOfMeasureType (base name: "unitOfMeasureType")', function() {
       // uncomment below and update the code to test the property unitOfMeasureType
-      //var instane = new CompetitionLabsApplicationServices.ActionTypeAllOf();
+      //var instane = new @CompetitionlabsJavascriptSdk.ActionTypeAllOf();
       //expect(instance).to.be();
     });
 
     it('should have the property metadata (base name: "metadata")', function() {
       // uncomment below and update the code to test the property metadata
-      //var instane = new CompetitionLabsApplicationServices.ActionTypeAllOf();
+      //var instane = new @CompetitionlabsJavascriptSdk.ActionTypeAllOf();
       //expect(instance).to.be();
     });
 

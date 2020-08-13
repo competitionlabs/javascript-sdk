@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.CompetitionLabsApplicationServices);
+    factory(root.expect, root.@CompetitionlabsJavascriptSdk);
   }
-}(this, function(expect, CompetitionLabsApplicationServices) {
+}(this, function(expect, @CompetitionlabsJavascriptSdk) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new CompetitionLabsApplicationServices.Metadata();
+    instance = new @CompetitionlabsJavascriptSdk.Metadata();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,19 +50,19 @@
   describe('Metadata', function() {
     it('should create an instance of Metadata', function() {
       // uncomment below and update the code to test Metadata
-      //var instane = new CompetitionLabsApplicationServices.Metadata();
-      //expect(instance).to.be.a(CompetitionLabsApplicationServices.Metadata);
+      //var instane = new @CompetitionlabsJavascriptSdk.Metadata();
+      //expect(instance).to.be.a(@CompetitionlabsJavascriptSdk.Metadata);
     });
 
     it('should have the property key (base name: "key")', function() {
       // uncomment below and update the code to test the property key
-      //var instane = new CompetitionLabsApplicationServices.Metadata();
+      //var instane = new @CompetitionlabsJavascriptSdk.Metadata();
       //expect(instance).to.be();
     });
 
     it('should have the property value (base name: "value")', function() {
       // uncomment below and update the code to test the property value
-      //var instane = new CompetitionLabsApplicationServices.Metadata();
+      //var instane = new @CompetitionlabsJavascriptSdk.Metadata();
       //expect(instance).to.be();
     });
 

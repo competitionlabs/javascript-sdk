@@ -17,7 +17,7 @@ import Macro from './Macro';
 /**
  * The FactDefault model module.
  * @module model/FactDefault
- * @version 1.0.0
+ * @version 1.0.1
  */
 class FactDefault {
     /**

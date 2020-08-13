@@ -23,7 +23,7 @@ import UpdateFileObjectRequest from '../model/UpdateFileObjectRequest';
 /**
 * Files service.
 * @module api/FilesApi
-* @version 1.0.0
+* @version 1.0.1
 */
 export default class FilesApi {
 

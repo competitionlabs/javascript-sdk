@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.RabbitMqConnection
+# @CompetitionlabsJavascriptSdk.RabbitMqConnection
 
 ## Properties
 

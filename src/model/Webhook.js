@@ -19,7 +19,7 @@ import WebhookAllOf from './WebhookAllOf';
 /**
  * The Webhook model module.
  * @module model/Webhook
- * @version 1.0.0
+ * @version 1.0.1
  */
 class Webhook {
     /**

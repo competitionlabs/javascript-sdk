@@ -17,7 +17,7 @@ import ErrorDetail from './ErrorDetail';
 /**
  * The Error model module.
  * @module model/Error
- * @version 1.0.0
+ * @version 1.0.1
  */
 class Error {
     /**

@@ -17,7 +17,7 @@ import SourceLanguage from './SourceLanguage';
 /**
  * The UpdateTransformerRequestAllOf model module.
  * @module model/UpdateTransformerRequestAllOf
- * @version 1.0.0
+ * @version 1.0.1
  */
 class UpdateTransformerRequestAllOf {
     /**

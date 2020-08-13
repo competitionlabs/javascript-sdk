@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.EntityType
+# @CompetitionlabsJavascriptSdk.EntityType
 
 ## Enum
 

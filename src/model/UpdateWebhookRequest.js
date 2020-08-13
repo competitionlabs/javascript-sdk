@@ -19,7 +19,7 @@ import UpdateWebhookRequestAllOf from './UpdateWebhookRequestAllOf';
 /**
  * The UpdateWebhookRequest model module.
  * @module model/UpdateWebhookRequest
- * @version 1.0.0
+ * @version 1.0.1
  */
 class UpdateWebhookRequest {
     /**

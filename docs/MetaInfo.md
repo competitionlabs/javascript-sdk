@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.MetaInfo
+# @CompetitionlabsJavascriptSdk.MetaInfo
 
 ## Properties
 

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ProductReducedAllOf model module.
  * @module model/ProductReducedAllOf
- * @version 1.0.0
+ * @version 1.0.1
  */
 class ProductReducedAllOf {
     /**

@@ -19,7 +19,7 @@ import TransformerAllOf from './TransformerAllOf';
 /**
  * The Transformer model module.
  * @module model/Transformer
- * @version 1.0.0
+ * @version 1.0.1
  */
 class Transformer {
     /**

@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.CompetitionLabsApplicationServices);
+    factory(root.expect, root.@CompetitionlabsJavascriptSdk);
   }
-}(this, function(expect, CompetitionLabsApplicationServices) {
+}(this, function(expect, @CompetitionlabsJavascriptSdk) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new CompetitionLabsApplicationServices.MetaExtendedAllOf();
+    instance = new @CompetitionlabsJavascriptSdk.MetaExtendedAllOf();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,19 +50,19 @@
   describe('MetaExtendedAllOf', function() {
     it('should create an instance of MetaExtendedAllOf', function() {
       // uncomment below and update the code to test MetaExtendedAllOf
-      //var instane = new CompetitionLabsApplicationServices.MetaExtendedAllOf();
-      //expect(instance).to.be.a(CompetitionLabsApplicationServices.MetaExtendedAllOf);
+      //var instane = new @CompetitionlabsJavascriptSdk.MetaExtendedAllOf();
+      //expect(instance).to.be.a(@CompetitionlabsJavascriptSdk.MetaExtendedAllOf);
     });
 
     it('should have the property skip (base name: "skip")', function() {
       // uncomment below and update the code to test the property skip
-      //var instane = new CompetitionLabsApplicationServices.MetaExtendedAllOf();
+      //var instane = new @CompetitionlabsJavascriptSdk.MetaExtendedAllOf();
       //expect(instance).to.be();
     });
 
     it('should have the property limit (base name: "limit")', function() {
       // uncomment below and update the code to test the property limit
-      //var instane = new CompetitionLabsApplicationServices.MetaExtendedAllOf();
+      //var instane = new @CompetitionlabsJavascriptSdk.MetaExtendedAllOf();
       //expect(instance).to.be();
     });
 

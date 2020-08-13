@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.CompetitionLeaderboardResponse
+# @CompetitionlabsJavascriptSdk.CompetitionLeaderboardResponse
 
 ## Properties
 

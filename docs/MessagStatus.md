@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.MessagStatus
+# @CompetitionlabsJavascriptSdk.MessagStatus
 
 ## Enum
 

@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.CompetitionLabsApplicationServices);
+    factory(root.expect, root.@CompetitionlabsJavascriptSdk);
   }
-}(this, function(expect, CompetitionLabsApplicationServices) {
+}(this, function(expect, @CompetitionlabsJavascriptSdk) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new CompetitionLabsApplicationServices.MetaBasic();
+    instance = new @CompetitionlabsJavascriptSdk.MetaBasic();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,8 +50,8 @@
   describe('MetaBasic', function() {
     it('should create an instance of MetaBasic', function() {
       // uncomment below and update the code to test MetaBasic
-      //var instane = new CompetitionLabsApplicationServices.MetaBasic();
-      //expect(instance).to.be.a(CompetitionLabsApplicationServices.MetaBasic);
+      //var instane = new @CompetitionlabsJavascriptSdk.MetaBasic();
+      //expect(instance).to.be.a(@CompetitionlabsJavascriptSdk.MetaBasic);
     });
 
   });
