@@ -102,3 +102,7 @@ web_modules/
 
 # custum rules
 _*
+*.iml
+.idea
+dist
+package-lock.json
