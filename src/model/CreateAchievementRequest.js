@@ -74,25 +74,25 @@ class CreateAchievementRequest {
             "requiredFields": {}
         };
 
-        obj["fields"]['name'] = { "type": 'String' };
-        obj["fields"]['description'] = { "type": 'String' };
-        obj["fields"]['isHidden'] = { "type": 'Boolean' };
-        obj["fields"]['icon'] = { "type": 'String' };
+        obj["fields"]['name'] = { "type": 'String', "system": false };
+        obj["fields"]['description'] = { "type": 'String', "system": false };
+        obj["fields"]['isHidden'] = { "type": 'Boolean', "system": false };
+        obj["fields"]['icon'] = { "type": 'String', "system": false };
         obj["fields"]['ruleSets'] = [new RuleSet().modelMap()];
         obj["fields"]['dependantOn'] = new DependantOn().modelMap();
         obj["fields"]['scheduling'] = new Scheduling().modelMap();
         obj["fields"]['achievementLiveStatus'] = new AchievementLiveStatus().modelMap();
-        obj["fields"]['category'] = [{ "type": 'String' }];
-        obj["fields"]['memberGroups'] = [{ "type": 'String' }];
+        obj["fields"]['category'] = [{ "type": 'String', "system": false }];
+        obj["fields"]['memberGroups'] = [{ "type": 'String', "system": false }];
         obj["fields"]['metadata'] = [new Metadata().modelMap()];
         obj["fields"]['translations'] = [new Translation().modelMap()];
         obj["fields"]['rewards'] = [new CreateRewardRequest().modelMap()];
-        obj["fields"]['constraints'] = [{ "type": 'String' }];
+        obj["fields"]['constraints'] = [{ "type": 'String', "system": false }];
 
         
-        obj["requiredFields"]['name'] = { "type": 'String' };
-        obj["requiredFields"]['isHidden'] = { "type": 'Boolean' };
-        obj["requiredFields"]['icon'] = { "type": 'String' };
+        obj["requiredFields"]['name'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['isHidden'] = { "type": 'Boolean', "system": false };
+        obj["requiredFields"]['icon'] = { "type": 'String', "system": false };
         obj["requiredFields"]['ruleSets'] = [new RuleSet().modelMap()];
         obj["requiredFields"]['scheduling'] = new Scheduling().modelMap();
         obj["requiredFields"]['achievementLiveStatus'] = new AchievementLiveStatus().modelMap();

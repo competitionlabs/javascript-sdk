@@ -51,12 +51,12 @@ class EventMetadata {
             "requiredFields": {}
         };
 
-        obj["fields"]['key'] = { "type": 'String' };
-        obj["fields"]['text'] = { "type": 'String' };
-        obj["fields"]['number'] = { "type": 'Number' };
+        obj["fields"]['key'] = { "type": 'String', "system": false };
+        obj["fields"]['text'] = { "type": 'String', "system": false };
+        obj["fields"]['number'] = { "type": 'Number', "system": false };
 
         
-        obj["requiredFields"]['key'] = { "type": 'String' };
+        obj["requiredFields"]['key'] = { "type": 'String', "system": false };
 
         return obj;
     }

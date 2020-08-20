@@ -65,23 +65,23 @@ class ProductAllOf {
             "requiredFields": {}
         };
 
-        obj["fields"]['name'] = { "type": 'String' };
-        obj["fields"]['productType'] = { "type": 'String' };
-        obj["fields"]['productTypeName'] = { "type": 'String' };
-        obj["fields"]['description'] = { "type": 'String' };
-        obj["fields"]['adjustmentFactor'] = { "type": 'Number' };
-        obj["fields"]['productRefId'] = { "type": 'String' };
+        obj["fields"]['name'] = { "type": 'String', "system": false };
+        obj["fields"]['productType'] = { "type": 'String', "system": false };
+        obj["fields"]['productTypeName'] = { "type": 'String', "system": false };
+        obj["fields"]['description'] = { "type": 'String', "system": false };
+        obj["fields"]['adjustmentFactor'] = { "type": 'Number', "system": false };
+        obj["fields"]['productRefId'] = { "type": 'String', "system": false };
         obj["fields"]['actionTypeAdjustmentFactors'] = [new ActionTypeAdjustmentFactor().modelMap()];
-        obj["fields"]['productGroups'] = [{ "type": 'String' }];
+        obj["fields"]['productGroups'] = [{ "type": 'String', "system": false }];
         obj["fields"]['metadata'] = [new Metadata().modelMap()];
         obj["fields"]['translations'] = [new Translation().modelMap()];
-        obj["fields"]['translatableFields'] = [{ "type": 'String' }];
+        obj["fields"]['translatableFields'] = [{ "type": 'String', "system": false }];
 
         
-        obj["requiredFields"]['name'] = { "type": 'String' };
-        obj["requiredFields"]['productType'] = { "type": 'String' };
-        obj["requiredFields"]['adjustmentFactor'] = { "type": 'Number' };
-        obj["requiredFields"]['productRefId'] = { "type": 'String' };
+        obj["requiredFields"]['name'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['productType'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['adjustmentFactor'] = { "type": 'Number', "system": false };
+        obj["requiredFields"]['productRefId'] = { "type": 'String', "system": false };
 
         return obj;
     }

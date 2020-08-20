@@ -53,8 +53,8 @@ class UpdateActionTypeRequestAllOf {
             "requiredFields": {}
         };
 
-        obj["fields"]['name'] = { "type": 'String' };
-        obj["fields"]['description'] = { "type": 'String' };
+        obj["fields"]['name'] = { "type": 'String', "system": false };
+        obj["fields"]['description'] = { "type": 'String', "system": false };
         obj["fields"]['unitOfMeasureType'] = new UnitOfMeasureType().modelMap();
         obj["fields"]['metadata'] = [new Metadata().modelMap()];
 

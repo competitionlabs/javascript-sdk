@@ -55,15 +55,15 @@ class WebhookAllOf {
             "requiredFields": {}
         };
 
-        obj["fields"]['postToUrl'] = { "type": 'String' };
-        obj["fields"]['triggers'] = [{ "type": 'String' }];
-        obj["fields"]['description'] = { "type": 'String' };
+        obj["fields"]['postToUrl'] = { "type": 'String', "system": false };
+        obj["fields"]['triggers'] = [{ "type": 'String', "system": false }];
+        obj["fields"]['description'] = { "type": 'String', "system": false };
         obj["fields"]['headers'] = [new Metadata().modelMap()];
-        obj["fields"]['transformerId'] = { "type": 'String' };
+        obj["fields"]['transformerId'] = { "type": 'String', "system": false };
 
         
-        obj["requiredFields"]['postToUrl'] = { "type": 'String' };
-        obj["requiredFields"]['triggers'] = [{ "type": 'String' }];
+        obj["requiredFields"]['postToUrl'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['triggers'] = [{ "type": 'String', "system": false }];
 
         return obj;
     }

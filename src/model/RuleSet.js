@@ -59,17 +59,17 @@ class RuleSet {
             "requiredFields": {}
         };
 
-        obj["fields"]['priority'] = { "type": 'Number' };
+        obj["fields"]['priority'] = { "type": 'Number', "system": false };
         obj["fields"]['scope'] = new RuleScope().modelMap();
-        obj["fields"]['action'] = { "type": 'String' };
+        obj["fields"]['action'] = { "type": 'String', "system": false };
         obj["fields"]['conditions'] = [new Condition().modelMap()];
-        obj["fields"]['onMatchThen'] = { "type": 'String' };
-        obj["fields"]['onMatchConstant'] = { "type": 'String' };
+        obj["fields"]['onMatchThen'] = { "type": 'String', "system": false };
+        obj["fields"]['onMatchConstant'] = { "type": 'String', "system": false };
 
         
-        obj["requiredFields"]['priority'] = { "type": 'Number' };
+        obj["requiredFields"]['priority'] = { "type": 'Number', "system": false };
         obj["requiredFields"]['scope'] = new RuleScope().modelMap();
-        obj["requiredFields"]['action'] = { "type": 'String' };
+        obj["requiredFields"]['action'] = { "type": 'String', "system": false };
         obj["requiredFields"]['conditions'] = [new Condition().modelMap()];
 
         return obj;

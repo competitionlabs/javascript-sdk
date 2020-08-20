@@ -70,23 +70,23 @@ class CreateContestRequest {
             "requiredFields": {}
         };
 
-        obj["fields"]['name'] = { "type": 'String' };
-        obj["fields"]['description'] = { "type": 'String' };
-        obj["fields"]['termsConditions'] = { "type": 'String' };
+        obj["fields"]['name'] = { "type": 'String', "system": false };
+        obj["fields"]['description'] = { "type": 'String', "system": false };
+        obj["fields"]['termsConditions'] = { "type": 'String', "system": false };
         obj["fields"]['roundType'] = new RoundType().modelMap();
-        obj["fields"]['maxNumberOfEntrants'] = { "type": 'Number' };
-        obj["fields"]['minNumberOfEntrants'] = { "type": 'Number' };
+        obj["fields"]['maxNumberOfEntrants'] = { "type": 'Number', "system": false };
+        obj["fields"]['minNumberOfEntrants'] = { "type": 'Number', "system": false };
         obj["fields"]['ruleSets'] = [new RuleSet().modelMap()];
-        obj["fields"]['scheduledStartDate'] = { "type": 'Date' };
-        obj["fields"]['scheduledEndDate'] = { "type": 'Date' };
+        obj["fields"]['scheduledStartDate'] = { "type": 'Date', "system": false };
+        obj["fields"]['scheduledEndDate'] = { "type": 'Date', "system": false };
         obj["fields"]['strategies'] = new Strategy().modelMap();
-        obj["fields"]['constraints'] = [{ "type": 'String' }];
+        obj["fields"]['constraints'] = [{ "type": 'String', "system": false }];
         obj["fields"]['metadata'] = [new Metadata().modelMap()];
         obj["fields"]['translations'] = [new Translation().modelMap()];
         obj["fields"]['rewards'] = [new CreateRewardRequest().modelMap()];
 
         
-        obj["requiredFields"]['name'] = { "type": 'String' };
+        obj["requiredFields"]['name'] = { "type": 'String', "system": false };
         obj["requiredFields"]['roundType'] = new RoundType().modelMap();
         obj["requiredFields"]['ruleSets'] = [new RuleSet().modelMap()];
 

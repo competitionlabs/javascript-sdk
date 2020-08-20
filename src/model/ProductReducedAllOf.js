@@ -51,12 +51,12 @@ class ProductReducedAllOf {
             "requiredFields": {}
         };
 
-        obj["fields"]['name'] = { "type": 'String' };
-        obj["fields"]['productRefId'] = { "type": 'String' };
+        obj["fields"]['name'] = { "type": 'String', "system": false };
+        obj["fields"]['productRefId'] = { "type": 'String', "system": false };
 
         
-        obj["requiredFields"]['name'] = { "type": 'String' };
-        obj["requiredFields"]['productRefId'] = { "type": 'String' };
+        obj["requiredFields"]['name'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['productRefId'] = { "type": 'String', "system": false };
 
         return obj;
     }

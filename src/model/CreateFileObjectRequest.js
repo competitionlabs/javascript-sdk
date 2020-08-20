@@ -58,18 +58,18 @@ class CreateFileObjectRequest {
             "requiredFields": {}
         };
 
-        obj["fields"]['tags'] = [{ "type": 'String' }];
-        obj["fields"]['repositoryId'] = { "type": 'String' };
-        obj["fields"]['fileName'] = { "type": 'String' };
-        obj["fields"]['mimeType'] = { "type": 'String' };
-        obj["fields"]['parentFolderPath'] = { "type": 'String' };
+        obj["fields"]['tags'] = [{ "type": 'String', "system": false }];
+        obj["fields"]['repositoryId'] = { "type": 'String', "system": false };
+        obj["fields"]['fileName'] = { "type": 'String', "system": false };
+        obj["fields"]['mimeType'] = { "type": 'String', "system": false };
+        obj["fields"]['parentFolderPath'] = { "type": 'String', "system": false };
         obj["fields"]['metadata'] = [new Metadata().modelMap()];
 
         
-        obj["requiredFields"]['repositoryId'] = { "type": 'String' };
-        obj["requiredFields"]['fileName'] = { "type": 'String' };
-        obj["requiredFields"]['mimeType'] = { "type": 'String' };
-        obj["requiredFields"]['parentFolderPath'] = { "type": 'String' };
+        obj["requiredFields"]['repositoryId'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['fileName'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['mimeType'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['parentFolderPath'] = { "type": 'String', "system": false };
 
         return obj;
     }

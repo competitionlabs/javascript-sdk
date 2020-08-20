@@ -67,22 +67,22 @@ class UpdateRewardRequest {
             "requiredFields": {}
         };
 
-        obj["fields"]['id'] = { "type": 'String' };
-        obj["fields"]['rewardRank'] = { "type": 'String' };
-        obj["fields"]['rewardName'] = { "type": 'String' };
-        obj["fields"]['value'] = { "type": 'Number' };
-        obj["fields"]['rewardTypeId'] = { "type": 'String' };
-        obj["fields"]['description'] = { "type": 'String' };
-        obj["fields"]['delay'] = { "type": 'Number' };
-        obj["fields"]['isMemberAcknowledgmentRequired'] = { "type": 'Boolean' };
+        obj["fields"]['id'] = { "type": 'String', "system": true };
+        obj["fields"]['rewardRank'] = { "type": 'String', "system": false };
+        obj["fields"]['rewardName'] = { "type": 'String', "system": false };
+        obj["fields"]['value'] = { "type": 'Number', "system": false };
+        obj["fields"]['rewardTypeId'] = { "type": 'String', "system": false };
+        obj["fields"]['description'] = { "type": 'String', "system": false };
+        obj["fields"]['delay'] = { "type": 'Number', "system": false };
+        obj["fields"]['isMemberAcknowledgmentRequired'] = { "type": 'Boolean', "system": false };
         obj["fields"]['metadata'] = [new Metadata().modelMap()];
-        obj["fields"]['pointInTime'] = { "type": 'Date' };
-        obj["fields"]['period'] = { "type": 'Number' };
+        obj["fields"]['pointInTime'] = { "type": 'Date', "system": false };
+        obj["fields"]['period'] = { "type": 'Number', "system": false };
         obj["fields"]['translations'] = [new Translation().modelMap()];
-        obj["fields"]['constraints'] = [{ "type": 'String' }];
+        obj["fields"]['constraints'] = [{ "type": 'String', "system": false }];
 
         
-        obj["requiredFields"]['id'] = { "type": 'String' };
+        obj["requiredFields"]['id'] = { "type": 'String', "system": true };
 
         return obj;
     }

@@ -53,14 +53,14 @@ class CollaboratorAllOf {
             "requiredFields": {}
         };
 
-        obj["fields"]['name'] = { "type": 'String' };
-        obj["fields"]['surname'] = { "type": 'String' };
-        obj["fields"]['email'] = { "type": 'String' };
-        obj["fields"]['role'] = { "type": 'String' };
+        obj["fields"]['name'] = { "type": 'String', "system": false };
+        obj["fields"]['surname'] = { "type": 'String', "system": false };
+        obj["fields"]['email'] = { "type": 'String', "system": false };
+        obj["fields"]['role'] = { "type": 'String', "system": false };
 
         
-        obj["requiredFields"]['email'] = { "type": 'String' };
-        obj["requiredFields"]['role'] = { "type": 'String' };
+        obj["requiredFields"]['email'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['role'] = { "type": 'String', "system": false };
 
         return obj;
     }

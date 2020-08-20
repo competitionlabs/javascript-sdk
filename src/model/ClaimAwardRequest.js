@@ -51,12 +51,12 @@ class ClaimAwardRequest {
             "requiredFields": {}
         };
 
-        obj["fields"]['id'] = { "type": 'String' };
-        obj["fields"]['claimed'] = { "type": 'Boolean' };
+        obj["fields"]['id'] = { "type": 'String', "system": true };
+        obj["fields"]['claimed'] = { "type": 'Boolean', "system": false };
 
         
-        obj["requiredFields"]['id'] = { "type": 'String' };
-        obj["requiredFields"]['claimed'] = { "type": 'Boolean' };
+        obj["requiredFields"]['id'] = { "type": 'String', "system": true };
+        obj["requiredFields"]['claimed'] = { "type": 'Boolean', "system": false };
 
         return obj;
     }

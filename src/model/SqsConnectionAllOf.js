@@ -57,18 +57,18 @@ class SqsConnectionAllOf {
             "requiredFields": {}
         };
 
-        obj["fields"]['name'] = { "type": 'String' };
-        obj["fields"]['uri'] = { "type": 'String' };
-        obj["fields"]['acessKey'] = { "type": 'String' };
-        obj["fields"]['lastKnownStatus'] = { "type": 'String' };
-        obj["fields"]['lastKnownStatusCode'] = { "type": 'Number' };
+        obj["fields"]['name'] = { "type": 'String', "system": false };
+        obj["fields"]['uri'] = { "type": 'String', "system": false };
+        obj["fields"]['acessKey'] = { "type": 'String', "system": false };
+        obj["fields"]['lastKnownStatus'] = { "type": 'String', "system": false };
+        obj["fields"]['lastKnownStatusCode'] = { "type": 'Number', "system": false };
 
         
-        obj["requiredFields"]['name'] = { "type": 'String' };
-        obj["requiredFields"]['uri'] = { "type": 'String' };
-        obj["requiredFields"]['acessKey'] = { "type": 'String' };
-        obj["requiredFields"]['lastKnownStatus'] = { "type": 'String' };
-        obj["requiredFields"]['lastKnownStatusCode'] = { "type": 'Number' };
+        obj["requiredFields"]['name'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['uri'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['acessKey'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['lastKnownStatus'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['lastKnownStatusCode'] = { "type": 'Number', "system": false };
 
         return obj;
     }

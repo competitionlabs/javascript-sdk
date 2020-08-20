@@ -54,13 +54,13 @@ class TransformerAllOf {
             "requiredFields": {}
         };
 
-        obj["fields"]['name'] = { "type": 'String' };
-        obj["fields"]['source'] = { "type": 'String' };
+        obj["fields"]['name'] = { "type": 'String', "system": false };
+        obj["fields"]['source'] = { "type": 'String', "system": false };
         obj["fields"]['sourceLanguage'] = new SourceLanguage().modelMap();
 
         
-        obj["requiredFields"]['name'] = { "type": 'String' };
-        obj["requiredFields"]['source'] = { "type": 'String' };
+        obj["requiredFields"]['name'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['source'] = { "type": 'String', "system": false };
         obj["requiredFields"]['sourceLanguage'] = new SourceLanguage().modelMap();
 
         return obj;

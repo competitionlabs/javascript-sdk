@@ -82,35 +82,35 @@ class CompetitionReduced {
             "requiredFields": {}
         };
 
-        obj["fields"]['id'] = { "type": 'String' };
-        obj["fields"]['spaceName'] = { "type": 'String' };
-        obj["fields"]['created'] = { "type": 'Date' };
+        obj["fields"]['id'] = { "type": 'String', "system": true };
+        obj["fields"]['spaceName'] = { "type": 'String', "system": true };
+        obj["fields"]['created'] = { "type": 'Date', "system": true };
         obj["fields"]['competitionType'] = new CompetitionType().modelMap();
-        obj["fields"]['numberOfRounds'] = { "type": 'Number' };
-        obj["fields"]['name'] = { "type": 'String' };
+        obj["fields"]['numberOfRounds'] = { "type": 'Number', "system": false };
+        obj["fields"]['name'] = { "type": 'String', "system": false };
         obj["fields"]['includeEntrantsWhere'] = new ComplexFilter().modelMap();
-        obj["fields"]['optinRequiredForEntrants'] = { "type": 'Boolean' };
+        obj["fields"]['optinRequiredForEntrants'] = { "type": 'Boolean', "system": false };
         obj["fields"]['status'] = new CompetitionStatus().modelMap();
-        obj["fields"]['statusCode'] = { "type": 'Number' };
+        obj["fields"]['statusCode'] = { "type": 'Number', "system": false };
         obj["fields"]['products'] = [new ProductReduced().modelMap()];
-        obj["fields"]['scheduledStartDate'] = { "type": 'Date' };
-        obj["fields"]['scheduledEndDate'] = { "type": 'Date' };
-        obj["fields"]['actualStartDate'] = { "type": 'Date' };
-        obj["fields"]['actualEndDate'] = { "type": 'Date' };
+        obj["fields"]['scheduledStartDate'] = { "type": 'Date', "system": false };
+        obj["fields"]['scheduledEndDate'] = { "type": 'Date', "system": false };
+        obj["fields"]['actualStartDate'] = { "type": 'Date', "system": false };
+        obj["fields"]['actualEndDate'] = { "type": 'Date', "system": false };
 
         
-        obj["requiredFields"]['id'] = { "type": 'String' };
-        obj["requiredFields"]['spaceName'] = { "type": 'String' };
-        obj["requiredFields"]['created'] = { "type": 'Date' };
+        obj["requiredFields"]['id'] = { "type": 'String', "system": true };
+        obj["requiredFields"]['spaceName'] = { "type": 'String', "system": true };
+        obj["requiredFields"]['created'] = { "type": 'Date', "system": true };
         obj["requiredFields"]['competitionType'] = new CompetitionType().modelMap();
-        obj["requiredFields"]['numberOfRounds'] = { "type": 'Number' };
-        obj["requiredFields"]['name'] = { "type": 'String' };
-        obj["requiredFields"]['optinRequiredForEntrants'] = { "type": 'Boolean' };
+        obj["requiredFields"]['numberOfRounds'] = { "type": 'Number', "system": false };
+        obj["requiredFields"]['name'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['optinRequiredForEntrants'] = { "type": 'Boolean', "system": false };
         obj["requiredFields"]['status'] = new CompetitionStatus().modelMap();
-        obj["requiredFields"]['statusCode'] = { "type": 'Number' };
+        obj["requiredFields"]['statusCode'] = { "type": 'Number', "system": false };
         obj["requiredFields"]['products'] = [new ProductReduced().modelMap()];
-        obj["requiredFields"]['scheduledStartDate'] = { "type": 'Date' };
-        obj["requiredFields"]['scheduledEndDate'] = { "type": 'Date' };
+        obj["requiredFields"]['scheduledStartDate'] = { "type": 'Date', "system": false };
+        obj["requiredFields"]['scheduledEndDate'] = { "type": 'Date', "system": false };
 
         return obj;
     }

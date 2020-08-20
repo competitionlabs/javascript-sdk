@@ -68,21 +68,21 @@ class CustomField {
             "requiredFields": {}
         };
 
-        obj["fields"]['id'] = { "type": 'String' };
-        obj["fields"]['spaceName'] = { "type": 'String' };
-        obj["fields"]['created'] = { "type": 'Date' };
-        obj["fields"]['name'] = { "type": 'String' };
-        obj["fields"]['term'] = { "type": 'String' };
-        obj["fields"]['description'] = { "type": 'String' };
+        obj["fields"]['id'] = { "type": 'String', "system": true };
+        obj["fields"]['spaceName'] = { "type": 'String', "system": true };
+        obj["fields"]['created'] = { "type": 'Date', "system": true };
+        obj["fields"]['name'] = { "type": 'String', "system": false };
+        obj["fields"]['term'] = { "type": 'String', "system": false };
+        obj["fields"]['description'] = { "type": 'String', "system": false };
         obj["fields"]['fieldType'] = new FieldType().modelMap();
         obj["fields"]['appliesTo'] = new AppliesTo().modelMap();
 
         
-        obj["requiredFields"]['id'] = { "type": 'String' };
-        obj["requiredFields"]['spaceName'] = { "type": 'String' };
-        obj["requiredFields"]['created'] = { "type": 'Date' };
-        obj["requiredFields"]['name'] = { "type": 'String' };
-        obj["requiredFields"]['term'] = { "type": 'String' };
+        obj["requiredFields"]['id'] = { "type": 'String', "system": true };
+        obj["requiredFields"]['spaceName'] = { "type": 'String', "system": true };
+        obj["requiredFields"]['created'] = { "type": 'Date', "system": true };
+        obj["requiredFields"]['name'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['term'] = { "type": 'String', "system": false };
         obj["requiredFields"]['fieldType'] = new FieldType().modelMap();
         obj["requiredFields"]['appliesTo'] = new AppliesTo().modelMap();
 

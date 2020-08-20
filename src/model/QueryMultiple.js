@@ -51,12 +51,12 @@ class QueryMultiple {
             "requiredFields": {}
         };
 
-        obj["fields"]['queryField'] = { "type": 'String' };
-        obj["fields"]['queryValues'] = [{ "type": 'String' }];
+        obj["fields"]['queryField'] = { "type": 'String', "system": false };
+        obj["fields"]['queryValues'] = [{ "type": 'String', "system": false }];
 
         
-        obj["requiredFields"]['queryField'] = { "type": 'String' };
-        obj["requiredFields"]['queryValues'] = [{ "type": 'String' }];
+        obj["requiredFields"]['queryField'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['queryValues'] = [{ "type": 'String', "system": false }];
 
         return obj;
     }

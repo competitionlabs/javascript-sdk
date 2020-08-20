@@ -55,16 +55,16 @@ class ScoringStrategy {
             "requiredFields": {}
         };
 
-        obj["fields"]['limitUpdatesTo'] = { "type": 'Number' };
-        obj["fields"]['sumBestXOf'] = { "type": 'Number' };
-        obj["fields"]['lastUpdateTimeStamp'] = { "type": 'Number' };
-        obj["fields"]['recordTimeWhenSumReaches'] = { "type": 'Number' };
+        obj["fields"]['limitUpdatesTo'] = { "type": 'Number', "system": false };
+        obj["fields"]['sumBestXOf'] = { "type": 'Number', "system": false };
+        obj["fields"]['lastUpdateTimeStamp'] = { "type": 'Number', "system": false };
+        obj["fields"]['recordTimeWhenSumReaches'] = { "type": 'Number', "system": false };
 
         
-        obj["requiredFields"]['limitUpdatesTo'] = { "type": 'Number' };
-        obj["requiredFields"]['sumBestXOf'] = { "type": 'Number' };
-        obj["requiredFields"]['lastUpdateTimeStamp'] = { "type": 'Number' };
-        obj["requiredFields"]['recordTimeWhenSumReaches'] = { "type": 'Number' };
+        obj["requiredFields"]['limitUpdatesTo'] = { "type": 'Number', "system": false };
+        obj["requiredFields"]['sumBestXOf'] = { "type": 'Number', "system": false };
+        obj["requiredFields"]['lastUpdateTimeStamp'] = { "type": 'Number', "system": false };
+        obj["requiredFields"]['recordTimeWhenSumReaches'] = { "type": 'Number', "system": false };
 
         return obj;
     }

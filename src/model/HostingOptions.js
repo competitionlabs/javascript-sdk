@@ -50,8 +50,8 @@ class HostingOptions {
             "requiredFields": {}
         };
 
-        obj["fields"]['indexFileName'] = { "type": 'String' };
-        obj["fields"]['errorFileName'] = { "type": 'String' };
+        obj["fields"]['indexFileName'] = { "type": 'String', "system": false };
+        obj["fields"]['errorFileName'] = { "type": 'String', "system": false };
 
         
 

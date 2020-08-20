@@ -52,11 +52,11 @@ class UpdateContestStateRequest {
             "requiredFields": {}
         };
 
-        obj["fields"]['contestId'] = { "type": 'String' };
+        obj["fields"]['contestId'] = { "type": 'String', "system": false };
         obj["fields"]['status'] = new ContestStateOperations().modelMap();
 
         
-        obj["requiredFields"]['contestId'] = { "type": 'String' };
+        obj["requiredFields"]['contestId'] = { "type": 'String', "system": false };
         obj["requiredFields"]['status'] = new ContestStateOperations().modelMap();
 
         return obj;

@@ -60,17 +60,17 @@ class UpdateSqsConnectionRequest {
             "requiredFields": {}
         };
 
-        obj["fields"]['id'] = { "type": 'String' };
-        obj["fields"]['objectType'] = { "type": 'String' };
-        obj["fields"]['name'] = { "type": 'String' };
-        obj["fields"]['uri'] = { "type": 'String' };
-        obj["fields"]['acessKey'] = { "type": 'String' };
-        obj["fields"]['secretKey'] = { "type": 'String' };
-        obj["fields"]['transformerId'] = { "type": 'String' };
+        obj["fields"]['id'] = { "type": 'String', "system": true };
+        obj["fields"]['objectType'] = { "type": 'String', "system": false };
+        obj["fields"]['name'] = { "type": 'String', "system": false };
+        obj["fields"]['uri'] = { "type": 'String', "system": false };
+        obj["fields"]['acessKey'] = { "type": 'String', "system": false };
+        obj["fields"]['secretKey'] = { "type": 'String', "system": false };
+        obj["fields"]['transformerId'] = { "type": 'String', "system": false };
 
         
-        obj["requiredFields"]['id'] = { "type": 'String' };
-        obj["requiredFields"]['objectType'] = { "type": 'String' };
+        obj["requiredFields"]['id'] = { "type": 'String', "system": true };
+        obj["requiredFields"]['objectType'] = { "type": 'String', "system": false };
 
         return obj;
     }

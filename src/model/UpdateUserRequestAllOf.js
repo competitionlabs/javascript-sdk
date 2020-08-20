@@ -52,9 +52,9 @@ class UpdateUserRequestAllOf {
             "requiredFields": {}
         };
 
-        obj["fields"]['firstName'] = { "type": 'String' };
-        obj["fields"]['lastName'] = { "type": 'String' };
-        obj["fields"]['email'] = { "type": 'String' };
+        obj["fields"]['firstName'] = { "type": 'String', "system": false };
+        obj["fields"]['lastName'] = { "type": 'String', "system": false };
+        obj["fields"]['email'] = { "type": 'String', "system": false };
         obj["fields"]['contact'] = new Contact().modelMap();
 
         

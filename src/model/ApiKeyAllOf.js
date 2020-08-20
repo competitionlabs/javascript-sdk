@@ -55,15 +55,15 @@ class ApiKeyAllOf {
             "requiredFields": {}
         };
 
-        obj["fields"]['active'] = { "type": 'Boolean' };
-        obj["fields"]['description'] = { "type": 'String' };
-        obj["fields"]['whiteListIPs'] = [{ "type": 'String' }];
-        obj["fields"]['key'] = { "type": 'String' };
+        obj["fields"]['active'] = { "type": 'Boolean', "system": false };
+        obj["fields"]['description'] = { "type": 'String', "system": false };
+        obj["fields"]['whiteListIPs'] = [{ "type": 'String', "system": false }];
+        obj["fields"]['key'] = { "type": 'String', "system": false };
         obj["fields"]['role'] = new Role().modelMap();
-        obj["fields"]['default'] = { "type": 'Boolean' };
+        obj["fields"]['default'] = { "type": 'Boolean', "system": false };
 
         
-        obj["requiredFields"]['active'] = { "type": 'Boolean' };
+        obj["requiredFields"]['active'] = { "type": 'Boolean', "system": false };
 
         return obj;
     }

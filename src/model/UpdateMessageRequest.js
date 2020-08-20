@@ -63,17 +63,17 @@ class UpdateMessageRequest {
             "requiredFields": {}
         };
 
-        obj["fields"]['id'] = { "type": 'String' };
-        obj["fields"]['memberGroup'] = [{ "type": 'String' }];
-        obj["fields"]['members'] = [{ "type": 'String' }];
+        obj["fields"]['id'] = { "type": 'String', "system": true };
+        obj["fields"]['memberGroup'] = [{ "type": 'String', "system": false }];
+        obj["fields"]['members'] = [{ "type": 'String', "system": false }];
         obj["fields"]['messageType'] = new MessageType().modelMap();
-        obj["fields"]['subject'] = { "type": 'String' };
-        obj["fields"]['body'] = { "type": 'String' };
+        obj["fields"]['subject'] = { "type": 'String', "system": false };
+        obj["fields"]['body'] = { "type": 'String', "system": false };
         obj["fields"]['scheduling'] = new Scheduling().modelMap();
         obj["fields"]['metadata'] = [new Metadata().modelMap()];
 
         
-        obj["requiredFields"]['id'] = { "type": 'String' };
+        obj["requiredFields"]['id'] = { "type": 'String', "system": true };
 
         return obj;
     }

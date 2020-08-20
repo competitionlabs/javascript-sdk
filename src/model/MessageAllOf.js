@@ -67,24 +67,24 @@ class MessageAllOf {
             "requiredFields": {}
         };
 
-        obj["fields"]['memberGroup'] = [{ "type": 'String' }];
-        obj["fields"]['members'] = [{ "type": 'String' }];
+        obj["fields"]['memberGroup'] = [{ "type": 'String', "system": false }];
+        obj["fields"]['members'] = [{ "type": 'String', "system": false }];
         obj["fields"]['messageType'] = new MessageType().modelMap();
-        obj["fields"]['subject'] = { "type": 'String' };
-        obj["fields"]['body'] = { "type": 'String' };
+        obj["fields"]['subject'] = { "type": 'String', "system": false };
+        obj["fields"]['body'] = { "type": 'String', "system": false };
         obj["fields"]['status'] = new MessagStatus().modelMap();
         obj["fields"]['scheduling'] = new Scheduling().modelMap();
-        obj["fields"]['deprecated'] = { "type": 'Boolean' };
+        obj["fields"]['deprecated'] = { "type": 'Boolean', "system": false };
         obj["fields"]['metadata'] = [new Metadata().modelMap()];
 
         
-        obj["requiredFields"]['members'] = [{ "type": 'String' }];
+        obj["requiredFields"]['members'] = [{ "type": 'String', "system": false }];
         obj["requiredFields"]['messageType'] = new MessageType().modelMap();
-        obj["requiredFields"]['subject'] = { "type": 'String' };
-        obj["requiredFields"]['body'] = { "type": 'String' };
+        obj["requiredFields"]['subject'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['body'] = { "type": 'String', "system": false };
         obj["requiredFields"]['status'] = new MessagStatus().modelMap();
         obj["requiredFields"]['scheduling'] = new Scheduling().modelMap();
-        obj["requiredFields"]['deprecated'] = { "type": 'Boolean' };
+        obj["requiredFields"]['deprecated'] = { "type": 'Boolean', "system": false };
 
         return obj;
     }

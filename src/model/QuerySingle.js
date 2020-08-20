@@ -51,12 +51,12 @@ class QuerySingle {
             "requiredFields": {}
         };
 
-        obj["fields"]['queryField'] = { "type": 'String' };
-        obj["fields"]['queryValue'] = { "type": 'String' };
+        obj["fields"]['queryField'] = { "type": 'String', "system": false };
+        obj["fields"]['queryValue'] = { "type": 'String', "system": false };
 
         
-        obj["requiredFields"]['queryField'] = { "type": 'String' };
-        obj["requiredFields"]['queryValue'] = { "type": 'String' };
+        obj["requiredFields"]['queryField'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['queryValue'] = { "type": 'String', "system": false };
 
         return obj;
     }

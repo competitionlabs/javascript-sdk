@@ -53,8 +53,8 @@ class UpdateFileObjectFormRequestAllOf {
             "requiredFields": {}
         };
 
-        obj["fields"]['tags'] = [{ "type": 'String' }];
-        obj["fields"]['parentFolderPath'] = { "type": 'String' };
+        obj["fields"]['tags'] = [{ "type": 'String', "system": false }];
+        obj["fields"]['parentFolderPath'] = { "type": 'String', "system": false };
         obj["fields"]['metadata'] = [new Metadata().modelMap()];
         obj["fields"]['file'] = [new File().modelMap()];
 

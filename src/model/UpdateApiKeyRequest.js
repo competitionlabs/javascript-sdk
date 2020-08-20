@@ -59,15 +59,15 @@ class UpdateApiKeyRequest {
             "requiredFields": {}
         };
 
-        obj["fields"]['id'] = { "type": 'String' };
-        obj["fields"]['active'] = { "type": 'Boolean' };
-        obj["fields"]['description'] = { "type": 'String' };
-        obj["fields"]['whiteListIPs'] = [{ "type": 'String' }];
+        obj["fields"]['id'] = { "type": 'String', "system": true };
+        obj["fields"]['active'] = { "type": 'Boolean', "system": false };
+        obj["fields"]['description'] = { "type": 'String', "system": false };
+        obj["fields"]['whiteListIPs'] = [{ "type": 'String', "system": false }];
         obj["fields"]['role'] = new Role().modelMap();
-        obj["fields"]['default'] = { "type": 'Boolean' };
+        obj["fields"]['default'] = { "type": 'Boolean', "system": false };
 
         
-        obj["requiredFields"]['id'] = { "type": 'String' };
+        obj["requiredFields"]['id'] = { "type": 'String', "system": true };
 
         return obj;
     }

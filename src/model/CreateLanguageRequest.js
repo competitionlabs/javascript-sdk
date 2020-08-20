@@ -50,11 +50,11 @@ class CreateLanguageRequest {
             "requiredFields": {}
         };
 
-        obj["fields"]['languageKey'] = { "type": 'String' };
-        obj["fields"]['references'] = [{ "type": 'String' }];
+        obj["fields"]['languageKey'] = { "type": 'String', "system": false };
+        obj["fields"]['references'] = [{ "type": 'String', "system": false }];
 
         
-        obj["requiredFields"]['languageKey'] = { "type": 'String' };
+        obj["requiredFields"]['languageKey'] = { "type": 'String', "system": false };
 
         return obj;
     }

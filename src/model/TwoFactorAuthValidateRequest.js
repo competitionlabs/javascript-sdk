@@ -51,12 +51,12 @@ class TwoFactorAuthValidateRequest {
             "requiredFields": {}
         };
 
-        obj["fields"]['secretKey'] = { "type": 'String' };
-        obj["fields"]['twoFactorAccessCode'] = { "type": 'String' };
+        obj["fields"]['secretKey'] = { "type": 'String', "system": false };
+        obj["fields"]['twoFactorAccessCode'] = { "type": 'String', "system": false };
 
         
-        obj["requiredFields"]['secretKey'] = { "type": 'String' };
-        obj["requiredFields"]['twoFactorAccessCode'] = { "type": 'String' };
+        obj["requiredFields"]['secretKey'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['twoFactorAccessCode'] = { "type": 'String', "system": false };
 
         return obj;
     }

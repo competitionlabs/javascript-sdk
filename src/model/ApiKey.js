@@ -65,21 +65,21 @@ class ApiKey {
             "requiredFields": {}
         };
 
-        obj["fields"]['id'] = { "type": 'String' };
-        obj["fields"]['spaceName'] = { "type": 'String' };
-        obj["fields"]['created'] = { "type": 'Date' };
-        obj["fields"]['active'] = { "type": 'Boolean' };
-        obj["fields"]['description'] = { "type": 'String' };
-        obj["fields"]['whiteListIPs'] = [{ "type": 'String' }];
-        obj["fields"]['key'] = { "type": 'String' };
+        obj["fields"]['id'] = { "type": 'String', "system": true };
+        obj["fields"]['spaceName'] = { "type": 'String', "system": true };
+        obj["fields"]['created'] = { "type": 'Date', "system": true };
+        obj["fields"]['active'] = { "type": 'Boolean', "system": false };
+        obj["fields"]['description'] = { "type": 'String', "system": false };
+        obj["fields"]['whiteListIPs'] = [{ "type": 'String', "system": false }];
+        obj["fields"]['key'] = { "type": 'String', "system": false };
         obj["fields"]['role'] = new Role().modelMap();
-        obj["fields"]['default'] = { "type": 'Boolean' };
+        obj["fields"]['default'] = { "type": 'Boolean', "system": false };
 
         
-        obj["requiredFields"]['id'] = { "type": 'String' };
-        obj["requiredFields"]['spaceName'] = { "type": 'String' };
-        obj["requiredFields"]['created'] = { "type": 'Date' };
-        obj["requiredFields"]['active'] = { "type": 'Boolean' };
+        obj["requiredFields"]['id'] = { "type": 'String', "system": true };
+        obj["requiredFields"]['spaceName'] = { "type": 'String', "system": true };
+        obj["requiredFields"]['created'] = { "type": 'Date', "system": true };
+        obj["requiredFields"]['active'] = { "type": 'Boolean', "system": false };
 
         return obj;
     }

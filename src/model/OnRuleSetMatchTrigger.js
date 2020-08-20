@@ -56,17 +56,17 @@ class OnRuleSetMatchTrigger {
             "requiredFields": {}
         };
 
-        obj["fields"]['constraints'] = [{ "type": 'String' }];
-        obj["fields"]['key'] = { "type": 'String' };
-        obj["fields"]['name'] = { "type": 'String' };
-        obj["fields"]['description'] = { "type": 'String' };
-        obj["fields"]['inputValueType'] = { "type": 'String' };
+        obj["fields"]['constraints'] = [{ "type": 'String', "system": false }];
+        obj["fields"]['key'] = { "type": 'String', "system": false };
+        obj["fields"]['name'] = { "type": 'String', "system": false };
+        obj["fields"]['description'] = { "type": 'String', "system": false };
+        obj["fields"]['inputValueType'] = { "type": 'String', "system": false };
 
         
-        obj["requiredFields"]['constraints'] = [{ "type": 'String' }];
-        obj["requiredFields"]['key'] = { "type": 'String' };
-        obj["requiredFields"]['name'] = { "type": 'String' };
-        obj["requiredFields"]['inputValueType'] = { "type": 'String' };
+        obj["requiredFields"]['constraints'] = [{ "type": 'String', "system": false }];
+        obj["requiredFields"]['key'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['name'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['inputValueType'] = { "type": 'String', "system": false };
 
         return obj;
     }

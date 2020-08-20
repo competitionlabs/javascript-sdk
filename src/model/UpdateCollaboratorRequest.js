@@ -56,11 +56,11 @@ class UpdateCollaboratorRequest {
             "requiredFields": {}
         };
 
-        obj["fields"]['id'] = { "type": 'String' };
+        obj["fields"]['id'] = { "type": 'String', "system": true };
         obj["fields"]['role'] = new Role().modelMap();
 
         
-        obj["requiredFields"]['id'] = { "type": 'String' };
+        obj["requiredFields"]['id'] = { "type": 'String', "system": true };
         obj["requiredFields"]['role'] = new Role().modelMap();
 
         return obj;

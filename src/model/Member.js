@@ -67,21 +67,21 @@ class Member {
             "requiredFields": {}
         };
 
-        obj["fields"]['id'] = { "type": 'String' };
-        obj["fields"]['spaceName'] = { "type": 'String' };
-        obj["fields"]['created'] = { "type": 'Date' };
-        obj["fields"]['name'] = { "type": 'String' };
-        obj["fields"]['memberRefId'] = { "type": 'String' };
+        obj["fields"]['id'] = { "type": 'String', "system": true };
+        obj["fields"]['spaceName'] = { "type": 'String', "system": true };
+        obj["fields"]['created'] = { "type": 'Date', "system": true };
+        obj["fields"]['name'] = { "type": 'String', "system": false };
+        obj["fields"]['memberRefId'] = { "type": 'String', "system": false };
         obj["fields"]['memberType'] = new MemberType().modelMap();
-        obj["fields"]['teamMembers'] = [{ "type": 'String' }];
-        obj["fields"]['groups'] = [{ "type": 'String' }];
+        obj["fields"]['teamMembers'] = [{ "type": 'String', "system": false }];
+        obj["fields"]['groups'] = [{ "type": 'String', "system": false }];
         obj["fields"]['metadata'] = [new Metadata().modelMap()];
 
         
-        obj["requiredFields"]['id'] = { "type": 'String' };
-        obj["requiredFields"]['spaceName'] = { "type": 'String' };
-        obj["requiredFields"]['created'] = { "type": 'Date' };
-        obj["requiredFields"]['memberRefId'] = { "type": 'String' };
+        obj["requiredFields"]['id'] = { "type": 'String', "system": true };
+        obj["requiredFields"]['spaceName'] = { "type": 'String', "system": true };
+        obj["requiredFields"]['created'] = { "type": 'Date', "system": true };
+        obj["requiredFields"]['memberRefId'] = { "type": 'String', "system": false };
         obj["requiredFields"]['memberType'] = new MemberType().modelMap();
 
         return obj;

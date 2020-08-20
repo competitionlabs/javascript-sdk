@@ -71,24 +71,24 @@ class SqsConnection {
             "requiredFields": {}
         };
 
-        obj["fields"]['id'] = { "type": 'String' };
-        obj["fields"]['spaceName'] = { "type": 'String' };
-        obj["fields"]['created'] = { "type": 'Date' };
-        obj["fields"]['name'] = { "type": 'String' };
-        obj["fields"]['uri'] = { "type": 'String' };
-        obj["fields"]['acessKey'] = { "type": 'String' };
-        obj["fields"]['lastKnownStatus'] = { "type": 'String' };
-        obj["fields"]['lastKnownStatusCode'] = { "type": 'Number' };
+        obj["fields"]['id'] = { "type": 'String', "system": true };
+        obj["fields"]['spaceName'] = { "type": 'String', "system": true };
+        obj["fields"]['created'] = { "type": 'Date', "system": true };
+        obj["fields"]['name'] = { "type": 'String', "system": false };
+        obj["fields"]['uri'] = { "type": 'String', "system": false };
+        obj["fields"]['acessKey'] = { "type": 'String', "system": false };
+        obj["fields"]['lastKnownStatus'] = { "type": 'String', "system": false };
+        obj["fields"]['lastKnownStatusCode'] = { "type": 'Number', "system": false };
 
         
-        obj["requiredFields"]['id'] = { "type": 'String' };
-        obj["requiredFields"]['spaceName'] = { "type": 'String' };
-        obj["requiredFields"]['created'] = { "type": 'Date' };
-        obj["requiredFields"]['name'] = { "type": 'String' };
-        obj["requiredFields"]['uri'] = { "type": 'String' };
-        obj["requiredFields"]['acessKey'] = { "type": 'String' };
-        obj["requiredFields"]['lastKnownStatus'] = { "type": 'String' };
-        obj["requiredFields"]['lastKnownStatusCode'] = { "type": 'Number' };
+        obj["requiredFields"]['id'] = { "type": 'String', "system": true };
+        obj["requiredFields"]['spaceName'] = { "type": 'String', "system": true };
+        obj["requiredFields"]['created'] = { "type": 'Date', "system": true };
+        obj["requiredFields"]['name'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['uri'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['acessKey'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['lastKnownStatus'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['lastKnownStatusCode'] = { "type": 'Number', "system": false };
 
         return obj;
     }

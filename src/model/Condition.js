@@ -56,12 +56,12 @@ class Condition {
         };
 
         obj["fields"]['matchCondition'] = new MatchCondition().modelMap();
-        obj["fields"]['mustEvaluateTo'] = { "type": 'Boolean' };
+        obj["fields"]['mustEvaluateTo'] = { "type": 'Boolean', "system": false };
         obj["fields"]['rules'] = [new Rule().modelMap()];
 
         
         obj["requiredFields"]['matchCondition'] = new MatchCondition().modelMap();
-        obj["requiredFields"]['mustEvaluateTo'] = { "type": 'Boolean' };
+        obj["requiredFields"]['mustEvaluateTo'] = { "type": 'Boolean', "system": false };
         obj["requiredFields"]['rules'] = [new Rule().modelMap()];
 
         return obj;

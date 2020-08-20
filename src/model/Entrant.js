@@ -60,15 +60,15 @@ class Entrant {
         };
 
         obj["fields"]['entrantAction'] = new EntrantAction().modelMap();
-        obj["fields"]['memberId'] = { "type": 'String' };
-        obj["fields"]['memberRefId'] = { "type": 'String' };
+        obj["fields"]['memberId'] = { "type": 'String', "system": false };
+        obj["fields"]['memberRefId'] = { "type": 'String', "system": false };
         obj["fields"]['entrantStatus'] = new EntrantStatus().modelMap();
-        obj["fields"]['entityId'] = { "type": 'String' };
+        obj["fields"]['entityId'] = { "type": 'String', "system": false };
         obj["fields"]['entityType'] = new EntityType().modelMap();
 
         
-        obj["requiredFields"]['memberId'] = { "type": 'String' };
-        obj["requiredFields"]['memberRefId'] = { "type": 'String' };
+        obj["requiredFields"]['memberId'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['memberRefId'] = { "type": 'String', "system": false };
         obj["requiredFields"]['entrantStatus'] = new EntrantStatus().modelMap();
 
         return obj;

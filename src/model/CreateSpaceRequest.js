@@ -52,13 +52,13 @@ class CreateSpaceRequest {
             "requiredFields": {}
         };
 
-        obj["fields"]['name'] = { "type": 'String' };
-        obj["fields"]['accountType'] = { "type": 'String' };
-        obj["fields"]['masterSpace'] = { "type": 'String' };
+        obj["fields"]['name'] = { "type": 'String', "system": false };
+        obj["fields"]['accountType'] = { "type": 'String', "system": false };
+        obj["fields"]['masterSpace'] = { "type": 'String', "system": false };
 
         
-        obj["requiredFields"]['name'] = { "type": 'String' };
-        obj["requiredFields"]['accountType'] = { "type": 'String' };
+        obj["requiredFields"]['name'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['accountType'] = { "type": 'String', "system": false };
 
         return obj;
     }

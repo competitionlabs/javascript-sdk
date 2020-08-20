@@ -62,18 +62,18 @@ class RuleDescriptorSubFact {
             "requiredFields": {}
         };
 
-        obj["fields"]['operators'] = [{ "type": 'String' }];
-        obj["fields"]['constantType'] = { "type": 'String' };
-        obj["fields"]['constantExample'] = { "type": 'String' };
-        obj["fields"]['defaultVale'] = { "type": 'String' };
+        obj["fields"]['operators'] = [{ "type": 'String', "system": false }];
+        obj["fields"]['constantType'] = { "type": 'String', "system": false };
+        obj["fields"]['constantExample'] = { "type": 'String', "system": false };
+        obj["fields"]['defaultVale'] = { "type": 'String', "system": false };
         obj["fields"]['macros'] = [new Macro().modelMap()];
-        obj["fields"]['subFact'] = { "type": 'String' };
+        obj["fields"]['subFact'] = { "type": 'String', "system": false };
 
         
-        obj["requiredFields"]['operators'] = [{ "type": 'String' }];
-        obj["requiredFields"]['constantType'] = { "type": 'String' };
-        obj["requiredFields"]['constantExample'] = { "type": 'String' };
-        obj["requiredFields"]['subFact'] = { "type": 'String' };
+        obj["requiredFields"]['operators'] = [{ "type": 'String', "system": false }];
+        obj["requiredFields"]['constantType'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['constantExample'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['subFact'] = { "type": 'String', "system": false };
 
         return obj;
     }

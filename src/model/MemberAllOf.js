@@ -57,15 +57,15 @@ class MemberAllOf {
             "requiredFields": {}
         };
 
-        obj["fields"]['name'] = { "type": 'String' };
-        obj["fields"]['memberRefId'] = { "type": 'String' };
+        obj["fields"]['name'] = { "type": 'String', "system": false };
+        obj["fields"]['memberRefId'] = { "type": 'String', "system": false };
         obj["fields"]['memberType'] = new MemberType().modelMap();
-        obj["fields"]['teamMembers'] = [{ "type": 'String' }];
-        obj["fields"]['groups'] = [{ "type": 'String' }];
+        obj["fields"]['teamMembers'] = [{ "type": 'String', "system": false }];
+        obj["fields"]['groups'] = [{ "type": 'String', "system": false }];
         obj["fields"]['metadata'] = [new Metadata().modelMap()];
 
         
-        obj["requiredFields"]['memberRefId'] = { "type": 'String' };
+        obj["requiredFields"]['memberRefId'] = { "type": 'String', "system": false };
         obj["requiredFields"]['memberType'] = new MemberType().modelMap();
 
         return obj;

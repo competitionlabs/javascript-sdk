@@ -52,12 +52,12 @@ class RuleDescriptorFactAllOf {
             "requiredFields": {}
         };
 
-        obj["fields"]['constraints'] = [{ "type": 'String' }];
-        obj["fields"]['fact'] = { "type": 'String' };
+        obj["fields"]['constraints'] = [{ "type": 'String', "system": false }];
+        obj["fields"]['fact'] = { "type": 'String', "system": false };
         obj["fields"]['subConditions'] = [new RuleDescriptorSubCondition().modelMap()];
 
         
-        obj["requiredFields"]['fact'] = { "type": 'String' };
+        obj["requiredFields"]['fact'] = { "type": 'String', "system": false };
 
         return obj;
     }

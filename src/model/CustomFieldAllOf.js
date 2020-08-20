@@ -58,15 +58,15 @@ class CustomFieldAllOf {
             "requiredFields": {}
         };
 
-        obj["fields"]['name'] = { "type": 'String' };
-        obj["fields"]['term'] = { "type": 'String' };
-        obj["fields"]['description'] = { "type": 'String' };
+        obj["fields"]['name'] = { "type": 'String', "system": false };
+        obj["fields"]['term'] = { "type": 'String', "system": false };
+        obj["fields"]['description'] = { "type": 'String', "system": false };
         obj["fields"]['fieldType'] = new FieldType().modelMap();
         obj["fields"]['appliesTo'] = new AppliesTo().modelMap();
 
         
-        obj["requiredFields"]['name'] = { "type": 'String' };
-        obj["requiredFields"]['term'] = { "type": 'String' };
+        obj["requiredFields"]['name'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['term'] = { "type": 'String', "system": false };
         obj["requiredFields"]['fieldType'] = new FieldType().modelMap();
         obj["requiredFields"]['appliesTo'] = new AppliesTo().modelMap();
 

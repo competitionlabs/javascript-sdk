@@ -55,12 +55,12 @@ class UpdateCustomFieldRequest {
             "requiredFields": {}
         };
 
-        obj["fields"]['id'] = { "type": 'String' };
-        obj["fields"]['name'] = { "type": 'String' };
-        obj["fields"]['description'] = { "type": 'String' };
+        obj["fields"]['id'] = { "type": 'String', "system": true };
+        obj["fields"]['name'] = { "type": 'String', "system": false };
+        obj["fields"]['description'] = { "type": 'String', "system": false };
 
         
-        obj["requiredFields"]['id'] = { "type": 'String' };
+        obj["requiredFields"]['id'] = { "type": 'String', "system": true };
 
         return obj;
     }

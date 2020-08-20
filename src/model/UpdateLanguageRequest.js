@@ -54,11 +54,11 @@ class UpdateLanguageRequest {
             "requiredFields": {}
         };
 
-        obj["fields"]['id'] = { "type": 'String' };
-        obj["fields"]['references'] = [{ "type": 'String' }];
+        obj["fields"]['id'] = { "type": 'String', "system": true };
+        obj["fields"]['references'] = [{ "type": 'String', "system": false }];
 
         
-        obj["requiredFields"]['id'] = { "type": 'String' };
+        obj["requiredFields"]['id'] = { "type": 'String', "system": true };
 
         return obj;
     }

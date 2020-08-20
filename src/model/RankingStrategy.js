@@ -57,18 +57,18 @@ class RankingStrategy {
             "requiredFields": {}
         };
 
-        obj["fields"]['scoreDesc'] = { "type": 'Boolean' };
-        obj["fields"]['timeDesc'] = { "type": 'Boolean' };
-        obj["fields"]['scoreFirst'] = { "type": 'Boolean' };
-        obj["fields"]['ignoreTime'] = { "type": 'Boolean' };
-        obj["fields"]['ignoreScore'] = { "type": 'Boolean' };
+        obj["fields"]['scoreDesc'] = { "type": 'Boolean', "system": false };
+        obj["fields"]['timeDesc'] = { "type": 'Boolean', "system": false };
+        obj["fields"]['scoreFirst'] = { "type": 'Boolean', "system": false };
+        obj["fields"]['ignoreTime'] = { "type": 'Boolean', "system": false };
+        obj["fields"]['ignoreScore'] = { "type": 'Boolean', "system": false };
 
         
-        obj["requiredFields"]['scoreDesc'] = { "type": 'Boolean' };
-        obj["requiredFields"]['timeDesc'] = { "type": 'Boolean' };
-        obj["requiredFields"]['scoreFirst'] = { "type": 'Boolean' };
-        obj["requiredFields"]['ignoreTime'] = { "type": 'Boolean' };
-        obj["requiredFields"]['ignoreScore'] = { "type": 'Boolean' };
+        obj["requiredFields"]['scoreDesc'] = { "type": 'Boolean', "system": false };
+        obj["requiredFields"]['timeDesc'] = { "type": 'Boolean', "system": false };
+        obj["requiredFields"]['scoreFirst'] = { "type": 'Boolean', "system": false };
+        obj["requiredFields"]['ignoreTime'] = { "type": 'Boolean', "system": false };
+        obj["requiredFields"]['ignoreScore'] = { "type": 'Boolean', "system": false };
 
         return obj;
     }

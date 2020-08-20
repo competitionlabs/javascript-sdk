@@ -51,12 +51,12 @@ class ActionTypeAdjustmentFactor {
             "requiredFields": {}
         };
 
-        obj["fields"]['adjustmentFactor'] = { "type": 'Number' };
-        obj["fields"]['actionTypeId'] = { "type": 'String' };
+        obj["fields"]['adjustmentFactor'] = { "type": 'Number', "system": false };
+        obj["fields"]['actionTypeId'] = { "type": 'String', "system": false };
 
         
-        obj["requiredFields"]['adjustmentFactor'] = { "type": 'Number' };
-        obj["requiredFields"]['actionTypeId'] = { "type": 'String' };
+        obj["requiredFields"]['adjustmentFactor'] = { "type": 'Number', "system": false };
+        obj["requiredFields"]['actionTypeId'] = { "type": 'String', "system": false };
 
         return obj;
     }

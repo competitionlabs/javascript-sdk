@@ -51,12 +51,12 @@ class TranslatedField {
             "requiredFields": {}
         };
 
-        obj["fields"]['fieldName'] = { "type": 'String' };
-        obj["fields"]['text'] = { "type": 'String' };
+        obj["fields"]['fieldName'] = { "type": 'String', "system": false };
+        obj["fields"]['text'] = { "type": 'String', "system": false };
 
         
-        obj["requiredFields"]['fieldName'] = { "type": 'String' };
-        obj["requiredFields"]['text'] = { "type": 'String' };
+        obj["requiredFields"]['fieldName'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['text'] = { "type": 'String', "system": false };
 
         return obj;
     }

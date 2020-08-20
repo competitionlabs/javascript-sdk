@@ -69,30 +69,30 @@ class RabbitMqConnectionAllOf {
             "requiredFields": {}
         };
 
-        obj["fields"]['name'] = { "type": 'String' };
-        obj["fields"]['uri'] = { "type": 'String' };
-        obj["fields"]['virtualHost'] = { "type": 'String' };
-        obj["fields"]['port'] = { "type": 'Number' };
-        obj["fields"]['useSsl'] = { "type": 'Boolean' };
-        obj["fields"]['username'] = { "type": 'String' };
-        obj["fields"]['password'] = { "type": 'String' };
-        obj["fields"]['queueName'] = { "type": 'String' };
-        obj["fields"]['exchange'] = { "type": 'String' };
-        obj["fields"]['routingKey'] = { "type": 'String' };
-        obj["fields"]['lastKnownStatus'] = { "type": 'String' };
-        obj["fields"]['lastKnownStatusCode'] = { "type": 'Number' };
+        obj["fields"]['name'] = { "type": 'String', "system": false };
+        obj["fields"]['uri'] = { "type": 'String', "system": false };
+        obj["fields"]['virtualHost'] = { "type": 'String', "system": false };
+        obj["fields"]['port'] = { "type": 'Number', "system": false };
+        obj["fields"]['useSsl'] = { "type": 'Boolean', "system": false };
+        obj["fields"]['username'] = { "type": 'String', "system": false };
+        obj["fields"]['password'] = { "type": 'String', "system": false };
+        obj["fields"]['queueName'] = { "type": 'String', "system": false };
+        obj["fields"]['exchange'] = { "type": 'String', "system": false };
+        obj["fields"]['routingKey'] = { "type": 'String', "system": false };
+        obj["fields"]['lastKnownStatus'] = { "type": 'String', "system": false };
+        obj["fields"]['lastKnownStatusCode'] = { "type": 'Number', "system": false };
 
         
-        obj["requiredFields"]['name'] = { "type": 'String' };
-        obj["requiredFields"]['uri'] = { "type": 'String' };
-        obj["requiredFields"]['virtualHost'] = { "type": 'String' };
-        obj["requiredFields"]['port'] = { "type": 'Number' };
-        obj["requiredFields"]['useSsl'] = { "type": 'Boolean' };
-        obj["requiredFields"]['username'] = { "type": 'String' };
-        obj["requiredFields"]['password'] = { "type": 'String' };
-        obj["requiredFields"]['queueName'] = { "type": 'String' };
-        obj["requiredFields"]['lastKnownStatus'] = { "type": 'String' };
-        obj["requiredFields"]['lastKnownStatusCode'] = { "type": 'Number' };
+        obj["requiredFields"]['name'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['uri'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['virtualHost'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['port'] = { "type": 'Number', "system": false };
+        obj["requiredFields"]['useSsl'] = { "type": 'Boolean', "system": false };
+        obj["requiredFields"]['username'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['password'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['queueName'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['lastKnownStatus'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['lastKnownStatusCode'] = { "type": 'Number', "system": false };
 
         return obj;
     }

@@ -61,17 +61,17 @@ class RuleDescriptorAction {
             "requiredFields": {}
         };
 
-        obj["fields"]['constraints'] = [{ "type": 'String' }];
-        obj["fields"]['name'] = { "type": 'String' };
-        obj["fields"]['description'] = { "type": 'String' };
-        obj["fields"]['matchCondition'] = { "type": 'String' };
+        obj["fields"]['constraints'] = [{ "type": 'String', "system": false }];
+        obj["fields"]['name'] = { "type": 'String', "system": false };
+        obj["fields"]['description'] = { "type": 'String', "system": false };
+        obj["fields"]['matchCondition'] = { "type": 'String', "system": false };
         obj["fields"]['operatability'] = new MatchCondition().modelMap();
         obj["fields"]['onRuleSetMatchTriggers'] = [new OnRuleSetMatchTrigger().modelMap()];
         obj["fields"]['facts'] = [new RuleDescriptorFact().modelMap()];
 
         
-        obj["requiredFields"]['constraints'] = [{ "type": 'String' }];
-        obj["requiredFields"]['name'] = { "type": 'String' };
+        obj["requiredFields"]['constraints'] = [{ "type": 'String', "system": false }];
+        obj["requiredFields"]['name'] = { "type": 'String', "system": false };
         obj["requiredFields"]['operatability'] = new MatchCondition().modelMap();
         obj["requiredFields"]['facts'] = [new RuleDescriptorFact().modelMap()];
 

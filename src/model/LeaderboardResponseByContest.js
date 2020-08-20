@@ -55,15 +55,15 @@ class LeaderboardResponseByContest {
             "requiredFields": {}
         };
 
-        obj["fields"]['contestId'] = { "type": 'String' };
-        obj["fields"]['name'] = { "type": 'String' };
-        obj["fields"]['round'] = { "type": 'Number' };
+        obj["fields"]['contestId'] = { "type": 'String', "system": false };
+        obj["fields"]['name'] = { "type": 'String', "system": false };
+        obj["fields"]['round'] = { "type": 'Number', "system": false };
         obj["fields"]['leaderboard'] = [new Leaderboard().modelMap()];
 
         
-        obj["requiredFields"]['contestId'] = { "type": 'String' };
-        obj["requiredFields"]['name'] = { "type": 'String' };
-        obj["requiredFields"]['round'] = { "type": 'Number' };
+        obj["requiredFields"]['contestId'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['name'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['round'] = { "type": 'Number', "system": false };
 
         return obj;
     }

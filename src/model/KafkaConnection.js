@@ -73,26 +73,26 @@ class KafkaConnection {
             "requiredFields": {}
         };
 
-        obj["fields"]['id'] = { "type": 'String' };
-        obj["fields"]['spaceName'] = { "type": 'String' };
-        obj["fields"]['created'] = { "type": 'Date' };
-        obj["fields"]['name'] = { "type": 'String' };
-        obj["fields"]['brokers'] = [{ "type": 'String' }];
-        obj["fields"]['groupId'] = { "type": 'String' };
-        obj["fields"]['topic'] = { "type": 'String' };
-        obj["fields"]['lastKnownStatus'] = { "type": 'String' };
-        obj["fields"]['lastKnownStatusCode'] = { "type": 'Number' };
+        obj["fields"]['id'] = { "type": 'String', "system": true };
+        obj["fields"]['spaceName'] = { "type": 'String', "system": true };
+        obj["fields"]['created'] = { "type": 'Date', "system": true };
+        obj["fields"]['name'] = { "type": 'String', "system": false };
+        obj["fields"]['brokers'] = [{ "type": 'String', "system": false }];
+        obj["fields"]['groupId'] = { "type": 'String', "system": false };
+        obj["fields"]['topic'] = { "type": 'String', "system": false };
+        obj["fields"]['lastKnownStatus'] = { "type": 'String', "system": false };
+        obj["fields"]['lastKnownStatusCode'] = { "type": 'Number', "system": false };
 
         
-        obj["requiredFields"]['id'] = { "type": 'String' };
-        obj["requiredFields"]['spaceName'] = { "type": 'String' };
-        obj["requiredFields"]['created'] = { "type": 'Date' };
-        obj["requiredFields"]['name'] = { "type": 'String' };
-        obj["requiredFields"]['brokers'] = [{ "type": 'String' }];
-        obj["requiredFields"]['groupId'] = { "type": 'String' };
-        obj["requiredFields"]['topic'] = { "type": 'String' };
-        obj["requiredFields"]['lastKnownStatus'] = { "type": 'String' };
-        obj["requiredFields"]['lastKnownStatusCode'] = { "type": 'Number' };
+        obj["requiredFields"]['id'] = { "type": 'String', "system": true };
+        obj["requiredFields"]['spaceName'] = { "type": 'String', "system": true };
+        obj["requiredFields"]['created'] = { "type": 'Date', "system": true };
+        obj["requiredFields"]['name'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['brokers'] = [{ "type": 'String', "system": false }];
+        obj["requiredFields"]['groupId'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['topic'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['lastKnownStatus'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['lastKnownStatusCode'] = { "type": 'Number', "system": false };
 
         return obj;
     }

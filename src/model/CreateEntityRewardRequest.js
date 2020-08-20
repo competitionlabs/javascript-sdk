@@ -72,28 +72,28 @@ class CreateEntityRewardRequest {
         };
 
         obj["fields"]['entityType'] = new EntityType().modelMap();
-        obj["fields"]['entityId'] = { "type": 'String' };
-        obj["fields"]['rewardRank'] = { "type": 'String' };
-        obj["fields"]['rewardName'] = { "type": 'String' };
-        obj["fields"]['value'] = { "type": 'Number' };
-        obj["fields"]['rewardTypeId'] = { "type": 'String' };
-        obj["fields"]['description'] = { "type": 'String' };
-        obj["fields"]['delay'] = { "type": 'Number' };
-        obj["fields"]['icon'] = { "type": 'String' };
-        obj["fields"]['isMemberAcknowledgmentRequired'] = { "type": 'Boolean' };
+        obj["fields"]['entityId'] = { "type": 'String', "system": false };
+        obj["fields"]['rewardRank'] = { "type": 'String', "system": false };
+        obj["fields"]['rewardName'] = { "type": 'String', "system": false };
+        obj["fields"]['value'] = { "type": 'Number', "system": false };
+        obj["fields"]['rewardTypeId'] = { "type": 'String', "system": false };
+        obj["fields"]['description'] = { "type": 'String', "system": false };
+        obj["fields"]['delay'] = { "type": 'Number', "system": false };
+        obj["fields"]['icon'] = { "type": 'String', "system": false };
+        obj["fields"]['isMemberAcknowledgmentRequired'] = { "type": 'Boolean', "system": false };
         obj["fields"]['metadata'] = [new Metadata().modelMap()];
-        obj["fields"]['pointInTime'] = { "type": 'Date' };
-        obj["fields"]['period'] = { "type": 'Number' };
+        obj["fields"]['pointInTime'] = { "type": 'Date', "system": false };
+        obj["fields"]['period'] = { "type": 'Number', "system": false };
         obj["fields"]['translations'] = [new Translation().modelMap()];
-        obj["fields"]['constraints'] = [{ "type": 'String' }];
+        obj["fields"]['constraints'] = [{ "type": 'String', "system": false }];
 
         
         obj["requiredFields"]['entityType'] = new EntityType().modelMap();
-        obj["requiredFields"]['entityId'] = { "type": 'String' };
-        obj["requiredFields"]['rewardRank'] = { "type": 'String' };
-        obj["requiredFields"]['rewardName'] = { "type": 'String' };
-        obj["requiredFields"]['value'] = { "type": 'Number' };
-        obj["requiredFields"]['rewardTypeId'] = { "type": 'String' };
+        obj["requiredFields"]['entityId'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['rewardRank'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['rewardName'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['value'] = { "type": 'Number', "system": false };
+        obj["requiredFields"]['rewardTypeId'] = { "type": 'String', "system": false };
 
         return obj;
     }

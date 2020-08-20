@@ -70,30 +70,30 @@ class ContestReducedAllOf {
             "requiredFields": {}
         };
 
-        obj["fields"]['competitionId'] = { "type": 'String' };
-        obj["fields"]['number'] = { "type": 'Number' };
-        obj["fields"]['name'] = { "type": 'String' };
-        obj["fields"]['round'] = { "type": 'Number' };
-        obj["fields"]['groupStage'] = { "type": 'Number' };
-        obj["fields"]['entrantsFromContest'] = [{ "type": 'String' }];
+        obj["fields"]['competitionId'] = { "type": 'String', "system": false };
+        obj["fields"]['number'] = { "type": 'Number', "system": false };
+        obj["fields"]['name'] = { "type": 'String', "system": false };
+        obj["fields"]['round'] = { "type": 'Number', "system": false };
+        obj["fields"]['groupStage'] = { "type": 'Number', "system": false };
+        obj["fields"]['entrantsFromContest'] = [{ "type": 'String', "system": false }];
         obj["fields"]['status'] = new ContestStatus().modelMap();
-        obj["fields"]['statusCode'] = { "type": 'Number' };
-        obj["fields"]['scheduledStartDate'] = { "type": 'Date' };
-        obj["fields"]['scheduledEndDate'] = { "type": 'Date' };
-        obj["fields"]['actualStartDate'] = { "type": 'Date' };
-        obj["fields"]['actualEndDate'] = { "type": 'Date' };
+        obj["fields"]['statusCode'] = { "type": 'Number', "system": false };
+        obj["fields"]['scheduledStartDate'] = { "type": 'Date', "system": false };
+        obj["fields"]['scheduledEndDate'] = { "type": 'Date', "system": false };
+        obj["fields"]['actualStartDate'] = { "type": 'Date', "system": false };
+        obj["fields"]['actualEndDate'] = { "type": 'Date', "system": false };
 
         
-        obj["requiredFields"]['competitionId'] = { "type": 'String' };
-        obj["requiredFields"]['number'] = { "type": 'Number' };
-        obj["requiredFields"]['name'] = { "type": 'String' };
-        obj["requiredFields"]['round'] = { "type": 'Number' };
-        obj["requiredFields"]['groupStage'] = { "type": 'Number' };
-        obj["requiredFields"]['entrantsFromContest'] = [{ "type": 'String' }];
+        obj["requiredFields"]['competitionId'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['number'] = { "type": 'Number', "system": false };
+        obj["requiredFields"]['name'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['round'] = { "type": 'Number', "system": false };
+        obj["requiredFields"]['groupStage'] = { "type": 'Number', "system": false };
+        obj["requiredFields"]['entrantsFromContest'] = [{ "type": 'String', "system": false }];
         obj["requiredFields"]['status'] = new ContestStatus().modelMap();
-        obj["requiredFields"]['statusCode'] = { "type": 'Number' };
-        obj["requiredFields"]['scheduledStartDate'] = { "type": 'Date' };
-        obj["requiredFields"]['scheduledEndDate'] = { "type": 'Date' };
+        obj["requiredFields"]['statusCode'] = { "type": 'Number', "system": false };
+        obj["requiredFields"]['scheduledStartDate'] = { "type": 'Date', "system": false };
+        obj["requiredFields"]['scheduledEndDate'] = { "type": 'Date', "system": false };
 
         return obj;
     }

@@ -52,11 +52,11 @@ class UpdateMessageStatusRequest {
             "requiredFields": {}
         };
 
-        obj["fields"]['id'] = { "type": 'String' };
+        obj["fields"]['id'] = { "type": 'String', "system": true };
         obj["fields"]['status'] = new MessagStatus().modelMap();
 
         
-        obj["requiredFields"]['id'] = { "type": 'String' };
+        obj["requiredFields"]['id'] = { "type": 'String', "system": true };
         obj["requiredFields"]['status'] = new MessagStatus().modelMap();
 
         return obj;

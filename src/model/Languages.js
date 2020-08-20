@@ -51,12 +51,12 @@ class Languages {
             "requiredFields": {}
         };
 
-        obj["fields"]['key'] = { "type": 'String' };
-        obj["fields"]['name'] = { "type": 'String' };
+        obj["fields"]['key'] = { "type": 'String', "system": false };
+        obj["fields"]['name'] = { "type": 'String', "system": false };
 
         
-        obj["requiredFields"]['key'] = { "type": 'String' };
-        obj["requiredFields"]['name'] = { "type": 'String' };
+        obj["requiredFields"]['key'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['name'] = { "type": 'String', "system": false };
 
         return obj;
     }

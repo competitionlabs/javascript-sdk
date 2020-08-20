@@ -70,26 +70,26 @@ class Contact {
             "requiredFields": {}
         };
 
-        obj["fields"]['id'] = { "type": 'String' };
-        obj["fields"]['spaceName'] = { "type": 'String' };
-        obj["fields"]['created'] = { "type": 'Date' };
-        obj["fields"]['addressLine1'] = { "type": 'String' };
-        obj["fields"]['addressLine2'] = { "type": 'String' };
-        obj["fields"]['city'] = { "type": 'String' };
-        obj["fields"]['state'] = { "type": 'String' };
-        obj["fields"]['zipPostalCode'] = { "type": 'String' };
-        obj["fields"]['country'] = { "type": 'String' };
-        obj["fields"]['mobileNumber'] = { "type": 'String' };
-        obj["fields"]['phoneNumber'] = { "type": 'String' };
+        obj["fields"]['id'] = { "type": 'String', "system": true };
+        obj["fields"]['spaceName'] = { "type": 'String', "system": true };
+        obj["fields"]['created'] = { "type": 'Date', "system": true };
+        obj["fields"]['addressLine1'] = { "type": 'String', "system": false };
+        obj["fields"]['addressLine2'] = { "type": 'String', "system": false };
+        obj["fields"]['city'] = { "type": 'String', "system": false };
+        obj["fields"]['state'] = { "type": 'String', "system": false };
+        obj["fields"]['zipPostalCode'] = { "type": 'String', "system": false };
+        obj["fields"]['country'] = { "type": 'String', "system": false };
+        obj["fields"]['mobileNumber'] = { "type": 'String', "system": false };
+        obj["fields"]['phoneNumber'] = { "type": 'String', "system": false };
         obj["fields"]['geoLocation'] = new Location().modelMap();
 
         
-        obj["requiredFields"]['id'] = { "type": 'String' };
-        obj["requiredFields"]['spaceName'] = { "type": 'String' };
-        obj["requiredFields"]['created'] = { "type": 'Date' };
-        obj["requiredFields"]['addressLine1'] = { "type": 'String' };
-        obj["requiredFields"]['zipPostalCode'] = { "type": 'String' };
-        obj["requiredFields"]['country'] = { "type": 'String' };
+        obj["requiredFields"]['id'] = { "type": 'String', "system": true };
+        obj["requiredFields"]['spaceName'] = { "type": 'String', "system": true };
+        obj["requiredFields"]['created'] = { "type": 'Date', "system": true };
+        obj["requiredFields"]['addressLine1'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['zipPostalCode'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['country'] = { "type": 'String', "system": false };
 
         return obj;
     }

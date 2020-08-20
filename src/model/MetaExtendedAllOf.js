@@ -51,12 +51,12 @@ class MetaExtendedAllOf {
             "requiredFields": {}
         };
 
-        obj["fields"]['skip'] = { "type": 'Number' };
-        obj["fields"]['limit'] = { "type": 'Number' };
+        obj["fields"]['skip'] = { "type": 'Number', "system": false };
+        obj["fields"]['limit'] = { "type": 'Number', "system": false };
 
         
-        obj["requiredFields"]['skip'] = { "type": 'Number' };
-        obj["requiredFields"]['limit'] = { "type": 'Number' };
+        obj["requiredFields"]['skip'] = { "type": 'Number', "system": false };
+        obj["requiredFields"]['limit'] = { "type": 'Number', "system": false };
 
         return obj;
     }

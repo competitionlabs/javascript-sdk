@@ -57,15 +57,15 @@ class CreateActionTypeRequest {
             "requiredFields": {}
         };
 
-        obj["fields"]['name'] = { "type": 'String' };
-        obj["fields"]['key'] = { "type": 'String' };
-        obj["fields"]['description'] = { "type": 'String' };
+        obj["fields"]['name'] = { "type": 'String', "system": false };
+        obj["fields"]['key'] = { "type": 'String', "system": false };
+        obj["fields"]['description'] = { "type": 'String', "system": false };
         obj["fields"]['unitOfMeasureType'] = new UnitOfMeasureType().modelMap();
         obj["fields"]['metadata'] = [new Metadata().modelMap()];
 
         
-        obj["requiredFields"]['name'] = { "type": 'String' };
-        obj["requiredFields"]['key'] = { "type": 'String' };
+        obj["requiredFields"]['name'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['key'] = { "type": 'String', "system": false };
         obj["requiredFields"]['unitOfMeasureType'] = new UnitOfMeasureType().modelMap();
 
         return obj;

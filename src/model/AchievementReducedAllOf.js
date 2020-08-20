@@ -54,13 +54,13 @@ class AchievementReducedAllOf {
             "requiredFields": {}
         };
 
-        obj["fields"]['name'] = { "type": 'String' };
+        obj["fields"]['name'] = { "type": 'String', "system": false };
         obj["fields"]['achievementLiveStatus'] = new AchievementLiveStatus().modelMap();
-        obj["fields"]['category'] = [{ "type": 'String' }];
-        obj["fields"]['memberGroups'] = [{ "type": 'String' }];
+        obj["fields"]['category'] = [{ "type": 'String', "system": false }];
+        obj["fields"]['memberGroups'] = [{ "type": 'String', "system": false }];
 
         
-        obj["requiredFields"]['name'] = { "type": 'String' };
+        obj["requiredFields"]['name'] = { "type": 'String', "system": false };
         obj["requiredFields"]['achievementLiveStatus'] = new AchievementLiveStatus().modelMap();
 
         return obj;

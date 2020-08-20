@@ -49,10 +49,10 @@ class RuleDescriptorSubFactAllOf {
             "requiredFields": {}
         };
 
-        obj["fields"]['subFact'] = { "type": 'String' };
+        obj["fields"]['subFact'] = { "type": 'String', "system": false };
 
         
-        obj["requiredFields"]['subFact'] = { "type": 'String' };
+        obj["requiredFields"]['subFact'] = { "type": 'String', "system": false };
 
         return obj;
     }

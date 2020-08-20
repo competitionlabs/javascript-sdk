@@ -56,16 +56,16 @@ class UserAllOf {
             "requiredFields": {}
         };
 
-        obj["fields"]['firstName'] = { "type": 'String' };
-        obj["fields"]['lastName'] = { "type": 'String' };
-        obj["fields"]['tfaEnabled'] = { "type": 'Boolean' };
-        obj["fields"]['email'] = { "type": 'String' };
+        obj["fields"]['firstName'] = { "type": 'String', "system": false };
+        obj["fields"]['lastName'] = { "type": 'String', "system": false };
+        obj["fields"]['tfaEnabled'] = { "type": 'Boolean', "system": false };
+        obj["fields"]['email'] = { "type": 'String', "system": false };
         obj["fields"]['contact'] = new Contact().modelMap();
-        obj["fields"]['emailVerified'] = { "type": 'Boolean' };
+        obj["fields"]['emailVerified'] = { "type": 'Boolean', "system": false };
 
         
-        obj["requiredFields"]['tfaEnabled'] = { "type": 'Boolean' };
-        obj["requiredFields"]['emailVerified'] = { "type": 'Boolean' };
+        obj["requiredFields"]['tfaEnabled'] = { "type": 'Boolean', "system": false };
+        obj["requiredFields"]['emailVerified'] = { "type": 'Boolean', "system": false };
 
         return obj;
     }

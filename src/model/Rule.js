@@ -58,17 +58,17 @@ class Rule {
             "requiredFields": {}
         };
 
-        obj["fields"]['fact'] = { "type": 'String' };
-        obj["fields"]['operator'] = { "type": 'String' };
-        obj["fields"]['constant'] = { "type": 'String' };
-        obj["fields"]['id'] = { "type": 'String' };
+        obj["fields"]['fact'] = { "type": 'String', "system": false };
+        obj["fields"]['operator'] = { "type": 'String', "system": false };
+        obj["fields"]['constant'] = { "type": 'String', "system": false };
+        obj["fields"]['id'] = { "type": 'String', "system": true };
         obj["fields"]['subConditions'] = [new RuleSubCondition().modelMap()];
 
         
-        obj["requiredFields"]['fact'] = { "type": 'String' };
-        obj["requiredFields"]['operator'] = { "type": 'String' };
-        obj["requiredFields"]['constant'] = { "type": 'String' };
-        obj["requiredFields"]['id'] = { "type": 'String' };
+        obj["requiredFields"]['fact'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['operator'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['constant'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['id'] = { "type": 'String', "system": true };
         obj["requiredFields"]['subConditions'] = [new RuleSubCondition().modelMap()];
 
         return obj;

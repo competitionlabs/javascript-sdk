@@ -71,25 +71,25 @@ class UnitOfMeasure {
             "requiredFields": {}
         };
 
-        obj["fields"]['id'] = { "type": 'String' };
-        obj["fields"]['spaceName'] = { "type": 'String' };
-        obj["fields"]['created'] = { "type": 'Date' };
-        obj["fields"]['name'] = { "type": 'String' };
-        obj["fields"]['key'] = { "type": 'String' };
-        obj["fields"]['description'] = { "type": 'String' };
-        obj["fields"]['isoCode'] = { "type": 'String' };
-        obj["fields"]['symbol'] = { "type": 'String' };
-        obj["fields"]['multiplier'] = { "type": 'Number' };
+        obj["fields"]['id'] = { "type": 'String', "system": true };
+        obj["fields"]['spaceName'] = { "type": 'String', "system": true };
+        obj["fields"]['created'] = { "type": 'Date', "system": true };
+        obj["fields"]['name'] = { "type": 'String', "system": false };
+        obj["fields"]['key'] = { "type": 'String', "system": false };
+        obj["fields"]['description'] = { "type": 'String', "system": false };
+        obj["fields"]['isoCode'] = { "type": 'String', "system": false };
+        obj["fields"]['symbol'] = { "type": 'String', "system": false };
+        obj["fields"]['multiplier'] = { "type": 'Number', "system": false };
         obj["fields"]['unitOfMeasureType'] = new UnitOfMeasureType().modelMap();
         obj["fields"]['metadata'] = [new Metadata().modelMap()];
 
         
-        obj["requiredFields"]['id'] = { "type": 'String' };
-        obj["requiredFields"]['spaceName'] = { "type": 'String' };
-        obj["requiredFields"]['created'] = { "type": 'Date' };
-        obj["requiredFields"]['name'] = { "type": 'String' };
-        obj["requiredFields"]['key'] = { "type": 'String' };
-        obj["requiredFields"]['multiplier'] = { "type": 'Number' };
+        obj["requiredFields"]['id'] = { "type": 'String', "system": true };
+        obj["requiredFields"]['spaceName'] = { "type": 'String', "system": true };
+        obj["requiredFields"]['created'] = { "type": 'Date', "system": true };
+        obj["requiredFields"]['name'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['key'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['multiplier'] = { "type": 'Number', "system": false };
         obj["requiredFields"]['unitOfMeasureType'] = new UnitOfMeasureType().modelMap();
 
         return obj;

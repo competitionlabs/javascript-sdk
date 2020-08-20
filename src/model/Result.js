@@ -54,14 +54,14 @@ class Result {
             "requiredFields": {}
         };
 
-        obj["fields"]['id'] = { "type": 'String' };
-        obj["fields"]['externalReference'] = { "type": 'String' };
-        obj["fields"]['result'] = { "type": 'String' };
+        obj["fields"]['id'] = { "type": 'String', "system": true };
+        obj["fields"]['externalReference'] = { "type": 'String', "system": false };
+        obj["fields"]['result'] = { "type": 'String', "system": false };
         obj["fields"]['relations'] = [new Relation().modelMap()];
 
         
-        obj["requiredFields"]['id'] = { "type": 'String' };
-        obj["requiredFields"]['result'] = { "type": 'String' };
+        obj["requiredFields"]['id'] = { "type": 'String', "system": true };
+        obj["requiredFields"]['result'] = { "type": 'String', "system": false };
 
         return obj;
     }

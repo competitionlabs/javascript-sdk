@@ -50,11 +50,11 @@ class MaxMin {
             "requiredFields": {}
         };
 
-        obj["fields"]['maximum'] = { "type": 'Number' };
-        obj["fields"]['minimum'] = { "type": 'Number' };
+        obj["fields"]['maximum'] = { "type": 'Number', "system": false };
+        obj["fields"]['minimum'] = { "type": 'Number', "system": false };
 
         
-        obj["requiredFields"]['minimum'] = { "type": 'Number' };
+        obj["requiredFields"]['minimum'] = { "type": 'Number', "system": false };
 
         return obj;
     }

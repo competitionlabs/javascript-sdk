@@ -56,11 +56,11 @@ class UpdateUnitOfMeasureRequestAllOf {
             "requiredFields": {}
         };
 
-        obj["fields"]['name'] = { "type": 'String' };
-        obj["fields"]['description'] = { "type": 'String' };
-        obj["fields"]['isoCode'] = { "type": 'String' };
-        obj["fields"]['symbol'] = { "type": 'String' };
-        obj["fields"]['multiplier'] = { "type": 'Number' };
+        obj["fields"]['name'] = { "type": 'String', "system": false };
+        obj["fields"]['description'] = { "type": 'String', "system": false };
+        obj["fields"]['isoCode'] = { "type": 'String', "system": false };
+        obj["fields"]['symbol'] = { "type": 'String', "system": false };
+        obj["fields"]['multiplier'] = { "type": 'Number', "system": false };
         obj["fields"]['unitOfMeasureType'] = new UnitOfMeasureType().modelMap();
         obj["fields"]['metadata'] = [new Metadata().modelMap()];
 

@@ -50,11 +50,11 @@ class SpaceAllOf {
             "requiredFields": {}
         };
 
-        obj["fields"]['accountType'] = { "type": 'String' };
-        obj["fields"]['masterSpace'] = { "type": 'String' };
+        obj["fields"]['accountType'] = { "type": 'String', "system": false };
+        obj["fields"]['masterSpace'] = { "type": 'String', "system": false };
 
         
-        obj["requiredFields"]['accountType'] = { "type": 'String' };
+        obj["requiredFields"]['accountType'] = { "type": 'String', "system": false };
 
         return obj;
     }

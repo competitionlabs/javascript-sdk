@@ -53,9 +53,9 @@ class UpdateMemberRequestAllOf {
             "requiredFields": {}
         };
 
-        obj["fields"]['name'] = { "type": 'String' };
+        obj["fields"]['name'] = { "type": 'String', "system": false };
         obj["fields"]['memberType'] = new MemberType().modelMap();
-        obj["fields"]['groups'] = [{ "type": 'String' }];
+        obj["fields"]['groups'] = [{ "type": 'String', "system": false }];
         obj["fields"]['metadata'] = [new Metadata().modelMap()];
 
         

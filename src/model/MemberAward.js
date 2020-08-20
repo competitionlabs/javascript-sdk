@@ -76,32 +76,32 @@ class MemberAward {
             "requiredFields": {}
         };
 
-        obj["fields"]['id'] = { "type": 'String' };
-        obj["fields"]['spaceName'] = { "type": 'String' };
-        obj["fields"]['created'] = { "type": 'Date' };
-        obj["fields"]['rewardId'] = { "type": 'String' };
-        obj["fields"]['rewardTypeKey'] = { "type": 'String' };
-        obj["fields"]['rewardTypeId'] = { "type": 'String' };
-        obj["fields"]['rewardValue'] = { "type": 'Number' };
-        obj["fields"]['memberAcknowledgmentRequired'] = { "type": 'Boolean' };
-        obj["fields"]['claimed'] = { "type": 'Boolean' };
-        obj["fields"]['delay'] = { "type": 'Number' };
+        obj["fields"]['id'] = { "type": 'String', "system": true };
+        obj["fields"]['spaceName'] = { "type": 'String', "system": true };
+        obj["fields"]['created'] = { "type": 'Date', "system": true };
+        obj["fields"]['rewardId'] = { "type": 'String', "system": false };
+        obj["fields"]['rewardTypeKey'] = { "type": 'String', "system": false };
+        obj["fields"]['rewardTypeId'] = { "type": 'String', "system": false };
+        obj["fields"]['rewardValue'] = { "type": 'Number', "system": false };
+        obj["fields"]['memberAcknowledgmentRequired'] = { "type": 'Boolean', "system": false };
+        obj["fields"]['claimed'] = { "type": 'Boolean', "system": false };
+        obj["fields"]['delay'] = { "type": 'Number', "system": false };
         obj["fields"]['entityType'] = new EntityType().modelMap();
-        obj["fields"]['entityId'] = { "type": 'String' };
-        obj["fields"]['pointInTime'] = { "type": 'Date' };
-        obj["fields"]['period'] = { "type": 'Number' };
+        obj["fields"]['entityId'] = { "type": 'String', "system": false };
+        obj["fields"]['pointInTime'] = { "type": 'Date', "system": false };
+        obj["fields"]['period'] = { "type": 'Number', "system": false };
 
         
-        obj["requiredFields"]['id'] = { "type": 'String' };
-        obj["requiredFields"]['spaceName'] = { "type": 'String' };
-        obj["requiredFields"]['created'] = { "type": 'Date' };
-        obj["requiredFields"]['rewardId'] = { "type": 'String' };
-        obj["requiredFields"]['rewardTypeKey'] = { "type": 'String' };
-        obj["requiredFields"]['rewardTypeId'] = { "type": 'String' };
-        obj["requiredFields"]['rewardValue'] = { "type": 'Number' };
-        obj["requiredFields"]['claimed'] = { "type": 'Boolean' };
+        obj["requiredFields"]['id'] = { "type": 'String', "system": true };
+        obj["requiredFields"]['spaceName'] = { "type": 'String', "system": true };
+        obj["requiredFields"]['created'] = { "type": 'Date', "system": true };
+        obj["requiredFields"]['rewardId'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['rewardTypeKey'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['rewardTypeId'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['rewardValue'] = { "type": 'Number', "system": false };
+        obj["requiredFields"]['claimed'] = { "type": 'Boolean', "system": false };
         obj["requiredFields"]['entityType'] = new EntityType().modelMap();
-        obj["requiredFields"]['entityId'] = { "type": 'String' };
+        obj["requiredFields"]['entityId'] = { "type": 'String', "system": false };
 
         return obj;
     }

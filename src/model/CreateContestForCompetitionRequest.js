@@ -83,38 +83,38 @@ class CreateContestForCompetitionRequest {
             "requiredFields": {}
         };
 
-        obj["fields"]['competitionId'] = { "type": 'String' };
-        obj["fields"]['number'] = { "type": 'Number' };
-        obj["fields"]['round'] = { "type": 'Number' };
-        obj["fields"]['groupStage'] = { "type": 'Number' };
-        obj["fields"]['groupStageLabel'] = { "type": 'String' };
-        obj["fields"]['entrantsFromContest'] = [{ "type": 'String' }];
-        obj["fields"]['name'] = { "type": 'String' };
-        obj["fields"]['description'] = { "type": 'String' };
-        obj["fields"]['termsConditions'] = { "type": 'String' };
+        obj["fields"]['competitionId'] = { "type": 'String', "system": false };
+        obj["fields"]['number'] = { "type": 'Number', "system": false };
+        obj["fields"]['round'] = { "type": 'Number', "system": false };
+        obj["fields"]['groupStage'] = { "type": 'Number', "system": false };
+        obj["fields"]['groupStageLabel'] = { "type": 'String', "system": false };
+        obj["fields"]['entrantsFromContest'] = [{ "type": 'String', "system": false }];
+        obj["fields"]['name'] = { "type": 'String', "system": false };
+        obj["fields"]['description'] = { "type": 'String', "system": false };
+        obj["fields"]['termsConditions'] = { "type": 'String', "system": false };
         obj["fields"]['roundType'] = new RoundType().modelMap();
-        obj["fields"]['maxNumberOfEntrants'] = { "type": 'Number' };
-        obj["fields"]['minNumberOfEntrants'] = { "type": 'Number' };
+        obj["fields"]['maxNumberOfEntrants'] = { "type": 'Number', "system": false };
+        obj["fields"]['minNumberOfEntrants'] = { "type": 'Number', "system": false };
         obj["fields"]['ruleSets'] = [new RuleSet().modelMap()];
-        obj["fields"]['scheduledStartDate'] = { "type": 'Date' };
-        obj["fields"]['scheduledEndDate'] = { "type": 'Date' };
+        obj["fields"]['scheduledStartDate'] = { "type": 'Date', "system": false };
+        obj["fields"]['scheduledEndDate'] = { "type": 'Date', "system": false };
         obj["fields"]['strategies'] = new Strategy().modelMap();
-        obj["fields"]['constraints'] = [{ "type": 'String' }];
+        obj["fields"]['constraints'] = [{ "type": 'String', "system": false }];
         obj["fields"]['metadata'] = [new Metadata().modelMap()];
         obj["fields"]['translations'] = [new Translation().modelMap()];
         obj["fields"]['rewards'] = [new CreateRewardRequest().modelMap()];
-        obj["fields"]['isPublic'] = { "type": 'Boolean' };
-        obj["fields"]['autoStart'] = { "type": 'Boolean' };
+        obj["fields"]['isPublic'] = { "type": 'Boolean', "system": false };
+        obj["fields"]['autoStart'] = { "type": 'Boolean', "system": false };
 
         
-        obj["requiredFields"]['competitionId'] = { "type": 'String' };
-        obj["requiredFields"]['number'] = { "type": 'Number' };
-        obj["requiredFields"]['round'] = { "type": 'Number' };
-        obj["requiredFields"]['name'] = { "type": 'String' };
+        obj["requiredFields"]['competitionId'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['number'] = { "type": 'Number', "system": false };
+        obj["requiredFields"]['round'] = { "type": 'Number', "system": false };
+        obj["requiredFields"]['name'] = { "type": 'String', "system": false };
         obj["requiredFields"]['roundType'] = new RoundType().modelMap();
         obj["requiredFields"]['ruleSets'] = [new RuleSet().modelMap()];
-        obj["requiredFields"]['scheduledStartDate'] = { "type": 'Date' };
-        obj["requiredFields"]['scheduledEndDate'] = { "type": 'Date' };
+        obj["requiredFields"]['scheduledStartDate'] = { "type": 'Date', "system": false };
+        obj["requiredFields"]['scheduledEndDate'] = { "type": 'Date', "system": false };
 
         return obj;
     }

@@ -53,11 +53,11 @@ class UpdateApiKeyRequestAllOf {
             "requiredFields": {}
         };
 
-        obj["fields"]['active'] = { "type": 'Boolean' };
-        obj["fields"]['description'] = { "type": 'String' };
-        obj["fields"]['whiteListIPs'] = [{ "type": 'String' }];
+        obj["fields"]['active'] = { "type": 'Boolean', "system": false };
+        obj["fields"]['description'] = { "type": 'String', "system": false };
+        obj["fields"]['whiteListIPs'] = [{ "type": 'String', "system": false }];
         obj["fields"]['role'] = new Role().modelMap();
-        obj["fields"]['default'] = { "type": 'Boolean' };
+        obj["fields"]['default'] = { "type": 'Boolean', "system": false };
 
         
 

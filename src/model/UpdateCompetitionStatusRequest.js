@@ -52,11 +52,11 @@ class UpdateCompetitionStatusRequest {
             "requiredFields": {}
         };
 
-        obj["fields"]['competitionId'] = { "type": 'String' };
+        obj["fields"]['competitionId'] = { "type": 'String', "system": false };
         obj["fields"]['status'] = new CompetitionStatusActions().modelMap();
 
         
-        obj["requiredFields"]['competitionId'] = { "type": 'String' };
+        obj["requiredFields"]['competitionId'] = { "type": 'String', "system": false };
         obj["requiredFields"]['status'] = new CompetitionStatusActions().modelMap();
 
         return obj;

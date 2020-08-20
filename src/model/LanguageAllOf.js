@@ -48,7 +48,7 @@ class LanguageAllOf {
             "requiredFields": {}
         };
 
-        obj["fields"]['references'] = [{ "type": 'String' }];
+        obj["fields"]['references'] = [{ "type": 'String', "system": false }];
 
         
 

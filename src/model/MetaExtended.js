@@ -61,18 +61,18 @@ class MetaExtended {
             "requiredFields": {}
         };
 
-        obj["fields"]['objectType'] = { "type": 'String' };
-        obj["fields"]['resultCount'] = { "type": 'Number' };
-        obj["fields"]['errorCount'] = { "type": 'Number' };
-        obj["fields"]['skip'] = { "type": 'Number' };
-        obj["fields"]['limit'] = { "type": 'Number' };
+        obj["fields"]['objectType'] = { "type": 'String', "system": false };
+        obj["fields"]['resultCount'] = { "type": 'Number', "system": false };
+        obj["fields"]['errorCount'] = { "type": 'Number', "system": false };
+        obj["fields"]['skip'] = { "type": 'Number', "system": false };
+        obj["fields"]['limit'] = { "type": 'Number', "system": false };
 
         
-        obj["requiredFields"]['objectType'] = { "type": 'String' };
-        obj["requiredFields"]['resultCount'] = { "type": 'Number' };
-        obj["requiredFields"]['errorCount'] = { "type": 'Number' };
-        obj["requiredFields"]['skip'] = { "type": 'Number' };
-        obj["requiredFields"]['limit'] = { "type": 'Number' };
+        obj["requiredFields"]['objectType'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['resultCount'] = { "type": 'Number', "system": false };
+        obj["requiredFields"]['errorCount'] = { "type": 'Number', "system": false };
+        obj["requiredFields"]['skip'] = { "type": 'Number', "system": false };
+        obj["requiredFields"]['limit'] = { "type": 'Number', "system": false };
 
         return obj;
     }

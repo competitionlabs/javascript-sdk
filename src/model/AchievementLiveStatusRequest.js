@@ -52,11 +52,11 @@ class AchievementLiveStatusRequest {
             "requiredFields": {}
         };
 
-        obj["fields"]['achievementId'] = { "type": 'String' };
+        obj["fields"]['achievementId'] = { "type": 'String', "system": false };
         obj["fields"]['status'] = new AchievementLiveStatus().modelMap();
 
         
-        obj["requiredFields"]['achievementId'] = { "type": 'String' };
+        obj["requiredFields"]['achievementId'] = { "type": 'String', "system": false };
         obj["requiredFields"]['status'] = new AchievementLiveStatus().modelMap();
 
         return obj;

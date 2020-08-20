@@ -52,11 +52,11 @@ class CreateCollaboratorRequest {
             "requiredFields": {}
         };
 
-        obj["fields"]['email'] = { "type": 'String' };
+        obj["fields"]['email'] = { "type": 'String', "system": false };
         obj["fields"]['role'] = new Role().modelMap();
 
         
-        obj["requiredFields"]['email'] = { "type": 'String' };
+        obj["requiredFields"]['email'] = { "type": 'String', "system": false };
         obj["requiredFields"]['role'] = new Role().modelMap();
 
         return obj;

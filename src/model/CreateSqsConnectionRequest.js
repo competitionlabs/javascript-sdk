@@ -63,20 +63,20 @@ class CreateSqsConnectionRequest {
             "requiredFields": {}
         };
 
-        obj["fields"]['objectType'] = { "type": 'String' };
-        obj["fields"]['name'] = { "type": 'String' };
-        obj["fields"]['uri'] = { "type": 'String' };
-        obj["fields"]['acessKey'] = { "type": 'String' };
-        obj["fields"]['secretKey'] = { "type": 'String' };
-        obj["fields"]['transformerId'] = { "type": 'String' };
+        obj["fields"]['objectType'] = { "type": 'String', "system": false };
+        obj["fields"]['name'] = { "type": 'String', "system": false };
+        obj["fields"]['uri'] = { "type": 'String', "system": false };
+        obj["fields"]['acessKey'] = { "type": 'String', "system": false };
+        obj["fields"]['secretKey'] = { "type": 'String', "system": false };
+        obj["fields"]['transformerId'] = { "type": 'String', "system": false };
 
         
-        obj["requiredFields"]['objectType'] = { "type": 'String' };
-        obj["requiredFields"]['name'] = { "type": 'String' };
-        obj["requiredFields"]['uri'] = { "type": 'String' };
-        obj["requiredFields"]['acessKey'] = { "type": 'String' };
-        obj["requiredFields"]['secretKey'] = { "type": 'String' };
-        obj["requiredFields"]['transformerId'] = { "type": 'String' };
+        obj["requiredFields"]['objectType'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['name'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['uri'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['acessKey'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['secretKey'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['transformerId'] = { "type": 'String', "system": false };
 
         return obj;
     }

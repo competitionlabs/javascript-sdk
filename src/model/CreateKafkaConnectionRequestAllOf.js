@@ -57,18 +57,18 @@ class CreateKafkaConnectionRequestAllOf {
             "requiredFields": {}
         };
 
-        obj["fields"]['name'] = { "type": 'String' };
-        obj["fields"]['brokers'] = { "type": 'String' };
-        obj["fields"]['transformerId'] = { "type": 'String' };
-        obj["fields"]['groupId'] = { "type": 'String' };
-        obj["fields"]['topic'] = { "type": 'String' };
+        obj["fields"]['name'] = { "type": 'String', "system": false };
+        obj["fields"]['brokers'] = { "type": 'String', "system": false };
+        obj["fields"]['transformerId'] = { "type": 'String', "system": false };
+        obj["fields"]['groupId'] = { "type": 'String', "system": false };
+        obj["fields"]['topic'] = { "type": 'String', "system": false };
 
         
-        obj["requiredFields"]['name'] = { "type": 'String' };
-        obj["requiredFields"]['brokers'] = { "type": 'String' };
-        obj["requiredFields"]['transformerId'] = { "type": 'String' };
-        obj["requiredFields"]['groupId'] = { "type": 'String' };
-        obj["requiredFields"]['topic'] = { "type": 'String' };
+        obj["requiredFields"]['name'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['brokers'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['transformerId'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['groupId'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['topic'] = { "type": 'String', "system": false };
 
         return obj;
     }

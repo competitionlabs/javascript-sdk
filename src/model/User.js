@@ -66,22 +66,22 @@ class User {
             "requiredFields": {}
         };
 
-        obj["fields"]['objectType'] = { "type": 'String' };
-        obj["fields"]['id'] = { "type": 'String' };
-        obj["fields"]['created'] = { "type": 'Date' };
-        obj["fields"]['firstName'] = { "type": 'String' };
-        obj["fields"]['lastName'] = { "type": 'String' };
-        obj["fields"]['tfaEnabled'] = { "type": 'Boolean' };
-        obj["fields"]['email'] = { "type": 'String' };
+        obj["fields"]['objectType'] = { "type": 'String', "system": false };
+        obj["fields"]['id'] = { "type": 'String', "system": true };
+        obj["fields"]['created'] = { "type": 'Date', "system": true };
+        obj["fields"]['firstName'] = { "type": 'String', "system": false };
+        obj["fields"]['lastName'] = { "type": 'String', "system": false };
+        obj["fields"]['tfaEnabled'] = { "type": 'Boolean', "system": false };
+        obj["fields"]['email'] = { "type": 'String', "system": false };
         obj["fields"]['contact'] = new Contact().modelMap();
-        obj["fields"]['emailVerified'] = { "type": 'Boolean' };
+        obj["fields"]['emailVerified'] = { "type": 'Boolean', "system": false };
 
         
-        obj["requiredFields"]['objectType'] = { "type": 'String' };
-        obj["requiredFields"]['id'] = { "type": 'String' };
-        obj["requiredFields"]['created'] = { "type": 'Date' };
-        obj["requiredFields"]['tfaEnabled'] = { "type": 'Boolean' };
-        obj["requiredFields"]['emailVerified'] = { "type": 'Boolean' };
+        obj["requiredFields"]['objectType'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['id'] = { "type": 'String', "system": true };
+        obj["requiredFields"]['created'] = { "type": 'Date', "system": true };
+        obj["requiredFields"]['tfaEnabled'] = { "type": 'Boolean', "system": false };
+        obj["requiredFields"]['emailVerified'] = { "type": 'Boolean', "system": false };
 
         return obj;
     }

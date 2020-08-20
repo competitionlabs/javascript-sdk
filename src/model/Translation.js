@@ -50,7 +50,7 @@ class Translation {
             "requiredFields": {}
         };
 
-        obj["fields"]['languageKey'] = { "type": 'String' };
+        obj["fields"]['languageKey'] = { "type": 'String', "system": false };
         obj["fields"]['translatedFields'] = [new TranslatedField().modelMap()];
 
         

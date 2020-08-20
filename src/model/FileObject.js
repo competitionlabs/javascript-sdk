@@ -73,29 +73,29 @@ class FileObject {
             "requiredFields": {}
         };
 
-        obj["fields"]['id'] = { "type": 'String' };
-        obj["fields"]['spaceName'] = { "type": 'String' };
-        obj["fields"]['created'] = { "type": 'Date' };
-        obj["fields"]['tags'] = [{ "type": 'String' }];
-        obj["fields"]['repositoryId'] = { "type": 'String' };
-        obj["fields"]['fileName'] = { "type": 'String' };
-        obj["fields"]['mimeType'] = { "type": 'String' };
-        obj["fields"]['extension'] = { "type": 'String' };
-        obj["fields"]['path'] = { "type": 'String' };
-        obj["fields"]['parentFolderPath'] = { "type": 'String' };
-        obj["fields"]['uri'] = { "type": 'String' };
-        obj["fields"]['size'] = { "type": 'Number' };
+        obj["fields"]['id'] = { "type": 'String', "system": true };
+        obj["fields"]['spaceName'] = { "type": 'String', "system": true };
+        obj["fields"]['created'] = { "type": 'Date', "system": true };
+        obj["fields"]['tags'] = [{ "type": 'String', "system": false }];
+        obj["fields"]['repositoryId'] = { "type": 'String', "system": false };
+        obj["fields"]['fileName'] = { "type": 'String', "system": false };
+        obj["fields"]['mimeType'] = { "type": 'String', "system": false };
+        obj["fields"]['extension'] = { "type": 'String', "system": false };
+        obj["fields"]['path'] = { "type": 'String', "system": false };
+        obj["fields"]['parentFolderPath'] = { "type": 'String', "system": false };
+        obj["fields"]['uri'] = { "type": 'String', "system": false };
+        obj["fields"]['size'] = { "type": 'Number', "system": false };
         obj["fields"]['metadata'] = [new Metadata().modelMap()];
 
         
-        obj["requiredFields"]['id'] = { "type": 'String' };
-        obj["requiredFields"]['spaceName'] = { "type": 'String' };
-        obj["requiredFields"]['created'] = { "type": 'Date' };
-        obj["requiredFields"]['repositoryId'] = { "type": 'String' };
-        obj["requiredFields"]['fileName'] = { "type": 'String' };
-        obj["requiredFields"]['mimeType'] = { "type": 'String' };
-        obj["requiredFields"]['path'] = { "type": 'String' };
-        obj["requiredFields"]['parentFolderPath'] = { "type": 'String' };
+        obj["requiredFields"]['id'] = { "type": 'String', "system": true };
+        obj["requiredFields"]['spaceName'] = { "type": 'String', "system": true };
+        obj["requiredFields"]['created'] = { "type": 'Date', "system": true };
+        obj["requiredFields"]['repositoryId'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['fileName'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['mimeType'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['path'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['parentFolderPath'] = { "type": 'String', "system": false };
 
         return obj;
     }

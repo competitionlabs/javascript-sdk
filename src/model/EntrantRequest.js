@@ -58,15 +58,15 @@ class EntrantRequest {
             "requiredFields": {}
         };
 
-        obj["fields"]['memberId'] = { "type": 'String' };
-        obj["fields"]['memberRefId'] = { "type": 'String' };
-        obj["fields"]['entityId'] = { "type": 'String' };
+        obj["fields"]['memberId'] = { "type": 'String', "system": false };
+        obj["fields"]['memberRefId'] = { "type": 'String', "system": false };
+        obj["fields"]['entityId'] = { "type": 'String', "system": false };
         obj["fields"]['entrantStatus'] = new EntrantStatus().modelMap();
         obj["fields"]['entrantAction'] = new EntrantAction().modelMap();
 
         
-        obj["requiredFields"]['memberRefId'] = { "type": 'String' };
-        obj["requiredFields"]['entityId'] = { "type": 'String' };
+        obj["requiredFields"]['memberRefId'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['entityId'] = { "type": 'String', "system": false };
         obj["requiredFields"]['entrantStatus'] = new EntrantStatus().modelMap();
         obj["requiredFields"]['entrantAction'] = new EntrantAction().modelMap();
 

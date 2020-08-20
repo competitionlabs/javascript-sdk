@@ -50,11 +50,11 @@ class StartEndDate {
             "requiredFields": {}
         };
 
-        obj["fields"]['start'] = { "type": 'Date' };
-        obj["fields"]['end'] = { "type": 'Date' };
+        obj["fields"]['start'] = { "type": 'Date', "system": false };
+        obj["fields"]['end'] = { "type": 'Date', "system": false };
 
         
-        obj["requiredFields"]['start'] = { "type": 'Date' };
+        obj["requiredFields"]['start'] = { "type": 'Date', "system": false };
 
         return obj;
     }

@@ -51,12 +51,12 @@ class Location {
             "requiredFields": {}
         };
 
-        obj["fields"]['lat'] = { "type": 'Number' };
-        obj["fields"]['lon'] = { "type": 'Number' };
+        obj["fields"]['lat'] = { "type": 'Number', "system": false };
+        obj["fields"]['lon'] = { "type": 'Number', "system": false };
 
         
-        obj["requiredFields"]['lat'] = { "type": 'Number' };
-        obj["requiredFields"]['lon'] = { "type": 'Number' };
+        obj["requiredFields"]['lat'] = { "type": 'Number', "system": false };
+        obj["requiredFields"]['lon'] = { "type": 'Number', "system": false };
 
         return obj;
     }

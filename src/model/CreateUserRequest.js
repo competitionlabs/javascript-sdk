@@ -57,17 +57,17 @@ class CreateUserRequest {
             "requiredFields": {}
         };
 
-        obj["fields"]['firstName'] = { "type": 'String' };
-        obj["fields"]['lastName'] = { "type": 'String' };
-        obj["fields"]['password'] = { "type": 'String' };
-        obj["fields"]['email'] = { "type": 'String' };
+        obj["fields"]['firstName'] = { "type": 'String', "system": false };
+        obj["fields"]['lastName'] = { "type": 'String', "system": false };
+        obj["fields"]['password'] = { "type": 'String', "system": false };
+        obj["fields"]['email'] = { "type": 'String', "system": false };
         obj["fields"]['contact'] = new Contact().modelMap();
 
         
-        obj["requiredFields"]['firstName'] = { "type": 'String' };
-        obj["requiredFields"]['lastName'] = { "type": 'String' };
-        obj["requiredFields"]['password'] = { "type": 'String' };
-        obj["requiredFields"]['email'] = { "type": 'String' };
+        obj["requiredFields"]['firstName'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['lastName'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['password'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['email'] = { "type": 'String', "system": false };
 
         return obj;
     }

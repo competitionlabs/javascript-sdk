@@ -51,12 +51,12 @@ class QueryMultipleFields {
             "requiredFields": {}
         };
 
-        obj["fields"]['queryFields'] = [{ "type": 'String' }];
-        obj["fields"]['queryValue'] = { "type": 'String' };
+        obj["fields"]['queryFields'] = [{ "type": 'String', "system": false }];
+        obj["fields"]['queryValue'] = { "type": 'String', "system": false };
 
         
-        obj["requiredFields"]['queryFields'] = [{ "type": 'String' }];
-        obj["requiredFields"]['queryValue'] = { "type": 'String' };
+        obj["requiredFields"]['queryFields'] = [{ "type": 'String', "system": false }];
+        obj["requiredFields"]['queryValue'] = { "type": 'String', "system": false };
 
         return obj;
     }

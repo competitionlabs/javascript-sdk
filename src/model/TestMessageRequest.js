@@ -49,10 +49,10 @@ class TestMessageRequest {
             "requiredFields": {}
         };
 
-        obj["fields"]['members'] = [{ "type": 'String' }];
+        obj["fields"]['members'] = [{ "type": 'String', "system": false }];
 
         
-        obj["requiredFields"]['members'] = [{ "type": 'String' }];
+        obj["requiredFields"]['members'] = [{ "type": 'String', "system": false }];
 
         return obj;
     }

@@ -52,11 +52,11 @@ class Bracket {
             "requiredFields": {}
         };
 
-        obj["fields"]['rounds'] = { "type": 'Number' };
+        obj["fields"]['rounds'] = { "type": 'Number', "system": false };
         obj["fields"]['contests'] = [new ContestReduced().modelMap()];
 
         
-        obj["requiredFields"]['rounds'] = { "type": 'Number' };
+        obj["requiredFields"]['rounds'] = { "type": 'Number', "system": false };
         obj["requiredFields"]['contests'] = [new ContestReduced().modelMap()];
 
         return obj;

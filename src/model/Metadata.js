@@ -51,12 +51,12 @@ class Metadata {
             "requiredFields": {}
         };
 
-        obj["fields"]['key'] = { "type": 'String' };
-        obj["fields"]['value'] = { "type": 'String' };
+        obj["fields"]['key'] = { "type": 'String', "system": false };
+        obj["fields"]['value'] = { "type": 'String', "system": false };
 
         
-        obj["requiredFields"]['key'] = { "type": 'String' };
-        obj["requiredFields"]['value'] = { "type": 'String' };
+        obj["requiredFields"]['key'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['value'] = { "type": 'String', "system": false };
 
         return obj;
     }

@@ -52,11 +52,11 @@ class UpdateConsumerStateRequest {
             "requiredFields": {}
         };
 
-        obj["fields"]['connectionId'] = { "type": 'String' };
+        obj["fields"]['connectionId'] = { "type": 'String', "system": false };
         obj["fields"]['status'] = new ConnectionState().modelMap();
 
         
-        obj["requiredFields"]['connectionId'] = { "type": 'String' };
+        obj["requiredFields"]['connectionId'] = { "type": 'String', "system": false };
         obj["requiredFields"]['status'] = new ConnectionState().modelMap();
 
         return obj;

@@ -51,10 +51,10 @@ class DependantOn {
             "requiredFields": {}
         };
 
-        obj["fields"]['must'] = [{ "type": 'String' }];
-        obj["fields"]['mustNot'] = [{ "type": 'String' }];
-        obj["fields"]['should'] = [{ "type": 'String' }];
-        obj["fields"]['shouldMatchAtLeast'] = { "type": 'Number' };
+        obj["fields"]['must'] = [{ "type": 'String', "system": false }];
+        obj["fields"]['mustNot'] = [{ "type": 'String', "system": false }];
+        obj["fields"]['should'] = [{ "type": 'String', "system": false }];
+        obj["fields"]['shouldMatchAtLeast'] = { "type": 'Number', "system": false };
 
         
 

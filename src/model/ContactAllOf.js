@@ -60,20 +60,20 @@ class ContactAllOf {
             "requiredFields": {}
         };
 
-        obj["fields"]['addressLine1'] = { "type": 'String' };
-        obj["fields"]['addressLine2'] = { "type": 'String' };
-        obj["fields"]['city'] = { "type": 'String' };
-        obj["fields"]['state'] = { "type": 'String' };
-        obj["fields"]['zipPostalCode'] = { "type": 'String' };
-        obj["fields"]['country'] = { "type": 'String' };
-        obj["fields"]['mobileNumber'] = { "type": 'String' };
-        obj["fields"]['phoneNumber'] = { "type": 'String' };
+        obj["fields"]['addressLine1'] = { "type": 'String', "system": false };
+        obj["fields"]['addressLine2'] = { "type": 'String', "system": false };
+        obj["fields"]['city'] = { "type": 'String', "system": false };
+        obj["fields"]['state'] = { "type": 'String', "system": false };
+        obj["fields"]['zipPostalCode'] = { "type": 'String', "system": false };
+        obj["fields"]['country'] = { "type": 'String', "system": false };
+        obj["fields"]['mobileNumber'] = { "type": 'String', "system": false };
+        obj["fields"]['phoneNumber'] = { "type": 'String', "system": false };
         obj["fields"]['geoLocation'] = new Location().modelMap();
 
         
-        obj["requiredFields"]['addressLine1'] = { "type": 'String' };
-        obj["requiredFields"]['zipPostalCode'] = { "type": 'String' };
-        obj["requiredFields"]['country'] = { "type": 'String' };
+        obj["requiredFields"]['addressLine1'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['zipPostalCode'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['country'] = { "type": 'String', "system": false };
 
         return obj;
     }

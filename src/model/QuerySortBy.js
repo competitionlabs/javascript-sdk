@@ -52,11 +52,11 @@ class QuerySortBy {
             "requiredFields": {}
         };
 
-        obj["fields"]['queryField'] = { "type": 'String' };
+        obj["fields"]['queryField'] = { "type": 'String', "system": false };
         obj["fields"]['order'] = new SortOrder().modelMap();
 
         
-        obj["requiredFields"]['queryField'] = { "type": 'String' };
+        obj["requiredFields"]['queryField'] = { "type": 'String', "system": false };
         obj["requiredFields"]['order'] = new SortOrder().modelMap();
 
         return obj;

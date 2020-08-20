@@ -65,25 +65,25 @@ class AttachmentAllOf {
             "requiredFields": {}
         };
 
-        obj["fields"]['attachmentType'] = { "type": 'String' };
-        obj["fields"]['md5Hash'] = { "type": 'String' };
-        obj["fields"]['fileName'] = { "type": 'String' };
-        obj["fields"]['mimeType'] = { "type": 'String' };
-        obj["fields"]['extension'] = { "type": 'String' };
-        obj["fields"]['locationKey'] = { "type": 'String' };
-        obj["fields"]['locationFolder'] = { "type": 'String' };
-        obj["fields"]['permission'] = { "type": 'Number' };
+        obj["fields"]['attachmentType'] = { "type": 'String', "system": false };
+        obj["fields"]['md5Hash'] = { "type": 'String', "system": false };
+        obj["fields"]['fileName'] = { "type": 'String', "system": false };
+        obj["fields"]['mimeType'] = { "type": 'String', "system": false };
+        obj["fields"]['extension'] = { "type": 'String', "system": false };
+        obj["fields"]['locationKey'] = { "type": 'String', "system": false };
+        obj["fields"]['locationFolder'] = { "type": 'String', "system": false };
+        obj["fields"]['permission'] = { "type": 'Number', "system": false };
         obj["fields"]['metadata'] = [new Metadata().modelMap()];
 
         
-        obj["requiredFields"]['attachmentType'] = { "type": 'String' };
-        obj["requiredFields"]['md5Hash'] = { "type": 'String' };
-        obj["requiredFields"]['fileName'] = { "type": 'String' };
-        obj["requiredFields"]['mimeType'] = { "type": 'String' };
-        obj["requiredFields"]['extension'] = { "type": 'String' };
-        obj["requiredFields"]['locationKey'] = { "type": 'String' };
-        obj["requiredFields"]['locationFolder'] = { "type": 'String' };
-        obj["requiredFields"]['permission'] = { "type": 'Number' };
+        obj["requiredFields"]['attachmentType'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['md5Hash'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['fileName'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['mimeType'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['extension'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['locationKey'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['locationFolder'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['permission'] = { "type": 'Number', "system": false };
 
         return obj;
     }

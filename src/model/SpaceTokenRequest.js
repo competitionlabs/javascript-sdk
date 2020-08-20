@@ -50,11 +50,11 @@ class SpaceTokenRequest {
             "requiredFields": {}
         };
 
-        obj["fields"]['userToken'] = { "type": 'String' };
-        obj["fields"]['spaceName'] = { "type": 'String' };
+        obj["fields"]['userToken'] = { "type": 'String', "system": false };
+        obj["fields"]['spaceName'] = { "type": 'String', "system": true };
 
         
-        obj["requiredFields"]['spaceName'] = { "type": 'String' };
+        obj["requiredFields"]['spaceName'] = { "type": 'String', "system": true };
 
         return obj;
     }

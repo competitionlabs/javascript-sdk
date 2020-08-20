@@ -52,13 +52,13 @@ class ErrorDetail {
             "requiredFields": {}
         };
 
-        obj["fields"]['modelId'] = { "type": 'String' };
-        obj["fields"]['errorCode'] = { "type": 'Number' };
-        obj["fields"]['message'] = { "type": 'String' };
+        obj["fields"]['modelId'] = { "type": 'String', "system": false };
+        obj["fields"]['errorCode'] = { "type": 'Number', "system": false };
+        obj["fields"]['message'] = { "type": 'String', "system": false };
 
         
-        obj["requiredFields"]['errorCode'] = { "type": 'Number' };
-        obj["requiredFields"]['message'] = { "type": 'String' };
+        obj["requiredFields"]['errorCode'] = { "type": 'Number', "system": false };
+        obj["requiredFields"]['message'] = { "type": 'String', "system": false };
 
         return obj;
     }

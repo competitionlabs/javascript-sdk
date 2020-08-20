@@ -56,16 +56,16 @@ class CreateAttachmentRequest {
             "requiredFields": {}
         };
 
-        obj["fields"]['fileName'] = { "type": 'String' };
-        obj["fields"]['mimeType'] = { "type": 'String' };
-        obj["fields"]['extension'] = { "type": 'String' };
-        obj["fields"]['permission'] = { "type": 'Number' };
+        obj["fields"]['fileName'] = { "type": 'String', "system": false };
+        obj["fields"]['mimeType'] = { "type": 'String', "system": false };
+        obj["fields"]['extension'] = { "type": 'String', "system": false };
+        obj["fields"]['permission'] = { "type": 'Number', "system": false };
         obj["fields"]['metadata'] = [new Metadata().modelMap()];
 
         
-        obj["requiredFields"]['fileName'] = { "type": 'String' };
-        obj["requiredFields"]['mimeType'] = { "type": 'String' };
-        obj["requiredFields"]['extension'] = { "type": 'String' };
+        obj["requiredFields"]['fileName'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['mimeType'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['extension'] = { "type": 'String', "system": false };
 
         return obj;
     }

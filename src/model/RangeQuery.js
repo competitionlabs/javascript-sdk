@@ -54,15 +54,15 @@ class RangeQuery {
             "requiredFields": {}
         };
 
-        obj["fields"]['queryField'] = { "type": 'String' };
-        obj["fields"]['gt'] = { "type": 'String' };
-        obj["fields"]['lt'] = { "type": 'String' };
-        obj["fields"]['includeBounds'] = { "type": 'Boolean' };
+        obj["fields"]['queryField'] = { "type": 'String', "system": false };
+        obj["fields"]['gt'] = { "type": 'String', "system": false };
+        obj["fields"]['lt'] = { "type": 'String', "system": false };
+        obj["fields"]['includeBounds'] = { "type": 'Boolean', "system": false };
 
         
-        obj["requiredFields"]['queryField'] = { "type": 'String' };
-        obj["requiredFields"]['gt'] = { "type": 'String' };
-        obj["requiredFields"]['lt'] = { "type": 'String' };
+        obj["requiredFields"]['queryField'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['gt'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['lt'] = { "type": 'String', "system": false };
 
         return obj;
     }

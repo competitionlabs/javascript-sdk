@@ -51,12 +51,12 @@ class CountResponse {
             "requiredFields": {}
         };
 
-        obj["fields"]['entityId'] = { "type": 'String' };
-        obj["fields"]['countValue'] = { "type": 'Number' };
+        obj["fields"]['entityId'] = { "type": 'String', "system": false };
+        obj["fields"]['countValue'] = { "type": 'Number', "system": false };
 
         
-        obj["requiredFields"]['entityId'] = { "type": 'String' };
-        obj["requiredFields"]['countValue'] = { "type": 'Number' };
+        obj["requiredFields"]['entityId'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['countValue'] = { "type": 'Number', "system": false };
 
         return obj;
     }

@@ -51,12 +51,12 @@ class TwoFactorAuthQrCode {
             "requiredFields": {}
         };
 
-        obj["fields"]['barcodeUrl'] = { "type": 'String' };
-        obj["fields"]['secretKey'] = { "type": 'String' };
+        obj["fields"]['barcodeUrl'] = { "type": 'String', "system": false };
+        obj["fields"]['secretKey'] = { "type": 'String', "system": false };
 
         
-        obj["requiredFields"]['barcodeUrl'] = { "type": 'String' };
-        obj["requiredFields"]['secretKey'] = { "type": 'String' };
+        obj["requiredFields"]['barcodeUrl'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['secretKey'] = { "type": 'String', "system": false };
 
         return obj;
     }

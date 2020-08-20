@@ -57,17 +57,17 @@ class UpdateFileObjectRequestAllOf {
             "requiredFields": {}
         };
 
-        obj["fields"]['id'] = { "type": 'String' };
-        obj["fields"]['tags'] = [{ "type": 'String' }];
-        obj["fields"]['repositoryId'] = { "type": 'String' };
-        obj["fields"]['fileName'] = { "type": 'String' };
-        obj["fields"]['mimeType'] = { "type": 'String' };
-        obj["fields"]['parentFolderPath'] = { "type": 'String' };
+        obj["fields"]['id'] = { "type": 'String', "system": true };
+        obj["fields"]['tags'] = [{ "type": 'String', "system": false }];
+        obj["fields"]['repositoryId'] = { "type": 'String', "system": false };
+        obj["fields"]['fileName'] = { "type": 'String', "system": false };
+        obj["fields"]['mimeType'] = { "type": 'String', "system": false };
+        obj["fields"]['parentFolderPath'] = { "type": 'String', "system": false };
         obj["fields"]['metadata'] = [new Metadata().modelMap()];
 
         
-        obj["requiredFields"]['id'] = { "type": 'String' };
-        obj["requiredFields"]['repositoryId'] = { "type": 'String' };
+        obj["requiredFields"]['id'] = { "type": 'String', "system": true };
+        obj["requiredFields"]['repositoryId'] = { "type": 'String', "system": false };
 
         return obj;
     }

@@ -67,26 +67,26 @@ class CreateEventRequest {
             "requiredFields": {}
         };
 
-        obj["fields"]['memberId'] = { "type": 'String' };
-        obj["fields"]['action'] = { "type": 'String' };
-        obj["fields"]['batchId'] = { "type": 'String' };
-        obj["fields"]['entityId'] = { "type": 'String' };
-        obj["fields"]['sourceValue'] = { "type": 'Number' };
-        obj["fields"]['points'] = { "type": 'Number' };
-        obj["fields"]['transactionTimestamp'] = { "type": 'Date' };
-        obj["fields"]['relatesTo'] = { "type": 'String' };
-        obj["fields"]['relatesToExternal'] = { "type": 'String' };
+        obj["fields"]['memberId'] = { "type": 'String', "system": false };
+        obj["fields"]['action'] = { "type": 'String', "system": false };
+        obj["fields"]['batchId'] = { "type": 'String', "system": false };
+        obj["fields"]['entityId'] = { "type": 'String', "system": false };
+        obj["fields"]['sourceValue'] = { "type": 'Number', "system": false };
+        obj["fields"]['points'] = { "type": 'Number', "system": false };
+        obj["fields"]['transactionTimestamp'] = { "type": 'Date', "system": false };
+        obj["fields"]['relatesTo'] = { "type": 'String', "system": false };
+        obj["fields"]['relatesToExternal'] = { "type": 'String', "system": false };
         obj["fields"]['metadata'] = new EventMetadata().modelMap();
 
         
-        obj["requiredFields"]['memberId'] = { "type": 'String' };
-        obj["requiredFields"]['action'] = { "type": 'String' };
-        obj["requiredFields"]['entityId'] = { "type": 'String' };
-        obj["requiredFields"]['sourceValue'] = { "type": 'Number' };
-        obj["requiredFields"]['points'] = { "type": 'Number' };
-        obj["requiredFields"]['transactionTimestamp'] = { "type": 'Date' };
-        obj["requiredFields"]['relatesTo'] = { "type": 'String' };
-        obj["requiredFields"]['relatesToExternal'] = { "type": 'String' };
+        obj["requiredFields"]['memberId'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['action'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['entityId'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['sourceValue'] = { "type": 'Number', "system": false };
+        obj["requiredFields"]['points'] = { "type": 'Number', "system": false };
+        obj["requiredFields"]['transactionTimestamp'] = { "type": 'Date', "system": false };
+        obj["requiredFields"]['relatesTo'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['relatesToExternal'] = { "type": 'String', "system": false };
         obj["requiredFields"]['metadata'] = new EventMetadata().modelMap();
 
         return obj;

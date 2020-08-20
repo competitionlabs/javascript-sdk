@@ -79,13 +79,13 @@ class QueryRequest {
         obj["fields"]['range'] = [new RangeQuery().modelMap()];
         obj["fields"]['sortBy'] = [new QuerySortBy().modelMap()];
         obj["fields"]['multiFields'] = new QueryMultipleFields().modelMap();
-        obj["fields"]['includeFields'] = [{ "type": 'String' }];
-        obj["fields"]['hasValue'] = [{ "type": 'String' }];
-        obj["fields"]['hasNoValue'] = [{ "type": 'String' }];
-        obj["fields"]['shouldMatch'] = { "type": 'Number' };
-        obj["fields"]['skip'] = { "type": 'Number' };
-        obj["fields"]['limit'] = { "type": 'Number' };
-        obj["fields"]['isCountQuery'] = { "type": 'Boolean' };
+        obj["fields"]['includeFields'] = [{ "type": 'String', "system": false }];
+        obj["fields"]['hasValue'] = [{ "type": 'String', "system": false }];
+        obj["fields"]['hasNoValue'] = [{ "type": 'String', "system": false }];
+        obj["fields"]['shouldMatch'] = { "type": 'Number', "system": false };
+        obj["fields"]['skip'] = { "type": 'Number', "system": false };
+        obj["fields"]['limit'] = { "type": 'Number', "system": false };
+        obj["fields"]['isCountQuery'] = { "type": 'Boolean', "system": false };
 
         
 

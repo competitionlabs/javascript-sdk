@@ -59,17 +59,17 @@ class Scheduling {
         };
 
         obj["fields"]['scheduleType'] = new ScheduleType().modelMap();
-        obj["fields"]['scheduleOccurrencesLimit'] = { "type": 'Number' };
-        obj["fields"]['every'] = [{ "type": 'Number' }];
-        obj["fields"]['startDate'] = { "type": 'Date' };
-        obj["fields"]['endDate'] = { "type": 'Date' };
-        obj["fields"]['onlyAggregateOnActiveDays'] = { "type": 'Boolean' };
+        obj["fields"]['scheduleOccurrencesLimit'] = { "type": 'Number', "system": false };
+        obj["fields"]['every'] = [{ "type": 'Number', "system": false }];
+        obj["fields"]['startDate'] = { "type": 'Date', "system": false };
+        obj["fields"]['endDate'] = { "type": 'Date', "system": false };
+        obj["fields"]['onlyAggregateOnActiveDays'] = { "type": 'Boolean', "system": false };
 
         
         obj["requiredFields"]['scheduleType'] = new ScheduleType().modelMap();
-        obj["requiredFields"]['scheduleOccurrencesLimit'] = { "type": 'Number' };
-        obj["requiredFields"]['every'] = [{ "type": 'Number' }];
-        obj["requiredFields"]['startDate'] = { "type": 'Date' };
+        obj["requiredFields"]['scheduleOccurrencesLimit'] = { "type": 'Number', "system": false };
+        obj["requiredFields"]['every'] = [{ "type": 'Number', "system": false }];
+        obj["requiredFields"]['startDate'] = { "type": 'Date', "system": false };
 
         return obj;
     }

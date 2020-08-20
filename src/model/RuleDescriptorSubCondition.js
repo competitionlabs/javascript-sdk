@@ -54,12 +54,12 @@ class RuleDescriptorSubCondition {
             "requiredFields": {}
         };
 
-        obj["fields"]['constraints'] = [{ "type": 'String' }];
+        obj["fields"]['constraints'] = [{ "type": 'String', "system": false }];
         obj["fields"]['matchCondition'] = new MatchCondition().modelMap();
         obj["fields"]['subFacts'] = [new RuleDescriptorSubFact().modelMap()];
 
         
-        obj["requiredFields"]['constraints'] = [{ "type": 'String' }];
+        obj["requiredFields"]['constraints'] = [{ "type": 'String', "system": false }];
         obj["requiredFields"]['matchCondition'] = new MatchCondition().modelMap();
 
         return obj;

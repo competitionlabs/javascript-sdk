@@ -49,10 +49,10 @@ class ConnectionAllOf {
             "requiredFields": {}
         };
 
-        obj["fields"]['objectType'] = { "type": 'String' };
+        obj["fields"]['objectType'] = { "type": 'String', "system": false };
 
         
-        obj["requiredFields"]['objectType'] = { "type": 'String' };
+        obj["requiredFields"]['objectType'] = { "type": 'String', "system": false };
 
         return obj;
     }

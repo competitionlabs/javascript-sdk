@@ -56,17 +56,17 @@ class ChangePasswordRequest {
             "requiredFields": {}
         };
 
-        obj["fields"]['email'] = { "type": 'String' };
-        obj["fields"]['password'] = { "type": 'String' };
-        obj["fields"]['newPassword'] = { "type": 'String' };
-        obj["fields"]['confirmPassword'] = { "type": 'String' };
-        obj["fields"]['twoFactorAccessCode'] = { "type": 'String' };
+        obj["fields"]['email'] = { "type": 'String', "system": false };
+        obj["fields"]['password'] = { "type": 'String', "system": false };
+        obj["fields"]['newPassword'] = { "type": 'String', "system": false };
+        obj["fields"]['confirmPassword'] = { "type": 'String', "system": false };
+        obj["fields"]['twoFactorAccessCode'] = { "type": 'String', "system": false };
 
         
-        obj["requiredFields"]['email'] = { "type": 'String' };
-        obj["requiredFields"]['password'] = { "type": 'String' };
-        obj["requiredFields"]['newPassword'] = { "type": 'String' };
-        obj["requiredFields"]['confirmPassword'] = { "type": 'String' };
+        obj["requiredFields"]['email'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['password'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['newPassword'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['confirmPassword'] = { "type": 'String', "system": false };
 
         return obj;
     }

@@ -49,10 +49,10 @@ class UpdateModelDefault {
             "requiredFields": {}
         };
 
-        obj["fields"]['id'] = { "type": 'String' };
+        obj["fields"]['id'] = { "type": 'String', "system": true };
 
         
-        obj["requiredFields"]['id'] = { "type": 'String' };
+        obj["requiredFields"]['id'] = { "type": 'String', "system": true };
 
         return obj;
     }

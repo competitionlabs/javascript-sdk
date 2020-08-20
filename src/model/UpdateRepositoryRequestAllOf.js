@@ -52,9 +52,9 @@ class UpdateRepositoryRequestAllOf {
             "requiredFields": {}
         };
 
-        obj["fields"]['description'] = { "type": 'String' };
-        obj["fields"]['tags'] = [{ "type": 'String' }];
-        obj["fields"]['constraints'] = [{ "type": 'String' }];
+        obj["fields"]['description'] = { "type": 'String', "system": false };
+        obj["fields"]['tags'] = [{ "type": 'String', "system": false }];
+        obj["fields"]['constraints'] = [{ "type": 'String', "system": false }];
         obj["fields"]['hostingOptions'] = new HostingOptions().modelMap();
 
         

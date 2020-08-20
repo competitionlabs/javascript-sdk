@@ -55,16 +55,16 @@ class MemberAchievementCountAllOf {
             "requiredFields": {}
         };
 
-        obj["fields"]['name'] = { "type": 'String' };
-        obj["fields"]['memberId'] = { "type": 'String' };
-        obj["fields"]['memberRefId'] = { "type": 'String' };
-        obj["fields"]['latestIssuedTimestamp'] = { "type": 'Date' };
+        obj["fields"]['name'] = { "type": 'String', "system": false };
+        obj["fields"]['memberId'] = { "type": 'String', "system": false };
+        obj["fields"]['memberRefId'] = { "type": 'String', "system": false };
+        obj["fields"]['latestIssuedTimestamp'] = { "type": 'Date', "system": false };
 
         
-        obj["requiredFields"]['name'] = { "type": 'String' };
-        obj["requiredFields"]['memberId'] = { "type": 'String' };
-        obj["requiredFields"]['memberRefId'] = { "type": 'String' };
-        obj["requiredFields"]['latestIssuedTimestamp'] = { "type": 'Date' };
+        obj["requiredFields"]['name'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['memberId'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['memberRefId'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['latestIssuedTimestamp'] = { "type": 'Date', "system": false };
 
         return obj;
     }

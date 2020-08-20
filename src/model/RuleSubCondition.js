@@ -56,12 +56,12 @@ class RuleSubCondition {
         };
 
         obj["fields"]['matchCondition'] = new MatchCondition().modelMap();
-        obj["fields"]['mustEvaluateTo'] = { "type": 'Boolean' };
+        obj["fields"]['mustEvaluateTo'] = { "type": 'Boolean', "system": false };
         obj["fields"]['subRules'] = [new SubRule().modelMap()];
 
         
         obj["requiredFields"]['matchCondition'] = new MatchCondition().modelMap();
-        obj["requiredFields"]['mustEvaluateTo'] = { "type": 'Boolean' };
+        obj["requiredFields"]['mustEvaluateTo'] = { "type": 'Boolean', "system": false };
         obj["requiredFields"]['subRules'] = [new SubRule().modelMap()];
 
         return obj;

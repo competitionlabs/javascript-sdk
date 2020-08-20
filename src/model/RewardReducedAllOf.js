@@ -57,18 +57,18 @@ class RewardReducedAllOf {
             "requiredFields": {}
         };
 
-        obj["fields"]['rewardRank'] = { "type": 'String' };
-        obj["fields"]['rewardName'] = { "type": 'String' };
-        obj["fields"]['value'] = { "type": 'Number' };
-        obj["fields"]['rewardType'] = { "type": 'String' };
-        obj["fields"]['rewardTypeId'] = { "type": 'String' };
+        obj["fields"]['rewardRank'] = { "type": 'String', "system": false };
+        obj["fields"]['rewardName'] = { "type": 'String', "system": false };
+        obj["fields"]['value'] = { "type": 'Number', "system": false };
+        obj["fields"]['rewardType'] = { "type": 'String', "system": false };
+        obj["fields"]['rewardTypeId'] = { "type": 'String', "system": false };
 
         
-        obj["requiredFields"]['rewardRank'] = { "type": 'String' };
-        obj["requiredFields"]['rewardName'] = { "type": 'String' };
-        obj["requiredFields"]['value'] = { "type": 'Number' };
-        obj["requiredFields"]['rewardType'] = { "type": 'String' };
-        obj["requiredFields"]['rewardTypeId'] = { "type": 'String' };
+        obj["requiredFields"]['rewardRank'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['rewardName'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['value'] = { "type": 'Number', "system": false };
+        obj["requiredFields"]['rewardType'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['rewardTypeId'] = { "type": 'String', "system": false };
 
         return obj;
     }
