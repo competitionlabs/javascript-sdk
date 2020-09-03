@@ -19,7 +19,7 @@ import EntrantStatus from './EntrantStatus';
 /**
  * The Entrant model module.
  * @module model/Entrant
- * @version 1.0.1
+ * @version 1.0.4
  */
 class Entrant {
     /**
@@ -35,17 +35,28 @@ class Entrant {
     }
 
     /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
+    static initialize(obj, memberId, memberRefId, entrantStatus) { 
+        obj['memberId'] = memberId;
+        obj['memberRefId'] = memberRefId;
+        obj['entrantStatus'] = entrantStatus;
+    }
+
+    /**
     * Constructs a full object with all available fields.
     */
     model(){
         var obj = {};
 
-        obj['entrantAction'] = new EntrantAction().model();
-        obj['memberId'] = null;
-        obj['memberRefId'] = null;
-        obj['entrantStatus'] = new EntrantStatus().model();
-        obj['entityId'] = null;
-        obj['entityType'] = new EntityType().model();
+        obj['entrantAction'];
+        obj['memberId'];
+        obj['memberRefId'];
+        obj['entrantStatus'];
+        obj['entityId'];
+        obj['entityType'];
 
         return obj;
     }
@@ -59,30 +70,19 @@ class Entrant {
             "requiredFields": {}
         };
 
-        obj["fields"]['entrantAction'] = new EntrantAction().modelMap();
-        obj["fields"]['memberId'] = { "type": 'String', "system": false };
-        obj["fields"]['memberRefId'] = { "type": 'String', "system": false };
-        obj["fields"]['entrantStatus'] = new EntrantStatus().modelMap();
-        obj["fields"]['entityId'] = { "type": 'String', "system": false };
-        obj["fields"]['entityType'] = new EntityType().modelMap();
+        obj["fields"]['entrantAction'];
+        obj["fields"]['memberId'];
+        obj["fields"]['memberRefId'];
+        obj["fields"]['entrantStatus'];
+        obj["fields"]['entityId'];
+        obj["fields"]['entityType'];
 
         
-        obj["requiredFields"]['memberId'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['memberRefId'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['entrantStatus'] = new EntrantStatus().modelMap();
+        obj["requiredFields"]['memberId'];
+        obj["requiredFields"]['memberRefId'];
+        obj["requiredFields"]['entrantStatus'];
 
         return obj;
-    }
-
-    /**
-     * Initializes the fields of this object.
-     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
-     * Only for internal use.
-     */
-    static initialize(obj, memberId, memberRefId, entrantStatus) { 
-        obj['memberId'] = memberId;
-        obj['memberRefId'] = memberRefId;
-        obj['entrantStatus'] = entrantStatus;
     }
 
     /**

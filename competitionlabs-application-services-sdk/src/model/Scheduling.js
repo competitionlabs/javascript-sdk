@@ -17,7 +17,7 @@ import ScheduleType from './ScheduleType';
 /**
  * The Scheduling model module.
  * @module model/Scheduling
- * @version 1.0.1
+ * @version 1.0.4
  */
 class Scheduling {
     /**
@@ -34,17 +34,29 @@ class Scheduling {
     }
 
     /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
+    static initialize(obj, scheduleType, scheduleOccurrencesLimit, every, startDate) { 
+        obj['scheduleType'] = scheduleType;
+        obj['scheduleOccurrencesLimit'] = scheduleOccurrencesLimit;
+        obj['every'] = every;
+        obj['startDate'] = startDate;
+    }
+
+    /**
     * Constructs a full object with all available fields.
     */
     model(){
         var obj = {};
 
-        obj['scheduleType'] = new ScheduleType().model();
-        obj['scheduleOccurrencesLimit'] = null;
-        obj['every'] = [null];
-        obj['startDate'] = null;
-        obj['endDate'] = null;
-        obj['onlyAggregateOnActiveDays'] = null;
+        obj['scheduleType'];
+        obj['scheduleOccurrencesLimit'];
+        obj['every'];
+        obj['startDate'];
+        obj['endDate'];
+        obj['onlyAggregateOnActiveDays'];
 
         return obj;
     }
@@ -58,32 +70,20 @@ class Scheduling {
             "requiredFields": {}
         };
 
-        obj["fields"]['scheduleType'] = new ScheduleType().modelMap();
-        obj["fields"]['scheduleOccurrencesLimit'] = { "type": 'Number', "system": false };
-        obj["fields"]['every'] = [{ "type": 'Number', "system": false }];
-        obj["fields"]['startDate'] = { "type": 'Date', "system": false };
-        obj["fields"]['endDate'] = { "type": 'Date', "system": false };
-        obj["fields"]['onlyAggregateOnActiveDays'] = { "type": 'Boolean', "system": false };
+        obj["fields"]['scheduleType'];
+        obj["fields"]['scheduleOccurrencesLimit'];
+        obj["fields"]['every'];
+        obj["fields"]['startDate'];
+        obj["fields"]['endDate'];
+        obj["fields"]['onlyAggregateOnActiveDays'];
 
         
-        obj["requiredFields"]['scheduleType'] = new ScheduleType().modelMap();
-        obj["requiredFields"]['scheduleOccurrencesLimit'] = { "type": 'Number', "system": false };
-        obj["requiredFields"]['every'] = [{ "type": 'Number', "system": false }];
-        obj["requiredFields"]['startDate'] = { "type": 'Date', "system": false };
+        obj["requiredFields"]['scheduleType'];
+        obj["requiredFields"]['scheduleOccurrencesLimit'];
+        obj["requiredFields"]['every'];
+        obj["requiredFields"]['startDate'];
 
         return obj;
-    }
-
-    /**
-     * Initializes the fields of this object.
-     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
-     * Only for internal use.
-     */
-    static initialize(obj, scheduleType, scheduleOccurrencesLimit, every, startDate) { 
-        obj['scheduleType'] = scheduleType;
-        obj['scheduleOccurrencesLimit'] = scheduleOccurrencesLimit;
-        obj['every'] = every;
-        obj['startDate'] = startDate;
     }
 
     /**
@@ -130,9 +130,8 @@ Scheduling.prototype['scheduleType'] = undefined;
 /**
  * A value indicating how many times it will be issued
  * @member {Number} scheduleOccurrencesLimit
- * @default 1
  */
-Scheduling.prototype['scheduleOccurrencesLimit'] = 1;
+Scheduling.prototype['scheduleOccurrencesLimit'] = undefined;
 
 /**
  * @member {Array.<Number>} every
@@ -153,9 +152,8 @@ Scheduling.prototype['endDate'] = undefined;
 
 /**
  * @member {Boolean} onlyAggregateOnActiveDays
- * @default false
  */
-Scheduling.prototype['onlyAggregateOnActiveDays'] = false;
+Scheduling.prototype['onlyAggregateOnActiveDays'] = undefined;
 
 
 

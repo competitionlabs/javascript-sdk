@@ -19,7 +19,7 @@ import UpdateModelDefault from './UpdateModelDefault';
 /**
  * The UpdateFileObjectRequest model module.
  * @module model/UpdateFileObjectRequest
- * @version 1.0.1
+ * @version 1.0.4
  */
 class UpdateFileObjectRequest {
     /**
@@ -27,12 +27,22 @@ class UpdateFileObjectRequest {
      * @alias module:model/UpdateFileObjectRequest
      * @implements module:model/UpdateModelDefault
      * @implements module:model/UpdateFileObjectRequestAllOf
-     * @param id {String} The file identifier
+     * @param id {String} A unique system generated identifier
      * @param repositoryId {String} The repository identifier this file belongs too
      */
     constructor(id, repositoryId) { 
-        UpdateModelDefault.initialize(this, id);UpdateFileObjectRequestAllOf.initialize(this, id, repositoryId);
+        UpdateModelDefault.initialize(this, id);UpdateFileObjectRequestAllOf.initialize(this, repositoryId);
         UpdateFileObjectRequest.initialize(this, id, repositoryId);
+    }
+
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
+    static initialize(obj, id, repositoryId) { 
+        obj['id'] = id;
+        obj['repositoryId'] = repositoryId;
     }
 
     /**
@@ -41,13 +51,13 @@ class UpdateFileObjectRequest {
     model(){
         var obj = {};
 
-        obj['id'] = null;
-        obj['tags'] = [null];
-        obj['repositoryId'] = null;
-        obj['fileName'] = null;
-        obj['mimeType'] = null;
-        obj['parentFolderPath'] = null;
-        obj['metadata'] = [new Metadata().model()];
+        obj['id'];
+        obj['tags'];
+        obj['repositoryId'];
+        obj['fileName'];
+        obj['mimeType'];
+        obj['parentFolderPath'];
+        obj['metadata'];
 
         return obj;
     }
@@ -61,29 +71,19 @@ class UpdateFileObjectRequest {
             "requiredFields": {}
         };
 
-        obj["fields"]['id'] = { "type": 'String', "system": true };
-        obj["fields"]['tags'] = [{ "type": 'String', "system": false }];
-        obj["fields"]['repositoryId'] = { "type": 'String', "system": false };
-        obj["fields"]['fileName'] = { "type": 'String', "system": false };
-        obj["fields"]['mimeType'] = { "type": 'String', "system": false };
-        obj["fields"]['parentFolderPath'] = { "type": 'String', "system": false };
-        obj["fields"]['metadata'] = [new Metadata().modelMap()];
+        obj["fields"]['id'];
+        obj["fields"]['tags'];
+        obj["fields"]['repositoryId'];
+        obj["fields"]['fileName'];
+        obj["fields"]['mimeType'];
+        obj["fields"]['parentFolderPath'];
+        obj["fields"]['metadata'];
 
         
-        obj["requiredFields"]['id'] = { "type": 'String', "system": true };
-        obj["requiredFields"]['repositoryId'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['id'];
+        obj["requiredFields"]['repositoryId'];
 
         return obj;
-    }
-
-    /**
-     * Initializes the fields of this object.
-     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
-     * Only for internal use.
-     */
-    static initialize(obj, id, repositoryId) { 
-        obj['id'] = id;
-        obj['repositoryId'] = repositoryId;
     }
 
     /**
@@ -128,7 +128,7 @@ class UpdateFileObjectRequest {
 }
 
 /**
- * The file identifier
+ * A unique system generated identifier
  * @member {String} id
  */
 UpdateFileObjectRequest.prototype['id'] = undefined;
@@ -176,11 +176,6 @@ UpdateFileObjectRequest.prototype['metadata'] = undefined;
  */
 UpdateModelDefault.prototype['id'] = undefined;
 // Implement UpdateFileObjectRequestAllOf interface:
-/**
- * The file identifier
- * @member {String} id
- */
-UpdateFileObjectRequestAllOf.prototype['id'] = undefined;
 /**
  * The tags associated with this file object
  * @member {Array.<String>} tags

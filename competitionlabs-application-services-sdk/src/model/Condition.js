@@ -18,7 +18,7 @@ import Rule from './Rule';
 /**
  * The Condition model module.
  * @module model/Condition
- * @version 1.0.1
+ * @version 1.0.4
  */
 class Condition {
     /**
@@ -34,14 +34,25 @@ class Condition {
     }
 
     /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
+    static initialize(obj, matchCondition, mustEvaluateTo, rules) { 
+        obj['matchCondition'] = matchCondition;
+        obj['mustEvaluateTo'] = mustEvaluateTo;
+        obj['rules'] = rules;
+    }
+
+    /**
     * Constructs a full object with all available fields.
     */
     model(){
         var obj = {};
 
-        obj['matchCondition'] = new MatchCondition().model();
-        obj['mustEvaluateTo'] = null;
-        obj['rules'] = [new Rule().model()];
+        obj['matchCondition'];
+        obj['mustEvaluateTo'];
+        obj['rules'];
 
         return obj;
     }
@@ -55,27 +66,16 @@ class Condition {
             "requiredFields": {}
         };
 
-        obj["fields"]['matchCondition'] = new MatchCondition().modelMap();
-        obj["fields"]['mustEvaluateTo'] = { "type": 'Boolean', "system": false };
-        obj["fields"]['rules'] = [new Rule().modelMap()];
+        obj["fields"]['matchCondition'];
+        obj["fields"]['mustEvaluateTo'];
+        obj["fields"]['rules'];
 
         
-        obj["requiredFields"]['matchCondition'] = new MatchCondition().modelMap();
-        obj["requiredFields"]['mustEvaluateTo'] = { "type": 'Boolean', "system": false };
-        obj["requiredFields"]['rules'] = [new Rule().modelMap()];
+        obj["requiredFields"]['matchCondition'];
+        obj["requiredFields"]['mustEvaluateTo'];
+        obj["requiredFields"]['rules'];
 
         return obj;
-    }
-
-    /**
-     * Initializes the fields of this object.
-     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
-     * Only for internal use.
-     */
-    static initialize(obj, matchCondition, mustEvaluateTo, rules) { 
-        obj['matchCondition'] = matchCondition;
-        obj['mustEvaluateTo'] = mustEvaluateTo;
-        obj['rules'] = rules;
     }
 
     /**
@@ -113,9 +113,8 @@ Condition.prototype['matchCondition'] = undefined;
 /**
  * The value the rule(s) must evaluate to for the rule to be satisfied
  * @member {Boolean} mustEvaluateTo
- * @default true
  */
-Condition.prototype['mustEvaluateTo'] = true;
+Condition.prototype['mustEvaluateTo'] = undefined;
 
 /**
  * @member {Array.<module:model/Rule>} rules

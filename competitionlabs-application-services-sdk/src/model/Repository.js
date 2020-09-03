@@ -13,13 +13,14 @@
 
 import ApiClient from '../ApiClient';
 import HostingOptions from './HostingOptions';
+import Metadata from './Metadata';
 import ModelDefault from './ModelDefault';
 import RepositoryAllOf from './RepositoryAllOf';
 
 /**
  * The Repository model module.
  * @module model/Repository
- * @version 1.0.1
+ * @version 1.0.4
  */
 class Repository {
     /**
@@ -31,10 +32,26 @@ class Repository {
      * @param spaceName {String} This is the space name which is linked to the account
      * @param created {Date} ISO8601 timestamp for when a Model was created. All records are stored in UTC time zone
      * @param name {String} The name of the repository. This cannot contain spaces or specil characters.
+     * @param tags {Array.<String>} The tags associated with this repository
+     * @param hostingOptions {module:model/HostingOptions} 
      */
-    constructor(id, spaceName, created, name) { 
-        ModelDefault.initialize(this, id, spaceName, created);RepositoryAllOf.initialize(this, name);
-        Repository.initialize(this, id, spaceName, created, name);
+    constructor(id, spaceName, created, name, tags, hostingOptions) { 
+        ModelDefault.initialize(this, id, spaceName, created);RepositoryAllOf.initialize(this, name, tags, hostingOptions);
+        Repository.initialize(this, id, spaceName, created, name, tags, hostingOptions);
+    }
+
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
+    static initialize(obj, id, spaceName, created, name, tags, hostingOptions) { 
+        obj['id'] = id;
+        obj['spaceName'] = spaceName;
+        obj['created'] = created;
+        obj['name'] = name;
+        obj['tags'] = tags;
+        obj['hostingOptions'] = hostingOptions;
     }
 
     /**
@@ -43,14 +60,15 @@ class Repository {
     model(){
         var obj = {};
 
-        obj['id'] = null;
-        obj['spaceName'] = null;
-        obj['created'] = null;
-        obj['name'] = null;
-        obj['description'] = null;
-        obj['constraints'] = [null];
-        obj['tags'] = [null];
-        obj['hostingOptions'] = new HostingOptions().model();
+        obj['id'];
+        obj['spaceName'];
+        obj['created'];
+        obj['name'];
+        obj['description'];
+        obj['constraints'];
+        obj['tags'];
+        obj['hostingOptions'];
+        obj['metadata'];
 
         return obj;
     }
@@ -64,34 +82,25 @@ class Repository {
             "requiredFields": {}
         };
 
-        obj["fields"]['id'] = { "type": 'String', "system": true };
-        obj["fields"]['spaceName'] = { "type": 'String', "system": true };
-        obj["fields"]['created'] = { "type": 'Date', "system": true };
-        obj["fields"]['name'] = { "type": 'String', "system": false };
-        obj["fields"]['description'] = { "type": 'String', "system": false };
-        obj["fields"]['constraints'] = [{ "type": 'String', "system": false }];
-        obj["fields"]['tags'] = [{ "type": 'String', "system": false }];
-        obj["fields"]['hostingOptions'] = new HostingOptions().modelMap();
+        obj["fields"]['id'];
+        obj["fields"]['spaceName'];
+        obj["fields"]['created'];
+        obj["fields"]['name'];
+        obj["fields"]['description'];
+        obj["fields"]['constraints'];
+        obj["fields"]['tags'];
+        obj["fields"]['hostingOptions'];
+        obj["fields"]['metadata'];
 
         
-        obj["requiredFields"]['id'] = { "type": 'String', "system": true };
-        obj["requiredFields"]['spaceName'] = { "type": 'String', "system": true };
-        obj["requiredFields"]['created'] = { "type": 'Date', "system": true };
-        obj["requiredFields"]['name'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['id'];
+        obj["requiredFields"]['spaceName'];
+        obj["requiredFields"]['created'];
+        obj["requiredFields"]['name'];
+        obj["requiredFields"]['tags'];
+        obj["requiredFields"]['hostingOptions'];
 
         return obj;
-    }
-
-    /**
-     * Initializes the fields of this object.
-     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
-     * Only for internal use.
-     */
-    static initialize(obj, id, spaceName, created, name) { 
-        obj['id'] = id;
-        obj['spaceName'] = spaceName;
-        obj['created'] = created;
-        obj['name'] = name;
     }
 
     /**
@@ -130,6 +139,9 @@ class Repository {
             }
             if (data.hasOwnProperty('hostingOptions')) {
                 obj['hostingOptions'] = HostingOptions.constructFromObject(data['hostingOptions']);
+            }
+            if (data.hasOwnProperty('metadata')) {
+                obj['metadata'] = ApiClient.convertToType(data['metadata'], [Metadata]);
             }
         }
         return obj;
@@ -185,6 +197,12 @@ Repository.prototype['tags'] = undefined;
  */
 Repository.prototype['hostingOptions'] = undefined;
 
+/**
+ * Metadata used to describe this file. Content type application/json
+ * @member {Array.<module:model/Metadata>} metadata
+ */
+Repository.prototype['metadata'] = undefined;
+
 
 // Implement ModelDefault interface:
 /**
@@ -227,6 +245,11 @@ RepositoryAllOf.prototype['tags'] = undefined;
  * @member {module:model/HostingOptions} hostingOptions
  */
 RepositoryAllOf.prototype['hostingOptions'] = undefined;
+/**
+ * Metadata used to describe this file. Content type application/json
+ * @member {Array.<module:model/Metadata>} metadata
+ */
+RepositoryAllOf.prototype['metadata'] = undefined;
 
 
 

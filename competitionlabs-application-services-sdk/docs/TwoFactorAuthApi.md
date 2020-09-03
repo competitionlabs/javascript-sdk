@@ -1,13 +1,13 @@
-# @CompetitionlabsJavascriptSdk.TwoFactorAuthApi
+# @CompetitionlabsApplicationServicesSdk.TwoFactorAuthApi
 
 All URIs are relative to *https://api.competitionlabs.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**disable2fa**](docs/TwoFactorAuthApi.md#disable2fa) | **DELETE** /user/2fa | NOT AVAILABLE IN CURRENT RELEASE
-[**get2faQrCode**](docs/TwoFactorAuthApi.md#get2faQrCode) | **GET** /user/2fa/qr-code | NOT AVAILABLE IN CURRENT RELEASE
-[**update2faScratchCodes**](docs/TwoFactorAuthApi.md#update2faScratchCodes) | **PUT** /user/2fa | NOT AVAILABLE IN CURRENT RELEASE
-[**validate2fa**](docs/TwoFactorAuthApi.md#validate2fa) | **POST** /user/2fa/validate | NOT AVAILABLE IN CURRENT RELEASE
+[**disable2fa**](TwoFactorAuthApi.md#disable2fa) | **DELETE** /user/2fa | NOT AVAILABLE IN CURRENT RELEASE
+[**get2faQrCode**](TwoFactorAuthApi.md#get2faQrCode) | **GET** /user/2fa/qr-code | NOT AVAILABLE IN CURRENT RELEASE
+[**update2faScratchCodes**](TwoFactorAuthApi.md#update2faScratchCodes) | **PUT** /user/2fa | NOT AVAILABLE IN CURRENT RELEASE
+[**validate2fa**](TwoFactorAuthApi.md#validate2fa) | **POST** /user/2fa/validate | NOT AVAILABLE IN CURRENT RELEASE
 
 
 
@@ -22,15 +22,15 @@ Disable the Users two factor authenticator from the CompetitionLabs back office
 ### Example
 
 ```javascript
-import @CompetitionlabsJavascriptSdk from '@competitionlabs/javascript-sdk';
-let defaultClient = @CompetitionlabsJavascriptSdk.ApiClient.instance;
+import @CompetitionlabsApplicationServicesSdk from '@competitionlabs/application-services-sdk';
+let defaultClient = @CompetitionlabsApplicationServicesSdk.ApiClient.instance;
 // Configure API key authorization: adminApiKey
 let adminApiKey = defaultClient.authentications['adminApiKey'];
 adminApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //adminApiKey.apiKeyPrefix = 'Token';
 
-let apiInstance = new @CompetitionlabsJavascriptSdk.TwoFactorAuthApi();
+let apiInstance = new @CompetitionlabsApplicationServicesSdk.TwoFactorAuthApi();
 let opts = {
   'X_API_KEY': "X_API_KEY_example" // String | The admin API Key generated from CompetitionLabs back office
 };
@@ -52,11 +52,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApiResponse**](docs/ApiResponse.md)
+[**ApiResponse**](ApiResponse.md)
 
 ### Authorization
 
-[adminApiKey](README.mdminApiKey)
+[adminApiKey](../README.md#adminApiKey)
 
 ### HTTP request headers
 
@@ -75,15 +75,15 @@ Get the 2FA QR code to enable 2FA. This resource will return the QR code to enab
 ### Example
 
 ```javascript
-import @CompetitionlabsJavascriptSdk from '@competitionlabs/javascript-sdk';
-let defaultClient = @CompetitionlabsJavascriptSdk.ApiClient.instance;
+import @CompetitionlabsApplicationServicesSdk from '@competitionlabs/application-services-sdk';
+let defaultClient = @CompetitionlabsApplicationServicesSdk.ApiClient.instance;
 // Configure API key authorization: adminApiKey
 let adminApiKey = defaultClient.authentications['adminApiKey'];
 adminApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //adminApiKey.apiKeyPrefix = 'Token';
 
-let apiInstance = new @CompetitionlabsJavascriptSdk.TwoFactorAuthApi();
+let apiInstance = new @CompetitionlabsApplicationServicesSdk.TwoFactorAuthApi();
 let opts = {
   'X_API_KEY': "X_API_KEY_example" // String | The admin API Key generated from CompetitionLabs back office
 };
@@ -105,11 +105,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**QrCodeResponse**](docs/QrCodeResponse.md)
+[**QrCodeResponse**](QrCodeResponse.md)
 
 ### Authorization
 
-[adminApiKey](README.mdminApiKey)
+[adminApiKey](../README.md#adminApiKey)
 
 ### HTTP request headers
 
@@ -128,15 +128,15 @@ Update scratch code for 2FA
 ### Example
 
 ```javascript
-import @CompetitionlabsJavascriptSdk from '@competitionlabs/javascript-sdk';
-let defaultClient = @CompetitionlabsJavascriptSdk.ApiClient.instance;
+import @CompetitionlabsApplicationServicesSdk from '@competitionlabs/application-services-sdk';
+let defaultClient = @CompetitionlabsApplicationServicesSdk.ApiClient.instance;
 // Configure API key authorization: adminApiKey
 let adminApiKey = defaultClient.authentications['adminApiKey'];
 adminApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //adminApiKey.apiKeyPrefix = 'Token';
 
-let apiInstance = new @CompetitionlabsJavascriptSdk.TwoFactorAuthApi();
+let apiInstance = new @CompetitionlabsApplicationServicesSdk.TwoFactorAuthApi();
 let opts = {
   'X_API_KEY': "X_API_KEY_example" // String | The admin API Key generated from CompetitionLabs back office
 };
@@ -158,11 +158,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApiResponse**](docs/ApiResponse.md)
+[**ApiResponse**](ApiResponse.md)
 
 ### Authorization
 
-[adminApiKey](README.mdminApiKey)
+[adminApiKey](../README.md#adminApiKey)
 
 ### HTTP request headers
 
@@ -181,16 +181,16 @@ Enable the Users two factor authentication in the CompetitionLabs system
 ### Example
 
 ```javascript
-import @CompetitionlabsJavascriptSdk from '@competitionlabs/javascript-sdk';
-let defaultClient = @CompetitionlabsJavascriptSdk.ApiClient.instance;
+import @CompetitionlabsApplicationServicesSdk from '@competitionlabs/application-services-sdk';
+let defaultClient = @CompetitionlabsApplicationServicesSdk.ApiClient.instance;
 // Configure API key authorization: adminApiKey
 let adminApiKey = defaultClient.authentications['adminApiKey'];
 adminApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //adminApiKey.apiKeyPrefix = 'Token';
 
-let apiInstance = new @CompetitionlabsJavascriptSdk.TwoFactorAuthApi();
-let body = new @CompetitionlabsJavascriptSdk.TwoFactorAuthValidateRequest(); // TwoFactorAuthValidateRequest | Enable the Users 2fa in the CompetitionLabs system
+let apiInstance = new @CompetitionlabsApplicationServicesSdk.TwoFactorAuthApi();
+let body = new @CompetitionlabsApplicationServicesSdk.TwoFactorAuthValidateRequest(); // TwoFactorAuthValidateRequest | Enable the Users 2fa in the CompetitionLabs system
 let opts = {
   'X_API_KEY': "X_API_KEY_example" // String | The admin API Key generated from CompetitionLabs back office
 };
@@ -208,16 +208,16 @@ apiInstance.validate2fa(body, opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**TwoFactorAuthValidateRequest**](docs/TwoFactorAuthValidateRequest.md)| Enable the Users 2fa in the CompetitionLabs system | 
+ **body** | [**TwoFactorAuthValidateRequest**](TwoFactorAuthValidateRequest.md)| Enable the Users 2fa in the CompetitionLabs system | 
  **X_API_KEY** | **String**| The admin API Key generated from CompetitionLabs back office | [optional] 
 
 ### Return type
 
-[**ApiResponse**](docs/ApiResponse.md)
+[**ApiResponse**](ApiResponse.md)
 
 ### Authorization
 
-[adminApiKey](README.mdminApiKey)
+[adminApiKey](../README.md#adminApiKey)
 
 ### HTTP request headers
 

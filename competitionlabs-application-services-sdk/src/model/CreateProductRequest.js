@@ -19,7 +19,7 @@ import Translation from './Translation';
 /**
  * The CreateProductRequest model module.
  * @module model/CreateProductRequest
- * @version 1.0.1
+ * @version 1.0.4
  */
 class CreateProductRequest {
     /**
@@ -36,21 +36,33 @@ class CreateProductRequest {
     }
 
     /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
+    static initialize(obj, name, productType, adjustmentFactor, productRefId) { 
+        obj['name'] = name;
+        obj['productType'] = productType;
+        obj['adjustmentFactor'] = adjustmentFactor;
+        obj['productRefId'] = productRefId;
+    }
+
+    /**
     * Constructs a full object with all available fields.
     */
     model(){
         var obj = {};
 
-        obj['name'] = null;
-        obj['productType'] = null;
-        obj['productTypeName'] = null;
-        obj['description'] = null;
-        obj['adjustmentFactor'] = null;
-        obj['productRefId'] = null;
-        obj['actionTypeAdjustmentFactors'] = [new ActionTypeAdjustmentFactor().model()];
-        obj['productGroups'] = [null];
-        obj['metadata'] = [new Metadata().model()];
-        obj['translations'] = [new Translation().model()];
+        obj['name'];
+        obj['productType'];
+        obj['productTypeName'];
+        obj['description'];
+        obj['adjustmentFactor'];
+        obj['productRefId'];
+        obj['actionTypeAdjustmentFactors'];
+        obj['productGroups'];
+        obj['metadata'];
+        obj['translations'];
 
         return obj;
     }
@@ -64,36 +76,24 @@ class CreateProductRequest {
             "requiredFields": {}
         };
 
-        obj["fields"]['name'] = { "type": 'String', "system": false };
-        obj["fields"]['productType'] = { "type": 'String', "system": false };
-        obj["fields"]['productTypeName'] = { "type": 'String', "system": false };
-        obj["fields"]['description'] = { "type": 'String', "system": false };
-        obj["fields"]['adjustmentFactor'] = { "type": 'Number', "system": false };
-        obj["fields"]['productRefId'] = { "type": 'String', "system": false };
-        obj["fields"]['actionTypeAdjustmentFactors'] = [new ActionTypeAdjustmentFactor().modelMap()];
-        obj["fields"]['productGroups'] = [{ "type": 'String', "system": false }];
-        obj["fields"]['metadata'] = [new Metadata().modelMap()];
-        obj["fields"]['translations'] = [new Translation().modelMap()];
+        obj["fields"]['name'];
+        obj["fields"]['productType'];
+        obj["fields"]['productTypeName'];
+        obj["fields"]['description'];
+        obj["fields"]['adjustmentFactor'];
+        obj["fields"]['productRefId'];
+        obj["fields"]['actionTypeAdjustmentFactors'];
+        obj["fields"]['productGroups'];
+        obj["fields"]['metadata'];
+        obj["fields"]['translations'];
 
         
-        obj["requiredFields"]['name'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['productType'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['adjustmentFactor'] = { "type": 'Number', "system": false };
-        obj["requiredFields"]['productRefId'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['name'];
+        obj["requiredFields"]['productType'];
+        obj["requiredFields"]['adjustmentFactor'];
+        obj["requiredFields"]['productRefId'];
 
         return obj;
-    }
-
-    /**
-     * Initializes the fields of this object.
-     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
-     * Only for internal use.
-     */
-    static initialize(obj, name, productType, adjustmentFactor, productRefId) { 
-        obj['name'] = name;
-        obj['productType'] = productType;
-        obj['adjustmentFactor'] = adjustmentFactor;
-        obj['productRefId'] = productRefId;
     }
 
     /**

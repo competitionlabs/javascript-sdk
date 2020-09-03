@@ -12,13 +12,15 @@
  */
 
 import ApiClient from '../ApiClient';
+import AppliesTo from './AppliesTo';
+import FieldType from './FieldType';
 import UpdateCustomFieldRequestAllOf from './UpdateCustomFieldRequestAllOf';
 import UpdateModelDefault from './UpdateModelDefault';
 
 /**
  * The UpdateCustomFieldRequest model module.
  * @module model/UpdateCustomFieldRequest
- * @version 1.0.1
+ * @version 1.0.4
  */
 class UpdateCustomFieldRequest {
     /**
@@ -34,14 +36,25 @@ class UpdateCustomFieldRequest {
     }
 
     /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
+    static initialize(obj, id) { 
+        obj['id'] = id;
+    }
+
+    /**
     * Constructs a full object with all available fields.
     */
     model(){
         var obj = {};
 
-        obj['id'] = null;
-        obj['name'] = null;
-        obj['description'] = null;
+        obj['id'];
+        obj['name'];
+        obj['description'];
+        obj['fieldType'];
+        obj['appliesTo'];
 
         return obj;
     }
@@ -55,23 +68,16 @@ class UpdateCustomFieldRequest {
             "requiredFields": {}
         };
 
-        obj["fields"]['id'] = { "type": 'String', "system": true };
-        obj["fields"]['name'] = { "type": 'String', "system": false };
-        obj["fields"]['description'] = { "type": 'String', "system": false };
+        obj["fields"]['id'];
+        obj["fields"]['name'];
+        obj["fields"]['description'];
+        obj["fields"]['fieldType'];
+        obj["fields"]['appliesTo'];
 
         
-        obj["requiredFields"]['id'] = { "type": 'String', "system": true };
+        obj["requiredFields"]['id'];
 
         return obj;
-    }
-
-    /**
-     * Initializes the fields of this object.
-     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
-     * Only for internal use.
-     */
-    static initialize(obj, id) { 
-        obj['id'] = id;
     }
 
     /**
@@ -95,6 +101,12 @@ class UpdateCustomFieldRequest {
             }
             if (data.hasOwnProperty('description')) {
                 obj['description'] = ApiClient.convertToType(data['description'], 'String');
+            }
+            if (data.hasOwnProperty('fieldType')) {
+                obj['fieldType'] = FieldType.constructFromObject(data['fieldType']);
+            }
+            if (data.hasOwnProperty('appliesTo')) {
+                obj['appliesTo'] = AppliesTo.constructFromObject(data['appliesTo']);
             }
         }
         return obj;
@@ -121,6 +133,16 @@ UpdateCustomFieldRequest.prototype['name'] = undefined;
  */
 UpdateCustomFieldRequest.prototype['description'] = undefined;
 
+/**
+ * @member {module:model/FieldType} fieldType
+ */
+UpdateCustomFieldRequest.prototype['fieldType'] = undefined;
+
+/**
+ * @member {module:model/AppliesTo} appliesTo
+ */
+UpdateCustomFieldRequest.prototype['appliesTo'] = undefined;
+
 
 // Implement UpdateModelDefault interface:
 /**
@@ -139,6 +161,14 @@ UpdateCustomFieldRequestAllOf.prototype['name'] = undefined;
  * @member {String} description
  */
 UpdateCustomFieldRequestAllOf.prototype['description'] = undefined;
+/**
+ * @member {module:model/FieldType} fieldType
+ */
+UpdateCustomFieldRequestAllOf.prototype['fieldType'] = undefined;
+/**
+ * @member {module:model/AppliesTo} appliesTo
+ */
+UpdateCustomFieldRequestAllOf.prototype['appliesTo'] = undefined;
 
 
 

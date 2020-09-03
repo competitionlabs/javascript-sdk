@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ActionTypeAdjustmentFactor model module.
  * @module model/ActionTypeAdjustmentFactor
- * @version 1.0.1
+ * @version 1.0.4
  */
 class ActionTypeAdjustmentFactor {
     /**
@@ -31,13 +31,23 @@ class ActionTypeAdjustmentFactor {
     }
 
     /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
+    static initialize(obj, adjustmentFactor, actionTypeId) { 
+        obj['adjustmentFactor'] = adjustmentFactor;
+        obj['actionTypeId'] = actionTypeId;
+    }
+
+    /**
     * Constructs a full object with all available fields.
     */
     model(){
         var obj = {};
 
-        obj['adjustmentFactor'] = null;
-        obj['actionTypeId'] = null;
+        obj['adjustmentFactor'];
+        obj['actionTypeId'];
 
         return obj;
     }
@@ -51,24 +61,14 @@ class ActionTypeAdjustmentFactor {
             "requiredFields": {}
         };
 
-        obj["fields"]['adjustmentFactor'] = { "type": 'Number', "system": false };
-        obj["fields"]['actionTypeId'] = { "type": 'String', "system": false };
+        obj["fields"]['adjustmentFactor'];
+        obj["fields"]['actionTypeId'];
 
         
-        obj["requiredFields"]['adjustmentFactor'] = { "type": 'Number', "system": false };
-        obj["requiredFields"]['actionTypeId'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['adjustmentFactor'];
+        obj["requiredFields"]['actionTypeId'];
 
         return obj;
-    }
-
-    /**
-     * Initializes the fields of this object.
-     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
-     * Only for internal use.
-     */
-    static initialize(obj, adjustmentFactor, actionTypeId) { 
-        obj['adjustmentFactor'] = adjustmentFactor;
-        obj['actionTypeId'] = actionTypeId;
     }
 
     /**

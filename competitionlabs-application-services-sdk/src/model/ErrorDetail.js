@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ErrorDetail model module.
  * @module model/ErrorDetail
- * @version 1.0.1
+ * @version 1.0.4
  */
 class ErrorDetail {
     /**
@@ -31,14 +31,24 @@ class ErrorDetail {
     }
 
     /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
+    static initialize(obj, errorCode, message) { 
+        obj['errorCode'] = errorCode;
+        obj['message'] = message;
+    }
+
+    /**
     * Constructs a full object with all available fields.
     */
     model(){
         var obj = {};
 
-        obj['modelId'] = null;
-        obj['errorCode'] = null;
-        obj['message'] = null;
+        obj['modelId'];
+        obj['errorCode'];
+        obj['message'];
 
         return obj;
     }
@@ -52,25 +62,15 @@ class ErrorDetail {
             "requiredFields": {}
         };
 
-        obj["fields"]['modelId'] = { "type": 'String', "system": false };
-        obj["fields"]['errorCode'] = { "type": 'Number', "system": false };
-        obj["fields"]['message'] = { "type": 'String', "system": false };
+        obj["fields"]['modelId'];
+        obj["fields"]['errorCode'];
+        obj["fields"]['message'];
 
         
-        obj["requiredFields"]['errorCode'] = { "type": 'Number', "system": false };
-        obj["requiredFields"]['message'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['errorCode'];
+        obj["requiredFields"]['message'];
 
         return obj;
-    }
-
-    /**
-     * Initializes the fields of this object.
-     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
-     * Only for internal use.
-     */
-    static initialize(obj, errorCode, message) { 
-        obj['errorCode'] = errorCode;
-        obj['message'] = message;
     }
 
     /**

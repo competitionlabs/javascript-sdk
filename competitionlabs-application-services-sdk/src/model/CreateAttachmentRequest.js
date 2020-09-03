@@ -17,7 +17,7 @@ import Metadata from './Metadata';
 /**
  * The CreateAttachmentRequest model module.
  * @module model/CreateAttachmentRequest
- * @version 1.0.1
+ * @version 1.0.4
  */
 class CreateAttachmentRequest {
     /**
@@ -33,16 +33,27 @@ class CreateAttachmentRequest {
     }
 
     /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
+    static initialize(obj, fileName, mimeType, extension) { 
+        obj['fileName'] = fileName;
+        obj['mimeType'] = mimeType;
+        obj['extension'] = extension;
+    }
+
+    /**
     * Constructs a full object with all available fields.
     */
     model(){
         var obj = {};
 
-        obj['fileName'] = null;
-        obj['mimeType'] = null;
-        obj['extension'] = null;
-        obj['permission'] = null;
-        obj['metadata'] = [new Metadata().model()];
+        obj['fileName'];
+        obj['mimeType'];
+        obj['extension'];
+        obj['permission'];
+        obj['metadata'];
 
         return obj;
     }
@@ -56,29 +67,18 @@ class CreateAttachmentRequest {
             "requiredFields": {}
         };
 
-        obj["fields"]['fileName'] = { "type": 'String', "system": false };
-        obj["fields"]['mimeType'] = { "type": 'String', "system": false };
-        obj["fields"]['extension'] = { "type": 'String', "system": false };
-        obj["fields"]['permission'] = { "type": 'Number', "system": false };
-        obj["fields"]['metadata'] = [new Metadata().modelMap()];
+        obj["fields"]['fileName'];
+        obj["fields"]['mimeType'];
+        obj["fields"]['extension'];
+        obj["fields"]['permission'];
+        obj["fields"]['metadata'];
 
         
-        obj["requiredFields"]['fileName'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['mimeType'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['extension'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['fileName'];
+        obj["requiredFields"]['mimeType'];
+        obj["requiredFields"]['extension'];
 
         return obj;
-    }
-
-    /**
-     * Initializes the fields of this object.
-     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
-     * Only for internal use.
-     */
-    static initialize(obj, fileName, mimeType, extension) { 
-        obj['fileName'] = fileName;
-        obj['mimeType'] = mimeType;
-        obj['extension'] = extension;
     }
 
     /**
@@ -134,9 +134,8 @@ CreateAttachmentRequest.prototype['extension'] = undefined;
 
 /**
  * @member {Number} permission
- * @default 744
  */
-CreateAttachmentRequest.prototype['permission'] = 744;
+CreateAttachmentRequest.prototype['permission'] = undefined;
 
 /**
  * @member {Array.<module:model/Metadata>} metadata

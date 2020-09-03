@@ -23,7 +23,7 @@ import UpdateRewardRequest from './UpdateRewardRequest';
 /**
  * The UpdateCompetitionRequestAllOf model module.
  * @module model/UpdateCompetitionRequestAllOf
- * @version 1.0.1
+ * @version 1.0.4
  */
 class UpdateCompetitionRequestAllOf {
     /**
@@ -36,31 +36,39 @@ class UpdateCompetitionRequestAllOf {
     }
 
     /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
+    static initialize(obj) { 
+    }
+
+    /**
     * Constructs a full object with all available fields.
     */
     model(){
         var obj = {};
 
-        obj['competitionType'] = new CompetitionType().model();
-        obj['numberOfRounds'] = null;
-        obj['numberOfGroupStages'] = null;
-        obj['name'] = null;
-        obj['description'] = null;
-        obj['termsConditions'] = null;
-        obj['maxNumberOfEntrants'] = null;
-        obj['minNumberOfEntrants'] = null;
-        obj['productIds'] = [null];
-        obj['ruleSets'] = [new RuleSet().model()];
-        obj['isPublic'] = null;
-        obj['autoStart'] = null;
-        obj['scheduledStartDate'] = null;
-        obj['scheduledEndDate'] = null;
-        obj['includeEntrantsWhere'] = new ComplexFilter().model();
-        obj['optinRequiredForEntrants'] = null;
-        obj['metadata'] = [new Metadata().model()];
-        obj['translations'] = [new Translation().model()];
-        obj['contests'] = [new UpdateContestRequest().model()];
-        obj['rewards'] = [new UpdateRewardRequest().model()];
+        obj['competitionType'];
+        obj['numberOfRounds'];
+        obj['numberOfGroupStages'];
+        obj['name'];
+        obj['description'];
+        obj['termsConditions'];
+        obj['maxNumberOfEntrants'];
+        obj['minNumberOfEntrants'];
+        obj['productIds'];
+        obj['ruleSets'];
+        obj['isPublic'];
+        obj['autoStart'];
+        obj['scheduledStartDate'];
+        obj['scheduledEndDate'];
+        obj['includeEntrantsWhere'];
+        obj['optinRequiredForEntrants'];
+        obj['metadata'];
+        obj['translations'];
+        obj['contests'];
+        obj['rewards'];
 
         return obj;
     }
@@ -74,38 +82,30 @@ class UpdateCompetitionRequestAllOf {
             "requiredFields": {}
         };
 
-        obj["fields"]['competitionType'] = new CompetitionType().modelMap();
-        obj["fields"]['numberOfRounds'] = { "type": 'Number', "system": false };
-        obj["fields"]['numberOfGroupStages'] = { "type": 'Number', "system": false };
-        obj["fields"]['name'] = { "type": 'String', "system": false };
-        obj["fields"]['description'] = { "type": 'String', "system": false };
-        obj["fields"]['termsConditions'] = { "type": 'String', "system": false };
-        obj["fields"]['maxNumberOfEntrants'] = { "type": 'Number', "system": false };
-        obj["fields"]['minNumberOfEntrants'] = { "type": 'Number', "system": false };
-        obj["fields"]['productIds'] = [{ "type": 'String', "system": false }];
-        obj["fields"]['ruleSets'] = [new RuleSet().modelMap()];
-        obj["fields"]['isPublic'] = { "type": 'Boolean', "system": false };
-        obj["fields"]['autoStart'] = { "type": 'Boolean', "system": false };
-        obj["fields"]['scheduledStartDate'] = { "type": 'Date', "system": false };
-        obj["fields"]['scheduledEndDate'] = { "type": 'Date', "system": false };
-        obj["fields"]['includeEntrantsWhere'] = new ComplexFilter().modelMap();
-        obj["fields"]['optinRequiredForEntrants'] = { "type": 'Boolean', "system": false };
-        obj["fields"]['metadata'] = [new Metadata().modelMap()];
-        obj["fields"]['translations'] = [new Translation().modelMap()];
-        obj["fields"]['contests'] = [new UpdateContestRequest().modelMap()];
-        obj["fields"]['rewards'] = [new UpdateRewardRequest().modelMap()];
+        obj["fields"]['competitionType'];
+        obj["fields"]['numberOfRounds'];
+        obj["fields"]['numberOfGroupStages'];
+        obj["fields"]['name'];
+        obj["fields"]['description'];
+        obj["fields"]['termsConditions'];
+        obj["fields"]['maxNumberOfEntrants'];
+        obj["fields"]['minNumberOfEntrants'];
+        obj["fields"]['productIds'];
+        obj["fields"]['ruleSets'];
+        obj["fields"]['isPublic'];
+        obj["fields"]['autoStart'];
+        obj["fields"]['scheduledStartDate'];
+        obj["fields"]['scheduledEndDate'];
+        obj["fields"]['includeEntrantsWhere'];
+        obj["fields"]['optinRequiredForEntrants'];
+        obj["fields"]['metadata'];
+        obj["fields"]['translations'];
+        obj["fields"]['contests'];
+        obj["fields"]['rewards'];
 
         
 
         return obj;
-    }
-
-    /**
-     * Initializes the fields of this object.
-     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
-     * Only for internal use.
-     */
-    static initialize(obj) { 
     }
 
     /**
@@ -194,9 +194,8 @@ UpdateCompetitionRequestAllOf.prototype['competitionType'] = undefined;
 /**
  * Number of rounds to be played in a competition
  * @member {Number} numberOfRounds
- * @default 1
  */
-UpdateCompetitionRequestAllOf.prototype['numberOfRounds'] = 1;
+UpdateCompetitionRequestAllOf.prototype['numberOfRounds'] = undefined;
 
 /**
  * Number of group stages
@@ -248,16 +247,14 @@ UpdateCompetitionRequestAllOf.prototype['ruleSets'] = undefined;
 /**
  * Is the event publicly exposed depending on the event model
  * @member {Boolean} isPublic
- * @default true
  */
-UpdateCompetitionRequestAllOf.prototype['isPublic'] = true;
+UpdateCompetitionRequestAllOf.prototype['isPublic'] = undefined;
 
 /**
  * Is the event publicly exposed depending on the event model
  * @member {Boolean} autoStart
- * @default true
  */
-UpdateCompetitionRequestAllOf.prototype['autoStart'] = true;
+UpdateCompetitionRequestAllOf.prototype['autoStart'] = undefined;
 
 /**
  * ISO8601 timestamp for when a Competition should start. All records are stored in UTC time zone
@@ -279,9 +276,8 @@ UpdateCompetitionRequestAllOf.prototype['includeEntrantsWhere'] = undefined;
 /**
  * If True, members must Opt in before they can acquire points in the contest
  * @member {Boolean} optinRequiredForEntrants
- * @default false
  */
-UpdateCompetitionRequestAllOf.prototype['optinRequiredForEntrants'] = false;
+UpdateCompetitionRequestAllOf.prototype['optinRequiredForEntrants'] = undefined;
 
 /**
  * @member {Array.<module:model/Metadata>} metadata

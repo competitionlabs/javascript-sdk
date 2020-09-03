@@ -1,10 +1,10 @@
-# @CompetitionlabsJavascriptSdk.UpdateCollaboratorRequest
+# @CompetitionlabsApplicationServicesSdk.UpdateCollaboratorRequest
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **String** | A unique system generated identifier | 
-**role** | [**Role**](docs/Role.md) |  | 
+**role** | [**Role**](Role.md) |  | 
 
 

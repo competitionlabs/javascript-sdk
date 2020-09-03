@@ -1,4 +1,4 @@
-# @CompetitionlabsJavascriptSdk.ModelDefault
+# @CompetitionlabsApplicationServicesSdk.ModelDefault
 
 ## Properties
 

@@ -17,7 +17,7 @@ import Contact from './Contact';
 /**
  * The UpdateUserRequestAllOf model module.
  * @module model/UpdateUserRequestAllOf
- * @version 1.0.1
+ * @version 1.0.4
  */
 class UpdateUserRequestAllOf {
     /**
@@ -30,15 +30,23 @@ class UpdateUserRequestAllOf {
     }
 
     /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
+    static initialize(obj) { 
+    }
+
+    /**
     * Constructs a full object with all available fields.
     */
     model(){
         var obj = {};
 
-        obj['firstName'] = null;
-        obj['lastName'] = null;
-        obj['email'] = null;
-        obj['contact'] = new Contact().model();
+        obj['firstName'];
+        obj['lastName'];
+        obj['email'];
+        obj['contact'];
 
         return obj;
     }
@@ -52,22 +60,14 @@ class UpdateUserRequestAllOf {
             "requiredFields": {}
         };
 
-        obj["fields"]['firstName'] = { "type": 'String', "system": false };
-        obj["fields"]['lastName'] = { "type": 'String', "system": false };
-        obj["fields"]['email'] = { "type": 'String', "system": false };
-        obj["fields"]['contact'] = new Contact().modelMap();
+        obj["fields"]['firstName'];
+        obj["fields"]['lastName'];
+        obj["fields"]['email'];
+        obj["fields"]['contact'];
 
         
 
         return obj;
-    }
-
-    /**
-     * Initializes the fields of this object.
-     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
-     * Only for internal use.
-     */
-    static initialize(obj) { 
     }
 
     /**

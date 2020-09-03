@@ -17,7 +17,7 @@ import ErrorDetail from './ErrorDetail';
 /**
  * The Error model module.
  * @module model/Error
- * @version 1.0.1
+ * @version 1.0.4
  */
 class Error {
     /**
@@ -32,15 +32,25 @@ class Error {
     }
 
     /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
+    static initialize(obj, errorCode, message) { 
+        obj['errorCode'] = errorCode;
+        obj['message'] = message;
+    }
+
+    /**
     * Constructs a full object with all available fields.
     */
     model(){
         var obj = {};
 
-        obj['modelId'] = null;
-        obj['errorCode'] = null;
-        obj['message'] = null;
-        obj['detail'] = [new ErrorDetail().model()];
+        obj['modelId'];
+        obj['errorCode'];
+        obj['message'];
+        obj['detail'];
 
         return obj;
     }
@@ -54,26 +64,16 @@ class Error {
             "requiredFields": {}
         };
 
-        obj["fields"]['modelId'] = { "type": 'String', "system": false };
-        obj["fields"]['errorCode'] = { "type": 'Number', "system": false };
-        obj["fields"]['message'] = { "type": 'String', "system": false };
-        obj["fields"]['detail'] = [new ErrorDetail().modelMap()];
+        obj["fields"]['modelId'];
+        obj["fields"]['errorCode'];
+        obj["fields"]['message'];
+        obj["fields"]['detail'];
 
         
-        obj["requiredFields"]['errorCode'] = { "type": 'Number', "system": false };
-        obj["requiredFields"]['message'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['errorCode'];
+        obj["requiredFields"]['message'];
 
         return obj;
-    }
-
-    /**
-     * Initializes the fields of this object.
-     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
-     * Only for internal use.
-     */
-    static initialize(obj, errorCode, message) { 
-        obj['errorCode'] = errorCode;
-        obj['message'] = message;
     }
 
     /**

@@ -1,10 +1,9 @@
-# @CompetitionlabsJavascriptSdk.FileObjectAllOf
+# @CompetitionlabsApplicationServicesSdk.FileObjectAllOf
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **String** | The file identifier | 
 **tags** | **[String]** | The tags associated with this file object | [optional] 
 **repositoryId** | **String** | The repository identifier this file belongs too | 
 **fileName** | **String** | Name of the original file uploaded | 
@@ -14,6 +13,6 @@ Name | Type | Description | Notes
 **parentFolderPath** | **String** | The folder name containing the attachment within the bucket | 
 **uri** | **String** | The uniform resource identifier where the file can be viewed/downloaded | [optional] 
 **size** | **Number** | The size of the file | [optional] 
-**metadata** | [**[Metadata]**](docs/Metadata.md) |  | [optional] 
+**metadata** | [**[Metadata]**](Metadata.md) |  | [optional] 
 
 

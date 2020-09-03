@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ChangePasswordRequest model module.
  * @module model/ChangePasswordRequest
- * @version 1.0.1
+ * @version 1.0.4
  */
 class ChangePasswordRequest {
     /**
@@ -33,16 +33,28 @@ class ChangePasswordRequest {
     }
 
     /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
+    static initialize(obj, email, password, newPassword, confirmPassword) { 
+        obj['email'] = email;
+        obj['password'] = password;
+        obj['newPassword'] = newPassword;
+        obj['confirmPassword'] = confirmPassword;
+    }
+
+    /**
     * Constructs a full object with all available fields.
     */
     model(){
         var obj = {};
 
-        obj['email'] = null;
-        obj['password'] = null;
-        obj['newPassword'] = null;
-        obj['confirmPassword'] = null;
-        obj['twoFactorAccessCode'] = null;
+        obj['email'];
+        obj['password'];
+        obj['newPassword'];
+        obj['confirmPassword'];
+        obj['twoFactorAccessCode'];
 
         return obj;
     }
@@ -56,31 +68,19 @@ class ChangePasswordRequest {
             "requiredFields": {}
         };
 
-        obj["fields"]['email'] = { "type": 'String', "system": false };
-        obj["fields"]['password'] = { "type": 'String', "system": false };
-        obj["fields"]['newPassword'] = { "type": 'String', "system": false };
-        obj["fields"]['confirmPassword'] = { "type": 'String', "system": false };
-        obj["fields"]['twoFactorAccessCode'] = { "type": 'String', "system": false };
+        obj["fields"]['email'];
+        obj["fields"]['password'];
+        obj["fields"]['newPassword'];
+        obj["fields"]['confirmPassword'];
+        obj["fields"]['twoFactorAccessCode'];
 
         
-        obj["requiredFields"]['email'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['password'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['newPassword'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['confirmPassword'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['email'];
+        obj["requiredFields"]['password'];
+        obj["requiredFields"]['newPassword'];
+        obj["requiredFields"]['confirmPassword'];
 
         return obj;
-    }
-
-    /**
-     * Initializes the fields of this object.
-     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
-     * Only for internal use.
-     */
-    static initialize(obj, email, password, newPassword, confirmPassword) { 
-        obj['email'] = email;
-        obj['password'] = password;
-        obj['newPassword'] = newPassword;
-        obj['confirmPassword'] = confirmPassword;
     }
 
     /**

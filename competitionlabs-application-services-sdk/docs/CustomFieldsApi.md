@@ -1,15 +1,15 @@
-# @CompetitionlabsJavascriptSdk.CustomFieldsApi
+# @CompetitionlabsApplicationServicesSdk.CustomFieldsApi
 
 All URIs are relative to *https://api.competitionlabs.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createCustomFields**](docs/CustomFieldsApi.md#createCustomFields) | **POST** /custom-fields/{spaceName} | 
-[**deleteCustomFields**](docs/CustomFieldsApi.md#deleteCustomFields) | **DELETE** /custom-fields/{spaceName} | 
-[**deleteCustomFieldsByQuery**](docs/CustomFieldsApi.md#deleteCustomFieldsByQuery) | **POST** /custom-fields/{spaceName}/delete | 
-[**getCustomFields**](docs/CustomFieldsApi.md#getCustomFields) | **GET** /custom-fields/{spaceName} | 
-[**getCustomFieldsByQuery**](docs/CustomFieldsApi.md#getCustomFieldsByQuery) | **POST** /custom-fields/{spaceName}/query | 
-[**updateCustomFields**](docs/CustomFieldsApi.md#updateCustomFields) | **PUT** /custom-fields/{spaceName} | 
+[**createCustomFields**](CustomFieldsApi.md#createCustomFields) | **POST** /custom-fields/{spaceName} | 
+[**deleteCustomFields**](CustomFieldsApi.md#deleteCustomFields) | **DELETE** /custom-fields/{spaceName} | 
+[**deleteCustomFieldsByQuery**](CustomFieldsApi.md#deleteCustomFieldsByQuery) | **POST** /custom-fields/{spaceName}/delete | 
+[**getCustomFields**](CustomFieldsApi.md#getCustomFields) | **GET** /custom-fields/{spaceName} | 
+[**getCustomFieldsByQuery**](CustomFieldsApi.md#getCustomFieldsByQuery) | **POST** /custom-fields/{spaceName}/query | 
+[**updateCustomFields**](CustomFieldsApi.md#updateCustomFields) | **PUT** /custom-fields/{spaceName} | 
 
 
 
@@ -24,17 +24,17 @@ Create new Custom fields in the CompetitionLabs database
 ### Example
 
 ```javascript
-import @CompetitionlabsJavascriptSdk from '@competitionlabs/javascript-sdk';
-let defaultClient = @CompetitionlabsJavascriptSdk.ApiClient.instance;
+import @CompetitionlabsApplicationServicesSdk from '@competitionlabs/application-services-sdk';
+let defaultClient = @CompetitionlabsApplicationServicesSdk.ApiClient.instance;
 // Configure API key authorization: adminApiKey
 let adminApiKey = defaultClient.authentications['adminApiKey'];
 adminApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //adminApiKey.apiKeyPrefix = 'Token';
 
-let apiInstance = new @CompetitionlabsJavascriptSdk.CustomFieldsApi();
+let apiInstance = new @CompetitionlabsApplicationServicesSdk.CustomFieldsApi();
 let spaceName = "spaceName_example"; // String | This is the space name which is linked to the account
-let body = [new @CompetitionlabsJavascriptSdk.CreateCustomFieldRequest()]; // [CreateCustomFieldRequest] | Create Custom fields in the CompetitionLabs database
+let body = [new @CompetitionlabsApplicationServicesSdk.CreateCustomFieldRequest()]; // [CreateCustomFieldRequest] | Create Custom fields in the CompetitionLabs database
 let opts = {
   'X_API_KEY': "X_API_KEY_example" // String | The admin API Key generated from CompetitionLabs back office
 };
@@ -53,16 +53,16 @@ apiInstance.createCustomFields(spaceName, body, opts, (error, data, response) =>
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **spaceName** | **String**| This is the space name which is linked to the account | 
- **body** | [**[CreateCustomFieldRequest]**](docs/CreateCustomFieldRequest.md)| Create Custom fields in the CompetitionLabs database | 
+ **body** | [**[CreateCustomFieldRequest]**](CreateCustomFieldRequest.md)| Create Custom fields in the CompetitionLabs database | 
  **X_API_KEY** | **String**| The admin API Key generated from CompetitionLabs back office | [optional] 
 
 ### Return type
 
-[**ApiResponse**](docs/ApiResponse.md)
+[**ApiResponse**](ApiResponse.md)
 
 ### Authorization
 
-[adminApiKey](README.mdminApiKey)
+[adminApiKey](../README.md#adminApiKey)
 
 ### HTTP request headers
 
@@ -81,15 +81,15 @@ Delete the Custom fields for a given identifier specified
 ### Example
 
 ```javascript
-import @CompetitionlabsJavascriptSdk from '@competitionlabs/javascript-sdk';
-let defaultClient = @CompetitionlabsJavascriptSdk.ApiClient.instance;
+import @CompetitionlabsApplicationServicesSdk from '@competitionlabs/application-services-sdk';
+let defaultClient = @CompetitionlabsApplicationServicesSdk.ApiClient.instance;
 // Configure API key authorization: adminApiKey
 let adminApiKey = defaultClient.authentications['adminApiKey'];
 adminApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //adminApiKey.apiKeyPrefix = 'Token';
 
-let apiInstance = new @CompetitionlabsJavascriptSdk.CustomFieldsApi();
+let apiInstance = new @CompetitionlabsApplicationServicesSdk.CustomFieldsApi();
 let spaceName = "spaceName_example"; // String | This is the space name which is linked to the account
 let opts = {
   'X_API_KEY': "X_API_KEY_example", // String | The admin API Key generated from CompetitionLabs back office
@@ -115,11 +115,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApiResponse**](docs/ApiResponse.md)
+[**ApiResponse**](ApiResponse.md)
 
 ### Authorization
 
-[adminApiKey](README.mdminApiKey)
+[adminApiKey](../README.md#adminApiKey)
 
 ### HTTP request headers
 
@@ -138,19 +138,19 @@ Delete Custom fields from CompetitionLabs database by unique Custom field ID&#39
 ### Example
 
 ```javascript
-import @CompetitionlabsJavascriptSdk from '@competitionlabs/javascript-sdk';
-let defaultClient = @CompetitionlabsJavascriptSdk.ApiClient.instance;
+import @CompetitionlabsApplicationServicesSdk from '@competitionlabs/application-services-sdk';
+let defaultClient = @CompetitionlabsApplicationServicesSdk.ApiClient.instance;
 // Configure API key authorization: adminApiKey
 let adminApiKey = defaultClient.authentications['adminApiKey'];
 adminApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //adminApiKey.apiKeyPrefix = 'Token';
 
-let apiInstance = new @CompetitionlabsJavascriptSdk.CustomFieldsApi();
+let apiInstance = new @CompetitionlabsApplicationServicesSdk.CustomFieldsApi();
 let spaceName = "spaceName_example"; // String | This is the space name which is linked to the account
 let opts = {
   'X_API_KEY': "X_API_KEY_example", // String | The admin API Key generated from CompetitionLabs back office
-  'body': new @CompetitionlabsJavascriptSdk.QueryRequest() // QueryRequest | Delete Custom fields from CompetitionLabs database by unique Custom field ID's or any other POST body parameters using the POST method
+  'body': new @CompetitionlabsApplicationServicesSdk.QueryRequest() // QueryRequest | Delete Custom fields from CompetitionLabs database by unique Custom field ID's or any other POST body parameters using the POST method
 };
 apiInstance.deleteCustomFieldsByQuery(spaceName, opts, (error, data, response) => {
   if (error) {
@@ -168,15 +168,15 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **spaceName** | **String**| This is the space name which is linked to the account | 
  **X_API_KEY** | **String**| The admin API Key generated from CompetitionLabs back office | [optional] 
- **body** | [**QueryRequest**](docs/QueryRequest.md)| Delete Custom fields from CompetitionLabs database by unique Custom field ID&#39;s or any other POST body parameters using the POST method | [optional] 
+ **body** | [**QueryRequest**](QueryRequest.md)| Delete Custom fields from CompetitionLabs database by unique Custom field ID&#39;s or any other POST body parameters using the POST method | [optional] 
 
 ### Return type
 
-[**ApiResponse**](docs/ApiResponse.md)
+[**ApiResponse**](ApiResponse.md)
 
 ### Authorization
 
-[adminApiKey](README.mdminApiKey)
+[adminApiKey](../README.md#adminApiKey)
 
 ### HTTP request headers
 
@@ -195,21 +195,21 @@ Returns a list of Custom fields. This assumes that custom fields have first been
 ### Example
 
 ```javascript
-import @CompetitionlabsJavascriptSdk from '@competitionlabs/javascript-sdk';
-let defaultClient = @CompetitionlabsJavascriptSdk.ApiClient.instance;
+import @CompetitionlabsApplicationServicesSdk from '@competitionlabs/application-services-sdk';
+let defaultClient = @CompetitionlabsApplicationServicesSdk.ApiClient.instance;
 // Configure API key authorization: adminApiKey
 let adminApiKey = defaultClient.authentications['adminApiKey'];
 adminApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //adminApiKey.apiKeyPrefix = 'Token';
 
-let apiInstance = new @CompetitionlabsJavascriptSdk.CustomFieldsApi();
+let apiInstance = new @CompetitionlabsApplicationServicesSdk.CustomFieldsApi();
 let spaceName = "spaceName_example"; // String | This is the space name which is linked to the account
 let opts = {
   'X_API_KEY': "X_API_KEY_example", // String | The admin API Key generated from CompetitionLabs back office
   'id': ["null"], // [String] | The unique identifiers of the resources
-  'limit': 20, // Number | Limit the returned total records found
-  'skip': 0 // Number | Skip the returned records found and return the next batch of records
+  'limit': 56, // Number | Limit the returned total records found
+  'skip': 56 // Number | Skip the returned records found and return the next batch of records
 };
 apiInstance.getCustomFields(spaceName, opts, (error, data, response) => {
   if (error) {
@@ -228,16 +228,16 @@ Name | Type | Description  | Notes
  **spaceName** | **String**| This is the space name which is linked to the account | 
  **X_API_KEY** | **String**| The admin API Key generated from CompetitionLabs back office | [optional] 
  **id** | [**[String]**](String.md)| The unique identifiers of the resources | [optional] 
- **limit** | **Number**| Limit the returned total records found | [optional] [default to 20]
- **skip** | **Number**| Skip the returned records found and return the next batch of records | [optional] [default to 0]
+ **limit** | **Number**| Limit the returned total records found | [optional] 
+ **skip** | **Number**| Skip the returned records found and return the next batch of records | [optional] 
 
 ### Return type
 
-[**CustomFieldResponse**](docs/CustomFieldResponse.md)
+[**CustomFieldResponse**](CustomFieldResponse.md)
 
 ### Authorization
 
-[adminApiKey](README.mdminApiKey)
+[adminApiKey](../README.md#adminApiKey)
 
 ### HTTP request headers
 
@@ -256,19 +256,19 @@ Retrieve Custom fields from CompetitionLabs database by unique Custom field ID&#
 ### Example
 
 ```javascript
-import @CompetitionlabsJavascriptSdk from '@competitionlabs/javascript-sdk';
-let defaultClient = @CompetitionlabsJavascriptSdk.ApiClient.instance;
+import @CompetitionlabsApplicationServicesSdk from '@competitionlabs/application-services-sdk';
+let defaultClient = @CompetitionlabsApplicationServicesSdk.ApiClient.instance;
 // Configure API key authorization: adminApiKey
 let adminApiKey = defaultClient.authentications['adminApiKey'];
 adminApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //adminApiKey.apiKeyPrefix = 'Token';
 
-let apiInstance = new @CompetitionlabsJavascriptSdk.CustomFieldsApi();
+let apiInstance = new @CompetitionlabsApplicationServicesSdk.CustomFieldsApi();
 let spaceName = "spaceName_example"; // String | This is the space name which is linked to the account
 let opts = {
   'X_API_KEY': "X_API_KEY_example", // String | The admin API Key generated from CompetitionLabs back office
-  'body': new @CompetitionlabsJavascriptSdk.QueryRequest() // QueryRequest | Retrieve Custom fields from CompetitionLabs database by unique Custom field ID's or any other Post body parameters using the POST method
+  'body': new @CompetitionlabsApplicationServicesSdk.QueryRequest() // QueryRequest | Retrieve Custom fields from CompetitionLabs database by unique Custom field ID's or any other Post body parameters using the POST method
 };
 apiInstance.getCustomFieldsByQuery(spaceName, opts, (error, data, response) => {
   if (error) {
@@ -286,15 +286,15 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **spaceName** | **String**| This is the space name which is linked to the account | 
  **X_API_KEY** | **String**| The admin API Key generated from CompetitionLabs back office | [optional] 
- **body** | [**QueryRequest**](docs/QueryRequest.md)| Retrieve Custom fields from CompetitionLabs database by unique Custom field ID&#39;s or any other Post body parameters using the POST method | [optional] 
+ **body** | [**QueryRequest**](QueryRequest.md)| Retrieve Custom fields from CompetitionLabs database by unique Custom field ID&#39;s or any other Post body parameters using the POST method | [optional] 
 
 ### Return type
 
-[**CustomFieldResponse**](docs/CustomFieldResponse.md)
+[**CustomFieldResponse**](CustomFieldResponse.md)
 
 ### Authorization
 
-[adminApiKey](README.mdminApiKey)
+[adminApiKey](../README.md#adminApiKey)
 
 ### HTTP request headers
 
@@ -313,17 +313,17 @@ Update existing Custom fields in the CompetitionLabs database
 ### Example
 
 ```javascript
-import @CompetitionlabsJavascriptSdk from '@competitionlabs/javascript-sdk';
-let defaultClient = @CompetitionlabsJavascriptSdk.ApiClient.instance;
+import @CompetitionlabsApplicationServicesSdk from '@competitionlabs/application-services-sdk';
+let defaultClient = @CompetitionlabsApplicationServicesSdk.ApiClient.instance;
 // Configure API key authorization: adminApiKey
 let adminApiKey = defaultClient.authentications['adminApiKey'];
 adminApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //adminApiKey.apiKeyPrefix = 'Token';
 
-let apiInstance = new @CompetitionlabsJavascriptSdk.CustomFieldsApi();
+let apiInstance = new @CompetitionlabsApplicationServicesSdk.CustomFieldsApi();
 let spaceName = "spaceName_example"; // String | This is the space name which is linked to the account
-let body = [new @CompetitionlabsJavascriptSdk.UpdateCustomFieldRequest()]; // [UpdateCustomFieldRequest] | Update Custom fields details in the CompetitionLabs database
+let body = [new @CompetitionlabsApplicationServicesSdk.UpdateCustomFieldRequest()]; // [UpdateCustomFieldRequest] | Update Custom fields details in the CompetitionLabs database
 let opts = {
   'X_API_KEY': "X_API_KEY_example" // String | The admin API Key generated from CompetitionLabs back office
 };
@@ -342,16 +342,16 @@ apiInstance.updateCustomFields(spaceName, body, opts, (error, data, response) =>
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **spaceName** | **String**| This is the space name which is linked to the account | 
- **body** | [**[UpdateCustomFieldRequest]**](docs/UpdateCustomFieldRequest.md)| Update Custom fields details in the CompetitionLabs database | 
+ **body** | [**[UpdateCustomFieldRequest]**](UpdateCustomFieldRequest.md)| Update Custom fields details in the CompetitionLabs database | 
  **X_API_KEY** | **String**| The admin API Key generated from CompetitionLabs back office | [optional] 
 
 ### Return type
 
-[**ApiResponse**](docs/ApiResponse.md)
+[**ApiResponse**](ApiResponse.md)
 
 ### Authorization
 
-[adminApiKey](README.mdminApiKey)
+[adminApiKey](../README.md#adminApiKey)
 
 ### HTTP request headers
 

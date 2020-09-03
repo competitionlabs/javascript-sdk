@@ -22,7 +22,7 @@ import Translation from './Translation';
 /**
  * The CreateContestRequest model module.
  * @module model/CreateContestRequest
- * @version 1.0.1
+ * @version 1.0.4
  */
 class CreateContestRequest {
     /**
@@ -38,25 +38,36 @@ class CreateContestRequest {
     }
 
     /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
+    static initialize(obj, name, roundType, ruleSets) { 
+        obj['name'] = name;
+        obj['roundType'] = roundType;
+        obj['ruleSets'] = ruleSets;
+    }
+
+    /**
     * Constructs a full object with all available fields.
     */
     model(){
         var obj = {};
 
-        obj['name'] = null;
-        obj['description'] = null;
-        obj['termsConditions'] = null;
-        obj['roundType'] = new RoundType().model();
-        obj['maxNumberOfEntrants'] = null;
-        obj['minNumberOfEntrants'] = null;
-        obj['ruleSets'] = [new RuleSet().model()];
-        obj['scheduledStartDate'] = null;
-        obj['scheduledEndDate'] = null;
-        obj['strategies'] = new Strategy().model();
-        obj['constraints'] = [null];
-        obj['metadata'] = [new Metadata().model()];
-        obj['translations'] = [new Translation().model()];
-        obj['rewards'] = [new CreateRewardRequest().model()];
+        obj['name'];
+        obj['description'];
+        obj['termsConditions'];
+        obj['roundType'];
+        obj['maxNumberOfEntrants'];
+        obj['minNumberOfEntrants'];
+        obj['ruleSets'];
+        obj['scheduledStartDate'];
+        obj['scheduledEndDate'];
+        obj['strategies'];
+        obj['constraints'];
+        obj['metadata'];
+        obj['translations'];
+        obj['rewards'];
 
         return obj;
     }
@@ -70,38 +81,27 @@ class CreateContestRequest {
             "requiredFields": {}
         };
 
-        obj["fields"]['name'] = { "type": 'String', "system": false };
-        obj["fields"]['description'] = { "type": 'String', "system": false };
-        obj["fields"]['termsConditions'] = { "type": 'String', "system": false };
-        obj["fields"]['roundType'] = new RoundType().modelMap();
-        obj["fields"]['maxNumberOfEntrants'] = { "type": 'Number', "system": false };
-        obj["fields"]['minNumberOfEntrants'] = { "type": 'Number', "system": false };
-        obj["fields"]['ruleSets'] = [new RuleSet().modelMap()];
-        obj["fields"]['scheduledStartDate'] = { "type": 'Date', "system": false };
-        obj["fields"]['scheduledEndDate'] = { "type": 'Date', "system": false };
-        obj["fields"]['strategies'] = new Strategy().modelMap();
-        obj["fields"]['constraints'] = [{ "type": 'String', "system": false }];
-        obj["fields"]['metadata'] = [new Metadata().modelMap()];
-        obj["fields"]['translations'] = [new Translation().modelMap()];
-        obj["fields"]['rewards'] = [new CreateRewardRequest().modelMap()];
+        obj["fields"]['name'];
+        obj["fields"]['description'];
+        obj["fields"]['termsConditions'];
+        obj["fields"]['roundType'];
+        obj["fields"]['maxNumberOfEntrants'];
+        obj["fields"]['minNumberOfEntrants'];
+        obj["fields"]['ruleSets'];
+        obj["fields"]['scheduledStartDate'];
+        obj["fields"]['scheduledEndDate'];
+        obj["fields"]['strategies'];
+        obj["fields"]['constraints'];
+        obj["fields"]['metadata'];
+        obj["fields"]['translations'];
+        obj["fields"]['rewards'];
 
         
-        obj["requiredFields"]['name'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['roundType'] = new RoundType().modelMap();
-        obj["requiredFields"]['ruleSets'] = [new RuleSet().modelMap()];
+        obj["requiredFields"]['name'];
+        obj["requiredFields"]['roundType'];
+        obj["requiredFields"]['ruleSets'];
 
         return obj;
-    }
-
-    /**
-     * Initializes the fields of this object.
-     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
-     * Only for internal use.
-     */
-    static initialize(obj, name, roundType, ruleSets) { 
-        obj['name'] = name;
-        obj['roundType'] = roundType;
-        obj['ruleSets'] = ruleSets;
     }
 
     /**

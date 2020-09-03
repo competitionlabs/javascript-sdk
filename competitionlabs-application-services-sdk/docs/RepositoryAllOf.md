@@ -1,4 +1,4 @@
-# @CompetitionlabsJavascriptSdk.RepositoryAllOf
+# @CompetitionlabsApplicationServicesSdk.RepositoryAllOf
 
 ## Properties
 
@@ -7,7 +7,8 @@ Name | Type | Description | Notes
 **name** | **String** | The name of the repository. This cannot contain spaces or specil characters. | 
 **description** | **String** | The description of the promotion page | [optional] 
 **constraints** | **[String]** | Additional constraints | [optional] 
-**tags** | **[String]** | The tags associated with this repository | [optional] 
-**hostingOptions** | [**HostingOptions**](docs/HostingOptions.md) |  | [optional] 
+**tags** | **[String]** | The tags associated with this repository | 
+**hostingOptions** | [**HostingOptions**](HostingOptions.md) |  | 
+**metadata** | [**[Metadata]**](Metadata.md) | Metadata used to describe this file. Content type application/json | [optional] 
 
 

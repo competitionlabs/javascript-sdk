@@ -19,7 +19,7 @@ import RuleDescriptorFact from './RuleDescriptorFact';
 /**
  * The RuleDescriptorAction model module.
  * @module model/RuleDescriptorAction
- * @version 1.0.1
+ * @version 1.0.4
  */
 class RuleDescriptorAction {
     /**
@@ -36,18 +36,30 @@ class RuleDescriptorAction {
     }
 
     /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
+    static initialize(obj, constraints, name, operatability, facts) { 
+        obj['constraints'] = constraints;
+        obj['name'] = name;
+        obj['operatability'] = operatability;
+        obj['facts'] = facts;
+    }
+
+    /**
     * Constructs a full object with all available fields.
     */
     model(){
         var obj = {};
 
-        obj['constraints'] = [null];
-        obj['name'] = null;
-        obj['description'] = null;
-        obj['matchCondition'] = null;
-        obj['operatability'] = new MatchCondition().model();
-        obj['onRuleSetMatchTriggers'] = [new OnRuleSetMatchTrigger().model()];
-        obj['facts'] = [new RuleDescriptorFact().model()];
+        obj['constraints'];
+        obj['name'];
+        obj['description'];
+        obj['matchCondition'];
+        obj['operatability'];
+        obj['onRuleSetMatchTriggers'];
+        obj['facts'];
 
         return obj;
     }
@@ -61,33 +73,21 @@ class RuleDescriptorAction {
             "requiredFields": {}
         };
 
-        obj["fields"]['constraints'] = [{ "type": 'String', "system": false }];
-        obj["fields"]['name'] = { "type": 'String', "system": false };
-        obj["fields"]['description'] = { "type": 'String', "system": false };
-        obj["fields"]['matchCondition'] = { "type": 'String', "system": false };
-        obj["fields"]['operatability'] = new MatchCondition().modelMap();
-        obj["fields"]['onRuleSetMatchTriggers'] = [new OnRuleSetMatchTrigger().modelMap()];
-        obj["fields"]['facts'] = [new RuleDescriptorFact().modelMap()];
+        obj["fields"]['constraints'];
+        obj["fields"]['name'];
+        obj["fields"]['description'];
+        obj["fields"]['matchCondition'];
+        obj["fields"]['operatability'];
+        obj["fields"]['onRuleSetMatchTriggers'];
+        obj["fields"]['facts'];
 
         
-        obj["requiredFields"]['constraints'] = [{ "type": 'String', "system": false }];
-        obj["requiredFields"]['name'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['operatability'] = new MatchCondition().modelMap();
-        obj["requiredFields"]['facts'] = [new RuleDescriptorFact().modelMap()];
+        obj["requiredFields"]['constraints'];
+        obj["requiredFields"]['name'];
+        obj["requiredFields"]['operatability'];
+        obj["requiredFields"]['facts'];
 
         return obj;
-    }
-
-    /**
-     * Initializes the fields of this object.
-     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
-     * Only for internal use.
-     */
-    static initialize(obj, constraints, name, operatability, facts) { 
-        obj['constraints'] = constraints;
-        obj['name'] = name;
-        obj['operatability'] = operatability;
-        obj['facts'] = facts;
     }
 
     /**

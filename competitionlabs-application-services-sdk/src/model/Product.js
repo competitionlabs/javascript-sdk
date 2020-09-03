@@ -21,7 +21,7 @@ import Translation from './Translation';
 /**
  * The Product model module.
  * @module model/Product
- * @version 1.0.1
+ * @version 1.0.4
  */
 class Product {
     /**
@@ -43,25 +43,40 @@ class Product {
     }
 
     /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
+    static initialize(obj, id, spaceName, created, name, productType, adjustmentFactor, productRefId) { 
+        obj['id'] = id;
+        obj['spaceName'] = spaceName;
+        obj['created'] = created;
+        obj['name'] = name;
+        obj['productType'] = productType;
+        obj['adjustmentFactor'] = adjustmentFactor;
+        obj['productRefId'] = productRefId;
+    }
+
+    /**
     * Constructs a full object with all available fields.
     */
     model(){
         var obj = {};
 
-        obj['id'] = null;
-        obj['spaceName'] = null;
-        obj['created'] = null;
-        obj['name'] = null;
-        obj['productType'] = null;
-        obj['productTypeName'] = null;
-        obj['description'] = null;
-        obj['adjustmentFactor'] = null;
-        obj['productRefId'] = null;
-        obj['actionTypeAdjustmentFactors'] = [new ActionTypeAdjustmentFactor().model()];
-        obj['productGroups'] = [null];
-        obj['metadata'] = [new Metadata().model()];
-        obj['translations'] = [new Translation().model()];
-        obj['translatableFields'] = [null];
+        obj['id'];
+        obj['spaceName'];
+        obj['created'];
+        obj['name'];
+        obj['productType'];
+        obj['productTypeName'];
+        obj['description'];
+        obj['adjustmentFactor'];
+        obj['productRefId'];
+        obj['actionTypeAdjustmentFactors'];
+        obj['productGroups'];
+        obj['metadata'];
+        obj['translations'];
+        obj['translatableFields'];
 
         return obj;
     }
@@ -75,46 +90,31 @@ class Product {
             "requiredFields": {}
         };
 
-        obj["fields"]['id'] = { "type": 'String', "system": true };
-        obj["fields"]['spaceName'] = { "type": 'String', "system": true };
-        obj["fields"]['created'] = { "type": 'Date', "system": true };
-        obj["fields"]['name'] = { "type": 'String', "system": false };
-        obj["fields"]['productType'] = { "type": 'String', "system": false };
-        obj["fields"]['productTypeName'] = { "type": 'String', "system": false };
-        obj["fields"]['description'] = { "type": 'String', "system": false };
-        obj["fields"]['adjustmentFactor'] = { "type": 'Number', "system": false };
-        obj["fields"]['productRefId'] = { "type": 'String', "system": false };
-        obj["fields"]['actionTypeAdjustmentFactors'] = [new ActionTypeAdjustmentFactor().modelMap()];
-        obj["fields"]['productGroups'] = [{ "type": 'String', "system": false }];
-        obj["fields"]['metadata'] = [new Metadata().modelMap()];
-        obj["fields"]['translations'] = [new Translation().modelMap()];
-        obj["fields"]['translatableFields'] = [{ "type": 'String', "system": false }];
+        obj["fields"]['id'];
+        obj["fields"]['spaceName'];
+        obj["fields"]['created'];
+        obj["fields"]['name'];
+        obj["fields"]['productType'];
+        obj["fields"]['productTypeName'];
+        obj["fields"]['description'];
+        obj["fields"]['adjustmentFactor'];
+        obj["fields"]['productRefId'];
+        obj["fields"]['actionTypeAdjustmentFactors'];
+        obj["fields"]['productGroups'];
+        obj["fields"]['metadata'];
+        obj["fields"]['translations'];
+        obj["fields"]['translatableFields'];
 
         
-        obj["requiredFields"]['id'] = { "type": 'String', "system": true };
-        obj["requiredFields"]['spaceName'] = { "type": 'String', "system": true };
-        obj["requiredFields"]['created'] = { "type": 'Date', "system": true };
-        obj["requiredFields"]['name'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['productType'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['adjustmentFactor'] = { "type": 'Number', "system": false };
-        obj["requiredFields"]['productRefId'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['id'];
+        obj["requiredFields"]['spaceName'];
+        obj["requiredFields"]['created'];
+        obj["requiredFields"]['name'];
+        obj["requiredFields"]['productType'];
+        obj["requiredFields"]['adjustmentFactor'];
+        obj["requiredFields"]['productRefId'];
 
         return obj;
-    }
-
-    /**
-     * Initializes the fields of this object.
-     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
-     * Only for internal use.
-     */
-    static initialize(obj, id, spaceName, created, name, productType, adjustmentFactor, productRefId) { 
-        obj['id'] = id;
-        obj['spaceName'] = spaceName;
-        obj['created'] = created;
-        obj['name'] = name;
-        obj['productType'] = productType;
-        obj['adjustmentFactor'] = adjustmentFactor;
-        obj['productRefId'] = productRefId;
     }
 
     /**
@@ -255,7 +255,7 @@ Product.prototype['metadata'] = undefined;
 Product.prototype['translations'] = undefined;
 
 /**
- * Rewards translatable fields
+ * Products translatable fields
  * @member {Array.<String>} translatableFields
  */
 Product.prototype['translatableFields'] = undefined;
@@ -326,7 +326,7 @@ ProductAllOf.prototype['metadata'] = undefined;
  */
 ProductAllOf.prototype['translations'] = undefined;
 /**
- * Rewards translatable fields
+ * Products translatable fields
  * @member {Array.<String>} translatableFields
  */
 ProductAllOf.prototype['translatableFields'] = undefined;

@@ -17,7 +17,7 @@ import RuleDescriptorSubCondition from './RuleDescriptorSubCondition';
 /**
  * The RuleDescriptorFactAllOf model module.
  * @module model/RuleDescriptorFactAllOf
- * @version 1.0.1
+ * @version 1.0.4
  */
 class RuleDescriptorFactAllOf {
     /**
@@ -31,14 +31,23 @@ class RuleDescriptorFactAllOf {
     }
 
     /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
+    static initialize(obj, fact) { 
+        obj['fact'] = fact;
+    }
+
+    /**
     * Constructs a full object with all available fields.
     */
     model(){
         var obj = {};
 
-        obj['constraints'] = [null];
-        obj['fact'] = null;
-        obj['subConditions'] = [new RuleDescriptorSubCondition().model()];
+        obj['constraints'];
+        obj['fact'];
+        obj['subConditions'];
 
         return obj;
     }
@@ -52,23 +61,14 @@ class RuleDescriptorFactAllOf {
             "requiredFields": {}
         };
 
-        obj["fields"]['constraints'] = [{ "type": 'String', "system": false }];
-        obj["fields"]['fact'] = { "type": 'String', "system": false };
-        obj["fields"]['subConditions'] = [new RuleDescriptorSubCondition().modelMap()];
+        obj["fields"]['constraints'];
+        obj["fields"]['fact'];
+        obj["fields"]['subConditions'];
 
         
-        obj["requiredFields"]['fact'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['fact'];
 
         return obj;
-    }
-
-    /**
-     * Initializes the fields of this object.
-     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
-     * Only for internal use.
-     */
-    static initialize(obj, fact) { 
-        obj['fact'] = fact;
     }
 
     /**

@@ -1,11 +1,11 @@
-# @CompetitionlabsJavascriptSdk.CompetitionResponse
+# @CompetitionlabsApplicationServicesSdk.CompetitionResponse
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**meta** | [**MetaExtended**](docs/MetaExtended.md) |  | 
-**results** | [**[Competition]**](docs/Competition.md) |  | [optional] 
-**errors** | [**[Error]**](docs/Error.md) |  | [optional] 
+**meta** | [**MetaExtended**](MetaExtended.md) |  | 
+**results** | [**[Competition]**](Competition.md) |  | [optional] 
+**errors** | [**[Error]**](Error.md) |  | [optional] 
 
 

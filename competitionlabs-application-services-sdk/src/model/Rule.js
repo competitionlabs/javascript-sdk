@@ -17,7 +17,7 @@ import RuleSubCondition from './RuleSubCondition';
 /**
  * The Rule model module.
  * @module model/Rule
- * @version 1.0.1
+ * @version 1.0.4
  */
 class Rule {
     /**
@@ -35,16 +35,29 @@ class Rule {
     }
 
     /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
+    static initialize(obj, fact, operator, constant, id, subConditions) { 
+        obj['fact'] = fact;
+        obj['operator'] = operator;
+        obj['constant'] = constant;
+        obj['id'] = id;
+        obj['subConditions'] = subConditions;
+    }
+
+    /**
     * Constructs a full object with all available fields.
     */
     model(){
         var obj = {};
 
-        obj['fact'] = null;
-        obj['operator'] = null;
-        obj['constant'] = null;
-        obj['id'] = null;
-        obj['subConditions'] = [new RuleSubCondition().model()];
+        obj['fact'];
+        obj['operator'];
+        obj['constant'];
+        obj['id'];
+        obj['subConditions'];
 
         return obj;
     }
@@ -58,33 +71,20 @@ class Rule {
             "requiredFields": {}
         };
 
-        obj["fields"]['fact'] = { "type": 'String', "system": false };
-        obj["fields"]['operator'] = { "type": 'String', "system": false };
-        obj["fields"]['constant'] = { "type": 'String', "system": false };
-        obj["fields"]['id'] = { "type": 'String', "system": true };
-        obj["fields"]['subConditions'] = [new RuleSubCondition().modelMap()];
+        obj["fields"]['fact'];
+        obj["fields"]['operator'];
+        obj["fields"]['constant'];
+        obj["fields"]['id'];
+        obj["fields"]['subConditions'];
 
         
-        obj["requiredFields"]['fact'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['operator'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['constant'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['id'] = { "type": 'String', "system": true };
-        obj["requiredFields"]['subConditions'] = [new RuleSubCondition().modelMap()];
+        obj["requiredFields"]['fact'];
+        obj["requiredFields"]['operator'];
+        obj["requiredFields"]['constant'];
+        obj["requiredFields"]['id'];
+        obj["requiredFields"]['subConditions'];
 
         return obj;
-    }
-
-    /**
-     * Initializes the fields of this object.
-     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
-     * Only for internal use.
-     */
-    static initialize(obj, fact, operator, constant, id, subConditions) { 
-        obj['fact'] = fact;
-        obj['operator'] = operator;
-        obj['constant'] = constant;
-        obj['id'] = id;
-        obj['subConditions'] = subConditions;
     }
 
     /**

@@ -1,4 +1,4 @@
-# @CompetitionlabsJavascriptSdk.AchievementIssuedCount
+# @CompetitionlabsApplicationServicesSdk.AchievementIssuedCount
 
 ## Properties
 

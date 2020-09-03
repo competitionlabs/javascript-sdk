@@ -18,7 +18,7 @@ import FieldType from './FieldType';
 /**
  * The CreateCustomFieldRequest model module.
  * @module model/CreateCustomFieldRequest
- * @version 1.0.1
+ * @version 1.0.4
  */
 class CreateCustomFieldRequest {
     /**
@@ -35,16 +35,28 @@ class CreateCustomFieldRequest {
     }
 
     /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
+    static initialize(obj, name, term, fieldType, appliesTo) { 
+        obj['name'] = name;
+        obj['term'] = term;
+        obj['fieldType'] = fieldType;
+        obj['appliesTo'] = appliesTo;
+    }
+
+    /**
     * Constructs a full object with all available fields.
     */
     model(){
         var obj = {};
 
-        obj['name'] = null;
-        obj['term'] = null;
-        obj['description'] = null;
-        obj['fieldType'] = new FieldType().model();
-        obj['appliesTo'] = new AppliesTo().model();
+        obj['name'];
+        obj['term'];
+        obj['description'];
+        obj['fieldType'];
+        obj['appliesTo'];
 
         return obj;
     }
@@ -58,31 +70,19 @@ class CreateCustomFieldRequest {
             "requiredFields": {}
         };
 
-        obj["fields"]['name'] = { "type": 'String', "system": false };
-        obj["fields"]['term'] = { "type": 'String', "system": false };
-        obj["fields"]['description'] = { "type": 'String', "system": false };
-        obj["fields"]['fieldType'] = new FieldType().modelMap();
-        obj["fields"]['appliesTo'] = new AppliesTo().modelMap();
+        obj["fields"]['name'];
+        obj["fields"]['term'];
+        obj["fields"]['description'];
+        obj["fields"]['fieldType'];
+        obj["fields"]['appliesTo'];
 
         
-        obj["requiredFields"]['name'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['term'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['fieldType'] = new FieldType().modelMap();
-        obj["requiredFields"]['appliesTo'] = new AppliesTo().modelMap();
+        obj["requiredFields"]['name'];
+        obj["requiredFields"]['term'];
+        obj["requiredFields"]['fieldType'];
+        obj["requiredFields"]['appliesTo'];
 
         return obj;
-    }
-
-    /**
-     * Initializes the fields of this object.
-     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
-     * Only for internal use.
-     */
-    static initialize(obj, name, term, fieldType, appliesTo) { 
-        obj['name'] = name;
-        obj['term'] = term;
-        obj['fieldType'] = fieldType;
-        obj['appliesTo'] = appliesTo;
     }
 
     /**

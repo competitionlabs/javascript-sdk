@@ -28,7 +28,7 @@ import UpdateCompetitionStatusRequest from '../model/UpdateCompetitionStatusRequ
 /**
 * Competitions service.
 * @module api/CompetitionsApi
-* @version 1.0.1
+* @version 1.0.4
 */
 export default class CompetitionsApi {
 
@@ -159,8 +159,8 @@ export default class CompetitionsApi {
      * @param {Object} opts Optional parameters
      * @param {String} opts.X_API_KEY The admin API Key generated from CompetitionLabs back office
      * @param {Array.<String>} opts.id The unique identifiers of the resources
-     * @param {Number} opts.limit Limit the returned total records found (default to 20)
-     * @param {Number} opts.skip Skip the returned records found and return the next batch of records (default to 0)
+     * @param {Number} opts.limit Limit the returned total records found
+     * @param {Number} opts.skip Skip the returned records found and return the next batch of records
      * @param {module:api/CompetitionsApi~getCompetitionsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/CompetitionResponse}
      */
@@ -212,8 +212,8 @@ export default class CompetitionsApi {
      * @param {String} id Unique identifier of the resource
      * @param {Object} opts Optional parameters
      * @param {String} opts.X_API_KEY The admin API Key generated from CompetitionLabs back office
-     * @param {Number} opts.limit Limit the returned total records found (default to 20)
-     * @param {Number} opts.skip Skip the returned records found and return the next batch of records (default to 0)
+     * @param {Number} opts.limit Limit the returned total records found
+     * @param {Number} opts.skip Skip the returned records found and return the next batch of records
      * @param {module:api/CompetitionsApi~getCompetitionsBracketsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/BracketResponse}
      */
@@ -370,8 +370,8 @@ export default class CompetitionsApi {
      * @param {String} id Unique identifier of the resource
      * @param {Object} opts Optional parameters
      * @param {String} opts.X_API_KEY The admin API Key generated from CompetitionLabs back office
-     * @param {Number} opts.limit Limit the returned total records found (default to 20)
-     * @param {Number} opts.skip Skip the returned records found and return the next batch of records (default to 0)
+     * @param {Number} opts.limit Limit the returned total records found
+     * @param {Number} opts.skip Skip the returned records found and return the next batch of records
      * @param {module:api/CompetitionsApi~getContestsForCompetitionsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ContestReducedResponse}
      */
@@ -427,8 +427,8 @@ export default class CompetitionsApi {
      * @param {String} id Unique identifier of the resource
      * @param {Object} opts Optional parameters
      * @param {String} opts.X_API_KEY The admin API Key generated from CompetitionLabs back office
-     * @param {Number} opts.limit Limit the returned total records found (default to 20)
-     * @param {Number} opts.skip Skip the returned records found and return the next batch of records (default to 0)
+     * @param {Number} opts.limit Limit the returned total records found
+     * @param {Number} opts.skip Skip the returned records found and return the next batch of records
      * @param {module:api/CompetitionsApi~getLeaderboardByCompetitionIdCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/CompetitionLeaderboardResponse}
      */
@@ -484,8 +484,8 @@ export default class CompetitionsApi {
      * @param {String} id Unique identifier of the resource
      * @param {Object} opts Optional parameters
      * @param {String} opts.X_API_KEY The admin API Key generated from CompetitionLabs back office
-     * @param {Number} opts.limit Limit the returned total records found (default to 20)
-     * @param {Number} opts.skip Skip the returned records found and return the next batch of records (default to 0)
+     * @param {Number} opts.limit Limit the returned total records found
+     * @param {Number} opts.skip Skip the returned records found and return the next batch of records
      * @param {module:api/CompetitionsApi~getListOfEntrantsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/EntrantResponse}
      */

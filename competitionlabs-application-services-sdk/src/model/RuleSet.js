@@ -18,7 +18,7 @@ import RuleScope from './RuleScope';
 /**
  * The RuleSet model module.
  * @module model/RuleSet
- * @version 1.0.1
+ * @version 1.0.4
  */
 class RuleSet {
     /**
@@ -35,17 +35,29 @@ class RuleSet {
     }
 
     /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
+    static initialize(obj, priority, scope, action, conditions) { 
+        obj['priority'] = priority;
+        obj['scope'] = scope;
+        obj['action'] = action;
+        obj['conditions'] = conditions;
+    }
+
+    /**
     * Constructs a full object with all available fields.
     */
     model(){
         var obj = {};
 
-        obj['priority'] = null;
-        obj['scope'] = new RuleScope().model();
-        obj['action'] = null;
-        obj['conditions'] = [new Condition().model()];
-        obj['onMatchThen'] = null;
-        obj['onMatchConstant'] = null;
+        obj['priority'];
+        obj['scope'];
+        obj['action'];
+        obj['conditions'];
+        obj['onMatchThen'];
+        obj['onMatchConstant'];
 
         return obj;
     }
@@ -59,32 +71,20 @@ class RuleSet {
             "requiredFields": {}
         };
 
-        obj["fields"]['priority'] = { "type": 'Number', "system": false };
-        obj["fields"]['scope'] = new RuleScope().modelMap();
-        obj["fields"]['action'] = { "type": 'String', "system": false };
-        obj["fields"]['conditions'] = [new Condition().modelMap()];
-        obj["fields"]['onMatchThen'] = { "type": 'String', "system": false };
-        obj["fields"]['onMatchConstant'] = { "type": 'String', "system": false };
+        obj["fields"]['priority'];
+        obj["fields"]['scope'];
+        obj["fields"]['action'];
+        obj["fields"]['conditions'];
+        obj["fields"]['onMatchThen'];
+        obj["fields"]['onMatchConstant'];
 
         
-        obj["requiredFields"]['priority'] = { "type": 'Number', "system": false };
-        obj["requiredFields"]['scope'] = new RuleScope().modelMap();
-        obj["requiredFields"]['action'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['conditions'] = [new Condition().modelMap()];
+        obj["requiredFields"]['priority'];
+        obj["requiredFields"]['scope'];
+        obj["requiredFields"]['action'];
+        obj["requiredFields"]['conditions'];
 
         return obj;
-    }
-
-    /**
-     * Initializes the fields of this object.
-     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
-     * Only for internal use.
-     */
-    static initialize(obj, priority, scope, action, conditions) { 
-        obj['priority'] = priority;
-        obj['scope'] = scope;
-        obj['action'] = action;
-        obj['conditions'] = conditions;
     }
 
     /**

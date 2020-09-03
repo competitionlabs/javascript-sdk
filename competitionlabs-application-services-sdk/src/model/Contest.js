@@ -25,7 +25,7 @@ import Translation from './Translation';
 /**
  * The Contest model module.
  * @module model/Contest
- * @version 1.0.1
+ * @version 1.0.4
  */
 class Contest {
     /**
@@ -56,105 +56,6 @@ class Contest {
     }
 
     /**
-    * Constructs a full object with all available fields.
-    */
-    model(){
-        var obj = {};
-
-        obj['id'] = null;
-        obj['spaceName'] = null;
-        obj['created'] = null;
-        obj['competitionId'] = null;
-        obj['number'] = null;
-        obj['name'] = null;
-        obj['description'] = null;
-        obj['termsConditions'] = null;
-        obj['round'] = null;
-        obj['roundType'] = new RoundType().model();
-        obj['groupStage'] = null;
-        obj['groupStageLabel'] = null;
-        obj['entrantsFromContest'] = [null];
-        obj['maxNumberOfEntrants'] = null;
-        obj['minNumberOfEntrants'] = null;
-        obj['ruleSets'] = [new RuleSet().model()];
-        obj['isPublic'] = null;
-        obj['autoStart'] = null;
-        obj['scheduledStartDate'] = null;
-        obj['scheduledEndDate'] = null;
-        obj['actualStartDate'] = null;
-        obj['actualEndDate'] = null;
-        obj['strategies'] = new Strategy().model();
-        obj['metadata'] = [new Metadata().model()];
-        obj['translations'] = [new Translation().model()];
-        obj['translatableFields'] = [null];
-        obj['status'] = new ContestStatus().model();
-        obj['statusCode'] = null;
-        obj['rewards'] = [new RewardReduced().model()];
-
-        return obj;
-    }
-
-    /**
-    * Constructs a full object Map for all available fields.
-    */
-    modelMap(){
-        var obj = {
-            "fields": {},
-            "requiredFields": {}
-        };
-
-        obj["fields"]['id'] = { "type": 'String', "system": true };
-        obj["fields"]['spaceName'] = { "type": 'String', "system": true };
-        obj["fields"]['created'] = { "type": 'Date', "system": true };
-        obj["fields"]['competitionId'] = { "type": 'String', "system": false };
-        obj["fields"]['number'] = { "type": 'Number', "system": false };
-        obj["fields"]['name'] = { "type": 'String', "system": false };
-        obj["fields"]['description'] = { "type": 'String', "system": false };
-        obj["fields"]['termsConditions'] = { "type": 'String', "system": false };
-        obj["fields"]['round'] = { "type": 'Number', "system": false };
-        obj["fields"]['roundType'] = new RoundType().modelMap();
-        obj["fields"]['groupStage'] = { "type": 'Number', "system": false };
-        obj["fields"]['groupStageLabel'] = { "type": 'String', "system": false };
-        obj["fields"]['entrantsFromContest'] = [{ "type": 'String', "system": false }];
-        obj["fields"]['maxNumberOfEntrants'] = { "type": 'Number', "system": false };
-        obj["fields"]['minNumberOfEntrants'] = { "type": 'Number', "system": false };
-        obj["fields"]['ruleSets'] = [new RuleSet().modelMap()];
-        obj["fields"]['isPublic'] = { "type": 'Boolean', "system": false };
-        obj["fields"]['autoStart'] = { "type": 'Boolean', "system": false };
-        obj["fields"]['scheduledStartDate'] = { "type": 'Date', "system": false };
-        obj["fields"]['scheduledEndDate'] = { "type": 'Date', "system": false };
-        obj["fields"]['actualStartDate'] = { "type": 'Date', "system": false };
-        obj["fields"]['actualEndDate'] = { "type": 'Date', "system": false };
-        obj["fields"]['strategies'] = new Strategy().modelMap();
-        obj["fields"]['metadata'] = [new Metadata().modelMap()];
-        obj["fields"]['translations'] = [new Translation().modelMap()];
-        obj["fields"]['translatableFields'] = [{ "type": 'String', "system": false }];
-        obj["fields"]['status'] = new ContestStatus().modelMap();
-        obj["fields"]['statusCode'] = { "type": 'Number', "system": false };
-        obj["fields"]['rewards'] = [new RewardReduced().modelMap()];
-
-        
-        obj["requiredFields"]['id'] = { "type": 'String', "system": true };
-        obj["requiredFields"]['spaceName'] = { "type": 'String', "system": true };
-        obj["requiredFields"]['created'] = { "type": 'Date', "system": true };
-        obj["requiredFields"]['competitionId'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['number'] = { "type": 'Number', "system": false };
-        obj["requiredFields"]['name'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['round'] = { "type": 'Number', "system": false };
-        obj["requiredFields"]['roundType'] = new RoundType().modelMap();
-        obj["requiredFields"]['entrantsFromContest'] = [{ "type": 'String', "system": false }];
-        obj["requiredFields"]['minNumberOfEntrants'] = { "type": 'Number', "system": false };
-        obj["requiredFields"]['ruleSets'] = [new RuleSet().modelMap()];
-        obj["requiredFields"]['isPublic'] = { "type": 'Boolean', "system": false };
-        obj["requiredFields"]['scheduledStartDate'] = { "type": 'Date', "system": false };
-        obj["requiredFields"]['scheduledEndDate'] = { "type": 'Date', "system": false };
-        obj["requiredFields"]['status'] = new ContestStatus().modelMap();
-        obj["requiredFields"]['statusCode'] = { "type": 'Number', "system": false };
-
-        return obj;
-    }
-
-    /**
      * Initializes the fields of this object.
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
@@ -176,6 +77,105 @@ class Contest {
         obj['scheduledEndDate'] = scheduledEndDate;
         obj['status'] = status;
         obj['statusCode'] = statusCode;
+    }
+
+    /**
+    * Constructs a full object with all available fields.
+    */
+    model(){
+        var obj = {};
+
+        obj['id'];
+        obj['spaceName'];
+        obj['created'];
+        obj['competitionId'];
+        obj['number'];
+        obj['name'];
+        obj['description'];
+        obj['termsConditions'];
+        obj['round'];
+        obj['roundType'];
+        obj['groupStage'];
+        obj['groupStageLabel'];
+        obj['entrantsFromContest'];
+        obj['maxNumberOfEntrants'];
+        obj['minNumberOfEntrants'];
+        obj['ruleSets'];
+        obj['isPublic'];
+        obj['autoStart'];
+        obj['scheduledStartDate'];
+        obj['scheduledEndDate'];
+        obj['actualStartDate'];
+        obj['actualEndDate'];
+        obj['strategies'];
+        obj['metadata'];
+        obj['translations'];
+        obj['translatableFields'];
+        obj['status'];
+        obj['statusCode'];
+        obj['rewards'];
+
+        return obj;
+    }
+
+    /**
+    * Constructs a full object Map for all available fields.
+    */
+    modelMap(){
+        var obj = {
+            "fields": {},
+            "requiredFields": {}
+        };
+
+        obj["fields"]['id'];
+        obj["fields"]['spaceName'];
+        obj["fields"]['created'];
+        obj["fields"]['competitionId'];
+        obj["fields"]['number'];
+        obj["fields"]['name'];
+        obj["fields"]['description'];
+        obj["fields"]['termsConditions'];
+        obj["fields"]['round'];
+        obj["fields"]['roundType'];
+        obj["fields"]['groupStage'];
+        obj["fields"]['groupStageLabel'];
+        obj["fields"]['entrantsFromContest'];
+        obj["fields"]['maxNumberOfEntrants'];
+        obj["fields"]['minNumberOfEntrants'];
+        obj["fields"]['ruleSets'];
+        obj["fields"]['isPublic'];
+        obj["fields"]['autoStart'];
+        obj["fields"]['scheduledStartDate'];
+        obj["fields"]['scheduledEndDate'];
+        obj["fields"]['actualStartDate'];
+        obj["fields"]['actualEndDate'];
+        obj["fields"]['strategies'];
+        obj["fields"]['metadata'];
+        obj["fields"]['translations'];
+        obj["fields"]['translatableFields'];
+        obj["fields"]['status'];
+        obj["fields"]['statusCode'];
+        obj["fields"]['rewards'];
+
+        
+        obj["requiredFields"]['id'];
+        obj["requiredFields"]['spaceName'];
+        obj["requiredFields"]['created'];
+        obj["requiredFields"]['competitionId'];
+        obj["requiredFields"]['number'];
+        obj["requiredFields"]['name'];
+        obj["requiredFields"]['round'];
+        obj["requiredFields"]['roundType'];
+        obj["requiredFields"]['entrantsFromContest'];
+        obj["requiredFields"]['minNumberOfEntrants'];
+        obj["requiredFields"]['ruleSets'];
+        obj["requiredFields"]['isPublic'];
+        obj["requiredFields"]['scheduledStartDate'];
+        obj["requiredFields"]['scheduledEndDate'];
+        obj["requiredFields"]['status'];
+        obj["requiredFields"]['statusCode'];
+
+        return obj;
     }
 
     /**
@@ -312,9 +312,8 @@ Contest.prototype['competitionId'] = undefined;
 /**
  * The row number for displaying the Contest in a table
  * @member {Number} number
- * @default 0
  */
-Contest.prototype['number'] = 0;
+Contest.prototype['number'] = undefined;
 
 /**
  * A name for the Contest. Can be translated
@@ -337,9 +336,8 @@ Contest.prototype['termsConditions'] = undefined;
 /**
  * To what round does the contest belong
  * @member {Number} round
- * @default 1
  */
-Contest.prototype['round'] = 1;
+Contest.prototype['round'] = undefined;
 
 /**
  * @member {module:model/RoundType} roundType
@@ -349,9 +347,8 @@ Contest.prototype['roundType'] = undefined;
 /**
  * Is used for more complex Competitions e.g. multi round competitions where round 1 group stage matched round 2
  * @member {Number} groupStage
- * @default 1
  */
-Contest.prototype['groupStage'] = 1;
+Contest.prototype['groupStage'] = undefined;
 
 /**
  * The name of the group stages
@@ -385,16 +382,14 @@ Contest.prototype['ruleSets'] = undefined;
 /**
  * Is the event publicly exposed depending on the event model
  * @member {Boolean} isPublic
- * @default true
  */
-Contest.prototype['isPublic'] = true;
+Contest.prototype['isPublic'] = undefined;
 
 /**
  * Is the event publicly exposed depending on the event model
  * @member {Boolean} autoStart
- * @default true
  */
-Contest.prototype['autoStart'] = true;
+Contest.prototype['autoStart'] = undefined;
 
 /**
  * ISO8601 timestamp for when a Contest should start. All records are stored in UTC time zone
@@ -449,9 +444,8 @@ Contest.prototype['status'] = undefined;
 /**
  * The code of the contest
  * @member {Number} statusCode
- * @default 3
  */
-Contest.prototype['statusCode'] = 3;
+Contest.prototype['statusCode'] = undefined;
 
 /**
  * @member {Array.<module:model/RewardReduced>} rewards
@@ -484,9 +478,8 @@ ContestAllOf.prototype['competitionId'] = undefined;
 /**
  * The row number for displaying the Contest in a table
  * @member {Number} number
- * @default 0
  */
-ContestAllOf.prototype['number'] = 0;
+ContestAllOf.prototype['number'] = undefined;
 /**
  * A name for the Contest. Can be translated
  * @member {String} name
@@ -505,9 +498,8 @@ ContestAllOf.prototype['termsConditions'] = undefined;
 /**
  * To what round does the contest belong
  * @member {Number} round
- * @default 1
  */
-ContestAllOf.prototype['round'] = 1;
+ContestAllOf.prototype['round'] = undefined;
 /**
  * @member {module:model/RoundType} roundType
  */
@@ -515,9 +507,8 @@ ContestAllOf.prototype['roundType'] = undefined;
 /**
  * Is used for more complex Competitions e.g. multi round competitions where round 1 group stage matched round 2
  * @member {Number} groupStage
- * @default 1
  */
-ContestAllOf.prototype['groupStage'] = 1;
+ContestAllOf.prototype['groupStage'] = undefined;
 /**
  * The name of the group stages
  * @member {String} groupStageLabel
@@ -545,15 +536,13 @@ ContestAllOf.prototype['ruleSets'] = undefined;
 /**
  * Is the event publicly exposed depending on the event model
  * @member {Boolean} isPublic
- * @default true
  */
-ContestAllOf.prototype['isPublic'] = true;
+ContestAllOf.prototype['isPublic'] = undefined;
 /**
  * Is the event publicly exposed depending on the event model
  * @member {Boolean} autoStart
- * @default true
  */
-ContestAllOf.prototype['autoStart'] = true;
+ContestAllOf.prototype['autoStart'] = undefined;
 /**
  * ISO8601 timestamp for when a Contest should start. All records are stored in UTC time zone
  * @member {Date} scheduledStartDate
@@ -598,9 +587,8 @@ ContestAllOf.prototype['status'] = undefined;
 /**
  * The code of the contest
  * @member {Number} statusCode
- * @default 3
  */
-ContestAllOf.prototype['statusCode'] = 3;
+ContestAllOf.prototype['statusCode'] = undefined;
 /**
  * @member {Array.<module:model/RewardReduced>} rewards
  */

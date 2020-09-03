@@ -1,4 +1,4 @@
-# @CompetitionlabsJavascriptSdk.Role
+# @CompetitionlabsApplicationServicesSdk.Role
 
 ## Enum
 

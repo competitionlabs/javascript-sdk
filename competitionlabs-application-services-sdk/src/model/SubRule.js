@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SubRule model module.
  * @module model/SubRule
- * @version 1.0.1
+ * @version 1.0.4
  */
 class SubRule {
     /**
@@ -32,14 +32,25 @@ class SubRule {
     }
 
     /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
+    static initialize(obj, fact, operator, constant) { 
+        obj['fact'] = fact;
+        obj['operator'] = operator;
+        obj['constant'] = constant;
+    }
+
+    /**
     * Constructs a full object with all available fields.
     */
     model(){
         var obj = {};
 
-        obj['fact'] = null;
-        obj['operator'] = null;
-        obj['constant'] = null;
+        obj['fact'];
+        obj['operator'];
+        obj['constant'];
 
         return obj;
     }
@@ -53,27 +64,16 @@ class SubRule {
             "requiredFields": {}
         };
 
-        obj["fields"]['fact'] = { "type": 'String', "system": false };
-        obj["fields"]['operator'] = { "type": 'String', "system": false };
-        obj["fields"]['constant'] = { "type": 'String', "system": false };
+        obj["fields"]['fact'];
+        obj["fields"]['operator'];
+        obj["fields"]['constant'];
 
         
-        obj["requiredFields"]['fact'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['operator'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['constant'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['fact'];
+        obj["requiredFields"]['operator'];
+        obj["requiredFields"]['constant'];
 
         return obj;
-    }
-
-    /**
-     * Initializes the fields of this object.
-     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
-     * Only for internal use.
-     */
-    static initialize(obj, fact, operator, constant) { 
-        obj['fact'] = fact;
-        obj['operator'] = operator;
-        obj['constant'] = constant;
     }
 
     /**

@@ -19,7 +19,7 @@ import SqsConnectionAllOf from './SqsConnectionAllOf';
 /**
  * The SqsConnection model module.
  * @module model/SqsConnection
- * @version 1.0.1
+ * @version 1.0.4
  */
 class SqsConnection {
     /**
@@ -45,55 +45,6 @@ class SqsConnection {
     }
 
     /**
-    * Constructs a full object with all available fields.
-    */
-    model(){
-        var obj = {};
-
-        obj['id'] = null;
-        obj['spaceName'] = null;
-        obj['created'] = null;
-        obj['name'] = null;
-        obj['uri'] = null;
-        obj['acessKey'] = null;
-        obj['lastKnownStatus'] = null;
-        obj['lastKnownStatusCode'] = null;
-
-        return obj;
-    }
-
-    /**
-    * Constructs a full object Map for all available fields.
-    */
-    modelMap(){
-        var obj = {
-            "fields": {},
-            "requiredFields": {}
-        };
-
-        obj["fields"]['id'] = { "type": 'String', "system": true };
-        obj["fields"]['spaceName'] = { "type": 'String', "system": true };
-        obj["fields"]['created'] = { "type": 'Date', "system": true };
-        obj["fields"]['name'] = { "type": 'String', "system": false };
-        obj["fields"]['uri'] = { "type": 'String', "system": false };
-        obj["fields"]['acessKey'] = { "type": 'String', "system": false };
-        obj["fields"]['lastKnownStatus'] = { "type": 'String', "system": false };
-        obj["fields"]['lastKnownStatusCode'] = { "type": 'Number', "system": false };
-
-        
-        obj["requiredFields"]['id'] = { "type": 'String', "system": true };
-        obj["requiredFields"]['spaceName'] = { "type": 'String', "system": true };
-        obj["requiredFields"]['created'] = { "type": 'Date', "system": true };
-        obj["requiredFields"]['name'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['uri'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['acessKey'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['lastKnownStatus'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['lastKnownStatusCode'] = { "type": 'Number', "system": false };
-
-        return obj;
-    }
-
-    /**
      * Initializes the fields of this object.
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
@@ -107,6 +58,55 @@ class SqsConnection {
         obj['acessKey'] = acessKey;
         obj['lastKnownStatus'] = lastKnownStatus;
         obj['lastKnownStatusCode'] = lastKnownStatusCode;
+    }
+
+    /**
+    * Constructs a full object with all available fields.
+    */
+    model(){
+        var obj = {};
+
+        obj['id'];
+        obj['spaceName'];
+        obj['created'];
+        obj['name'];
+        obj['uri'];
+        obj['acessKey'];
+        obj['lastKnownStatus'];
+        obj['lastKnownStatusCode'];
+
+        return obj;
+    }
+
+    /**
+    * Constructs a full object Map for all available fields.
+    */
+    modelMap(){
+        var obj = {
+            "fields": {},
+            "requiredFields": {}
+        };
+
+        obj["fields"]['id'];
+        obj["fields"]['spaceName'];
+        obj["fields"]['created'];
+        obj["fields"]['name'];
+        obj["fields"]['uri'];
+        obj["fields"]['acessKey'];
+        obj["fields"]['lastKnownStatus'];
+        obj["fields"]['lastKnownStatusCode'];
+
+        
+        obj["requiredFields"]['id'];
+        obj["requiredFields"]['spaceName'];
+        obj["requiredFields"]['created'];
+        obj["requiredFields"]['name'];
+        obj["requiredFields"]['uri'];
+        obj["requiredFields"]['acessKey'];
+        obj["requiredFields"]['lastKnownStatus'];
+        obj["requiredFields"]['lastKnownStatusCode'];
+
+        return obj;
     }
 
     /**

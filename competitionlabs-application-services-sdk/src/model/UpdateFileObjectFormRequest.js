@@ -18,7 +18,7 @@ import UpdateFileObjectFormRequestAllOf from './UpdateFileObjectFormRequestAllOf
 /**
  * The UpdateFileObjectFormRequest model module.
  * @module model/UpdateFileObjectFormRequest
- * @version 1.0.1
+ * @version 1.0.4
  */
 class UpdateFileObjectFormRequest {
     /**
@@ -32,6 +32,14 @@ class UpdateFileObjectFormRequest {
     constructor(file) { 
         UpdateFileObjectFormRequestAllOf.initialize(this, file);
         UpdateFileObjectFormRequest.initialize(this, file);
+    }
+
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
+    static initialize(obj, file) { 
     }
 
     /**
@@ -57,14 +65,6 @@ class UpdateFileObjectFormRequest {
         
 
         return obj;
-    }
-
-    /**
-     * Initializes the fields of this object.
-     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
-     * Only for internal use.
-     */
-    static initialize(obj, file) { 
     }
 
     /**

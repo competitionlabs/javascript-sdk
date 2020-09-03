@@ -17,7 +17,7 @@ import Metadata from './Metadata';
 /**
  * The UpdateFileObjectFormRequestAllOf model module.
  * @module model/UpdateFileObjectFormRequestAllOf
- * @version 1.0.1
+ * @version 1.0.4
  */
 class UpdateFileObjectFormRequestAllOf {
     /**
@@ -31,15 +31,24 @@ class UpdateFileObjectFormRequestAllOf {
     }
 
     /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
+    static initialize(obj, file) { 
+        obj['file'] = file;
+    }
+
+    /**
     * Constructs a full object with all available fields.
     */
     model(){
         var obj = {};
 
-        obj['tags'] = [null];
-        obj['parentFolderPath'] = null;
-        obj['metadata'] = [new Metadata().model()];
-        obj['file'] = [new File().model()];
+        obj['tags'];
+        obj['parentFolderPath'];
+        obj['metadata'];
+        obj['file'];
 
         return obj;
     }
@@ -53,24 +62,15 @@ class UpdateFileObjectFormRequestAllOf {
             "requiredFields": {}
         };
 
-        obj["fields"]['tags'] = [{ "type": 'String', "system": false }];
-        obj["fields"]['parentFolderPath'] = { "type": 'String', "system": false };
-        obj["fields"]['metadata'] = [new Metadata().modelMap()];
-        obj["fields"]['file'] = [new File().modelMap()];
+        obj["fields"]['tags'];
+        obj["fields"]['parentFolderPath'];
+        obj["fields"]['metadata'];
+        obj["fields"]['file'];
 
         
-        obj["requiredFields"]['file'] = [new File().modelMap()];
+        obj["requiredFields"]['file'];
 
         return obj;
-    }
-
-    /**
-     * Initializes the fields of this object.
-     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
-     * Only for internal use.
-     */
-    static initialize(obj, file) { 
-        obj['file'] = file;
     }
 
     /**

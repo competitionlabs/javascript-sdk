@@ -17,7 +17,7 @@ import MetaInfo from './MetaInfo';
 /**
  * The MetaBasic model module.
  * @module model/MetaBasic
- * @version 1.0.1
+ * @version 1.0.4
  */
 class MetaBasic {
     /**
@@ -32,6 +32,14 @@ class MetaBasic {
     constructor(objectType, resultCount, errorCount) { 
         MetaInfo.initialize(this, objectType, resultCount, errorCount);
         MetaBasic.initialize(this, objectType, resultCount, errorCount);
+    }
+
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
+    static initialize(obj, objectType, resultCount, errorCount) { 
     }
 
     /**
@@ -57,14 +65,6 @@ class MetaBasic {
         
 
         return obj;
-    }
-
-    /**
-     * Initializes the fields of this object.
-     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
-     * Only for internal use.
-     */
-    static initialize(obj, objectType, resultCount, errorCount) { 
     }
 
     /**

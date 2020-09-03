@@ -13,11 +13,12 @@
 
 import ApiClient from '../ApiClient';
 import HostingOptions from './HostingOptions';
+import Metadata from './Metadata';
 
 /**
  * The UpdateRepositoryRequestAllOf model module.
  * @module model/UpdateRepositoryRequestAllOf
- * @version 1.0.1
+ * @version 1.0.4
  */
 class UpdateRepositoryRequestAllOf {
     /**
@@ -30,15 +31,25 @@ class UpdateRepositoryRequestAllOf {
     }
 
     /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
+    static initialize(obj) { 
+    }
+
+    /**
     * Constructs a full object with all available fields.
     */
     model(){
         var obj = {};
 
-        obj['description'] = null;
-        obj['tags'] = [null];
-        obj['constraints'] = [null];
-        obj['hostingOptions'] = new HostingOptions().model();
+        obj['name'];
+        obj['description'];
+        obj['tags'];
+        obj['constraints'];
+        obj['hostingOptions'];
+        obj['metadata'];
 
         return obj;
     }
@@ -52,22 +63,16 @@ class UpdateRepositoryRequestAllOf {
             "requiredFields": {}
         };
 
-        obj["fields"]['description'] = { "type": 'String', "system": false };
-        obj["fields"]['tags'] = [{ "type": 'String', "system": false }];
-        obj["fields"]['constraints'] = [{ "type": 'String', "system": false }];
-        obj["fields"]['hostingOptions'] = new HostingOptions().modelMap();
+        obj["fields"]['name'];
+        obj["fields"]['description'];
+        obj["fields"]['tags'];
+        obj["fields"]['constraints'];
+        obj["fields"]['hostingOptions'];
+        obj["fields"]['metadata'];
 
         
 
         return obj;
-    }
-
-    /**
-     * Initializes the fields of this object.
-     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
-     * Only for internal use.
-     */
-    static initialize(obj) { 
     }
 
     /**
@@ -81,6 +86,9 @@ class UpdateRepositoryRequestAllOf {
         if (data) {
             obj = obj || new UpdateRepositoryRequestAllOf();
 
+            if (data.hasOwnProperty('name')) {
+                obj['name'] = ApiClient.convertToType(data['name'], 'String');
+            }
             if (data.hasOwnProperty('description')) {
                 obj['description'] = ApiClient.convertToType(data['description'], 'String');
             }
@@ -93,12 +101,21 @@ class UpdateRepositoryRequestAllOf {
             if (data.hasOwnProperty('hostingOptions')) {
                 obj['hostingOptions'] = HostingOptions.constructFromObject(data['hostingOptions']);
             }
+            if (data.hasOwnProperty('metadata')) {
+                obj['metadata'] = ApiClient.convertToType(data['metadata'], [Metadata]);
+            }
         }
         return obj;
     }
 
 
 }
+
+/**
+ * The name of the repository. No special charaters or spaces permitted
+ * @member {String} name
+ */
+UpdateRepositoryRequestAllOf.prototype['name'] = undefined;
 
 /**
  * The description of the repository
@@ -122,6 +139,12 @@ UpdateRepositoryRequestAllOf.prototype['constraints'] = undefined;
  * @member {module:model/HostingOptions} hostingOptions
  */
 UpdateRepositoryRequestAllOf.prototype['hostingOptions'] = undefined;
+
+/**
+ * Metadata used to describe this file. Content type application/json
+ * @member {Array.<module:model/Metadata>} metadata
+ */
+UpdateRepositoryRequestAllOf.prototype['metadata'] = undefined;
 
 
 

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TwoFactorAuthValidateRequest model module.
  * @module model/TwoFactorAuthValidateRequest
- * @version 1.0.1
+ * @version 1.0.4
  */
 class TwoFactorAuthValidateRequest {
     /**
@@ -31,13 +31,23 @@ class TwoFactorAuthValidateRequest {
     }
 
     /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
+    static initialize(obj, secretKey, twoFactorAccessCode) { 
+        obj['secretKey'] = secretKey;
+        obj['twoFactorAccessCode'] = twoFactorAccessCode;
+    }
+
+    /**
     * Constructs a full object with all available fields.
     */
     model(){
         var obj = {};
 
-        obj['secretKey'] = null;
-        obj['twoFactorAccessCode'] = null;
+        obj['secretKey'];
+        obj['twoFactorAccessCode'];
 
         return obj;
     }
@@ -51,24 +61,14 @@ class TwoFactorAuthValidateRequest {
             "requiredFields": {}
         };
 
-        obj["fields"]['secretKey'] = { "type": 'String', "system": false };
-        obj["fields"]['twoFactorAccessCode'] = { "type": 'String', "system": false };
+        obj["fields"]['secretKey'];
+        obj["fields"]['twoFactorAccessCode'];
 
         
-        obj["requiredFields"]['secretKey'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['twoFactorAccessCode'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['secretKey'];
+        obj["requiredFields"]['twoFactorAccessCode'];
 
         return obj;
-    }
-
-    /**
-     * Initializes the fields of this object.
-     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
-     * Only for internal use.
-     */
-    static initialize(obj, secretKey, twoFactorAccessCode) { 
-        obj['secretKey'] = secretKey;
-        obj['twoFactorAccessCode'] = twoFactorAccessCode;
     }
 
     /**

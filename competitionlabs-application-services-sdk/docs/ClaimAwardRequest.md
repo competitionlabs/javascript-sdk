@@ -1,10 +1,10 @@
-# @CompetitionlabsJavascriptSdk.ClaimAwardRequest
+# @CompetitionlabsApplicationServicesSdk.ClaimAwardRequest
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **String** | Unique system identifier of an Award | 
-**claimed** | **Boolean** | has the award been claimed or not | 
+**constraints** | **[String]** | Additional constraints, if the value is present it means the | [optional] 
 
 

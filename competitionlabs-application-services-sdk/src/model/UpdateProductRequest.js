@@ -21,7 +21,7 @@ import UpdateProductRequestAllOf from './UpdateProductRequestAllOf';
 /**
  * The UpdateProductRequest model module.
  * @module model/UpdateProductRequest
- * @version 1.0.1
+ * @version 1.0.4
  */
 class UpdateProductRequest {
     /**
@@ -37,21 +37,31 @@ class UpdateProductRequest {
     }
 
     /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
+    static initialize(obj, id) { 
+        obj['id'] = id;
+    }
+
+    /**
     * Constructs a full object with all available fields.
     */
     model(){
         var obj = {};
 
-        obj['id'] = null;
-        obj['name'] = null;
-        obj['productType'] = null;
-        obj['productTypeName'] = null;
-        obj['description'] = null;
-        obj['adjustmentFactor'] = null;
-        obj['actionTypeAdjustmentFactors'] = [new ActionTypeAdjustmentFactor().model()];
-        obj['productGroups'] = [null];
-        obj['metadata'] = [new Metadata().model()];
-        obj['translations'] = [new Translation().model()];
+        obj['id'];
+        obj['name'];
+        obj['productType'];
+        obj['productTypeName'];
+        obj['description'];
+        obj['adjustmentFactor'];
+        obj['productRefId'];
+        obj['actionTypeAdjustmentFactors'];
+        obj['productGroups'];
+        obj['metadata'];
+        obj['translations'];
 
         return obj;
     }
@@ -65,30 +75,22 @@ class UpdateProductRequest {
             "requiredFields": {}
         };
 
-        obj["fields"]['id'] = { "type": 'String', "system": true };
-        obj["fields"]['name'] = { "type": 'String', "system": false };
-        obj["fields"]['productType'] = { "type": 'String', "system": false };
-        obj["fields"]['productTypeName'] = { "type": 'String', "system": false };
-        obj["fields"]['description'] = { "type": 'String', "system": false };
-        obj["fields"]['adjustmentFactor'] = { "type": 'Number', "system": false };
-        obj["fields"]['actionTypeAdjustmentFactors'] = [new ActionTypeAdjustmentFactor().modelMap()];
-        obj["fields"]['productGroups'] = [{ "type": 'String', "system": false }];
-        obj["fields"]['metadata'] = [new Metadata().modelMap()];
-        obj["fields"]['translations'] = [new Translation().modelMap()];
+        obj["fields"]['id'];
+        obj["fields"]['name'];
+        obj["fields"]['productType'];
+        obj["fields"]['productTypeName'];
+        obj["fields"]['description'];
+        obj["fields"]['adjustmentFactor'];
+        obj["fields"]['productRefId'];
+        obj["fields"]['actionTypeAdjustmentFactors'];
+        obj["fields"]['productGroups'];
+        obj["fields"]['metadata'];
+        obj["fields"]['translations'];
 
         
-        obj["requiredFields"]['id'] = { "type": 'String', "system": true };
+        obj["requiredFields"]['id'];
 
         return obj;
-    }
-
-    /**
-     * Initializes the fields of this object.
-     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
-     * Only for internal use.
-     */
-    static initialize(obj, id) { 
-        obj['id'] = id;
     }
 
     /**
@@ -121,6 +123,9 @@ class UpdateProductRequest {
             }
             if (data.hasOwnProperty('adjustmentFactor')) {
                 obj['adjustmentFactor'] = ApiClient.convertToType(data['adjustmentFactor'], 'Number');
+            }
+            if (data.hasOwnProperty('productRefId')) {
+                obj['productRefId'] = ApiClient.convertToType(data['productRefId'], 'String');
             }
             if (data.hasOwnProperty('actionTypeAdjustmentFactors')) {
                 obj['actionTypeAdjustmentFactors'] = ApiClient.convertToType(data['actionTypeAdjustmentFactors'], [ActionTypeAdjustmentFactor]);
@@ -178,6 +183,12 @@ UpdateProductRequest.prototype['description'] = undefined;
 UpdateProductRequest.prototype['adjustmentFactor'] = undefined;
 
 /**
+ * The reference to this product in your system. The reference identifier can not be changed after the product has been created
+ * @member {String} productRefId
+ */
+UpdateProductRequest.prototype['productRefId'] = undefined;
+
+/**
  * @member {Array.<module:model/ActionTypeAdjustmentFactor>} actionTypeAdjustmentFactors
  */
 UpdateProductRequest.prototype['actionTypeAdjustmentFactors'] = undefined;
@@ -231,6 +242,11 @@ UpdateProductRequestAllOf.prototype['description'] = undefined;
  * @member {Number} adjustmentFactor
  */
 UpdateProductRequestAllOf.prototype['adjustmentFactor'] = undefined;
+/**
+ * The reference to this product in your system. The reference identifier can not be changed after the product has been created
+ * @member {String} productRefId
+ */
+UpdateProductRequestAllOf.prototype['productRefId'] = undefined;
 /**
  * @member {Array.<module:model/ActionTypeAdjustmentFactor>} actionTypeAdjustmentFactors
  */

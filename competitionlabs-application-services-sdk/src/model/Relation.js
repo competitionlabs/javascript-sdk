@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Relation model module.
  * @module model/Relation
- * @version 1.0.1
+ * @version 1.0.4
  */
 class Relation {
     /**
@@ -31,13 +31,23 @@ class Relation {
     }
 
     /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
+    static initialize(obj, id, relationType) { 
+        obj['id'] = id;
+        obj['relationType'] = relationType;
+    }
+
+    /**
     * Constructs a full object with all available fields.
     */
     model(){
         var obj = {};
 
-        obj['id'] = null;
-        obj['relationType'] = null;
+        obj['id'];
+        obj['relationType'];
 
         return obj;
     }
@@ -51,24 +61,14 @@ class Relation {
             "requiredFields": {}
         };
 
-        obj["fields"]['id'] = { "type": 'String', "system": true };
-        obj["fields"]['relationType'] = { "type": 'String', "system": false };
+        obj["fields"]['id'];
+        obj["fields"]['relationType'];
 
         
-        obj["requiredFields"]['id'] = { "type": 'String', "system": true };
-        obj["requiredFields"]['relationType'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['id'];
+        obj["requiredFields"]['relationType'];
 
         return obj;
-    }
-
-    /**
-     * Initializes the fields of this object.
-     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
-     * Only for internal use.
-     */
-    static initialize(obj, id, relationType) { 
-        obj['id'] = id;
-        obj['relationType'] = relationType;
     }
 
     /**

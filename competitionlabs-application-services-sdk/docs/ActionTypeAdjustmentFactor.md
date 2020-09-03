@@ -1,4 +1,4 @@
-# @CompetitionlabsJavascriptSdk.ActionTypeAdjustmentFactor
+# @CompetitionlabsApplicationServicesSdk.ActionTypeAdjustmentFactor
 
 ## Properties
 

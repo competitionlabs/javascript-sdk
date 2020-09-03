@@ -1,10 +1,10 @@
-# @CompetitionlabsJavascriptSdk.AchievementLiveStatusRequest
+# @CompetitionlabsApplicationServicesSdk.AchievementLiveStatusRequest
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**achievementId** | **String** | Unique system identifier of an Achievement | 
-**status** | [**AchievementLiveStatus**](docs/AchievementLiveStatus.md) |  | 
+**id** | **String** | A unique system generated identifier | 
+**status** | [**AchievementLiveStatus**](AchievementLiveStatus.md) |  | 
 
 

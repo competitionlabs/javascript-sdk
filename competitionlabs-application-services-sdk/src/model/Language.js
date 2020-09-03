@@ -19,7 +19,7 @@ import ModelDefault from './ModelDefault';
 /**
  * The Language model module.
  * @module model/Language
- * @version 1.0.1
+ * @version 1.0.4
  */
 class Language {
     /**
@@ -40,17 +40,30 @@ class Language {
     }
 
     /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
+    static initialize(obj, id, spaceName, created, key, name) { 
+        obj['id'] = id;
+        obj['spaceName'] = spaceName;
+        obj['created'] = created;
+        obj['key'] = key;
+        obj['name'] = name;
+    }
+
+    /**
     * Constructs a full object with all available fields.
     */
     model(){
         var obj = {};
 
-        obj['id'] = null;
-        obj['spaceName'] = null;
-        obj['created'] = null;
-        obj['key'] = null;
-        obj['name'] = null;
-        obj['references'] = [null];
+        obj['id'];
+        obj['spaceName'];
+        obj['created'];
+        obj['key'];
+        obj['name'];
+        obj['references'];
 
         return obj;
     }
@@ -64,34 +77,21 @@ class Language {
             "requiredFields": {}
         };
 
-        obj["fields"]['id'] = { "type": 'String', "system": true };
-        obj["fields"]['spaceName'] = { "type": 'String', "system": true };
-        obj["fields"]['created'] = { "type": 'Date', "system": true };
-        obj["fields"]['key'] = { "type": 'String', "system": false };
-        obj["fields"]['name'] = { "type": 'String', "system": false };
-        obj["fields"]['references'] = [{ "type": 'String', "system": false }];
+        obj["fields"]['id'];
+        obj["fields"]['spaceName'];
+        obj["fields"]['created'];
+        obj["fields"]['key'];
+        obj["fields"]['name'];
+        obj["fields"]['references'];
 
         
-        obj["requiredFields"]['id'] = { "type": 'String', "system": true };
-        obj["requiredFields"]['spaceName'] = { "type": 'String', "system": true };
-        obj["requiredFields"]['created'] = { "type": 'Date', "system": true };
-        obj["requiredFields"]['key'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['name'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['id'];
+        obj["requiredFields"]['spaceName'];
+        obj["requiredFields"]['created'];
+        obj["requiredFields"]['key'];
+        obj["requiredFields"]['name'];
 
         return obj;
-    }
-
-    /**
-     * Initializes the fields of this object.
-     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
-     * Only for internal use.
-     */
-    static initialize(obj, id, spaceName, created, key, name) { 
-        obj['id'] = id;
-        obj['spaceName'] = spaceName;
-        obj['created'] = created;
-        obj['key'] = key;
-        obj['name'] = name;
     }
 
     /**

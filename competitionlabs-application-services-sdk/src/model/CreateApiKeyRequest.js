@@ -12,12 +12,13 @@
  */
 
 import ApiClient from '../ApiClient';
+import Metadata from './Metadata';
 import Role from './Role';
 
 /**
  * The CreateApiKeyRequest model module.
  * @module model/CreateApiKeyRequest
- * @version 1.0.1
+ * @version 1.0.4
  */
 class CreateApiKeyRequest {
     /**
@@ -33,16 +34,29 @@ class CreateApiKeyRequest {
     }
 
     /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
+    static initialize(obj, active, role, _default) { 
+        obj['active'] = active;
+        obj['role'] = role;
+        obj['default'] = _default;
+    }
+
+    /**
     * Constructs a full object with all available fields.
     */
     model(){
         var obj = {};
 
-        obj['active'] = null;
-        obj['description'] = null;
-        obj['whiteListIPs'] = [null];
-        obj['role'] = new Role().model();
-        obj['default'] = null;
+        obj['active'];
+        obj['description'];
+        obj['whiteListIPs'];
+        obj['key'];
+        obj['role'];
+        obj['default'];
+        obj['metadata'];
 
         return obj;
     }
@@ -56,29 +70,20 @@ class CreateApiKeyRequest {
             "requiredFields": {}
         };
 
-        obj["fields"]['active'] = { "type": 'Boolean', "system": false };
-        obj["fields"]['description'] = { "type": 'String', "system": false };
-        obj["fields"]['whiteListIPs'] = [{ "type": 'String', "system": false }];
-        obj["fields"]['role'] = new Role().modelMap();
-        obj["fields"]['default'] = { "type": 'Boolean', "system": false };
+        obj["fields"]['active'];
+        obj["fields"]['description'];
+        obj["fields"]['whiteListIPs'];
+        obj["fields"]['key'];
+        obj["fields"]['role'];
+        obj["fields"]['default'];
+        obj["fields"]['metadata'];
 
         
-        obj["requiredFields"]['active'] = { "type": 'Boolean', "system": false };
-        obj["requiredFields"]['role'] = new Role().modelMap();
-        obj["requiredFields"]['default'] = { "type": 'Boolean', "system": false };
+        obj["requiredFields"]['active'];
+        obj["requiredFields"]['role'];
+        obj["requiredFields"]['default'];
 
         return obj;
-    }
-
-    /**
-     * Initializes the fields of this object.
-     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
-     * Only for internal use.
-     */
-    static initialize(obj, active, role, _default) { 
-        obj['active'] = active;
-        obj['role'] = role;
-        obj['default'] = _default;
     }
 
     /**
@@ -101,11 +106,17 @@ class CreateApiKeyRequest {
             if (data.hasOwnProperty('whiteListIPs')) {
                 obj['whiteListIPs'] = ApiClient.convertToType(data['whiteListIPs'], ['String']);
             }
+            if (data.hasOwnProperty('key')) {
+                obj['key'] = ApiClient.convertToType(data['key'], 'String');
+            }
             if (data.hasOwnProperty('role')) {
                 obj['role'] = Role.constructFromObject(data['role']);
             }
             if (data.hasOwnProperty('default')) {
                 obj['default'] = ApiClient.convertToType(data['default'], 'Boolean');
+            }
+            if (data.hasOwnProperty('metadata')) {
+                obj['metadata'] = ApiClient.convertToType(data['metadata'], [Metadata]);
             }
         }
         return obj;
@@ -117,9 +128,8 @@ class CreateApiKeyRequest {
 /**
  * To enable or dissable an Api key
  * @member {Boolean} active
- * @default true
  */
-CreateApiKeyRequest.prototype['active'] = true;
+CreateApiKeyRequest.prototype['active'] = undefined;
 
 /**
  * The description of an Api key
@@ -134,6 +144,12 @@ CreateApiKeyRequest.prototype['description'] = undefined;
 CreateApiKeyRequest.prototype['whiteListIPs'] = undefined;
 
 /**
+ * An Api key hash
+ * @member {String} key
+ */
+CreateApiKeyRequest.prototype['key'] = undefined;
+
+/**
  * @member {module:model/Role} role
  */
 CreateApiKeyRequest.prototype['role'] = undefined;
@@ -141,9 +157,13 @@ CreateApiKeyRequest.prototype['role'] = undefined;
 /**
  * To enable the Api key to be default
  * @member {Boolean} default
- * @default false
  */
-CreateApiKeyRequest.prototype['default'] = false;
+CreateApiKeyRequest.prototype['default'] = undefined;
+
+/**
+ * @member {Array.<module:model/Metadata>} metadata
+ */
+CreateApiKeyRequest.prototype['metadata'] = undefined;
 
 
 

@@ -17,7 +17,7 @@ import Contact from './Contact';
 /**
  * The UserAllOf model module.
  * @module model/UserAllOf
- * @version 1.0.1
+ * @version 1.0.4
  */
 class UserAllOf {
     /**
@@ -32,17 +32,27 @@ class UserAllOf {
     }
 
     /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
+    static initialize(obj, tfaEnabled, emailVerified) { 
+        obj['tfaEnabled'] = tfaEnabled;
+        obj['emailVerified'] = emailVerified;
+    }
+
+    /**
     * Constructs a full object with all available fields.
     */
     model(){
         var obj = {};
 
-        obj['firstName'] = null;
-        obj['lastName'] = null;
-        obj['tfaEnabled'] = null;
-        obj['email'] = null;
-        obj['contact'] = new Contact().model();
-        obj['emailVerified'] = null;
+        obj['firstName'];
+        obj['lastName'];
+        obj['tfaEnabled'];
+        obj['email'];
+        obj['contact'];
+        obj['emailVerified'];
 
         return obj;
     }
@@ -56,28 +66,18 @@ class UserAllOf {
             "requiredFields": {}
         };
 
-        obj["fields"]['firstName'] = { "type": 'String', "system": false };
-        obj["fields"]['lastName'] = { "type": 'String', "system": false };
-        obj["fields"]['tfaEnabled'] = { "type": 'Boolean', "system": false };
-        obj["fields"]['email'] = { "type": 'String', "system": false };
-        obj["fields"]['contact'] = new Contact().modelMap();
-        obj["fields"]['emailVerified'] = { "type": 'Boolean', "system": false };
+        obj["fields"]['firstName'];
+        obj["fields"]['lastName'];
+        obj["fields"]['tfaEnabled'];
+        obj["fields"]['email'];
+        obj["fields"]['contact'];
+        obj["fields"]['emailVerified'];
 
         
-        obj["requiredFields"]['tfaEnabled'] = { "type": 'Boolean', "system": false };
-        obj["requiredFields"]['emailVerified'] = { "type": 'Boolean', "system": false };
+        obj["requiredFields"]['tfaEnabled'];
+        obj["requiredFields"]['emailVerified'];
 
         return obj;
-    }
-
-    /**
-     * Initializes the fields of this object.
-     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
-     * Only for internal use.
-     */
-    static initialize(obj, tfaEnabled, emailVerified) { 
-        obj['tfaEnabled'] = tfaEnabled;
-        obj['emailVerified'] = emailVerified;
     }
 
     /**
@@ -131,9 +131,8 @@ UserAllOf.prototype['lastName'] = undefined;
 /**
  * To enable two factor authentication
  * @member {Boolean} tfaEnabled
- * @default false
  */
-UserAllOf.prototype['tfaEnabled'] = false;
+UserAllOf.prototype['tfaEnabled'] = undefined;
 
 /**
  * The email of the user to log in
@@ -149,9 +148,8 @@ UserAllOf.prototype['contact'] = undefined;
 /**
  * Is the email verified
  * @member {Boolean} emailVerified
- * @default false
  */
-UserAllOf.prototype['emailVerified'] = false;
+UserAllOf.prototype['emailVerified'] = undefined;
 
 
 

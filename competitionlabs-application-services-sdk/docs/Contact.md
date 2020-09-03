@@ -1,4 +1,4 @@
-# @CompetitionlabsJavascriptSdk.Contact
+# @CompetitionlabsApplicationServicesSdk.Contact
 
 ## Properties
 
@@ -15,6 +15,6 @@ Name | Type | Description | Notes
 **country** | **String** | The Country | 
 **mobileNumber** | **String** | The mobile number | [optional] 
 **phoneNumber** | **String** | The phone number | [optional] 
-**geoLocation** | [**Location**](docs/Location.md) |  | [optional] 
+**geoLocation** | [**Location**](Location.md) |  | [optional] 
 
 

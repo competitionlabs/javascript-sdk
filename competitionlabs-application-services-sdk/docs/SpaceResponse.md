@@ -1,11 +1,11 @@
-# @CompetitionlabsJavascriptSdk.SpaceResponse
+# @CompetitionlabsApplicationServicesSdk.SpaceResponse
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**meta** | [**MetaExtended**](docs/MetaExtended.md) |  | 
-**results** | [**[Space]**](docs/Space.md) |  | [optional] 
-**errors** | [**[Error]**](docs/Error.md) |  | [optional] 
+**meta** | [**MetaExtended**](MetaExtended.md) |  | 
+**results** | [**[Space]**](Space.md) |  | [optional] 
+**errors** | [**[Error]**](Error.md) |  | [optional] 
 
 

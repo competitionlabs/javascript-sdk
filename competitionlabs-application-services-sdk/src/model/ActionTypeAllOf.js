@@ -18,7 +18,7 @@ import UnitOfMeasureType from './UnitOfMeasureType';
 /**
  * The ActionTypeAllOf model module.
  * @module model/ActionTypeAllOf
- * @version 1.0.1
+ * @version 1.0.4
  */
 class ActionTypeAllOf {
     /**
@@ -34,17 +34,28 @@ class ActionTypeAllOf {
     }
 
     /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
+    static initialize(obj, name, key, unitOfMeasureType) { 
+        obj['name'] = name;
+        obj['key'] = key;
+        obj['unitOfMeasureType'] = unitOfMeasureType;
+    }
+
+    /**
     * Constructs a full object with all available fields.
     */
     model(){
         var obj = {};
 
-        obj['name'] = null;
-        obj['key'] = null;
-        obj['description'] = null;
-        obj['system'] = null;
-        obj['unitOfMeasureType'] = new UnitOfMeasureType().model();
-        obj['metadata'] = [new Metadata().model()];
+        obj['name'];
+        obj['key'];
+        obj['description'];
+        obj['system'];
+        obj['unitOfMeasureType'];
+        obj['metadata'];
 
         return obj;
     }
@@ -58,30 +69,19 @@ class ActionTypeAllOf {
             "requiredFields": {}
         };
 
-        obj["fields"]['name'] = { "type": 'String', "system": false };
-        obj["fields"]['key'] = { "type": 'String', "system": false };
-        obj["fields"]['description'] = { "type": 'String', "system": false };
-        obj["fields"]['system'] = { "type": 'Boolean', "system": false };
-        obj["fields"]['unitOfMeasureType'] = new UnitOfMeasureType().modelMap();
-        obj["fields"]['metadata'] = [new Metadata().modelMap()];
+        obj["fields"]['name'];
+        obj["fields"]['key'];
+        obj["fields"]['description'];
+        obj["fields"]['system'];
+        obj["fields"]['unitOfMeasureType'];
+        obj["fields"]['metadata'];
 
         
-        obj["requiredFields"]['name'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['key'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['unitOfMeasureType'] = new UnitOfMeasureType().modelMap();
+        obj["requiredFields"]['name'];
+        obj["requiredFields"]['key'];
+        obj["requiredFields"]['unitOfMeasureType'];
 
         return obj;
-    }
-
-    /**
-     * Initializes the fields of this object.
-     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
-     * Only for internal use.
-     */
-    static initialize(obj, name, key, unitOfMeasureType) { 
-        obj['name'] = name;
-        obj['key'] = key;
-        obj['unitOfMeasureType'] = unitOfMeasureType;
     }
 
     /**
@@ -141,9 +141,8 @@ ActionTypeAllOf.prototype['description'] = undefined;
 /**
  * A boolean value (true/false) that represents the Action Helpers state. A system reserved entry (set to true) cannot be deleted.
  * @member {Boolean} system
- * @default false
  */
-ActionTypeAllOf.prototype['system'] = false;
+ActionTypeAllOf.prototype['system'] = undefined;
 
 /**
  * @member {module:model/UnitOfMeasureType} unitOfMeasureType

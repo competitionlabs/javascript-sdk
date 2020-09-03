@@ -1,11 +1,11 @@
-# @CompetitionlabsJavascriptSdk.MemberAchievementIssuedResponse
+# @CompetitionlabsApplicationServicesSdk.MemberAchievementIssuedResponse
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**meta** | [**MetaExtended**](docs/MetaExtended.md) |  | 
-**results** | [**[MemberAchievementCount]**](docs/MemberAchievementCount.md) |  | [optional] 
-**errors** | [**[Error]**](docs/Error.md) |  | [optional] 
+**meta** | [**MetaExtended**](MetaExtended.md) |  | 
+**results** | [**[MemberAchievementCount]**](MemberAchievementCount.md) |  | [optional] 
+**errors** | [**[Error]**](Error.md) |  | [optional] 
 
 

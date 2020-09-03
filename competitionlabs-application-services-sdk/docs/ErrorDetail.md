@@ -1,4 +1,4 @@
-# @CompetitionlabsJavascriptSdk.ErrorDetail
+# @CompetitionlabsApplicationServicesSdk.ErrorDetail
 
 ## Properties
 

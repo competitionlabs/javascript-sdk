@@ -1,4 +1,4 @@
-# @CompetitionlabsJavascriptSdk.RoundType
+# @CompetitionlabsApplicationServicesSdk.RoundType
 
 ## Enum
 

@@ -1,11 +1,11 @@
-# @CompetitionlabsJavascriptSdk.CompetitionLeaderboardResponse
+# @CompetitionlabsApplicationServicesSdk.CompetitionLeaderboardResponse
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**meta** | [**MetaExtended**](docs/MetaExtended.md) |  | 
-**results** | [**[LeaderboardResponseByContest]**](docs/LeaderboardResponseByContest.md) |  | [optional] 
-**errors** | [**[Error]**](docs/Error.md) |  | [optional] 
+**meta** | [**MetaExtended**](MetaExtended.md) |  | 
+**results** | [**[LeaderboardResponseByContest]**](LeaderboardResponseByContest.md) |  | [optional] 
+**errors** | [**[Error]**](Error.md) |  | [optional] 
 
 

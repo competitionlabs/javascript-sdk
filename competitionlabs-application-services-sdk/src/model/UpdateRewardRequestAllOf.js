@@ -18,7 +18,7 @@ import Translation from './Translation';
 /**
  * The UpdateRewardRequestAllOf model module.
  * @module model/UpdateRewardRequestAllOf
- * @version 1.0.1
+ * @version 1.0.4
  */
 class UpdateRewardRequestAllOf {
     /**
@@ -31,23 +31,32 @@ class UpdateRewardRequestAllOf {
     }
 
     /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
+    static initialize(obj) { 
+    }
+
+    /**
     * Constructs a full object with all available fields.
     */
     model(){
         var obj = {};
 
-        obj['rewardRank'] = null;
-        obj['rewardName'] = null;
-        obj['value'] = null;
-        obj['rewardTypeId'] = null;
-        obj['description'] = null;
-        obj['delay'] = null;
-        obj['isMemberAcknowledgmentRequired'] = null;
-        obj['metadata'] = [new Metadata().model()];
-        obj['pointInTime'] = null;
-        obj['period'] = null;
-        obj['translations'] = [new Translation().model()];
-        obj['constraints'] = [null];
+        obj['rewardRank'];
+        obj['rewardName'];
+        obj['value'];
+        obj['rewardType'];
+        obj['rewardTypeId'];
+        obj['description'];
+        obj['delay'];
+        obj['icon'];
+        obj['metadata'];
+        obj['pointInTime'];
+        obj['period'];
+        obj['translations'];
+        obj['constraints'];
 
         return obj;
     }
@@ -61,30 +70,23 @@ class UpdateRewardRequestAllOf {
             "requiredFields": {}
         };
 
-        obj["fields"]['rewardRank'] = { "type": 'String', "system": false };
-        obj["fields"]['rewardName'] = { "type": 'String', "system": false };
-        obj["fields"]['value'] = { "type": 'Number', "system": false };
-        obj["fields"]['rewardTypeId'] = { "type": 'String', "system": false };
-        obj["fields"]['description'] = { "type": 'String', "system": false };
-        obj["fields"]['delay'] = { "type": 'Number', "system": false };
-        obj["fields"]['isMemberAcknowledgmentRequired'] = { "type": 'Boolean', "system": false };
-        obj["fields"]['metadata'] = [new Metadata().modelMap()];
-        obj["fields"]['pointInTime'] = { "type": 'Date', "system": false };
-        obj["fields"]['period'] = { "type": 'Number', "system": false };
-        obj["fields"]['translations'] = [new Translation().modelMap()];
-        obj["fields"]['constraints'] = [{ "type": 'String', "system": false }];
+        obj["fields"]['rewardRank'];
+        obj["fields"]['rewardName'];
+        obj["fields"]['value'];
+        obj["fields"]['rewardType'];
+        obj["fields"]['rewardTypeId'];
+        obj["fields"]['description'];
+        obj["fields"]['delay'];
+        obj["fields"]['icon'];
+        obj["fields"]['metadata'];
+        obj["fields"]['pointInTime'];
+        obj["fields"]['period'];
+        obj["fields"]['translations'];
+        obj["fields"]['constraints'];
 
         
 
         return obj;
-    }
-
-    /**
-     * Initializes the fields of this object.
-     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
-     * Only for internal use.
-     */
-    static initialize(obj) { 
     }
 
     /**
@@ -107,6 +109,9 @@ class UpdateRewardRequestAllOf {
             if (data.hasOwnProperty('value')) {
                 obj['value'] = ApiClient.convertToType(data['value'], 'Number');
             }
+            if (data.hasOwnProperty('rewardType')) {
+                obj['rewardType'] = ApiClient.convertToType(data['rewardType'], 'String');
+            }
             if (data.hasOwnProperty('rewardTypeId')) {
                 obj['rewardTypeId'] = ApiClient.convertToType(data['rewardTypeId'], 'String');
             }
@@ -116,8 +121,8 @@ class UpdateRewardRequestAllOf {
             if (data.hasOwnProperty('delay')) {
                 obj['delay'] = ApiClient.convertToType(data['delay'], 'Number');
             }
-            if (data.hasOwnProperty('isMemberAcknowledgmentRequired')) {
-                obj['isMemberAcknowledgmentRequired'] = ApiClient.convertToType(data['isMemberAcknowledgmentRequired'], 'Boolean');
+            if (data.hasOwnProperty('icon')) {
+                obj['icon'] = ApiClient.convertToType(data['icon'], 'String');
             }
             if (data.hasOwnProperty('metadata')) {
                 obj['metadata'] = ApiClient.convertToType(data['metadata'], [Metadata]);
@@ -160,6 +165,12 @@ UpdateRewardRequestAllOf.prototype['rewardName'] = undefined;
 UpdateRewardRequestAllOf.prototype['value'] = undefined;
 
 /**
+ * Reward Type key
+ * @member {String} rewardType
+ */
+UpdateRewardRequestAllOf.prototype['rewardType'] = undefined;
+
+/**
  * A unique id of the Reward Type
  * @member {String} rewardTypeId
  */
@@ -174,16 +185,14 @@ UpdateRewardRequestAllOf.prototype['description'] = undefined;
 /**
  * Delay of issuing a reward in minutes
  * @member {Number} delay
- * @default 0
  */
-UpdateRewardRequestAllOf.prototype['delay'] = 0;
+UpdateRewardRequestAllOf.prototype['delay'] = undefined;
 
 /**
- * Requires member acknowledgment to claim a reward. If set to True reward will not be automatically issued
- * @member {Boolean} isMemberAcknowledgmentRequired
- * @default false
+ * An Icon id that has been pre uploaded to the system to display for a reward
+ * @member {String} icon
  */
-UpdateRewardRequestAllOf.prototype['isMemberAcknowledgmentRequired'] = false;
+UpdateRewardRequestAllOf.prototype['icon'] = undefined;
 
 /**
  * @member {Array.<module:model/Metadata>} metadata
@@ -199,9 +208,8 @@ UpdateRewardRequestAllOf.prototype['pointInTime'] = undefined;
 /**
  * Reward available for a period of time from issuing in minutes
  * @member {Number} period
- * @default 0
  */
-UpdateRewardRequestAllOf.prototype['period'] = 0;
+UpdateRewardRequestAllOf.prototype['period'] = undefined;
 
 /**
  * @member {Array.<module:model/Translation>} translations

@@ -20,7 +20,7 @@ import RuleSet from '../model/RuleSet';
 /**
 * Rules service.
 * @module api/RulesApi
-* @version 1.0.1
+* @version 1.0.4
 */
 export default class RulesApi {
 

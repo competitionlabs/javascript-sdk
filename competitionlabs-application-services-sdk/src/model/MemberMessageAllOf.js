@@ -13,13 +13,13 @@
 
 import ApiClient from '../ApiClient';
 import EventRefType from './EventRefType';
-import MessagStatus from './MessagStatus';
+import MessageStatus from './MessageStatus';
 import MessageType from './MessageType';
 
 /**
  * The MemberMessageAllOf model module.
  * @module model/MemberMessageAllOf
- * @version 1.0.1
+ * @version 1.0.4
  */
 class MemberMessageAllOf {
     /**
@@ -31,61 +31,12 @@ class MemberMessageAllOf {
      * @param subject {String} The title of the message
      * @param body {String} The context of the message
      * @param prize {String} Unique system identifier of an Award
-     * @param status {module:model/MessagStatus} 
+     * @param status {module:model/MessageStatus} 
      * @param expiry {Date} The time that the message will disappear after. ISO8601 timestamp
      */
     constructor(eventRefType, eventReferenceId, messageType, subject, body, prize, status, expiry) { 
         
         MemberMessageAllOf.initialize(this, eventRefType, eventReferenceId, messageType, subject, body, prize, status, expiry);
-    }
-
-    /**
-    * Constructs a full object with all available fields.
-    */
-    model(){
-        var obj = {};
-
-        obj['eventRefType'] = new EventRefType().model();
-        obj['eventReferenceId'] = null;
-        obj['messageType'] = new MessageType().model();
-        obj['subject'] = null;
-        obj['body'] = null;
-        obj['prize'] = null;
-        obj['status'] = new MessagStatus().model();
-        obj['expiry'] = null;
-
-        return obj;
-    }
-
-    /**
-    * Constructs a full object Map for all available fields.
-    */
-    modelMap(){
-        var obj = {
-            "fields": {},
-            "requiredFields": {}
-        };
-
-        obj["fields"]['eventRefType'] = new EventRefType().modelMap();
-        obj["fields"]['eventReferenceId'] = { "type": 'String', "system": false };
-        obj["fields"]['messageType'] = new MessageType().modelMap();
-        obj["fields"]['subject'] = { "type": 'String', "system": false };
-        obj["fields"]['body'] = { "type": 'String', "system": false };
-        obj["fields"]['prize'] = { "type": 'String', "system": false };
-        obj["fields"]['status'] = new MessagStatus().modelMap();
-        obj["fields"]['expiry'] = { "type": 'Date', "system": false };
-
-        
-        obj["requiredFields"]['eventRefType'] = new EventRefType().modelMap();
-        obj["requiredFields"]['eventReferenceId'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['messageType'] = new MessageType().modelMap();
-        obj["requiredFields"]['subject'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['body'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['prize'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['status'] = new MessagStatus().modelMap();
-        obj["requiredFields"]['expiry'] = { "type": 'Date', "system": false };
-
-        return obj;
     }
 
     /**
@@ -102,6 +53,55 @@ class MemberMessageAllOf {
         obj['prize'] = prize;
         obj['status'] = status;
         obj['expiry'] = expiry;
+    }
+
+    /**
+    * Constructs a full object with all available fields.
+    */
+    model(){
+        var obj = {};
+
+        obj['eventRefType'];
+        obj['eventReferenceId'];
+        obj['messageType'];
+        obj['subject'];
+        obj['body'];
+        obj['prize'];
+        obj['status'];
+        obj['expiry'];
+
+        return obj;
+    }
+
+    /**
+    * Constructs a full object Map for all available fields.
+    */
+    modelMap(){
+        var obj = {
+            "fields": {},
+            "requiredFields": {}
+        };
+
+        obj["fields"]['eventRefType'];
+        obj["fields"]['eventReferenceId'];
+        obj["fields"]['messageType'];
+        obj["fields"]['subject'];
+        obj["fields"]['body'];
+        obj["fields"]['prize'];
+        obj["fields"]['status'];
+        obj["fields"]['expiry'];
+
+        
+        obj["requiredFields"]['eventRefType'];
+        obj["requiredFields"]['eventReferenceId'];
+        obj["requiredFields"]['messageType'];
+        obj["requiredFields"]['subject'];
+        obj["requiredFields"]['body'];
+        obj["requiredFields"]['prize'];
+        obj["requiredFields"]['status'];
+        obj["requiredFields"]['expiry'];
+
+        return obj;
     }
 
     /**
@@ -134,7 +134,7 @@ class MemberMessageAllOf {
                 obj['prize'] = ApiClient.convertToType(data['prize'], 'String');
             }
             if (data.hasOwnProperty('status')) {
-                obj['status'] = MessagStatus.constructFromObject(data['status']);
+                obj['status'] = MessageStatus.constructFromObject(data['status']);
             }
             if (data.hasOwnProperty('expiry')) {
                 obj['expiry'] = ApiClient.convertToType(data['expiry'], 'Date');
@@ -181,7 +181,7 @@ MemberMessageAllOf.prototype['body'] = undefined;
 MemberMessageAllOf.prototype['prize'] = undefined;
 
 /**
- * @member {module:model/MessagStatus} status
+ * @member {module:model/MessageStatus} status
  */
 MemberMessageAllOf.prototype['status'] = undefined;
 

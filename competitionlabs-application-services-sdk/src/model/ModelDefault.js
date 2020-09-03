@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ModelDefault model module.
  * @module model/ModelDefault
- * @version 1.0.1
+ * @version 1.0.4
  */
 class ModelDefault {
     /**
@@ -32,14 +32,25 @@ class ModelDefault {
     }
 
     /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
+    static initialize(obj, id, spaceName, created) { 
+        obj['id'] = id;
+        obj['spaceName'] = spaceName;
+        obj['created'] = created;
+    }
+
+    /**
     * Constructs a full object with all available fields.
     */
     model(){
         var obj = {};
 
-        obj['id'] = null;
-        obj['spaceName'] = null;
-        obj['created'] = null;
+        obj['id'];
+        obj['spaceName'];
+        obj['created'];
 
         return obj;
     }
@@ -53,27 +64,16 @@ class ModelDefault {
             "requiredFields": {}
         };
 
-        obj["fields"]['id'] = { "type": 'String', "system": true };
-        obj["fields"]['spaceName'] = { "type": 'String', "system": true };
-        obj["fields"]['created'] = { "type": 'Date', "system": true };
+        obj["fields"]['id'];
+        obj["fields"]['spaceName'];
+        obj["fields"]['created'];
 
         
-        obj["requiredFields"]['id'] = { "type": 'String', "system": true };
-        obj["requiredFields"]['spaceName'] = { "type": 'String', "system": true };
-        obj["requiredFields"]['created'] = { "type": 'Date', "system": true };
+        obj["requiredFields"]['id'];
+        obj["requiredFields"]['spaceName'];
+        obj["requiredFields"]['created'];
 
         return obj;
-    }
-
-    /**
-     * Initializes the fields of this object.
-     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
-     * Only for internal use.
-     */
-    static initialize(obj, id, spaceName, created) { 
-        obj['id'] = id;
-        obj['spaceName'] = spaceName;
-        obj['created'] = created;
     }
 
     /**

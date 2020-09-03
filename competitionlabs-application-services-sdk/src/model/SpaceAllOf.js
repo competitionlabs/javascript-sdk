@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SpaceAllOf model module.
  * @module model/SpaceAllOf
- * @version 1.0.1
+ * @version 1.0.4
  */
 class SpaceAllOf {
     /**
@@ -30,13 +30,22 @@ class SpaceAllOf {
     }
 
     /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
+    static initialize(obj, accountType) { 
+        obj['accountType'] = accountType;
+    }
+
+    /**
     * Constructs a full object with all available fields.
     */
     model(){
         var obj = {};
 
-        obj['accountType'] = null;
-        obj['masterSpace'] = null;
+        obj['accountType'];
+        obj['masterSpace'];
 
         return obj;
     }
@@ -50,22 +59,13 @@ class SpaceAllOf {
             "requiredFields": {}
         };
 
-        obj["fields"]['accountType'] = { "type": 'String', "system": false };
-        obj["fields"]['masterSpace'] = { "type": 'String', "system": false };
+        obj["fields"]['accountType'];
+        obj["fields"]['masterSpace'];
 
         
-        obj["requiredFields"]['accountType'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['accountType'];
 
         return obj;
-    }
-
-    /**
-     * Initializes the fields of this object.
-     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
-     * Only for internal use.
-     */
-    static initialize(obj, accountType) { 
-        obj['accountType'] = accountType;
     }
 
     /**

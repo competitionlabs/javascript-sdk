@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The QueryMultipleFields model module.
  * @module model/QueryMultipleFields
- * @version 1.0.1
+ * @version 1.0.4
  */
 class QueryMultipleFields {
     /**
@@ -31,13 +31,23 @@ class QueryMultipleFields {
     }
 
     /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
+    static initialize(obj, queryFields, queryValue) { 
+        obj['queryFields'] = queryFields;
+        obj['queryValue'] = queryValue;
+    }
+
+    /**
     * Constructs a full object with all available fields.
     */
     model(){
         var obj = {};
 
-        obj['queryFields'] = [null];
-        obj['queryValue'] = null;
+        obj['queryFields'];
+        obj['queryValue'];
 
         return obj;
     }
@@ -51,24 +61,14 @@ class QueryMultipleFields {
             "requiredFields": {}
         };
 
-        obj["fields"]['queryFields'] = [{ "type": 'String', "system": false }];
-        obj["fields"]['queryValue'] = { "type": 'String', "system": false };
+        obj["fields"]['queryFields'];
+        obj["fields"]['queryValue'];
 
         
-        obj["requiredFields"]['queryFields'] = [{ "type": 'String', "system": false }];
-        obj["requiredFields"]['queryValue'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['queryFields'];
+        obj["requiredFields"]['queryValue'];
 
         return obj;
-    }
-
-    /**
-     * Initializes the fields of this object.
-     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
-     * Only for internal use.
-     */
-    static initialize(obj, queryFields, queryValue) { 
-        obj['queryFields'] = queryFields;
-        obj['queryValue'] = queryValue;
     }
 
     /**

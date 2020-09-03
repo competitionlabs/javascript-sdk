@@ -12,54 +12,27 @@
  */
 
 import ApiClient from '../ApiClient';
-import MessagStatus from './MessagStatus';
+import MessageStatus from './MessageStatus';
+import UpdateMessageStatusRequestAllOf from './UpdateMessageStatusRequestAllOf';
+import UpdateModelDefault from './UpdateModelDefault';
 
 /**
  * The UpdateMessageStatusRequest model module.
  * @module model/UpdateMessageStatusRequest
- * @version 1.0.1
+ * @version 1.0.4
  */
 class UpdateMessageStatusRequest {
     /**
      * Constructs a new <code>UpdateMessageStatusRequest</code>.
      * @alias module:model/UpdateMessageStatusRequest
-     * @param id {String} Unique system identifier of a message
-     * @param status {module:model/MessagStatus} 
+     * @implements module:model/UpdateModelDefault
+     * @implements module:model/UpdateMessageStatusRequestAllOf
+     * @param id {String} A unique system generated identifier
+     * @param status {module:model/MessageStatus} 
      */
     constructor(id, status) { 
-        
+        UpdateModelDefault.initialize(this, id);UpdateMessageStatusRequestAllOf.initialize(this, status);
         UpdateMessageStatusRequest.initialize(this, id, status);
-    }
-
-    /**
-    * Constructs a full object with all available fields.
-    */
-    model(){
-        var obj = {};
-
-        obj['id'] = null;
-        obj['status'] = new MessagStatus().model();
-
-        return obj;
-    }
-
-    /**
-    * Constructs a full object Map for all available fields.
-    */
-    modelMap(){
-        var obj = {
-            "fields": {},
-            "requiredFields": {}
-        };
-
-        obj["fields"]['id'] = { "type": 'String', "system": true };
-        obj["fields"]['status'] = new MessagStatus().modelMap();
-
-        
-        obj["requiredFields"]['id'] = { "type": 'String', "system": true };
-        obj["requiredFields"]['status'] = new MessagStatus().modelMap();
-
-        return obj;
     }
 
     /**
@@ -73,6 +46,37 @@ class UpdateMessageStatusRequest {
     }
 
     /**
+    * Constructs a full object with all available fields.
+    */
+    model(){
+        var obj = {};
+
+        obj['id'];
+        obj['status'];
+
+        return obj;
+    }
+
+    /**
+    * Constructs a full object Map for all available fields.
+    */
+    modelMap(){
+        var obj = {
+            "fields": {},
+            "requiredFields": {}
+        };
+
+        obj["fields"]['id'];
+        obj["fields"]['status'];
+
+        
+        obj["requiredFields"]['id'];
+        obj["requiredFields"]['status'];
+
+        return obj;
+    }
+
+    /**
      * Constructs a <code>UpdateMessageStatusRequest</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
@@ -82,12 +86,14 @@ class UpdateMessageStatusRequest {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new UpdateMessageStatusRequest();
+            UpdateModelDefault.constructFromObject(data, obj);
+            UpdateMessageStatusRequestAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'String');
             }
             if (data.hasOwnProperty('status')) {
-                obj['status'] = MessagStatus.constructFromObject(data['status']);
+                obj['status'] = MessageStatus.constructFromObject(data['status']);
             }
         }
         return obj;
@@ -97,17 +103,28 @@ class UpdateMessageStatusRequest {
 }
 
 /**
- * Unique system identifier of a message
+ * A unique system generated identifier
  * @member {String} id
  */
 UpdateMessageStatusRequest.prototype['id'] = undefined;
 
 /**
- * @member {module:model/MessagStatus} status
+ * @member {module:model/MessageStatus} status
  */
 UpdateMessageStatusRequest.prototype['status'] = undefined;
 
 
+// Implement UpdateModelDefault interface:
+/**
+ * A unique system generated identifier
+ * @member {String} id
+ */
+UpdateModelDefault.prototype['id'] = undefined;
+// Implement UpdateMessageStatusRequestAllOf interface:
+/**
+ * @member {module:model/MessageStatus} status
+ */
+UpdateMessageStatusRequestAllOf.prototype['status'] = undefined;
 
 
 

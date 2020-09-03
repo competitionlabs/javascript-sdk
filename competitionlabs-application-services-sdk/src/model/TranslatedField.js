@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TranslatedField model module.
  * @module model/TranslatedField
- * @version 1.0.1
+ * @version 1.0.4
  */
 class TranslatedField {
     /**
@@ -31,13 +31,23 @@ class TranslatedField {
     }
 
     /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
+    static initialize(obj, fieldName, text) { 
+        obj['fieldName'] = fieldName;
+        obj['text'] = text;
+    }
+
+    /**
     * Constructs a full object with all available fields.
     */
     model(){
         var obj = {};
 
-        obj['fieldName'] = null;
-        obj['text'] = null;
+        obj['fieldName'];
+        obj['text'];
 
         return obj;
     }
@@ -51,24 +61,14 @@ class TranslatedField {
             "requiredFields": {}
         };
 
-        obj["fields"]['fieldName'] = { "type": 'String', "system": false };
-        obj["fields"]['text'] = { "type": 'String', "system": false };
+        obj["fields"]['fieldName'];
+        obj["fields"]['text'];
 
         
-        obj["requiredFields"]['fieldName'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['text'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['fieldName'];
+        obj["requiredFields"]['text'];
 
         return obj;
-    }
-
-    /**
-     * Initializes the fields of this object.
-     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
-     * Only for internal use.
-     */
-    static initialize(obj, fieldName, text) { 
-        obj['fieldName'] = fieldName;
-        obj['text'] = text;
     }
 
     /**

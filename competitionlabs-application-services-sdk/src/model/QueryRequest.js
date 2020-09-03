@@ -21,7 +21,7 @@ import RangeQuery from './RangeQuery';
 /**
  * The QueryRequest model module.
  * @module model/QueryRequest
- * @version 1.0.1
+ * @version 1.0.4
  */
 class QueryRequest {
     /**
@@ -34,28 +34,36 @@ class QueryRequest {
     }
 
     /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
+    static initialize(obj) { 
+    }
+
+    /**
     * Constructs a full object with all available fields.
     */
     model(){
         var obj = {};
 
-        obj['must'] = [new QueryMultiple().model()];
-        obj['mustNot'] = [new QueryMultiple().model()];
-        obj['should'] = [new QueryMultiple().model()];
-        obj['gte'] = [new QuerySingle().model()];
-        obj['lte'] = [new QuerySingle().model()];
-        obj['gt'] = [new QuerySingle().model()];
-        obj['lt'] = [new QuerySingle().model()];
-        obj['range'] = [new RangeQuery().model()];
-        obj['sortBy'] = [new QuerySortBy().model()];
-        obj['multiFields'] = new QueryMultipleFields().model();
-        obj['includeFields'] = [null];
-        obj['hasValue'] = [null];
-        obj['hasNoValue'] = [null];
-        obj['shouldMatch'] = null;
-        obj['skip'] = null;
-        obj['limit'] = null;
-        obj['isCountQuery'] = null;
+        obj['must'];
+        obj['mustNot'];
+        obj['should'];
+        obj['gte'];
+        obj['lte'];
+        obj['gt'];
+        obj['lt'];
+        obj['range'];
+        obj['sortBy'];
+        obj['multiFields'];
+        obj['includeFields'];
+        obj['hasValue'];
+        obj['hasNoValue'];
+        obj['shouldMatch'];
+        obj['skip'];
+        obj['limit'];
+        obj['isCountQuery'];
 
         return obj;
     }
@@ -69,35 +77,27 @@ class QueryRequest {
             "requiredFields": {}
         };
 
-        obj["fields"]['must'] = [new QueryMultiple().modelMap()];
-        obj["fields"]['mustNot'] = [new QueryMultiple().modelMap()];
-        obj["fields"]['should'] = [new QueryMultiple().modelMap()];
-        obj["fields"]['gte'] = [new QuerySingle().modelMap()];
-        obj["fields"]['lte'] = [new QuerySingle().modelMap()];
-        obj["fields"]['gt'] = [new QuerySingle().modelMap()];
-        obj["fields"]['lt'] = [new QuerySingle().modelMap()];
-        obj["fields"]['range'] = [new RangeQuery().modelMap()];
-        obj["fields"]['sortBy'] = [new QuerySortBy().modelMap()];
-        obj["fields"]['multiFields'] = new QueryMultipleFields().modelMap();
-        obj["fields"]['includeFields'] = [{ "type": 'String', "system": false }];
-        obj["fields"]['hasValue'] = [{ "type": 'String', "system": false }];
-        obj["fields"]['hasNoValue'] = [{ "type": 'String', "system": false }];
-        obj["fields"]['shouldMatch'] = { "type": 'Number', "system": false };
-        obj["fields"]['skip'] = { "type": 'Number', "system": false };
-        obj["fields"]['limit'] = { "type": 'Number', "system": false };
-        obj["fields"]['isCountQuery'] = { "type": 'Boolean', "system": false };
+        obj["fields"]['must'];
+        obj["fields"]['mustNot'];
+        obj["fields"]['should'];
+        obj["fields"]['gte'];
+        obj["fields"]['lte'];
+        obj["fields"]['gt'];
+        obj["fields"]['lt'];
+        obj["fields"]['range'];
+        obj["fields"]['sortBy'];
+        obj["fields"]['multiFields'];
+        obj["fields"]['includeFields'];
+        obj["fields"]['hasValue'];
+        obj["fields"]['hasNoValue'];
+        obj["fields"]['shouldMatch'];
+        obj["fields"]['skip'];
+        obj["fields"]['limit'];
+        obj["fields"]['isCountQuery'];
 
         
 
         return obj;
-    }
-
-    /**
-     * Initializes the fields of this object.
-     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
-     * Only for internal use.
-     */
-    static initialize(obj) { 
     }
 
     /**
@@ -139,7 +139,7 @@ class QueryRequest {
                 obj['sortBy'] = ApiClient.convertToType(data['sortBy'], [QuerySortBy]);
             }
             if (data.hasOwnProperty('multiFields')) {
-                obj['multiFields'] = QueryMultipleFields.constructFromObject(data['multiFields']);
+                obj['multiFields'] = ApiClient.convertToType(data['multiFields'], [QueryMultipleFields]);
             }
             if (data.hasOwnProperty('includeFields')) {
                 obj['includeFields'] = ApiClient.convertToType(data['includeFields'], ['String']);
@@ -215,7 +215,7 @@ QueryRequest.prototype['range'] = undefined;
 QueryRequest.prototype['sortBy'] = undefined;
 
 /**
- * @member {module:model/QueryMultipleFields} multiFields
+ * @member {Array.<module:model/QueryMultipleFields>} multiFields
  */
 QueryRequest.prototype['multiFields'] = undefined;
 
@@ -240,23 +240,20 @@ QueryRequest.prototype['hasNoValue'] = undefined;
 /**
  * How many should properties need to be displayed
  * @member {Number} shouldMatch
- * @default 0
  */
-QueryRequest.prototype['shouldMatch'] = 0;
+QueryRequest.prototype['shouldMatch'] = undefined;
 
 /**
  * How many response objects will be skipped for preview
  * @member {Number} skip
- * @default 0
  */
-QueryRequest.prototype['skip'] = 0;
+QueryRequest.prototype['skip'] = undefined;
 
 /**
  * How many response objects will be displayed
  * @member {Number} limit
- * @default 20
  */
-QueryRequest.prototype['limit'] = 20;
+QueryRequest.prototype['limit'] = undefined;
 
 /**
  * Whether this query requires a count of records found only

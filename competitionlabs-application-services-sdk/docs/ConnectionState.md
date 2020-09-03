@@ -1,4 +1,4 @@
-# @CompetitionlabsJavascriptSdk.ConnectionState
+# @CompetitionlabsApplicationServicesSdk.ConnectionState
 
 ## Enum
 

@@ -19,7 +19,7 @@ import WebhookAllOf from './WebhookAllOf';
 /**
  * The Webhook model module.
  * @module model/Webhook
- * @version 1.0.1
+ * @version 1.0.4
  */
 class Webhook {
     /**
@@ -39,19 +39,33 @@ class Webhook {
     }
 
     /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
+    static initialize(obj, id, spaceName, created, postToUrl, triggers) { 
+        obj['id'] = id;
+        obj['spaceName'] = spaceName;
+        obj['created'] = created;
+        obj['postToUrl'] = postToUrl;
+        obj['triggers'] = triggers;
+    }
+
+    /**
     * Constructs a full object with all available fields.
     */
     model(){
         var obj = {};
 
-        obj['id'] = null;
-        obj['spaceName'] = null;
-        obj['created'] = null;
-        obj['postToUrl'] = null;
-        obj['triggers'] = [null];
-        obj['description'] = null;
-        obj['headers'] = [new Metadata().model()];
-        obj['transformerId'] = null;
+        obj['id'];
+        obj['spaceName'];
+        obj['created'];
+        obj['postToUrl'];
+        obj['triggers'];
+        obj['description'];
+        obj['headers'];
+        obj['transformerId'];
+        obj['metadata'];
 
         return obj;
     }
@@ -65,36 +79,24 @@ class Webhook {
             "requiredFields": {}
         };
 
-        obj["fields"]['id'] = { "type": 'String', "system": true };
-        obj["fields"]['spaceName'] = { "type": 'String', "system": true };
-        obj["fields"]['created'] = { "type": 'Date', "system": true };
-        obj["fields"]['postToUrl'] = { "type": 'String', "system": false };
-        obj["fields"]['triggers'] = [{ "type": 'String', "system": false }];
-        obj["fields"]['description'] = { "type": 'String', "system": false };
-        obj["fields"]['headers'] = [new Metadata().modelMap()];
-        obj["fields"]['transformerId'] = { "type": 'String', "system": false };
+        obj["fields"]['id'];
+        obj["fields"]['spaceName'];
+        obj["fields"]['created'];
+        obj["fields"]['postToUrl'];
+        obj["fields"]['triggers'];
+        obj["fields"]['description'];
+        obj["fields"]['headers'];
+        obj["fields"]['transformerId'];
+        obj["fields"]['metadata'];
 
         
-        obj["requiredFields"]['id'] = { "type": 'String', "system": true };
-        obj["requiredFields"]['spaceName'] = { "type": 'String', "system": true };
-        obj["requiredFields"]['created'] = { "type": 'Date', "system": true };
-        obj["requiredFields"]['postToUrl'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['triggers'] = [{ "type": 'String', "system": false }];
+        obj["requiredFields"]['id'];
+        obj["requiredFields"]['spaceName'];
+        obj["requiredFields"]['created'];
+        obj["requiredFields"]['postToUrl'];
+        obj["requiredFields"]['triggers'];
 
         return obj;
-    }
-
-    /**
-     * Initializes the fields of this object.
-     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
-     * Only for internal use.
-     */
-    static initialize(obj, id, spaceName, created, postToUrl, triggers) { 
-        obj['id'] = id;
-        obj['spaceName'] = spaceName;
-        obj['created'] = created;
-        obj['postToUrl'] = postToUrl;
-        obj['triggers'] = triggers;
     }
 
     /**
@@ -133,6 +135,9 @@ class Webhook {
             }
             if (data.hasOwnProperty('transformerId')) {
                 obj['transformerId'] = ApiClient.convertToType(data['transformerId'], 'String');
+            }
+            if (data.hasOwnProperty('metadata')) {
+                obj['metadata'] = ApiClient.convertToType(data['metadata'], [Metadata]);
             }
         }
         return obj;
@@ -188,6 +193,11 @@ Webhook.prototype['headers'] = undefined;
  */
 Webhook.prototype['transformerId'] = undefined;
 
+/**
+ * @member {Array.<module:model/Metadata>} metadata
+ */
+Webhook.prototype['metadata'] = undefined;
+
 
 // Implement ModelDefault interface:
 /**
@@ -230,6 +240,10 @@ WebhookAllOf.prototype['headers'] = undefined;
  * @member {String} transformerId
  */
 WebhookAllOf.prototype['transformerId'] = undefined;
+/**
+ * @member {Array.<module:model/Metadata>} metadata
+ */
+WebhookAllOf.prototype['metadata'] = undefined;
 
 
 

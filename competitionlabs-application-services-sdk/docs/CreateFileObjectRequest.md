@@ -1,4 +1,4 @@
-# @CompetitionlabsJavascriptSdk.CreateFileObjectRequest
+# @CompetitionlabsApplicationServicesSdk.CreateFileObjectRequest
 
 ## Properties
 
@@ -9,6 +9,6 @@ Name | Type | Description | Notes
 **fileName** | **String** | Name of the original file uploaded | 
 **mimeType** | **String** | Mime type of the file. Valid mime types - text/csv or application/vmd.ms-excel or application/x-directory for directories | 
 **parentFolderPath** | **String** | The folder containing the file within the repository | 
-**metadata** | [**[Metadata]**](docs/Metadata.md) |  | [optional] 
+**metadata** | [**[Metadata]**](Metadata.md) |  | [optional] 
 
 

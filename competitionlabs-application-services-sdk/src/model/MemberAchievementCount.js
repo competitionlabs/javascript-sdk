@@ -18,7 +18,7 @@ import MemberAchievementCountAllOf from './MemberAchievementCountAllOf';
 /**
  * The MemberAchievementCount model module.
  * @module model/MemberAchievementCount
- * @version 1.0.1
+ * @version 1.0.4
  */
 class MemberAchievementCount {
     /**
@@ -39,17 +39,31 @@ class MemberAchievementCount {
     }
 
     /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
+    static initialize(obj, entityId, countValue, name, memberId, memberRefId, latestIssuedTimestamp) { 
+        obj['entityId'] = entityId;
+        obj['countValue'] = countValue;
+        obj['name'] = name;
+        obj['memberId'] = memberId;
+        obj['memberRefId'] = memberRefId;
+        obj['latestIssuedTimestamp'] = latestIssuedTimestamp;
+    }
+
+    /**
     * Constructs a full object with all available fields.
     */
     model(){
         var obj = {};
 
-        obj['entityId'] = null;
-        obj['countValue'] = null;
-        obj['name'] = null;
-        obj['memberId'] = null;
-        obj['memberRefId'] = null;
-        obj['latestIssuedTimestamp'] = null;
+        obj['entityId'];
+        obj['countValue'];
+        obj['name'];
+        obj['memberId'];
+        obj['memberRefId'];
+        obj['latestIssuedTimestamp'];
 
         return obj;
     }
@@ -63,36 +77,22 @@ class MemberAchievementCount {
             "requiredFields": {}
         };
 
-        obj["fields"]['entityId'] = { "type": 'String', "system": false };
-        obj["fields"]['countValue'] = { "type": 'Number', "system": false };
-        obj["fields"]['name'] = { "type": 'String', "system": false };
-        obj["fields"]['memberId'] = { "type": 'String', "system": false };
-        obj["fields"]['memberRefId'] = { "type": 'String', "system": false };
-        obj["fields"]['latestIssuedTimestamp'] = { "type": 'Date', "system": false };
+        obj["fields"]['entityId'];
+        obj["fields"]['countValue'];
+        obj["fields"]['name'];
+        obj["fields"]['memberId'];
+        obj["fields"]['memberRefId'];
+        obj["fields"]['latestIssuedTimestamp'];
 
         
-        obj["requiredFields"]['entityId'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['countValue'] = { "type": 'Number', "system": false };
-        obj["requiredFields"]['name'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['memberId'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['memberRefId'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['latestIssuedTimestamp'] = { "type": 'Date', "system": false };
+        obj["requiredFields"]['entityId'];
+        obj["requiredFields"]['countValue'];
+        obj["requiredFields"]['name'];
+        obj["requiredFields"]['memberId'];
+        obj["requiredFields"]['memberRefId'];
+        obj["requiredFields"]['latestIssuedTimestamp'];
 
         return obj;
-    }
-
-    /**
-     * Initializes the fields of this object.
-     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
-     * Only for internal use.
-     */
-    static initialize(obj, entityId, countValue, name, memberId, memberRefId, latestIssuedTimestamp) { 
-        obj['entityId'] = entityId;
-        obj['countValue'] = countValue;
-        obj['name'] = name;
-        obj['memberId'] = memberId;
-        obj['memberRefId'] = memberRefId;
-        obj['latestIssuedTimestamp'] = latestIssuedTimestamp;
     }
 
     /**

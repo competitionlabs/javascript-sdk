@@ -18,7 +18,7 @@ import UnitOfMeasureType from './UnitOfMeasureType';
 /**
  * The CreateActionTypeRequest model module.
  * @module model/CreateActionTypeRequest
- * @version 1.0.1
+ * @version 1.0.4
  */
 class CreateActionTypeRequest {
     /**
@@ -34,16 +34,27 @@ class CreateActionTypeRequest {
     }
 
     /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
+    static initialize(obj, name, key, unitOfMeasureType) { 
+        obj['name'] = name;
+        obj['key'] = key;
+        obj['unitOfMeasureType'] = unitOfMeasureType;
+    }
+
+    /**
     * Constructs a full object with all available fields.
     */
     model(){
         var obj = {};
 
-        obj['name'] = null;
-        obj['key'] = null;
-        obj['description'] = null;
-        obj['unitOfMeasureType'] = new UnitOfMeasureType().model();
-        obj['metadata'] = [new Metadata().model()];
+        obj['name'];
+        obj['key'];
+        obj['description'];
+        obj['unitOfMeasureType'];
+        obj['metadata'];
 
         return obj;
     }
@@ -57,29 +68,18 @@ class CreateActionTypeRequest {
             "requiredFields": {}
         };
 
-        obj["fields"]['name'] = { "type": 'String', "system": false };
-        obj["fields"]['key'] = { "type": 'String', "system": false };
-        obj["fields"]['description'] = { "type": 'String', "system": false };
-        obj["fields"]['unitOfMeasureType'] = new UnitOfMeasureType().modelMap();
-        obj["fields"]['metadata'] = [new Metadata().modelMap()];
+        obj["fields"]['name'];
+        obj["fields"]['key'];
+        obj["fields"]['description'];
+        obj["fields"]['unitOfMeasureType'];
+        obj["fields"]['metadata'];
 
         
-        obj["requiredFields"]['name'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['key'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['unitOfMeasureType'] = new UnitOfMeasureType().modelMap();
+        obj["requiredFields"]['name'];
+        obj["requiredFields"]['key'];
+        obj["requiredFields"]['unitOfMeasureType'];
 
         return obj;
-    }
-
-    /**
-     * Initializes the fields of this object.
-     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
-     * Only for internal use.
-     */
-    static initialize(obj, name, key, unitOfMeasureType) { 
-        obj['name'] = name;
-        obj['key'] = key;
-        obj['unitOfMeasureType'] = unitOfMeasureType;
     }
 
     /**

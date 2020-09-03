@@ -19,7 +19,7 @@ import Scheduling from './Scheduling';
 /**
  * The CreateMessageRequest model module.
  * @module model/CreateMessageRequest
- * @version 1.0.1
+ * @version 1.0.4
  */
 class CreateMessageRequest {
     /**
@@ -37,18 +37,31 @@ class CreateMessageRequest {
     }
 
     /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
+    static initialize(obj, members, messageType, subject, body, scheduling) { 
+        obj['members'] = members;
+        obj['messageType'] = messageType;
+        obj['subject'] = subject;
+        obj['body'] = body;
+        obj['scheduling'] = scheduling;
+    }
+
+    /**
     * Constructs a full object with all available fields.
     */
     model(){
         var obj = {};
 
-        obj['memberGroup'] = [null];
-        obj['members'] = [null];
-        obj['messageType'] = new MessageType().model();
-        obj['subject'] = null;
-        obj['body'] = null;
-        obj['scheduling'] = new Scheduling().model();
-        obj['metadata'] = [new Metadata().model()];
+        obj['memberGroup'];
+        obj['members'];
+        obj['messageType'];
+        obj['subject'];
+        obj['body'];
+        obj['scheduling'];
+        obj['metadata'];
 
         return obj;
     }
@@ -62,35 +75,22 @@ class CreateMessageRequest {
             "requiredFields": {}
         };
 
-        obj["fields"]['memberGroup'] = [{ "type": 'String', "system": false }];
-        obj["fields"]['members'] = [{ "type": 'String', "system": false }];
-        obj["fields"]['messageType'] = new MessageType().modelMap();
-        obj["fields"]['subject'] = { "type": 'String', "system": false };
-        obj["fields"]['body'] = { "type": 'String', "system": false };
-        obj["fields"]['scheduling'] = new Scheduling().modelMap();
-        obj["fields"]['metadata'] = [new Metadata().modelMap()];
+        obj["fields"]['memberGroup'];
+        obj["fields"]['members'];
+        obj["fields"]['messageType'];
+        obj["fields"]['subject'];
+        obj["fields"]['body'];
+        obj["fields"]['scheduling'];
+        obj["fields"]['metadata'];
 
         
-        obj["requiredFields"]['members'] = [{ "type": 'String', "system": false }];
-        obj["requiredFields"]['messageType'] = new MessageType().modelMap();
-        obj["requiredFields"]['subject'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['body'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['scheduling'] = new Scheduling().modelMap();
+        obj["requiredFields"]['members'];
+        obj["requiredFields"]['messageType'];
+        obj["requiredFields"]['subject'];
+        obj["requiredFields"]['body'];
+        obj["requiredFields"]['scheduling'];
 
         return obj;
-    }
-
-    /**
-     * Initializes the fields of this object.
-     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
-     * Only for internal use.
-     */
-    static initialize(obj, members, messageType, subject, body, scheduling) { 
-        obj['members'] = members;
-        obj['messageType'] = messageType;
-        obj['subject'] = subject;
-        obj['body'] = body;
-        obj['scheduling'] = scheduling;
     }
 
     /**

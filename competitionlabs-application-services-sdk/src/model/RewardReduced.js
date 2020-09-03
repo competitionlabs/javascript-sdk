@@ -18,7 +18,7 @@ import RewardReducedAllOf from './RewardReducedAllOf';
 /**
  * The RewardReduced model module.
  * @module model/RewardReduced
- * @version 1.0.1
+ * @version 1.0.4
  */
 class RewardReduced {
     /**
@@ -41,55 +41,6 @@ class RewardReduced {
     }
 
     /**
-    * Constructs a full object with all available fields.
-    */
-    model(){
-        var obj = {};
-
-        obj['id'] = null;
-        obj['spaceName'] = null;
-        obj['created'] = null;
-        obj['rewardRank'] = null;
-        obj['rewardName'] = null;
-        obj['value'] = null;
-        obj['rewardType'] = null;
-        obj['rewardTypeId'] = null;
-
-        return obj;
-    }
-
-    /**
-    * Constructs a full object Map for all available fields.
-    */
-    modelMap(){
-        var obj = {
-            "fields": {},
-            "requiredFields": {}
-        };
-
-        obj["fields"]['id'] = { "type": 'String', "system": true };
-        obj["fields"]['spaceName'] = { "type": 'String', "system": true };
-        obj["fields"]['created'] = { "type": 'Date', "system": true };
-        obj["fields"]['rewardRank'] = { "type": 'String', "system": false };
-        obj["fields"]['rewardName'] = { "type": 'String', "system": false };
-        obj["fields"]['value'] = { "type": 'Number', "system": false };
-        obj["fields"]['rewardType'] = { "type": 'String', "system": false };
-        obj["fields"]['rewardTypeId'] = { "type": 'String', "system": false };
-
-        
-        obj["requiredFields"]['id'] = { "type": 'String', "system": true };
-        obj["requiredFields"]['spaceName'] = { "type": 'String', "system": true };
-        obj["requiredFields"]['created'] = { "type": 'Date', "system": true };
-        obj["requiredFields"]['rewardRank'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['rewardName'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['value'] = { "type": 'Number', "system": false };
-        obj["requiredFields"]['rewardType'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['rewardTypeId'] = { "type": 'String', "system": false };
-
-        return obj;
-    }
-
-    /**
      * Initializes the fields of this object.
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
@@ -103,6 +54,55 @@ class RewardReduced {
         obj['value'] = value;
         obj['rewardType'] = rewardType;
         obj['rewardTypeId'] = rewardTypeId;
+    }
+
+    /**
+    * Constructs a full object with all available fields.
+    */
+    model(){
+        var obj = {};
+
+        obj['id'];
+        obj['spaceName'];
+        obj['created'];
+        obj['rewardRank'];
+        obj['rewardName'];
+        obj['value'];
+        obj['rewardType'];
+        obj['rewardTypeId'];
+
+        return obj;
+    }
+
+    /**
+    * Constructs a full object Map for all available fields.
+    */
+    modelMap(){
+        var obj = {
+            "fields": {},
+            "requiredFields": {}
+        };
+
+        obj["fields"]['id'];
+        obj["fields"]['spaceName'];
+        obj["fields"]['created'];
+        obj["fields"]['rewardRank'];
+        obj["fields"]['rewardName'];
+        obj["fields"]['value'];
+        obj["fields"]['rewardType'];
+        obj["fields"]['rewardTypeId'];
+
+        
+        obj["requiredFields"]['id'];
+        obj["requiredFields"]['spaceName'];
+        obj["requiredFields"]['created'];
+        obj["requiredFields"]['rewardRank'];
+        obj["requiredFields"]['rewardName'];
+        obj["requiredFields"]['value'];
+        obj["requiredFields"]['rewardType'];
+        obj["requiredFields"]['rewardTypeId'];
+
+        return obj;
     }
 
     /**

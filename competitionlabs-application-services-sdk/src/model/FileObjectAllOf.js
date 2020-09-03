@@ -17,22 +17,34 @@ import Metadata from './Metadata';
 /**
  * The FileObjectAllOf model module.
  * @module model/FileObjectAllOf
- * @version 1.0.1
+ * @version 1.0.4
  */
 class FileObjectAllOf {
     /**
      * Constructs a new <code>FileObjectAllOf</code>.
      * @alias module:model/FileObjectAllOf
-     * @param id {String} The file identifier
      * @param repositoryId {String} The repository identifier this file belongs too
      * @param fileName {String} Name of the original file uploaded
      * @param mimeType {String} Mime type of the file. Valid mime types - text/csv or application/vmd.ms-excelor or application/x-directory for directories
      * @param path {String} The name of the attachment within the bucket
      * @param parentFolderPath {String} The folder name containing the attachment within the bucket
      */
-    constructor(id, repositoryId, fileName, mimeType, path, parentFolderPath) { 
+    constructor(repositoryId, fileName, mimeType, path, parentFolderPath) { 
         
-        FileObjectAllOf.initialize(this, id, repositoryId, fileName, mimeType, path, parentFolderPath);
+        FileObjectAllOf.initialize(this, repositoryId, fileName, mimeType, path, parentFolderPath);
+    }
+
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
+    static initialize(obj, repositoryId, fileName, mimeType, path, parentFolderPath) { 
+        obj['repositoryId'] = repositoryId;
+        obj['fileName'] = fileName;
+        obj['mimeType'] = mimeType;
+        obj['path'] = path;
+        obj['parentFolderPath'] = parentFolderPath;
     }
 
     /**
@@ -41,17 +53,16 @@ class FileObjectAllOf {
     model(){
         var obj = {};
 
-        obj['id'] = null;
-        obj['tags'] = [null];
-        obj['repositoryId'] = null;
-        obj['fileName'] = null;
-        obj['mimeType'] = null;
-        obj['extension'] = null;
-        obj['path'] = null;
-        obj['parentFolderPath'] = null;
-        obj['uri'] = null;
-        obj['size'] = null;
-        obj['metadata'] = [new Metadata().model()];
+        obj['tags'];
+        obj['repositoryId'];
+        obj['fileName'];
+        obj['mimeType'];
+        obj['extension'];
+        obj['path'];
+        obj['parentFolderPath'];
+        obj['uri'];
+        obj['size'];
+        obj['metadata'];
 
         return obj;
     }
@@ -65,41 +76,25 @@ class FileObjectAllOf {
             "requiredFields": {}
         };
 
-        obj["fields"]['id'] = { "type": 'String', "system": true };
-        obj["fields"]['tags'] = [{ "type": 'String', "system": false }];
-        obj["fields"]['repositoryId'] = { "type": 'String', "system": false };
-        obj["fields"]['fileName'] = { "type": 'String', "system": false };
-        obj["fields"]['mimeType'] = { "type": 'String', "system": false };
-        obj["fields"]['extension'] = { "type": 'String', "system": false };
-        obj["fields"]['path'] = { "type": 'String', "system": false };
-        obj["fields"]['parentFolderPath'] = { "type": 'String', "system": false };
-        obj["fields"]['uri'] = { "type": 'String', "system": false };
-        obj["fields"]['size'] = { "type": 'Number', "system": false };
-        obj["fields"]['metadata'] = [new Metadata().modelMap()];
+        obj["fields"]['tags'];
+        obj["fields"]['repositoryId'];
+        obj["fields"]['fileName'];
+        obj["fields"]['mimeType'];
+        obj["fields"]['extension'];
+        obj["fields"]['path'];
+        obj["fields"]['parentFolderPath'];
+        obj["fields"]['uri'];
+        obj["fields"]['size'];
+        obj["fields"]['metadata'];
 
         
-        obj["requiredFields"]['id'] = { "type": 'String', "system": true };
-        obj["requiredFields"]['repositoryId'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['fileName'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['mimeType'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['path'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['parentFolderPath'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['repositoryId'];
+        obj["requiredFields"]['fileName'];
+        obj["requiredFields"]['mimeType'];
+        obj["requiredFields"]['path'];
+        obj["requiredFields"]['parentFolderPath'];
 
         return obj;
-    }
-
-    /**
-     * Initializes the fields of this object.
-     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
-     * Only for internal use.
-     */
-    static initialize(obj, id, repositoryId, fileName, mimeType, path, parentFolderPath) { 
-        obj['id'] = id;
-        obj['repositoryId'] = repositoryId;
-        obj['fileName'] = fileName;
-        obj['mimeType'] = mimeType;
-        obj['path'] = path;
-        obj['parentFolderPath'] = parentFolderPath;
     }
 
     /**
@@ -113,9 +108,6 @@ class FileObjectAllOf {
         if (data) {
             obj = obj || new FileObjectAllOf();
 
-            if (data.hasOwnProperty('id')) {
-                obj['id'] = ApiClient.convertToType(data['id'], 'String');
-            }
             if (data.hasOwnProperty('tags')) {
                 obj['tags'] = ApiClient.convertToType(data['tags'], ['String']);
             }
@@ -152,12 +144,6 @@ class FileObjectAllOf {
 
 
 }
-
-/**
- * The file identifier
- * @member {String} id
- */
-FileObjectAllOf.prototype['id'] = undefined;
 
 /**
  * The tags associated with this file object

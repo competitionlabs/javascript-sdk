@@ -1,4 +1,4 @@
-# @CompetitionlabsJavascriptSdk.ConnectionAllOf
+# @CompetitionlabsApplicationServicesSdk.ConnectionAllOf
 
 ## Properties
 

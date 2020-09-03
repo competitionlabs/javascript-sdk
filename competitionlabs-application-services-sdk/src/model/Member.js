@@ -20,7 +20,7 @@ import ModelDefault from './ModelDefault';
 /**
  * The Member model module.
  * @module model/Member
- * @version 1.0.1
+ * @version 1.0.4
  */
 class Member {
     /**
@@ -40,20 +40,33 @@ class Member {
     }
 
     /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
+    static initialize(obj, id, spaceName, created, memberRefId, memberType) { 
+        obj['id'] = id;
+        obj['spaceName'] = spaceName;
+        obj['created'] = created;
+        obj['memberRefId'] = memberRefId;
+        obj['memberType'] = memberType;
+    }
+
+    /**
     * Constructs a full object with all available fields.
     */
     model(){
         var obj = {};
 
-        obj['id'] = null;
-        obj['spaceName'] = null;
-        obj['created'] = null;
-        obj['name'] = null;
-        obj['memberRefId'] = null;
-        obj['memberType'] = new MemberType().model();
-        obj['teamMembers'] = [null];
-        obj['groups'] = [null];
-        obj['metadata'] = [new Metadata().model()];
+        obj['id'];
+        obj['spaceName'];
+        obj['created'];
+        obj['name'];
+        obj['memberRefId'];
+        obj['memberType'];
+        obj['teamMembers'];
+        obj['groups'];
+        obj['metadata'];
 
         return obj;
     }
@@ -67,37 +80,24 @@ class Member {
             "requiredFields": {}
         };
 
-        obj["fields"]['id'] = { "type": 'String', "system": true };
-        obj["fields"]['spaceName'] = { "type": 'String', "system": true };
-        obj["fields"]['created'] = { "type": 'Date', "system": true };
-        obj["fields"]['name'] = { "type": 'String', "system": false };
-        obj["fields"]['memberRefId'] = { "type": 'String', "system": false };
-        obj["fields"]['memberType'] = new MemberType().modelMap();
-        obj["fields"]['teamMembers'] = [{ "type": 'String', "system": false }];
-        obj["fields"]['groups'] = [{ "type": 'String', "system": false }];
-        obj["fields"]['metadata'] = [new Metadata().modelMap()];
+        obj["fields"]['id'];
+        obj["fields"]['spaceName'];
+        obj["fields"]['created'];
+        obj["fields"]['name'];
+        obj["fields"]['memberRefId'];
+        obj["fields"]['memberType'];
+        obj["fields"]['teamMembers'];
+        obj["fields"]['groups'];
+        obj["fields"]['metadata'];
 
         
-        obj["requiredFields"]['id'] = { "type": 'String', "system": true };
-        obj["requiredFields"]['spaceName'] = { "type": 'String', "system": true };
-        obj["requiredFields"]['created'] = { "type": 'Date', "system": true };
-        obj["requiredFields"]['memberRefId'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['memberType'] = new MemberType().modelMap();
+        obj["requiredFields"]['id'];
+        obj["requiredFields"]['spaceName'];
+        obj["requiredFields"]['created'];
+        obj["requiredFields"]['memberRefId'];
+        obj["requiredFields"]['memberType'];
 
         return obj;
-    }
-
-    /**
-     * Initializes the fields of this object.
-     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
-     * Only for internal use.
-     */
-    static initialize(obj, id, spaceName, created, memberRefId, memberType) { 
-        obj['id'] = id;
-        obj['spaceName'] = spaceName;
-        obj['created'] = created;
-        obj['memberRefId'] = memberRefId;
-        obj['memberType'] = memberType;
     }
 
     /**

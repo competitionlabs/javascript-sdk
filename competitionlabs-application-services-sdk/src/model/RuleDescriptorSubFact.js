@@ -19,7 +19,7 @@ import RuleDescriptorSubFactAllOf from './RuleDescriptorSubFactAllOf';
 /**
  * The RuleDescriptorSubFact model module.
  * @module model/RuleDescriptorSubFact
- * @version 1.0.1
+ * @version 1.0.4
  */
 class RuleDescriptorSubFact {
     /**
@@ -38,17 +38,29 @@ class RuleDescriptorSubFact {
     }
 
     /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
+    static initialize(obj, operators, constantType, constantExample, subFact) { 
+        obj['operators'] = operators;
+        obj['constantType'] = constantType;
+        obj['constantExample'] = constantExample;
+        obj['subFact'] = subFact;
+    }
+
+    /**
     * Constructs a full object with all available fields.
     */
     model(){
         var obj = {};
 
-        obj['operators'] = [null];
-        obj['constantType'] = null;
-        obj['constantExample'] = null;
-        obj['defaultVale'] = null;
-        obj['macros'] = [new Macro().model()];
-        obj['subFact'] = null;
+        obj['operators'];
+        obj['constantType'];
+        obj['constantExample'];
+        obj['defaultVale'];
+        obj['macros'];
+        obj['subFact'];
 
         return obj;
     }
@@ -62,32 +74,20 @@ class RuleDescriptorSubFact {
             "requiredFields": {}
         };
 
-        obj["fields"]['operators'] = [{ "type": 'String', "system": false }];
-        obj["fields"]['constantType'] = { "type": 'String', "system": false };
-        obj["fields"]['constantExample'] = { "type": 'String', "system": false };
-        obj["fields"]['defaultVale'] = { "type": 'String', "system": false };
-        obj["fields"]['macros'] = [new Macro().modelMap()];
-        obj["fields"]['subFact'] = { "type": 'String', "system": false };
+        obj["fields"]['operators'];
+        obj["fields"]['constantType'];
+        obj["fields"]['constantExample'];
+        obj["fields"]['defaultVale'];
+        obj["fields"]['macros'];
+        obj["fields"]['subFact'];
 
         
-        obj["requiredFields"]['operators'] = [{ "type": 'String', "system": false }];
-        obj["requiredFields"]['constantType'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['constantExample'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['subFact'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['operators'];
+        obj["requiredFields"]['constantType'];
+        obj["requiredFields"]['constantExample'];
+        obj["requiredFields"]['subFact'];
 
         return obj;
-    }
-
-    /**
-     * Initializes the fields of this object.
-     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
-     * Only for internal use.
-     */
-    static initialize(obj, operators, constantType, constantExample, subFact) { 
-        obj['operators'] = operators;
-        obj['constantType'] = constantType;
-        obj['constantExample'] = constantExample;
-        obj['subFact'] = subFact;
     }
 
     /**

@@ -1,4 +1,4 @@
-# @CompetitionlabsJavascriptSdk.RuleScope
+# @CompetitionlabsApplicationServicesSdk.RuleScope
 
 ## Enum
 

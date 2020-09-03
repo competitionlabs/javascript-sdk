@@ -1,11 +1,11 @@
-# @CompetitionlabsJavascriptSdk.WebhookResponse
+# @CompetitionlabsApplicationServicesSdk.WebhookResponse
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**meta** | [**MetaExtended**](docs/MetaExtended.md) |  | 
-**results** | [**[Webhook]**](docs/Webhook.md) |  | [optional] 
-**errors** | [**[Error]**](docs/Error.md) |  | [optional] 
+**meta** | [**MetaExtended**](MetaExtended.md) |  | 
+**results** | [**[Webhook]**](Webhook.md) |  | [optional] 
+**errors** | [**[Error]**](Error.md) |  | [optional] 
 
 

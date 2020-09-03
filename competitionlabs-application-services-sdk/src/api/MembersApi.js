@@ -27,7 +27,7 @@ import UpdateMemberRequest from '../model/UpdateMemberRequest';
 /**
 * Members service.
 * @module api/MembersApi
-* @version 1.0.1
+* @version 1.0.4
 */
 export default class MembersApi {
 
@@ -204,8 +204,8 @@ export default class MembersApi {
      * @param {Object} opts Optional parameters
      * @param {String} opts.X_API_KEY The admin API Key generated from CompetitionLabs back office
      * @param {String} opts.achievementId Id of an Achievement
-     * @param {Number} opts.limit Limit the returned total records found (default to 20)
-     * @param {Number} opts.skip Skip the returned records found and return the next batch of records (default to 0)
+     * @param {Number} opts.limit Limit the returned total records found
+     * @param {Number} opts.skip Skip the returned records found and return the next batch of records
      * @param {module:api/MembersApi~getAchievementsForMembersCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/AchievementReducedResponse}
      */
@@ -262,8 +262,8 @@ export default class MembersApi {
      * @param {Object} opts Optional parameters
      * @param {String} opts.X_API_KEY The admin API Key generated from CompetitionLabs back office
      * @param {String} opts.awardId Id of an Award
-     * @param {Number} opts.limit Limit the returned total records found (default to 20)
-     * @param {Number} opts.skip Skip the returned records found and return the next batch of records (default to 0)
+     * @param {Number} opts.limit Limit the returned total records found
+     * @param {Number} opts.skip Skip the returned records found and return the next batch of records
      * @param {module:api/MembersApi~getAwardsForMembersCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/MemberAwardResponse}
      */
@@ -320,8 +320,8 @@ export default class MembersApi {
      * @param {Object} opts Optional parameters
      * @param {String} opts.X_API_KEY The admin API Key generated from CompetitionLabs back office
      * @param {String} opts.competitionId Id of a Competition
-     * @param {Number} opts.limit Limit the returned total records found (default to 20)
-     * @param {Number} opts.skip Skip the returned records found and return the next batch of records (default to 0)
+     * @param {Number} opts.limit Limit the returned total records found
+     * @param {Number} opts.skip Skip the returned records found and return the next batch of records
      * @param {module:api/MembersApi~getCompetitionsForMembersCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/CompetitionReducedResponse}
      */
@@ -378,8 +378,8 @@ export default class MembersApi {
      * @param {Object} opts Optional parameters
      * @param {String} opts.X_API_KEY The admin API Key generated from CompetitionLabs back office
      * @param {String} opts.contestId Id of a Contest
-     * @param {Number} opts.limit Limit the returned total records found (default to 20)
-     * @param {Number} opts.skip Skip the returned records found and return the next batch of records (default to 0)
+     * @param {Number} opts.limit Limit the returned total records found
+     * @param {Number} opts.skip Skip the returned records found and return the next batch of records
      * @param {module:api/MembersApi~getContestsForMembersCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ContestReducedResponse}
      */
@@ -435,8 +435,8 @@ export default class MembersApi {
      * @param {Object} opts Optional parameters
      * @param {String} opts.X_API_KEY The admin API Key generated from CompetitionLabs back office
      * @param {Array.<String>} opts.id The unique identifiers of the resources
-     * @param {Number} opts.limit Limit the returned total records found (default to 20)
-     * @param {Number} opts.skip Skip the returned records found and return the next batch of records (default to 0)
+     * @param {Number} opts.limit Limit the returned total records found
+     * @param {Number} opts.skip Skip the returned records found and return the next batch of records
      * @param {module:api/MembersApi~getMembersCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/MemberResponse}
      */
@@ -536,8 +536,8 @@ export default class MembersApi {
      * @param {Object} opts Optional parameters
      * @param {String} opts.X_API_KEY The admin API Key generated from CompetitionLabs back office
      * @param {String} opts.messageId Id of a Message
-     * @param {Number} opts.limit Limit the returned total records found (default to 20)
-     * @param {Number} opts.skip Skip the returned records found and return the next batch of records (default to 0)
+     * @param {Number} opts.limit Limit the returned total records found
+     * @param {Number} opts.skip Skip the returned records found and return the next batch of records
      * @param {module:api/MembersApi~getMessagesForMembersCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/MemberMessageResponse}
      */

@@ -17,7 +17,7 @@ import ContestReduced from './ContestReduced';
 /**
  * The Bracket model module.
  * @module model/Bracket
- * @version 1.0.1
+ * @version 1.0.4
  */
 class Bracket {
     /**
@@ -32,13 +32,23 @@ class Bracket {
     }
 
     /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
+    static initialize(obj, rounds, contests) { 
+        obj['rounds'] = rounds;
+        obj['contests'] = contests;
+    }
+
+    /**
     * Constructs a full object with all available fields.
     */
     model(){
         var obj = {};
 
-        obj['rounds'] = null;
-        obj['contests'] = [new ContestReduced().model()];
+        obj['rounds'];
+        obj['contests'];
 
         return obj;
     }
@@ -52,24 +62,14 @@ class Bracket {
             "requiredFields": {}
         };
 
-        obj["fields"]['rounds'] = { "type": 'Number', "system": false };
-        obj["fields"]['contests'] = [new ContestReduced().modelMap()];
+        obj["fields"]['rounds'];
+        obj["fields"]['contests'];
 
         
-        obj["requiredFields"]['rounds'] = { "type": 'Number', "system": false };
-        obj["requiredFields"]['contests'] = [new ContestReduced().modelMap()];
+        obj["requiredFields"]['rounds'];
+        obj["requiredFields"]['contests'];
 
         return obj;
-    }
-
-    /**
-     * Initializes the fields of this object.
-     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
-     * Only for internal use.
-     */
-    static initialize(obj, rounds, contests) { 
-        obj['rounds'] = rounds;
-        obj['contests'] = contests;
     }
 
     /**
@@ -99,9 +99,8 @@ class Bracket {
 /**
  * Number of rounds to be played in a competition
  * @member {Number} rounds
- * @default 1
  */
-Bracket.prototype['rounds'] = 1;
+Bracket.prototype['rounds'] = undefined;
 
 /**
  * @member {Array.<module:model/ContestReduced>} contests

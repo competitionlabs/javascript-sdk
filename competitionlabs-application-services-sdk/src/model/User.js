@@ -19,7 +19,7 @@ import UserModelDefault from './UserModelDefault';
 /**
  * The User model module.
  * @module model/User
- * @version 1.0.1
+ * @version 1.0.4
  */
 class User {
     /**
@@ -39,20 +39,33 @@ class User {
     }
 
     /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
+    static initialize(obj, objectType, id, created, tfaEnabled, emailVerified) { 
+        obj['objectType'] = objectType;
+        obj['id'] = id;
+        obj['created'] = created;
+        obj['tfaEnabled'] = tfaEnabled;
+        obj['emailVerified'] = emailVerified;
+    }
+
+    /**
     * Constructs a full object with all available fields.
     */
     model(){
         var obj = {};
 
-        obj['objectType'] = null;
-        obj['id'] = null;
-        obj['created'] = null;
-        obj['firstName'] = null;
-        obj['lastName'] = null;
-        obj['tfaEnabled'] = null;
-        obj['email'] = null;
-        obj['contact'] = new Contact().model();
-        obj['emailVerified'] = null;
+        obj['objectType'];
+        obj['id'];
+        obj['created'];
+        obj['firstName'];
+        obj['lastName'];
+        obj['tfaEnabled'];
+        obj['email'];
+        obj['contact'];
+        obj['emailVerified'];
 
         return obj;
     }
@@ -66,37 +79,24 @@ class User {
             "requiredFields": {}
         };
 
-        obj["fields"]['objectType'] = { "type": 'String', "system": false };
-        obj["fields"]['id'] = { "type": 'String', "system": true };
-        obj["fields"]['created'] = { "type": 'Date', "system": true };
-        obj["fields"]['firstName'] = { "type": 'String', "system": false };
-        obj["fields"]['lastName'] = { "type": 'String', "system": false };
-        obj["fields"]['tfaEnabled'] = { "type": 'Boolean', "system": false };
-        obj["fields"]['email'] = { "type": 'String', "system": false };
-        obj["fields"]['contact'] = new Contact().modelMap();
-        obj["fields"]['emailVerified'] = { "type": 'Boolean', "system": false };
+        obj["fields"]['objectType'];
+        obj["fields"]['id'];
+        obj["fields"]['created'];
+        obj["fields"]['firstName'];
+        obj["fields"]['lastName'];
+        obj["fields"]['tfaEnabled'];
+        obj["fields"]['email'];
+        obj["fields"]['contact'];
+        obj["fields"]['emailVerified'];
 
         
-        obj["requiredFields"]['objectType'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['id'] = { "type": 'String', "system": true };
-        obj["requiredFields"]['created'] = { "type": 'Date', "system": true };
-        obj["requiredFields"]['tfaEnabled'] = { "type": 'Boolean', "system": false };
-        obj["requiredFields"]['emailVerified'] = { "type": 'Boolean', "system": false };
+        obj["requiredFields"]['objectType'];
+        obj["requiredFields"]['id'];
+        obj["requiredFields"]['created'];
+        obj["requiredFields"]['tfaEnabled'];
+        obj["requiredFields"]['emailVerified'];
 
         return obj;
-    }
-
-    /**
-     * Initializes the fields of this object.
-     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
-     * Only for internal use.
-     */
-    static initialize(obj, objectType, id, created, tfaEnabled, emailVerified) { 
-        obj['objectType'] = objectType;
-        obj['id'] = id;
-        obj['created'] = created;
-        obj['tfaEnabled'] = tfaEnabled;
-        obj['emailVerified'] = emailVerified;
     }
 
     /**
@@ -178,9 +178,8 @@ User.prototype['lastName'] = undefined;
 /**
  * To enable two factor authentication
  * @member {Boolean} tfaEnabled
- * @default false
  */
-User.prototype['tfaEnabled'] = false;
+User.prototype['tfaEnabled'] = undefined;
 
 /**
  * The email of the user to log in
@@ -196,9 +195,8 @@ User.prototype['contact'] = undefined;
 /**
  * Is the email verified
  * @member {Boolean} emailVerified
- * @default false
  */
-User.prototype['emailVerified'] = false;
+User.prototype['emailVerified'] = undefined;
 
 
 // Implement UserModelDefault interface:
@@ -230,9 +228,8 @@ UserAllOf.prototype['lastName'] = undefined;
 /**
  * To enable two factor authentication
  * @member {Boolean} tfaEnabled
- * @default false
  */
-UserAllOf.prototype['tfaEnabled'] = false;
+UserAllOf.prototype['tfaEnabled'] = undefined;
 /**
  * The email of the user to log in
  * @member {String} email
@@ -245,9 +242,8 @@ UserAllOf.prototype['contact'] = undefined;
 /**
  * Is the email verified
  * @member {Boolean} emailVerified
- * @default false
  */
-UserAllOf.prototype['emailVerified'] = false;
+UserAllOf.prototype['emailVerified'] = undefined;
 
 
 

@@ -1,16 +1,16 @@
-# @CompetitionlabsJavascriptSdk.ApiKeysApi
+# @CompetitionlabsApplicationServicesSdk.ApiKeysApi
 
 All URIs are relative to *https://api.competitionlabs.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createApiKeys**](docs/ApiKeysApi.md#createApiKeys) | **POST** /api-keys/{spaceName} | 
-[**deleteApiKeysById**](docs/ApiKeysApi.md#deleteApiKeysById) | **DELETE** /api-keys/{spaceName}/{id} | 
-[**deleteApiKeysByQuery**](docs/ApiKeysApi.md#deleteApiKeysByQuery) | **POST** /api-keys/{spaceName}/delete | 
-[**getApiKeysById**](docs/ApiKeysApi.md#getApiKeysById) | **GET** /api-keys/{spaceName}/{id} | 
-[**getApiKeysByQuery**](docs/ApiKeysApi.md#getApiKeysByQuery) | **POST** /api-keys/{spaceName}/query | 
-[**getListOfApiKeys**](docs/ApiKeysApi.md#getListOfApiKeys) | **GET** /api-keys/{spaceName} | 
-[**updateApiKeys**](docs/ApiKeysApi.md#updateApiKeys) | **PUT** /api-keys/{spaceName} | 
+[**createApiKeys**](ApiKeysApi.md#createApiKeys) | **POST** /api-keys/{spaceName} | 
+[**deleteApiKeysById**](ApiKeysApi.md#deleteApiKeysById) | **DELETE** /api-keys/{spaceName}/{id} | 
+[**deleteApiKeysByQuery**](ApiKeysApi.md#deleteApiKeysByQuery) | **POST** /api-keys/{spaceName}/delete | 
+[**getApiKeysById**](ApiKeysApi.md#getApiKeysById) | **GET** /api-keys/{spaceName}/{id} | 
+[**getApiKeysByQuery**](ApiKeysApi.md#getApiKeysByQuery) | **POST** /api-keys/{spaceName}/query | 
+[**getListOfApiKeys**](ApiKeysApi.md#getListOfApiKeys) | **GET** /api-keys/{spaceName} | 
+[**updateApiKeys**](ApiKeysApi.md#updateApiKeys) | **PUT** /api-keys/{spaceName} | 
 
 
 
@@ -25,17 +25,17 @@ Create a new Api key in the CompetitionLabs system
 ### Example
 
 ```javascript
-import @CompetitionlabsJavascriptSdk from '@competitionlabs/javascript-sdk';
-let defaultClient = @CompetitionlabsJavascriptSdk.ApiClient.instance;
+import @CompetitionlabsApplicationServicesSdk from '@competitionlabs/application-services-sdk';
+let defaultClient = @CompetitionlabsApplicationServicesSdk.ApiClient.instance;
 // Configure API key authorization: adminApiKey
 let adminApiKey = defaultClient.authentications['adminApiKey'];
 adminApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //adminApiKey.apiKeyPrefix = 'Token';
 
-let apiInstance = new @CompetitionlabsJavascriptSdk.ApiKeysApi();
+let apiInstance = new @CompetitionlabsApplicationServicesSdk.ApiKeysApi();
 let spaceName = "spaceName_example"; // String | This is the space name which is linked to the account
-let body = new @CompetitionlabsJavascriptSdk.CreateApiKeyRequest(); // CreateApiKeyRequest | Create an Api key in the CompetitionLabs system
+let body = new @CompetitionlabsApplicationServicesSdk.CreateApiKeyRequest(); // CreateApiKeyRequest | Create an Api key in the CompetitionLabs system
 let opts = {
   'X_API_KEY': "X_API_KEY_example" // String | The admin API Key generated from CompetitionLabs back office
 };
@@ -54,16 +54,16 @@ apiInstance.createApiKeys(spaceName, body, opts, (error, data, response) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **spaceName** | **String**| This is the space name which is linked to the account | 
- **body** | [**CreateApiKeyRequest**](docs/CreateApiKeyRequest.md)| Create an Api key in the CompetitionLabs system | 
+ **body** | [**CreateApiKeyRequest**](CreateApiKeyRequest.md)| Create an Api key in the CompetitionLabs system | 
  **X_API_KEY** | **String**| The admin API Key generated from CompetitionLabs back office | [optional] 
 
 ### Return type
 
-[**ApiResponse**](docs/ApiResponse.md)
+[**ApiResponse**](ApiResponse.md)
 
 ### Authorization
 
-[adminApiKey](README.mdminApiKey)
+[adminApiKey](../README.md#adminApiKey)
 
 ### HTTP request headers
 
@@ -82,15 +82,15 @@ Delete the Api key for a given identifier specified
 ### Example
 
 ```javascript
-import @CompetitionlabsJavascriptSdk from '@competitionlabs/javascript-sdk';
-let defaultClient = @CompetitionlabsJavascriptSdk.ApiClient.instance;
+import @CompetitionlabsApplicationServicesSdk from '@competitionlabs/application-services-sdk';
+let defaultClient = @CompetitionlabsApplicationServicesSdk.ApiClient.instance;
 // Configure API key authorization: adminApiKey
 let adminApiKey = defaultClient.authentications['adminApiKey'];
 adminApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //adminApiKey.apiKeyPrefix = 'Token';
 
-let apiInstance = new @CompetitionlabsJavascriptSdk.ApiKeysApi();
+let apiInstance = new @CompetitionlabsApplicationServicesSdk.ApiKeysApi();
 let spaceName = "spaceName_example"; // String | This is the space name which is linked to the account
 let id = "id_example"; // String | Unique identifier of the resource
 let opts = {
@@ -116,11 +116,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApiResponse**](docs/ApiResponse.md)
+[**ApiResponse**](ApiResponse.md)
 
 ### Authorization
 
-[adminApiKey](README.mdminApiKey)
+[adminApiKey](../README.md#adminApiKey)
 
 ### HTTP request headers
 
@@ -139,19 +139,19 @@ Delete an Api key or a list of Api keys from CompetitionLabs by query
 ### Example
 
 ```javascript
-import @CompetitionlabsJavascriptSdk from '@competitionlabs/javascript-sdk';
-let defaultClient = @CompetitionlabsJavascriptSdk.ApiClient.instance;
+import @CompetitionlabsApplicationServicesSdk from '@competitionlabs/application-services-sdk';
+let defaultClient = @CompetitionlabsApplicationServicesSdk.ApiClient.instance;
 // Configure API key authorization: adminApiKey
 let adminApiKey = defaultClient.authentications['adminApiKey'];
 adminApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //adminApiKey.apiKeyPrefix = 'Token';
 
-let apiInstance = new @CompetitionlabsJavascriptSdk.ApiKeysApi();
+let apiInstance = new @CompetitionlabsApplicationServicesSdk.ApiKeysApi();
 let spaceName = "spaceName_example"; // String | This is the space name which is linked to the account
 let opts = {
   'X_API_KEY': "X_API_KEY_example", // String | The admin API Key generated from CompetitionLabs back office
-  'body': new @CompetitionlabsJavascriptSdk.QueryRequest() // QueryRequest | Delete an Api key or a list of Api keys from CompetitionLabs by unique Api key ID's or any other POST body parameters using the POST method
+  'body': new @CompetitionlabsApplicationServicesSdk.QueryRequest() // QueryRequest | Delete an Api key or a list of Api keys from CompetitionLabs by unique Api key ID's or any other POST body parameters using the POST method
 };
 apiInstance.deleteApiKeysByQuery(spaceName, opts, (error, data, response) => {
   if (error) {
@@ -169,15 +169,15 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **spaceName** | **String**| This is the space name which is linked to the account | 
  **X_API_KEY** | **String**| The admin API Key generated from CompetitionLabs back office | [optional] 
- **body** | [**QueryRequest**](docs/QueryRequest.md)| Delete an Api key or a list of Api keys from CompetitionLabs by unique Api key ID&#39;s or any other POST body parameters using the POST method | [optional] 
+ **body** | [**QueryRequest**](QueryRequest.md)| Delete an Api key or a list of Api keys from CompetitionLabs by unique Api key ID&#39;s or any other POST body parameters using the POST method | [optional] 
 
 ### Return type
 
-[**ApiResponse**](docs/ApiResponse.md)
+[**ApiResponse**](ApiResponse.md)
 
 ### Authorization
 
-[adminApiKey](README.mdminApiKey)
+[adminApiKey](../README.md#adminApiKey)
 
 ### HTTP request headers
 
@@ -196,15 +196,15 @@ Returns an Api key by identifier provided. This assumes that api keys have first
 ### Example
 
 ```javascript
-import @CompetitionlabsJavascriptSdk from '@competitionlabs/javascript-sdk';
-let defaultClient = @CompetitionlabsJavascriptSdk.ApiClient.instance;
+import @CompetitionlabsApplicationServicesSdk from '@competitionlabs/application-services-sdk';
+let defaultClient = @CompetitionlabsApplicationServicesSdk.ApiClient.instance;
 // Configure API key authorization: adminApiKey
 let adminApiKey = defaultClient.authentications['adminApiKey'];
 adminApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //adminApiKey.apiKeyPrefix = 'Token';
 
-let apiInstance = new @CompetitionlabsJavascriptSdk.ApiKeysApi();
+let apiInstance = new @CompetitionlabsApplicationServicesSdk.ApiKeysApi();
 let spaceName = "spaceName_example"; // String | This is the space name which is linked to the account
 let id = "id_example"; // String | Unique identifier of the resource
 let opts = {
@@ -230,11 +230,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApiKeyResponse**](docs/ApiKeyResponse.md)
+[**ApiKeyResponse**](ApiKeyResponse.md)
 
 ### Authorization
 
-[adminApiKey](README.mdminApiKey)
+[adminApiKey](../README.md#adminApiKey)
 
 ### HTTP request headers
 
@@ -253,19 +253,19 @@ Retrieve an Api key or a list of Api keys by query
 ### Example
 
 ```javascript
-import @CompetitionlabsJavascriptSdk from '@competitionlabs/javascript-sdk';
-let defaultClient = @CompetitionlabsJavascriptSdk.ApiClient.instance;
+import @CompetitionlabsApplicationServicesSdk from '@competitionlabs/application-services-sdk';
+let defaultClient = @CompetitionlabsApplicationServicesSdk.ApiClient.instance;
 // Configure API key authorization: adminApiKey
 let adminApiKey = defaultClient.authentications['adminApiKey'];
 adminApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //adminApiKey.apiKeyPrefix = 'Token';
 
-let apiInstance = new @CompetitionlabsJavascriptSdk.ApiKeysApi();
+let apiInstance = new @CompetitionlabsApplicationServicesSdk.ApiKeysApi();
 let spaceName = "spaceName_example"; // String | This is the space name which is linked to the account
 let opts = {
   'X_API_KEY': "X_API_KEY_example", // String | The admin API Key generated from CompetitionLabs back office
-  'body': new @CompetitionlabsJavascriptSdk.QueryRequest() // QueryRequest | Retrieve an Api key or a list of Api keys from CompetitionLabs by unique Api key ID's or any other POST body parameters using the POST method
+  'body': new @CompetitionlabsApplicationServicesSdk.QueryRequest() // QueryRequest | Retrieve an Api key or a list of Api keys from CompetitionLabs by unique Api key ID's or any other POST body parameters using the POST method
 };
 apiInstance.getApiKeysByQuery(spaceName, opts, (error, data, response) => {
   if (error) {
@@ -283,15 +283,15 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **spaceName** | **String**| This is the space name which is linked to the account | 
  **X_API_KEY** | **String**| The admin API Key generated from CompetitionLabs back office | [optional] 
- **body** | [**QueryRequest**](docs/QueryRequest.md)| Retrieve an Api key or a list of Api keys from CompetitionLabs by unique Api key ID&#39;s or any other POST body parameters using the POST method | [optional] 
+ **body** | [**QueryRequest**](QueryRequest.md)| Retrieve an Api key or a list of Api keys from CompetitionLabs by unique Api key ID&#39;s or any other POST body parameters using the POST method | [optional] 
 
 ### Return type
 
-[**ApiKeyResponse**](docs/ApiKeyResponse.md)
+[**ApiKeyResponse**](ApiKeyResponse.md)
 
 ### Authorization
 
-[adminApiKey](README.mdminApiKey)
+[adminApiKey](../README.md#adminApiKey)
 
 ### HTTP request headers
 
@@ -310,20 +310,20 @@ Returns a list of Api keys. This assumes that api keys have first been created v
 ### Example
 
 ```javascript
-import @CompetitionlabsJavascriptSdk from '@competitionlabs/javascript-sdk';
-let defaultClient = @CompetitionlabsJavascriptSdk.ApiClient.instance;
+import @CompetitionlabsApplicationServicesSdk from '@competitionlabs/application-services-sdk';
+let defaultClient = @CompetitionlabsApplicationServicesSdk.ApiClient.instance;
 // Configure API key authorization: adminApiKey
 let adminApiKey = defaultClient.authentications['adminApiKey'];
 adminApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //adminApiKey.apiKeyPrefix = 'Token';
 
-let apiInstance = new @CompetitionlabsJavascriptSdk.ApiKeysApi();
+let apiInstance = new @CompetitionlabsApplicationServicesSdk.ApiKeysApi();
 let spaceName = "spaceName_example"; // String | This is the space name which is linked to the account
 let opts = {
   'X_API_KEY': "X_API_KEY_example", // String | The admin API Key generated from CompetitionLabs back office
-  'limit': 20, // Number | Limit the returned total records found
-  'skip': 0 // Number | Skip the returned records found and return the next batch of records
+  'limit': 56, // Number | Limit the returned total records found
+  'skip': 56 // Number | Skip the returned records found and return the next batch of records
 };
 apiInstance.getListOfApiKeys(spaceName, opts, (error, data, response) => {
   if (error) {
@@ -341,16 +341,16 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **spaceName** | **String**| This is the space name which is linked to the account | 
  **X_API_KEY** | **String**| The admin API Key generated from CompetitionLabs back office | [optional] 
- **limit** | **Number**| Limit the returned total records found | [optional] [default to 20]
- **skip** | **Number**| Skip the returned records found and return the next batch of records | [optional] [default to 0]
+ **limit** | **Number**| Limit the returned total records found | [optional] 
+ **skip** | **Number**| Skip the returned records found and return the next batch of records | [optional] 
 
 ### Return type
 
-[**ApiKeyResponse**](docs/ApiKeyResponse.md)
+[**ApiKeyResponse**](ApiKeyResponse.md)
 
 ### Authorization
 
-[adminApiKey](README.mdminApiKey)
+[adminApiKey](../README.md#adminApiKey)
 
 ### HTTP request headers
 
@@ -369,17 +369,17 @@ Update an existing Api key in the CompetitionLabs system
 ### Example
 
 ```javascript
-import @CompetitionlabsJavascriptSdk from '@competitionlabs/javascript-sdk';
-let defaultClient = @CompetitionlabsJavascriptSdk.ApiClient.instance;
+import @CompetitionlabsApplicationServicesSdk from '@competitionlabs/application-services-sdk';
+let defaultClient = @CompetitionlabsApplicationServicesSdk.ApiClient.instance;
 // Configure API key authorization: adminApiKey
 let adminApiKey = defaultClient.authentications['adminApiKey'];
 adminApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //adminApiKey.apiKeyPrefix = 'Token';
 
-let apiInstance = new @CompetitionlabsJavascriptSdk.ApiKeysApi();
+let apiInstance = new @CompetitionlabsApplicationServicesSdk.ApiKeysApi();
 let spaceName = "spaceName_example"; // String | This is the space name which is linked to the account
-let body = new @CompetitionlabsJavascriptSdk.UpdateApiKeyRequest(); // UpdateApiKeyRequest | Update an Api key in the CompetitionLabs system. * Any Put body Parameters that are excluded in the Request body field will be considered as empty and updated with an empty field
+let body = new @CompetitionlabsApplicationServicesSdk.UpdateApiKeyRequest(); // UpdateApiKeyRequest | Update an Api key in the CompetitionLabs system. * Any Put body Parameters that are excluded in the Request body field will be considered as empty and updated with an empty field
 let opts = {
   'X_API_KEY': "X_API_KEY_example" // String | The admin API Key generated from CompetitionLabs back office
 };
@@ -398,16 +398,16 @@ apiInstance.updateApiKeys(spaceName, body, opts, (error, data, response) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **spaceName** | **String**| This is the space name which is linked to the account | 
- **body** | [**UpdateApiKeyRequest**](docs/UpdateApiKeyRequest.md)| Update an Api key in the CompetitionLabs system. * Any Put body Parameters that are excluded in the Request body field will be considered as empty and updated with an empty field | 
+ **body** | [**UpdateApiKeyRequest**](UpdateApiKeyRequest.md)| Update an Api key in the CompetitionLabs system. * Any Put body Parameters that are excluded in the Request body field will be considered as empty and updated with an empty field | 
  **X_API_KEY** | **String**| The admin API Key generated from CompetitionLabs back office | [optional] 
 
 ### Return type
 
-[**ApiResponse**](docs/ApiResponse.md)
+[**ApiResponse**](ApiResponse.md)
 
 ### Authorization
 
-[adminApiKey](README.mdminApiKey)
+[adminApiKey](../README.md#adminApiKey)
 
 ### HTTP request headers
 

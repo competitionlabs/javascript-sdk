@@ -1,4 +1,4 @@
-# @CompetitionlabsJavascriptSdk.QueryMultipleFields
+# @CompetitionlabsApplicationServicesSdk.QueryMultipleFields
 
 ## Properties
 

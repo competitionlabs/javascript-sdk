@@ -20,7 +20,7 @@ import SpaceResponse from '../model/SpaceResponse';
 /**
 * Spaces service.
 * @module api/SpacesApi
-* @version 1.0.1
+* @version 1.0.4
 */
 export default class SpacesApi {
 
@@ -158,8 +158,8 @@ export default class SpacesApi {
      * Returns a list of Spaces for the current session
      * @param {Object} opts Optional parameters
      * @param {String} opts.X_API_KEY The admin API Key generated from CompetitionLabs back office
-     * @param {Number} opts.limit Limit the returned total records found (default to 20)
-     * @param {Number} opts.skip Skip the returned records found and return the next batch of records (default to 0)
+     * @param {Number} opts.limit Limit the returned total records found
+     * @param {Number} opts.skip Skip the returned records found and return the next batch of records
      * @param {module:api/SpacesApi~getListOfSpacesForUserCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/SpaceResponse}
      */
@@ -212,8 +212,8 @@ export default class SpacesApi {
      * @param {String} spaceName This is the space name which is linked to the account
      * @param {Object} opts Optional parameters
      * @param {String} opts.X_API_KEY The admin API Key generated from CompetitionLabs back office
-     * @param {Number} opts.limit Limit the returned total records found (default to 20)
-     * @param {Number} opts.skip Skip the returned records found and return the next batch of records (default to 0)
+     * @param {Number} opts.limit Limit the returned total records found
+     * @param {Number} opts.skip Skip the returned records found and return the next batch of records
      * @param {module:api/SpacesApi~getSpacesByNameCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/SpaceResponse}
      */

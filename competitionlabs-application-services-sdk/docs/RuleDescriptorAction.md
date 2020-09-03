@@ -1,4 +1,4 @@
-# @CompetitionlabsJavascriptSdk.RuleDescriptorAction
+# @CompetitionlabsApplicationServicesSdk.RuleDescriptorAction
 
 ## Properties
 
@@ -8,8 +8,8 @@ Name | Type | Description | Notes
 **name** | **String** | The rules name | 
 **description** | **String** | The rules description | [optional] 
 **matchCondition** | **String** | The rules action | [optional] 
-**operatability** | [**MatchCondition**](docs/MatchCondition.md) |  | 
-**onRuleSetMatchTriggers** | [**[OnRuleSetMatchTrigger]**](docs/OnRuleSetMatchTrigger.md) |  | [optional] 
-**facts** | [**[RuleDescriptorFact]**](docs/RuleDescriptorFact.md) |  | 
+**operatability** | [**MatchCondition**](MatchCondition.md) |  | 
+**onRuleSetMatchTriggers** | [**[OnRuleSetMatchTrigger]**](OnRuleSetMatchTrigger.md) |  | [optional] 
+**facts** | [**[RuleDescriptorFact]**](RuleDescriptorFact.md) |  | 
 
 

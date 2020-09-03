@@ -17,7 +17,7 @@ import Macro from './Macro';
 /**
  * The FactDefault model module.
  * @module model/FactDefault
- * @version 1.0.1
+ * @version 1.0.4
  */
 class FactDefault {
     /**
@@ -33,16 +33,27 @@ class FactDefault {
     }
 
     /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
+    static initialize(obj, operators, constantType, constantExample) { 
+        obj['operators'] = operators;
+        obj['constantType'] = constantType;
+        obj['constantExample'] = constantExample;
+    }
+
+    /**
     * Constructs a full object with all available fields.
     */
     model(){
         var obj = {};
 
-        obj['operators'] = [null];
-        obj['constantType'] = null;
-        obj['constantExample'] = null;
-        obj['defaultVale'] = null;
-        obj['macros'] = [new Macro().model()];
+        obj['operators'];
+        obj['constantType'];
+        obj['constantExample'];
+        obj['defaultVale'];
+        obj['macros'];
 
         return obj;
     }
@@ -56,29 +67,18 @@ class FactDefault {
             "requiredFields": {}
         };
 
-        obj["fields"]['operators'] = [{ "type": 'String', "system": false }];
-        obj["fields"]['constantType'] = { "type": 'String', "system": false };
-        obj["fields"]['constantExample'] = { "type": 'String', "system": false };
-        obj["fields"]['defaultVale'] = { "type": 'String', "system": false };
-        obj["fields"]['macros'] = [new Macro().modelMap()];
+        obj["fields"]['operators'];
+        obj["fields"]['constantType'];
+        obj["fields"]['constantExample'];
+        obj["fields"]['defaultVale'];
+        obj["fields"]['macros'];
 
         
-        obj["requiredFields"]['operators'] = [{ "type": 'String', "system": false }];
-        obj["requiredFields"]['constantType'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['constantExample'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['operators'];
+        obj["requiredFields"]['constantType'];
+        obj["requiredFields"]['constantExample'];
 
         return obj;
-    }
-
-    /**
-     * Initializes the fields of this object.
-     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
-     * Only for internal use.
-     */
-    static initialize(obj, operators, constantType, constantExample) { 
-        obj['operators'] = operators;
-        obj['constantType'] = constantType;
-        obj['constantExample'] = constantExample;
     }
 
     /**

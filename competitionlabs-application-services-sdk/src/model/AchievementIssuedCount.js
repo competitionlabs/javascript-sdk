@@ -17,7 +17,7 @@ import CountResponse from './CountResponse';
 /**
  * The AchievementIssuedCount model module.
  * @module model/AchievementIssuedCount
- * @version 1.0.1
+ * @version 1.0.4
  */
 class AchievementIssuedCount {
     /**
@@ -31,6 +31,14 @@ class AchievementIssuedCount {
     constructor(entityId, countValue) { 
         CountResponse.initialize(this, entityId, countValue);
         AchievementIssuedCount.initialize(this, entityId, countValue);
+    }
+
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
+    static initialize(obj, entityId, countValue) { 
     }
 
     /**
@@ -56,14 +64,6 @@ class AchievementIssuedCount {
         
 
         return obj;
-    }
-
-    /**
-     * Initializes the fields of this object.
-     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
-     * Only for internal use.
-     */
-    static initialize(obj, entityId, countValue) { 
     }
 
     /**

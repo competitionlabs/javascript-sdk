@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CollaboratorAllOf model module.
  * @module model/CollaboratorAllOf
- * @version 1.0.1
+ * @version 1.0.4
  */
 class CollaboratorAllOf {
     /**
@@ -31,15 +31,25 @@ class CollaboratorAllOf {
     }
 
     /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
+    static initialize(obj, email, role) { 
+        obj['email'] = email;
+        obj['role'] = role;
+    }
+
+    /**
     * Constructs a full object with all available fields.
     */
     model(){
         var obj = {};
 
-        obj['name'] = null;
-        obj['surname'] = null;
-        obj['email'] = null;
-        obj['role'] = null;
+        obj['name'];
+        obj['surname'];
+        obj['email'];
+        obj['role'];
 
         return obj;
     }
@@ -53,26 +63,16 @@ class CollaboratorAllOf {
             "requiredFields": {}
         };
 
-        obj["fields"]['name'] = { "type": 'String', "system": false };
-        obj["fields"]['surname'] = { "type": 'String', "system": false };
-        obj["fields"]['email'] = { "type": 'String', "system": false };
-        obj["fields"]['role'] = { "type": 'String', "system": false };
+        obj["fields"]['name'];
+        obj["fields"]['surname'];
+        obj["fields"]['email'];
+        obj["fields"]['role'];
 
         
-        obj["requiredFields"]['email'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['role'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['email'];
+        obj["requiredFields"]['role'];
 
         return obj;
-    }
-
-    /**
-     * Initializes the fields of this object.
-     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
-     * Only for internal use.
-     */
-    static initialize(obj, email, role) { 
-        obj['email'] = email;
-        obj['role'] = role;
     }
 
     /**

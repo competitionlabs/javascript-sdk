@@ -21,7 +21,7 @@ import QueryRequest from '../model/QueryRequest';
 /**
 * Events service.
 * @module api/EventsApi
-* @version 1.0.1
+* @version 1.0.4
 */
 export default class EventsApi {
 
@@ -51,7 +51,7 @@ export default class EventsApi {
      * @param {String} spaceName This is the space name which is linked to the account
      * @param {Object} opts Optional parameters
      * @param {String} opts.X_API_KEY The admin API Key generated from CompetitionLabs back office
-     * @param {module:model/CreateEventRequest} opts.body Create an Event
+     * @param {Array.<module:model/CreateEventRequest>} opts.body Create an Event
      * @param {module:api/EventsApi~createEventsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ApiResponse}
      */
@@ -80,6 +80,59 @@ export default class EventsApi {
       let returnType = ApiResponse;
       return this.apiClient.callApi(
         '/events/{spaceName}', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the getEvents operation.
+     * @callback module:api/EventsApi~getEventsCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/EventResponse} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * NOT AVAILABLE IN CURRENT RELEASE
+     * Retrieve an Event or a list of Events from CompetitionLabs by unique Event ID's or any other POST body parameters using the POST method
+     * @param {String} spaceName This is the space name which is linked to the account
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.X_API_KEY The admin API Key generated from CompetitionLabs back office
+     * @param {Array.<String>} opts.id The unique identifiers of the resources
+     * @param {Number} opts.limit Limit the returned total records found
+     * @param {Number} opts.skip Skip the returned records found and return the next batch of records
+     * @param {module:api/EventsApi~getEventsCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/EventResponse}
+     */
+    getEvents(spaceName, opts, callback) {
+      opts = opts || {};
+      let postBody = null;
+      // verify the required parameter 'spaceName' is set
+      if (spaceName === undefined || spaceName === null) {
+        throw new Error("Missing the required parameter 'spaceName' when calling getEvents");
+      }
+
+      let pathParams = {
+        'spaceName': spaceName
+      };
+      let queryParams = {
+        'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),
+        '_limit': opts['limit'],
+        '_skip': opts['skip']
+      };
+      let headerParams = {
+        'X-API-KEY': opts['X_API_KEY']
+      };
+      let formParams = {
+      };
+
+      let authNames = ['adminApiKey'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = EventResponse;
+      return this.apiClient.callApi(
+        '/events/{spaceName}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );

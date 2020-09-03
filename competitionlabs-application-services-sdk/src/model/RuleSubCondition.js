@@ -18,7 +18,7 @@ import SubRule from './SubRule';
 /**
  * The RuleSubCondition model module.
  * @module model/RuleSubCondition
- * @version 1.0.1
+ * @version 1.0.4
  */
 class RuleSubCondition {
     /**
@@ -34,14 +34,25 @@ class RuleSubCondition {
     }
 
     /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
+    static initialize(obj, matchCondition, mustEvaluateTo, subRules) { 
+        obj['matchCondition'] = matchCondition;
+        obj['mustEvaluateTo'] = mustEvaluateTo;
+        obj['subRules'] = subRules;
+    }
+
+    /**
     * Constructs a full object with all available fields.
     */
     model(){
         var obj = {};
 
-        obj['matchCondition'] = new MatchCondition().model();
-        obj['mustEvaluateTo'] = null;
-        obj['subRules'] = [new SubRule().model()];
+        obj['matchCondition'];
+        obj['mustEvaluateTo'];
+        obj['subRules'];
 
         return obj;
     }
@@ -55,27 +66,16 @@ class RuleSubCondition {
             "requiredFields": {}
         };
 
-        obj["fields"]['matchCondition'] = new MatchCondition().modelMap();
-        obj["fields"]['mustEvaluateTo'] = { "type": 'Boolean', "system": false };
-        obj["fields"]['subRules'] = [new SubRule().modelMap()];
+        obj["fields"]['matchCondition'];
+        obj["fields"]['mustEvaluateTo'];
+        obj["fields"]['subRules'];
 
         
-        obj["requiredFields"]['matchCondition'] = new MatchCondition().modelMap();
-        obj["requiredFields"]['mustEvaluateTo'] = { "type": 'Boolean', "system": false };
-        obj["requiredFields"]['subRules'] = [new SubRule().modelMap()];
+        obj["requiredFields"]['matchCondition'];
+        obj["requiredFields"]['mustEvaluateTo'];
+        obj["requiredFields"]['subRules'];
 
         return obj;
-    }
-
-    /**
-     * Initializes the fields of this object.
-     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
-     * Only for internal use.
-     */
-    static initialize(obj, matchCondition, mustEvaluateTo, subRules) { 
-        obj['matchCondition'] = matchCondition;
-        obj['mustEvaluateTo'] = mustEvaluateTo;
-        obj['subRules'] = subRules;
     }
 
     /**
@@ -113,9 +113,8 @@ RuleSubCondition.prototype['matchCondition'] = undefined;
 /**
  * The value the rule(s) must evaluate to for the rule to be satisfied
  * @member {Boolean} mustEvaluateTo
- * @default true
  */
-RuleSubCondition.prototype['mustEvaluateTo'] = true;
+RuleSubCondition.prototype['mustEvaluateTo'] = undefined;
 
 /**
  * @member {Array.<module:model/SubRule>} subRules

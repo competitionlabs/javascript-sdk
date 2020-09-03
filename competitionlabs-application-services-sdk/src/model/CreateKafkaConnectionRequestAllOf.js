@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateKafkaConnectionRequestAllOf model module.
  * @module model/CreateKafkaConnectionRequestAllOf
- * @version 1.0.1
+ * @version 1.0.4
  */
 class CreateKafkaConnectionRequestAllOf {
     /**
@@ -34,16 +34,29 @@ class CreateKafkaConnectionRequestAllOf {
     }
 
     /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
+    static initialize(obj, name, brokers, transformerId, groupId, topic) { 
+        obj['name'] = name;
+        obj['brokers'] = brokers;
+        obj['transformerId'] = transformerId;
+        obj['groupId'] = groupId;
+        obj['topic'] = topic;
+    }
+
+    /**
     * Constructs a full object with all available fields.
     */
     model(){
         var obj = {};
 
-        obj['name'] = null;
-        obj['brokers'] = null;
-        obj['transformerId'] = null;
-        obj['groupId'] = null;
-        obj['topic'] = null;
+        obj['name'];
+        obj['brokers'];
+        obj['transformerId'];
+        obj['groupId'];
+        obj['topic'];
 
         return obj;
     }
@@ -57,33 +70,20 @@ class CreateKafkaConnectionRequestAllOf {
             "requiredFields": {}
         };
 
-        obj["fields"]['name'] = { "type": 'String', "system": false };
-        obj["fields"]['brokers'] = { "type": 'String', "system": false };
-        obj["fields"]['transformerId'] = { "type": 'String', "system": false };
-        obj["fields"]['groupId'] = { "type": 'String', "system": false };
-        obj["fields"]['topic'] = { "type": 'String', "system": false };
+        obj["fields"]['name'];
+        obj["fields"]['brokers'];
+        obj["fields"]['transformerId'];
+        obj["fields"]['groupId'];
+        obj["fields"]['topic'];
 
         
-        obj["requiredFields"]['name'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['brokers'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['transformerId'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['groupId'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['topic'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['name'];
+        obj["requiredFields"]['brokers'];
+        obj["requiredFields"]['transformerId'];
+        obj["requiredFields"]['groupId'];
+        obj["requiredFields"]['topic'];
 
         return obj;
-    }
-
-    /**
-     * Initializes the fields of this object.
-     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
-     * Only for internal use.
-     */
-    static initialize(obj, name, brokers, transformerId, groupId, topic) { 
-        obj['name'] = name;
-        obj['brokers'] = brokers;
-        obj['transformerId'] = transformerId;
-        obj['groupId'] = groupId;
-        obj['topic'] = topic;
     }
 
     /**

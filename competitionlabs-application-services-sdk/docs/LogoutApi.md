@@ -1,10 +1,10 @@
-# @CompetitionlabsJavascriptSdk.LogoutApi
+# @CompetitionlabsApplicationServicesSdk.LogoutApi
 
 All URIs are relative to *https://api.competitionlabs.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**logout**](docs/LogoutApi.md#logout) | **GET** /logout | 
+[**logout**](LogoutApi.md#logout) | **GET** /logout | 
 
 
 
@@ -19,15 +19,15 @@ Logout of CompetitionLabs
 ### Example
 
 ```javascript
-import @CompetitionlabsJavascriptSdk from '@competitionlabs/javascript-sdk';
-let defaultClient = @CompetitionlabsJavascriptSdk.ApiClient.instance;
+import @CompetitionlabsApplicationServicesSdk from '@competitionlabs/application-services-sdk';
+let defaultClient = @CompetitionlabsApplicationServicesSdk.ApiClient.instance;
 // Configure API key authorization: adminApiKey
 let adminApiKey = defaultClient.authentications['adminApiKey'];
 adminApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //adminApiKey.apiKeyPrefix = 'Token';
 
-let apiInstance = new @CompetitionlabsJavascriptSdk.LogoutApi();
+let apiInstance = new @CompetitionlabsApplicationServicesSdk.LogoutApi();
 let opts = {
   'returnPath': "returnPath_example" // String | Return path of the request
 };
@@ -49,11 +49,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApiResponse**](docs/ApiResponse.md)
+[**ApiResponse**](ApiResponse.md)
 
 ### Authorization
 
-[adminApiKey](README.mdminApiKey)
+[adminApiKey](../README.md#adminApiKey)
 
 ### HTTP request headers
 

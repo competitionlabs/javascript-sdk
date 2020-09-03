@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The MemberAchievementCountAllOf model module.
  * @module model/MemberAchievementCountAllOf
- * @version 1.0.1
+ * @version 1.0.4
  */
 class MemberAchievementCountAllOf {
     /**
@@ -33,15 +33,27 @@ class MemberAchievementCountAllOf {
     }
 
     /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
+    static initialize(obj, name, memberId, memberRefId, latestIssuedTimestamp) { 
+        obj['name'] = name;
+        obj['memberId'] = memberId;
+        obj['memberRefId'] = memberRefId;
+        obj['latestIssuedTimestamp'] = latestIssuedTimestamp;
+    }
+
+    /**
     * Constructs a full object with all available fields.
     */
     model(){
         var obj = {};
 
-        obj['name'] = null;
-        obj['memberId'] = null;
-        obj['memberRefId'] = null;
-        obj['latestIssuedTimestamp'] = null;
+        obj['name'];
+        obj['memberId'];
+        obj['memberRefId'];
+        obj['latestIssuedTimestamp'];
 
         return obj;
     }
@@ -55,30 +67,18 @@ class MemberAchievementCountAllOf {
             "requiredFields": {}
         };
 
-        obj["fields"]['name'] = { "type": 'String', "system": false };
-        obj["fields"]['memberId'] = { "type": 'String', "system": false };
-        obj["fields"]['memberRefId'] = { "type": 'String', "system": false };
-        obj["fields"]['latestIssuedTimestamp'] = { "type": 'Date', "system": false };
+        obj["fields"]['name'];
+        obj["fields"]['memberId'];
+        obj["fields"]['memberRefId'];
+        obj["fields"]['latestIssuedTimestamp'];
 
         
-        obj["requiredFields"]['name'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['memberId'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['memberRefId'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['latestIssuedTimestamp'] = { "type": 'Date', "system": false };
+        obj["requiredFields"]['name'];
+        obj["requiredFields"]['memberId'];
+        obj["requiredFields"]['memberRefId'];
+        obj["requiredFields"]['latestIssuedTimestamp'];
 
         return obj;
-    }
-
-    /**
-     * Initializes the fields of this object.
-     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
-     * Only for internal use.
-     */
-    static initialize(obj, name, memberId, memberRefId, latestIssuedTimestamp) { 
-        obj['name'] = name;
-        obj['memberId'] = memberId;
-        obj['memberRefId'] = memberRefId;
-        obj['latestIssuedTimestamp'] = latestIssuedTimestamp;
     }
 
     /**

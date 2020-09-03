@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The MaxMin model module.
  * @module model/MaxMin
- * @version 1.0.1
+ * @version 1.0.4
  */
 class MaxMin {
     /**
@@ -30,13 +30,22 @@ class MaxMin {
     }
 
     /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
+    static initialize(obj, minimum) { 
+        obj['minimum'] = minimum;
+    }
+
+    /**
     * Constructs a full object with all available fields.
     */
     model(){
         var obj = {};
 
-        obj['maximum'] = null;
-        obj['minimum'] = null;
+        obj['maximum'];
+        obj['minimum'];
 
         return obj;
     }
@@ -50,22 +59,13 @@ class MaxMin {
             "requiredFields": {}
         };
 
-        obj["fields"]['maximum'] = { "type": 'Number', "system": false };
-        obj["fields"]['minimum'] = { "type": 'Number', "system": false };
+        obj["fields"]['maximum'];
+        obj["fields"]['minimum'];
 
         
-        obj["requiredFields"]['minimum'] = { "type": 'Number', "system": false };
+        obj["requiredFields"]['minimum'];
 
         return obj;
-    }
-
-    /**
-     * Initializes the fields of this object.
-     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
-     * Only for internal use.
-     */
-    static initialize(obj, minimum) { 
-        obj['minimum'] = minimum;
     }
 
     /**
@@ -95,16 +95,14 @@ class MaxMin {
 /**
  * Indication of a maximum amount
  * @member {Number} maximum
- * @default 1000000000
  */
-MaxMin.prototype['maximum'] = 1000000000;
+MaxMin.prototype['maximum'] = undefined;
 
 /**
  * Indication of a minimum amount
  * @member {Number} minimum
- * @default 0
  */
-MaxMin.prototype['minimum'] = 0;
+MaxMin.prototype['minimum'] = undefined;
 
 
 

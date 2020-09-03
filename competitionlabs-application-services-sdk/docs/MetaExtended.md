@@ -1,4 +1,4 @@
-# @CompetitionlabsJavascriptSdk.MetaExtended
+# @CompetitionlabsApplicationServicesSdk.MetaExtended
 
 ## Properties
 

@@ -17,7 +17,7 @@ import ContestStateOperations from './ContestStateOperations';
 /**
  * The UpdateContestStateRequest model module.
  * @module model/UpdateContestStateRequest
- * @version 1.0.1
+ * @version 1.0.4
  */
 class UpdateContestStateRequest {
     /**
@@ -32,13 +32,23 @@ class UpdateContestStateRequest {
     }
 
     /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
+    static initialize(obj, contestId, status) { 
+        obj['contestId'] = contestId;
+        obj['status'] = status;
+    }
+
+    /**
     * Constructs a full object with all available fields.
     */
     model(){
         var obj = {};
 
-        obj['contestId'] = null;
-        obj['status'] = new ContestStateOperations().model();
+        obj['contestId'];
+        obj['status'];
 
         return obj;
     }
@@ -52,24 +62,14 @@ class UpdateContestStateRequest {
             "requiredFields": {}
         };
 
-        obj["fields"]['contestId'] = { "type": 'String', "system": false };
-        obj["fields"]['status'] = new ContestStateOperations().modelMap();
+        obj["fields"]['contestId'];
+        obj["fields"]['status'];
 
         
-        obj["requiredFields"]['contestId'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['status'] = new ContestStateOperations().modelMap();
+        obj["requiredFields"]['contestId'];
+        obj["requiredFields"]['status'];
 
         return obj;
-    }
-
-    /**
-     * Initializes the fields of this object.
-     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
-     * Only for internal use.
-     */
-    static initialize(obj, contestId, status) { 
-        obj['contestId'] = contestId;
-        obj['status'] = status;
     }
 
     /**

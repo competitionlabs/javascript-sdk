@@ -1,14 +1,14 @@
-# @CompetitionlabsJavascriptSdk.UsersApi
+# @CompetitionlabsApplicationServicesSdk.UsersApi
 
 All URIs are relative to *https://api.competitionlabs.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createUser**](docs/UsersApi.md#createUser) | **POST** /users/{spaceName} | 
-[**deleteUserForSpace**](docs/UsersApi.md#deleteUserForSpace) | **DELETE** /users/{spaceName}/{id} | 
-[**getUserForSpace**](docs/UsersApi.md#getUserForSpace) | **GET** /users/{spaceName}/{id} | 
-[**getUsersForSpace**](docs/UsersApi.md#getUsersForSpace) | **GET** /users/{spaceName} | 
-[**updateUserForSpace**](docs/UsersApi.md#updateUserForSpace) | **PUT** /users/{spaceName} | 
+[**createUser**](UsersApi.md#createUser) | **POST** /users/{spaceName} | 
+[**deleteUserForSpace**](UsersApi.md#deleteUserForSpace) | **DELETE** /users/{spaceName}/{id} | 
+[**getUserForSpace**](UsersApi.md#getUserForSpace) | **GET** /users/{spaceName}/{id} | 
+[**getUsersForSpace**](UsersApi.md#getUsersForSpace) | **GET** /users/{spaceName} | 
+[**updateUserForSpace**](UsersApi.md#updateUserForSpace) | **PUT** /users/{spaceName} | 
 
 
 
@@ -23,17 +23,17 @@ Create a new user in the CompetitionLabs system
 ### Example
 
 ```javascript
-import @CompetitionlabsJavascriptSdk from '@competitionlabs/javascript-sdk';
-let defaultClient = @CompetitionlabsJavascriptSdk.ApiClient.instance;
+import @CompetitionlabsApplicationServicesSdk from '@competitionlabs/application-services-sdk';
+let defaultClient = @CompetitionlabsApplicationServicesSdk.ApiClient.instance;
 // Configure API key authorization: adminApiKey
 let adminApiKey = defaultClient.authentications['adminApiKey'];
 adminApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //adminApiKey.apiKeyPrefix = 'Token';
 
-let apiInstance = new @CompetitionlabsJavascriptSdk.UsersApi();
+let apiInstance = new @CompetitionlabsApplicationServicesSdk.UsersApi();
 let spaceName = "spaceName_example"; // String | This is the space name which is linked to the account
-let body = new @CompetitionlabsJavascriptSdk.CreateUserRequest(); // CreateUserRequest | Create a User in the CompetitionLabs system
+let body = new @CompetitionlabsApplicationServicesSdk.CreateUserRequest(); // CreateUserRequest | Create a User in the CompetitionLabs system
 let opts = {
   'X_API_KEY': "X_API_KEY_example" // String | The admin API Key generated from CompetitionLabs back office
 };
@@ -52,16 +52,16 @@ apiInstance.createUser(spaceName, body, opts, (error, data, response) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **spaceName** | **String**| This is the space name which is linked to the account | 
- **body** | [**CreateUserRequest**](docs/CreateUserRequest.md)| Create a User in the CompetitionLabs system | 
+ **body** | [**CreateUserRequest**](CreateUserRequest.md)| Create a User in the CompetitionLabs system | 
  **X_API_KEY** | **String**| The admin API Key generated from CompetitionLabs back office | [optional] 
 
 ### Return type
 
-[**ApiResponse**](docs/ApiResponse.md)
+[**ApiResponse**](ApiResponse.md)
 
 ### Authorization
 
-[adminApiKey](README.mdminApiKey)
+[adminApiKey](../README.md#adminApiKey)
 
 ### HTTP request headers
 
@@ -80,15 +80,15 @@ Delete a User from the CompetitionLabs
 ### Example
 
 ```javascript
-import @CompetitionlabsJavascriptSdk from '@competitionlabs/javascript-sdk';
-let defaultClient = @CompetitionlabsJavascriptSdk.ApiClient.instance;
+import @CompetitionlabsApplicationServicesSdk from '@competitionlabs/application-services-sdk';
+let defaultClient = @CompetitionlabsApplicationServicesSdk.ApiClient.instance;
 // Configure API key authorization: adminApiKey
 let adminApiKey = defaultClient.authentications['adminApiKey'];
 adminApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //adminApiKey.apiKeyPrefix = 'Token';
 
-let apiInstance = new @CompetitionlabsJavascriptSdk.UsersApi();
+let apiInstance = new @CompetitionlabsApplicationServicesSdk.UsersApi();
 let id = "id_example"; // String | Unique identifier of the resource
 let spaceName = "spaceName_example"; // String | This is the space name which is linked to the account
 let opts = {
@@ -114,11 +114,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApiResponse**](docs/ApiResponse.md)
+[**ApiResponse**](ApiResponse.md)
 
 ### Authorization
 
-[adminApiKey](README.mdminApiKey)
+[adminApiKey](../README.md#adminApiKey)
 
 ### HTTP request headers
 
@@ -137,15 +137,15 @@ Get a list of user profiles owned by this space. This assumes that a user has fi
 ### Example
 
 ```javascript
-import @CompetitionlabsJavascriptSdk from '@competitionlabs/javascript-sdk';
-let defaultClient = @CompetitionlabsJavascriptSdk.ApiClient.instance;
+import @CompetitionlabsApplicationServicesSdk from '@competitionlabs/application-services-sdk';
+let defaultClient = @CompetitionlabsApplicationServicesSdk.ApiClient.instance;
 // Configure API key authorization: adminApiKey
 let adminApiKey = defaultClient.authentications['adminApiKey'];
 adminApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //adminApiKey.apiKeyPrefix = 'Token';
 
-let apiInstance = new @CompetitionlabsJavascriptSdk.UsersApi();
+let apiInstance = new @CompetitionlabsApplicationServicesSdk.UsersApi();
 let spaceName = "spaceName_example"; // String | This is the space name which is linked to the account
 let id = "id_example"; // String | Unique identifier of the resource
 let opts = {
@@ -173,11 +173,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**UserResponse**](docs/UserResponse.md)
+[**UserResponse**](UserResponse.md)
 
 ### Authorization
 
-[adminApiKey](README.mdminApiKey)
+[adminApiKey](../README.md#adminApiKey)
 
 ### HTTP request headers
 
@@ -196,15 +196,15 @@ Get a list of user profiles owned by this space. This assumes that a user has fi
 ### Example
 
 ```javascript
-import @CompetitionlabsJavascriptSdk from '@competitionlabs/javascript-sdk';
-let defaultClient = @CompetitionlabsJavascriptSdk.ApiClient.instance;
+import @CompetitionlabsApplicationServicesSdk from '@competitionlabs/application-services-sdk';
+let defaultClient = @CompetitionlabsApplicationServicesSdk.ApiClient.instance;
 // Configure API key authorization: adminApiKey
 let adminApiKey = defaultClient.authentications['adminApiKey'];
 adminApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //adminApiKey.apiKeyPrefix = 'Token';
 
-let apiInstance = new @CompetitionlabsJavascriptSdk.UsersApi();
+let apiInstance = new @CompetitionlabsApplicationServicesSdk.UsersApi();
 let spaceName = "spaceName_example"; // String | This is the space name which is linked to the account
 let opts = {
   'X_API_KEY': "X_API_KEY_example", // String | The admin API Key generated from CompetitionLabs back office
@@ -230,11 +230,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**UserResponse**](docs/UserResponse.md)
+[**UserResponse**](UserResponse.md)
 
 ### Authorization
 
-[adminApiKey](README.mdminApiKey)
+[adminApiKey](../README.md#adminApiKey)
 
 ### HTTP request headers
 
@@ -253,17 +253,17 @@ Update an existing User in the CompetitionLabs system
 ### Example
 
 ```javascript
-import @CompetitionlabsJavascriptSdk from '@competitionlabs/javascript-sdk';
-let defaultClient = @CompetitionlabsJavascriptSdk.ApiClient.instance;
+import @CompetitionlabsApplicationServicesSdk from '@competitionlabs/application-services-sdk';
+let defaultClient = @CompetitionlabsApplicationServicesSdk.ApiClient.instance;
 // Configure API key authorization: adminApiKey
 let adminApiKey = defaultClient.authentications['adminApiKey'];
 adminApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //adminApiKey.apiKeyPrefix = 'Token';
 
-let apiInstance = new @CompetitionlabsJavascriptSdk.UsersApi();
+let apiInstance = new @CompetitionlabsApplicationServicesSdk.UsersApi();
 let spaceName = "spaceName_example"; // String | This is the space name which is linked to the account
-let body = new @CompetitionlabsJavascriptSdk.UpdateUserRequest(); // UpdateUserRequest | Update a User in the CompetitionLabs system. * Any Put body Parameters that are excluded in the Request body field will be considered as empty and updated with an empty field
+let body = new @CompetitionlabsApplicationServicesSdk.UpdateUserRequest(); // UpdateUserRequest | Update a User in the CompetitionLabs system. * Any Put body Parameters that are excluded in the Request body field will be considered as empty and updated with an empty field
 let opts = {
   'X_API_KEY': "X_API_KEY_example" // String | The admin API Key generated from CompetitionLabs back office
 };
@@ -282,16 +282,16 @@ apiInstance.updateUserForSpace(spaceName, body, opts, (error, data, response) =>
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **spaceName** | **String**| This is the space name which is linked to the account | 
- **body** | [**UpdateUserRequest**](docs/UpdateUserRequest.md)| Update a User in the CompetitionLabs system. * Any Put body Parameters that are excluded in the Request body field will be considered as empty and updated with an empty field | 
+ **body** | [**UpdateUserRequest**](UpdateUserRequest.md)| Update a User in the CompetitionLabs system. * Any Put body Parameters that are excluded in the Request body field will be considered as empty and updated with an empty field | 
  **X_API_KEY** | **String**| The admin API Key generated from CompetitionLabs back office | [optional] 
 
 ### Return type
 
-[**ApiResponse**](docs/ApiResponse.md)
+[**ApiResponse**](ApiResponse.md)
 
 ### Authorization
 
-[adminApiKey](README.mdminApiKey)
+[adminApiKey](../README.md#adminApiKey)
 
 ### HTTP request headers
 

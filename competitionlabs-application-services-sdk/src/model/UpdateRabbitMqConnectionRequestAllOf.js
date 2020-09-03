@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateRabbitMqConnectionRequestAllOf model module.
  * @module model/UpdateRabbitMqConnectionRequestAllOf
- * @version 1.0.1
+ * @version 1.0.4
  */
 class UpdateRabbitMqConnectionRequestAllOf {
     /**
@@ -29,22 +29,30 @@ class UpdateRabbitMqConnectionRequestAllOf {
     }
 
     /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
+    static initialize(obj) { 
+    }
+
+    /**
     * Constructs a full object with all available fields.
     */
     model(){
         var obj = {};
 
-        obj['name'] = null;
-        obj['uri'] = null;
-        obj['virtualHost'] = null;
-        obj['port'] = null;
-        obj['useSsl'] = null;
-        obj['username'] = null;
-        obj['password'] = null;
-        obj['queueName'] = null;
-        obj['exchange'] = null;
-        obj['routingKey'] = null;
-        obj['transformerId'] = null;
+        obj['name'];
+        obj['uri'];
+        obj['virtualHost'];
+        obj['port'];
+        obj['useSsl'];
+        obj['username'];
+        obj['password'];
+        obj['queueName'];
+        obj['exchange'];
+        obj['routingKey'];
+        obj['transformerId'];
 
         return obj;
     }
@@ -58,29 +66,21 @@ class UpdateRabbitMqConnectionRequestAllOf {
             "requiredFields": {}
         };
 
-        obj["fields"]['name'] = { "type": 'String', "system": false };
-        obj["fields"]['uri'] = { "type": 'String', "system": false };
-        obj["fields"]['virtualHost'] = { "type": 'String', "system": false };
-        obj["fields"]['port'] = { "type": 'Number', "system": false };
-        obj["fields"]['useSsl'] = { "type": 'Boolean', "system": false };
-        obj["fields"]['username'] = { "type": 'String', "system": false };
-        obj["fields"]['password'] = { "type": 'String', "system": false };
-        obj["fields"]['queueName'] = { "type": 'String', "system": false };
-        obj["fields"]['exchange'] = { "type": 'String', "system": false };
-        obj["fields"]['routingKey'] = { "type": 'String', "system": false };
-        obj["fields"]['transformerId'] = { "type": 'String', "system": false };
+        obj["fields"]['name'];
+        obj["fields"]['uri'];
+        obj["fields"]['virtualHost'];
+        obj["fields"]['port'];
+        obj["fields"]['useSsl'];
+        obj["fields"]['username'];
+        obj["fields"]['password'];
+        obj["fields"]['queueName'];
+        obj["fields"]['exchange'];
+        obj["fields"]['routingKey'];
+        obj["fields"]['transformerId'];
 
         
 
         return obj;
-    }
-
-    /**
-     * Initializes the fields of this object.
-     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
-     * Only for internal use.
-     */
-    static initialize(obj) { 
     }
 
     /**
@@ -149,16 +149,14 @@ UpdateRabbitMqConnectionRequestAllOf.prototype['uri'] = undefined;
 /**
  * The virtual host of the rabbitmq broker
  * @member {String} virtualHost
- * @default '/'
  */
-UpdateRabbitMqConnectionRequestAllOf.prototype['virtualHost'] = '/';
+UpdateRabbitMqConnectionRequestAllOf.prototype['virtualHost'] = undefined;
 
 /**
  * The port number on which consumer will connect on rabbitmq broker
  * @member {Number} port
- * @default 5672
  */
-UpdateRabbitMqConnectionRequestAllOf.prototype['port'] = 5672;
+UpdateRabbitMqConnectionRequestAllOf.prototype['port'] = undefined;
 
 /**
  * Whether the connection is SSL enabled or not

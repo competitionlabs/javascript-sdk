@@ -1,10 +1,10 @@
-# @CompetitionlabsJavascriptSdk.UpdateMessageStatusRequest
+# @CompetitionlabsApplicationServicesSdk.UpdateMessageStatusRequest
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **String** | Unique system identifier of a message | 
-**status** | [**MessagStatus**](docs/MessagStatus.md) |  | 
+**id** | **String** | A unique system generated identifier | 
+**status** | [**MessageStatus**](MessageStatus.md) |  | 
 
 

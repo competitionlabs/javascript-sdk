@@ -19,6 +19,7 @@ import AchievementIssuedCount from './model/AchievementIssuedCount';
 import AchievementIssuedResponse from './model/AchievementIssuedResponse';
 import AchievementLiveStatus from './model/AchievementLiveStatus';
 import AchievementLiveStatusRequest from './model/AchievementLiveStatusRequest';
+import AchievementLiveStatusRequestAllOf from './model/AchievementLiveStatusRequestAllOf';
 import AchievementReduced from './model/AchievementReduced';
 import AchievementReducedAllOf from './model/AchievementReducedAllOf';
 import AchievementReducedResponse from './model/AchievementReducedResponse';
@@ -87,7 +88,6 @@ import CreateCustomFieldRequest from './model/CreateCustomFieldRequest';
 import CreateEntityRewardRequest from './model/CreateEntityRewardRequest';
 import CreateEventRequest from './model/CreateEventRequest';
 import CreateFileObjectRequest from './model/CreateFileObjectRequest';
-import CreateFolderObjectRequest from './model/CreateFolderObjectRequest';
 import CreateKafkaConnectionRequest from './model/CreateKafkaConnectionRequest';
 import CreateKafkaConnectionRequestAllOf from './model/CreateKafkaConnectionRequestAllOf';
 import CreateLanguageRequest from './model/CreateLanguageRequest';
@@ -121,6 +121,7 @@ import ErrorDetail from './model/ErrorDetail';
 import Event from './model/Event';
 import EventAllOf from './model/EventAllOf';
 import EventMetadata from './model/EventMetadata';
+import EventMetadataRequest from './model/EventMetadataRequest';
 import EventRefType from './model/EventRefType';
 import EventResponse from './model/EventResponse';
 import FactDefault from './model/FactDefault';
@@ -136,6 +137,8 @@ import LanguageAllOf from './model/LanguageAllOf';
 import LanguageResponse from './model/LanguageResponse';
 import Languages from './model/Languages';
 import Leaderboard from './model/Leaderboard';
+import LeaderboardAllOf from './model/LeaderboardAllOf';
+import LeaderboardEntry from './model/LeaderboardEntry';
 import LeaderboardResponseByContest from './model/LeaderboardResponseByContest';
 import Location from './model/Location';
 import Macro from './model/Macro';
@@ -154,10 +157,10 @@ import MemberMessageAllOf from './model/MemberMessageAllOf';
 import MemberMessageResponse from './model/MemberMessageResponse';
 import MemberResponse from './model/MemberResponse';
 import MemberType from './model/MemberType';
-import MessagStatus from './model/MessagStatus';
 import Message from './model/Message';
 import MessageAllOf from './model/MessageAllOf';
 import MessageResponse from './model/MessageResponse';
+import MessageStatus from './model/MessageStatus';
 import MessageType from './model/MessageType';
 import MetaBasic from './model/MetaBasic';
 import MetaExtended from './model/MetaExtended';
@@ -246,9 +249,10 @@ import UpdateCollaboratorRequestAllOf from './model/UpdateCollaboratorRequestAll
 import UpdateCompetitionRequest from './model/UpdateCompetitionRequest';
 import UpdateCompetitionRequestAllOf from './model/UpdateCompetitionRequestAllOf';
 import UpdateCompetitionStatusRequest from './model/UpdateCompetitionStatusRequest';
+import UpdateCompetitionStatusRequestAllOf from './model/UpdateCompetitionStatusRequestAllOf';
 import UpdateConnectionRequest from './model/UpdateConnectionRequest';
-import UpdateConnectionRequestAllOf from './model/UpdateConnectionRequestAllOf';
 import UpdateConsumerStateRequest from './model/UpdateConsumerStateRequest';
+import UpdateConsumerStateRequestAllOf from './model/UpdateConsumerStateRequestAllOf';
 import UpdateContestRequest from './model/UpdateContestRequest';
 import UpdateContestRequestAllOf from './model/UpdateContestRequestAllOf';
 import UpdateContestStateRequest from './model/UpdateContestStateRequest';
@@ -261,11 +265,13 @@ import UpdateFileObjectRequestAllOf from './model/UpdateFileObjectRequestAllOf';
 import UpdateKafkaConnectionRequest from './model/UpdateKafkaConnectionRequest';
 import UpdateKafkaConnectionRequestAllOf from './model/UpdateKafkaConnectionRequestAllOf';
 import UpdateLanguageRequest from './model/UpdateLanguageRequest';
+import UpdateLanguageRequestAllOf from './model/UpdateLanguageRequestAllOf';
 import UpdateMemberRequest from './model/UpdateMemberRequest';
 import UpdateMemberRequestAllOf from './model/UpdateMemberRequestAllOf';
 import UpdateMessageRequest from './model/UpdateMessageRequest';
 import UpdateMessageRequestAllOf from './model/UpdateMessageRequestAllOf';
 import UpdateMessageStatusRequest from './model/UpdateMessageStatusRequest';
+import UpdateMessageStatusRequestAllOf from './model/UpdateMessageStatusRequestAllOf';
 import UpdateModelDefault from './model/UpdateModelDefault';
 import UpdateProductRequest from './model/UpdateProductRequest';
 import UpdateProductRequestAllOf from './model/UpdateProductRequestAllOf';
@@ -324,14 +330,14 @@ import WebhooksApi from './api/WebhooksApi';
 
 
 /**
-* CompetitionLabs API JavaScript SDK.<br>
+* CompetitionLabs API Application services JavaScript SDK.<br>
 * The <code>index</code> module provides access to constructors for all the classes which comprise the public API.
 * <p>
 * An AMD (recommended!) or CommonJS application will generally do something equivalent to the following:
 * <pre>
-* var @CompetitionlabsJavascriptSdk = require('index'); // See note below*.
-* var xxxSvc = new @CompetitionlabsJavascriptSdk.XxxApi(); // Allocate the API class we're going to use.
-* var yyyModel = new @CompetitionlabsJavascriptSdk.Yyy(); // Construct a model instance.
+* var @CompetitionlabsApplicationServicesSdk = require('index'); // See note below*.
+* var xxxSvc = new @CompetitionlabsApplicationServicesSdk.XxxApi(); // Allocate the API class we're going to use.
+* var yyyModel = new @CompetitionlabsApplicationServicesSdk.Yyy(); // Construct a model instance.
 * yyyModel.someProperty = 'someValue';
 * ...
 * var zzz = xxxSvc.doSomething(yyyModel); // Invoke the service.
@@ -343,8 +349,8 @@ import WebhooksApi from './api/WebhooksApi';
 * <p>
 * A non-AMD browser application (discouraged) might do something like this:
 * <pre>
-* var xxxSvc = new @CompetitionlabsJavascriptSdk.XxxApi(); // Allocate the API class we're going to use.
-* var yyy = new @CompetitionlabsJavascriptSdk.Yyy(); // Construct a model instance.
+* var xxxSvc = new @CompetitionlabsApplicationServicesSdk.XxxApi(); // Allocate the API class we're going to use.
+* var yyy = new @CompetitionlabsApplicationServicesSdk.Yyy(); // Construct a model instance.
 * yyyModel.someProperty = 'someValue';
 * ...
 * var zzz = xxxSvc.doSomething(yyyModel); // Invoke the service.
@@ -352,7 +358,7 @@ import WebhooksApi from './api/WebhooksApi';
 * </pre>
 * </p>
 * @module index
-* @version 1.0.1
+* @version 1.0.4
 */
 export {
     /**
@@ -396,6 +402,12 @@ export {
      * @property {module:model/AchievementLiveStatusRequest}
      */
     AchievementLiveStatusRequest,
+
+    /**
+     * The AchievementLiveStatusRequestAllOf model constructor.
+     * @property {module:model/AchievementLiveStatusRequestAllOf}
+     */
+    AchievementLiveStatusRequestAllOf,
 
     /**
      * The AchievementReduced model constructor.
@@ -806,12 +818,6 @@ export {
     CreateFileObjectRequest,
 
     /**
-     * The CreateFolderObjectRequest model constructor.
-     * @property {module:model/CreateFolderObjectRequest}
-     */
-    CreateFolderObjectRequest,
-
-    /**
      * The CreateKafkaConnectionRequest model constructor.
      * @property {module:model/CreateKafkaConnectionRequest}
      */
@@ -1010,6 +1016,12 @@ export {
     EventMetadata,
 
     /**
+     * The EventMetadataRequest model constructor.
+     * @property {module:model/EventMetadataRequest}
+     */
+    EventMetadataRequest,
+
+    /**
      * The EventRefType model constructor.
      * @property {module:model/EventRefType}
      */
@@ -1098,6 +1110,18 @@ export {
      * @property {module:model/Leaderboard}
      */
     Leaderboard,
+
+    /**
+     * The LeaderboardAllOf model constructor.
+     * @property {module:model/LeaderboardAllOf}
+     */
+    LeaderboardAllOf,
+
+    /**
+     * The LeaderboardEntry model constructor.
+     * @property {module:model/LeaderboardEntry}
+     */
+    LeaderboardEntry,
 
     /**
      * The LeaderboardResponseByContest model constructor.
@@ -1208,12 +1232,6 @@ export {
     MemberType,
 
     /**
-     * The MessagStatus model constructor.
-     * @property {module:model/MessagStatus}
-     */
-    MessagStatus,
-
-    /**
      * The Message model constructor.
      * @property {module:model/Message}
      */
@@ -1230,6 +1248,12 @@ export {
      * @property {module:model/MessageResponse}
      */
     MessageResponse,
+
+    /**
+     * The MessageStatus model constructor.
+     * @property {module:model/MessageStatus}
+     */
+    MessageStatus,
 
     /**
      * The MessageType model constructor.
@@ -1760,22 +1784,28 @@ export {
     UpdateCompetitionStatusRequest,
 
     /**
+     * The UpdateCompetitionStatusRequestAllOf model constructor.
+     * @property {module:model/UpdateCompetitionStatusRequestAllOf}
+     */
+    UpdateCompetitionStatusRequestAllOf,
+
+    /**
      * The UpdateConnectionRequest model constructor.
      * @property {module:model/UpdateConnectionRequest}
      */
     UpdateConnectionRequest,
 
     /**
-     * The UpdateConnectionRequestAllOf model constructor.
-     * @property {module:model/UpdateConnectionRequestAllOf}
-     */
-    UpdateConnectionRequestAllOf,
-
-    /**
      * The UpdateConsumerStateRequest model constructor.
      * @property {module:model/UpdateConsumerStateRequest}
      */
     UpdateConsumerStateRequest,
+
+    /**
+     * The UpdateConsumerStateRequestAllOf model constructor.
+     * @property {module:model/UpdateConsumerStateRequestAllOf}
+     */
+    UpdateConsumerStateRequestAllOf,
 
     /**
      * The UpdateContestRequest model constructor.
@@ -1850,6 +1880,12 @@ export {
     UpdateLanguageRequest,
 
     /**
+     * The UpdateLanguageRequestAllOf model constructor.
+     * @property {module:model/UpdateLanguageRequestAllOf}
+     */
+    UpdateLanguageRequestAllOf,
+
+    /**
      * The UpdateMemberRequest model constructor.
      * @property {module:model/UpdateMemberRequest}
      */
@@ -1878,6 +1914,12 @@ export {
      * @property {module:model/UpdateMessageStatusRequest}
      */
     UpdateMessageStatusRequest,
+
+    /**
+     * The UpdateMessageStatusRequestAllOf model constructor.
+     * @property {module:model/UpdateMessageStatusRequestAllOf}
+     */
+    UpdateMessageStatusRequestAllOf,
 
     /**
      * The UpdateModelDefault model constructor.

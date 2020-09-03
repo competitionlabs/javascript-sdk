@@ -1,10 +1,10 @@
-# @CompetitionlabsJavascriptSdk.RuleDescriptor
+# @CompetitionlabsApplicationServicesSdk.RuleDescriptor
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ruleScope** | [**RuleScope**](docs/RuleScope.md) |  | 
-**actions** | [**[RuleDescriptorAction]**](docs/RuleDescriptorAction.md) |  | 
+**ruleScope** | [**RuleScope**](RuleScope.md) |  | 
+**actions** | [**[RuleDescriptorAction]**](RuleDescriptorAction.md) |  | 
 
 

@@ -13,13 +13,14 @@
 
 import ApiClient from '../ApiClient';
 import ApiKeyAllOf from './ApiKeyAllOf';
+import Metadata from './Metadata';
 import ModelDefault from './ModelDefault';
 import Role from './Role';
 
 /**
  * The ApiKey model module.
  * @module model/ApiKey
- * @version 1.0.1
+ * @version 1.0.4
  */
 class ApiKey {
     /**
@@ -38,20 +39,33 @@ class ApiKey {
     }
 
     /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
+    static initialize(obj, id, spaceName, created, active) { 
+        obj['id'] = id;
+        obj['spaceName'] = spaceName;
+        obj['created'] = created;
+        obj['active'] = active;
+    }
+
+    /**
     * Constructs a full object with all available fields.
     */
     model(){
         var obj = {};
 
-        obj['id'] = null;
-        obj['spaceName'] = null;
-        obj['created'] = null;
-        obj['active'] = null;
-        obj['description'] = null;
-        obj['whiteListIPs'] = [null];
-        obj['key'] = null;
-        obj['role'] = new Role().model();
-        obj['default'] = null;
+        obj['id'];
+        obj['spaceName'];
+        obj['created'];
+        obj['active'];
+        obj['description'];
+        obj['whiteListIPs'];
+        obj['key'];
+        obj['role'];
+        obj['default'];
+        obj['metadata'];
 
         return obj;
     }
@@ -65,35 +79,24 @@ class ApiKey {
             "requiredFields": {}
         };
 
-        obj["fields"]['id'] = { "type": 'String', "system": true };
-        obj["fields"]['spaceName'] = { "type": 'String', "system": true };
-        obj["fields"]['created'] = { "type": 'Date', "system": true };
-        obj["fields"]['active'] = { "type": 'Boolean', "system": false };
-        obj["fields"]['description'] = { "type": 'String', "system": false };
-        obj["fields"]['whiteListIPs'] = [{ "type": 'String', "system": false }];
-        obj["fields"]['key'] = { "type": 'String', "system": false };
-        obj["fields"]['role'] = new Role().modelMap();
-        obj["fields"]['default'] = { "type": 'Boolean', "system": false };
+        obj["fields"]['id'];
+        obj["fields"]['spaceName'];
+        obj["fields"]['created'];
+        obj["fields"]['active'];
+        obj["fields"]['description'];
+        obj["fields"]['whiteListIPs'];
+        obj["fields"]['key'];
+        obj["fields"]['role'];
+        obj["fields"]['default'];
+        obj["fields"]['metadata'];
 
         
-        obj["requiredFields"]['id'] = { "type": 'String', "system": true };
-        obj["requiredFields"]['spaceName'] = { "type": 'String', "system": true };
-        obj["requiredFields"]['created'] = { "type": 'Date', "system": true };
-        obj["requiredFields"]['active'] = { "type": 'Boolean', "system": false };
+        obj["requiredFields"]['id'];
+        obj["requiredFields"]['spaceName'];
+        obj["requiredFields"]['created'];
+        obj["requiredFields"]['active'];
 
         return obj;
-    }
-
-    /**
-     * Initializes the fields of this object.
-     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
-     * Only for internal use.
-     */
-    static initialize(obj, id, spaceName, created, active) { 
-        obj['id'] = id;
-        obj['spaceName'] = spaceName;
-        obj['created'] = created;
-        obj['active'] = active;
     }
 
     /**
@@ -136,6 +139,9 @@ class ApiKey {
             if (data.hasOwnProperty('default')) {
                 obj['default'] = ApiClient.convertToType(data['default'], 'Boolean');
             }
+            if (data.hasOwnProperty('metadata')) {
+                obj['metadata'] = ApiClient.convertToType(data['metadata'], [Metadata]);
+            }
         }
         return obj;
     }
@@ -164,9 +170,8 @@ ApiKey.prototype['created'] = undefined;
 /**
  * To enable or dissable an Api key
  * @member {Boolean} active
- * @default true
  */
-ApiKey.prototype['active'] = true;
+ApiKey.prototype['active'] = undefined;
 
 /**
  * The description of an Api key
@@ -194,9 +199,13 @@ ApiKey.prototype['role'] = undefined;
 /**
  * To enable the Api key to be default
  * @member {Boolean} default
- * @default false
  */
-ApiKey.prototype['default'] = false;
+ApiKey.prototype['default'] = undefined;
+
+/**
+ * @member {Array.<module:model/Metadata>} metadata
+ */
+ApiKey.prototype['metadata'] = undefined;
 
 
 // Implement ModelDefault interface:
@@ -219,9 +228,8 @@ ModelDefault.prototype['created'] = undefined;
 /**
  * To enable or dissable an Api key
  * @member {Boolean} active
- * @default true
  */
-ApiKeyAllOf.prototype['active'] = true;
+ApiKeyAllOf.prototype['active'] = undefined;
 /**
  * The description of an Api key
  * @member {String} description
@@ -244,9 +252,12 @@ ApiKeyAllOf.prototype['role'] = undefined;
 /**
  * To enable the Api key to be default
  * @member {Boolean} default
- * @default false
  */
-ApiKeyAllOf.prototype['default'] = false;
+ApiKeyAllOf.prototype['default'] = undefined;
+/**
+ * @member {Array.<module:model/Metadata>} metadata
+ */
+ApiKeyAllOf.prototype['metadata'] = undefined;
 
 
 

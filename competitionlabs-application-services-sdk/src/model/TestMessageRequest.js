@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TestMessageRequest model module.
  * @module model/TestMessageRequest
- * @version 1.0.1
+ * @version 1.0.4
  */
 class TestMessageRequest {
     /**
@@ -30,12 +30,21 @@ class TestMessageRequest {
     }
 
     /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
+    static initialize(obj, members) { 
+        obj['members'] = members;
+    }
+
+    /**
     * Constructs a full object with all available fields.
     */
     model(){
         var obj = {};
 
-        obj['members'] = [null];
+        obj['members'];
 
         return obj;
     }
@@ -49,21 +58,12 @@ class TestMessageRequest {
             "requiredFields": {}
         };
 
-        obj["fields"]['members'] = [{ "type": 'String', "system": false }];
+        obj["fields"]['members'];
 
         
-        obj["requiredFields"]['members'] = [{ "type": 'String', "system": false }];
+        obj["requiredFields"]['members'];
 
         return obj;
-    }
-
-    /**
-     * Initializes the fields of this object.
-     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
-     * Only for internal use.
-     */
-    static initialize(obj, members) { 
-        obj['members'] = members;
     }
 
     /**

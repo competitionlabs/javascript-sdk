@@ -13,22 +13,36 @@
 
 import ApiClient from '../ApiClient';
 import ConnectionState from './ConnectionState';
+import UpdateConsumerStateRequestAllOf from './UpdateConsumerStateRequestAllOf';
+import UpdateModelDefault from './UpdateModelDefault';
 
 /**
  * The UpdateConsumerStateRequest model module.
  * @module model/UpdateConsumerStateRequest
- * @version 1.0.1
+ * @version 1.0.4
  */
 class UpdateConsumerStateRequest {
     /**
      * Constructs a new <code>UpdateConsumerStateRequest</code>.
      * @alias module:model/UpdateConsumerStateRequest
-     * @param connectionId {String} A unique identifier of the consumer
+     * @implements module:model/UpdateModelDefault
+     * @implements module:model/UpdateConsumerStateRequestAllOf
+     * @param id {String} A unique system generated identifier
      * @param status {module:model/ConnectionState} 
      */
-    constructor(connectionId, status) { 
-        
-        UpdateConsumerStateRequest.initialize(this, connectionId, status);
+    constructor(id, status) { 
+        UpdateModelDefault.initialize(this, id);UpdateConsumerStateRequestAllOf.initialize(this, status);
+        UpdateConsumerStateRequest.initialize(this, id, status);
+    }
+
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
+    static initialize(obj, id, status) { 
+        obj['id'] = id;
+        obj['status'] = status;
     }
 
     /**
@@ -37,8 +51,8 @@ class UpdateConsumerStateRequest {
     model(){
         var obj = {};
 
-        obj['connectionId'] = null;
-        obj['status'] = new ConnectionState().model();
+        obj['id'];
+        obj['status'];
 
         return obj;
     }
@@ -52,24 +66,14 @@ class UpdateConsumerStateRequest {
             "requiredFields": {}
         };
 
-        obj["fields"]['connectionId'] = { "type": 'String', "system": false };
-        obj["fields"]['status'] = new ConnectionState().modelMap();
+        obj["fields"]['id'];
+        obj["fields"]['status'];
 
         
-        obj["requiredFields"]['connectionId'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['status'] = new ConnectionState().modelMap();
+        obj["requiredFields"]['id'];
+        obj["requiredFields"]['status'];
 
         return obj;
-    }
-
-    /**
-     * Initializes the fields of this object.
-     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
-     * Only for internal use.
-     */
-    static initialize(obj, connectionId, status) { 
-        obj['connectionId'] = connectionId;
-        obj['status'] = status;
     }
 
     /**
@@ -82,9 +86,11 @@ class UpdateConsumerStateRequest {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new UpdateConsumerStateRequest();
+            UpdateModelDefault.constructFromObject(data, obj);
+            UpdateConsumerStateRequestAllOf.constructFromObject(data, obj);
 
-            if (data.hasOwnProperty('connectionId')) {
-                obj['connectionId'] = ApiClient.convertToType(data['connectionId'], 'String');
+            if (data.hasOwnProperty('id')) {
+                obj['id'] = ApiClient.convertToType(data['id'], 'String');
             }
             if (data.hasOwnProperty('status')) {
                 obj['status'] = ConnectionState.constructFromObject(data['status']);
@@ -97,10 +103,10 @@ class UpdateConsumerStateRequest {
 }
 
 /**
- * A unique identifier of the consumer
- * @member {String} connectionId
+ * A unique system generated identifier
+ * @member {String} id
  */
-UpdateConsumerStateRequest.prototype['connectionId'] = undefined;
+UpdateConsumerStateRequest.prototype['id'] = undefined;
 
 /**
  * @member {module:model/ConnectionState} status
@@ -108,6 +114,17 @@ UpdateConsumerStateRequest.prototype['connectionId'] = undefined;
 UpdateConsumerStateRequest.prototype['status'] = undefined;
 
 
+// Implement UpdateModelDefault interface:
+/**
+ * A unique system generated identifier
+ * @member {String} id
+ */
+UpdateModelDefault.prototype['id'] = undefined;
+// Implement UpdateConsumerStateRequestAllOf interface:
+/**
+ * @member {module:model/ConnectionState} status
+ */
+UpdateConsumerStateRequestAllOf.prototype['status'] = undefined;
 
 
 

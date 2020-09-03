@@ -18,7 +18,7 @@ import MetaInfo from './MetaInfo';
 /**
  * The MetaExtended model module.
  * @module model/MetaExtended
- * @version 1.0.1
+ * @version 1.0.4
  */
 class MetaExtended {
     /**
@@ -38,16 +38,29 @@ class MetaExtended {
     }
 
     /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
+    static initialize(obj, objectType, resultCount, errorCount, skip, limit) { 
+        obj['objectType'] = objectType;
+        obj['resultCount'] = resultCount;
+        obj['errorCount'] = errorCount;
+        obj['skip'] = skip;
+        obj['limit'] = limit;
+    }
+
+    /**
     * Constructs a full object with all available fields.
     */
     model(){
         var obj = {};
 
-        obj['objectType'] = null;
-        obj['resultCount'] = null;
-        obj['errorCount'] = null;
-        obj['skip'] = null;
-        obj['limit'] = null;
+        obj['objectType'];
+        obj['resultCount'];
+        obj['errorCount'];
+        obj['skip'];
+        obj['limit'];
 
         return obj;
     }
@@ -61,33 +74,20 @@ class MetaExtended {
             "requiredFields": {}
         };
 
-        obj["fields"]['objectType'] = { "type": 'String', "system": false };
-        obj["fields"]['resultCount'] = { "type": 'Number', "system": false };
-        obj["fields"]['errorCount'] = { "type": 'Number', "system": false };
-        obj["fields"]['skip'] = { "type": 'Number', "system": false };
-        obj["fields"]['limit'] = { "type": 'Number', "system": false };
+        obj["fields"]['objectType'];
+        obj["fields"]['resultCount'];
+        obj["fields"]['errorCount'];
+        obj["fields"]['skip'];
+        obj["fields"]['limit'];
 
         
-        obj["requiredFields"]['objectType'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['resultCount'] = { "type": 'Number', "system": false };
-        obj["requiredFields"]['errorCount'] = { "type": 'Number', "system": false };
-        obj["requiredFields"]['skip'] = { "type": 'Number', "system": false };
-        obj["requiredFields"]['limit'] = { "type": 'Number', "system": false };
+        obj["requiredFields"]['objectType'];
+        obj["requiredFields"]['resultCount'];
+        obj["requiredFields"]['errorCount'];
+        obj["requiredFields"]['skip'];
+        obj["requiredFields"]['limit'];
 
         return obj;
-    }
-
-    /**
-     * Initializes the fields of this object.
-     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
-     * Only for internal use.
-     */
-    static initialize(obj, objectType, resultCount, errorCount, skip, limit) { 
-        obj['objectType'] = objectType;
-        obj['resultCount'] = resultCount;
-        obj['errorCount'] = errorCount;
-        obj['skip'] = skip;
-        obj['limit'] = limit;
     }
 
     /**

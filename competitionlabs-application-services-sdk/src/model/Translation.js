@@ -17,7 +17,7 @@ import TranslatedField from './TranslatedField';
 /**
  * The Translation model module.
  * @module model/Translation
- * @version 1.0.1
+ * @version 1.0.4
  */
 class Translation {
     /**
@@ -30,13 +30,21 @@ class Translation {
     }
 
     /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
+    static initialize(obj) { 
+    }
+
+    /**
     * Constructs a full object with all available fields.
     */
     model(){
         var obj = {};
 
-        obj['languageKey'] = null;
-        obj['translatedFields'] = [new TranslatedField().model()];
+        obj['languageKey'];
+        obj['translatedFields'];
 
         return obj;
     }
@@ -50,20 +58,12 @@ class Translation {
             "requiredFields": {}
         };
 
-        obj["fields"]['languageKey'] = { "type": 'String', "system": false };
-        obj["fields"]['translatedFields'] = [new TranslatedField().modelMap()];
+        obj["fields"]['languageKey'];
+        obj["fields"]['translatedFields'];
 
         
 
         return obj;
-    }
-
-    /**
-     * Initializes the fields of this object.
-     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
-     * Only for internal use.
-     */
-    static initialize(obj) { 
     }
 
     /**

@@ -17,7 +17,7 @@ import Metadata from './Metadata';
 /**
  * The CreateFileObjectRequest model module.
  * @module model/CreateFileObjectRequest
- * @version 1.0.1
+ * @version 1.0.4
  */
 class CreateFileObjectRequest {
     /**
@@ -34,17 +34,29 @@ class CreateFileObjectRequest {
     }
 
     /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
+    static initialize(obj, repositoryId, fileName, mimeType, parentFolderPath) { 
+        obj['repositoryId'] = repositoryId;
+        obj['fileName'] = fileName;
+        obj['mimeType'] = mimeType;
+        obj['parentFolderPath'] = parentFolderPath;
+    }
+
+    /**
     * Constructs a full object with all available fields.
     */
     model(){
         var obj = {};
 
-        obj['tags'] = [null];
-        obj['repositoryId'] = null;
-        obj['fileName'] = null;
-        obj['mimeType'] = null;
-        obj['parentFolderPath'] = null;
-        obj['metadata'] = [new Metadata().model()];
+        obj['tags'];
+        obj['repositoryId'];
+        obj['fileName'];
+        obj['mimeType'];
+        obj['parentFolderPath'];
+        obj['metadata'];
 
         return obj;
     }
@@ -58,32 +70,20 @@ class CreateFileObjectRequest {
             "requiredFields": {}
         };
 
-        obj["fields"]['tags'] = [{ "type": 'String', "system": false }];
-        obj["fields"]['repositoryId'] = { "type": 'String', "system": false };
-        obj["fields"]['fileName'] = { "type": 'String', "system": false };
-        obj["fields"]['mimeType'] = { "type": 'String', "system": false };
-        obj["fields"]['parentFolderPath'] = { "type": 'String', "system": false };
-        obj["fields"]['metadata'] = [new Metadata().modelMap()];
+        obj["fields"]['tags'];
+        obj["fields"]['repositoryId'];
+        obj["fields"]['fileName'];
+        obj["fields"]['mimeType'];
+        obj["fields"]['parentFolderPath'];
+        obj["fields"]['metadata'];
 
         
-        obj["requiredFields"]['repositoryId'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['fileName'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['mimeType'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['parentFolderPath'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['repositoryId'];
+        obj["requiredFields"]['fileName'];
+        obj["requiredFields"]['mimeType'];
+        obj["requiredFields"]['parentFolderPath'];
 
         return obj;
-    }
-
-    /**
-     * Initializes the fields of this object.
-     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
-     * Only for internal use.
-     */
-    static initialize(obj, repositoryId, fileName, mimeType, parentFolderPath) { 
-        obj['repositoryId'] = repositoryId;
-        obj['fileName'] = fileName;
-        obj['mimeType'] = mimeType;
-        obj['parentFolderPath'] = parentFolderPath;
     }
 
     /**

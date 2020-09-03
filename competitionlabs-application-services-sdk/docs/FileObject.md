@@ -1,10 +1,10 @@
-# @CompetitionlabsJavascriptSdk.FileObject
+# @CompetitionlabsApplicationServicesSdk.FileObject
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **String** | The file identifier | 
+**id** | **String** | A unique system generated identifier | [readonly] 
 **spaceName** | **String** | This is the space name which is linked to the account | [readonly] 
 **created** | **Date** | ISO8601 timestamp for when a Model was created. All records are stored in UTC time zone | [readonly] 
 **tags** | **[String]** | The tags associated with this file object | [optional] 
@@ -16,6 +16,6 @@ Name | Type | Description | Notes
 **parentFolderPath** | **String** | The folder name containing the attachment within the bucket | 
 **uri** | **String** | The uniform resource identifier where the file can be viewed/downloaded | [optional] 
 **size** | **Number** | The size of the file | [optional] 
-**metadata** | [**[Metadata]**](docs/Metadata.md) |  | [optional] 
+**metadata** | [**[Metadata]**](Metadata.md) |  | [optional] 
 
 

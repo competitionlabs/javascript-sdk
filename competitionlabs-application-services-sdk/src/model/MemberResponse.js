@@ -19,7 +19,7 @@ import MetaExtended from './MetaExtended';
 /**
  * The MemberResponse model module.
  * @module model/MemberResponse
- * @version 1.0.1
+ * @version 1.0.4
  */
 class MemberResponse {
     /**
@@ -33,14 +33,23 @@ class MemberResponse {
     }
 
     /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
+    static initialize(obj, meta) { 
+        obj['meta'] = meta;
+    }
+
+    /**
     * Constructs a full object with all available fields.
     */
     model(){
         var obj = {};
 
-        obj['meta'] = new MetaExtended().model();
-        obj['results'] = [new Member().model()];
-        obj['errors'] = [new Error().model()];
+        obj['meta'];
+        obj['results'];
+        obj['errors'];
 
         return obj;
     }
@@ -54,23 +63,14 @@ class MemberResponse {
             "requiredFields": {}
         };
 
-        obj["fields"]['meta'] = new MetaExtended().modelMap();
-        obj["fields"]['results'] = [new Member().modelMap()];
-        obj["fields"]['errors'] = [new Error().modelMap()];
+        obj["fields"]['meta'];
+        obj["fields"]['results'];
+        obj["fields"]['errors'];
 
         
-        obj["requiredFields"]['meta'] = new MetaExtended().modelMap();
+        obj["requiredFields"]['meta'];
 
         return obj;
-    }
-
-    /**
-     * Initializes the fields of this object.
-     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
-     * Only for internal use.
-     */
-    static initialize(obj, meta) { 
-        obj['meta'] = meta;
     }
 
     /**

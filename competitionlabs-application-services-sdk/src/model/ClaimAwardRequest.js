@@ -16,18 +16,26 @@ import ApiClient from '../ApiClient';
 /**
  * The ClaimAwardRequest model module.
  * @module model/ClaimAwardRequest
- * @version 1.0.1
+ * @version 1.0.4
  */
 class ClaimAwardRequest {
     /**
      * Constructs a new <code>ClaimAwardRequest</code>.
      * @alias module:model/ClaimAwardRequest
      * @param id {String} Unique system identifier of an Award
-     * @param claimed {Boolean} has the award been claimed or not
      */
-    constructor(id, claimed) { 
+    constructor(id) { 
         
-        ClaimAwardRequest.initialize(this, id, claimed);
+        ClaimAwardRequest.initialize(this, id);
+    }
+
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
+    static initialize(obj, id) { 
+        obj['id'] = id;
     }
 
     /**
@@ -36,8 +44,8 @@ class ClaimAwardRequest {
     model(){
         var obj = {};
 
-        obj['id'] = null;
-        obj['claimed'] = null;
+        obj['id'];
+        obj['constraints'];
 
         return obj;
     }
@@ -51,24 +59,13 @@ class ClaimAwardRequest {
             "requiredFields": {}
         };
 
-        obj["fields"]['id'] = { "type": 'String', "system": true };
-        obj["fields"]['claimed'] = { "type": 'Boolean', "system": false };
+        obj["fields"]['id'];
+        obj["fields"]['constraints'];
 
         
-        obj["requiredFields"]['id'] = { "type": 'String', "system": true };
-        obj["requiredFields"]['claimed'] = { "type": 'Boolean', "system": false };
+        obj["requiredFields"]['id'];
 
         return obj;
-    }
-
-    /**
-     * Initializes the fields of this object.
-     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
-     * Only for internal use.
-     */
-    static initialize(obj, id, claimed) { 
-        obj['id'] = id;
-        obj['claimed'] = claimed;
     }
 
     /**
@@ -85,8 +82,8 @@ class ClaimAwardRequest {
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'String');
             }
-            if (data.hasOwnProperty('claimed')) {
-                obj['claimed'] = ApiClient.convertToType(data['claimed'], 'Boolean');
+            if (data.hasOwnProperty('constraints')) {
+                obj['constraints'] = ApiClient.convertToType(data['constraints'], ['String']);
             }
         }
         return obj;
@@ -102,10 +99,10 @@ class ClaimAwardRequest {
 ClaimAwardRequest.prototype['id'] = undefined;
 
 /**
- * has the award been claimed or not
- * @member {Boolean} claimed
+ * Additional constraints, if the value is present it means the
+ * @member {Array.<String>} constraints
  */
-ClaimAwardRequest.prototype['claimed'] = undefined;
+ClaimAwardRequest.prototype['constraints'] = undefined;
 
 
 

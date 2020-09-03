@@ -19,7 +19,7 @@ import ModelDefault from './ModelDefault';
 /**
  * The ContestReduced model module.
  * @module model/ContestReduced
- * @version 1.0.1
+ * @version 1.0.4
  */
 class ContestReduced {
     /**
@@ -47,74 +47,6 @@ class ContestReduced {
     }
 
     /**
-    * Constructs a full object with all available fields.
-    */
-    model(){
-        var obj = {};
-
-        obj['id'] = null;
-        obj['spaceName'] = null;
-        obj['created'] = null;
-        obj['competitionId'] = null;
-        obj['number'] = null;
-        obj['name'] = null;
-        obj['round'] = null;
-        obj['groupStage'] = null;
-        obj['entrantsFromContest'] = [null];
-        obj['status'] = new ContestStatus().model();
-        obj['statusCode'] = null;
-        obj['scheduledStartDate'] = null;
-        obj['scheduledEndDate'] = null;
-        obj['actualStartDate'] = null;
-        obj['actualEndDate'] = null;
-
-        return obj;
-    }
-
-    /**
-    * Constructs a full object Map for all available fields.
-    */
-    modelMap(){
-        var obj = {
-            "fields": {},
-            "requiredFields": {}
-        };
-
-        obj["fields"]['id'] = { "type": 'String', "system": true };
-        obj["fields"]['spaceName'] = { "type": 'String', "system": true };
-        obj["fields"]['created'] = { "type": 'Date', "system": true };
-        obj["fields"]['competitionId'] = { "type": 'String', "system": false };
-        obj["fields"]['number'] = { "type": 'Number', "system": false };
-        obj["fields"]['name'] = { "type": 'String', "system": false };
-        obj["fields"]['round'] = { "type": 'Number', "system": false };
-        obj["fields"]['groupStage'] = { "type": 'Number', "system": false };
-        obj["fields"]['entrantsFromContest'] = [{ "type": 'String', "system": false }];
-        obj["fields"]['status'] = new ContestStatus().modelMap();
-        obj["fields"]['statusCode'] = { "type": 'Number', "system": false };
-        obj["fields"]['scheduledStartDate'] = { "type": 'Date', "system": false };
-        obj["fields"]['scheduledEndDate'] = { "type": 'Date', "system": false };
-        obj["fields"]['actualStartDate'] = { "type": 'Date', "system": false };
-        obj["fields"]['actualEndDate'] = { "type": 'Date', "system": false };
-
-        
-        obj["requiredFields"]['id'] = { "type": 'String', "system": true };
-        obj["requiredFields"]['spaceName'] = { "type": 'String', "system": true };
-        obj["requiredFields"]['created'] = { "type": 'Date', "system": true };
-        obj["requiredFields"]['competitionId'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['number'] = { "type": 'Number', "system": false };
-        obj["requiredFields"]['name'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['round'] = { "type": 'Number', "system": false };
-        obj["requiredFields"]['groupStage'] = { "type": 'Number', "system": false };
-        obj["requiredFields"]['entrantsFromContest'] = [{ "type": 'String', "system": false }];
-        obj["requiredFields"]['status'] = new ContestStatus().modelMap();
-        obj["requiredFields"]['statusCode'] = { "type": 'Number', "system": false };
-        obj["requiredFields"]['scheduledStartDate'] = { "type": 'Date', "system": false };
-        obj["requiredFields"]['scheduledEndDate'] = { "type": 'Date', "system": false };
-
-        return obj;
-    }
-
-    /**
      * Initializes the fields of this object.
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
@@ -133,6 +65,74 @@ class ContestReduced {
         obj['statusCode'] = statusCode;
         obj['scheduledStartDate'] = scheduledStartDate;
         obj['scheduledEndDate'] = scheduledEndDate;
+    }
+
+    /**
+    * Constructs a full object with all available fields.
+    */
+    model(){
+        var obj = {};
+
+        obj['id'];
+        obj['spaceName'];
+        obj['created'];
+        obj['competitionId'];
+        obj['number'];
+        obj['name'];
+        obj['round'];
+        obj['groupStage'];
+        obj['entrantsFromContest'];
+        obj['status'];
+        obj['statusCode'];
+        obj['scheduledStartDate'];
+        obj['scheduledEndDate'];
+        obj['actualStartDate'];
+        obj['actualEndDate'];
+
+        return obj;
+    }
+
+    /**
+    * Constructs a full object Map for all available fields.
+    */
+    modelMap(){
+        var obj = {
+            "fields": {},
+            "requiredFields": {}
+        };
+
+        obj["fields"]['id'];
+        obj["fields"]['spaceName'];
+        obj["fields"]['created'];
+        obj["fields"]['competitionId'];
+        obj["fields"]['number'];
+        obj["fields"]['name'];
+        obj["fields"]['round'];
+        obj["fields"]['groupStage'];
+        obj["fields"]['entrantsFromContest'];
+        obj["fields"]['status'];
+        obj["fields"]['statusCode'];
+        obj["fields"]['scheduledStartDate'];
+        obj["fields"]['scheduledEndDate'];
+        obj["fields"]['actualStartDate'];
+        obj["fields"]['actualEndDate'];
+
+        
+        obj["requiredFields"]['id'];
+        obj["requiredFields"]['spaceName'];
+        obj["requiredFields"]['created'];
+        obj["requiredFields"]['competitionId'];
+        obj["requiredFields"]['number'];
+        obj["requiredFields"]['name'];
+        obj["requiredFields"]['round'];
+        obj["requiredFields"]['groupStage'];
+        obj["requiredFields"]['entrantsFromContest'];
+        obj["requiredFields"]['status'];
+        obj["requiredFields"]['statusCode'];
+        obj["requiredFields"]['scheduledStartDate'];
+        obj["requiredFields"]['scheduledEndDate'];
+
+        return obj;
     }
 
     /**
@@ -227,9 +227,8 @@ ContestReduced.prototype['competitionId'] = undefined;
 /**
  * The row number for displaying the Contest in a table
  * @member {Number} number
- * @default 0
  */
-ContestReduced.prototype['number'] = 0;
+ContestReduced.prototype['number'] = undefined;
 
 /**
  * A name for the Contest. Can be translated
@@ -240,16 +239,14 @@ ContestReduced.prototype['name'] = undefined;
 /**
  * To what round does the contest belong
  * @member {Number} round
- * @default 1
  */
-ContestReduced.prototype['round'] = 1;
+ContestReduced.prototype['round'] = undefined;
 
 /**
  * Is used for more complex Competitions e.g. multi round competitions where round 1 group stage matched round 2
  * @member {Number} groupStage
- * @default 1
  */
-ContestReduced.prototype['groupStage'] = 1;
+ContestReduced.prototype['groupStage'] = undefined;
 
 /**
  * A list of CompetitionLabs contest identifiers to allow contests chaining. When a Progression competition is active and you have a 2 round competition the first round has to reference the second round then this parameter becomes mandatory instead of Optional.
@@ -265,9 +262,8 @@ ContestReduced.prototype['status'] = undefined;
 /**
  * The code of the contest
  * @member {Number} statusCode
- * @default 3
  */
-ContestReduced.prototype['statusCode'] = 3;
+ContestReduced.prototype['statusCode'] = undefined;
 
 /**
  * ISO8601 timestamp for when a Contest should start. All records are stored in UTC time zone
@@ -319,9 +315,8 @@ ContestReducedAllOf.prototype['competitionId'] = undefined;
 /**
  * The row number for displaying the Contest in a table
  * @member {Number} number
- * @default 0
  */
-ContestReducedAllOf.prototype['number'] = 0;
+ContestReducedAllOf.prototype['number'] = undefined;
 /**
  * A name for the Contest. Can be translated
  * @member {String} name
@@ -330,15 +325,13 @@ ContestReducedAllOf.prototype['name'] = undefined;
 /**
  * To what round does the contest belong
  * @member {Number} round
- * @default 1
  */
-ContestReducedAllOf.prototype['round'] = 1;
+ContestReducedAllOf.prototype['round'] = undefined;
 /**
  * Is used for more complex Competitions e.g. multi round competitions where round 1 group stage matched round 2
  * @member {Number} groupStage
- * @default 1
  */
-ContestReducedAllOf.prototype['groupStage'] = 1;
+ContestReducedAllOf.prototype['groupStage'] = undefined;
 /**
  * A list of CompetitionLabs contest identifiers to allow contests chaining. When a Progression competition is active and you have a 2 round competition the first round has to reference the second round then this parameter becomes mandatory instead of Optional.
  * @member {Array.<String>} entrantsFromContest
@@ -351,9 +344,8 @@ ContestReducedAllOf.prototype['status'] = undefined;
 /**
  * The code of the contest
  * @member {Number} statusCode
- * @default 3
  */
-ContestReducedAllOf.prototype['statusCode'] = 3;
+ContestReducedAllOf.prototype['statusCode'] = undefined;
 /**
  * ISO8601 timestamp for when a Contest should start. All records are stored in UTC time zone
  * @member {Date} scheduledStartDate

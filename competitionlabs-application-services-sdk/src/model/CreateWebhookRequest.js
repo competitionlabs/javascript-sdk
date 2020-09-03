@@ -17,7 +17,7 @@ import Metadata from './Metadata';
 /**
  * The CreateWebhookRequest model module.
  * @module model/CreateWebhookRequest
- * @version 1.0.1
+ * @version 1.0.4
  */
 class CreateWebhookRequest {
     /**
@@ -33,16 +33,28 @@ class CreateWebhookRequest {
     }
 
     /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
+    static initialize(obj, postToUrl, triggers, transformerId) { 
+        obj['postToUrl'] = postToUrl;
+        obj['triggers'] = triggers;
+        obj['transformerId'] = transformerId;
+    }
+
+    /**
     * Constructs a full object with all available fields.
     */
     model(){
         var obj = {};
 
-        obj['postToUrl'] = null;
-        obj['triggers'] = [null];
-        obj['description'] = null;
-        obj['headers'] = [new Metadata().model()];
-        obj['transformerId'] = null;
+        obj['postToUrl'];
+        obj['triggers'];
+        obj['description'];
+        obj['headers'];
+        obj['transformerId'];
+        obj['metadata'];
 
         return obj;
     }
@@ -56,29 +68,19 @@ class CreateWebhookRequest {
             "requiredFields": {}
         };
 
-        obj["fields"]['postToUrl'] = { "type": 'String', "system": false };
-        obj["fields"]['triggers'] = [{ "type": 'String', "system": false }];
-        obj["fields"]['description'] = { "type": 'String', "system": false };
-        obj["fields"]['headers'] = [new Metadata().modelMap()];
-        obj["fields"]['transformerId'] = { "type": 'String', "system": false };
+        obj["fields"]['postToUrl'];
+        obj["fields"]['triggers'];
+        obj["fields"]['description'];
+        obj["fields"]['headers'];
+        obj["fields"]['transformerId'];
+        obj["fields"]['metadata'];
 
         
-        obj["requiredFields"]['postToUrl'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['triggers'] = [{ "type": 'String', "system": false }];
-        obj["requiredFields"]['transformerId'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['postToUrl'];
+        obj["requiredFields"]['triggers'];
+        obj["requiredFields"]['transformerId'];
 
         return obj;
-    }
-
-    /**
-     * Initializes the fields of this object.
-     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
-     * Only for internal use.
-     */
-    static initialize(obj, postToUrl, triggers, transformerId) { 
-        obj['postToUrl'] = postToUrl;
-        obj['triggers'] = triggers;
-        obj['transformerId'] = transformerId;
     }
 
     /**
@@ -106,6 +108,9 @@ class CreateWebhookRequest {
             }
             if (data.hasOwnProperty('transformerId')) {
                 obj['transformerId'] = ApiClient.convertToType(data['transformerId'], 'String');
+            }
+            if (data.hasOwnProperty('metadata')) {
+                obj['metadata'] = ApiClient.convertToType(data['metadata'], [Metadata]);
             }
         }
         return obj;
@@ -142,6 +147,11 @@ CreateWebhookRequest.prototype['headers'] = undefined;
  * @member {String} transformerId
  */
 CreateWebhookRequest.prototype['transformerId'] = undefined;
+
+/**
+ * @member {Array.<module:model/Metadata>} metadata
+ */
+CreateWebhookRequest.prototype['metadata'] = undefined;
 
 
 

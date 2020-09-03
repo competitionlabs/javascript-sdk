@@ -1,11 +1,11 @@
-# @CompetitionlabsJavascriptSdk.ConnectionResponse
+# @CompetitionlabsApplicationServicesSdk.ConnectionResponse
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**meta** | [**MetaExtended**](docs/MetaExtended.md) |  | 
-**results** | [**[Connection]**](docs/Connection.md) |  | [optional] 
-**errors** | [**[Error]**](docs/Error.md) |  | [optional] 
+**meta** | [**MetaExtended**](MetaExtended.md) |  | 
+**results** | [**[Connection]**](Connection.md) |  | [optional] 
+**errors** | [**[Error]**](Error.md) |  | [optional] 
 
 

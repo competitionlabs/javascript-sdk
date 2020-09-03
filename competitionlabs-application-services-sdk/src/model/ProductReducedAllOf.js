@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ProductReducedAllOf model module.
  * @module model/ProductReducedAllOf
- * @version 1.0.1
+ * @version 1.0.4
  */
 class ProductReducedAllOf {
     /**
@@ -31,13 +31,23 @@ class ProductReducedAllOf {
     }
 
     /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
+    static initialize(obj, name, productRefId) { 
+        obj['name'] = name;
+        obj['productRefId'] = productRefId;
+    }
+
+    /**
     * Constructs a full object with all available fields.
     */
     model(){
         var obj = {};
 
-        obj['name'] = null;
-        obj['productRefId'] = null;
+        obj['name'];
+        obj['productRefId'];
 
         return obj;
     }
@@ -51,24 +61,14 @@ class ProductReducedAllOf {
             "requiredFields": {}
         };
 
-        obj["fields"]['name'] = { "type": 'String', "system": false };
-        obj["fields"]['productRefId'] = { "type": 'String', "system": false };
+        obj["fields"]['name'];
+        obj["fields"]['productRefId'];
 
         
-        obj["requiredFields"]['name'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['productRefId'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['name'];
+        obj["requiredFields"]['productRefId'];
 
         return obj;
-    }
-
-    /**
-     * Initializes the fields of this object.
-     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
-     * Only for internal use.
-     */
-    static initialize(obj, name, productRefId) { 
-        obj['name'] = name;
-        obj['productRefId'] = productRefId;
     }
 
     /**

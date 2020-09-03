@@ -20,7 +20,7 @@ import UpdateModelDefault from './UpdateModelDefault';
 /**
  * The UpdateMemberRequest model module.
  * @module model/UpdateMemberRequest
- * @version 1.0.1
+ * @version 1.0.4
  */
 class UpdateMemberRequest {
     /**
@@ -36,16 +36,26 @@ class UpdateMemberRequest {
     }
 
     /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
+    static initialize(obj, id) { 
+        obj['id'] = id;
+    }
+
+    /**
     * Constructs a full object with all available fields.
     */
     model(){
         var obj = {};
 
-        obj['id'] = null;
-        obj['name'] = null;
-        obj['memberType'] = new MemberType().model();
-        obj['groups'] = [null];
-        obj['metadata'] = [new Metadata().model()];
+        obj['id'];
+        obj['name'];
+        obj['memberRefId'];
+        obj['memberType'];
+        obj['groups'];
+        obj['metadata'];
 
         return obj;
     }
@@ -59,25 +69,17 @@ class UpdateMemberRequest {
             "requiredFields": {}
         };
 
-        obj["fields"]['id'] = { "type": 'String', "system": true };
-        obj["fields"]['name'] = { "type": 'String', "system": false };
-        obj["fields"]['memberType'] = new MemberType().modelMap();
-        obj["fields"]['groups'] = [{ "type": 'String', "system": false }];
-        obj["fields"]['metadata'] = [new Metadata().modelMap()];
+        obj["fields"]['id'];
+        obj["fields"]['name'];
+        obj["fields"]['memberRefId'];
+        obj["fields"]['memberType'];
+        obj["fields"]['groups'];
+        obj["fields"]['metadata'];
 
         
-        obj["requiredFields"]['id'] = { "type": 'String', "system": true };
+        obj["requiredFields"]['id'];
 
         return obj;
-    }
-
-    /**
-     * Initializes the fields of this object.
-     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
-     * Only for internal use.
-     */
-    static initialize(obj, id) { 
-        obj['id'] = id;
     }
 
     /**
@@ -98,6 +100,9 @@ class UpdateMemberRequest {
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
+            }
+            if (data.hasOwnProperty('memberRefId')) {
+                obj['memberRefId'] = ApiClient.convertToType(data['memberRefId'], 'String');
             }
             if (data.hasOwnProperty('memberType')) {
                 obj['memberType'] = MemberType.constructFromObject(data['memberType']);
@@ -128,6 +133,12 @@ UpdateMemberRequest.prototype['id'] = undefined;
 UpdateMemberRequest.prototype['name'] = undefined;
 
 /**
+ * The reference to this member in your system
+ * @member {String} memberRefId
+ */
+UpdateMemberRequest.prototype['memberRefId'] = undefined;
+
+/**
  * @member {module:model/MemberType} memberType
  */
 UpdateMemberRequest.prototype['memberType'] = undefined;
@@ -156,6 +167,11 @@ UpdateModelDefault.prototype['id'] = undefined;
  * @member {String} name
  */
 UpdateMemberRequestAllOf.prototype['name'] = undefined;
+/**
+ * The reference to this member in your system
+ * @member {String} memberRefId
+ */
+UpdateMemberRequestAllOf.prototype['memberRefId'] = undefined;
 /**
  * @member {module:model/MemberType} memberType
  */

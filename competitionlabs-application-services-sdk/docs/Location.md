@@ -1,4 +1,4 @@
-# @CompetitionlabsJavascriptSdk.Location
+# @CompetitionlabsApplicationServicesSdk.Location
 
 ## Properties
 

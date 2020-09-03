@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateConnectionRequest model module.
  * @module model/CreateConnectionRequest
- * @version 1.0.1
+ * @version 1.0.4
  */
 class CreateConnectionRequest {
     /**
@@ -30,12 +30,21 @@ class CreateConnectionRequest {
     }
 
     /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
+    static initialize(obj, objectType) { 
+        obj['objectType'] = objectType;
+    }
+
+    /**
     * Constructs a full object with all available fields.
     */
     model(){
         var obj = {};
 
-        obj['objectType'] = null;
+        obj['objectType'];
 
         return obj;
     }
@@ -49,21 +58,12 @@ class CreateConnectionRequest {
             "requiredFields": {}
         };
 
-        obj["fields"]['objectType'] = { "type": 'String', "system": false };
+        obj["fields"]['objectType'];
 
         
-        obj["requiredFields"]['objectType'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['objectType'];
 
         return obj;
-    }
-
-    /**
-     * Initializes the fields of this object.
-     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
-     * Only for internal use.
-     */
-    static initialize(obj, objectType) { 
-        obj['objectType'] = objectType;
     }
 
     /**

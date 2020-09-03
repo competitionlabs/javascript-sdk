@@ -18,7 +18,7 @@ import UpdateSqsConnectionRequestAllOf from './UpdateSqsConnectionRequestAllOf';
 /**
  * The UpdateSqsConnectionRequest model module.
  * @module model/UpdateSqsConnectionRequest
- * @version 1.0.1
+ * @version 1.0.4
  */
 class UpdateSqsConnectionRequest {
     /**
@@ -35,18 +35,28 @@ class UpdateSqsConnectionRequest {
     }
 
     /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
+    static initialize(obj, id, objectType) { 
+        obj['id'] = id;
+        obj['objectType'] = objectType;
+    }
+
+    /**
     * Constructs a full object with all available fields.
     */
     model(){
         var obj = {};
 
-        obj['id'] = null;
-        obj['objectType'] = null;
-        obj['name'] = null;
-        obj['uri'] = null;
-        obj['acessKey'] = null;
-        obj['secretKey'] = null;
-        obj['transformerId'] = null;
+        obj['id'];
+        obj['objectType'];
+        obj['name'];
+        obj['uri'];
+        obj['acessKey'];
+        obj['secretKey'];
+        obj['transformerId'];
 
         return obj;
     }
@@ -60,29 +70,19 @@ class UpdateSqsConnectionRequest {
             "requiredFields": {}
         };
 
-        obj["fields"]['id'] = { "type": 'String', "system": true };
-        obj["fields"]['objectType'] = { "type": 'String', "system": false };
-        obj["fields"]['name'] = { "type": 'String', "system": false };
-        obj["fields"]['uri'] = { "type": 'String', "system": false };
-        obj["fields"]['acessKey'] = { "type": 'String', "system": false };
-        obj["fields"]['secretKey'] = { "type": 'String', "system": false };
-        obj["fields"]['transformerId'] = { "type": 'String', "system": false };
+        obj["fields"]['id'];
+        obj["fields"]['objectType'];
+        obj["fields"]['name'];
+        obj["fields"]['uri'];
+        obj["fields"]['acessKey'];
+        obj["fields"]['secretKey'];
+        obj["fields"]['transformerId'];
 
         
-        obj["requiredFields"]['id'] = { "type": 'String', "system": true };
-        obj["requiredFields"]['objectType'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['id'];
+        obj["requiredFields"]['objectType'];
 
         return obj;
-    }
-
-    /**
-     * Initializes the fields of this object.
-     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
-     * Only for internal use.
-     */
-    static initialize(obj, id, objectType) { 
-        obj['id'] = id;
-        obj['objectType'] = objectType;
     }
 
     /**

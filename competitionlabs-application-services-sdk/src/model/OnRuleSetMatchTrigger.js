@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The OnRuleSetMatchTrigger model module.
  * @module model/OnRuleSetMatchTrigger
- * @version 1.0.1
+ * @version 1.0.4
  */
 class OnRuleSetMatchTrigger {
     /**
@@ -33,16 +33,28 @@ class OnRuleSetMatchTrigger {
     }
 
     /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
+    static initialize(obj, constraints, key, name, inputValueType) { 
+        obj['constraints'] = constraints;
+        obj['key'] = key;
+        obj['name'] = name;
+        obj['inputValueType'] = inputValueType;
+    }
+
+    /**
     * Constructs a full object with all available fields.
     */
     model(){
         var obj = {};
 
-        obj['constraints'] = [null];
-        obj['key'] = null;
-        obj['name'] = null;
-        obj['description'] = null;
-        obj['inputValueType'] = null;
+        obj['constraints'];
+        obj['key'];
+        obj['name'];
+        obj['description'];
+        obj['inputValueType'];
 
         return obj;
     }
@@ -56,31 +68,19 @@ class OnRuleSetMatchTrigger {
             "requiredFields": {}
         };
 
-        obj["fields"]['constraints'] = [{ "type": 'String', "system": false }];
-        obj["fields"]['key'] = { "type": 'String', "system": false };
-        obj["fields"]['name'] = { "type": 'String', "system": false };
-        obj["fields"]['description'] = { "type": 'String', "system": false };
-        obj["fields"]['inputValueType'] = { "type": 'String', "system": false };
+        obj["fields"]['constraints'];
+        obj["fields"]['key'];
+        obj["fields"]['name'];
+        obj["fields"]['description'];
+        obj["fields"]['inputValueType'];
 
         
-        obj["requiredFields"]['constraints'] = [{ "type": 'String', "system": false }];
-        obj["requiredFields"]['key'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['name'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['inputValueType'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['constraints'];
+        obj["requiredFields"]['key'];
+        obj["requiredFields"]['name'];
+        obj["requiredFields"]['inputValueType'];
 
         return obj;
-    }
-
-    /**
-     * Initializes the fields of this object.
-     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
-     * Only for internal use.
-     */
-    static initialize(obj, constraints, key, name, inputValueType) { 
-        obj['constraints'] = constraints;
-        obj['key'] = key;
-        obj['name'] = name;
-        obj['inputValueType'] = inputValueType;
     }
 
     /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SpaceTokenRequest model module.
  * @module model/SpaceTokenRequest
- * @version 1.0.1
+ * @version 1.0.4
  */
 class SpaceTokenRequest {
     /**
@@ -30,13 +30,22 @@ class SpaceTokenRequest {
     }
 
     /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
+    static initialize(obj, spaceName) { 
+        obj['spaceName'] = spaceName;
+    }
+
+    /**
     * Constructs a full object with all available fields.
     */
     model(){
         var obj = {};
 
-        obj['userToken'] = null;
-        obj['spaceName'] = null;
+        obj['userToken'];
+        obj['spaceName'];
 
         return obj;
     }
@@ -50,22 +59,13 @@ class SpaceTokenRequest {
             "requiredFields": {}
         };
 
-        obj["fields"]['userToken'] = { "type": 'String', "system": false };
-        obj["fields"]['spaceName'] = { "type": 'String', "system": true };
+        obj["fields"]['userToken'];
+        obj["fields"]['spaceName'];
 
         
-        obj["requiredFields"]['spaceName'] = { "type": 'String', "system": true };
+        obj["requiredFields"]['spaceName'];
 
         return obj;
-    }
-
-    /**
-     * Initializes the fields of this object.
-     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
-     * Only for internal use.
-     */
-    static initialize(obj, spaceName) { 
-        obj['spaceName'] = spaceName;
     }
 
     /**

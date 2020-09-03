@@ -17,7 +17,7 @@ import AchievementLiveStatus from './AchievementLiveStatus';
 /**
  * The AchievementReducedAllOf model module.
  * @module model/AchievementReducedAllOf
- * @version 1.0.1
+ * @version 1.0.4
  */
 class AchievementReducedAllOf {
     /**
@@ -32,15 +32,25 @@ class AchievementReducedAllOf {
     }
 
     /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
+    static initialize(obj, name, achievementLiveStatus) { 
+        obj['name'] = name;
+        obj['achievementLiveStatus'] = achievementLiveStatus;
+    }
+
+    /**
     * Constructs a full object with all available fields.
     */
     model(){
         var obj = {};
 
-        obj['name'] = null;
-        obj['achievementLiveStatus'] = new AchievementLiveStatus().model();
-        obj['category'] = [null];
-        obj['memberGroups'] = [null];
+        obj['name'];
+        obj['achievementLiveStatus'];
+        obj['category'];
+        obj['memberGroups'];
 
         return obj;
     }
@@ -54,26 +64,16 @@ class AchievementReducedAllOf {
             "requiredFields": {}
         };
 
-        obj["fields"]['name'] = { "type": 'String', "system": false };
-        obj["fields"]['achievementLiveStatus'] = new AchievementLiveStatus().modelMap();
-        obj["fields"]['category'] = [{ "type": 'String', "system": false }];
-        obj["fields"]['memberGroups'] = [{ "type": 'String', "system": false }];
+        obj["fields"]['name'];
+        obj["fields"]['achievementLiveStatus'];
+        obj["fields"]['category'];
+        obj["fields"]['memberGroups'];
 
         
-        obj["requiredFields"]['name'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['achievementLiveStatus'] = new AchievementLiveStatus().modelMap();
+        obj["requiredFields"]['name'];
+        obj["requiredFields"]['achievementLiveStatus'];
 
         return obj;
-    }
-
-    /**
-     * Initializes the fields of this object.
-     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
-     * Only for internal use.
-     */
-    static initialize(obj, name, achievementLiveStatus) { 
-        obj['name'] = name;
-        obj['achievementLiveStatus'] = achievementLiveStatus;
     }
 
     /**

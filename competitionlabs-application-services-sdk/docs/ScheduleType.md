@@ -1,4 +1,4 @@
-# @CompetitionlabsJavascriptSdk.ScheduleType
+# @CompetitionlabsApplicationServicesSdk.ScheduleType
 
 ## Enum
 

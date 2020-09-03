@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ScoringStrategy model module.
  * @module model/ScoringStrategy
- * @version 1.0.1
+ * @version 1.0.4
  */
 class ScoringStrategy {
     /**
@@ -33,15 +33,27 @@ class ScoringStrategy {
     }
 
     /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
+    static initialize(obj, limitUpdatesTo, sumBestXOf, lastUpdateTimeStamp, recordTimeWhenSumReaches) { 
+        obj['limitUpdatesTo'] = limitUpdatesTo;
+        obj['sumBestXOf'] = sumBestXOf;
+        obj['lastUpdateTimeStamp'] = lastUpdateTimeStamp;
+        obj['recordTimeWhenSumReaches'] = recordTimeWhenSumReaches;
+    }
+
+    /**
     * Constructs a full object with all available fields.
     */
     model(){
         var obj = {};
 
-        obj['limitUpdatesTo'] = null;
-        obj['sumBestXOf'] = null;
-        obj['lastUpdateTimeStamp'] = null;
-        obj['recordTimeWhenSumReaches'] = null;
+        obj['limitUpdatesTo'];
+        obj['sumBestXOf'];
+        obj['lastUpdateTimeStamp'];
+        obj['recordTimeWhenSumReaches'];
 
         return obj;
     }
@@ -55,30 +67,18 @@ class ScoringStrategy {
             "requiredFields": {}
         };
 
-        obj["fields"]['limitUpdatesTo'] = { "type": 'Number', "system": false };
-        obj["fields"]['sumBestXOf'] = { "type": 'Number', "system": false };
-        obj["fields"]['lastUpdateTimeStamp'] = { "type": 'Number', "system": false };
-        obj["fields"]['recordTimeWhenSumReaches'] = { "type": 'Number', "system": false };
+        obj["fields"]['limitUpdatesTo'];
+        obj["fields"]['sumBestXOf'];
+        obj["fields"]['lastUpdateTimeStamp'];
+        obj["fields"]['recordTimeWhenSumReaches'];
 
         
-        obj["requiredFields"]['limitUpdatesTo'] = { "type": 'Number', "system": false };
-        obj["requiredFields"]['sumBestXOf'] = { "type": 'Number', "system": false };
-        obj["requiredFields"]['lastUpdateTimeStamp'] = { "type": 'Number', "system": false };
-        obj["requiredFields"]['recordTimeWhenSumReaches'] = { "type": 'Number', "system": false };
+        obj["requiredFields"]['limitUpdatesTo'];
+        obj["requiredFields"]['sumBestXOf'];
+        obj["requiredFields"]['lastUpdateTimeStamp'];
+        obj["requiredFields"]['recordTimeWhenSumReaches'];
 
         return obj;
-    }
-
-    /**
-     * Initializes the fields of this object.
-     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
-     * Only for internal use.
-     */
-    static initialize(obj, limitUpdatesTo, sumBestXOf, lastUpdateTimeStamp, recordTimeWhenSumReaches) { 
-        obj['limitUpdatesTo'] = limitUpdatesTo;
-        obj['sumBestXOf'] = sumBestXOf;
-        obj['lastUpdateTimeStamp'] = lastUpdateTimeStamp;
-        obj['recordTimeWhenSumReaches'] = recordTimeWhenSumReaches;
     }
 
     /**
@@ -114,23 +114,20 @@ class ScoringStrategy {
 /**
  * The scoring strategies types \"SumBest\" value
  * @member {Number} limitUpdatesTo
- * @default 0
  */
-ScoringStrategy.prototype['limitUpdatesTo'] = 0;
+ScoringStrategy.prototype['limitUpdatesTo'] = undefined;
 
 /**
  * The scoring strategies types \"LimitedTo\" value
  * @member {Number} sumBestXOf
- * @default 0
  */
-ScoringStrategy.prototype['sumBestXOf'] = 0;
+ScoringStrategy.prototype['sumBestXOf'] = undefined;
 
 /**
  * The scoring strategies types \"FirstTo\" value
  * @member {Number} lastUpdateTimeStamp
- * @default 0
  */
-ScoringStrategy.prototype['lastUpdateTimeStamp'] = 0;
+ScoringStrategy.prototype['lastUpdateTimeStamp'] = undefined;
 
 /**
  * Not supported at the moment

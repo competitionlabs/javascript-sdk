@@ -12,25 +12,34 @@
  */
 
 import ApiClient from '../ApiClient';
-import LanguageAllOf from './LanguageAllOf';
+import UpdateLanguageRequestAllOf from './UpdateLanguageRequestAllOf';
 import UpdateModelDefault from './UpdateModelDefault';
 
 /**
  * The UpdateLanguageRequest model module.
  * @module model/UpdateLanguageRequest
- * @version 1.0.1
+ * @version 1.0.4
  */
 class UpdateLanguageRequest {
     /**
      * Constructs a new <code>UpdateLanguageRequest</code>.
      * @alias module:model/UpdateLanguageRequest
      * @implements module:model/UpdateModelDefault
-     * @implements module:model/LanguageAllOf
+     * @implements module:model/UpdateLanguageRequestAllOf
      * @param id {String} A unique system generated identifier
      */
     constructor(id) { 
-        UpdateModelDefault.initialize(this, id);LanguageAllOf.initialize(this);
+        UpdateModelDefault.initialize(this, id);UpdateLanguageRequestAllOf.initialize(this);
         UpdateLanguageRequest.initialize(this, id);
+    }
+
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
+    static initialize(obj, id) { 
+        obj['id'] = id;
     }
 
     /**
@@ -39,8 +48,9 @@ class UpdateLanguageRequest {
     model(){
         var obj = {};
 
-        obj['id'] = null;
-        obj['references'] = [null];
+        obj['id'];
+        obj['languageKey'];
+        obj['references'];
 
         return obj;
     }
@@ -54,22 +64,14 @@ class UpdateLanguageRequest {
             "requiredFields": {}
         };
 
-        obj["fields"]['id'] = { "type": 'String', "system": true };
-        obj["fields"]['references'] = [{ "type": 'String', "system": false }];
+        obj["fields"]['id'];
+        obj["fields"]['languageKey'];
+        obj["fields"]['references'];
 
         
-        obj["requiredFields"]['id'] = { "type": 'String', "system": true };
+        obj["requiredFields"]['id'];
 
         return obj;
-    }
-
-    /**
-     * Initializes the fields of this object.
-     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
-     * Only for internal use.
-     */
-    static initialize(obj, id) { 
-        obj['id'] = id;
     }
 
     /**
@@ -83,10 +85,13 @@ class UpdateLanguageRequest {
         if (data) {
             obj = obj || new UpdateLanguageRequest();
             UpdateModelDefault.constructFromObject(data, obj);
-            LanguageAllOf.constructFromObject(data, obj);
+            UpdateLanguageRequestAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'String');
+            }
+            if (data.hasOwnProperty('languageKey')) {
+                obj['languageKey'] = ApiClient.convertToType(data['languageKey'], 'String');
             }
             if (data.hasOwnProperty('references')) {
                 obj['references'] = ApiClient.convertToType(data['references'], ['String']);
@@ -106,6 +111,12 @@ UpdateLanguageRequest.prototype['id'] = undefined;
 
 /**
  * A reference to the pre created language keys
+ * @member {String} languageKey
+ */
+UpdateLanguageRequest.prototype['languageKey'] = undefined;
+
+/**
+ * A reference to the pre created language keys
  * @member {Array.<String>} references
  */
 UpdateLanguageRequest.prototype['references'] = undefined;
@@ -117,12 +128,17 @@ UpdateLanguageRequest.prototype['references'] = undefined;
  * @member {String} id
  */
 UpdateModelDefault.prototype['id'] = undefined;
-// Implement LanguageAllOf interface:
+// Implement UpdateLanguageRequestAllOf interface:
+/**
+ * A reference to the pre created language keys
+ * @member {String} languageKey
+ */
+UpdateLanguageRequestAllOf.prototype['languageKey'] = undefined;
 /**
  * A reference to the pre created language keys
  * @member {Array.<String>} references
  */
-LanguageAllOf.prototype['references'] = undefined;
+UpdateLanguageRequestAllOf.prototype['references'] = undefined;
 
 
 

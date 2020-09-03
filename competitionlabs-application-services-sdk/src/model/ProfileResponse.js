@@ -19,7 +19,7 @@ import User from './User';
 /**
  * The ProfileResponse model module.
  * @module model/ProfileResponse
- * @version 1.0.1
+ * @version 1.0.4
  */
 class ProfileResponse {
     /**
@@ -33,14 +33,23 @@ class ProfileResponse {
     }
 
     /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
+    static initialize(obj, meta) { 
+        obj['meta'] = meta;
+    }
+
+    /**
     * Constructs a full object with all available fields.
     */
     model(){
         var obj = {};
 
-        obj['meta'] = new MetaExtended().model();
-        obj['result'] = new User().model();
-        obj['errors'] = [new Error().model()];
+        obj['meta'];
+        obj['result'];
+        obj['errors'];
 
         return obj;
     }
@@ -54,23 +63,14 @@ class ProfileResponse {
             "requiredFields": {}
         };
 
-        obj["fields"]['meta'] = new MetaExtended().modelMap();
-        obj["fields"]['result'] = new User().modelMap();
-        obj["fields"]['errors'] = [new Error().modelMap()];
+        obj["fields"]['meta'];
+        obj["fields"]['result'];
+        obj["fields"]['errors'];
 
         
-        obj["requiredFields"]['meta'] = new MetaExtended().modelMap();
+        obj["requiredFields"]['meta'];
 
         return obj;
-    }
-
-    /**
-     * Initializes the fields of this object.
-     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
-     * Only for internal use.
-     */
-    static initialize(obj, meta) { 
-        obj['meta'] = meta;
     }
 
     /**

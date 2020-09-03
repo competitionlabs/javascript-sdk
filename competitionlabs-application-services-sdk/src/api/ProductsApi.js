@@ -25,7 +25,7 @@ import UpdateProductRequest from '../model/UpdateProductRequest';
 /**
 * Products service.
 * @module api/ProductsApi
-* @version 1.0.1
+* @version 1.0.4
 */
 export default class ProductsApi {
 
@@ -204,8 +204,8 @@ export default class ProductsApi {
      * @param {Object} opts Optional parameters
      * @param {String} opts.X_API_KEY The admin API Key generated from CompetitionLabs back office
      * @param {String} opts.achievementId Id of an Achievement
-     * @param {Number} opts.limit Limit the returned total records found (default to 20)
-     * @param {Number} opts.skip Skip the returned records found and return the next batch of records (default to 0)
+     * @param {Number} opts.limit Limit the returned total records found
+     * @param {Number} opts.skip Skip the returned records found and return the next batch of records
      * @param {module:api/ProductsApi~getAchievementsForProductsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/AchievementReducedResponse}
      */
@@ -262,8 +262,8 @@ export default class ProductsApi {
      * @param {Object} opts Optional parameters
      * @param {String} opts.X_API_KEY The admin API Key generated from CompetitionLabs back office
      * @param {String} opts.competitionId Id of a Competition
-     * @param {Number} opts.limit Limit the returned total records found (default to 20)
-     * @param {Number} opts.skip Skip the returned records found and return the next batch of records (default to 0)
+     * @param {Number} opts.limit Limit the returned total records found
+     * @param {Number} opts.skip Skip the returned records found and return the next batch of records
      * @param {module:api/ProductsApi~getCompetitionsForProductsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/CompetitionReducedResponse}
      */
@@ -320,8 +320,8 @@ export default class ProductsApi {
      * @param {Object} opts Optional parameters
      * @param {String} opts.X_API_KEY The admin API Key generated from CompetitionLabs back office
      * @param {String} opts.contestId Id of a Contest
-     * @param {Number} opts.limit Limit the returned total records found (default to 20)
-     * @param {Number} opts.skip Skip the returned records found and return the next batch of records (default to 0)
+     * @param {Number} opts.limit Limit the returned total records found
+     * @param {Number} opts.skip Skip the returned records found and return the next batch of records
      * @param {module:api/ProductsApi~getContestsForProductsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ContestReducedResponse}
      */
@@ -377,8 +377,8 @@ export default class ProductsApi {
      * @param {Object} opts Optional parameters
      * @param {String} opts.X_API_KEY The admin API Key generated from CompetitionLabs back office
      * @param {Array.<String>} opts.id The unique identifiers of the resources
-     * @param {Number} opts.limit Limit the returned total records found (default to 20)
-     * @param {Number} opts.skip Skip the returned records found and return the next batch of records (default to 0)
+     * @param {Number} opts.limit Limit the returned total records found
+     * @param {Number} opts.skip Skip the returned records found and return the next batch of records
      * @param {module:api/ProductsApi~getProductsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ProductResponse}
      */

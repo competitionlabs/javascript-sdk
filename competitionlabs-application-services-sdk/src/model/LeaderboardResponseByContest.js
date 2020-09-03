@@ -17,7 +17,7 @@ import Leaderboard from './Leaderboard';
 /**
  * The LeaderboardResponseByContest model module.
  * @module model/LeaderboardResponseByContest
- * @version 1.0.1
+ * @version 1.0.4
  */
 class LeaderboardResponseByContest {
     /**
@@ -33,15 +33,26 @@ class LeaderboardResponseByContest {
     }
 
     /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
+    static initialize(obj, contestId, name, round) { 
+        obj['contestId'] = contestId;
+        obj['name'] = name;
+        obj['round'] = round;
+    }
+
+    /**
     * Constructs a full object with all available fields.
     */
     model(){
         var obj = {};
 
-        obj['contestId'] = null;
-        obj['name'] = null;
-        obj['round'] = null;
-        obj['leaderboard'] = [new Leaderboard().model()];
+        obj['contestId'];
+        obj['name'];
+        obj['round'];
+        obj['leaderboard'];
 
         return obj;
     }
@@ -55,28 +66,17 @@ class LeaderboardResponseByContest {
             "requiredFields": {}
         };
 
-        obj["fields"]['contestId'] = { "type": 'String', "system": false };
-        obj["fields"]['name'] = { "type": 'String', "system": false };
-        obj["fields"]['round'] = { "type": 'Number', "system": false };
-        obj["fields"]['leaderboard'] = [new Leaderboard().modelMap()];
+        obj["fields"]['contestId'];
+        obj["fields"]['name'];
+        obj["fields"]['round'];
+        obj["fields"]['leaderboard'];
 
         
-        obj["requiredFields"]['contestId'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['name'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['round'] = { "type": 'Number', "system": false };
+        obj["requiredFields"]['contestId'];
+        obj["requiredFields"]['name'];
+        obj["requiredFields"]['round'];
 
         return obj;
-    }
-
-    /**
-     * Initializes the fields of this object.
-     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
-     * Only for internal use.
-     */
-    static initialize(obj, contestId, name, round) { 
-        obj['contestId'] = contestId;
-        obj['name'] = name;
-        obj['round'] = round;
     }
 
     /**
@@ -124,9 +124,8 @@ LeaderboardResponseByContest.prototype['name'] = undefined;
 /**
  * To what round does the contest belong
  * @member {Number} round
- * @default 1
  */
-LeaderboardResponseByContest.prototype['round'] = 1;
+LeaderboardResponseByContest.prototype['round'] = undefined;
 
 /**
  * @member {Array.<module:model/Leaderboard>} leaderboard

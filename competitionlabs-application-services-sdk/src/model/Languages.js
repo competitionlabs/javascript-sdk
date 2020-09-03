@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Languages model module.
  * @module model/Languages
- * @version 1.0.1
+ * @version 1.0.4
  */
 class Languages {
     /**
@@ -31,13 +31,23 @@ class Languages {
     }
 
     /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
+    static initialize(obj, key, name) { 
+        obj['key'] = key;
+        obj['name'] = name;
+    }
+
+    /**
     * Constructs a full object with all available fields.
     */
     model(){
         var obj = {};
 
-        obj['key'] = null;
-        obj['name'] = null;
+        obj['key'];
+        obj['name'];
 
         return obj;
     }
@@ -51,24 +61,14 @@ class Languages {
             "requiredFields": {}
         };
 
-        obj["fields"]['key'] = { "type": 'String', "system": false };
-        obj["fields"]['name'] = { "type": 'String', "system": false };
+        obj["fields"]['key'];
+        obj["fields"]['name'];
 
         
-        obj["requiredFields"]['key'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['name'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['key'];
+        obj["requiredFields"]['name'];
 
         return obj;
-    }
-
-    /**
-     * Initializes the fields of this object.
-     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
-     * Only for internal use.
-     */
-    static initialize(obj, key, name) { 
-        obj['key'] = key;
-        obj['name'] = name;
     }
 
     /**

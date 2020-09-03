@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The EventMetadata model module.
  * @module model/EventMetadata
- * @version 1.0.1
+ * @version 1.0.4
  */
 class EventMetadata {
     /**
@@ -30,14 +30,23 @@ class EventMetadata {
     }
 
     /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
+    static initialize(obj, key) { 
+        obj['key'] = key;
+    }
+
+    /**
     * Constructs a full object with all available fields.
     */
     model(){
         var obj = {};
 
-        obj['key'] = null;
-        obj['text'] = null;
-        obj['number'] = null;
+        obj['key'];
+        obj['textArray'];
+        obj['numberArray'];
 
         return obj;
     }
@@ -51,23 +60,14 @@ class EventMetadata {
             "requiredFields": {}
         };
 
-        obj["fields"]['key'] = { "type": 'String', "system": false };
-        obj["fields"]['text'] = { "type": 'String', "system": false };
-        obj["fields"]['number'] = { "type": 'Number', "system": false };
+        obj["fields"]['key'];
+        obj["fields"]['textArray'];
+        obj["fields"]['numberArray'];
 
         
-        obj["requiredFields"]['key'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['key'];
 
         return obj;
-    }
-
-    /**
-     * Initializes the fields of this object.
-     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
-     * Only for internal use.
-     */
-    static initialize(obj, key) { 
-        obj['key'] = key;
     }
 
     /**
@@ -84,11 +84,11 @@ class EventMetadata {
             if (data.hasOwnProperty('key')) {
                 obj['key'] = ApiClient.convertToType(data['key'], 'String');
             }
-            if (data.hasOwnProperty('text')) {
-                obj['text'] = ApiClient.convertToType(data['text'], 'String');
+            if (data.hasOwnProperty('textArray')) {
+                obj['textArray'] = ApiClient.convertToType(data['textArray'], ['String']);
             }
-            if (data.hasOwnProperty('number')) {
-                obj['number'] = ApiClient.convertToType(data['number'], 'Number');
+            if (data.hasOwnProperty('numberArray')) {
+                obj['numberArray'] = ApiClient.convertToType(data['numberArray'], ['Number']);
             }
         }
         return obj;
@@ -104,16 +104,16 @@ class EventMetadata {
 EventMetadata.prototype['key'] = undefined;
 
 /**
- * The data that is identified
- * @member {String} text
+ * Metadata as text array
+ * @member {Array.<String>} textArray
  */
-EventMetadata.prototype['text'] = undefined;
+EventMetadata.prototype['textArray'] = undefined;
 
 /**
- * The data that is identified
- * @member {Number} number
+ * Metadata as number array
+ * @member {Array.<Number>} numberArray
  */
-EventMetadata.prototype['number'] = undefined;
+EventMetadata.prototype['numberArray'] = undefined;
 
 
 

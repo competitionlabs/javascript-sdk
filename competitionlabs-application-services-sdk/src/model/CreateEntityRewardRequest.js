@@ -19,7 +19,7 @@ import Translation from './Translation';
 /**
  * The CreateEntityRewardRequest model module.
  * @module model/CreateEntityRewardRequest
- * @version 1.0.1
+ * @version 1.0.4
  */
 class CreateEntityRewardRequest {
     /**
@@ -38,26 +38,39 @@ class CreateEntityRewardRequest {
     }
 
     /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
+    static initialize(obj, entityType, entityId, rewardRank, rewardName, value, rewardTypeId) { 
+        obj['entityType'] = entityType;
+        obj['entityId'] = entityId;
+        obj['rewardRank'] = rewardRank;
+        obj['rewardName'] = rewardName;
+        obj['value'] = value;
+        obj['rewardTypeId'] = rewardTypeId;
+    }
+
+    /**
     * Constructs a full object with all available fields.
     */
     model(){
         var obj = {};
 
-        obj['entityType'] = new EntityType().model();
-        obj['entityId'] = null;
-        obj['rewardRank'] = null;
-        obj['rewardName'] = null;
-        obj['value'] = null;
-        obj['rewardTypeId'] = null;
-        obj['description'] = null;
-        obj['delay'] = null;
-        obj['icon'] = null;
-        obj['isMemberAcknowledgmentRequired'] = null;
-        obj['metadata'] = [new Metadata().model()];
-        obj['pointInTime'] = null;
-        obj['period'] = null;
-        obj['translations'] = [new Translation().model()];
-        obj['constraints'] = [null];
+        obj['entityType'];
+        obj['entityId'];
+        obj['rewardRank'];
+        obj['rewardName'];
+        obj['value'];
+        obj['rewardTypeId'];
+        obj['description'];
+        obj['delay'];
+        obj['icon'];
+        obj['metadata'];
+        obj['pointInTime'];
+        obj['period'];
+        obj['translations'];
+        obj['constraints'];
 
         return obj;
     }
@@ -71,45 +84,30 @@ class CreateEntityRewardRequest {
             "requiredFields": {}
         };
 
-        obj["fields"]['entityType'] = new EntityType().modelMap();
-        obj["fields"]['entityId'] = { "type": 'String', "system": false };
-        obj["fields"]['rewardRank'] = { "type": 'String', "system": false };
-        obj["fields"]['rewardName'] = { "type": 'String', "system": false };
-        obj["fields"]['value'] = { "type": 'Number', "system": false };
-        obj["fields"]['rewardTypeId'] = { "type": 'String', "system": false };
-        obj["fields"]['description'] = { "type": 'String', "system": false };
-        obj["fields"]['delay'] = { "type": 'Number', "system": false };
-        obj["fields"]['icon'] = { "type": 'String', "system": false };
-        obj["fields"]['isMemberAcknowledgmentRequired'] = { "type": 'Boolean', "system": false };
-        obj["fields"]['metadata'] = [new Metadata().modelMap()];
-        obj["fields"]['pointInTime'] = { "type": 'Date', "system": false };
-        obj["fields"]['period'] = { "type": 'Number', "system": false };
-        obj["fields"]['translations'] = [new Translation().modelMap()];
-        obj["fields"]['constraints'] = [{ "type": 'String', "system": false }];
+        obj["fields"]['entityType'];
+        obj["fields"]['entityId'];
+        obj["fields"]['rewardRank'];
+        obj["fields"]['rewardName'];
+        obj["fields"]['value'];
+        obj["fields"]['rewardTypeId'];
+        obj["fields"]['description'];
+        obj["fields"]['delay'];
+        obj["fields"]['icon'];
+        obj["fields"]['metadata'];
+        obj["fields"]['pointInTime'];
+        obj["fields"]['period'];
+        obj["fields"]['translations'];
+        obj["fields"]['constraints'];
 
         
-        obj["requiredFields"]['entityType'] = new EntityType().modelMap();
-        obj["requiredFields"]['entityId'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['rewardRank'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['rewardName'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['value'] = { "type": 'Number', "system": false };
-        obj["requiredFields"]['rewardTypeId'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['entityType'];
+        obj["requiredFields"]['entityId'];
+        obj["requiredFields"]['rewardRank'];
+        obj["requiredFields"]['rewardName'];
+        obj["requiredFields"]['value'];
+        obj["requiredFields"]['rewardTypeId'];
 
         return obj;
-    }
-
-    /**
-     * Initializes the fields of this object.
-     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
-     * Only for internal use.
-     */
-    static initialize(obj, entityType, entityId, rewardRank, rewardName, value, rewardTypeId) { 
-        obj['entityType'] = entityType;
-        obj['entityId'] = entityId;
-        obj['rewardRank'] = rewardRank;
-        obj['rewardName'] = rewardName;
-        obj['value'] = value;
-        obj['rewardTypeId'] = rewardTypeId;
     }
 
     /**
@@ -149,9 +147,6 @@ class CreateEntityRewardRequest {
             }
             if (data.hasOwnProperty('icon')) {
                 obj['icon'] = ApiClient.convertToType(data['icon'], 'String');
-            }
-            if (data.hasOwnProperty('isMemberAcknowledgmentRequired')) {
-                obj['isMemberAcknowledgmentRequired'] = ApiClient.convertToType(data['isMemberAcknowledgmentRequired'], 'Boolean');
             }
             if (data.hasOwnProperty('metadata')) {
                 obj['metadata'] = ApiClient.convertToType(data['metadata'], [Metadata]);
@@ -219,22 +214,14 @@ CreateEntityRewardRequest.prototype['description'] = undefined;
 /**
  * Delay of issuing a reward in minutes
  * @member {Number} delay
- * @default 0
  */
-CreateEntityRewardRequest.prototype['delay'] = 0;
+CreateEntityRewardRequest.prototype['delay'] = undefined;
 
 /**
  * An Icon id that has been pre uploaded to the system to display for Achievement
  * @member {String} icon
  */
 CreateEntityRewardRequest.prototype['icon'] = undefined;
-
-/**
- * Requires member acknowledgment to claim a reward. If set to True reward will not be automatically issued
- * @member {Boolean} isMemberAcknowledgmentRequired
- * @default false
- */
-CreateEntityRewardRequest.prototype['isMemberAcknowledgmentRequired'] = false;
 
 /**
  * @member {Array.<module:model/Metadata>} metadata
@@ -250,9 +237,8 @@ CreateEntityRewardRequest.prototype['pointInTime'] = undefined;
 /**
  * Reward available for a period of time from issuing in minutes
  * @member {Number} period
- * @default 0
  */
-CreateEntityRewardRequest.prototype['period'] = 0;
+CreateEntityRewardRequest.prototype['period'] = undefined;
 
 /**
  * @member {Array.<module:model/Translation>} translations

@@ -13,22 +13,36 @@
 
 import ApiClient from '../ApiClient';
 import CompetitionStatusActions from './CompetitionStatusActions';
+import UpdateCompetitionStatusRequestAllOf from './UpdateCompetitionStatusRequestAllOf';
+import UpdateModelDefault from './UpdateModelDefault';
 
 /**
  * The UpdateCompetitionStatusRequest model module.
  * @module model/UpdateCompetitionStatusRequest
- * @version 1.0.1
+ * @version 1.0.4
  */
 class UpdateCompetitionStatusRequest {
     /**
      * Constructs a new <code>UpdateCompetitionStatusRequest</code>.
      * @alias module:model/UpdateCompetitionStatusRequest
-     * @param competitionId {String} Unique competition identifier
+     * @implements module:model/UpdateModelDefault
+     * @implements module:model/UpdateCompetitionStatusRequestAllOf
+     * @param id {String} A unique system generated identifier
      * @param status {module:model/CompetitionStatusActions} 
      */
-    constructor(competitionId, status) { 
-        
-        UpdateCompetitionStatusRequest.initialize(this, competitionId, status);
+    constructor(id, status) { 
+        UpdateModelDefault.initialize(this, id);UpdateCompetitionStatusRequestAllOf.initialize(this, status);
+        UpdateCompetitionStatusRequest.initialize(this, id, status);
+    }
+
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
+    static initialize(obj, id, status) { 
+        obj['id'] = id;
+        obj['status'] = status;
     }
 
     /**
@@ -37,8 +51,8 @@ class UpdateCompetitionStatusRequest {
     model(){
         var obj = {};
 
-        obj['competitionId'] = null;
-        obj['status'] = new CompetitionStatusActions().model();
+        obj['id'];
+        obj['status'];
 
         return obj;
     }
@@ -52,24 +66,14 @@ class UpdateCompetitionStatusRequest {
             "requiredFields": {}
         };
 
-        obj["fields"]['competitionId'] = { "type": 'String', "system": false };
-        obj["fields"]['status'] = new CompetitionStatusActions().modelMap();
+        obj["fields"]['id'];
+        obj["fields"]['status'];
 
         
-        obj["requiredFields"]['competitionId'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['status'] = new CompetitionStatusActions().modelMap();
+        obj["requiredFields"]['id'];
+        obj["requiredFields"]['status'];
 
         return obj;
-    }
-
-    /**
-     * Initializes the fields of this object.
-     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
-     * Only for internal use.
-     */
-    static initialize(obj, competitionId, status) { 
-        obj['competitionId'] = competitionId;
-        obj['status'] = status;
     }
 
     /**
@@ -82,9 +86,11 @@ class UpdateCompetitionStatusRequest {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new UpdateCompetitionStatusRequest();
+            UpdateModelDefault.constructFromObject(data, obj);
+            UpdateCompetitionStatusRequestAllOf.constructFromObject(data, obj);
 
-            if (data.hasOwnProperty('competitionId')) {
-                obj['competitionId'] = ApiClient.convertToType(data['competitionId'], 'String');
+            if (data.hasOwnProperty('id')) {
+                obj['id'] = ApiClient.convertToType(data['id'], 'String');
             }
             if (data.hasOwnProperty('status')) {
                 obj['status'] = CompetitionStatusActions.constructFromObject(data['status']);
@@ -97,10 +103,10 @@ class UpdateCompetitionStatusRequest {
 }
 
 /**
- * Unique competition identifier
- * @member {String} competitionId
+ * A unique system generated identifier
+ * @member {String} id
  */
-UpdateCompetitionStatusRequest.prototype['competitionId'] = undefined;
+UpdateCompetitionStatusRequest.prototype['id'] = undefined;
 
 /**
  * @member {module:model/CompetitionStatusActions} status
@@ -108,6 +114,17 @@ UpdateCompetitionStatusRequest.prototype['competitionId'] = undefined;
 UpdateCompetitionStatusRequest.prototype['status'] = undefined;
 
 
+// Implement UpdateModelDefault interface:
+/**
+ * A unique system generated identifier
+ * @member {String} id
+ */
+UpdateModelDefault.prototype['id'] = undefined;
+// Implement UpdateCompetitionStatusRequestAllOf interface:
+/**
+ * @member {module:model/CompetitionStatusActions} status
+ */
+UpdateCompetitionStatusRequestAllOf.prototype['status'] = undefined;
 
 
 

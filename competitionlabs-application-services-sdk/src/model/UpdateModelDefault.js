@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateModelDefault model module.
  * @module model/UpdateModelDefault
- * @version 1.0.1
+ * @version 1.0.4
  */
 class UpdateModelDefault {
     /**
@@ -30,12 +30,21 @@ class UpdateModelDefault {
     }
 
     /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
+    static initialize(obj, id) { 
+        obj['id'] = id;
+    }
+
+    /**
     * Constructs a full object with all available fields.
     */
     model(){
         var obj = {};
 
-        obj['id'] = null;
+        obj['id'];
 
         return obj;
     }
@@ -49,21 +58,12 @@ class UpdateModelDefault {
             "requiredFields": {}
         };
 
-        obj["fields"]['id'] = { "type": 'String', "system": true };
+        obj["fields"]['id'];
 
         
-        obj["requiredFields"]['id'] = { "type": 'String', "system": true };
+        obj["requiredFields"]['id'];
 
         return obj;
-    }
-
-    /**
-     * Initializes the fields of this object.
-     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
-     * Only for internal use.
-     */
-    static initialize(obj, id) { 
-        obj['id'] = id;
     }
 
     /**

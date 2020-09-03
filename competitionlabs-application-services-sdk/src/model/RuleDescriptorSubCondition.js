@@ -18,7 +18,7 @@ import RuleDescriptorSubFact from './RuleDescriptorSubFact';
 /**
  * The RuleDescriptorSubCondition model module.
  * @module model/RuleDescriptorSubCondition
- * @version 1.0.1
+ * @version 1.0.4
  */
 class RuleDescriptorSubCondition {
     /**
@@ -33,14 +33,24 @@ class RuleDescriptorSubCondition {
     }
 
     /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
+    static initialize(obj, constraints, matchCondition) { 
+        obj['constraints'] = constraints;
+        obj['matchCondition'] = matchCondition;
+    }
+
+    /**
     * Constructs a full object with all available fields.
     */
     model(){
         var obj = {};
 
-        obj['constraints'] = [null];
-        obj['matchCondition'] = new MatchCondition().model();
-        obj['subFacts'] = [new RuleDescriptorSubFact().model()];
+        obj['constraints'];
+        obj['matchCondition'];
+        obj['subFacts'];
 
         return obj;
     }
@@ -54,25 +64,15 @@ class RuleDescriptorSubCondition {
             "requiredFields": {}
         };
 
-        obj["fields"]['constraints'] = [{ "type": 'String', "system": false }];
-        obj["fields"]['matchCondition'] = new MatchCondition().modelMap();
-        obj["fields"]['subFacts'] = [new RuleDescriptorSubFact().modelMap()];
+        obj["fields"]['constraints'];
+        obj["fields"]['matchCondition'];
+        obj["fields"]['subFacts'];
 
         
-        obj["requiredFields"]['constraints'] = [{ "type": 'String', "system": false }];
-        obj["requiredFields"]['matchCondition'] = new MatchCondition().modelMap();
+        obj["requiredFields"]['constraints'];
+        obj["requiredFields"]['matchCondition'];
 
         return obj;
-    }
-
-    /**
-     * Initializes the fields of this object.
-     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
-     * Only for internal use.
-     */
-    static initialize(obj, constraints, matchCondition) { 
-        obj['constraints'] = constraints;
-        obj['matchCondition'] = matchCondition;
     }
 
     /**

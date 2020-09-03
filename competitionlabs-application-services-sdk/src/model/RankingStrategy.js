@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RankingStrategy model module.
  * @module model/RankingStrategy
- * @version 1.0.1
+ * @version 1.0.4
  */
 class RankingStrategy {
     /**
@@ -34,16 +34,29 @@ class RankingStrategy {
     }
 
     /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
+    static initialize(obj, scoreDesc, timeDesc, scoreFirst, ignoreTime, ignoreScore) { 
+        obj['scoreDesc'] = scoreDesc;
+        obj['timeDesc'] = timeDesc;
+        obj['scoreFirst'] = scoreFirst;
+        obj['ignoreTime'] = ignoreTime;
+        obj['ignoreScore'] = ignoreScore;
+    }
+
+    /**
     * Constructs a full object with all available fields.
     */
     model(){
         var obj = {};
 
-        obj['scoreDesc'] = null;
-        obj['timeDesc'] = null;
-        obj['scoreFirst'] = null;
-        obj['ignoreTime'] = null;
-        obj['ignoreScore'] = null;
+        obj['scoreDesc'];
+        obj['timeDesc'];
+        obj['scoreFirst'];
+        obj['ignoreTime'];
+        obj['ignoreScore'];
 
         return obj;
     }
@@ -57,33 +70,20 @@ class RankingStrategy {
             "requiredFields": {}
         };
 
-        obj["fields"]['scoreDesc'] = { "type": 'Boolean', "system": false };
-        obj["fields"]['timeDesc'] = { "type": 'Boolean', "system": false };
-        obj["fields"]['scoreFirst'] = { "type": 'Boolean', "system": false };
-        obj["fields"]['ignoreTime'] = { "type": 'Boolean', "system": false };
-        obj["fields"]['ignoreScore'] = { "type": 'Boolean', "system": false };
+        obj["fields"]['scoreDesc'];
+        obj["fields"]['timeDesc'];
+        obj["fields"]['scoreFirst'];
+        obj["fields"]['ignoreTime'];
+        obj["fields"]['ignoreScore'];
 
         
-        obj["requiredFields"]['scoreDesc'] = { "type": 'Boolean', "system": false };
-        obj["requiredFields"]['timeDesc'] = { "type": 'Boolean', "system": false };
-        obj["requiredFields"]['scoreFirst'] = { "type": 'Boolean', "system": false };
-        obj["requiredFields"]['ignoreTime'] = { "type": 'Boolean', "system": false };
-        obj["requiredFields"]['ignoreScore'] = { "type": 'Boolean', "system": false };
+        obj["requiredFields"]['scoreDesc'];
+        obj["requiredFields"]['timeDesc'];
+        obj["requiredFields"]['scoreFirst'];
+        obj["requiredFields"]['ignoreTime'];
+        obj["requiredFields"]['ignoreScore'];
 
         return obj;
-    }
-
-    /**
-     * Initializes the fields of this object.
-     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
-     * Only for internal use.
-     */
-    static initialize(obj, scoreDesc, timeDesc, scoreFirst, ignoreTime, ignoreScore) { 
-        obj['scoreDesc'] = scoreDesc;
-        obj['timeDesc'] = timeDesc;
-        obj['scoreFirst'] = scoreFirst;
-        obj['ignoreTime'] = ignoreTime;
-        obj['ignoreScore'] = ignoreScore;
     }
 
     /**
@@ -122,37 +122,32 @@ class RankingStrategy {
 /**
  * The Ranking that can be Ascending or Descending based on timeDesc.
  * @member {Boolean} scoreDesc
- * @default true
  */
-RankingStrategy.prototype['scoreDesc'] = true;
+RankingStrategy.prototype['scoreDesc'] = undefined;
 
 /**
  * The Ranking that can be Ascending or Descending based on scoreDesc.
  * @member {Boolean} timeDesc
- * @default false
  */
-RankingStrategy.prototype['timeDesc'] = false;
+RankingStrategy.prototype['timeDesc'] = undefined;
 
 /**
  * The Ranking that can be score first or time first
  * @member {Boolean} scoreFirst
- * @default true
  */
-RankingStrategy.prototype['scoreFirst'] = true;
+RankingStrategy.prototype['scoreFirst'] = undefined;
 
 /**
  * The Ranking when time is ignored
  * @member {Boolean} ignoreTime
- * @default false
  */
-RankingStrategy.prototype['ignoreTime'] = false;
+RankingStrategy.prototype['ignoreTime'] = undefined;
 
 /**
  * The Ranking when score is ignored
  * @member {Boolean} ignoreScore
- * @default false
  */
-RankingStrategy.prototype['ignoreScore'] = false;
+RankingStrategy.prototype['ignoreScore'] = undefined;
 
 
 

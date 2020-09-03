@@ -22,7 +22,7 @@ import UpdateRepositoryRequest from '../model/UpdateRepositoryRequest';
 /**
 * Repositories service.
 * @module api/RepositoriesApi
-* @version 1.0.1
+* @version 1.0.4
 */
 export default class RepositoriesApi {
 
@@ -47,6 +47,7 @@ export default class RepositoriesApi {
      */
 
     /**
+     * NOT AVAILABLE IN CURRENT RELEASE
      * Create a new file object repository in your CompetitionLabs space
      * @param {String} spaceName This is the space name which is linked to the account
      * @param {Array.<module:model/CreateRepositoryRequest>} body Create a new file object repository in your CompetitionLabs space
@@ -107,6 +108,7 @@ export default class RepositoriesApi {
      */
 
     /**
+     * NOT AVAILABLE IN CURRENT RELEASE
      * Delete repositories nby query. Delete repositories by query and/or unique repository ID's or any other body parameters
      * @param {String} spaceName This is the space name which is linked to the account
      * @param {Object} opts Optional parameters
@@ -163,6 +165,7 @@ export default class RepositoriesApi {
      */
 
     /**
+     * NOT AVAILABLE IN CURRENT RELEASE
      * Delete the file repository for a given identifier specified
      * @param {String} spaceName This is the space name which is linked to the account
      * @param {Object} opts Optional parameters
@@ -222,6 +225,7 @@ export default class RepositoriesApi {
      */
 
     /**
+     * NOT AVAILABLE IN CURRENT RELEASE
      * Find file object repositories by query
      * @param {String} spaceName This is the space name which is linked to the account
      * @param {Object} opts Optional parameters
@@ -278,12 +282,13 @@ export default class RepositoriesApi {
      */
 
     /**
+     * NOT AVAILABLE IN CURRENT RELEASE
      * Returns a list of file object repositories. This assumes that repositories have first been uploaded via a POST request or web console
      * @param {String} spaceName This is the space name which is linked to the account
      * @param {Object} opts Optional parameters
      * @param {String} opts.X_API_KEY The admin API Key generated from CompetitionLabs back office
-     * @param {Number} opts.limit Limit the returned total records found (default to 20)
-     * @param {Number} opts.skip Skip the returned records found and return the next batch of records (default to 0)
+     * @param {Number} opts.limit Limit the returned total records found
+     * @param {Number} opts.skip Skip the returned records found and return the next batch of records
      * @param {Array.<String>} opts.id The unique identifiers of the resources
      * @param {module:api/RepositoriesApi~getListOfFileObjectRepositoriesCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/RepositoryResponse}
@@ -339,6 +344,7 @@ export default class RepositoriesApi {
      */
 
     /**
+     * NOT AVAILABLE IN CURRENT RELEASE
      * Update a file object repository in your CompetitionLabs space.
      * @param {String} spaceName This is the space name which is linked to the account
      * @param {Array.<module:model/UpdateRepositoryRequest>} body Update a file object repository in your CompetitionLabs space.

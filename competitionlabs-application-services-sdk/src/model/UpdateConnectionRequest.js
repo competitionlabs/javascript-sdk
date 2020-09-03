@@ -12,57 +12,26 @@
  */
 
 import ApiClient from '../ApiClient';
-import UpdateConnectionRequestAllOf from './UpdateConnectionRequestAllOf';
+import ConnectionAllOf from './ConnectionAllOf';
 import UpdateModelDefault from './UpdateModelDefault';
 
 /**
  * The UpdateConnectionRequest model module.
  * @module model/UpdateConnectionRequest
- * @version 1.0.1
+ * @version 1.0.4
  */
 class UpdateConnectionRequest {
     /**
      * Constructs a new <code>UpdateConnectionRequest</code>.
      * @alias module:model/UpdateConnectionRequest
      * @implements module:model/UpdateModelDefault
-     * @implements module:model/UpdateConnectionRequestAllOf
+     * @implements module:model/ConnectionAllOf
      * @param id {String} A unique system generated identifier
      * @param objectType {String} The type of consumer to create
      */
     constructor(id, objectType) { 
-        UpdateModelDefault.initialize(this, id);UpdateConnectionRequestAllOf.initialize(this, objectType, id);
+        UpdateModelDefault.initialize(this, id);ConnectionAllOf.initialize(this, objectType);
         UpdateConnectionRequest.initialize(this, id, objectType);
-    }
-
-    /**
-    * Constructs a full object with all available fields.
-    */
-    model(){
-        var obj = {};
-
-        obj['id'] = null;
-        obj['objectType'] = null;
-
-        return obj;
-    }
-
-    /**
-    * Constructs a full object Map for all available fields.
-    */
-    modelMap(){
-        var obj = {
-            "fields": {},
-            "requiredFields": {}
-        };
-
-        obj["fields"]['id'] = { "type": 'String', "system": true };
-        obj["fields"]['objectType'] = { "type": 'String', "system": false };
-
-        
-        obj["requiredFields"]['id'] = { "type": 'String', "system": true };
-        obj["requiredFields"]['objectType'] = { "type": 'String', "system": false };
-
-        return obj;
     }
 
     /**
@@ -76,6 +45,37 @@ class UpdateConnectionRequest {
     }
 
     /**
+    * Constructs a full object with all available fields.
+    */
+    model(){
+        var obj = {};
+
+        obj['id'];
+        obj['objectType'];
+
+        return obj;
+    }
+
+    /**
+    * Constructs a full object Map for all available fields.
+    */
+    modelMap(){
+        var obj = {
+            "fields": {},
+            "requiredFields": {}
+        };
+
+        obj["fields"]['id'];
+        obj["fields"]['objectType'];
+
+        
+        obj["requiredFields"]['id'];
+        obj["requiredFields"]['objectType'];
+
+        return obj;
+    }
+
+    /**
      * Constructs a <code>UpdateConnectionRequest</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
@@ -86,7 +86,7 @@ class UpdateConnectionRequest {
         if (data) {
             obj = obj || new UpdateConnectionRequest();
             UpdateModelDefault.constructFromObject(data, obj);
-            UpdateConnectionRequestAllOf.constructFromObject(data, obj);
+            ConnectionAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'String');
@@ -120,17 +120,12 @@ UpdateConnectionRequest.prototype['objectType'] = undefined;
  * @member {String} id
  */
 UpdateModelDefault.prototype['id'] = undefined;
-// Implement UpdateConnectionRequestAllOf interface:
+// Implement ConnectionAllOf interface:
 /**
  * The type of consumer to create
  * @member {String} objectType
  */
-UpdateConnectionRequestAllOf.prototype['objectType'] = undefined;
-/**
- * A unique system generated identifier
- * @member {String} id
- */
-UpdateConnectionRequestAllOf.prototype['id'] = undefined;
+ConnectionAllOf.prototype['objectType'] = undefined;
 
 
 

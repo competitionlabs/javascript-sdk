@@ -20,7 +20,7 @@ import TwoFactorAuthValidateRequest from '../model/TwoFactorAuthValidateRequest'
 /**
 * TwoFactorAuth service.
 * @module api/TwoFactorAuthApi
-* @version 1.0.1
+* @version 1.0.4
 */
 export default class TwoFactorAuthApi {
 

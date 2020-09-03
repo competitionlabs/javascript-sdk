@@ -1,11 +1,11 @@
-# @CompetitionlabsJavascriptSdk.MessageResponse
+# @CompetitionlabsApplicationServicesSdk.MessageResponse
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**meta** | [**MetaExtended**](docs/MetaExtended.md) |  | 
-**results** | [**[Message]**](docs/Message.md) |  | [optional] 
-**errors** | [**[Error]**](docs/Error.md) |  | [optional] 
+**meta** | [**MetaExtended**](MetaExtended.md) |  | 
+**results** | [**[Message]**](Message.md) |  | [optional] 
+**errors** | [**[Error]**](Error.md) |  | [optional] 
 
 

@@ -17,7 +17,7 @@ import EntityType from './EntityType';
 /**
  * The MemberAwardAllOf model module.
  * @module model/MemberAwardAllOf
- * @version 1.0.1
+ * @version 1.0.4
  */
 class MemberAwardAllOf {
     /**
@@ -37,22 +37,37 @@ class MemberAwardAllOf {
     }
 
     /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
+    static initialize(obj, rewardId, rewardTypeKey, rewardTypeId, rewardValue, claimed, entityType, entityId) { 
+        obj['rewardId'] = rewardId;
+        obj['rewardTypeKey'] = rewardTypeKey;
+        obj['rewardTypeId'] = rewardTypeId;
+        obj['rewardValue'] = rewardValue;
+        obj['claimed'] = claimed;
+        obj['entityType'] = entityType;
+        obj['entityId'] = entityId;
+    }
+
+    /**
     * Constructs a full object with all available fields.
     */
     model(){
         var obj = {};
 
-        obj['rewardId'] = null;
-        obj['rewardTypeKey'] = null;
-        obj['rewardTypeId'] = null;
-        obj['rewardValue'] = null;
-        obj['memberAcknowledgmentRequired'] = null;
-        obj['claimed'] = null;
-        obj['delay'] = null;
-        obj['entityType'] = new EntityType().model();
-        obj['entityId'] = null;
-        obj['pointInTime'] = null;
-        obj['period'] = null;
+        obj['rewardId'];
+        obj['rewardTypeKey'];
+        obj['rewardTypeId'];
+        obj['rewardValue'];
+        obj['memberAcknowledgmentRequired'];
+        obj['claimed'];
+        obj['delay'];
+        obj['entityType'];
+        obj['entityId'];
+        obj['pointInTime'];
+        obj['period'];
 
         return obj;
     }
@@ -66,43 +81,28 @@ class MemberAwardAllOf {
             "requiredFields": {}
         };
 
-        obj["fields"]['rewardId'] = { "type": 'String', "system": false };
-        obj["fields"]['rewardTypeKey'] = { "type": 'String', "system": false };
-        obj["fields"]['rewardTypeId'] = { "type": 'String', "system": false };
-        obj["fields"]['rewardValue'] = { "type": 'Number', "system": false };
-        obj["fields"]['memberAcknowledgmentRequired'] = { "type": 'Boolean', "system": false };
-        obj["fields"]['claimed'] = { "type": 'Boolean', "system": false };
-        obj["fields"]['delay'] = { "type": 'Number', "system": false };
-        obj["fields"]['entityType'] = new EntityType().modelMap();
-        obj["fields"]['entityId'] = { "type": 'String', "system": false };
-        obj["fields"]['pointInTime'] = { "type": 'Date', "system": false };
-        obj["fields"]['period'] = { "type": 'Number', "system": false };
+        obj["fields"]['rewardId'];
+        obj["fields"]['rewardTypeKey'];
+        obj["fields"]['rewardTypeId'];
+        obj["fields"]['rewardValue'];
+        obj["fields"]['memberAcknowledgmentRequired'];
+        obj["fields"]['claimed'];
+        obj["fields"]['delay'];
+        obj["fields"]['entityType'];
+        obj["fields"]['entityId'];
+        obj["fields"]['pointInTime'];
+        obj["fields"]['period'];
 
         
-        obj["requiredFields"]['rewardId'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['rewardTypeKey'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['rewardTypeId'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['rewardValue'] = { "type": 'Number', "system": false };
-        obj["requiredFields"]['claimed'] = { "type": 'Boolean', "system": false };
-        obj["requiredFields"]['entityType'] = new EntityType().modelMap();
-        obj["requiredFields"]['entityId'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['rewardId'];
+        obj["requiredFields"]['rewardTypeKey'];
+        obj["requiredFields"]['rewardTypeId'];
+        obj["requiredFields"]['rewardValue'];
+        obj["requiredFields"]['claimed'];
+        obj["requiredFields"]['entityType'];
+        obj["requiredFields"]['entityId'];
 
         return obj;
-    }
-
-    /**
-     * Initializes the fields of this object.
-     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
-     * Only for internal use.
-     */
-    static initialize(obj, rewardId, rewardTypeKey, rewardTypeId, rewardValue, claimed, entityType, entityId) { 
-        obj['rewardId'] = rewardId;
-        obj['rewardTypeKey'] = rewardTypeKey;
-        obj['rewardTypeId'] = rewardTypeId;
-        obj['rewardValue'] = rewardValue;
-        obj['claimed'] = claimed;
-        obj['entityType'] = entityType;
-        obj['entityId'] = entityId;
     }
 
     /**
@@ -183,9 +183,8 @@ MemberAwardAllOf.prototype['rewardValue'] = undefined;
 /**
  * Requires member acknowledgment to claim a reward. If set to True reward will not be automatically issued
  * @member {Boolean} memberAcknowledgmentRequired
- * @default false
  */
-MemberAwardAllOf.prototype['memberAcknowledgmentRequired'] = false;
+MemberAwardAllOf.prototype['memberAcknowledgmentRequired'] = undefined;
 
 /**
  * has the award been claimed or not
@@ -196,9 +195,8 @@ MemberAwardAllOf.prototype['claimed'] = undefined;
 /**
  * Delay of issuing a reward in minutes
  * @member {Number} delay
- * @default 0
  */
-MemberAwardAllOf.prototype['delay'] = 0;
+MemberAwardAllOf.prototype['delay'] = undefined;
 
 /**
  * @member {module:model/EntityType} entityType
@@ -220,9 +218,8 @@ MemberAwardAllOf.prototype['pointInTime'] = undefined;
 /**
  * Claimable duration in minutes, this value will set the controls until when the award is claimable. * There can only be one time definition used for claim period either \"pointInTime\" or \"period\"
  * @member {Number} period
- * @default 0
  */
-MemberAwardAllOf.prototype['period'] = 0;
+MemberAwardAllOf.prototype['period'] = undefined;
 
 
 

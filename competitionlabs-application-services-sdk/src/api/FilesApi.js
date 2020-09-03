@@ -23,7 +23,7 @@ import UpdateFileObjectRequest from '../model/UpdateFileObjectRequest';
 /**
 * Files service.
 * @module api/FilesApi
-* @version 1.0.1
+* @version 1.0.4
 */
 export default class FilesApi {
 
@@ -40,33 +40,34 @@ export default class FilesApi {
 
 
     /**
-     * Callback function to receive the result of the copyResourceObjects operation.
-     * @callback module:api/FilesApi~copyResourceObjectsCallback
+     * Callback function to receive the result of the copyFileObjects operation.
+     * @callback module:api/FilesApi~copyFileObjectsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/ApiResponse} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
+     * NOT AVAILABLE IN CURRENT RELEASE
      * Copy an existing file object
      * @param {String} spaceName This is the space name which is linked to the account
      * @param {module:model/UpdateFileObjectRequest} body Copy file objects inside a repository and dumplicate in another folder or repository.
      * @param {Object} opts Optional parameters
      * @param {String} opts.X_API_KEY The admin API Key generated from CompetitionLabs back office
      * @param {Array.<String>} opts.id The unique identifiers of the resources
-     * @param {module:api/FilesApi~copyResourceObjectsCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/FilesApi~copyFileObjectsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ApiResponse}
      */
-    copyResourceObjects(spaceName, body, opts, callback) {
+    copyFileObjects(spaceName, body, opts, callback) {
       opts = opts || {};
       let postBody = body;
       // verify the required parameter 'spaceName' is set
       if (spaceName === undefined || spaceName === null) {
-        throw new Error("Missing the required parameter 'spaceName' when calling copyResourceObjects");
+        throw new Error("Missing the required parameter 'spaceName' when calling copyFileObjects");
       }
       // verify the required parameter 'body' is set
       if (body === undefined || body === null) {
-        throw new Error("Missing the required parameter 'body' when calling copyResourceObjects");
+        throw new Error("Missing the required parameter 'body' when calling copyFileObjects");
       }
 
       let pathParams = {
@@ -110,6 +111,7 @@ export default class FilesApi {
      */
 
     /**
+     * NOT AVAILABLE IN CURRENT RELEASE
      * @param {String} spaceName This is the space name which is linked to the account
      * @param {Array.<module:model/CreateFileObjectRequest>} body Create a new file object repository in your CompetitionLabs space
      * @param {Object} opts Optional parameters
@@ -169,6 +171,7 @@ export default class FilesApi {
      */
 
     /**
+     * NOT AVAILABLE IN CURRENT RELEASE
      * @param {String} spaceName This is the space name which is linked to the account
      * @param {Object} opts Optional parameters
      * @param {String} opts.X_API_KEY The admin API Key generated from CompetitionLabs back office
@@ -219,29 +222,30 @@ export default class FilesApi {
     }
 
     /**
-     * Callback function to receive the result of the deleteResourceObjectsByQuery operation.
-     * @callback module:api/FilesApi~deleteResourceObjectsByQueryCallback
+     * Callback function to receive the result of the deleteFileObjectsByQuery operation.
+     * @callback module:api/FilesApi~deleteFileObjectsByQueryCallback
      * @param {String} error Error message, if any.
      * @param {module:model/ApiResponse} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
+     * NOT AVAILABLE IN CURRENT RELEASE
      * Delete file objects by query
      * @param {String} spaceName This is the space name which is linked to the account
      * @param {Object} opts Optional parameters
      * @param {String} opts.X_API_KEY The admin API Key generated from CompetitionLabs back office
      * @param {Array.<String>} opts.id The unique identifiers of the resources
      * @param {module:model/QueryRequest} opts.body Delete file objects inside a repository from CompetitionLabs by unique file by unique object ID's or any other POST body parameters using the POST method
-     * @param {module:api/FilesApi~deleteResourceObjectsByQueryCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/FilesApi~deleteFileObjectsByQueryCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ApiResponse}
      */
-    deleteResourceObjectsByQuery(spaceName, opts, callback) {
+    deleteFileObjectsByQuery(spaceName, opts, callback) {
       opts = opts || {};
       let postBody = opts['body'];
       // verify the required parameter 'spaceName' is set
       if (spaceName === undefined || spaceName === null) {
-        throw new Error("Missing the required parameter 'spaceName' when calling deleteResourceObjectsByQuery");
+        throw new Error("Missing the required parameter 'spaceName' when calling deleteFileObjectsByQuery");
       }
 
       let pathParams = {
@@ -277,6 +281,65 @@ export default class FilesApi {
     }
 
     /**
+     * Callback function to receive the result of the getFileObjectsByQuery operation.
+     * @callback module:api/FilesApi~getFileObjectsByQueryCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/FileObjectsResponse} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * NOT AVAILABLE IN CURRENT RELEASE
+     * Retrieve file objects by query
+     * @param {String} spaceName This is the space name which is linked to the account
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.X_API_KEY The admin API Key generated from CompetitionLabs back office
+     * @param {Array.<String>} opts.id The unique identifiers of the resources
+     * @param {module:model/QueryRequest} opts.body Retrieve file objects inside a repository from CompetitionLabs by unique file object ID's or any other POST body parameters using the POST method
+     * @param {module:api/FilesApi~getFileObjectsByQueryCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/FileObjectsResponse}
+     */
+    getFileObjectsByQuery(spaceName, opts, callback) {
+      opts = opts || {};
+      let postBody = opts['body'];
+      // verify the required parameter 'spaceName' is set
+      if (spaceName === undefined || spaceName === null) {
+        throw new Error("Missing the required parameter 'spaceName' when calling getFileObjectsByQuery");
+      }
+
+      let pathParams = {
+        'spaceName': spaceName
+      };
+      let queryParams = {
+        'id': this.apiClient.buildCollectionParam(opts['id'], 'multi')
+      };
+      let headerParams = {
+        'X-API-KEY': opts['X_API_KEY']
+      };
+      let formParams = {
+      };
+
+      let authNames = ['adminApiKey'];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = FileObjectsResponse;
+      let basePaths = ['https://web-assets.competitionlabs.com', 'https://web-assets-demo.competitionlabs.com'];
+      let basePath = basePaths[0]; // by default use the first one in "servers" defined in OpenAPI
+      if (typeof opts['_base_path_index'] !== 'undefined') {
+        if (opts['_base_path_index']  >= basePaths.length || opts['_base_path_index'] <  0) {
+          throw new Error("Invalid index " + opts['_base_path_index'] + " when selecting the host settings. Must be less than " + basePaths.length);
+        }
+        basePath = basePaths[opts['_base_path_index']];
+      }
+
+      return this.apiClient.callApi(
+        '/files/{spaceName}/query', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, basePath, callback
+      );
+    }
+
+    /**
      * Callback function to receive the result of the getListOfFileObjects operation.
      * @callback module:api/FilesApi~getListOfFileObjectsCallback
      * @param {String} error Error message, if any.
@@ -285,12 +348,13 @@ export default class FilesApi {
      */
 
     /**
+     * NOT AVAILABLE IN CURRENT RELEASE
      * Returns a list of file objects
      * @param {String} spaceName This is the space name which is linked to the account
      * @param {Object} opts Optional parameters
      * @param {String} opts.X_API_KEY The admin API Key generated from CompetitionLabs back office
-     * @param {Number} opts.limit Limit the returned total records found (default to 20)
-     * @param {Number} opts.skip Skip the returned records found and return the next batch of records (default to 0)
+     * @param {Number} opts.limit Limit the returned total records found
+     * @param {Number} opts.skip Skip the returned records found and return the next batch of records
      * @param {Array.<String>} opts.id The unique identifiers of the resources
      * @param {module:api/FilesApi~getListOfFileObjectsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/FileObjectsResponse}
@@ -338,64 +402,6 @@ export default class FilesApi {
     }
 
     /**
-     * Callback function to receive the result of the getResourceObjectsByQuery operation.
-     * @callback module:api/FilesApi~getResourceObjectsByQueryCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/FileObjectsResponse} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Retrieve file objects by query
-     * @param {String} spaceName This is the space name which is linked to the account
-     * @param {Object} opts Optional parameters
-     * @param {String} opts.X_API_KEY The admin API Key generated from CompetitionLabs back office
-     * @param {Array.<String>} opts.id The unique identifiers of the resources
-     * @param {module:model/QueryRequest} opts.body Retrieve file objects inside a repository from CompetitionLabs by unique file object ID's or any other POST body parameters using the POST method
-     * @param {module:api/FilesApi~getResourceObjectsByQueryCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/FileObjectsResponse}
-     */
-    getResourceObjectsByQuery(spaceName, opts, callback) {
-      opts = opts || {};
-      let postBody = opts['body'];
-      // verify the required parameter 'spaceName' is set
-      if (spaceName === undefined || spaceName === null) {
-        throw new Error("Missing the required parameter 'spaceName' when calling getResourceObjectsByQuery");
-      }
-
-      let pathParams = {
-        'spaceName': spaceName
-      };
-      let queryParams = {
-        'id': this.apiClient.buildCollectionParam(opts['id'], 'multi')
-      };
-      let headerParams = {
-        'X-API-KEY': opts['X_API_KEY']
-      };
-      let formParams = {
-      };
-
-      let authNames = ['adminApiKey'];
-      let contentTypes = ['application/json'];
-      let accepts = ['application/json'];
-      let returnType = FileObjectsResponse;
-      let basePaths = ['https://web-assets.competitionlabs.com', 'https://web-assets-demo.competitionlabs.com'];
-      let basePath = basePaths[0]; // by default use the first one in "servers" defined in OpenAPI
-      if (typeof opts['_base_path_index'] !== 'undefined') {
-        if (opts['_base_path_index']  >= basePaths.length || opts['_base_path_index'] <  0) {
-          throw new Error("Invalid index " + opts['_base_path_index'] + " when selecting the host settings. Must be less than " + basePaths.length);
-        }
-        basePath = basePaths[opts['_base_path_index']];
-      }
-
-      return this.apiClient.callApi(
-        '/files/{spaceName}/query', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, basePath, callback
-      );
-    }
-
-    /**
      * Callback function to receive the result of the updateFileObject operation.
      * @callback module:api/FilesApi~updateFileObjectCallback
      * @param {String} error Error message, if any.
@@ -404,6 +410,7 @@ export default class FilesApi {
      */
 
     /**
+     * NOT AVAILABLE IN CURRENT RELEASE
      * @param {String} spaceName This is the space name which is linked to the account
      * @param {Array.<module:model/UpdateFileObjectRequest>} body Update a file object in your CompetitionLabs space.
      * @param {Object} opts Optional parameters
@@ -463,8 +470,8 @@ export default class FilesApi {
      */
 
     /**
+     * NOT AVAILABLE IN CURRENT RELEASE
      * Create or update file objects and binaries in your CompetitionLabs space
-     * @param {String} repositoryId The repository to upload too
      * @param {String} spaceName This is the space name which is linked to the account
      * @param {Object} opts Optional parameters
      * @param {String} opts.X_API_KEY The admin API Key generated from CompetitionLabs back office
@@ -475,13 +482,9 @@ export default class FilesApi {
      * @param {module:api/FilesApi~uploadFileObjectCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ApiResponse}
      */
-    uploadFileObject(repositoryId, spaceName, opts, callback) {
+    uploadFileObject(spaceName, opts, callback) {
       opts = opts || {};
       let postBody = null;
-      // verify the required parameter 'repositoryId' is set
-      if (repositoryId === undefined || repositoryId === null) {
-        throw new Error("Missing the required parameter 'repositoryId' when calling uploadFileObject");
-      }
       // verify the required parameter 'spaceName' is set
       if (spaceName === undefined || spaceName === null) {
         throw new Error("Missing the required parameter 'spaceName' when calling uploadFileObject");
@@ -491,7 +494,6 @@ export default class FilesApi {
         'spaceName': spaceName
       };
       let queryParams = {
-        'repositoryId': repositoryId
       };
       let headerParams = {
         'X-API-KEY': opts['X_API_KEY']

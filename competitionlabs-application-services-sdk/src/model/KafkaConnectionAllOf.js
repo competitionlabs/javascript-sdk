@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The KafkaConnectionAllOf model module.
  * @module model/KafkaConnectionAllOf
- * @version 1.0.1
+ * @version 1.0.4
  */
 class KafkaConnectionAllOf {
     /**
@@ -35,17 +35,31 @@ class KafkaConnectionAllOf {
     }
 
     /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
+    static initialize(obj, name, brokers, groupId, topic, lastKnownStatus, lastKnownStatusCode) { 
+        obj['name'] = name;
+        obj['brokers'] = brokers;
+        obj['groupId'] = groupId;
+        obj['topic'] = topic;
+        obj['lastKnownStatus'] = lastKnownStatus;
+        obj['lastKnownStatusCode'] = lastKnownStatusCode;
+    }
+
+    /**
     * Constructs a full object with all available fields.
     */
     model(){
         var obj = {};
 
-        obj['name'] = null;
-        obj['brokers'] = [null];
-        obj['groupId'] = null;
-        obj['topic'] = null;
-        obj['lastKnownStatus'] = null;
-        obj['lastKnownStatusCode'] = null;
+        obj['name'];
+        obj['brokers'];
+        obj['groupId'];
+        obj['topic'];
+        obj['lastKnownStatus'];
+        obj['lastKnownStatusCode'];
 
         return obj;
     }
@@ -59,36 +73,22 @@ class KafkaConnectionAllOf {
             "requiredFields": {}
         };
 
-        obj["fields"]['name'] = { "type": 'String', "system": false };
-        obj["fields"]['brokers'] = [{ "type": 'String', "system": false }];
-        obj["fields"]['groupId'] = { "type": 'String', "system": false };
-        obj["fields"]['topic'] = { "type": 'String', "system": false };
-        obj["fields"]['lastKnownStatus'] = { "type": 'String', "system": false };
-        obj["fields"]['lastKnownStatusCode'] = { "type": 'Number', "system": false };
+        obj["fields"]['name'];
+        obj["fields"]['brokers'];
+        obj["fields"]['groupId'];
+        obj["fields"]['topic'];
+        obj["fields"]['lastKnownStatus'];
+        obj["fields"]['lastKnownStatusCode'];
 
         
-        obj["requiredFields"]['name'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['brokers'] = [{ "type": 'String', "system": false }];
-        obj["requiredFields"]['groupId'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['topic'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['lastKnownStatus'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['lastKnownStatusCode'] = { "type": 'Number', "system": false };
+        obj["requiredFields"]['name'];
+        obj["requiredFields"]['brokers'];
+        obj["requiredFields"]['groupId'];
+        obj["requiredFields"]['topic'];
+        obj["requiredFields"]['lastKnownStatus'];
+        obj["requiredFields"]['lastKnownStatusCode'];
 
         return obj;
-    }
-
-    /**
-     * Initializes the fields of this object.
-     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
-     * Only for internal use.
-     */
-    static initialize(obj, name, brokers, groupId, topic, lastKnownStatus, lastKnownStatusCode) { 
-        obj['name'] = name;
-        obj['brokers'] = brokers;
-        obj['groupId'] = groupId;
-        obj['topic'] = topic;
-        obj['lastKnownStatus'] = lastKnownStatus;
-        obj['lastKnownStatusCode'] = lastKnownStatusCode;
     }
 
     /**

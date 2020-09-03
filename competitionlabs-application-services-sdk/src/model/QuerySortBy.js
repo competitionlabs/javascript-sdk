@@ -17,7 +17,7 @@ import SortOrder from './SortOrder';
 /**
  * The QuerySortBy model module.
  * @module model/QuerySortBy
- * @version 1.0.1
+ * @version 1.0.4
  */
 class QuerySortBy {
     /**
@@ -32,13 +32,23 @@ class QuerySortBy {
     }
 
     /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
+    static initialize(obj, queryField, order) { 
+        obj['queryField'] = queryField;
+        obj['order'] = order;
+    }
+
+    /**
     * Constructs a full object with all available fields.
     */
     model(){
         var obj = {};
 
-        obj['queryField'] = null;
-        obj['order'] = new SortOrder().model();
+        obj['queryField'];
+        obj['order'];
 
         return obj;
     }
@@ -52,24 +62,14 @@ class QuerySortBy {
             "requiredFields": {}
         };
 
-        obj["fields"]['queryField'] = { "type": 'String', "system": false };
-        obj["fields"]['order'] = new SortOrder().modelMap();
+        obj["fields"]['queryField'];
+        obj["fields"]['order'];
 
         
-        obj["requiredFields"]['queryField'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['order'] = new SortOrder().modelMap();
+        obj["requiredFields"]['queryField'];
+        obj["requiredFields"]['order'];
 
         return obj;
-    }
-
-    /**
-     * Initializes the fields of this object.
-     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
-     * Only for internal use.
-     */
-    static initialize(obj, queryField, order) { 
-        obj['queryField'] = queryField;
-        obj['order'] = order;
     }
 
     /**

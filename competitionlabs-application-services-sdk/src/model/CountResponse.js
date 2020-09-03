@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CountResponse model module.
  * @module model/CountResponse
- * @version 1.0.1
+ * @version 1.0.4
  */
 class CountResponse {
     /**
@@ -31,13 +31,23 @@ class CountResponse {
     }
 
     /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
+    static initialize(obj, entityId, countValue) { 
+        obj['entityId'] = entityId;
+        obj['countValue'] = countValue;
+    }
+
+    /**
     * Constructs a full object with all available fields.
     */
     model(){
         var obj = {};
 
-        obj['entityId'] = null;
-        obj['countValue'] = null;
+        obj['entityId'];
+        obj['countValue'];
 
         return obj;
     }
@@ -51,24 +61,14 @@ class CountResponse {
             "requiredFields": {}
         };
 
-        obj["fields"]['entityId'] = { "type": 'String', "system": false };
-        obj["fields"]['countValue'] = { "type": 'Number', "system": false };
+        obj["fields"]['entityId'];
+        obj["fields"]['countValue'];
 
         
-        obj["requiredFields"]['entityId'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['countValue'] = { "type": 'Number', "system": false };
+        obj["requiredFields"]['entityId'];
+        obj["requiredFields"]['countValue'];
 
         return obj;
-    }
-
-    /**
-     * Initializes the fields of this object.
-     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
-     * Only for internal use.
-     */
-    static initialize(obj, entityId, countValue) { 
-        obj['entityId'] = entityId;
-        obj['countValue'] = countValue;
     }
 
     /**

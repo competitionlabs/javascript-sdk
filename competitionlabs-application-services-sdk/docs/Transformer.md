@@ -1,4 +1,4 @@
-# @CompetitionlabsJavascriptSdk.Transformer
+# @CompetitionlabsApplicationServicesSdk.Transformer
 
 ## Properties
 
@@ -9,6 +9,6 @@ Name | Type | Description | Notes
 **created** | **Date** | ISO8601 timestamp for when a Model was created. All records are stored in UTC time zone | [readonly] 
 **name** | **String** | The name of the Transformer | 
 **source** | **String** | Source code | 
-**sourceLanguage** | [**SourceLanguage**](docs/SourceLanguage.md) |  | 
+**sourceLanguage** | [**SourceLanguage**](SourceLanguage.md) |  | 
 
 

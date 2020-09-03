@@ -17,7 +17,7 @@ import Role from './Role';
 /**
  * The UpdateCollaboratorRequestAllOf model module.
  * @module model/UpdateCollaboratorRequestAllOf
- * @version 1.0.1
+ * @version 1.0.4
  */
 class UpdateCollaboratorRequestAllOf {
     /**
@@ -31,12 +31,21 @@ class UpdateCollaboratorRequestAllOf {
     }
 
     /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
+    static initialize(obj, role) { 
+        obj['role'] = role;
+    }
+
+    /**
     * Constructs a full object with all available fields.
     */
     model(){
         var obj = {};
 
-        obj['role'] = new Role().model();
+        obj['role'];
 
         return obj;
     }
@@ -50,21 +59,12 @@ class UpdateCollaboratorRequestAllOf {
             "requiredFields": {}
         };
 
-        obj["fields"]['role'] = new Role().modelMap();
+        obj["fields"]['role'];
 
         
-        obj["requiredFields"]['role'] = new Role().modelMap();
+        obj["requiredFields"]['role'];
 
         return obj;
-    }
-
-    /**
-     * Initializes the fields of this object.
-     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
-     * Only for internal use.
-     */
-    static initialize(obj, role) { 
-        obj['role'] = role;
     }
 
     /**

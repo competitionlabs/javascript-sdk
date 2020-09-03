@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Macro model module.
  * @module model/Macro
- * @version 1.0.1
+ * @version 1.0.4
  */
 class Macro {
     /**
@@ -31,13 +31,23 @@ class Macro {
     }
 
     /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
+    static initialize(obj, name, macroValue) { 
+        obj['name'] = name;
+        obj['macroValue'] = macroValue;
+    }
+
+    /**
     * Constructs a full object with all available fields.
     */
     model(){
         var obj = {};
 
-        obj['name'] = null;
-        obj['macroValue'] = null;
+        obj['name'];
+        obj['macroValue'];
 
         return obj;
     }
@@ -51,24 +61,14 @@ class Macro {
             "requiredFields": {}
         };
 
-        obj["fields"]['name'] = { "type": 'String', "system": false };
-        obj["fields"]['macroValue'] = { "type": 'String', "system": false };
+        obj["fields"]['name'];
+        obj["fields"]['macroValue'];
 
         
-        obj["requiredFields"]['name'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['macroValue'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['name'];
+        obj["requiredFields"]['macroValue'];
 
         return obj;
-    }
-
-    /**
-     * Initializes the fields of this object.
-     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
-     * Only for internal use.
-     */
-    static initialize(obj, name, macroValue) { 
-        obj['name'] = name;
-        obj['macroValue'] = macroValue;
     }
 
     /**

@@ -19,7 +19,7 @@ import ModelDefault from './ModelDefault';
 /**
  * The Event model module.
  * @module model/Event
- * @version 1.0.1
+ * @version 1.0.4
  */
 class Event {
     /**
@@ -31,18 +31,36 @@ class Event {
      * @param spaceName {String} This is the space name which is linked to the account
      * @param created {Date} ISO8601 timestamp for when a Model was created. All records are stored in UTC time zone
      * @param memberId {String} Unique system identifier of a Member
+     * @param memberRefId {String} The reference to this member in external system
      * @param action {String} The identifier that describes the meaning of this event
      * @param entityId {String} It is a reference to a models ID for any of the following objects - Product, Achievement, Reward, Award
+     * @param entityRefId {String} It is a reference to a models ID for any of the following objects - Product, Achievement, Reward, Award
      * @param sourceValue {Number} The actual numerical value related to the event
      * @param points {Number} A value derived from the source value field. In the context of Product additionally an adjustment factor will be applied
      * @param transactionTimestamp {Date} ISO8601 timestamp for when this event happened. All records are stored in UTC time zone
-     * @param relatesTo {String} Contains relatable object Id's of type of Competitions or Contests
-     * @param relatesToExternal {String} Are meant to record extra information about the object that can be the original transaction Id or extra tagging information
-     * @param metadata {module:model/EventMetadata} 
      */
-    constructor(id, spaceName, created, memberId, action, entityId, sourceValue, points, transactionTimestamp, relatesTo, relatesToExternal, metadata) { 
-        ModelDefault.initialize(this, id, spaceName, created);EventAllOf.initialize(this, memberId, action, entityId, sourceValue, points, transactionTimestamp, relatesTo, relatesToExternal, metadata);
-        Event.initialize(this, id, spaceName, created, memberId, action, entityId, sourceValue, points, transactionTimestamp, relatesTo, relatesToExternal, metadata);
+    constructor(id, spaceName, created, memberId, memberRefId, action, entityId, entityRefId, sourceValue, points, transactionTimestamp) { 
+        ModelDefault.initialize(this, id, spaceName, created);EventAllOf.initialize(this, memberId, memberRefId, action, entityId, entityRefId, sourceValue, points, transactionTimestamp);
+        Event.initialize(this, id, spaceName, created, memberId, memberRefId, action, entityId, entityRefId, sourceValue, points, transactionTimestamp);
+    }
+
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
+    static initialize(obj, id, spaceName, created, memberId, memberRefId, action, entityId, entityRefId, sourceValue, points, transactionTimestamp) { 
+        obj['id'] = id;
+        obj['spaceName'] = spaceName;
+        obj['created'] = created;
+        obj['memberId'] = memberId;
+        obj['memberRefId'] = memberRefId;
+        obj['action'] = action;
+        obj['entityId'] = entityId;
+        obj['entityRefId'] = entityRefId;
+        obj['sourceValue'] = sourceValue;
+        obj['points'] = points;
+        obj['transactionTimestamp'] = transactionTimestamp;
     }
 
     /**
@@ -51,19 +69,19 @@ class Event {
     model(){
         var obj = {};
 
-        obj['id'] = null;
-        obj['spaceName'] = null;
-        obj['created'] = null;
-        obj['memberId'] = null;
-        obj['action'] = null;
-        obj['batchId'] = null;
-        obj['entityId'] = null;
-        obj['sourceValue'] = null;
-        obj['points'] = null;
-        obj['transactionTimestamp'] = null;
-        obj['relatesTo'] = null;
-        obj['relatesToExternal'] = null;
-        obj['metadata'] = new EventMetadata().model();
+        obj['id'];
+        obj['spaceName'];
+        obj['created'];
+        obj['memberId'];
+        obj['memberRefId'];
+        obj['action'];
+        obj['batchId'];
+        obj['entityId'];
+        obj['entityRefId'];
+        obj['sourceValue'];
+        obj['points'];
+        obj['transactionTimestamp'];
+        obj['metadata'];
 
         return obj;
     }
@@ -77,55 +95,34 @@ class Event {
             "requiredFields": {}
         };
 
-        obj["fields"]['id'] = { "type": 'String', "system": true };
-        obj["fields"]['spaceName'] = { "type": 'String', "system": true };
-        obj["fields"]['created'] = { "type": 'Date', "system": true };
-        obj["fields"]['memberId'] = { "type": 'String', "system": false };
-        obj["fields"]['action'] = { "type": 'String', "system": false };
-        obj["fields"]['batchId'] = { "type": 'String', "system": false };
-        obj["fields"]['entityId'] = { "type": 'String', "system": false };
-        obj["fields"]['sourceValue'] = { "type": 'Number', "system": false };
-        obj["fields"]['points'] = { "type": 'Number', "system": false };
-        obj["fields"]['transactionTimestamp'] = { "type": 'Date', "system": false };
-        obj["fields"]['relatesTo'] = { "type": 'String', "system": false };
-        obj["fields"]['relatesToExternal'] = { "type": 'String', "system": false };
-        obj["fields"]['metadata'] = new EventMetadata().modelMap();
+        obj["fields"]['id'];
+        obj["fields"]['spaceName'];
+        obj["fields"]['created'];
+        obj["fields"]['memberId'];
+        obj["fields"]['memberRefId'];
+        obj["fields"]['action'];
+        obj["fields"]['batchId'];
+        obj["fields"]['entityId'];
+        obj["fields"]['entityRefId'];
+        obj["fields"]['sourceValue'];
+        obj["fields"]['points'];
+        obj["fields"]['transactionTimestamp'];
+        obj["fields"]['metadata'];
 
         
-        obj["requiredFields"]['id'] = { "type": 'String', "system": true };
-        obj["requiredFields"]['spaceName'] = { "type": 'String', "system": true };
-        obj["requiredFields"]['created'] = { "type": 'Date', "system": true };
-        obj["requiredFields"]['memberId'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['action'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['entityId'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['sourceValue'] = { "type": 'Number', "system": false };
-        obj["requiredFields"]['points'] = { "type": 'Number', "system": false };
-        obj["requiredFields"]['transactionTimestamp'] = { "type": 'Date', "system": false };
-        obj["requiredFields"]['relatesTo'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['relatesToExternal'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['metadata'] = new EventMetadata().modelMap();
+        obj["requiredFields"]['id'];
+        obj["requiredFields"]['spaceName'];
+        obj["requiredFields"]['created'];
+        obj["requiredFields"]['memberId'];
+        obj["requiredFields"]['memberRefId'];
+        obj["requiredFields"]['action'];
+        obj["requiredFields"]['entityId'];
+        obj["requiredFields"]['entityRefId'];
+        obj["requiredFields"]['sourceValue'];
+        obj["requiredFields"]['points'];
+        obj["requiredFields"]['transactionTimestamp'];
 
         return obj;
-    }
-
-    /**
-     * Initializes the fields of this object.
-     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
-     * Only for internal use.
-     */
-    static initialize(obj, id, spaceName, created, memberId, action, entityId, sourceValue, points, transactionTimestamp, relatesTo, relatesToExternal, metadata) { 
-        obj['id'] = id;
-        obj['spaceName'] = spaceName;
-        obj['created'] = created;
-        obj['memberId'] = memberId;
-        obj['action'] = action;
-        obj['entityId'] = entityId;
-        obj['sourceValue'] = sourceValue;
-        obj['points'] = points;
-        obj['transactionTimestamp'] = transactionTimestamp;
-        obj['relatesTo'] = relatesTo;
-        obj['relatesToExternal'] = relatesToExternal;
-        obj['metadata'] = metadata;
     }
 
     /**
@@ -153,6 +150,9 @@ class Event {
             if (data.hasOwnProperty('memberId')) {
                 obj['memberId'] = ApiClient.convertToType(data['memberId'], 'String');
             }
+            if (data.hasOwnProperty('memberRefId')) {
+                obj['memberRefId'] = ApiClient.convertToType(data['memberRefId'], 'String');
+            }
             if (data.hasOwnProperty('action')) {
                 obj['action'] = ApiClient.convertToType(data['action'], 'String');
             }
@@ -161,6 +161,9 @@ class Event {
             }
             if (data.hasOwnProperty('entityId')) {
                 obj['entityId'] = ApiClient.convertToType(data['entityId'], 'String');
+            }
+            if (data.hasOwnProperty('entityRefId')) {
+                obj['entityRefId'] = ApiClient.convertToType(data['entityRefId'], 'String');
             }
             if (data.hasOwnProperty('sourceValue')) {
                 obj['sourceValue'] = ApiClient.convertToType(data['sourceValue'], 'Number');
@@ -171,14 +174,8 @@ class Event {
             if (data.hasOwnProperty('transactionTimestamp')) {
                 obj['transactionTimestamp'] = ApiClient.convertToType(data['transactionTimestamp'], 'Date');
             }
-            if (data.hasOwnProperty('relatesTo')) {
-                obj['relatesTo'] = ApiClient.convertToType(data['relatesTo'], 'String');
-            }
-            if (data.hasOwnProperty('relatesToExternal')) {
-                obj['relatesToExternal'] = ApiClient.convertToType(data['relatesToExternal'], 'String');
-            }
             if (data.hasOwnProperty('metadata')) {
-                obj['metadata'] = EventMetadata.constructFromObject(data['metadata']);
+                obj['metadata'] = ApiClient.convertToType(data['metadata'], [EventMetadata]);
             }
         }
         return obj;
@@ -212,6 +209,12 @@ Event.prototype['created'] = undefined;
 Event.prototype['memberId'] = undefined;
 
 /**
+ * The reference to this member in external system
+ * @member {String} memberRefId
+ */
+Event.prototype['memberRefId'] = undefined;
+
+/**
  * The identifier that describes the meaning of this event
  * @member {String} action
  */
@@ -228,6 +231,12 @@ Event.prototype['batchId'] = undefined;
  * @member {String} entityId
  */
 Event.prototype['entityId'] = undefined;
+
+/**
+ * It is a reference to a models ID for any of the following objects - Product, Achievement, Reward, Award
+ * @member {String} entityRefId
+ */
+Event.prototype['entityRefId'] = undefined;
 
 /**
  * The actual numerical value related to the event
@@ -248,19 +257,7 @@ Event.prototype['points'] = undefined;
 Event.prototype['transactionTimestamp'] = undefined;
 
 /**
- * Contains relatable object Id's of type of Competitions or Contests
- * @member {String} relatesTo
- */
-Event.prototype['relatesTo'] = undefined;
-
-/**
- * Are meant to record extra information about the object that can be the original transaction Id or extra tagging information
- * @member {String} relatesToExternal
- */
-Event.prototype['relatesToExternal'] = undefined;
-
-/**
- * @member {module:model/EventMetadata} metadata
+ * @member {Array.<module:model/EventMetadata>} metadata
  */
 Event.prototype['metadata'] = undefined;
 
@@ -288,6 +285,11 @@ ModelDefault.prototype['created'] = undefined;
  */
 EventAllOf.prototype['memberId'] = undefined;
 /**
+ * The reference to this member in external system
+ * @member {String} memberRefId
+ */
+EventAllOf.prototype['memberRefId'] = undefined;
+/**
  * The identifier that describes the meaning of this event
  * @member {String} action
  */
@@ -302,6 +304,11 @@ EventAllOf.prototype['batchId'] = undefined;
  * @member {String} entityId
  */
 EventAllOf.prototype['entityId'] = undefined;
+/**
+ * It is a reference to a models ID for any of the following objects - Product, Achievement, Reward, Award
+ * @member {String} entityRefId
+ */
+EventAllOf.prototype['entityRefId'] = undefined;
 /**
  * The actual numerical value related to the event
  * @member {Number} sourceValue
@@ -318,17 +325,7 @@ EventAllOf.prototype['points'] = undefined;
  */
 EventAllOf.prototype['transactionTimestamp'] = undefined;
 /**
- * Contains relatable object Id's of type of Competitions or Contests
- * @member {String} relatesTo
- */
-EventAllOf.prototype['relatesTo'] = undefined;
-/**
- * Are meant to record extra information about the object that can be the original transaction Id or extra tagging information
- * @member {String} relatesToExternal
- */
-EventAllOf.prototype['relatesToExternal'] = undefined;
-/**
- * @member {module:model/EventMetadata} metadata
+ * @member {Array.<module:model/EventMetadata>} metadata
  */
 EventAllOf.prototype['metadata'] = undefined;
 

@@ -22,7 +22,7 @@ import UpdateLanguageRequest from '../model/UpdateLanguageRequest';
 /**
 * Languages service.
 * @module api/LanguagesApi
-* @version 1.0.1
+* @version 1.0.4
 */
 export default class LanguagesApi {
 
@@ -198,8 +198,8 @@ export default class LanguagesApi {
      * @param {Object} opts Optional parameters
      * @param {String} opts.X_API_KEY The admin API Key generated from CompetitionLabs back office
      * @param {Array.<String>} opts.id The unique identifiers of the resources
-     * @param {Number} opts.limit Limit the returned total records found (default to 20)
-     * @param {Number} opts.skip Skip the returned records found and return the next batch of records (default to 0)
+     * @param {Number} opts.limit Limit the returned total records found
+     * @param {Number} opts.skip Skip the returned records found and return the next batch of records
      * @param {module:api/LanguagesApi~getLanguagesCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/LanguageResponse}
      */
@@ -296,8 +296,8 @@ export default class LanguagesApi {
      * @param {String} spaceName This is the space name which is linked to the account
      * @param {Object} opts Optional parameters
      * @param {String} opts.X_API_KEY The admin API Key generated from CompetitionLabs back office
-     * @param {Number} opts.limit Limit the returned total records found (default to 20)
-     * @param {Number} opts.skip Skip the returned records found and return the next batch of records (default to 0)
+     * @param {Number} opts.limit Limit the returned total records found
+     * @param {Number} opts.skip Skip the returned records found and return the next batch of records
      * @param {module:api/LanguagesApi~getListOfAllLanguagesCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/LanguageResponse}
      */

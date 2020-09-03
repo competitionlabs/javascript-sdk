@@ -12,7 +12,7 @@
  */
 
 import ApiClient from '../ApiClient';
-import MessagStatus from './MessagStatus';
+import MessageStatus from './MessageStatus';
 import MessageType from './MessageType';
 import Metadata from './Metadata';
 import Scheduling from './Scheduling';
@@ -20,7 +20,7 @@ import Scheduling from './Scheduling';
 /**
  * The MessageAllOf model module.
  * @module model/MessageAllOf
- * @version 1.0.1
+ * @version 1.0.4
  */
 class MessageAllOf {
     /**
@@ -30,63 +30,13 @@ class MessageAllOf {
      * @param messageType {module:model/MessageType} 
      * @param subject {String} The title of the message
      * @param body {String} The context of the message
-     * @param status {module:model/MessagStatus} 
+     * @param status {module:model/MessageStatus} 
      * @param scheduling {module:model/Scheduling} 
      * @param deprecated {Boolean} A boolean value (true/false) that represents the message state
      */
     constructor(members, messageType, subject, body, status, scheduling, deprecated) { 
         
         MessageAllOf.initialize(this, members, messageType, subject, body, status, scheduling, deprecated);
-    }
-
-    /**
-    * Constructs a full object with all available fields.
-    */
-    model(){
-        var obj = {};
-
-        obj['memberGroup'] = [null];
-        obj['members'] = [null];
-        obj['messageType'] = new MessageType().model();
-        obj['subject'] = null;
-        obj['body'] = null;
-        obj['status'] = new MessagStatus().model();
-        obj['scheduling'] = new Scheduling().model();
-        obj['deprecated'] = null;
-        obj['metadata'] = [new Metadata().model()];
-
-        return obj;
-    }
-
-    /**
-    * Constructs a full object Map for all available fields.
-    */
-    modelMap(){
-        var obj = {
-            "fields": {},
-            "requiredFields": {}
-        };
-
-        obj["fields"]['memberGroup'] = [{ "type": 'String', "system": false }];
-        obj["fields"]['members'] = [{ "type": 'String', "system": false }];
-        obj["fields"]['messageType'] = new MessageType().modelMap();
-        obj["fields"]['subject'] = { "type": 'String', "system": false };
-        obj["fields"]['body'] = { "type": 'String', "system": false };
-        obj["fields"]['status'] = new MessagStatus().modelMap();
-        obj["fields"]['scheduling'] = new Scheduling().modelMap();
-        obj["fields"]['deprecated'] = { "type": 'Boolean', "system": false };
-        obj["fields"]['metadata'] = [new Metadata().modelMap()];
-
-        
-        obj["requiredFields"]['members'] = [{ "type": 'String', "system": false }];
-        obj["requiredFields"]['messageType'] = new MessageType().modelMap();
-        obj["requiredFields"]['subject'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['body'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['status'] = new MessagStatus().modelMap();
-        obj["requiredFields"]['scheduling'] = new Scheduling().modelMap();
-        obj["requiredFields"]['deprecated'] = { "type": 'Boolean', "system": false };
-
-        return obj;
     }
 
     /**
@@ -102,6 +52,56 @@ class MessageAllOf {
         obj['status'] = status;
         obj['scheduling'] = scheduling;
         obj['deprecated'] = deprecated;
+    }
+
+    /**
+    * Constructs a full object with all available fields.
+    */
+    model(){
+        var obj = {};
+
+        obj['memberGroup'];
+        obj['members'];
+        obj['messageType'];
+        obj['subject'];
+        obj['body'];
+        obj['status'];
+        obj['scheduling'];
+        obj['deprecated'];
+        obj['metadata'];
+
+        return obj;
+    }
+
+    /**
+    * Constructs a full object Map for all available fields.
+    */
+    modelMap(){
+        var obj = {
+            "fields": {},
+            "requiredFields": {}
+        };
+
+        obj["fields"]['memberGroup'];
+        obj["fields"]['members'];
+        obj["fields"]['messageType'];
+        obj["fields"]['subject'];
+        obj["fields"]['body'];
+        obj["fields"]['status'];
+        obj["fields"]['scheduling'];
+        obj["fields"]['deprecated'];
+        obj["fields"]['metadata'];
+
+        
+        obj["requiredFields"]['members'];
+        obj["requiredFields"]['messageType'];
+        obj["requiredFields"]['subject'];
+        obj["requiredFields"]['body'];
+        obj["requiredFields"]['status'];
+        obj["requiredFields"]['scheduling'];
+        obj["requiredFields"]['deprecated'];
+
+        return obj;
     }
 
     /**
@@ -131,7 +131,7 @@ class MessageAllOf {
                 obj['body'] = ApiClient.convertToType(data['body'], 'String');
             }
             if (data.hasOwnProperty('status')) {
-                obj['status'] = MessagStatus.constructFromObject(data['status']);
+                obj['status'] = MessageStatus.constructFromObject(data['status']);
             }
             if (data.hasOwnProperty('scheduling')) {
                 obj['scheduling'] = Scheduling.constructFromObject(data['scheduling']);
@@ -179,7 +179,7 @@ MessageAllOf.prototype['subject'] = undefined;
 MessageAllOf.prototype['body'] = undefined;
 
 /**
- * @member {module:model/MessagStatus} status
+ * @member {module:model/MessageStatus} status
  */
 MessageAllOf.prototype['status'] = undefined;
 
@@ -191,9 +191,8 @@ MessageAllOf.prototype['scheduling'] = undefined;
 /**
  * A boolean value (true/false) that represents the message state
  * @member {Boolean} deprecated
- * @default false
  */
-MessageAllOf.prototype['deprecated'] = false;
+MessageAllOf.prototype['deprecated'] = undefined;
 
 /**
  * @member {Array.<module:model/Metadata>} metadata

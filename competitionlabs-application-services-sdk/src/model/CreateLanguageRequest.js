@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateLanguageRequest model module.
  * @module model/CreateLanguageRequest
- * @version 1.0.1
+ * @version 1.0.4
  */
 class CreateLanguageRequest {
     /**
@@ -30,13 +30,22 @@ class CreateLanguageRequest {
     }
 
     /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
+    static initialize(obj, languageKey) { 
+        obj['languageKey'] = languageKey;
+    }
+
+    /**
     * Constructs a full object with all available fields.
     */
     model(){
         var obj = {};
 
-        obj['languageKey'] = null;
-        obj['references'] = [null];
+        obj['languageKey'];
+        obj['references'];
 
         return obj;
     }
@@ -50,22 +59,13 @@ class CreateLanguageRequest {
             "requiredFields": {}
         };
 
-        obj["fields"]['languageKey'] = { "type": 'String', "system": false };
-        obj["fields"]['references'] = [{ "type": 'String', "system": false }];
+        obj["fields"]['languageKey'];
+        obj["fields"]['references'];
 
         
-        obj["requiredFields"]['languageKey'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['languageKey'];
 
         return obj;
-    }
-
-    /**
-     * Initializes the fields of this object.
-     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
-     * Only for internal use.
-     */
-    static initialize(obj, languageKey) { 
-        obj['languageKey'] = languageKey;
     }
 
     /**

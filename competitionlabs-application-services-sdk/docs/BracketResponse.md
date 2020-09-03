@@ -1,11 +1,11 @@
-# @CompetitionlabsJavascriptSdk.BracketResponse
+# @CompetitionlabsApplicationServicesSdk.BracketResponse
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**meta** | [**MetaExtended**](docs/MetaExtended.md) |  | 
-**results** | [**[Bracket]**](docs/Bracket.md) |  | [optional] 
-**errors** | [**[Error]**](docs/Error.md) |  | [optional] 
+**meta** | [**MetaExtended**](MetaExtended.md) |  | 
+**results** | [**[Bracket]**](Bracket.md) |  | [optional] 
+**errors** | [**[Error]**](Error.md) |  | [optional] 
 
 

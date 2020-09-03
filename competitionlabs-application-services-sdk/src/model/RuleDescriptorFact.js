@@ -20,7 +20,7 @@ import RuleDescriptorSubCondition from './RuleDescriptorSubCondition';
 /**
  * The RuleDescriptorFact model module.
  * @module model/RuleDescriptorFact
- * @version 1.0.1
+ * @version 1.0.4
  */
 class RuleDescriptorFact {
     /**
@@ -39,19 +39,31 @@ class RuleDescriptorFact {
     }
 
     /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
+    static initialize(obj, operators, constantType, constantExample, fact) { 
+        obj['operators'] = operators;
+        obj['constantType'] = constantType;
+        obj['constantExample'] = constantExample;
+        obj['fact'] = fact;
+    }
+
+    /**
     * Constructs a full object with all available fields.
     */
     model(){
         var obj = {};
 
-        obj['operators'] = [null];
-        obj['constantType'] = null;
-        obj['constantExample'] = null;
-        obj['defaultVale'] = null;
-        obj['macros'] = [new Macro().model()];
-        obj['constraints'] = [null];
-        obj['fact'] = null;
-        obj['subConditions'] = [new RuleDescriptorSubCondition().model()];
+        obj['operators'];
+        obj['constantType'];
+        obj['constantExample'];
+        obj['defaultVale'];
+        obj['macros'];
+        obj['constraints'];
+        obj['fact'];
+        obj['subConditions'];
 
         return obj;
     }
@@ -65,34 +77,22 @@ class RuleDescriptorFact {
             "requiredFields": {}
         };
 
-        obj["fields"]['operators'] = [{ "type": 'String', "system": false }];
-        obj["fields"]['constantType'] = { "type": 'String', "system": false };
-        obj["fields"]['constantExample'] = { "type": 'String', "system": false };
-        obj["fields"]['defaultVale'] = { "type": 'String', "system": false };
-        obj["fields"]['macros'] = [new Macro().modelMap()];
-        obj["fields"]['constraints'] = [{ "type": 'String', "system": false }];
-        obj["fields"]['fact'] = { "type": 'String', "system": false };
-        obj["fields"]['subConditions'] = [new RuleDescriptorSubCondition().modelMap()];
+        obj["fields"]['operators'];
+        obj["fields"]['constantType'];
+        obj["fields"]['constantExample'];
+        obj["fields"]['defaultVale'];
+        obj["fields"]['macros'];
+        obj["fields"]['constraints'];
+        obj["fields"]['fact'];
+        obj["fields"]['subConditions'];
 
         
-        obj["requiredFields"]['operators'] = [{ "type": 'String', "system": false }];
-        obj["requiredFields"]['constantType'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['constantExample'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['fact'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['operators'];
+        obj["requiredFields"]['constantType'];
+        obj["requiredFields"]['constantExample'];
+        obj["requiredFields"]['fact'];
 
         return obj;
-    }
-
-    /**
-     * Initializes the fields of this object.
-     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
-     * Only for internal use.
-     */
-    static initialize(obj, operators, constantType, constantExample, fact) { 
-        obj['operators'] = operators;
-        obj['constantType'] = constantType;
-        obj['constantExample'] = constantExample;
-        obj['fact'] = fact;
     }
 
     /**

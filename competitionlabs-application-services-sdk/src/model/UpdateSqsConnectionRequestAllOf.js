@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateSqsConnectionRequestAllOf model module.
  * @module model/UpdateSqsConnectionRequestAllOf
- * @version 1.0.1
+ * @version 1.0.4
  */
 class UpdateSqsConnectionRequestAllOf {
     /**
@@ -29,16 +29,24 @@ class UpdateSqsConnectionRequestAllOf {
     }
 
     /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
+    static initialize(obj) { 
+    }
+
+    /**
     * Constructs a full object with all available fields.
     */
     model(){
         var obj = {};
 
-        obj['name'] = null;
-        obj['uri'] = null;
-        obj['acessKey'] = null;
-        obj['secretKey'] = null;
-        obj['transformerId'] = null;
+        obj['name'];
+        obj['uri'];
+        obj['acessKey'];
+        obj['secretKey'];
+        obj['transformerId'];
 
         return obj;
     }
@@ -52,23 +60,15 @@ class UpdateSqsConnectionRequestAllOf {
             "requiredFields": {}
         };
 
-        obj["fields"]['name'] = { "type": 'String', "system": false };
-        obj["fields"]['uri'] = { "type": 'String', "system": false };
-        obj["fields"]['acessKey'] = { "type": 'String', "system": false };
-        obj["fields"]['secretKey'] = { "type": 'String', "system": false };
-        obj["fields"]['transformerId'] = { "type": 'String', "system": false };
+        obj["fields"]['name'];
+        obj["fields"]['uri'];
+        obj["fields"]['acessKey'];
+        obj["fields"]['secretKey'];
+        obj["fields"]['transformerId'];
 
         
 
         return obj;
-    }
-
-    /**
-     * Initializes the fields of this object.
-     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
-     * Only for internal use.
-     */
-    static initialize(obj) { 
     }
 
     /**

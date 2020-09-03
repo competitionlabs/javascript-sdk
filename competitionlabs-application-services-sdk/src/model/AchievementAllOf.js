@@ -23,7 +23,7 @@ import Translation from './Translation';
 /**
  * The AchievementAllOf model module.
  * @module model/AchievementAllOf
- * @version 1.0.1
+ * @version 1.0.4
  */
 class AchievementAllOf {
     /**
@@ -41,25 +41,38 @@ class AchievementAllOf {
     }
 
     /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
+    static initialize(obj, name, icon, ruleSets, scheduling, achievementLiveStatus) { 
+        obj['name'] = name;
+        obj['icon'] = icon;
+        obj['ruleSets'] = ruleSets;
+        obj['scheduling'] = scheduling;
+        obj['achievementLiveStatus'] = achievementLiveStatus;
+    }
+
+    /**
     * Constructs a full object with all available fields.
     */
     model(){
         var obj = {};
 
-        obj['name'] = null;
-        obj['description'] = null;
-        obj['icon'] = null;
-        obj['ruleSets'] = [new RuleSet().model()];
-        obj['dependantOn'] = new DependantOn().model();
-        obj['scheduling'] = new Scheduling().model();
-        obj['achievementLiveStatus'] = new AchievementLiveStatus().model();
-        obj['category'] = [null];
-        obj['memberGroups'] = [null];
-        obj['metadata'] = [new Metadata().model()];
-        obj['translations'] = [new Translation().model()];
-        obj['translatableFields'] = [null];
-        obj['rewards'] = [new RewardReduced().model()];
-        obj['constraints'] = [null];
+        obj['name'];
+        obj['description'];
+        obj['icon'];
+        obj['ruleSets'];
+        obj['dependantOn'];
+        obj['scheduling'];
+        obj['achievementLiveStatus'];
+        obj['category'];
+        obj['memberGroups'];
+        obj['metadata'];
+        obj['translations'];
+        obj['translatableFields'];
+        obj['rewards'];
+        obj['constraints'];
 
         return obj;
     }
@@ -73,42 +86,29 @@ class AchievementAllOf {
             "requiredFields": {}
         };
 
-        obj["fields"]['name'] = { "type": 'String', "system": false };
-        obj["fields"]['description'] = { "type": 'String', "system": false };
-        obj["fields"]['icon'] = { "type": 'String', "system": false };
-        obj["fields"]['ruleSets'] = [new RuleSet().modelMap()];
-        obj["fields"]['dependantOn'] = new DependantOn().modelMap();
-        obj["fields"]['scheduling'] = new Scheduling().modelMap();
-        obj["fields"]['achievementLiveStatus'] = new AchievementLiveStatus().modelMap();
-        obj["fields"]['category'] = [{ "type": 'String', "system": false }];
-        obj["fields"]['memberGroups'] = [{ "type": 'String', "system": false }];
-        obj["fields"]['metadata'] = [new Metadata().modelMap()];
-        obj["fields"]['translations'] = [new Translation().modelMap()];
-        obj["fields"]['translatableFields'] = [{ "type": 'String', "system": false }];
-        obj["fields"]['rewards'] = [new RewardReduced().modelMap()];
-        obj["fields"]['constraints'] = [{ "type": 'String', "system": false }];
+        obj["fields"]['name'];
+        obj["fields"]['description'];
+        obj["fields"]['icon'];
+        obj["fields"]['ruleSets'];
+        obj["fields"]['dependantOn'];
+        obj["fields"]['scheduling'];
+        obj["fields"]['achievementLiveStatus'];
+        obj["fields"]['category'];
+        obj["fields"]['memberGroups'];
+        obj["fields"]['metadata'];
+        obj["fields"]['translations'];
+        obj["fields"]['translatableFields'];
+        obj["fields"]['rewards'];
+        obj["fields"]['constraints'];
 
         
-        obj["requiredFields"]['name'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['icon'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['ruleSets'] = [new RuleSet().modelMap()];
-        obj["requiredFields"]['scheduling'] = new Scheduling().modelMap();
-        obj["requiredFields"]['achievementLiveStatus'] = new AchievementLiveStatus().modelMap();
+        obj["requiredFields"]['name'];
+        obj["requiredFields"]['icon'];
+        obj["requiredFields"]['ruleSets'];
+        obj["requiredFields"]['scheduling'];
+        obj["requiredFields"]['achievementLiveStatus'];
 
         return obj;
-    }
-
-    /**
-     * Initializes the fields of this object.
-     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
-     * Only for internal use.
-     */
-    static initialize(obj, name, icon, ruleSets, scheduling, achievementLiveStatus) { 
-        obj['name'] = name;
-        obj['icon'] = icon;
-        obj['ruleSets'] = ruleSets;
-        obj['scheduling'] = scheduling;
-        obj['achievementLiveStatus'] = achievementLiveStatus;
     }
 
     /**

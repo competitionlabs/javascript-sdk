@@ -18,7 +18,7 @@ import Metadata from './Metadata';
 /**
  * The MemberAllOf model module.
  * @module model/MemberAllOf
- * @version 1.0.1
+ * @version 1.0.4
  */
 class MemberAllOf {
     /**
@@ -33,17 +33,27 @@ class MemberAllOf {
     }
 
     /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
+    static initialize(obj, memberRefId, memberType) { 
+        obj['memberRefId'] = memberRefId;
+        obj['memberType'] = memberType;
+    }
+
+    /**
     * Constructs a full object with all available fields.
     */
     model(){
         var obj = {};
 
-        obj['name'] = null;
-        obj['memberRefId'] = null;
-        obj['memberType'] = new MemberType().model();
-        obj['teamMembers'] = [null];
-        obj['groups'] = [null];
-        obj['metadata'] = [new Metadata().model()];
+        obj['name'];
+        obj['memberRefId'];
+        obj['memberType'];
+        obj['teamMembers'];
+        obj['groups'];
+        obj['metadata'];
 
         return obj;
     }
@@ -57,28 +67,18 @@ class MemberAllOf {
             "requiredFields": {}
         };
 
-        obj["fields"]['name'] = { "type": 'String', "system": false };
-        obj["fields"]['memberRefId'] = { "type": 'String', "system": false };
-        obj["fields"]['memberType'] = new MemberType().modelMap();
-        obj["fields"]['teamMembers'] = [{ "type": 'String', "system": false }];
-        obj["fields"]['groups'] = [{ "type": 'String', "system": false }];
-        obj["fields"]['metadata'] = [new Metadata().modelMap()];
+        obj["fields"]['name'];
+        obj["fields"]['memberRefId'];
+        obj["fields"]['memberType'];
+        obj["fields"]['teamMembers'];
+        obj["fields"]['groups'];
+        obj["fields"]['metadata'];
 
         
-        obj["requiredFields"]['memberRefId'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['memberType'] = new MemberType().modelMap();
+        obj["requiredFields"]['memberRefId'];
+        obj["requiredFields"]['memberType'];
 
         return obj;
-    }
-
-    /**
-     * Initializes the fields of this object.
-     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
-     * Only for internal use.
-     */
-    static initialize(obj, memberRefId, memberType) { 
-        obj['memberRefId'] = memberRefId;
-        obj['memberType'] = memberType;
     }
 
     /**

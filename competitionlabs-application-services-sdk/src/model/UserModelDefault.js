@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UserModelDefault model module.
  * @module model/UserModelDefault
- * @version 1.0.1
+ * @version 1.0.4
  */
 class UserModelDefault {
     /**
@@ -32,14 +32,25 @@ class UserModelDefault {
     }
 
     /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
+    static initialize(obj, objectType, id, created) { 
+        obj['objectType'] = objectType;
+        obj['id'] = id;
+        obj['created'] = created;
+    }
+
+    /**
     * Constructs a full object with all available fields.
     */
     model(){
         var obj = {};
 
-        obj['objectType'] = null;
-        obj['id'] = null;
-        obj['created'] = null;
+        obj['objectType'];
+        obj['id'];
+        obj['created'];
 
         return obj;
     }
@@ -53,27 +64,16 @@ class UserModelDefault {
             "requiredFields": {}
         };
 
-        obj["fields"]['objectType'] = { "type": 'String', "system": false };
-        obj["fields"]['id'] = { "type": 'String', "system": true };
-        obj["fields"]['created'] = { "type": 'Date', "system": true };
+        obj["fields"]['objectType'];
+        obj["fields"]['id'];
+        obj["fields"]['created'];
 
         
-        obj["requiredFields"]['objectType'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['id'] = { "type": 'String', "system": true };
-        obj["requiredFields"]['created'] = { "type": 'Date', "system": true };
+        obj["requiredFields"]['objectType'];
+        obj["requiredFields"]['id'];
+        obj["requiredFields"]['created'];
 
         return obj;
-    }
-
-    /**
-     * Initializes the fields of this object.
-     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
-     * Only for internal use.
-     */
-    static initialize(obj, objectType, id, created) { 
-        obj['objectType'] = objectType;
-        obj['id'] = id;
-        obj['created'] = created;
     }
 
     /**

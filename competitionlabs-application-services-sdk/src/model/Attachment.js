@@ -19,7 +19,7 @@ import ModelDefault from './ModelDefault';
 /**
  * The Attachment model module.
  * @module model/Attachment
- * @version 1.0.1
+ * @version 1.0.4
  */
 class Attachment {
     /**
@@ -45,66 +45,6 @@ class Attachment {
     }
 
     /**
-    * Constructs a full object with all available fields.
-    */
-    model(){
-        var obj = {};
-
-        obj['id'] = null;
-        obj['spaceName'] = null;
-        obj['created'] = null;
-        obj['attachmentType'] = null;
-        obj['md5Hash'] = null;
-        obj['fileName'] = null;
-        obj['mimeType'] = null;
-        obj['extension'] = null;
-        obj['locationKey'] = null;
-        obj['locationFolder'] = null;
-        obj['permission'] = null;
-        obj['metadata'] = [new Metadata().model()];
-
-        return obj;
-    }
-
-    /**
-    * Constructs a full object Map for all available fields.
-    */
-    modelMap(){
-        var obj = {
-            "fields": {},
-            "requiredFields": {}
-        };
-
-        obj["fields"]['id'] = { "type": 'String', "system": true };
-        obj["fields"]['spaceName'] = { "type": 'String', "system": true };
-        obj["fields"]['created'] = { "type": 'Date', "system": true };
-        obj["fields"]['attachmentType'] = { "type": 'String', "system": false };
-        obj["fields"]['md5Hash'] = { "type": 'String', "system": false };
-        obj["fields"]['fileName'] = { "type": 'String', "system": false };
-        obj["fields"]['mimeType'] = { "type": 'String', "system": false };
-        obj["fields"]['extension'] = { "type": 'String', "system": false };
-        obj["fields"]['locationKey'] = { "type": 'String', "system": false };
-        obj["fields"]['locationFolder'] = { "type": 'String', "system": false };
-        obj["fields"]['permission'] = { "type": 'Number', "system": false };
-        obj["fields"]['metadata'] = [new Metadata().modelMap()];
-
-        
-        obj["requiredFields"]['id'] = { "type": 'String', "system": true };
-        obj["requiredFields"]['spaceName'] = { "type": 'String', "system": true };
-        obj["requiredFields"]['created'] = { "type": 'Date', "system": true };
-        obj["requiredFields"]['attachmentType'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['md5Hash'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['fileName'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['mimeType'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['extension'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['locationKey'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['locationFolder'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['permission'] = { "type": 'Number', "system": false };
-
-        return obj;
-    }
-
-    /**
      * Initializes the fields of this object.
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
@@ -121,6 +61,66 @@ class Attachment {
         obj['locationKey'] = locationKey;
         obj['locationFolder'] = locationFolder;
         obj['permission'] = permission;
+    }
+
+    /**
+    * Constructs a full object with all available fields.
+    */
+    model(){
+        var obj = {};
+
+        obj['id'];
+        obj['spaceName'];
+        obj['created'];
+        obj['attachmentType'];
+        obj['md5Hash'];
+        obj['fileName'];
+        obj['mimeType'];
+        obj['extension'];
+        obj['locationKey'];
+        obj['locationFolder'];
+        obj['permission'];
+        obj['metadata'];
+
+        return obj;
+    }
+
+    /**
+    * Constructs a full object Map for all available fields.
+    */
+    modelMap(){
+        var obj = {
+            "fields": {},
+            "requiredFields": {}
+        };
+
+        obj["fields"]['id'];
+        obj["fields"]['spaceName'];
+        obj["fields"]['created'];
+        obj["fields"]['attachmentType'];
+        obj["fields"]['md5Hash'];
+        obj["fields"]['fileName'];
+        obj["fields"]['mimeType'];
+        obj["fields"]['extension'];
+        obj["fields"]['locationKey'];
+        obj["fields"]['locationFolder'];
+        obj["fields"]['permission'];
+        obj["fields"]['metadata'];
+
+        
+        obj["requiredFields"]['id'];
+        obj["requiredFields"]['spaceName'];
+        obj["requiredFields"]['created'];
+        obj["requiredFields"]['attachmentType'];
+        obj["requiredFields"]['md5Hash'];
+        obj["requiredFields"]['fileName'];
+        obj["requiredFields"]['mimeType'];
+        obj["requiredFields"]['extension'];
+        obj["requiredFields"]['locationKey'];
+        obj["requiredFields"]['locationFolder'];
+        obj["requiredFields"]['permission'];
+
+        return obj;
     }
 
     /**
@@ -241,9 +241,8 @@ Attachment.prototype['locationFolder'] = undefined;
 
 /**
  * @member {Number} permission
- * @default 744
  */
-Attachment.prototype['permission'] = 744;
+Attachment.prototype['permission'] = undefined;
 
 /**
  * @member {Array.<module:model/Metadata>} metadata
@@ -305,9 +304,8 @@ AttachmentAllOf.prototype['locationKey'] = undefined;
 AttachmentAllOf.prototype['locationFolder'] = undefined;
 /**
  * @member {Number} permission
- * @default 744
  */
-AttachmentAllOf.prototype['permission'] = 744;
+AttachmentAllOf.prototype['permission'] = undefined;
 /**
  * @member {Array.<module:model/Metadata>} metadata
  */

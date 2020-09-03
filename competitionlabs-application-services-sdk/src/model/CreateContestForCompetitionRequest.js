@@ -22,7 +22,7 @@ import Translation from './Translation';
 /**
  * The CreateContestForCompetitionRequest model module.
  * @module model/CreateContestForCompetitionRequest
- * @version 1.0.1
+ * @version 1.0.4
  */
 class CreateContestForCompetitionRequest {
     /**
@@ -43,83 +43,6 @@ class CreateContestForCompetitionRequest {
     }
 
     /**
-    * Constructs a full object with all available fields.
-    */
-    model(){
-        var obj = {};
-
-        obj['competitionId'] = null;
-        obj['number'] = null;
-        obj['round'] = null;
-        obj['groupStage'] = null;
-        obj['groupStageLabel'] = null;
-        obj['entrantsFromContest'] = [null];
-        obj['name'] = null;
-        obj['description'] = null;
-        obj['termsConditions'] = null;
-        obj['roundType'] = new RoundType().model();
-        obj['maxNumberOfEntrants'] = null;
-        obj['minNumberOfEntrants'] = null;
-        obj['ruleSets'] = [new RuleSet().model()];
-        obj['scheduledStartDate'] = null;
-        obj['scheduledEndDate'] = null;
-        obj['strategies'] = new Strategy().model();
-        obj['constraints'] = [null];
-        obj['metadata'] = [new Metadata().model()];
-        obj['translations'] = [new Translation().model()];
-        obj['rewards'] = [new CreateRewardRequest().model()];
-        obj['isPublic'] = null;
-        obj['autoStart'] = null;
-
-        return obj;
-    }
-
-    /**
-    * Constructs a full object Map for all available fields.
-    */
-    modelMap(){
-        var obj = {
-            "fields": {},
-            "requiredFields": {}
-        };
-
-        obj["fields"]['competitionId'] = { "type": 'String', "system": false };
-        obj["fields"]['number'] = { "type": 'Number', "system": false };
-        obj["fields"]['round'] = { "type": 'Number', "system": false };
-        obj["fields"]['groupStage'] = { "type": 'Number', "system": false };
-        obj["fields"]['groupStageLabel'] = { "type": 'String', "system": false };
-        obj["fields"]['entrantsFromContest'] = [{ "type": 'String', "system": false }];
-        obj["fields"]['name'] = { "type": 'String', "system": false };
-        obj["fields"]['description'] = { "type": 'String', "system": false };
-        obj["fields"]['termsConditions'] = { "type": 'String', "system": false };
-        obj["fields"]['roundType'] = new RoundType().modelMap();
-        obj["fields"]['maxNumberOfEntrants'] = { "type": 'Number', "system": false };
-        obj["fields"]['minNumberOfEntrants'] = { "type": 'Number', "system": false };
-        obj["fields"]['ruleSets'] = [new RuleSet().modelMap()];
-        obj["fields"]['scheduledStartDate'] = { "type": 'Date', "system": false };
-        obj["fields"]['scheduledEndDate'] = { "type": 'Date', "system": false };
-        obj["fields"]['strategies'] = new Strategy().modelMap();
-        obj["fields"]['constraints'] = [{ "type": 'String', "system": false }];
-        obj["fields"]['metadata'] = [new Metadata().modelMap()];
-        obj["fields"]['translations'] = [new Translation().modelMap()];
-        obj["fields"]['rewards'] = [new CreateRewardRequest().modelMap()];
-        obj["fields"]['isPublic'] = { "type": 'Boolean', "system": false };
-        obj["fields"]['autoStart'] = { "type": 'Boolean', "system": false };
-
-        
-        obj["requiredFields"]['competitionId'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['number'] = { "type": 'Number', "system": false };
-        obj["requiredFields"]['round'] = { "type": 'Number', "system": false };
-        obj["requiredFields"]['name'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['roundType'] = new RoundType().modelMap();
-        obj["requiredFields"]['ruleSets'] = [new RuleSet().modelMap()];
-        obj["requiredFields"]['scheduledStartDate'] = { "type": 'Date', "system": false };
-        obj["requiredFields"]['scheduledEndDate'] = { "type": 'Date', "system": false };
-
-        return obj;
-    }
-
-    /**
      * Initializes the fields of this object.
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
@@ -133,6 +56,83 @@ class CreateContestForCompetitionRequest {
         obj['ruleSets'] = ruleSets;
         obj['scheduledStartDate'] = scheduledStartDate;
         obj['scheduledEndDate'] = scheduledEndDate;
+    }
+
+    /**
+    * Constructs a full object with all available fields.
+    */
+    model(){
+        var obj = {};
+
+        obj['competitionId'];
+        obj['number'];
+        obj['round'];
+        obj['groupStage'];
+        obj['groupStageLabel'];
+        obj['entrantsFromContest'];
+        obj['name'];
+        obj['description'];
+        obj['termsConditions'];
+        obj['roundType'];
+        obj['maxNumberOfEntrants'];
+        obj['minNumberOfEntrants'];
+        obj['ruleSets'];
+        obj['scheduledStartDate'];
+        obj['scheduledEndDate'];
+        obj['strategies'];
+        obj['constraints'];
+        obj['metadata'];
+        obj['translations'];
+        obj['rewards'];
+        obj['isPublic'];
+        obj['autoStart'];
+
+        return obj;
+    }
+
+    /**
+    * Constructs a full object Map for all available fields.
+    */
+    modelMap(){
+        var obj = {
+            "fields": {},
+            "requiredFields": {}
+        };
+
+        obj["fields"]['competitionId'];
+        obj["fields"]['number'];
+        obj["fields"]['round'];
+        obj["fields"]['groupStage'];
+        obj["fields"]['groupStageLabel'];
+        obj["fields"]['entrantsFromContest'];
+        obj["fields"]['name'];
+        obj["fields"]['description'];
+        obj["fields"]['termsConditions'];
+        obj["fields"]['roundType'];
+        obj["fields"]['maxNumberOfEntrants'];
+        obj["fields"]['minNumberOfEntrants'];
+        obj["fields"]['ruleSets'];
+        obj["fields"]['scheduledStartDate'];
+        obj["fields"]['scheduledEndDate'];
+        obj["fields"]['strategies'];
+        obj["fields"]['constraints'];
+        obj["fields"]['metadata'];
+        obj["fields"]['translations'];
+        obj["fields"]['rewards'];
+        obj["fields"]['isPublic'];
+        obj["fields"]['autoStart'];
+
+        
+        obj["requiredFields"]['competitionId'];
+        obj["requiredFields"]['number'];
+        obj["requiredFields"]['round'];
+        obj["requiredFields"]['name'];
+        obj["requiredFields"]['roundType'];
+        obj["requiredFields"]['ruleSets'];
+        obj["requiredFields"]['scheduledStartDate'];
+        obj["requiredFields"]['scheduledEndDate'];
+
+        return obj;
     }
 
     /**
@@ -228,23 +228,20 @@ CreateContestForCompetitionRequest.prototype['competitionId'] = undefined;
 /**
  * The row number for displaying the Contest in a table
  * @member {Number} number
- * @default 0
  */
-CreateContestForCompetitionRequest.prototype['number'] = 0;
+CreateContestForCompetitionRequest.prototype['number'] = undefined;
 
 /**
  * To what round does the contest belong
  * @member {Number} round
- * @default 1
  */
-CreateContestForCompetitionRequest.prototype['round'] = 1;
+CreateContestForCompetitionRequest.prototype['round'] = undefined;
 
 /**
  * Is used for more complex Competitions e.g. multi round competitions where round 1 group stage matched round 2
  * @member {Number} groupStage
- * @default 1
  */
-CreateContestForCompetitionRequest.prototype['groupStage'] = 1;
+CreateContestForCompetitionRequest.prototype['groupStage'] = undefined;
 
 /**
  * The name of the group stages
@@ -339,16 +336,14 @@ CreateContestForCompetitionRequest.prototype['rewards'] = undefined;
 /**
  * Is the event publicly exposed depending on the event model
  * @member {Boolean} isPublic
- * @default true
  */
-CreateContestForCompetitionRequest.prototype['isPublic'] = true;
+CreateContestForCompetitionRequest.prototype['isPublic'] = undefined;
 
 /**
  * Is the event publicly exposed depending on the event model
  * @member {Boolean} autoStart
- * @default true
  */
-CreateContestForCompetitionRequest.prototype['autoStart'] = true;
+CreateContestForCompetitionRequest.prototype['autoStart'] = undefined;
 
 
 

@@ -1,4 +1,4 @@
-# @CompetitionlabsJavascriptSdk.SpaceAllOf
+# @CompetitionlabsApplicationServicesSdk.SpaceAllOf
 
 ## Properties
 

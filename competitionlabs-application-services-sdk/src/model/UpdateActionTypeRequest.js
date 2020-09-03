@@ -20,7 +20,7 @@ import UpdateModelDefault from './UpdateModelDefault';
 /**
  * The UpdateActionTypeRequest model module.
  * @module model/UpdateActionTypeRequest
- * @version 1.0.1
+ * @version 1.0.4
  */
 class UpdateActionTypeRequest {
     /**
@@ -36,16 +36,26 @@ class UpdateActionTypeRequest {
     }
 
     /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
+    static initialize(obj, id) { 
+        obj['id'] = id;
+    }
+
+    /**
     * Constructs a full object with all available fields.
     */
     model(){
         var obj = {};
 
-        obj['id'] = null;
-        obj['name'] = null;
-        obj['description'] = null;
-        obj['unitOfMeasureType'] = new UnitOfMeasureType().model();
-        obj['metadata'] = [new Metadata().model()];
+        obj['id'];
+        obj['name'];
+        obj['description'];
+        obj['key'];
+        obj['unitOfMeasureType'];
+        obj['metadata'];
 
         return obj;
     }
@@ -59,25 +69,17 @@ class UpdateActionTypeRequest {
             "requiredFields": {}
         };
 
-        obj["fields"]['id'] = { "type": 'String', "system": true };
-        obj["fields"]['name'] = { "type": 'String', "system": false };
-        obj["fields"]['description'] = { "type": 'String', "system": false };
-        obj["fields"]['unitOfMeasureType'] = new UnitOfMeasureType().modelMap();
-        obj["fields"]['metadata'] = [new Metadata().modelMap()];
+        obj["fields"]['id'];
+        obj["fields"]['name'];
+        obj["fields"]['description'];
+        obj["fields"]['key'];
+        obj["fields"]['unitOfMeasureType'];
+        obj["fields"]['metadata'];
 
         
-        obj["requiredFields"]['id'] = { "type": 'String', "system": true };
+        obj["requiredFields"]['id'];
 
         return obj;
-    }
-
-    /**
-     * Initializes the fields of this object.
-     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
-     * Only for internal use.
-     */
-    static initialize(obj, id) { 
-        obj['id'] = id;
     }
 
     /**
@@ -101,6 +103,9 @@ class UpdateActionTypeRequest {
             }
             if (data.hasOwnProperty('description')) {
                 obj['description'] = ApiClient.convertToType(data['description'], 'String');
+            }
+            if (data.hasOwnProperty('key')) {
+                obj['key'] = ApiClient.convertToType(data['key'], 'String');
             }
             if (data.hasOwnProperty('unitOfMeasureType')) {
                 obj['unitOfMeasureType'] = UnitOfMeasureType.constructFromObject(data['unitOfMeasureType']);
@@ -134,6 +139,12 @@ UpdateActionTypeRequest.prototype['name'] = undefined;
 UpdateActionTypeRequest.prototype['description'] = undefined;
 
 /**
+ * A unique key that represents an action helper
+ * @member {String} key
+ */
+UpdateActionTypeRequest.prototype['key'] = undefined;
+
+/**
  * @member {module:model/UnitOfMeasureType} unitOfMeasureType
  */
 UpdateActionTypeRequest.prototype['unitOfMeasureType'] = undefined;
@@ -161,6 +172,11 @@ UpdateActionTypeRequestAllOf.prototype['name'] = undefined;
  * @member {String} description
  */
 UpdateActionTypeRequestAllOf.prototype['description'] = undefined;
+/**
+ * A unique key that represents an action helper
+ * @member {String} key
+ */
+UpdateActionTypeRequestAllOf.prototype['key'] = undefined;
 /**
  * @member {module:model/UnitOfMeasureType} unitOfMeasureType
  */

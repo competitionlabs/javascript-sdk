@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Location model module.
  * @module model/Location
- * @version 1.0.1
+ * @version 1.0.4
  */
 class Location {
     /**
@@ -31,13 +31,23 @@ class Location {
     }
 
     /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
+    static initialize(obj, lat, lon) { 
+        obj['lat'] = lat;
+        obj['lon'] = lon;
+    }
+
+    /**
     * Constructs a full object with all available fields.
     */
     model(){
         var obj = {};
 
-        obj['lat'] = null;
-        obj['lon'] = null;
+        obj['lat'];
+        obj['lon'];
 
         return obj;
     }
@@ -51,24 +61,14 @@ class Location {
             "requiredFields": {}
         };
 
-        obj["fields"]['lat'] = { "type": 'Number', "system": false };
-        obj["fields"]['lon'] = { "type": 'Number', "system": false };
+        obj["fields"]['lat'];
+        obj["fields"]['lon'];
 
         
-        obj["requiredFields"]['lat'] = { "type": 'Number', "system": false };
-        obj["requiredFields"]['lon'] = { "type": 'Number', "system": false };
+        obj["requiredFields"]['lat'];
+        obj["requiredFields"]['lon'];
 
         return obj;
-    }
-
-    /**
-     * Initializes the fields of this object.
-     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
-     * Only for internal use.
-     */
-    static initialize(obj, lat, lon) { 
-        obj['lat'] = lat;
-        obj['lon'] = lon;
     }
 
     /**

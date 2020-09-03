@@ -1,16 +1,16 @@
-# @CompetitionlabsJavascriptSdk.LanguagesApi
+# @CompetitionlabsApplicationServicesSdk.LanguagesApi
 
 All URIs are relative to *https://api.competitionlabs.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createLanguages**](docs/LanguagesApi.md#createLanguages) | **POST** /languages/{spaceName} | 
-[**deleteLanguages**](docs/LanguagesApi.md#deleteLanguages) | **DELETE** /languages/{spaceName} | 
-[**deleteLanguagesByQuery**](docs/LanguagesApi.md#deleteLanguagesByQuery) | **POST** /languages/{spaceName}/delete | 
-[**getLanguages**](docs/LanguagesApi.md#getLanguages) | **GET** /languages/{spaceName} | 
-[**getLanguagesByQuery**](docs/LanguagesApi.md#getLanguagesByQuery) | **POST** /languages/{spaceName}/query | 
-[**getListOfAllLanguages**](docs/LanguagesApi.md#getListOfAllLanguages) | **GET** /languages/{spaceName}/available | 
-[**updateLanguages**](docs/LanguagesApi.md#updateLanguages) | **PUT** /languages/{spaceName} | 
+[**createLanguages**](LanguagesApi.md#createLanguages) | **POST** /languages/{spaceName} | 
+[**deleteLanguages**](LanguagesApi.md#deleteLanguages) | **DELETE** /languages/{spaceName} | 
+[**deleteLanguagesByQuery**](LanguagesApi.md#deleteLanguagesByQuery) | **POST** /languages/{spaceName}/delete | 
+[**getLanguages**](LanguagesApi.md#getLanguages) | **GET** /languages/{spaceName} | 
+[**getLanguagesByQuery**](LanguagesApi.md#getLanguagesByQuery) | **POST** /languages/{spaceName}/query | 
+[**getListOfAllLanguages**](LanguagesApi.md#getListOfAllLanguages) | **GET** /languages/{spaceName}/available | 
+[**updateLanguages**](LanguagesApi.md#updateLanguages) | **PUT** /languages/{spaceName} | 
 
 
 
@@ -25,17 +25,17 @@ Create a new Language in the CompetitionLabs database
 ### Example
 
 ```javascript
-import @CompetitionlabsJavascriptSdk from '@competitionlabs/javascript-sdk';
-let defaultClient = @CompetitionlabsJavascriptSdk.ApiClient.instance;
+import @CompetitionlabsApplicationServicesSdk from '@competitionlabs/application-services-sdk';
+let defaultClient = @CompetitionlabsApplicationServicesSdk.ApiClient.instance;
 // Configure API key authorization: adminApiKey
 let adminApiKey = defaultClient.authentications['adminApiKey'];
 adminApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //adminApiKey.apiKeyPrefix = 'Token';
 
-let apiInstance = new @CompetitionlabsJavascriptSdk.LanguagesApi();
+let apiInstance = new @CompetitionlabsApplicationServicesSdk.LanguagesApi();
 let spaceName = "spaceName_example"; // String | This is the space name which is linked to the account
-let body = [new @CompetitionlabsJavascriptSdk.CreateLanguageRequest()]; // [CreateLanguageRequest] | Create a Language in the CompetitionLabs database
+let body = [new @CompetitionlabsApplicationServicesSdk.CreateLanguageRequest()]; // [CreateLanguageRequest] | Create a Language in the CompetitionLabs database
 let opts = {
   'X_API_KEY': "X_API_KEY_example" // String | The admin API Key generated from CompetitionLabs back office
 };
@@ -54,16 +54,16 @@ apiInstance.createLanguages(spaceName, body, opts, (error, data, response) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **spaceName** | **String**| This is the space name which is linked to the account | 
- **body** | [**[CreateLanguageRequest]**](docs/CreateLanguageRequest.md)| Create a Language in the CompetitionLabs database | 
+ **body** | [**[CreateLanguageRequest]**](CreateLanguageRequest.md)| Create a Language in the CompetitionLabs database | 
  **X_API_KEY** | **String**| The admin API Key generated from CompetitionLabs back office | [optional] 
 
 ### Return type
 
-[**ApiResponse**](docs/ApiResponse.md)
+[**ApiResponse**](ApiResponse.md)
 
 ### Authorization
 
-[adminApiKey](README.mdminApiKey)
+[adminApiKey](../README.md#adminApiKey)
 
 ### HTTP request headers
 
@@ -82,15 +82,15 @@ Delete Languages for a given identifier specified
 ### Example
 
 ```javascript
-import @CompetitionlabsJavascriptSdk from '@competitionlabs/javascript-sdk';
-let defaultClient = @CompetitionlabsJavascriptSdk.ApiClient.instance;
+import @CompetitionlabsApplicationServicesSdk from '@competitionlabs/application-services-sdk';
+let defaultClient = @CompetitionlabsApplicationServicesSdk.ApiClient.instance;
 // Configure API key authorization: adminApiKey
 let adminApiKey = defaultClient.authentications['adminApiKey'];
 adminApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //adminApiKey.apiKeyPrefix = 'Token';
 
-let apiInstance = new @CompetitionlabsJavascriptSdk.LanguagesApi();
+let apiInstance = new @CompetitionlabsApplicationServicesSdk.LanguagesApi();
 let spaceName = "spaceName_example"; // String | This is the space name which is linked to the account
 let opts = {
   'X_API_KEY': "X_API_KEY_example", // String | The admin API Key generated from CompetitionLabs back office
@@ -116,11 +116,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApiResponse**](docs/ApiResponse.md)
+[**ApiResponse**](ApiResponse.md)
 
 ### Authorization
 
-[adminApiKey](README.mdminApiKey)
+[adminApiKey](../README.md#adminApiKey)
 
 ### HTTP request headers
 
@@ -139,19 +139,19 @@ Delete Languages from CompetitionLabs database by unique Language ID&#39;s or an
 ### Example
 
 ```javascript
-import @CompetitionlabsJavascriptSdk from '@competitionlabs/javascript-sdk';
-let defaultClient = @CompetitionlabsJavascriptSdk.ApiClient.instance;
+import @CompetitionlabsApplicationServicesSdk from '@competitionlabs/application-services-sdk';
+let defaultClient = @CompetitionlabsApplicationServicesSdk.ApiClient.instance;
 // Configure API key authorization: adminApiKey
 let adminApiKey = defaultClient.authentications['adminApiKey'];
 adminApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //adminApiKey.apiKeyPrefix = 'Token';
 
-let apiInstance = new @CompetitionlabsJavascriptSdk.LanguagesApi();
+let apiInstance = new @CompetitionlabsApplicationServicesSdk.LanguagesApi();
 let spaceName = "spaceName_example"; // String | This is the space name which is linked to the account
 let opts = {
   'X_API_KEY': "X_API_KEY_example", // String | The admin API Key generated from CompetitionLabs back office
-  'body': new @CompetitionlabsJavascriptSdk.QueryRequest() // QueryRequest | Delete Languages from CompetitionLabs database by unique Language ID's or any other POST body parameters using the POST method
+  'body': new @CompetitionlabsApplicationServicesSdk.QueryRequest() // QueryRequest | Delete Languages from CompetitionLabs database by unique Language ID's or any other POST body parameters using the POST method
 };
 apiInstance.deleteLanguagesByQuery(spaceName, opts, (error, data, response) => {
   if (error) {
@@ -169,15 +169,15 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **spaceName** | **String**| This is the space name which is linked to the account | 
  **X_API_KEY** | **String**| The admin API Key generated from CompetitionLabs back office | [optional] 
- **body** | [**QueryRequest**](docs/QueryRequest.md)| Delete Languages from CompetitionLabs database by unique Language ID&#39;s or any other POST body parameters using the POST method | [optional] 
+ **body** | [**QueryRequest**](QueryRequest.md)| Delete Languages from CompetitionLabs database by unique Language ID&#39;s or any other POST body parameters using the POST method | [optional] 
 
 ### Return type
 
-[**ApiResponse**](docs/ApiResponse.md)
+[**ApiResponse**](ApiResponse.md)
 
 ### Authorization
 
-[adminApiKey](README.mdminApiKey)
+[adminApiKey](../README.md#adminApiKey)
 
 ### HTTP request headers
 
@@ -196,21 +196,21 @@ Returns a list of Languages available in the space. This assumes that languages 
 ### Example
 
 ```javascript
-import @CompetitionlabsJavascriptSdk from '@competitionlabs/javascript-sdk';
-let defaultClient = @CompetitionlabsJavascriptSdk.ApiClient.instance;
+import @CompetitionlabsApplicationServicesSdk from '@competitionlabs/application-services-sdk';
+let defaultClient = @CompetitionlabsApplicationServicesSdk.ApiClient.instance;
 // Configure API key authorization: adminApiKey
 let adminApiKey = defaultClient.authentications['adminApiKey'];
 adminApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //adminApiKey.apiKeyPrefix = 'Token';
 
-let apiInstance = new @CompetitionlabsJavascriptSdk.LanguagesApi();
+let apiInstance = new @CompetitionlabsApplicationServicesSdk.LanguagesApi();
 let spaceName = "spaceName_example"; // String | This is the space name which is linked to the account
 let opts = {
   'X_API_KEY': "X_API_KEY_example", // String | The admin API Key generated from CompetitionLabs back office
   'id': ["null"], // [String] | The unique identifiers of the resources
-  'limit': 20, // Number | Limit the returned total records found
-  'skip': 0 // Number | Skip the returned records found and return the next batch of records
+  'limit': 56, // Number | Limit the returned total records found
+  'skip': 56 // Number | Skip the returned records found and return the next batch of records
 };
 apiInstance.getLanguages(spaceName, opts, (error, data, response) => {
   if (error) {
@@ -229,16 +229,16 @@ Name | Type | Description  | Notes
  **spaceName** | **String**| This is the space name which is linked to the account | 
  **X_API_KEY** | **String**| The admin API Key generated from CompetitionLabs back office | [optional] 
  **id** | [**[String]**](String.md)| The unique identifiers of the resources | [optional] 
- **limit** | **Number**| Limit the returned total records found | [optional] [default to 20]
- **skip** | **Number**| Skip the returned records found and return the next batch of records | [optional] [default to 0]
+ **limit** | **Number**| Limit the returned total records found | [optional] 
+ **skip** | **Number**| Skip the returned records found and return the next batch of records | [optional] 
 
 ### Return type
 
-[**LanguageResponse**](docs/LanguageResponse.md)
+[**LanguageResponse**](LanguageResponse.md)
 
 ### Authorization
 
-[adminApiKey](README.mdminApiKey)
+[adminApiKey](../README.md#adminApiKey)
 
 ### HTTP request headers
 
@@ -257,19 +257,19 @@ Retrieve Languages from CompetitionLabs database by unique Language ID&#39;s or 
 ### Example
 
 ```javascript
-import @CompetitionlabsJavascriptSdk from '@competitionlabs/javascript-sdk';
-let defaultClient = @CompetitionlabsJavascriptSdk.ApiClient.instance;
+import @CompetitionlabsApplicationServicesSdk from '@competitionlabs/application-services-sdk';
+let defaultClient = @CompetitionlabsApplicationServicesSdk.ApiClient.instance;
 // Configure API key authorization: adminApiKey
 let adminApiKey = defaultClient.authentications['adminApiKey'];
 adminApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //adminApiKey.apiKeyPrefix = 'Token';
 
-let apiInstance = new @CompetitionlabsJavascriptSdk.LanguagesApi();
+let apiInstance = new @CompetitionlabsApplicationServicesSdk.LanguagesApi();
 let spaceName = "spaceName_example"; // String | This is the space name which is linked to the account
 let opts = {
   'X_API_KEY': "X_API_KEY_example", // String | The admin API Key generated from CompetitionLabs back office
-  'body': new @CompetitionlabsJavascriptSdk.QueryRequest() // QueryRequest | Retrieve Languages from CompetitionLabs database by unique Language ID's or any other Post body parameters using the POST method
+  'body': new @CompetitionlabsApplicationServicesSdk.QueryRequest() // QueryRequest | Retrieve Languages from CompetitionLabs database by unique Language ID's or any other Post body parameters using the POST method
 };
 apiInstance.getLanguagesByQuery(spaceName, opts, (error, data, response) => {
   if (error) {
@@ -287,15 +287,15 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **spaceName** | **String**| This is the space name which is linked to the account | 
  **X_API_KEY** | **String**| The admin API Key generated from CompetitionLabs back office | [optional] 
- **body** | [**QueryRequest**](docs/QueryRequest.md)| Retrieve Languages from CompetitionLabs database by unique Language ID&#39;s or any other Post body parameters using the POST method | [optional] 
+ **body** | [**QueryRequest**](QueryRequest.md)| Retrieve Languages from CompetitionLabs database by unique Language ID&#39;s or any other Post body parameters using the POST method | [optional] 
 
 ### Return type
 
-[**LanguageResponse**](docs/LanguageResponse.md)
+[**LanguageResponse**](LanguageResponse.md)
 
 ### Authorization
 
-[adminApiKey](README.mdminApiKey)
+[adminApiKey](../README.md#adminApiKey)
 
 ### HTTP request headers
 
@@ -314,20 +314,20 @@ Returns a list of all avaialable Languages
 ### Example
 
 ```javascript
-import @CompetitionlabsJavascriptSdk from '@competitionlabs/javascript-sdk';
-let defaultClient = @CompetitionlabsJavascriptSdk.ApiClient.instance;
+import @CompetitionlabsApplicationServicesSdk from '@competitionlabs/application-services-sdk';
+let defaultClient = @CompetitionlabsApplicationServicesSdk.ApiClient.instance;
 // Configure API key authorization: adminApiKey
 let adminApiKey = defaultClient.authentications['adminApiKey'];
 adminApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //adminApiKey.apiKeyPrefix = 'Token';
 
-let apiInstance = new @CompetitionlabsJavascriptSdk.LanguagesApi();
+let apiInstance = new @CompetitionlabsApplicationServicesSdk.LanguagesApi();
 let spaceName = "spaceName_example"; // String | This is the space name which is linked to the account
 let opts = {
   'X_API_KEY': "X_API_KEY_example", // String | The admin API Key generated from CompetitionLabs back office
-  'limit': 20, // Number | Limit the returned total records found
-  'skip': 0 // Number | Skip the returned records found and return the next batch of records
+  'limit': 56, // Number | Limit the returned total records found
+  'skip': 56 // Number | Skip the returned records found and return the next batch of records
 };
 apiInstance.getListOfAllLanguages(spaceName, opts, (error, data, response) => {
   if (error) {
@@ -345,16 +345,16 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **spaceName** | **String**| This is the space name which is linked to the account | 
  **X_API_KEY** | **String**| The admin API Key generated from CompetitionLabs back office | [optional] 
- **limit** | **Number**| Limit the returned total records found | [optional] [default to 20]
- **skip** | **Number**| Skip the returned records found and return the next batch of records | [optional] [default to 0]
+ **limit** | **Number**| Limit the returned total records found | [optional] 
+ **skip** | **Number**| Skip the returned records found and return the next batch of records | [optional] 
 
 ### Return type
 
-[**LanguageResponse**](docs/LanguageResponse.md)
+[**LanguageResponse**](LanguageResponse.md)
 
 ### Authorization
 
-[adminApiKey](README.mdminApiKey)
+[adminApiKey](../README.md#adminApiKey)
 
 ### HTTP request headers
 
@@ -373,17 +373,17 @@ Update an existing Language in the CompetitionLabs database
 ### Example
 
 ```javascript
-import @CompetitionlabsJavascriptSdk from '@competitionlabs/javascript-sdk';
-let defaultClient = @CompetitionlabsJavascriptSdk.ApiClient.instance;
+import @CompetitionlabsApplicationServicesSdk from '@competitionlabs/application-services-sdk';
+let defaultClient = @CompetitionlabsApplicationServicesSdk.ApiClient.instance;
 // Configure API key authorization: adminApiKey
 let adminApiKey = defaultClient.authentications['adminApiKey'];
 adminApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //adminApiKey.apiKeyPrefix = 'Token';
 
-let apiInstance = new @CompetitionlabsJavascriptSdk.LanguagesApi();
+let apiInstance = new @CompetitionlabsApplicationServicesSdk.LanguagesApi();
 let spaceName = "spaceName_example"; // String | This is the space name which is linked to the account
-let body = [new @CompetitionlabsJavascriptSdk.UpdateLanguageRequest()]; // [UpdateLanguageRequest] | Update Language details in the CompetitionLabs database
+let body = [new @CompetitionlabsApplicationServicesSdk.UpdateLanguageRequest()]; // [UpdateLanguageRequest] | Update Language details in the CompetitionLabs database
 let opts = {
   'X_API_KEY': "X_API_KEY_example" // String | The admin API Key generated from CompetitionLabs back office
 };
@@ -402,16 +402,16 @@ apiInstance.updateLanguages(spaceName, body, opts, (error, data, response) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **spaceName** | **String**| This is the space name which is linked to the account | 
- **body** | [**[UpdateLanguageRequest]**](docs/UpdateLanguageRequest.md)| Update Language details in the CompetitionLabs database | 
+ **body** | [**[UpdateLanguageRequest]**](UpdateLanguageRequest.md)| Update Language details in the CompetitionLabs database | 
  **X_API_KEY** | **String**| The admin API Key generated from CompetitionLabs back office | [optional] 
 
 ### Return type
 
-[**ApiResponse**](docs/ApiResponse.md)
+[**ApiResponse**](ApiResponse.md)
 
 ### Authorization
 
-[adminApiKey](README.mdminApiKey)
+[adminApiKey](../README.md#adminApiKey)
 
 ### HTTP request headers
 

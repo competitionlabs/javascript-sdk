@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The StartEndDate model module.
  * @module model/StartEndDate
- * @version 1.0.1
+ * @version 1.0.4
  */
 class StartEndDate {
     /**
@@ -30,13 +30,22 @@ class StartEndDate {
     }
 
     /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
+    static initialize(obj, start) { 
+        obj['start'] = start;
+    }
+
+    /**
     * Constructs a full object with all available fields.
     */
     model(){
         var obj = {};
 
-        obj['start'] = null;
-        obj['end'] = null;
+        obj['start'];
+        obj['end'];
 
         return obj;
     }
@@ -50,22 +59,13 @@ class StartEndDate {
             "requiredFields": {}
         };
 
-        obj["fields"]['start'] = { "type": 'Date', "system": false };
-        obj["fields"]['end'] = { "type": 'Date', "system": false };
+        obj["fields"]['start'];
+        obj["fields"]['end'];
 
         
-        obj["requiredFields"]['start'] = { "type": 'Date', "system": false };
+        obj["requiredFields"]['start'];
 
         return obj;
-    }
-
-    /**
-     * Initializes the fields of this object.
-     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
-     * Only for internal use.
-     */
-    static initialize(obj, start) { 
-        obj['start'] = start;
     }
 
     /**

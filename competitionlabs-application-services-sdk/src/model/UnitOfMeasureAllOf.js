@@ -18,7 +18,7 @@ import UnitOfMeasureType from './UnitOfMeasureType';
 /**
  * The UnitOfMeasureAllOf model module.
  * @module model/UnitOfMeasureAllOf
- * @version 1.0.1
+ * @version 1.0.4
  */
 class UnitOfMeasureAllOf {
     /**
@@ -35,19 +35,31 @@ class UnitOfMeasureAllOf {
     }
 
     /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
+    static initialize(obj, name, key, multiplier, unitOfMeasureType) { 
+        obj['name'] = name;
+        obj['key'] = key;
+        obj['multiplier'] = multiplier;
+        obj['unitOfMeasureType'] = unitOfMeasureType;
+    }
+
+    /**
     * Constructs a full object with all available fields.
     */
     model(){
         var obj = {};
 
-        obj['name'] = null;
-        obj['key'] = null;
-        obj['description'] = null;
-        obj['isoCode'] = null;
-        obj['symbol'] = null;
-        obj['multiplier'] = null;
-        obj['unitOfMeasureType'] = new UnitOfMeasureType().model();
-        obj['metadata'] = [new Metadata().model()];
+        obj['name'];
+        obj['key'];
+        obj['description'];
+        obj['isoCode'];
+        obj['symbol'];
+        obj['multiplier'];
+        obj['unitOfMeasureType'];
+        obj['metadata'];
 
         return obj;
     }
@@ -61,34 +73,22 @@ class UnitOfMeasureAllOf {
             "requiredFields": {}
         };
 
-        obj["fields"]['name'] = { "type": 'String', "system": false };
-        obj["fields"]['key'] = { "type": 'String', "system": false };
-        obj["fields"]['description'] = { "type": 'String', "system": false };
-        obj["fields"]['isoCode'] = { "type": 'String', "system": false };
-        obj["fields"]['symbol'] = { "type": 'String', "system": false };
-        obj["fields"]['multiplier'] = { "type": 'Number', "system": false };
-        obj["fields"]['unitOfMeasureType'] = new UnitOfMeasureType().modelMap();
-        obj["fields"]['metadata'] = [new Metadata().modelMap()];
+        obj["fields"]['name'];
+        obj["fields"]['key'];
+        obj["fields"]['description'];
+        obj["fields"]['isoCode'];
+        obj["fields"]['symbol'];
+        obj["fields"]['multiplier'];
+        obj["fields"]['unitOfMeasureType'];
+        obj["fields"]['metadata'];
 
         
-        obj["requiredFields"]['name'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['key'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['multiplier'] = { "type": 'Number', "system": false };
-        obj["requiredFields"]['unitOfMeasureType'] = new UnitOfMeasureType().modelMap();
+        obj["requiredFields"]['name'];
+        obj["requiredFields"]['key'];
+        obj["requiredFields"]['multiplier'];
+        obj["requiredFields"]['unitOfMeasureType'];
 
         return obj;
-    }
-
-    /**
-     * Initializes the fields of this object.
-     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
-     * Only for internal use.
-     */
-    static initialize(obj, name, key, multiplier, unitOfMeasureType) { 
-        obj['name'] = name;
-        obj['key'] = key;
-        obj['multiplier'] = multiplier;
-        obj['unitOfMeasureType'] = unitOfMeasureType;
     }
 
     /**

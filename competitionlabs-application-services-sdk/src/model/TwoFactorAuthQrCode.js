@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TwoFactorAuthQrCode model module.
  * @module model/TwoFactorAuthQrCode
- * @version 1.0.1
+ * @version 1.0.4
  */
 class TwoFactorAuthQrCode {
     /**
@@ -31,13 +31,23 @@ class TwoFactorAuthQrCode {
     }
 
     /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
+    static initialize(obj, barcodeUrl, secretKey) { 
+        obj['barcodeUrl'] = barcodeUrl;
+        obj['secretKey'] = secretKey;
+    }
+
+    /**
     * Constructs a full object with all available fields.
     */
     model(){
         var obj = {};
 
-        obj['barcodeUrl'] = null;
-        obj['secretKey'] = null;
+        obj['barcodeUrl'];
+        obj['secretKey'];
 
         return obj;
     }
@@ -51,24 +61,14 @@ class TwoFactorAuthQrCode {
             "requiredFields": {}
         };
 
-        obj["fields"]['barcodeUrl'] = { "type": 'String', "system": false };
-        obj["fields"]['secretKey'] = { "type": 'String', "system": false };
+        obj["fields"]['barcodeUrl'];
+        obj["fields"]['secretKey'];
 
         
-        obj["requiredFields"]['barcodeUrl'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['secretKey'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['barcodeUrl'];
+        obj["requiredFields"]['secretKey'];
 
         return obj;
-    }
-
-    /**
-     * Initializes the fields of this object.
-     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
-     * Only for internal use.
-     */
-    static initialize(obj, barcodeUrl, secretKey) { 
-        obj['barcodeUrl'] = barcodeUrl;
-        obj['secretKey'] = secretKey;
     }
 
     /**

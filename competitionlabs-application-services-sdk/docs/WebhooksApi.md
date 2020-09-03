@@ -1,16 +1,16 @@
-# @CompetitionlabsJavascriptSdk.WebhooksApi
+# @CompetitionlabsApplicationServicesSdk.WebhooksApi
 
 All URIs are relative to *https://api.competitionlabs.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createWebhooks**](docs/WebhooksApi.md#createWebhooks) | **POST** /webhooks/{spaceName} | 
-[**deleteWebhooks**](docs/WebhooksApi.md#deleteWebhooks) | **DELETE** /webhooks/{spaceName} | 
-[**deleteWebhooksByQuery**](docs/WebhooksApi.md#deleteWebhooksByQuery) | **POST** /webhooks/{spaceName}/delete | 
-[**getWebhooks**](docs/WebhooksApi.md#getWebhooks) | **GET** /webhooks/{spaceName} | 
-[**getWebhooksByQuery**](docs/WebhooksApi.md#getWebhooksByQuery) | **POST** /webhooks/{spaceName}/query | 
-[**updateWebhooks**](docs/WebhooksApi.md#updateWebhooks) | **PUT** /webhooks/{spaceName} | 
-[**updateWebhooksState**](docs/WebhooksApi.md#updateWebhooksState) | **POST** /webhooks/{spaceName}/state | NOT AVAILABLE IN CURRENT RELEASE
+[**createWebhooks**](WebhooksApi.md#createWebhooks) | **POST** /webhooks/{spaceName} | 
+[**deleteWebhooks**](WebhooksApi.md#deleteWebhooks) | **DELETE** /webhooks/{spaceName} | 
+[**deleteWebhooksByQuery**](WebhooksApi.md#deleteWebhooksByQuery) | **POST** /webhooks/{spaceName}/delete | 
+[**getWebhooks**](WebhooksApi.md#getWebhooks) | **GET** /webhooks/{spaceName} | 
+[**getWebhooksByQuery**](WebhooksApi.md#getWebhooksByQuery) | **POST** /webhooks/{spaceName}/query | 
+[**updateWebhooks**](WebhooksApi.md#updateWebhooks) | **PUT** /webhooks/{spaceName} | 
+[**updateWebhooksState**](WebhooksApi.md#updateWebhooksState) | **POST** /webhooks/{spaceName}/state | NOT AVAILABLE IN CURRENT RELEASE
 
 
 
@@ -25,17 +25,17 @@ Create a new Webhook in the CompetitionLabs system
 ### Example
 
 ```javascript
-import @CompetitionlabsJavascriptSdk from '@competitionlabs/javascript-sdk';
-let defaultClient = @CompetitionlabsJavascriptSdk.ApiClient.instance;
+import @CompetitionlabsApplicationServicesSdk from '@competitionlabs/application-services-sdk';
+let defaultClient = @CompetitionlabsApplicationServicesSdk.ApiClient.instance;
 // Configure API key authorization: adminApiKey
 let adminApiKey = defaultClient.authentications['adminApiKey'];
 adminApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //adminApiKey.apiKeyPrefix = 'Token';
 
-let apiInstance = new @CompetitionlabsJavascriptSdk.WebhooksApi();
+let apiInstance = new @CompetitionlabsApplicationServicesSdk.WebhooksApi();
 let spaceName = "spaceName_example"; // String | This is the space name which is linked to the account
-let body = new @CompetitionlabsJavascriptSdk.CreateWebhookRequest(); // CreateWebhookRequest | Create a Webhook in the CompetitionLabs system
+let body = new @CompetitionlabsApplicationServicesSdk.CreateWebhookRequest(); // CreateWebhookRequest | Create a Webhook in the CompetitionLabs system
 let opts = {
   'X_API_KEY': "X_API_KEY_example" // String | The admin API Key generated from CompetitionLabs back office
 };
@@ -54,16 +54,16 @@ apiInstance.createWebhooks(spaceName, body, opts, (error, data, response) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **spaceName** | **String**| This is the space name which is linked to the account | 
- **body** | [**CreateWebhookRequest**](docs/CreateWebhookRequest.md)| Create a Webhook in the CompetitionLabs system | 
+ **body** | [**CreateWebhookRequest**](CreateWebhookRequest.md)| Create a Webhook in the CompetitionLabs system | 
  **X_API_KEY** | **String**| The admin API Key generated from CompetitionLabs back office | [optional] 
 
 ### Return type
 
-[**ApiResponse**](docs/ApiResponse.md)
+[**ApiResponse**](ApiResponse.md)
 
 ### Authorization
 
-[adminApiKey](README.mdminApiKey)
+[adminApiKey](../README.md#adminApiKey)
 
 ### HTTP request headers
 
@@ -82,15 +82,15 @@ Delete the Webhooks for a given identifier specified
 ### Example
 
 ```javascript
-import @CompetitionlabsJavascriptSdk from '@competitionlabs/javascript-sdk';
-let defaultClient = @CompetitionlabsJavascriptSdk.ApiClient.instance;
+import @CompetitionlabsApplicationServicesSdk from '@competitionlabs/application-services-sdk';
+let defaultClient = @CompetitionlabsApplicationServicesSdk.ApiClient.instance;
 // Configure API key authorization: adminApiKey
 let adminApiKey = defaultClient.authentications['adminApiKey'];
 adminApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //adminApiKey.apiKeyPrefix = 'Token';
 
-let apiInstance = new @CompetitionlabsJavascriptSdk.WebhooksApi();
+let apiInstance = new @CompetitionlabsApplicationServicesSdk.WebhooksApi();
 let spaceName = "spaceName_example"; // String | This is the space name which is linked to the account
 let opts = {
   'X_API_KEY': "X_API_KEY_example", // String | The admin API Key generated from CompetitionLabs back office
@@ -116,11 +116,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApiResponse**](docs/ApiResponse.md)
+[**ApiResponse**](ApiResponse.md)
 
 ### Authorization
 
-[adminApiKey](README.mdminApiKey)
+[adminApiKey](../README.md#adminApiKey)
 
 ### HTTP request headers
 
@@ -139,19 +139,19 @@ Delete a Webhook or a list of Webhooks from CompetitionLabs by unique Webhook ID
 ### Example
 
 ```javascript
-import @CompetitionlabsJavascriptSdk from '@competitionlabs/javascript-sdk';
-let defaultClient = @CompetitionlabsJavascriptSdk.ApiClient.instance;
+import @CompetitionlabsApplicationServicesSdk from '@competitionlabs/application-services-sdk';
+let defaultClient = @CompetitionlabsApplicationServicesSdk.ApiClient.instance;
 // Configure API key authorization: adminApiKey
 let adminApiKey = defaultClient.authentications['adminApiKey'];
 adminApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //adminApiKey.apiKeyPrefix = 'Token';
 
-let apiInstance = new @CompetitionlabsJavascriptSdk.WebhooksApi();
+let apiInstance = new @CompetitionlabsApplicationServicesSdk.WebhooksApi();
 let spaceName = "spaceName_example"; // String | This is the space name which is linked to the account
 let opts = {
   'X_API_KEY': "X_API_KEY_example", // String | The admin API Key generated from CompetitionLabs back office
-  'body': new @CompetitionlabsJavascriptSdk.QueryRequest() // QueryRequest | Delete a Webhook or a list of Webhooks from CompetitionLabs by unique Webhook ID's or any other POST body parameters using the POST method
+  'body': new @CompetitionlabsApplicationServicesSdk.QueryRequest() // QueryRequest | Delete a Webhook or a list of Webhooks from CompetitionLabs by unique Webhook ID's or any other POST body parameters using the POST method
 };
 apiInstance.deleteWebhooksByQuery(spaceName, opts, (error, data, response) => {
   if (error) {
@@ -169,15 +169,15 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **spaceName** | **String**| This is the space name which is linked to the account | 
  **X_API_KEY** | **String**| The admin API Key generated from CompetitionLabs back office | [optional] 
- **body** | [**QueryRequest**](docs/QueryRequest.md)| Delete a Webhook or a list of Webhooks from CompetitionLabs by unique Webhook ID&#39;s or any other POST body parameters using the POST method | [optional] 
+ **body** | [**QueryRequest**](QueryRequest.md)| Delete a Webhook or a list of Webhooks from CompetitionLabs by unique Webhook ID&#39;s or any other POST body parameters using the POST method | [optional] 
 
 ### Return type
 
-[**ApiResponse**](docs/ApiResponse.md)
+[**ApiResponse**](ApiResponse.md)
 
 ### Authorization
 
-[adminApiKey](README.mdminApiKey)
+[adminApiKey](../README.md#adminApiKey)
 
 ### HTTP request headers
 
@@ -196,21 +196,21 @@ Returns a list of Webhooks. This assumes that webhooks have first been uploaded 
 ### Example
 
 ```javascript
-import @CompetitionlabsJavascriptSdk from '@competitionlabs/javascript-sdk';
-let defaultClient = @CompetitionlabsJavascriptSdk.ApiClient.instance;
+import @CompetitionlabsApplicationServicesSdk from '@competitionlabs/application-services-sdk';
+let defaultClient = @CompetitionlabsApplicationServicesSdk.ApiClient.instance;
 // Configure API key authorization: adminApiKey
 let adminApiKey = defaultClient.authentications['adminApiKey'];
 adminApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //adminApiKey.apiKeyPrefix = 'Token';
 
-let apiInstance = new @CompetitionlabsJavascriptSdk.WebhooksApi();
+let apiInstance = new @CompetitionlabsApplicationServicesSdk.WebhooksApi();
 let spaceName = "spaceName_example"; // String | This is the space name which is linked to the account
 let opts = {
   'X_API_KEY': "X_API_KEY_example", // String | The admin API Key generated from CompetitionLabs back office
   'id': ["null"], // [String] | The unique identifiers of the resources
-  'limit': 20, // Number | Limit the returned total records found
-  'skip': 0 // Number | Skip the returned records found and return the next batch of records
+  'limit': 56, // Number | Limit the returned total records found
+  'skip': 56 // Number | Skip the returned records found and return the next batch of records
 };
 apiInstance.getWebhooks(spaceName, opts, (error, data, response) => {
   if (error) {
@@ -229,16 +229,16 @@ Name | Type | Description  | Notes
  **spaceName** | **String**| This is the space name which is linked to the account | 
  **X_API_KEY** | **String**| The admin API Key generated from CompetitionLabs back office | [optional] 
  **id** | [**[String]**](String.md)| The unique identifiers of the resources | [optional] 
- **limit** | **Number**| Limit the returned total records found | [optional] [default to 20]
- **skip** | **Number**| Skip the returned records found and return the next batch of records | [optional] [default to 0]
+ **limit** | **Number**| Limit the returned total records found | [optional] 
+ **skip** | **Number**| Skip the returned records found and return the next batch of records | [optional] 
 
 ### Return type
 
-[**WebhookResponse**](docs/WebhookResponse.md)
+[**WebhookResponse**](WebhookResponse.md)
 
 ### Authorization
 
-[adminApiKey](README.mdminApiKey)
+[adminApiKey](../README.md#adminApiKey)
 
 ### HTTP request headers
 
@@ -257,19 +257,19 @@ Retrieve a Webhook or a list of Webhooks from CompetitionLabs by unique Webhook 
 ### Example
 
 ```javascript
-import @CompetitionlabsJavascriptSdk from '@competitionlabs/javascript-sdk';
-let defaultClient = @CompetitionlabsJavascriptSdk.ApiClient.instance;
+import @CompetitionlabsApplicationServicesSdk from '@competitionlabs/application-services-sdk';
+let defaultClient = @CompetitionlabsApplicationServicesSdk.ApiClient.instance;
 // Configure API key authorization: adminApiKey
 let adminApiKey = defaultClient.authentications['adminApiKey'];
 adminApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //adminApiKey.apiKeyPrefix = 'Token';
 
-let apiInstance = new @CompetitionlabsJavascriptSdk.WebhooksApi();
+let apiInstance = new @CompetitionlabsApplicationServicesSdk.WebhooksApi();
 let spaceName = "spaceName_example"; // String | This is the space name which is linked to the account
 let opts = {
   'X_API_KEY': "X_API_KEY_example", // String | The admin API Key generated from CompetitionLabs back office
-  'body': new @CompetitionlabsJavascriptSdk.QueryRequest() // QueryRequest | Retrieve a Webhook or a list of Webhooks from CompetitionLabs by unique Webhook ID's or any other Post body parameters using the POST method
+  'body': new @CompetitionlabsApplicationServicesSdk.QueryRequest() // QueryRequest | Retrieve a Webhook or a list of Webhooks from CompetitionLabs by unique Webhook ID's or any other Post body parameters using the POST method
 };
 apiInstance.getWebhooksByQuery(spaceName, opts, (error, data, response) => {
   if (error) {
@@ -287,15 +287,15 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **spaceName** | **String**| This is the space name which is linked to the account | 
  **X_API_KEY** | **String**| The admin API Key generated from CompetitionLabs back office | [optional] 
- **body** | [**QueryRequest**](docs/QueryRequest.md)| Retrieve a Webhook or a list of Webhooks from CompetitionLabs by unique Webhook ID&#39;s or any other Post body parameters using the POST method | [optional] 
+ **body** | [**QueryRequest**](QueryRequest.md)| Retrieve a Webhook or a list of Webhooks from CompetitionLabs by unique Webhook ID&#39;s or any other Post body parameters using the POST method | [optional] 
 
 ### Return type
 
-[**WebhookResponse**](docs/WebhookResponse.md)
+[**WebhookResponse**](WebhookResponse.md)
 
 ### Authorization
 
-[adminApiKey](README.mdminApiKey)
+[adminApiKey](../README.md#adminApiKey)
 
 ### HTTP request headers
 
@@ -314,17 +314,17 @@ Update an existing Webhook in the CompetitionLabs system
 ### Example
 
 ```javascript
-import @CompetitionlabsJavascriptSdk from '@competitionlabs/javascript-sdk';
-let defaultClient = @CompetitionlabsJavascriptSdk.ApiClient.instance;
+import @CompetitionlabsApplicationServicesSdk from '@competitionlabs/application-services-sdk';
+let defaultClient = @CompetitionlabsApplicationServicesSdk.ApiClient.instance;
 // Configure API key authorization: adminApiKey
 let adminApiKey = defaultClient.authentications['adminApiKey'];
 adminApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //adminApiKey.apiKeyPrefix = 'Token';
 
-let apiInstance = new @CompetitionlabsJavascriptSdk.WebhooksApi();
+let apiInstance = new @CompetitionlabsApplicationServicesSdk.WebhooksApi();
 let spaceName = "spaceName_example"; // String | This is the space name which is linked to the account
-let body = new @CompetitionlabsJavascriptSdk.UpdateWebhookRequest(); // UpdateWebhookRequest | Update Webhook details in the CompetitionLabs system
+let body = new @CompetitionlabsApplicationServicesSdk.UpdateWebhookRequest(); // UpdateWebhookRequest | Update Webhook details in the CompetitionLabs system
 let opts = {
   'X_API_KEY': "X_API_KEY_example" // String | The admin API Key generated from CompetitionLabs back office
 };
@@ -343,16 +343,16 @@ apiInstance.updateWebhooks(spaceName, body, opts, (error, data, response) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **spaceName** | **String**| This is the space name which is linked to the account | 
- **body** | [**UpdateWebhookRequest**](docs/UpdateWebhookRequest.md)| Update Webhook details in the CompetitionLabs system | 
+ **body** | [**UpdateWebhookRequest**](UpdateWebhookRequest.md)| Update Webhook details in the CompetitionLabs system | 
  **X_API_KEY** | **String**| The admin API Key generated from CompetitionLabs back office | [optional] 
 
 ### Return type
 
-[**ApiResponse**](docs/ApiResponse.md)
+[**ApiResponse**](ApiResponse.md)
 
 ### Authorization
 
-[adminApiKey](README.mdminApiKey)
+[adminApiKey](../README.md#adminApiKey)
 
 ### HTTP request headers
 
@@ -371,19 +371,19 @@ Update the state of a Wbhook using the POST method
 ### Example
 
 ```javascript
-import @CompetitionlabsJavascriptSdk from '@competitionlabs/javascript-sdk';
-let defaultClient = @CompetitionlabsJavascriptSdk.ApiClient.instance;
+import @CompetitionlabsApplicationServicesSdk from '@competitionlabs/application-services-sdk';
+let defaultClient = @CompetitionlabsApplicationServicesSdk.ApiClient.instance;
 // Configure API key authorization: adminApiKey
 let adminApiKey = defaultClient.authentications['adminApiKey'];
 adminApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //adminApiKey.apiKeyPrefix = 'Token';
 
-let apiInstance = new @CompetitionlabsJavascriptSdk.WebhooksApi();
+let apiInstance = new @CompetitionlabsApplicationServicesSdk.WebhooksApi();
 let spaceName = "spaceName_example"; // String | This is the space name which is linked to the account
 let opts = {
   'X_API_KEY': "X_API_KEY_example", // String | The admin API Key generated from CompetitionLabs back office
-  'body': new @CompetitionlabsJavascriptSdk.CreateWebhookRequest() // CreateWebhookRequest | Update the state of a Webhook using the POST method
+  'body': new @CompetitionlabsApplicationServicesSdk.CreateWebhookRequest() // CreateWebhookRequest | Update the state of a Webhook using the POST method
 };
 apiInstance.updateWebhooksState(spaceName, opts, (error, data, response) => {
   if (error) {
@@ -401,15 +401,15 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **spaceName** | **String**| This is the space name which is linked to the account | 
  **X_API_KEY** | **String**| The admin API Key generated from CompetitionLabs back office | [optional] 
- **body** | [**CreateWebhookRequest**](docs/CreateWebhookRequest.md)| Update the state of a Webhook using the POST method | [optional] 
+ **body** | [**CreateWebhookRequest**](CreateWebhookRequest.md)| Update the state of a Webhook using the POST method | [optional] 
 
 ### Return type
 
-[**ApiResponse**](docs/ApiResponse.md)
+[**ApiResponse**](ApiResponse.md)
 
 ### Authorization
 
-[adminApiKey](README.mdminApiKey)
+[adminApiKey](../README.md#adminApiKey)
 
 ### HTTP request headers
 

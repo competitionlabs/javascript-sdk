@@ -18,7 +18,7 @@ import UnitOfMeasureType from './UnitOfMeasureType';
 /**
  * The UpdateActionTypeRequestAllOf model module.
  * @module model/UpdateActionTypeRequestAllOf
- * @version 1.0.1
+ * @version 1.0.4
  */
 class UpdateActionTypeRequestAllOf {
     /**
@@ -31,15 +31,24 @@ class UpdateActionTypeRequestAllOf {
     }
 
     /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
+    static initialize(obj) { 
+    }
+
+    /**
     * Constructs a full object with all available fields.
     */
     model(){
         var obj = {};
 
-        obj['name'] = null;
-        obj['description'] = null;
-        obj['unitOfMeasureType'] = new UnitOfMeasureType().model();
-        obj['metadata'] = [new Metadata().model()];
+        obj['name'];
+        obj['description'];
+        obj['key'];
+        obj['unitOfMeasureType'];
+        obj['metadata'];
 
         return obj;
     }
@@ -53,22 +62,15 @@ class UpdateActionTypeRequestAllOf {
             "requiredFields": {}
         };
 
-        obj["fields"]['name'] = { "type": 'String', "system": false };
-        obj["fields"]['description'] = { "type": 'String', "system": false };
-        obj["fields"]['unitOfMeasureType'] = new UnitOfMeasureType().modelMap();
-        obj["fields"]['metadata'] = [new Metadata().modelMap()];
+        obj["fields"]['name'];
+        obj["fields"]['description'];
+        obj["fields"]['key'];
+        obj["fields"]['unitOfMeasureType'];
+        obj["fields"]['metadata'];
 
         
 
         return obj;
-    }
-
-    /**
-     * Initializes the fields of this object.
-     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
-     * Only for internal use.
-     */
-    static initialize(obj) { 
     }
 
     /**
@@ -87,6 +89,9 @@ class UpdateActionTypeRequestAllOf {
             }
             if (data.hasOwnProperty('description')) {
                 obj['description'] = ApiClient.convertToType(data['description'], 'String');
+            }
+            if (data.hasOwnProperty('key')) {
+                obj['key'] = ApiClient.convertToType(data['key'], 'String');
             }
             if (data.hasOwnProperty('unitOfMeasureType')) {
                 obj['unitOfMeasureType'] = UnitOfMeasureType.constructFromObject(data['unitOfMeasureType']);
@@ -112,6 +117,12 @@ UpdateActionTypeRequestAllOf.prototype['name'] = undefined;
  * @member {String} description
  */
 UpdateActionTypeRequestAllOf.prototype['description'] = undefined;
+
+/**
+ * A unique key that represents an action helper
+ * @member {String} key
+ */
+UpdateActionTypeRequestAllOf.prototype['key'] = undefined;
 
 /**
  * @member {module:model/UnitOfMeasureType} unitOfMeasureType

@@ -1,4 +1,4 @@
-# @CompetitionlabsJavascriptSdk.Attachment
+# @CompetitionlabsApplicationServicesSdk.Attachment
 
 ## Properties
 
@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **extension** | **String** | Extension of the file uploaded. Valid extensions supported - csv, xlsx, xls | 
 **locationKey** | **String** | The name of the attachment within the bucket | 
 **locationFolder** | **String** | The folder name containing the attachment within the bucket | 
-**permission** | **Number** |  | [default to 744]
-**metadata** | [**[Metadata]**](docs/Metadata.md) |  | [optional] 
+**permission** | **Number** |  | 
+**metadata** | [**[Metadata]**](Metadata.md) |  | [optional] 
 
 

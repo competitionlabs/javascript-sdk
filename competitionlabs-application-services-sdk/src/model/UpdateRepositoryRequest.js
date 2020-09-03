@@ -13,13 +13,14 @@
 
 import ApiClient from '../ApiClient';
 import HostingOptions from './HostingOptions';
+import Metadata from './Metadata';
 import UpdateModelDefault from './UpdateModelDefault';
 import UpdateRepositoryRequestAllOf from './UpdateRepositoryRequestAllOf';
 
 /**
  * The UpdateRepositoryRequest model module.
  * @module model/UpdateRepositoryRequest
- * @version 1.0.1
+ * @version 1.0.4
  */
 class UpdateRepositoryRequest {
     /**
@@ -35,16 +36,27 @@ class UpdateRepositoryRequest {
     }
 
     /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
+    static initialize(obj, id) { 
+        obj['id'] = id;
+    }
+
+    /**
     * Constructs a full object with all available fields.
     */
     model(){
         var obj = {};
 
-        obj['id'] = null;
-        obj['description'] = null;
-        obj['tags'] = [null];
-        obj['constraints'] = [null];
-        obj['hostingOptions'] = new HostingOptions().model();
+        obj['id'];
+        obj['name'];
+        obj['description'];
+        obj['tags'];
+        obj['constraints'];
+        obj['hostingOptions'];
+        obj['metadata'];
 
         return obj;
     }
@@ -58,25 +70,18 @@ class UpdateRepositoryRequest {
             "requiredFields": {}
         };
 
-        obj["fields"]['id'] = { "type": 'String', "system": true };
-        obj["fields"]['description'] = { "type": 'String', "system": false };
-        obj["fields"]['tags'] = [{ "type": 'String', "system": false }];
-        obj["fields"]['constraints'] = [{ "type": 'String', "system": false }];
-        obj["fields"]['hostingOptions'] = new HostingOptions().modelMap();
+        obj["fields"]['id'];
+        obj["fields"]['name'];
+        obj["fields"]['description'];
+        obj["fields"]['tags'];
+        obj["fields"]['constraints'];
+        obj["fields"]['hostingOptions'];
+        obj["fields"]['metadata'];
 
         
-        obj["requiredFields"]['id'] = { "type": 'String', "system": true };
+        obj["requiredFields"]['id'];
 
         return obj;
-    }
-
-    /**
-     * Initializes the fields of this object.
-     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
-     * Only for internal use.
-     */
-    static initialize(obj, id) { 
-        obj['id'] = id;
     }
 
     /**
@@ -95,6 +100,9 @@ class UpdateRepositoryRequest {
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'String');
             }
+            if (data.hasOwnProperty('name')) {
+                obj['name'] = ApiClient.convertToType(data['name'], 'String');
+            }
             if (data.hasOwnProperty('description')) {
                 obj['description'] = ApiClient.convertToType(data['description'], 'String');
             }
@@ -106,6 +114,9 @@ class UpdateRepositoryRequest {
             }
             if (data.hasOwnProperty('hostingOptions')) {
                 obj['hostingOptions'] = HostingOptions.constructFromObject(data['hostingOptions']);
+            }
+            if (data.hasOwnProperty('metadata')) {
+                obj['metadata'] = ApiClient.convertToType(data['metadata'], [Metadata]);
             }
         }
         return obj;
@@ -119,6 +130,12 @@ class UpdateRepositoryRequest {
  * @member {String} id
  */
 UpdateRepositoryRequest.prototype['id'] = undefined;
+
+/**
+ * The name of the repository. No special charaters or spaces permitted
+ * @member {String} name
+ */
+UpdateRepositoryRequest.prototype['name'] = undefined;
 
 /**
  * The description of the repository
@@ -143,6 +160,12 @@ UpdateRepositoryRequest.prototype['constraints'] = undefined;
  */
 UpdateRepositoryRequest.prototype['hostingOptions'] = undefined;
 
+/**
+ * Metadata used to describe this file. Content type application/json
+ * @member {Array.<module:model/Metadata>} metadata
+ */
+UpdateRepositoryRequest.prototype['metadata'] = undefined;
+
 
 // Implement UpdateModelDefault interface:
 /**
@@ -151,6 +174,11 @@ UpdateRepositoryRequest.prototype['hostingOptions'] = undefined;
  */
 UpdateModelDefault.prototype['id'] = undefined;
 // Implement UpdateRepositoryRequestAllOf interface:
+/**
+ * The name of the repository. No special charaters or spaces permitted
+ * @member {String} name
+ */
+UpdateRepositoryRequestAllOf.prototype['name'] = undefined;
 /**
  * The description of the repository
  * @member {String} description
@@ -170,6 +198,11 @@ UpdateRepositoryRequestAllOf.prototype['constraints'] = undefined;
  * @member {module:model/HostingOptions} hostingOptions
  */
 UpdateRepositoryRequestAllOf.prototype['hostingOptions'] = undefined;
+/**
+ * Metadata used to describe this file. Content type application/json
+ * @member {Array.<module:model/Metadata>} metadata
+ */
+UpdateRepositoryRequestAllOf.prototype['metadata'] = undefined;
 
 
 

@@ -18,7 +18,7 @@ import UnitOfMeasureType from './UnitOfMeasureType';
 /**
  * The UpdateUnitOfMeasureRequestAllOf model module.
  * @module model/UpdateUnitOfMeasureRequestAllOf
- * @version 1.0.1
+ * @version 1.0.4
  */
 class UpdateUnitOfMeasureRequestAllOf {
     /**
@@ -31,18 +31,27 @@ class UpdateUnitOfMeasureRequestAllOf {
     }
 
     /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
+    static initialize(obj) { 
+    }
+
+    /**
     * Constructs a full object with all available fields.
     */
     model(){
         var obj = {};
 
-        obj['name'] = null;
-        obj['description'] = null;
-        obj['isoCode'] = null;
-        obj['symbol'] = null;
-        obj['multiplier'] = null;
-        obj['unitOfMeasureType'] = new UnitOfMeasureType().model();
-        obj['metadata'] = [new Metadata().model()];
+        obj['name'];
+        obj['description'];
+        obj['key'];
+        obj['isoCode'];
+        obj['symbol'];
+        obj['multiplier'];
+        obj['unitOfMeasureType'];
+        obj['metadata'];
 
         return obj;
     }
@@ -56,25 +65,18 @@ class UpdateUnitOfMeasureRequestAllOf {
             "requiredFields": {}
         };
 
-        obj["fields"]['name'] = { "type": 'String', "system": false };
-        obj["fields"]['description'] = { "type": 'String', "system": false };
-        obj["fields"]['isoCode'] = { "type": 'String', "system": false };
-        obj["fields"]['symbol'] = { "type": 'String', "system": false };
-        obj["fields"]['multiplier'] = { "type": 'Number', "system": false };
-        obj["fields"]['unitOfMeasureType'] = new UnitOfMeasureType().modelMap();
-        obj["fields"]['metadata'] = [new Metadata().modelMap()];
+        obj["fields"]['name'];
+        obj["fields"]['description'];
+        obj["fields"]['key'];
+        obj["fields"]['isoCode'];
+        obj["fields"]['symbol'];
+        obj["fields"]['multiplier'];
+        obj["fields"]['unitOfMeasureType'];
+        obj["fields"]['metadata'];
 
         
 
         return obj;
-    }
-
-    /**
-     * Initializes the fields of this object.
-     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
-     * Only for internal use.
-     */
-    static initialize(obj) { 
     }
 
     /**
@@ -93,6 +95,9 @@ class UpdateUnitOfMeasureRequestAllOf {
             }
             if (data.hasOwnProperty('description')) {
                 obj['description'] = ApiClient.convertToType(data['description'], 'String');
+            }
+            if (data.hasOwnProperty('key')) {
+                obj['key'] = ApiClient.convertToType(data['key'], 'String');
             }
             if (data.hasOwnProperty('isoCode')) {
                 obj['isoCode'] = ApiClient.convertToType(data['isoCode'], 'String');
@@ -127,6 +132,12 @@ UpdateUnitOfMeasureRequestAllOf.prototype['name'] = undefined;
  * @member {String} description
  */
 UpdateUnitOfMeasureRequestAllOf.prototype['description'] = undefined;
+
+/**
+ * The reference to the unit of measure in your system
+ * @member {String} key
+ */
+UpdateUnitOfMeasureRequestAllOf.prototype['key'] = undefined;
 
 /**
  * An alphabetical or numerical code to identify a unit of measure

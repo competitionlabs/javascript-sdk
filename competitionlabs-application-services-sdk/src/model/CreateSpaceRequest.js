@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateSpaceRequest model module.
  * @module model/CreateSpaceRequest
- * @version 1.0.1
+ * @version 1.0.4
  */
 class CreateSpaceRequest {
     /**
@@ -31,14 +31,24 @@ class CreateSpaceRequest {
     }
 
     /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
+    static initialize(obj, name, accountType) { 
+        obj['name'] = name;
+        obj['accountType'] = accountType;
+    }
+
+    /**
     * Constructs a full object with all available fields.
     */
     model(){
         var obj = {};
 
-        obj['name'] = null;
-        obj['accountType'] = null;
-        obj['masterSpace'] = null;
+        obj['name'];
+        obj['accountType'];
+        obj['masterSpace'];
 
         return obj;
     }
@@ -52,25 +62,15 @@ class CreateSpaceRequest {
             "requiredFields": {}
         };
 
-        obj["fields"]['name'] = { "type": 'String', "system": false };
-        obj["fields"]['accountType'] = { "type": 'String', "system": false };
-        obj["fields"]['masterSpace'] = { "type": 'String', "system": false };
+        obj["fields"]['name'];
+        obj["fields"]['accountType'];
+        obj["fields"]['masterSpace'];
 
         
-        obj["requiredFields"]['name'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['accountType'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['name'];
+        obj["requiredFields"]['accountType'];
 
         return obj;
-    }
-
-    /**
-     * Initializes the fields of this object.
-     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
-     * Only for internal use.
-     */
-    static initialize(obj, name, accountType) { 
-        obj['name'] = name;
-        obj['accountType'] = accountType;
     }
 
     /**

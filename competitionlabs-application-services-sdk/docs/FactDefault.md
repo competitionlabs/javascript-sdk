@@ -1,4 +1,4 @@
-# @CompetitionlabsJavascriptSdk.FactDefault
+# @CompetitionlabsApplicationServicesSdk.FactDefault
 
 ## Properties
 
@@ -8,6 +8,6 @@ Name | Type | Description | Notes
 **constantType** | **String** | The data type of the constant | 
 **constantExample** | **String** | Example of the constant | 
 **defaultVale** | **String** | The default value of the constant for the fact | [optional] 
-**macros** | [**[Macro]**](docs/Macro.md) |  | [optional] 
+**macros** | [**[Macro]**](Macro.md) |  | [optional] 
 
 

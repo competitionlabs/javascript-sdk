@@ -17,7 +17,7 @@ import Location from './Location';
 /**
  * The ContactAllOf model module.
  * @module model/ContactAllOf
- * @version 1.0.1
+ * @version 1.0.4
  */
 class ContactAllOf {
     /**
@@ -33,20 +33,31 @@ class ContactAllOf {
     }
 
     /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
+    static initialize(obj, addressLine1, zipPostalCode, country) { 
+        obj['addressLine1'] = addressLine1;
+        obj['zipPostalCode'] = zipPostalCode;
+        obj['country'] = country;
+    }
+
+    /**
     * Constructs a full object with all available fields.
     */
     model(){
         var obj = {};
 
-        obj['addressLine1'] = null;
-        obj['addressLine2'] = null;
-        obj['city'] = null;
-        obj['state'] = null;
-        obj['zipPostalCode'] = null;
-        obj['country'] = null;
-        obj['mobileNumber'] = null;
-        obj['phoneNumber'] = null;
-        obj['geoLocation'] = new Location().model();
+        obj['addressLine1'];
+        obj['addressLine2'];
+        obj['city'];
+        obj['state'];
+        obj['zipPostalCode'];
+        obj['country'];
+        obj['mobileNumber'];
+        obj['phoneNumber'];
+        obj['geoLocation'];
 
         return obj;
     }
@@ -60,33 +71,22 @@ class ContactAllOf {
             "requiredFields": {}
         };
 
-        obj["fields"]['addressLine1'] = { "type": 'String', "system": false };
-        obj["fields"]['addressLine2'] = { "type": 'String', "system": false };
-        obj["fields"]['city'] = { "type": 'String', "system": false };
-        obj["fields"]['state'] = { "type": 'String', "system": false };
-        obj["fields"]['zipPostalCode'] = { "type": 'String', "system": false };
-        obj["fields"]['country'] = { "type": 'String', "system": false };
-        obj["fields"]['mobileNumber'] = { "type": 'String', "system": false };
-        obj["fields"]['phoneNumber'] = { "type": 'String', "system": false };
-        obj["fields"]['geoLocation'] = new Location().modelMap();
+        obj["fields"]['addressLine1'];
+        obj["fields"]['addressLine2'];
+        obj["fields"]['city'];
+        obj["fields"]['state'];
+        obj["fields"]['zipPostalCode'];
+        obj["fields"]['country'];
+        obj["fields"]['mobileNumber'];
+        obj["fields"]['phoneNumber'];
+        obj["fields"]['geoLocation'];
 
         
-        obj["requiredFields"]['addressLine1'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['zipPostalCode'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['country'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['addressLine1'];
+        obj["requiredFields"]['zipPostalCode'];
+        obj["requiredFields"]['country'];
 
         return obj;
-    }
-
-    /**
-     * Initializes the fields of this object.
-     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
-     * Only for internal use.
-     */
-    static initialize(obj, addressLine1, zipPostalCode, country) { 
-        obj['addressLine1'] = addressLine1;
-        obj['zipPostalCode'] = zipPostalCode;
-        obj['country'] = country;
     }
 
     /**

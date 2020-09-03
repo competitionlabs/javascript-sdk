@@ -1,7 +1,7 @@
 {
-  "name": "@competitionlabs/javascript-sdk",
-  "version": "1.0.2",
-  "description": "CompetitionLabs API JavaScript SDK",
+  "name": "@competitionlabs/application-services-sdk",
+  "version": "1.0.4",
+  "description": "CompetitionLabs API Application services JavaScript SDK",
   "license": "ISC",
   "author": "COMPETITION LABS LTD",
   "main": "dist/index.js",
@@ -12,6 +12,10 @@
   },
   "browser": {
     "fs": false
+  },
+  "repository":{
+    "type":"git",
+    "url":"https://github.com/competitionlabs/javascript-sdk/tree/master/competitionlabs-application-services-sdk"
   },
   "dependencies": {
     "@babel/cli": "^7.0.0",
@@ -40,10 +44,6 @@
     "expect.js": "^0.3.1",
     "mocha": "^8.0.1",
     "sinon": "^7.2.0"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/competitionlabs/javascript-sdk/tree/master"
   },
   "files": [
     "dist"

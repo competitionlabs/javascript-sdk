@@ -1,4 +1,4 @@
-# @CompetitionlabsJavascriptSdk.UnitOfMeasureAllOf
+# @CompetitionlabsApplicationServicesSdk.UnitOfMeasureAllOf
 
 ## Properties
 
@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **isoCode** | **String** | An alphabetical or numerical code to identify a unit of measure | [optional] 
 **symbol** | **String** | The symbol of a unit of measure | [optional] 
 **multiplier** | **Number** | Is used to multiply the value from the standardised one that is being used | 
-**unitOfMeasureType** | [**UnitOfMeasureType**](docs/UnitOfMeasureType.md) |  | 
-**metadata** | [**[Metadata]**](docs/Metadata.md) |  | [optional] 
+**unitOfMeasureType** | [**UnitOfMeasureType**](UnitOfMeasureType.md) |  | 
+**metadata** | [**[Metadata]**](Metadata.md) |  | [optional] 
 
 

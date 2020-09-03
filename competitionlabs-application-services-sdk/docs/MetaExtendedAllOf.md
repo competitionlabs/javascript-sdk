@@ -1,4 +1,4 @@
-# @CompetitionlabsJavascriptSdk.MetaExtendedAllOf
+# @CompetitionlabsApplicationServicesSdk.MetaExtendedAllOf
 
 ## Properties
 

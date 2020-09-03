@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RuleDescriptorSubFactAllOf model module.
  * @module model/RuleDescriptorSubFactAllOf
- * @version 1.0.1
+ * @version 1.0.4
  */
 class RuleDescriptorSubFactAllOf {
     /**
@@ -30,12 +30,21 @@ class RuleDescriptorSubFactAllOf {
     }
 
     /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
+    static initialize(obj, subFact) { 
+        obj['subFact'] = subFact;
+    }
+
+    /**
     * Constructs a full object with all available fields.
     */
     model(){
         var obj = {};
 
-        obj['subFact'] = null;
+        obj['subFact'];
 
         return obj;
     }
@@ -49,21 +58,12 @@ class RuleDescriptorSubFactAllOf {
             "requiredFields": {}
         };
 
-        obj["fields"]['subFact'] = { "type": 'String', "system": false };
+        obj["fields"]['subFact'];
 
         
-        obj["requiredFields"]['subFact'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['subFact'];
 
         return obj;
-    }
-
-    /**
-     * Initializes the fields of this object.
-     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
-     * Only for internal use.
-     */
-    static initialize(obj, subFact) { 
-        obj['subFact'] = subFact;
     }
 
     /**

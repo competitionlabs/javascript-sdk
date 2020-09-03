@@ -24,7 +24,7 @@ import UpdateRewardRequest from './UpdateRewardRequest';
 /**
  * The UpdateContestRequest model module.
  * @module model/UpdateContestRequest
- * @version 1.0.1
+ * @version 1.0.4
  */
 class UpdateContestRequest {
     /**
@@ -40,34 +40,43 @@ class UpdateContestRequest {
     }
 
     /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
+    static initialize(obj, id) { 
+        obj['id'] = id;
+    }
+
+    /**
     * Constructs a full object with all available fields.
     */
     model(){
         var obj = {};
 
-        obj['id'] = null;
-        obj['competitionId'] = null;
-        obj['number'] = null;
-        obj['name'] = null;
-        obj['description'] = null;
-        obj['termsConditions'] = null;
-        obj['round'] = null;
-        obj['roundType'] = new RoundType().model();
-        obj['groupStage'] = null;
-        obj['groupStageLabel'] = null;
-        obj['entrantsFromContest'] = [null];
-        obj['maxNumberOfEntrants'] = null;
-        obj['minNumberOfEntrants'] = null;
-        obj['ruleSets'] = new RuleSet().model();
-        obj['isPublic'] = null;
-        obj['autoStart'] = null;
-        obj['scheduledStartDate'] = null;
-        obj['scheduledEndDate'] = null;
-        obj['strategies'] = new Strategy().model();
-        obj['constraints'] = [null];
-        obj['metadata'] = [new Metadata().model()];
-        obj['translations'] = [new Translation().model()];
-        obj['rewards'] = [new UpdateRewardRequest().model()];
+        obj['id'];
+        obj['competitionId'];
+        obj['number'];
+        obj['name'];
+        obj['description'];
+        obj['termsConditions'];
+        obj['round'];
+        obj['roundType'];
+        obj['groupStage'];
+        obj['groupStageLabel'];
+        obj['entrantsFromContest'];
+        obj['maxNumberOfEntrants'];
+        obj['minNumberOfEntrants'];
+        obj['ruleSets'];
+        obj['isPublic'];
+        obj['autoStart'];
+        obj['scheduledStartDate'];
+        obj['scheduledEndDate'];
+        obj['strategies'];
+        obj['constraints'];
+        obj['metadata'];
+        obj['translations'];
+        obj['rewards'];
 
         return obj;
     }
@@ -81,43 +90,34 @@ class UpdateContestRequest {
             "requiredFields": {}
         };
 
-        obj["fields"]['id'] = { "type": 'String', "system": true };
-        obj["fields"]['competitionId'] = { "type": 'String', "system": false };
-        obj["fields"]['number'] = { "type": 'Number', "system": false };
-        obj["fields"]['name'] = { "type": 'String', "system": false };
-        obj["fields"]['description'] = { "type": 'String', "system": false };
-        obj["fields"]['termsConditions'] = { "type": 'String', "system": false };
-        obj["fields"]['round'] = { "type": 'Number', "system": false };
-        obj["fields"]['roundType'] = new RoundType().modelMap();
-        obj["fields"]['groupStage'] = { "type": 'Number', "system": false };
-        obj["fields"]['groupStageLabel'] = { "type": 'String', "system": false };
-        obj["fields"]['entrantsFromContest'] = [{ "type": 'String', "system": false }];
-        obj["fields"]['maxNumberOfEntrants'] = { "type": 'Number', "system": false };
-        obj["fields"]['minNumberOfEntrants'] = { "type": 'Number', "system": false };
-        obj["fields"]['ruleSets'] = new RuleSet().modelMap();
-        obj["fields"]['isPublic'] = { "type": 'Boolean', "system": false };
-        obj["fields"]['autoStart'] = { "type": 'Boolean', "system": false };
-        obj["fields"]['scheduledStartDate'] = { "type": 'Date', "system": false };
-        obj["fields"]['scheduledEndDate'] = { "type": 'Date', "system": false };
-        obj["fields"]['strategies'] = new Strategy().modelMap();
-        obj["fields"]['constraints'] = [{ "type": 'String', "system": false }];
-        obj["fields"]['metadata'] = [new Metadata().modelMap()];
-        obj["fields"]['translations'] = [new Translation().modelMap()];
-        obj["fields"]['rewards'] = [new UpdateRewardRequest().modelMap()];
+        obj["fields"]['id'];
+        obj["fields"]['competitionId'];
+        obj["fields"]['number'];
+        obj["fields"]['name'];
+        obj["fields"]['description'];
+        obj["fields"]['termsConditions'];
+        obj["fields"]['round'];
+        obj["fields"]['roundType'];
+        obj["fields"]['groupStage'];
+        obj["fields"]['groupStageLabel'];
+        obj["fields"]['entrantsFromContest'];
+        obj["fields"]['maxNumberOfEntrants'];
+        obj["fields"]['minNumberOfEntrants'];
+        obj["fields"]['ruleSets'];
+        obj["fields"]['isPublic'];
+        obj["fields"]['autoStart'];
+        obj["fields"]['scheduledStartDate'];
+        obj["fields"]['scheduledEndDate'];
+        obj["fields"]['strategies'];
+        obj["fields"]['constraints'];
+        obj["fields"]['metadata'];
+        obj["fields"]['translations'];
+        obj["fields"]['rewards'];
 
         
-        obj["requiredFields"]['id'] = { "type": 'String', "system": true };
+        obj["requiredFields"]['id'];
 
         return obj;
-    }
-
-    /**
-     * Initializes the fields of this object.
-     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
-     * Only for internal use.
-     */
-    static initialize(obj, id) { 
-        obj['id'] = id;
     }
 
     /**
@@ -224,9 +224,8 @@ UpdateContestRequest.prototype['competitionId'] = undefined;
 /**
  * The row number for displaying the Contest in a table
  * @member {Number} number
- * @default 0
  */
-UpdateContestRequest.prototype['number'] = 0;
+UpdateContestRequest.prototype['number'] = undefined;
 
 /**
  * A name for the Contest. Can be translated
@@ -249,9 +248,8 @@ UpdateContestRequest.prototype['termsConditions'] = undefined;
 /**
  * To what round does the contest belong
  * @member {Number} round
- * @default 1
  */
-UpdateContestRequest.prototype['round'] = 1;
+UpdateContestRequest.prototype['round'] = undefined;
 
 /**
  * @member {module:model/RoundType} roundType
@@ -261,9 +259,8 @@ UpdateContestRequest.prototype['roundType'] = undefined;
 /**
  * Is used for more complex Competitions e.g. multi round competitions where round 1 group stage matched round 2
  * @member {Number} groupStage
- * @default 1
  */
-UpdateContestRequest.prototype['groupStage'] = 1;
+UpdateContestRequest.prototype['groupStage'] = undefined;
 
 /**
  * The name of the group stages
@@ -297,16 +294,14 @@ UpdateContestRequest.prototype['ruleSets'] = undefined;
 /**
  * Is the event publicly exposed depending on the event model
  * @member {Boolean} isPublic
- * @default true
  */
-UpdateContestRequest.prototype['isPublic'] = true;
+UpdateContestRequest.prototype['isPublic'] = undefined;
 
 /**
  * Is the event publicly exposed depending on the event model
  * @member {Boolean} autoStart
- * @default true
  */
-UpdateContestRequest.prototype['autoStart'] = true;
+UpdateContestRequest.prototype['autoStart'] = undefined;
 
 /**
  * ISO8601 timestamp for when a Contest should start. All records are stored in UTC time zone
@@ -362,9 +357,8 @@ UpdateContestRequestAllOf.prototype['competitionId'] = undefined;
 /**
  * The row number for displaying the Contest in a table
  * @member {Number} number
- * @default 0
  */
-UpdateContestRequestAllOf.prototype['number'] = 0;
+UpdateContestRequestAllOf.prototype['number'] = undefined;
 /**
  * A name for the Contest. Can be translated
  * @member {String} name
@@ -383,9 +377,8 @@ UpdateContestRequestAllOf.prototype['termsConditions'] = undefined;
 /**
  * To what round does the contest belong
  * @member {Number} round
- * @default 1
  */
-UpdateContestRequestAllOf.prototype['round'] = 1;
+UpdateContestRequestAllOf.prototype['round'] = undefined;
 /**
  * @member {module:model/RoundType} roundType
  */
@@ -393,9 +386,8 @@ UpdateContestRequestAllOf.prototype['roundType'] = undefined;
 /**
  * Is used for more complex Competitions e.g. multi round competitions where round 1 group stage matched round 2
  * @member {Number} groupStage
- * @default 1
  */
-UpdateContestRequestAllOf.prototype['groupStage'] = 1;
+UpdateContestRequestAllOf.prototype['groupStage'] = undefined;
 /**
  * The name of the group stages
  * @member {String} groupStageLabel
@@ -423,15 +415,13 @@ UpdateContestRequestAllOf.prototype['ruleSets'] = undefined;
 /**
  * Is the event publicly exposed depending on the event model
  * @member {Boolean} isPublic
- * @default true
  */
-UpdateContestRequestAllOf.prototype['isPublic'] = true;
+UpdateContestRequestAllOf.prototype['isPublic'] = undefined;
 /**
  * Is the event publicly exposed depending on the event model
  * @member {Boolean} autoStart
- * @default true
  */
-UpdateContestRequestAllOf.prototype['autoStart'] = true;
+UpdateContestRequestAllOf.prototype['autoStart'] = undefined;
 /**
  * ISO8601 timestamp for when a Contest should start. All records are stored in UTC time zone
  * @member {Date} scheduledStartDate

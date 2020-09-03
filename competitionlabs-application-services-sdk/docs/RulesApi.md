@@ -1,11 +1,11 @@
-# @CompetitionlabsJavascriptSdk.RulesApi
+# @CompetitionlabsApplicationServicesSdk.RulesApi
 
 All URIs are relative to *https://api.competitionlabs.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getRulesByRuleScope**](docs/RulesApi.md#getRulesByRuleScope) | **GET** /rules/{spaceName}/{ruleScope} | NOT AVAILABLE IN CURRENT RELEASE
-[**validateRulesByRuleScope**](docs/RulesApi.md#validateRulesByRuleScope) | **POST** /rules/{spaceName}/{ruleScope} | NOT AVAILABLE IN CURRENT RELEASE
+[**getRulesByRuleScope**](RulesApi.md#getRulesByRuleScope) | **GET** /rules/{spaceName}/{ruleScope} | NOT AVAILABLE IN CURRENT RELEASE
+[**validateRulesByRuleScope**](RulesApi.md#validateRulesByRuleScope) | **POST** /rules/{spaceName}/{ruleScope} | NOT AVAILABLE IN CURRENT RELEASE
 
 
 
@@ -20,15 +20,15 @@ Returns a list of either Achievement, Competition or Contest rules.
 ### Example
 
 ```javascript
-import @CompetitionlabsJavascriptSdk from '@competitionlabs/javascript-sdk';
-let defaultClient = @CompetitionlabsJavascriptSdk.ApiClient.instance;
+import @CompetitionlabsApplicationServicesSdk from '@competitionlabs/application-services-sdk';
+let defaultClient = @CompetitionlabsApplicationServicesSdk.ApiClient.instance;
 // Configure API key authorization: adminApiKey
 let adminApiKey = defaultClient.authentications['adminApiKey'];
 adminApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //adminApiKey.apiKeyPrefix = 'Token';
 
-let apiInstance = new @CompetitionlabsJavascriptSdk.RulesApi();
+let apiInstance = new @CompetitionlabsApplicationServicesSdk.RulesApi();
 let spaceName = "spaceName_example"; // String | This is the space name which is linked to the account
 let ruleScope = "ruleScope_example"; // String | The rule scope to assess the ruleset against
 let opts = {
@@ -54,11 +54,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**RuleDescriptor**](docs/RuleDescriptor.md)
+[**RuleDescriptor**](RuleDescriptor.md)
 
 ### Authorization
 
-[adminApiKey](README.mdminApiKey)
+[adminApiKey](../README.md#adminApiKey)
 
 ### HTTP request headers
 
@@ -77,20 +77,20 @@ Validates either Achievement, Competition or Contest Rules.
 ### Example
 
 ```javascript
-import @CompetitionlabsJavascriptSdk from '@competitionlabs/javascript-sdk';
-let defaultClient = @CompetitionlabsJavascriptSdk.ApiClient.instance;
+import @CompetitionlabsApplicationServicesSdk from '@competitionlabs/application-services-sdk';
+let defaultClient = @CompetitionlabsApplicationServicesSdk.ApiClient.instance;
 // Configure API key authorization: adminApiKey
 let adminApiKey = defaultClient.authentications['adminApiKey'];
 adminApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //adminApiKey.apiKeyPrefix = 'Token';
 
-let apiInstance = new @CompetitionlabsJavascriptSdk.RulesApi();
+let apiInstance = new @CompetitionlabsApplicationServicesSdk.RulesApi();
 let spaceName = "spaceName_example"; // String | This is the space name which is linked to the account
 let ruleScope = "ruleScope_example"; // String | The rule scope to assess the ruleset against
 let opts = {
   'X_API_KEY': "X_API_KEY_example", // String | The admin API Key generated from CompetitionLabs back office
-  'body': [new @CompetitionlabsJavascriptSdk.RuleSet()] // [RuleSet] | Post a Rules Set to validate if the contest rules are valid
+  'body': [new @CompetitionlabsApplicationServicesSdk.RuleSet()] // [RuleSet] | Post a Rules Set to validate if the contest rules are valid
 };
 apiInstance.validateRulesByRuleScope(spaceName, ruleScope, opts, (error, data, response) => {
   if (error) {
@@ -109,15 +109,15 @@ Name | Type | Description  | Notes
  **spaceName** | **String**| This is the space name which is linked to the account | 
  **ruleScope** | **String**| The rule scope to assess the ruleset against | 
  **X_API_KEY** | **String**| The admin API Key generated from CompetitionLabs back office | [optional] 
- **body** | [**[RuleSet]**](docs/RuleSet.md)| Post a Rules Set to validate if the contest rules are valid | [optional] 
+ **body** | [**[RuleSet]**](RuleSet.md)| Post a Rules Set to validate if the contest rules are valid | [optional] 
 
 ### Return type
 
-[**ApiResponse**](docs/ApiResponse.md)
+[**ApiResponse**](ApiResponse.md)
 
 ### Authorization
 
-[adminApiKey](README.mdminApiKey)
+[adminApiKey](../README.md#adminApiKey)
 
 ### HTTP request headers
 

@@ -19,7 +19,7 @@ import StrategyType from './StrategyType';
 /**
  * The Strategy model module.
  * @module model/Strategy
- * @version 1.0.1
+ * @version 1.0.4
  */
 class Strategy {
     /**
@@ -35,14 +35,25 @@ class Strategy {
     }
 
     /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
+    static initialize(obj, strategyType, rankingStrategy, scoringStrategy) { 
+        obj['strategyType'] = strategyType;
+        obj['rankingStrategy'] = rankingStrategy;
+        obj['scoringStrategy'] = scoringStrategy;
+    }
+
+    /**
     * Constructs a full object with all available fields.
     */
     model(){
         var obj = {};
 
-        obj['strategyType'] = new StrategyType().model();
-        obj['rankingStrategy'] = new RankingStrategy().model();
-        obj['scoringStrategy'] = new ScoringStrategy().model();
+        obj['strategyType'];
+        obj['rankingStrategy'];
+        obj['scoringStrategy'];
 
         return obj;
     }
@@ -56,27 +67,16 @@ class Strategy {
             "requiredFields": {}
         };
 
-        obj["fields"]['strategyType'] = new StrategyType().modelMap();
-        obj["fields"]['rankingStrategy'] = new RankingStrategy().modelMap();
-        obj["fields"]['scoringStrategy'] = new ScoringStrategy().modelMap();
+        obj["fields"]['strategyType'];
+        obj["fields"]['rankingStrategy'];
+        obj["fields"]['scoringStrategy'];
 
         
-        obj["requiredFields"]['strategyType'] = new StrategyType().modelMap();
-        obj["requiredFields"]['rankingStrategy'] = new RankingStrategy().modelMap();
-        obj["requiredFields"]['scoringStrategy'] = new ScoringStrategy().modelMap();
+        obj["requiredFields"]['strategyType'];
+        obj["requiredFields"]['rankingStrategy'];
+        obj["requiredFields"]['scoringStrategy'];
 
         return obj;
-    }
-
-    /**
-     * Initializes the fields of this object.
-     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
-     * Only for internal use.
-     */
-    static initialize(obj, strategyType, rankingStrategy, scoringStrategy) { 
-        obj['strategyType'] = strategyType;
-        obj['rankingStrategy'] = rankingStrategy;
-        obj['scoringStrategy'] = scoringStrategy;
     }
 
     /**

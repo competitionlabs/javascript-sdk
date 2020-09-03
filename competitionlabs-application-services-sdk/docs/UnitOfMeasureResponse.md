@@ -1,11 +1,11 @@
-# @CompetitionlabsJavascriptSdk.UnitOfMeasureResponse
+# @CompetitionlabsApplicationServicesSdk.UnitOfMeasureResponse
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**meta** | [**MetaExtended**](docs/MetaExtended.md) |  | 
-**results** | [**[UnitOfMeasure]**](docs/UnitOfMeasure.md) |  | [optional] 
-**errors** | [**[Error]**](docs/Error.md) |  | [optional] 
+**meta** | [**MetaExtended**](MetaExtended.md) |  | 
+**results** | [**[UnitOfMeasure]**](UnitOfMeasure.md) |  | [optional] 
+**errors** | [**[Error]**](Error.md) |  | [optional] 
 
 

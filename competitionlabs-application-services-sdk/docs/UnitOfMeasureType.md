@@ -1,4 +1,4 @@
-# @CompetitionlabsJavascriptSdk.UnitOfMeasureType
+# @CompetitionlabsApplicationServicesSdk.UnitOfMeasureType
 
 ## Enum
 

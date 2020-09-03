@@ -19,7 +19,7 @@ import ModelDefault from './ModelDefault';
 /**
  * The FileObject model module.
  * @module model/FileObject
- * @version 1.0.1
+ * @version 1.0.4
  */
 class FileObject {
     /**
@@ -27,7 +27,7 @@ class FileObject {
      * @alias module:model/FileObject
      * @implements module:model/ModelDefault
      * @implements module:model/FileObjectAllOf
-     * @param id {String} The file identifier
+     * @param id {String} A unique system generated identifier
      * @param spaceName {String} This is the space name which is linked to the account
      * @param created {Date} ISO8601 timestamp for when a Model was created. All records are stored in UTC time zone
      * @param repositoryId {String} The repository identifier this file belongs too
@@ -37,67 +37,8 @@ class FileObject {
      * @param parentFolderPath {String} The folder name containing the attachment within the bucket
      */
     constructor(id, spaceName, created, repositoryId, fileName, mimeType, path, parentFolderPath) { 
-        ModelDefault.initialize(this, id, spaceName, created);FileObjectAllOf.initialize(this, id, repositoryId, fileName, mimeType, path, parentFolderPath);
+        ModelDefault.initialize(this, id, spaceName, created);FileObjectAllOf.initialize(this, repositoryId, fileName, mimeType, path, parentFolderPath);
         FileObject.initialize(this, id, spaceName, created, repositoryId, fileName, mimeType, path, parentFolderPath);
-    }
-
-    /**
-    * Constructs a full object with all available fields.
-    */
-    model(){
-        var obj = {};
-
-        obj['id'] = null;
-        obj['spaceName'] = null;
-        obj['created'] = null;
-        obj['tags'] = [null];
-        obj['repositoryId'] = null;
-        obj['fileName'] = null;
-        obj['mimeType'] = null;
-        obj['extension'] = null;
-        obj['path'] = null;
-        obj['parentFolderPath'] = null;
-        obj['uri'] = null;
-        obj['size'] = null;
-        obj['metadata'] = [new Metadata().model()];
-
-        return obj;
-    }
-
-    /**
-    * Constructs a full object Map for all available fields.
-    */
-    modelMap(){
-        var obj = {
-            "fields": {},
-            "requiredFields": {}
-        };
-
-        obj["fields"]['id'] = { "type": 'String', "system": true };
-        obj["fields"]['spaceName'] = { "type": 'String', "system": true };
-        obj["fields"]['created'] = { "type": 'Date', "system": true };
-        obj["fields"]['tags'] = [{ "type": 'String', "system": false }];
-        obj["fields"]['repositoryId'] = { "type": 'String', "system": false };
-        obj["fields"]['fileName'] = { "type": 'String', "system": false };
-        obj["fields"]['mimeType'] = { "type": 'String', "system": false };
-        obj["fields"]['extension'] = { "type": 'String', "system": false };
-        obj["fields"]['path'] = { "type": 'String', "system": false };
-        obj["fields"]['parentFolderPath'] = { "type": 'String', "system": false };
-        obj["fields"]['uri'] = { "type": 'String', "system": false };
-        obj["fields"]['size'] = { "type": 'Number', "system": false };
-        obj["fields"]['metadata'] = [new Metadata().modelMap()];
-
-        
-        obj["requiredFields"]['id'] = { "type": 'String', "system": true };
-        obj["requiredFields"]['spaceName'] = { "type": 'String', "system": true };
-        obj["requiredFields"]['created'] = { "type": 'Date', "system": true };
-        obj["requiredFields"]['repositoryId'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['fileName'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['mimeType'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['path'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['parentFolderPath'] = { "type": 'String', "system": false };
-
-        return obj;
     }
 
     /**
@@ -114,6 +55,65 @@ class FileObject {
         obj['mimeType'] = mimeType;
         obj['path'] = path;
         obj['parentFolderPath'] = parentFolderPath;
+    }
+
+    /**
+    * Constructs a full object with all available fields.
+    */
+    model(){
+        var obj = {};
+
+        obj['id'];
+        obj['spaceName'];
+        obj['created'];
+        obj['tags'];
+        obj['repositoryId'];
+        obj['fileName'];
+        obj['mimeType'];
+        obj['extension'];
+        obj['path'];
+        obj['parentFolderPath'];
+        obj['uri'];
+        obj['size'];
+        obj['metadata'];
+
+        return obj;
+    }
+
+    /**
+    * Constructs a full object Map for all available fields.
+    */
+    modelMap(){
+        var obj = {
+            "fields": {},
+            "requiredFields": {}
+        };
+
+        obj["fields"]['id'];
+        obj["fields"]['spaceName'];
+        obj["fields"]['created'];
+        obj["fields"]['tags'];
+        obj["fields"]['repositoryId'];
+        obj["fields"]['fileName'];
+        obj["fields"]['mimeType'];
+        obj["fields"]['extension'];
+        obj["fields"]['path'];
+        obj["fields"]['parentFolderPath'];
+        obj["fields"]['uri'];
+        obj["fields"]['size'];
+        obj["fields"]['metadata'];
+
+        
+        obj["requiredFields"]['id'];
+        obj["requiredFields"]['spaceName'];
+        obj["requiredFields"]['created'];
+        obj["requiredFields"]['repositoryId'];
+        obj["requiredFields"]['fileName'];
+        obj["requiredFields"]['mimeType'];
+        obj["requiredFields"]['path'];
+        obj["requiredFields"]['parentFolderPath'];
+
+        return obj;
     }
 
     /**
@@ -176,7 +176,7 @@ class FileObject {
 }
 
 /**
- * The file identifier
+ * A unique system generated identifier
  * @member {String} id
  */
 FileObject.prototype['id'] = undefined;
@@ -270,11 +270,6 @@ ModelDefault.prototype['spaceName'] = undefined;
  */
 ModelDefault.prototype['created'] = undefined;
 // Implement FileObjectAllOf interface:
-/**
- * The file identifier
- * @member {String} id
- */
-FileObjectAllOf.prototype['id'] = undefined;
 /**
  * The tags associated with this file object
  * @member {Array.<String>} tags

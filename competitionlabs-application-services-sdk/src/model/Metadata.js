@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Metadata model module.
  * @module model/Metadata
- * @version 1.0.1
+ * @version 1.0.4
  */
 class Metadata {
     /**
@@ -31,13 +31,23 @@ class Metadata {
     }
 
     /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
+    static initialize(obj, key, value) { 
+        obj['key'] = key;
+        obj['value'] = value;
+    }
+
+    /**
     * Constructs a full object with all available fields.
     */
     model(){
         var obj = {};
 
-        obj['key'] = null;
-        obj['value'] = null;
+        obj['key'];
+        obj['value'];
 
         return obj;
     }
@@ -51,24 +61,14 @@ class Metadata {
             "requiredFields": {}
         };
 
-        obj["fields"]['key'] = { "type": 'String', "system": false };
-        obj["fields"]['value'] = { "type": 'String', "system": false };
+        obj["fields"]['key'];
+        obj["fields"]['value'];
 
         
-        obj["requiredFields"]['key'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['value'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['key'];
+        obj["requiredFields"]['value'];
 
         return obj;
-    }
-
-    /**
-     * Initializes the fields of this object.
-     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
-     * Only for internal use.
-     */
-    static initialize(obj, key, value) { 
-        obj['key'] = key;
-        obj['value'] = value;
     }
 
     /**

@@ -1,4 +1,4 @@
-# @CompetitionlabsJavascriptSdk.RewardReduced
+# @CompetitionlabsApplicationServicesSdk.RewardReduced
 
 ## Properties
 

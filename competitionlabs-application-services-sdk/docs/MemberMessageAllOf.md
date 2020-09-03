@@ -1,16 +1,16 @@
-# @CompetitionlabsJavascriptSdk.MemberMessageAllOf
+# @CompetitionlabsApplicationServicesSdk.MemberMessageAllOf
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**eventRefType** | [**EventRefType**](docs/EventRefType.md) |  | 
+**eventRefType** | [**EventRefType**](EventRefType.md) |  | 
 **eventReferenceId** | **String** | The reference ID of the event object | 
-**messageType** | [**MessageType**](docs/MessageType.md) |  | 
+**messageType** | [**MessageType**](MessageType.md) |  | 
 **subject** | **String** | The title of the message | 
 **body** | **String** | The context of the message | 
 **prize** | **String** | Unique system identifier of an Award | [readonly] 
-**status** | [**MessagStatus**](docs/MessagStatus.md) |  | 
+**status** | [**MessageStatus**](MessageStatus.md) |  | 
 **expiry** | **Date** | The time that the message will disappear after. ISO8601 timestamp | 
 
 

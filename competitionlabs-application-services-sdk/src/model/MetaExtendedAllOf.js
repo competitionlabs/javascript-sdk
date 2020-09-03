@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The MetaExtendedAllOf model module.
  * @module model/MetaExtendedAllOf
- * @version 1.0.1
+ * @version 1.0.4
  */
 class MetaExtendedAllOf {
     /**
@@ -31,13 +31,23 @@ class MetaExtendedAllOf {
     }
 
     /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
+    static initialize(obj, skip, limit) { 
+        obj['skip'] = skip;
+        obj['limit'] = limit;
+    }
+
+    /**
     * Constructs a full object with all available fields.
     */
     model(){
         var obj = {};
 
-        obj['skip'] = null;
-        obj['limit'] = null;
+        obj['skip'];
+        obj['limit'];
 
         return obj;
     }
@@ -51,24 +61,14 @@ class MetaExtendedAllOf {
             "requiredFields": {}
         };
 
-        obj["fields"]['skip'] = { "type": 'Number', "system": false };
-        obj["fields"]['limit'] = { "type": 'Number', "system": false };
+        obj["fields"]['skip'];
+        obj["fields"]['limit'];
 
         
-        obj["requiredFields"]['skip'] = { "type": 'Number', "system": false };
-        obj["requiredFields"]['limit'] = { "type": 'Number', "system": false };
+        obj["requiredFields"]['skip'];
+        obj["requiredFields"]['limit'];
 
         return obj;
-    }
-
-    /**
-     * Initializes the fields of this object.
-     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
-     * Only for internal use.
-     */
-    static initialize(obj, skip, limit) { 
-        obj['skip'] = skip;
-        obj['limit'] = limit;
     }
 
     /**

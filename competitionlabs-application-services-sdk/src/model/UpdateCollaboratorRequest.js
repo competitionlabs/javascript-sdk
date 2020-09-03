@@ -19,7 +19,7 @@ import UpdateModelDefault from './UpdateModelDefault';
 /**
  * The UpdateCollaboratorRequest model module.
  * @module model/UpdateCollaboratorRequest
- * @version 1.0.1
+ * @version 1.0.4
  */
 class UpdateCollaboratorRequest {
     /**
@@ -36,13 +36,23 @@ class UpdateCollaboratorRequest {
     }
 
     /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
+    static initialize(obj, id, role) { 
+        obj['id'] = id;
+        obj['role'] = role;
+    }
+
+    /**
     * Constructs a full object with all available fields.
     */
     model(){
         var obj = {};
 
-        obj['id'] = null;
-        obj['role'] = new Role().model();
+        obj['id'];
+        obj['role'];
 
         return obj;
     }
@@ -56,24 +66,14 @@ class UpdateCollaboratorRequest {
             "requiredFields": {}
         };
 
-        obj["fields"]['id'] = { "type": 'String', "system": true };
-        obj["fields"]['role'] = new Role().modelMap();
+        obj["fields"]['id'];
+        obj["fields"]['role'];
 
         
-        obj["requiredFields"]['id'] = { "type": 'String', "system": true };
-        obj["requiredFields"]['role'] = new Role().modelMap();
+        obj["requiredFields"]['id'];
+        obj["requiredFields"]['role'];
 
         return obj;
-    }
-
-    /**
-     * Initializes the fields of this object.
-     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
-     * Only for internal use.
-     */
-    static initialize(obj, id, role) { 
-        obj['id'] = id;
-        obj['role'] = role;
     }
 
     /**

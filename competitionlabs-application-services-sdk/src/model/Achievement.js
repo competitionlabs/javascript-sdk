@@ -25,7 +25,7 @@ import Translation from './Translation';
 /**
  * The Achievement model module.
  * @module model/Achievement
- * @version 1.0.1
+ * @version 1.0.4
  */
 class Achievement {
     /**
@@ -48,73 +48,6 @@ class Achievement {
     }
 
     /**
-    * Constructs a full object with all available fields.
-    */
-    model(){
-        var obj = {};
-
-        obj['id'] = null;
-        obj['spaceName'] = null;
-        obj['created'] = null;
-        obj['name'] = null;
-        obj['description'] = null;
-        obj['icon'] = null;
-        obj['ruleSets'] = [new RuleSet().model()];
-        obj['dependantOn'] = new DependantOn().model();
-        obj['scheduling'] = new Scheduling().model();
-        obj['achievementLiveStatus'] = new AchievementLiveStatus().model();
-        obj['category'] = [null];
-        obj['memberGroups'] = [null];
-        obj['metadata'] = [new Metadata().model()];
-        obj['translations'] = [new Translation().model()];
-        obj['translatableFields'] = [null];
-        obj['rewards'] = [new RewardReduced().model()];
-        obj['constraints'] = [null];
-
-        return obj;
-    }
-
-    /**
-    * Constructs a full object Map for all available fields.
-    */
-    modelMap(){
-        var obj = {
-            "fields": {},
-            "requiredFields": {}
-        };
-
-        obj["fields"]['id'] = { "type": 'String', "system": true };
-        obj["fields"]['spaceName'] = { "type": 'String', "system": true };
-        obj["fields"]['created'] = { "type": 'Date', "system": true };
-        obj["fields"]['name'] = { "type": 'String', "system": false };
-        obj["fields"]['description'] = { "type": 'String', "system": false };
-        obj["fields"]['icon'] = { "type": 'String', "system": false };
-        obj["fields"]['ruleSets'] = [new RuleSet().modelMap()];
-        obj["fields"]['dependantOn'] = new DependantOn().modelMap();
-        obj["fields"]['scheduling'] = new Scheduling().modelMap();
-        obj["fields"]['achievementLiveStatus'] = new AchievementLiveStatus().modelMap();
-        obj["fields"]['category'] = [{ "type": 'String', "system": false }];
-        obj["fields"]['memberGroups'] = [{ "type": 'String', "system": false }];
-        obj["fields"]['metadata'] = [new Metadata().modelMap()];
-        obj["fields"]['translations'] = [new Translation().modelMap()];
-        obj["fields"]['translatableFields'] = [{ "type": 'String', "system": false }];
-        obj["fields"]['rewards'] = [new RewardReduced().modelMap()];
-        obj["fields"]['constraints'] = [{ "type": 'String', "system": false }];
-
-        
-        obj["requiredFields"]['id'] = { "type": 'String', "system": true };
-        obj["requiredFields"]['spaceName'] = { "type": 'String', "system": true };
-        obj["requiredFields"]['created'] = { "type": 'Date', "system": true };
-        obj["requiredFields"]['name'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['icon'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['ruleSets'] = [new RuleSet().modelMap()];
-        obj["requiredFields"]['scheduling'] = new Scheduling().modelMap();
-        obj["requiredFields"]['achievementLiveStatus'] = new AchievementLiveStatus().modelMap();
-
-        return obj;
-    }
-
-    /**
      * Initializes the fields of this object.
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
@@ -128,6 +61,73 @@ class Achievement {
         obj['ruleSets'] = ruleSets;
         obj['scheduling'] = scheduling;
         obj['achievementLiveStatus'] = achievementLiveStatus;
+    }
+
+    /**
+    * Constructs a full object with all available fields.
+    */
+    model(){
+        var obj = {};
+
+        obj['id'];
+        obj['spaceName'];
+        obj['created'];
+        obj['name'];
+        obj['description'];
+        obj['icon'];
+        obj['ruleSets'];
+        obj['dependantOn'];
+        obj['scheduling'];
+        obj['achievementLiveStatus'];
+        obj['category'];
+        obj['memberGroups'];
+        obj['metadata'];
+        obj['translations'];
+        obj['translatableFields'];
+        obj['rewards'];
+        obj['constraints'];
+
+        return obj;
+    }
+
+    /**
+    * Constructs a full object Map for all available fields.
+    */
+    modelMap(){
+        var obj = {
+            "fields": {},
+            "requiredFields": {}
+        };
+
+        obj["fields"]['id'];
+        obj["fields"]['spaceName'];
+        obj["fields"]['created'];
+        obj["fields"]['name'];
+        obj["fields"]['description'];
+        obj["fields"]['icon'];
+        obj["fields"]['ruleSets'];
+        obj["fields"]['dependantOn'];
+        obj["fields"]['scheduling'];
+        obj["fields"]['achievementLiveStatus'];
+        obj["fields"]['category'];
+        obj["fields"]['memberGroups'];
+        obj["fields"]['metadata'];
+        obj["fields"]['translations'];
+        obj["fields"]['translatableFields'];
+        obj["fields"]['rewards'];
+        obj["fields"]['constraints'];
+
+        
+        obj["requiredFields"]['id'];
+        obj["requiredFields"]['spaceName'];
+        obj["requiredFields"]['created'];
+        obj["requiredFields"]['name'];
+        obj["requiredFields"]['icon'];
+        obj["requiredFields"]['ruleSets'];
+        obj["requiredFields"]['scheduling'];
+        obj["requiredFields"]['achievementLiveStatus'];
+
+        return obj;
     }
 
     /**

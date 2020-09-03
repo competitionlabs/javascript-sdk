@@ -13,22 +13,36 @@
 
 import ApiClient from '../ApiClient';
 import AchievementLiveStatus from './AchievementLiveStatus';
+import AchievementLiveStatusRequestAllOf from './AchievementLiveStatusRequestAllOf';
+import UpdateModelDefault from './UpdateModelDefault';
 
 /**
  * The AchievementLiveStatusRequest model module.
  * @module model/AchievementLiveStatusRequest
- * @version 1.0.1
+ * @version 1.0.4
  */
 class AchievementLiveStatusRequest {
     /**
      * Constructs a new <code>AchievementLiveStatusRequest</code>.
      * @alias module:model/AchievementLiveStatusRequest
-     * @param achievementId {String} Unique system identifier of an Achievement
+     * @implements module:model/UpdateModelDefault
+     * @implements module:model/AchievementLiveStatusRequestAllOf
+     * @param id {String} A unique system generated identifier
      * @param status {module:model/AchievementLiveStatus} 
      */
-    constructor(achievementId, status) { 
-        
-        AchievementLiveStatusRequest.initialize(this, achievementId, status);
+    constructor(id, status) { 
+        UpdateModelDefault.initialize(this, id);AchievementLiveStatusRequestAllOf.initialize(this, status);
+        AchievementLiveStatusRequest.initialize(this, id, status);
+    }
+
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
+    static initialize(obj, id, status) { 
+        obj['id'] = id;
+        obj['status'] = status;
     }
 
     /**
@@ -37,8 +51,8 @@ class AchievementLiveStatusRequest {
     model(){
         var obj = {};
 
-        obj['achievementId'] = null;
-        obj['status'] = new AchievementLiveStatus().model();
+        obj['id'];
+        obj['status'];
 
         return obj;
     }
@@ -52,24 +66,14 @@ class AchievementLiveStatusRequest {
             "requiredFields": {}
         };
 
-        obj["fields"]['achievementId'] = { "type": 'String', "system": false };
-        obj["fields"]['status'] = new AchievementLiveStatus().modelMap();
+        obj["fields"]['id'];
+        obj["fields"]['status'];
 
         
-        obj["requiredFields"]['achievementId'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['status'] = new AchievementLiveStatus().modelMap();
+        obj["requiredFields"]['id'];
+        obj["requiredFields"]['status'];
 
         return obj;
-    }
-
-    /**
-     * Initializes the fields of this object.
-     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
-     * Only for internal use.
-     */
-    static initialize(obj, achievementId, status) { 
-        obj['achievementId'] = achievementId;
-        obj['status'] = status;
     }
 
     /**
@@ -82,9 +86,11 @@ class AchievementLiveStatusRequest {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new AchievementLiveStatusRequest();
+            UpdateModelDefault.constructFromObject(data, obj);
+            AchievementLiveStatusRequestAllOf.constructFromObject(data, obj);
 
-            if (data.hasOwnProperty('achievementId')) {
-                obj['achievementId'] = ApiClient.convertToType(data['achievementId'], 'String');
+            if (data.hasOwnProperty('id')) {
+                obj['id'] = ApiClient.convertToType(data['id'], 'String');
             }
             if (data.hasOwnProperty('status')) {
                 obj['status'] = AchievementLiveStatus.constructFromObject(data['status']);
@@ -97,10 +103,10 @@ class AchievementLiveStatusRequest {
 }
 
 /**
- * Unique system identifier of an Achievement
- * @member {String} achievementId
+ * A unique system generated identifier
+ * @member {String} id
  */
-AchievementLiveStatusRequest.prototype['achievementId'] = undefined;
+AchievementLiveStatusRequest.prototype['id'] = undefined;
 
 /**
  * @member {module:model/AchievementLiveStatus} status
@@ -108,6 +114,17 @@ AchievementLiveStatusRequest.prototype['achievementId'] = undefined;
 AchievementLiveStatusRequest.prototype['status'] = undefined;
 
 
+// Implement UpdateModelDefault interface:
+/**
+ * A unique system generated identifier
+ * @member {String} id
+ */
+UpdateModelDefault.prototype['id'] = undefined;
+// Implement AchievementLiveStatusRequestAllOf interface:
+/**
+ * @member {module:model/AchievementLiveStatus} status
+ */
+AchievementLiveStatusRequestAllOf.prototype['status'] = undefined;
 
 
 

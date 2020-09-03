@@ -1,11 +1,11 @@
-# @CompetitionlabsJavascriptSdk.EventResponse
+# @CompetitionlabsApplicationServicesSdk.EventResponse
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**meta** | [**MetaExtended**](docs/MetaExtended.md) |  | 
-**results** | [**[Event]**](docs/Event.md) |  | [optional] 
-**errors** | [**[Error]**](docs/Error.md) |  | [optional] 
+**meta** | [**MetaExtended**](MetaExtended.md) |  | 
+**results** | [**[Event]**](Event.md) |  | [optional] 
+**errors** | [**[Error]**](Error.md) |  | [optional] 
 
 

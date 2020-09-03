@@ -17,7 +17,7 @@ import Relation from './Relation';
 /**
  * The Result model module.
  * @module model/Result
- * @version 1.0.1
+ * @version 1.0.4
  */
 class Result {
     /**
@@ -32,15 +32,25 @@ class Result {
     }
 
     /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
+    static initialize(obj, id, result) { 
+        obj['id'] = id;
+        obj['result'] = result;
+    }
+
+    /**
     * Constructs a full object with all available fields.
     */
     model(){
         var obj = {};
 
-        obj['id'] = null;
-        obj['externalReference'] = null;
-        obj['result'] = null;
-        obj['relations'] = [new Relation().model()];
+        obj['id'];
+        obj['externalReference'];
+        obj['result'];
+        obj['relations'];
 
         return obj;
     }
@@ -54,26 +64,16 @@ class Result {
             "requiredFields": {}
         };
 
-        obj["fields"]['id'] = { "type": 'String', "system": true };
-        obj["fields"]['externalReference'] = { "type": 'String', "system": false };
-        obj["fields"]['result'] = { "type": 'String', "system": false };
-        obj["fields"]['relations'] = [new Relation().modelMap()];
+        obj["fields"]['id'];
+        obj["fields"]['externalReference'];
+        obj["fields"]['result'];
+        obj["fields"]['relations'];
 
         
-        obj["requiredFields"]['id'] = { "type": 'String', "system": true };
-        obj["requiredFields"]['result'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['id'];
+        obj["requiredFields"]['result'];
 
         return obj;
-    }
-
-    /**
-     * Initializes the fields of this object.
-     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
-     * Only for internal use.
-     */
-    static initialize(obj, id, result) { 
-        obj['id'] = id;
-        obj['result'] = result;
     }
 
     /**

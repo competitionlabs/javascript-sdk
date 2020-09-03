@@ -18,7 +18,7 @@ import RuleScope from './RuleScope';
 /**
  * The RuleDescriptor model module.
  * @module model/RuleDescriptor
- * @version 1.0.1
+ * @version 1.0.4
  */
 class RuleDescriptor {
     /**
@@ -33,13 +33,23 @@ class RuleDescriptor {
     }
 
     /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
+    static initialize(obj, ruleScope, actions) { 
+        obj['ruleScope'] = ruleScope;
+        obj['actions'] = actions;
+    }
+
+    /**
     * Constructs a full object with all available fields.
     */
     model(){
         var obj = {};
 
-        obj['ruleScope'] = new RuleScope().model();
-        obj['actions'] = [new RuleDescriptorAction().model()];
+        obj['ruleScope'];
+        obj['actions'];
 
         return obj;
     }
@@ -53,24 +63,14 @@ class RuleDescriptor {
             "requiredFields": {}
         };
 
-        obj["fields"]['ruleScope'] = new RuleScope().modelMap();
-        obj["fields"]['actions'] = [new RuleDescriptorAction().modelMap()];
+        obj["fields"]['ruleScope'];
+        obj["fields"]['actions'];
 
         
-        obj["requiredFields"]['ruleScope'] = new RuleScope().modelMap();
-        obj["requiredFields"]['actions'] = [new RuleDescriptorAction().modelMap()];
+        obj["requiredFields"]['ruleScope'];
+        obj["requiredFields"]['actions'];
 
         return obj;
-    }
-
-    /**
-     * Initializes the fields of this object.
-     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
-     * Only for internal use.
-     */
-    static initialize(obj, ruleScope, actions) { 
-        obj['ruleScope'] = ruleScope;
-        obj['actions'] = actions;
     }
 
     /**

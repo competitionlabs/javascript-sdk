@@ -27,7 +27,7 @@ import Translation from './Translation';
 /**
  * The Competition model module.
  * @module model/Competition
- * @version 1.0.1
+ * @version 1.0.4
  */
 class Competition {
     /**
@@ -58,103 +58,6 @@ class Competition {
     }
 
     /**
-    * Constructs a full object with all available fields.
-    */
-    model(){
-        var obj = {};
-
-        obj['id'] = null;
-        obj['spaceName'] = null;
-        obj['created'] = null;
-        obj['competitionType'] = new CompetitionType().model();
-        obj['numberOfRounds'] = null;
-        obj['numberOfGroupStages'] = null;
-        obj['name'] = null;
-        obj['description'] = null;
-        obj['termsConditions'] = null;
-        obj['maxNumberOfEntrants'] = null;
-        obj['minNumberOfEntrants'] = null;
-        obj['products'] = [new ProductReduced().model()];
-        obj['ruleSets'] = [new RuleSet().model()];
-        obj['isPublic'] = null;
-        obj['autoStart'] = null;
-        obj['scheduledStartDate'] = null;
-        obj['scheduledEndDate'] = null;
-        obj['actualStartDate'] = null;
-        obj['actualEndDate'] = null;
-        obj['includeEntrantsWhere'] = new ComplexFilter().model();
-        obj['optinRequiredForEntrants'] = null;
-        obj['metadata'] = [new Metadata().model()];
-        obj['translations'] = [new Translation().model()];
-        obj['status'] = new CompetitionStatus().model();
-        obj['statusCode'] = null;
-        obj['contests'] = [new ContestReduced().model()];
-        obj['rewards'] = [new RewardReduced().model()];
-        obj['constraints'] = [null];
-
-        return obj;
-    }
-
-    /**
-    * Constructs a full object Map for all available fields.
-    */
-    modelMap(){
-        var obj = {
-            "fields": {},
-            "requiredFields": {}
-        };
-
-        obj["fields"]['id'] = { "type": 'String', "system": true };
-        obj["fields"]['spaceName'] = { "type": 'String', "system": true };
-        obj["fields"]['created'] = { "type": 'Date', "system": true };
-        obj["fields"]['competitionType'] = new CompetitionType().modelMap();
-        obj["fields"]['numberOfRounds'] = { "type": 'Number', "system": false };
-        obj["fields"]['numberOfGroupStages'] = { "type": 'Number', "system": false };
-        obj["fields"]['name'] = { "type": 'String', "system": false };
-        obj["fields"]['description'] = { "type": 'String', "system": false };
-        obj["fields"]['termsConditions'] = { "type": 'String', "system": false };
-        obj["fields"]['maxNumberOfEntrants'] = { "type": 'Number', "system": false };
-        obj["fields"]['minNumberOfEntrants'] = { "type": 'Number', "system": false };
-        obj["fields"]['products'] = [new ProductReduced().modelMap()];
-        obj["fields"]['ruleSets'] = [new RuleSet().modelMap()];
-        obj["fields"]['isPublic'] = { "type": 'Boolean', "system": false };
-        obj["fields"]['autoStart'] = { "type": 'Boolean', "system": false };
-        obj["fields"]['scheduledStartDate'] = { "type": 'Date', "system": false };
-        obj["fields"]['scheduledEndDate'] = { "type": 'Date', "system": false };
-        obj["fields"]['actualStartDate'] = { "type": 'Date', "system": false };
-        obj["fields"]['actualEndDate'] = { "type": 'Date', "system": false };
-        obj["fields"]['includeEntrantsWhere'] = new ComplexFilter().modelMap();
-        obj["fields"]['optinRequiredForEntrants'] = { "type": 'Boolean', "system": false };
-        obj["fields"]['metadata'] = [new Metadata().modelMap()];
-        obj["fields"]['translations'] = [new Translation().modelMap()];
-        obj["fields"]['status'] = new CompetitionStatus().modelMap();
-        obj["fields"]['statusCode'] = { "type": 'Number', "system": false };
-        obj["fields"]['contests'] = [new ContestReduced().modelMap()];
-        obj["fields"]['rewards'] = [new RewardReduced().modelMap()];
-        obj["fields"]['constraints'] = [{ "type": 'String', "system": false }];
-
-        
-        obj["requiredFields"]['id'] = { "type": 'String', "system": true };
-        obj["requiredFields"]['spaceName'] = { "type": 'String', "system": true };
-        obj["requiredFields"]['created'] = { "type": 'Date', "system": true };
-        obj["requiredFields"]['competitionType'] = new CompetitionType().modelMap();
-        obj["requiredFields"]['numberOfRounds'] = { "type": 'Number', "system": false };
-        obj["requiredFields"]['name'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['minNumberOfEntrants'] = { "type": 'Number', "system": false };
-        obj["requiredFields"]['products'] = [new ProductReduced().modelMap()];
-        obj["requiredFields"]['ruleSets'] = [new RuleSet().modelMap()];
-        obj["requiredFields"]['isPublic'] = { "type": 'Boolean', "system": false };
-        obj["requiredFields"]['autoStart'] = { "type": 'Boolean', "system": false };
-        obj["requiredFields"]['scheduledStartDate'] = { "type": 'Date', "system": false };
-        obj["requiredFields"]['scheduledEndDate'] = { "type": 'Date', "system": false };
-        obj["requiredFields"]['optinRequiredForEntrants'] = { "type": 'Boolean', "system": false };
-        obj["requiredFields"]['status'] = new CompetitionStatus().modelMap();
-        obj["requiredFields"]['statusCode'] = { "type": 'Number', "system": false };
-
-        return obj;
-    }
-
-    /**
      * Initializes the fields of this object.
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
@@ -176,6 +79,103 @@ class Competition {
         obj['optinRequiredForEntrants'] = optinRequiredForEntrants;
         obj['status'] = status;
         obj['statusCode'] = statusCode;
+    }
+
+    /**
+    * Constructs a full object with all available fields.
+    */
+    model(){
+        var obj = {};
+
+        obj['id'];
+        obj['spaceName'];
+        obj['created'];
+        obj['competitionType'];
+        obj['numberOfRounds'];
+        obj['numberOfGroupStages'];
+        obj['name'];
+        obj['description'];
+        obj['termsConditions'];
+        obj['maxNumberOfEntrants'];
+        obj['minNumberOfEntrants'];
+        obj['products'];
+        obj['ruleSets'];
+        obj['isPublic'];
+        obj['autoStart'];
+        obj['scheduledStartDate'];
+        obj['scheduledEndDate'];
+        obj['actualStartDate'];
+        obj['actualEndDate'];
+        obj['includeEntrantsWhere'];
+        obj['optinRequiredForEntrants'];
+        obj['metadata'];
+        obj['translations'];
+        obj['status'];
+        obj['statusCode'];
+        obj['contests'];
+        obj['rewards'];
+        obj['constraints'];
+
+        return obj;
+    }
+
+    /**
+    * Constructs a full object Map for all available fields.
+    */
+    modelMap(){
+        var obj = {
+            "fields": {},
+            "requiredFields": {}
+        };
+
+        obj["fields"]['id'];
+        obj["fields"]['spaceName'];
+        obj["fields"]['created'];
+        obj["fields"]['competitionType'];
+        obj["fields"]['numberOfRounds'];
+        obj["fields"]['numberOfGroupStages'];
+        obj["fields"]['name'];
+        obj["fields"]['description'];
+        obj["fields"]['termsConditions'];
+        obj["fields"]['maxNumberOfEntrants'];
+        obj["fields"]['minNumberOfEntrants'];
+        obj["fields"]['products'];
+        obj["fields"]['ruleSets'];
+        obj["fields"]['isPublic'];
+        obj["fields"]['autoStart'];
+        obj["fields"]['scheduledStartDate'];
+        obj["fields"]['scheduledEndDate'];
+        obj["fields"]['actualStartDate'];
+        obj["fields"]['actualEndDate'];
+        obj["fields"]['includeEntrantsWhere'];
+        obj["fields"]['optinRequiredForEntrants'];
+        obj["fields"]['metadata'];
+        obj["fields"]['translations'];
+        obj["fields"]['status'];
+        obj["fields"]['statusCode'];
+        obj["fields"]['contests'];
+        obj["fields"]['rewards'];
+        obj["fields"]['constraints'];
+
+        
+        obj["requiredFields"]['id'];
+        obj["requiredFields"]['spaceName'];
+        obj["requiredFields"]['created'];
+        obj["requiredFields"]['competitionType'];
+        obj["requiredFields"]['numberOfRounds'];
+        obj["requiredFields"]['name'];
+        obj["requiredFields"]['minNumberOfEntrants'];
+        obj["requiredFields"]['products'];
+        obj["requiredFields"]['ruleSets'];
+        obj["requiredFields"]['isPublic'];
+        obj["requiredFields"]['autoStart'];
+        obj["requiredFields"]['scheduledStartDate'];
+        obj["requiredFields"]['scheduledEndDate'];
+        obj["requiredFields"]['optinRequiredForEntrants'];
+        obj["requiredFields"]['status'];
+        obj["requiredFields"]['statusCode'];
+
+        return obj;
     }
 
     /**
@@ -308,9 +308,8 @@ Competition.prototype['competitionType'] = undefined;
 /**
  * Number of rounds to be played in a competition
  * @member {Number} numberOfRounds
- * @default 1
  */
-Competition.prototype['numberOfRounds'] = 1;
+Competition.prototype['numberOfRounds'] = undefined;
 
 /**
  * Number of group stages
@@ -361,16 +360,14 @@ Competition.prototype['ruleSets'] = undefined;
 /**
  * Is the event publicly exposed depending on the event model
  * @member {Boolean} isPublic
- * @default true
  */
-Competition.prototype['isPublic'] = true;
+Competition.prototype['isPublic'] = undefined;
 
 /**
  * Is the event publicly exposed depending on the event model
  * @member {Boolean} autoStart
- * @default true
  */
-Competition.prototype['autoStart'] = true;
+Competition.prototype['autoStart'] = undefined;
 
 /**
  * ISO8601 timestamp for when a Competition should start. All records are stored in UTC time zone
@@ -404,9 +401,8 @@ Competition.prototype['includeEntrantsWhere'] = undefined;
 /**
  * If True, members must Opt in before they can acquire points in the contest
  * @member {Boolean} optinRequiredForEntrants
- * @default false
  */
-Competition.prototype['optinRequiredForEntrants'] = false;
+Competition.prototype['optinRequiredForEntrants'] = undefined;
 
 /**
  * @member {Array.<module:model/Metadata>} metadata
@@ -426,9 +422,8 @@ Competition.prototype['status'] = undefined;
 /**
  * The code of the competition
  * @member {Number} statusCode
- * @default 3
  */
-Competition.prototype['statusCode'] = 3;
+Competition.prototype['statusCode'] = undefined;
 
 /**
  * @member {Array.<module:model/ContestReduced>} contests
@@ -471,9 +466,8 @@ CompetitionAllOf.prototype['competitionType'] = undefined;
 /**
  * Number of rounds to be played in a competition
  * @member {Number} numberOfRounds
- * @default 1
  */
-CompetitionAllOf.prototype['numberOfRounds'] = 1;
+CompetitionAllOf.prototype['numberOfRounds'] = undefined;
 /**
  * Number of group stages
  * @member {Number} numberOfGroupStages
@@ -515,15 +509,13 @@ CompetitionAllOf.prototype['ruleSets'] = undefined;
 /**
  * Is the event publicly exposed depending on the event model
  * @member {Boolean} isPublic
- * @default true
  */
-CompetitionAllOf.prototype['isPublic'] = true;
+CompetitionAllOf.prototype['isPublic'] = undefined;
 /**
  * Is the event publicly exposed depending on the event model
  * @member {Boolean} autoStart
- * @default true
  */
-CompetitionAllOf.prototype['autoStart'] = true;
+CompetitionAllOf.prototype['autoStart'] = undefined;
 /**
  * ISO8601 timestamp for when a Competition should start. All records are stored in UTC time zone
  * @member {Date} scheduledStartDate
@@ -551,9 +543,8 @@ CompetitionAllOf.prototype['includeEntrantsWhere'] = undefined;
 /**
  * If True, members must Opt in before they can acquire points in the contest
  * @member {Boolean} optinRequiredForEntrants
- * @default false
  */
-CompetitionAllOf.prototype['optinRequiredForEntrants'] = false;
+CompetitionAllOf.prototype['optinRequiredForEntrants'] = undefined;
 /**
  * @member {Array.<module:model/Metadata>} metadata
  */
@@ -569,9 +560,8 @@ CompetitionAllOf.prototype['status'] = undefined;
 /**
  * The code of the competition
  * @member {Number} statusCode
- * @default 3
  */
-CompetitionAllOf.prototype['statusCode'] = 3;
+CompetitionAllOf.prototype['statusCode'] = undefined;
 /**
  * @member {Array.<module:model/ContestReduced>} contests
  */

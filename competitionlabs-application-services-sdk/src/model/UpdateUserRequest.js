@@ -19,7 +19,7 @@ import UpdateUserRequestAllOf from './UpdateUserRequestAllOf';
 /**
  * The UpdateUserRequest model module.
  * @module model/UpdateUserRequest
- * @version 1.0.1
+ * @version 1.0.4
  */
 class UpdateUserRequest {
     /**
@@ -35,16 +35,25 @@ class UpdateUserRequest {
     }
 
     /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
+    static initialize(obj, id) { 
+        obj['id'] = id;
+    }
+
+    /**
     * Constructs a full object with all available fields.
     */
     model(){
         var obj = {};
 
-        obj['id'] = null;
-        obj['firstName'] = null;
-        obj['lastName'] = null;
-        obj['email'] = null;
-        obj['contact'] = new Contact().model();
+        obj['id'];
+        obj['firstName'];
+        obj['lastName'];
+        obj['email'];
+        obj['contact'];
 
         return obj;
     }
@@ -58,25 +67,16 @@ class UpdateUserRequest {
             "requiredFields": {}
         };
 
-        obj["fields"]['id'] = { "type": 'String', "system": true };
-        obj["fields"]['firstName'] = { "type": 'String', "system": false };
-        obj["fields"]['lastName'] = { "type": 'String', "system": false };
-        obj["fields"]['email'] = { "type": 'String', "system": false };
-        obj["fields"]['contact'] = new Contact().modelMap();
+        obj["fields"]['id'];
+        obj["fields"]['firstName'];
+        obj["fields"]['lastName'];
+        obj["fields"]['email'];
+        obj["fields"]['contact'];
 
         
-        obj["requiredFields"]['id'] = { "type": 'String', "system": true };
+        obj["requiredFields"]['id'];
 
         return obj;
-    }
-
-    /**
-     * Initializes the fields of this object.
-     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
-     * Only for internal use.
-     */
-    static initialize(obj, id) { 
-        obj['id'] = id;
     }
 
     /**

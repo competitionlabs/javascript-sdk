@@ -20,7 +20,7 @@ import UnitOfMeasureType from './UnitOfMeasureType';
 /**
  * The RewardType model module.
  * @module model/RewardType
- * @version 1.0.1
+ * @version 1.0.4
  */
 class RewardType {
     /**
@@ -42,21 +42,36 @@ class RewardType {
     }
 
     /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
+    static initialize(obj, id, spaceName, created, name, key, unitOfMeasureType, system) { 
+        obj['id'] = id;
+        obj['spaceName'] = spaceName;
+        obj['created'] = created;
+        obj['name'] = name;
+        obj['key'] = key;
+        obj['unitOfMeasureType'] = unitOfMeasureType;
+        obj['system'] = system;
+    }
+
+    /**
     * Constructs a full object with all available fields.
     */
     model(){
         var obj = {};
 
-        obj['id'] = null;
-        obj['spaceName'] = null;
-        obj['created'] = null;
-        obj['name'] = null;
-        obj['description'] = null;
-        obj['key'] = null;
-        obj['unitOfMeasureType'] = new UnitOfMeasureType().model();
-        obj['system'] = null;
-        obj['metadata'] = [new Metadata().model()];
-        obj['providers'] = null;
+        obj['id'];
+        obj['spaceName'];
+        obj['created'];
+        obj['name'];
+        obj['description'];
+        obj['key'];
+        obj['unitOfMeasureType'];
+        obj['system'];
+        obj['metadata'];
+        obj['providers'];
 
         return obj;
     }
@@ -70,42 +85,27 @@ class RewardType {
             "requiredFields": {}
         };
 
-        obj["fields"]['id'] = { "type": 'String', "system": true };
-        obj["fields"]['spaceName'] = { "type": 'String', "system": true };
-        obj["fields"]['created'] = { "type": 'Date', "system": true };
-        obj["fields"]['name'] = { "type": 'String', "system": false };
-        obj["fields"]['description'] = { "type": 'String', "system": false };
-        obj["fields"]['key'] = { "type": 'String', "system": false };
-        obj["fields"]['unitOfMeasureType'] = new UnitOfMeasureType().modelMap();
-        obj["fields"]['system'] = { "type": 'Boolean', "system": false };
-        obj["fields"]['metadata'] = [new Metadata().modelMap()];
-        obj["fields"]['providers'] = { "type": 'String', "system": false };
+        obj["fields"]['id'];
+        obj["fields"]['spaceName'];
+        obj["fields"]['created'];
+        obj["fields"]['name'];
+        obj["fields"]['description'];
+        obj["fields"]['key'];
+        obj["fields"]['unitOfMeasureType'];
+        obj["fields"]['system'];
+        obj["fields"]['metadata'];
+        obj["fields"]['providers'];
 
         
-        obj["requiredFields"]['id'] = { "type": 'String', "system": true };
-        obj["requiredFields"]['spaceName'] = { "type": 'String', "system": true };
-        obj["requiredFields"]['created'] = { "type": 'Date', "system": true };
-        obj["requiredFields"]['name'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['key'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['unitOfMeasureType'] = new UnitOfMeasureType().modelMap();
-        obj["requiredFields"]['system'] = { "type": 'Boolean', "system": false };
+        obj["requiredFields"]['id'];
+        obj["requiredFields"]['spaceName'];
+        obj["requiredFields"]['created'];
+        obj["requiredFields"]['name'];
+        obj["requiredFields"]['key'];
+        obj["requiredFields"]['unitOfMeasureType'];
+        obj["requiredFields"]['system'];
 
         return obj;
-    }
-
-    /**
-     * Initializes the fields of this object.
-     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
-     * Only for internal use.
-     */
-    static initialize(obj, id, spaceName, created, name, key, unitOfMeasureType, system) { 
-        obj['id'] = id;
-        obj['spaceName'] = spaceName;
-        obj['created'] = created;
-        obj['name'] = name;
-        obj['key'] = key;
-        obj['unitOfMeasureType'] = unitOfMeasureType;
-        obj['system'] = system;
     }
 
     /**
@@ -202,9 +202,8 @@ RewardType.prototype['unitOfMeasureType'] = undefined;
 /**
  * A boolean value (true/false) that represents the Reward type state. A system reserved entry (set to true) cannot be deleted.
  * @member {Boolean} system
- * @default false
  */
-RewardType.prototype['system'] = false;
+RewardType.prototype['system'] = undefined;
 
 /**
  * @member {Array.<module:model/Metadata>} metadata
@@ -257,9 +256,8 @@ RewardTypeAllOf.prototype['unitOfMeasureType'] = undefined;
 /**
  * A boolean value (true/false) that represents the Reward type state. A system reserved entry (set to true) cannot be deleted.
  * @member {Boolean} system
- * @default false
  */
-RewardTypeAllOf.prototype['system'] = false;
+RewardTypeAllOf.prototype['system'] = undefined;
 /**
  * @member {Array.<module:model/Metadata>} metadata
  */

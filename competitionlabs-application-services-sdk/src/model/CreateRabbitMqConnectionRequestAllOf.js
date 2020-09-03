@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateRabbitMqConnectionRequestAllOf model module.
  * @module model/CreateRabbitMqConnectionRequestAllOf
- * @version 1.0.1
+ * @version 1.0.4
  */
 class CreateRabbitMqConnectionRequestAllOf {
     /**
@@ -38,62 +38,6 @@ class CreateRabbitMqConnectionRequestAllOf {
     }
 
     /**
-    * Constructs a full object with all available fields.
-    */
-    model(){
-        var obj = {};
-
-        obj['name'] = null;
-        obj['uri'] = null;
-        obj['transformerId'] = null;
-        obj['virtualHost'] = null;
-        obj['port'] = null;
-        obj['useSsl'] = null;
-        obj['username'] = null;
-        obj['password'] = null;
-        obj['queueName'] = null;
-        obj['exchange'] = null;
-        obj['routingKey'] = null;
-
-        return obj;
-    }
-
-    /**
-    * Constructs a full object Map for all available fields.
-    */
-    modelMap(){
-        var obj = {
-            "fields": {},
-            "requiredFields": {}
-        };
-
-        obj["fields"]['name'] = { "type": 'String', "system": false };
-        obj["fields"]['uri'] = { "type": 'String', "system": false };
-        obj["fields"]['transformerId'] = { "type": 'String', "system": false };
-        obj["fields"]['virtualHost'] = { "type": 'String', "system": false };
-        obj["fields"]['port'] = { "type": 'Number', "system": false };
-        obj["fields"]['useSsl'] = { "type": 'Boolean', "system": false };
-        obj["fields"]['username'] = { "type": 'String', "system": false };
-        obj["fields"]['password'] = { "type": 'String', "system": false };
-        obj["fields"]['queueName'] = { "type": 'String', "system": false };
-        obj["fields"]['exchange'] = { "type": 'String', "system": false };
-        obj["fields"]['routingKey'] = { "type": 'String', "system": false };
-
-        
-        obj["requiredFields"]['name'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['uri'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['transformerId'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['virtualHost'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['port'] = { "type": 'Number', "system": false };
-        obj["requiredFields"]['useSsl'] = { "type": 'Boolean', "system": false };
-        obj["requiredFields"]['username'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['password'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['queueName'] = { "type": 'String', "system": false };
-
-        return obj;
-    }
-
-    /**
      * Initializes the fields of this object.
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
@@ -108,6 +52,62 @@ class CreateRabbitMqConnectionRequestAllOf {
         obj['username'] = username;
         obj['password'] = password;
         obj['queueName'] = queueName;
+    }
+
+    /**
+    * Constructs a full object with all available fields.
+    */
+    model(){
+        var obj = {};
+
+        obj['name'];
+        obj['uri'];
+        obj['transformerId'];
+        obj['virtualHost'];
+        obj['port'];
+        obj['useSsl'];
+        obj['username'];
+        obj['password'];
+        obj['queueName'];
+        obj['exchange'];
+        obj['routingKey'];
+
+        return obj;
+    }
+
+    /**
+    * Constructs a full object Map for all available fields.
+    */
+    modelMap(){
+        var obj = {
+            "fields": {},
+            "requiredFields": {}
+        };
+
+        obj["fields"]['name'];
+        obj["fields"]['uri'];
+        obj["fields"]['transformerId'];
+        obj["fields"]['virtualHost'];
+        obj["fields"]['port'];
+        obj["fields"]['useSsl'];
+        obj["fields"]['username'];
+        obj["fields"]['password'];
+        obj["fields"]['queueName'];
+        obj["fields"]['exchange'];
+        obj["fields"]['routingKey'];
+
+        
+        obj["requiredFields"]['name'];
+        obj["requiredFields"]['uri'];
+        obj["requiredFields"]['transformerId'];
+        obj["requiredFields"]['virtualHost'];
+        obj["requiredFields"]['port'];
+        obj["requiredFields"]['useSsl'];
+        obj["requiredFields"]['username'];
+        obj["requiredFields"]['password'];
+        obj["requiredFields"]['queueName'];
+
+        return obj;
     }
 
     /**
@@ -182,16 +182,14 @@ CreateRabbitMqConnectionRequestAllOf.prototype['transformerId'] = undefined;
 /**
  * The virtual host of the rabbitmq broker
  * @member {String} virtualHost
- * @default '/'
  */
-CreateRabbitMqConnectionRequestAllOf.prototype['virtualHost'] = '/';
+CreateRabbitMqConnectionRequestAllOf.prototype['virtualHost'] = undefined;
 
 /**
  * The port number on which consumer will connect on rabbitmq broker
  * @member {Number} port
- * @default 5672
  */
-CreateRabbitMqConnectionRequestAllOf.prototype['port'] = 5672;
+CreateRabbitMqConnectionRequestAllOf.prototype['port'] = undefined;
 
 /**
  * Whether the connection is SSL enabled or not

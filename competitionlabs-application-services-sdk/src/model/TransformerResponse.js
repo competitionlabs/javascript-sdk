@@ -19,7 +19,7 @@ import Transformer from './Transformer';
 /**
  * The TransformerResponse model module.
  * @module model/TransformerResponse
- * @version 1.0.1
+ * @version 1.0.4
  */
 class TransformerResponse {
     /**
@@ -33,14 +33,23 @@ class TransformerResponse {
     }
 
     /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
+    static initialize(obj, meta) { 
+        obj['meta'] = meta;
+    }
+
+    /**
     * Constructs a full object with all available fields.
     */
     model(){
         var obj = {};
 
-        obj['meta'] = new MetaExtended().model();
-        obj['results'] = [new Transformer().model()];
-        obj['errors'] = [new Error().model()];
+        obj['meta'];
+        obj['results'];
+        obj['errors'];
 
         return obj;
     }
@@ -54,23 +63,14 @@ class TransformerResponse {
             "requiredFields": {}
         };
 
-        obj["fields"]['meta'] = new MetaExtended().modelMap();
-        obj["fields"]['results'] = [new Transformer().modelMap()];
-        obj["fields"]['errors'] = [new Error().modelMap()];
+        obj["fields"]['meta'];
+        obj["fields"]['results'];
+        obj["fields"]['errors'];
 
         
-        obj["requiredFields"]['meta'] = new MetaExtended().modelMap();
+        obj["requiredFields"]['meta'];
 
         return obj;
-    }
-
-    /**
-     * Initializes the fields of this object.
-     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
-     * Only for internal use.
-     */
-    static initialize(obj, meta) { 
-        obj['meta'] = meta;
     }
 
     /**

@@ -1,4 +1,4 @@
-# @CompetitionlabsJavascriptSdk.UpdateSqsConnectionRequestAllOf
+# @CompetitionlabsApplicationServicesSdk.UpdateSqsConnectionRequestAllOf
 
 ## Properties
 

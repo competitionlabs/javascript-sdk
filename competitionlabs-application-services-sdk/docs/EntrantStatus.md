@@ -1,4 +1,4 @@
-# @CompetitionlabsJavascriptSdk.EntrantStatus
+# @CompetitionlabsApplicationServicesSdk.EntrantStatus
 
 ## Enum
 

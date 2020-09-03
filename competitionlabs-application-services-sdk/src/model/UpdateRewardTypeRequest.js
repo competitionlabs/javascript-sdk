@@ -20,7 +20,7 @@ import UpdateRewardTypeRequestAllOf from './UpdateRewardTypeRequestAllOf';
 /**
  * The UpdateRewardTypeRequest model module.
  * @module model/UpdateRewardTypeRequest
- * @version 1.0.1
+ * @version 1.0.4
  */
 class UpdateRewardTypeRequest {
     /**
@@ -36,17 +36,27 @@ class UpdateRewardTypeRequest {
     }
 
     /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
+    static initialize(obj, id) { 
+        obj['id'] = id;
+    }
+
+    /**
     * Constructs a full object with all available fields.
     */
     model(){
         var obj = {};
 
-        obj['id'] = null;
-        obj['name'] = null;
-        obj['description'] = null;
-        obj['unitOfMeasureType'] = new UnitOfMeasureType().model();
-        obj['metadata'] = [new Metadata().model()];
-        obj['providers'] = null;
+        obj['id'];
+        obj['name'];
+        obj['description'];
+        obj['key'];
+        obj['unitOfMeasureType'];
+        obj['metadata'];
+        obj['providers'];
 
         return obj;
     }
@@ -60,26 +70,18 @@ class UpdateRewardTypeRequest {
             "requiredFields": {}
         };
 
-        obj["fields"]['id'] = { "type": 'String', "system": true };
-        obj["fields"]['name'] = { "type": 'String', "system": false };
-        obj["fields"]['description'] = { "type": 'String', "system": false };
-        obj["fields"]['unitOfMeasureType'] = new UnitOfMeasureType().modelMap();
-        obj["fields"]['metadata'] = [new Metadata().modelMap()];
-        obj["fields"]['providers'] = { "type": 'String', "system": false };
+        obj["fields"]['id'];
+        obj["fields"]['name'];
+        obj["fields"]['description'];
+        obj["fields"]['key'];
+        obj["fields"]['unitOfMeasureType'];
+        obj["fields"]['metadata'];
+        obj["fields"]['providers'];
 
         
-        obj["requiredFields"]['id'] = { "type": 'String', "system": true };
+        obj["requiredFields"]['id'];
 
         return obj;
-    }
-
-    /**
-     * Initializes the fields of this object.
-     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
-     * Only for internal use.
-     */
-    static initialize(obj, id) { 
-        obj['id'] = id;
     }
 
     /**
@@ -103,6 +105,9 @@ class UpdateRewardTypeRequest {
             }
             if (data.hasOwnProperty('description')) {
                 obj['description'] = ApiClient.convertToType(data['description'], 'String');
+            }
+            if (data.hasOwnProperty('key')) {
+                obj['key'] = ApiClient.convertToType(data['key'], 'String');
             }
             if (data.hasOwnProperty('unitOfMeasureType')) {
                 obj['unitOfMeasureType'] = UnitOfMeasureType.constructFromObject(data['unitOfMeasureType']);
@@ -139,6 +144,12 @@ UpdateRewardTypeRequest.prototype['name'] = undefined;
 UpdateRewardTypeRequest.prototype['description'] = undefined;
 
 /**
+ * A unique key that represents the reward type
+ * @member {String} key
+ */
+UpdateRewardTypeRequest.prototype['key'] = undefined;
+
+/**
  * @member {module:model/UnitOfMeasureType} unitOfMeasureType
  */
 UpdateRewardTypeRequest.prototype['unitOfMeasureType'] = undefined;
@@ -172,6 +183,11 @@ UpdateRewardTypeRequestAllOf.prototype['name'] = undefined;
  * @member {String} description
  */
 UpdateRewardTypeRequestAllOf.prototype['description'] = undefined;
+/**
+ * A unique key that represents the reward type
+ * @member {String} key
+ */
+UpdateRewardTypeRequestAllOf.prototype['key'] = undefined;
 /**
  * @member {module:model/UnitOfMeasureType} unitOfMeasureType
  */

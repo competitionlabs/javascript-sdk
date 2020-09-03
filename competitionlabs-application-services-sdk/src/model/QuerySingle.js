@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The QuerySingle model module.
  * @module model/QuerySingle
- * @version 1.0.1
+ * @version 1.0.4
  */
 class QuerySingle {
     /**
@@ -31,13 +31,23 @@ class QuerySingle {
     }
 
     /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
+    static initialize(obj, queryField, queryValue) { 
+        obj['queryField'] = queryField;
+        obj['queryValue'] = queryValue;
+    }
+
+    /**
     * Constructs a full object with all available fields.
     */
     model(){
         var obj = {};
 
-        obj['queryField'] = null;
-        obj['queryValue'] = null;
+        obj['queryField'];
+        obj['queryValue'];
 
         return obj;
     }
@@ -51,24 +61,14 @@ class QuerySingle {
             "requiredFields": {}
         };
 
-        obj["fields"]['queryField'] = { "type": 'String', "system": false };
-        obj["fields"]['queryValue'] = { "type": 'String', "system": false };
+        obj["fields"]['queryField'];
+        obj["fields"]['queryValue'];
 
         
-        obj["requiredFields"]['queryField'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['queryValue'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['queryField'];
+        obj["requiredFields"]['queryValue'];
 
         return obj;
-    }
-
-    /**
-     * Initializes the fields of this object.
-     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
-     * Only for internal use.
-     */
-    static initialize(obj, queryField, queryValue) { 
-        obj['queryField'] = queryField;
-        obj['queryValue'] = queryValue;
     }
 
     /**

@@ -13,11 +13,12 @@
 
 import ApiClient from '../ApiClient';
 import HostingOptions from './HostingOptions';
+import Metadata from './Metadata';
 
 /**
  * The CreateRepositoryRequest model module.
  * @module model/CreateRepositoryRequest
- * @version 1.0.1
+ * @version 1.0.4
  */
 class CreateRepositoryRequest {
     /**
@@ -25,10 +26,23 @@ class CreateRepositoryRequest {
      * Create a new repository object
      * @alias module:model/CreateRepositoryRequest
      * @param name {String} The name of the repository. No special charaters or spaces permitted
+     * @param tags {Array.<String>} The tags used to categorize the repository
+     * @param hostingOptions {module:model/HostingOptions} 
      */
-    constructor(name) { 
+    constructor(name, tags, hostingOptions) { 
         
-        CreateRepositoryRequest.initialize(this, name);
+        CreateRepositoryRequest.initialize(this, name, tags, hostingOptions);
+    }
+
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
+    static initialize(obj, name, tags, hostingOptions) { 
+        obj['name'] = name;
+        obj['tags'] = tags;
+        obj['hostingOptions'] = hostingOptions;
     }
 
     /**
@@ -37,11 +51,12 @@ class CreateRepositoryRequest {
     model(){
         var obj = {};
 
-        obj['name'] = null;
-        obj['description'] = null;
-        obj['tags'] = [null];
-        obj['constraints'] = [null];
-        obj['hostingOptions'] = new HostingOptions().model();
+        obj['name'];
+        obj['description'];
+        obj['tags'];
+        obj['constraints'];
+        obj['hostingOptions'];
+        obj['metadata'];
 
         return obj;
     }
@@ -55,25 +70,19 @@ class CreateRepositoryRequest {
             "requiredFields": {}
         };
 
-        obj["fields"]['name'] = { "type": 'String', "system": false };
-        obj["fields"]['description'] = { "type": 'String', "system": false };
-        obj["fields"]['tags'] = [{ "type": 'String', "system": false }];
-        obj["fields"]['constraints'] = [{ "type": 'String', "system": false }];
-        obj["fields"]['hostingOptions'] = new HostingOptions().modelMap();
+        obj["fields"]['name'];
+        obj["fields"]['description'];
+        obj["fields"]['tags'];
+        obj["fields"]['constraints'];
+        obj["fields"]['hostingOptions'];
+        obj["fields"]['metadata'];
 
         
-        obj["requiredFields"]['name'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['name'];
+        obj["requiredFields"]['tags'];
+        obj["requiredFields"]['hostingOptions'];
 
         return obj;
-    }
-
-    /**
-     * Initializes the fields of this object.
-     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
-     * Only for internal use.
-     */
-    static initialize(obj, name) { 
-        obj['name'] = name;
     }
 
     /**
@@ -101,6 +110,9 @@ class CreateRepositoryRequest {
             }
             if (data.hasOwnProperty('hostingOptions')) {
                 obj['hostingOptions'] = HostingOptions.constructFromObject(data['hostingOptions']);
+            }
+            if (data.hasOwnProperty('metadata')) {
+                obj['metadata'] = ApiClient.convertToType(data['metadata'], [Metadata]);
             }
         }
         return obj;
@@ -137,6 +149,12 @@ CreateRepositoryRequest.prototype['constraints'] = undefined;
  * @member {module:model/HostingOptions} hostingOptions
  */
 CreateRepositoryRequest.prototype['hostingOptions'] = undefined;
+
+/**
+ * Metadata used to describe this file. Content type application/json
+ * @member {Array.<module:model/Metadata>} metadata
+ */
+CreateRepositoryRequest.prototype['metadata'] = undefined;
 
 
 

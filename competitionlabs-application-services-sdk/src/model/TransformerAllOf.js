@@ -17,7 +17,7 @@ import SourceLanguage from './SourceLanguage';
 /**
  * The TransformerAllOf model module.
  * @module model/TransformerAllOf
- * @version 1.0.1
+ * @version 1.0.4
  */
 class TransformerAllOf {
     /**
@@ -33,14 +33,25 @@ class TransformerAllOf {
     }
 
     /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
+    static initialize(obj, name, source, sourceLanguage) { 
+        obj['name'] = name;
+        obj['source'] = source;
+        obj['sourceLanguage'] = sourceLanguage;
+    }
+
+    /**
     * Constructs a full object with all available fields.
     */
     model(){
         var obj = {};
 
-        obj['name'] = null;
-        obj['source'] = null;
-        obj['sourceLanguage'] = new SourceLanguage().model();
+        obj['name'];
+        obj['source'];
+        obj['sourceLanguage'];
 
         return obj;
     }
@@ -54,27 +65,16 @@ class TransformerAllOf {
             "requiredFields": {}
         };
 
-        obj["fields"]['name'] = { "type": 'String', "system": false };
-        obj["fields"]['source'] = { "type": 'String', "system": false };
-        obj["fields"]['sourceLanguage'] = new SourceLanguage().modelMap();
+        obj["fields"]['name'];
+        obj["fields"]['source'];
+        obj["fields"]['sourceLanguage'];
 
         
-        obj["requiredFields"]['name'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['source'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['sourceLanguage'] = new SourceLanguage().modelMap();
+        obj["requiredFields"]['name'];
+        obj["requiredFields"]['source'];
+        obj["requiredFields"]['sourceLanguage'];
 
         return obj;
-    }
-
-    /**
-     * Initializes the fields of this object.
-     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
-     * Only for internal use.
-     */
-    static initialize(obj, name, source, sourceLanguage) { 
-        obj['name'] = name;
-        obj['source'] = source;
-        obj['sourceLanguage'] = sourceLanguage;
     }
 
     /**

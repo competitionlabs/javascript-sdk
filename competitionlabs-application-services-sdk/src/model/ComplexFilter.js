@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ComplexFilter model module.
  * @module model/ComplexFilter
- * @version 1.0.1
+ * @version 1.0.4
  */
 class ComplexFilter {
     /**
@@ -29,15 +29,23 @@ class ComplexFilter {
     }
 
     /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
+    static initialize(obj) { 
+    }
+
+    /**
     * Constructs a full object with all available fields.
     */
     model(){
         var obj = {};
 
-        obj['must'] = [null];
-        obj['mustNot'] = [null];
-        obj['should'] = [null];
-        obj['shouldMatchAtLeast'] = null;
+        obj['must'];
+        obj['mustNot'];
+        obj['should'];
+        obj['shouldMatchAtLeast'];
 
         return obj;
     }
@@ -51,22 +59,14 @@ class ComplexFilter {
             "requiredFields": {}
         };
 
-        obj["fields"]['must'] = [{ "type": 'String', "system": false }];
-        obj["fields"]['mustNot'] = [{ "type": 'String', "system": false }];
-        obj["fields"]['should'] = [{ "type": 'String', "system": false }];
-        obj["fields"]['shouldMatchAtLeast'] = { "type": 'Number', "system": false };
+        obj["fields"]['must'];
+        obj["fields"]['mustNot'];
+        obj["fields"]['should'];
+        obj["fields"]['shouldMatchAtLeast'];
 
         
 
         return obj;
-    }
-
-    /**
-     * Initializes the fields of this object.
-     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
-     * Only for internal use.
-     */
-    static initialize(obj) { 
     }
 
     /**
@@ -120,9 +120,8 @@ ComplexFilter.prototype['should'] = undefined;
 /**
  * Dependant on should. Triggered when 2 or more should parameters selected
  * @member {Number} shouldMatchAtLeast
- * @default 0
  */
-ComplexFilter.prototype['shouldMatchAtLeast'] = 0;
+ComplexFilter.prototype['shouldMatchAtLeast'] = undefined;
 
 
 

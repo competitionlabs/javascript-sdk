@@ -19,7 +19,7 @@ import UpdateTransformerRequestAllOf from './UpdateTransformerRequestAllOf';
 /**
  * The UpdateTransformerRequest model module.
  * @module model/UpdateTransformerRequest
- * @version 1.0.1
+ * @version 1.0.4
  */
 class UpdateTransformerRequest {
     /**
@@ -35,15 +35,24 @@ class UpdateTransformerRequest {
     }
 
     /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
+    static initialize(obj, id) { 
+        obj['id'] = id;
+    }
+
+    /**
     * Constructs a full object with all available fields.
     */
     model(){
         var obj = {};
 
-        obj['id'] = null;
-        obj['name'] = null;
-        obj['source'] = null;
-        obj['sourceLanguage'] = new SourceLanguage().model();
+        obj['id'];
+        obj['name'];
+        obj['source'];
+        obj['sourceLanguage'];
 
         return obj;
     }
@@ -57,24 +66,15 @@ class UpdateTransformerRequest {
             "requiredFields": {}
         };
 
-        obj["fields"]['id'] = { "type": 'String', "system": true };
-        obj["fields"]['name'] = { "type": 'String', "system": false };
-        obj["fields"]['source'] = { "type": 'String', "system": false };
-        obj["fields"]['sourceLanguage'] = new SourceLanguage().modelMap();
+        obj["fields"]['id'];
+        obj["fields"]['name'];
+        obj["fields"]['source'];
+        obj["fields"]['sourceLanguage'];
 
         
-        obj["requiredFields"]['id'] = { "type": 'String', "system": true };
+        obj["requiredFields"]['id'];
 
         return obj;
-    }
-
-    /**
-     * Initializes the fields of this object.
-     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
-     * Only for internal use.
-     */
-    static initialize(obj, id) { 
-        obj['id'] = id;
     }
 
     /**

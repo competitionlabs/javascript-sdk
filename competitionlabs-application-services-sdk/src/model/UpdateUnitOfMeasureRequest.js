@@ -20,7 +20,7 @@ import UpdateUnitOfMeasureRequestAllOf from './UpdateUnitOfMeasureRequestAllOf';
 /**
  * The UpdateUnitOfMeasureRequest model module.
  * @module model/UpdateUnitOfMeasureRequest
- * @version 1.0.1
+ * @version 1.0.4
  */
 class UpdateUnitOfMeasureRequest {
     /**
@@ -36,19 +36,29 @@ class UpdateUnitOfMeasureRequest {
     }
 
     /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
+    static initialize(obj, id) { 
+        obj['id'] = id;
+    }
+
+    /**
     * Constructs a full object with all available fields.
     */
     model(){
         var obj = {};
 
-        obj['id'] = null;
-        obj['name'] = null;
-        obj['description'] = null;
-        obj['isoCode'] = null;
-        obj['symbol'] = null;
-        obj['multiplier'] = null;
-        obj['unitOfMeasureType'] = new UnitOfMeasureType().model();
-        obj['metadata'] = [new Metadata().model()];
+        obj['id'];
+        obj['name'];
+        obj['description'];
+        obj['key'];
+        obj['isoCode'];
+        obj['symbol'];
+        obj['multiplier'];
+        obj['unitOfMeasureType'];
+        obj['metadata'];
 
         return obj;
     }
@@ -62,28 +72,20 @@ class UpdateUnitOfMeasureRequest {
             "requiredFields": {}
         };
 
-        obj["fields"]['id'] = { "type": 'String', "system": true };
-        obj["fields"]['name'] = { "type": 'String', "system": false };
-        obj["fields"]['description'] = { "type": 'String', "system": false };
-        obj["fields"]['isoCode'] = { "type": 'String', "system": false };
-        obj["fields"]['symbol'] = { "type": 'String', "system": false };
-        obj["fields"]['multiplier'] = { "type": 'Number', "system": false };
-        obj["fields"]['unitOfMeasureType'] = new UnitOfMeasureType().modelMap();
-        obj["fields"]['metadata'] = [new Metadata().modelMap()];
+        obj["fields"]['id'];
+        obj["fields"]['name'];
+        obj["fields"]['description'];
+        obj["fields"]['key'];
+        obj["fields"]['isoCode'];
+        obj["fields"]['symbol'];
+        obj["fields"]['multiplier'];
+        obj["fields"]['unitOfMeasureType'];
+        obj["fields"]['metadata'];
 
         
-        obj["requiredFields"]['id'] = { "type": 'String', "system": true };
+        obj["requiredFields"]['id'];
 
         return obj;
-    }
-
-    /**
-     * Initializes the fields of this object.
-     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
-     * Only for internal use.
-     */
-    static initialize(obj, id) { 
-        obj['id'] = id;
     }
 
     /**
@@ -107,6 +109,9 @@ class UpdateUnitOfMeasureRequest {
             }
             if (data.hasOwnProperty('description')) {
                 obj['description'] = ApiClient.convertToType(data['description'], 'String');
+            }
+            if (data.hasOwnProperty('key')) {
+                obj['key'] = ApiClient.convertToType(data['key'], 'String');
             }
             if (data.hasOwnProperty('isoCode')) {
                 obj['isoCode'] = ApiClient.convertToType(data['isoCode'], 'String');
@@ -147,6 +152,12 @@ UpdateUnitOfMeasureRequest.prototype['name'] = undefined;
  * @member {String} description
  */
 UpdateUnitOfMeasureRequest.prototype['description'] = undefined;
+
+/**
+ * The reference to the unit of measure in your system
+ * @member {String} key
+ */
+UpdateUnitOfMeasureRequest.prototype['key'] = undefined;
 
 /**
  * An alphabetical or numerical code to identify a unit of measure
@@ -194,6 +205,11 @@ UpdateUnitOfMeasureRequestAllOf.prototype['name'] = undefined;
  * @member {String} description
  */
 UpdateUnitOfMeasureRequestAllOf.prototype['description'] = undefined;
+/**
+ * The reference to the unit of measure in your system
+ * @member {String} key
+ */
+UpdateUnitOfMeasureRequestAllOf.prototype['key'] = undefined;
 /**
  * An alphabetical or numerical code to identify a unit of measure
  * @member {String} isoCode

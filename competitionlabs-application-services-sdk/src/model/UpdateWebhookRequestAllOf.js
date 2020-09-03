@@ -17,7 +17,7 @@ import Metadata from './Metadata';
 /**
  * The UpdateWebhookRequestAllOf model module.
  * @module model/UpdateWebhookRequestAllOf
- * @version 1.0.1
+ * @version 1.0.4
  */
 class UpdateWebhookRequestAllOf {
     /**
@@ -30,16 +30,25 @@ class UpdateWebhookRequestAllOf {
     }
 
     /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
+    static initialize(obj) { 
+    }
+
+    /**
     * Constructs a full object with all available fields.
     */
     model(){
         var obj = {};
 
-        obj['postToUrl'] = null;
-        obj['triggers'] = [null];
-        obj['description'] = null;
-        obj['headers'] = [new Metadata().model()];
-        obj['transformerId'] = null;
+        obj['postToUrl'];
+        obj['triggers'];
+        obj['description'];
+        obj['headers'];
+        obj['transformerId'];
+        obj['metadata'];
 
         return obj;
     }
@@ -53,23 +62,16 @@ class UpdateWebhookRequestAllOf {
             "requiredFields": {}
         };
 
-        obj["fields"]['postToUrl'] = { "type": 'String', "system": false };
-        obj["fields"]['triggers'] = [{ "type": 'String', "system": false }];
-        obj["fields"]['description'] = { "type": 'String', "system": false };
-        obj["fields"]['headers'] = [new Metadata().modelMap()];
-        obj["fields"]['transformerId'] = { "type": 'String', "system": false };
+        obj["fields"]['postToUrl'];
+        obj["fields"]['triggers'];
+        obj["fields"]['description'];
+        obj["fields"]['headers'];
+        obj["fields"]['transformerId'];
+        obj["fields"]['metadata'];
 
         
 
         return obj;
-    }
-
-    /**
-     * Initializes the fields of this object.
-     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
-     * Only for internal use.
-     */
-    static initialize(obj) { 
     }
 
     /**
@@ -97,6 +99,9 @@ class UpdateWebhookRequestAllOf {
             }
             if (data.hasOwnProperty('transformerId')) {
                 obj['transformerId'] = ApiClient.convertToType(data['transformerId'], 'String');
+            }
+            if (data.hasOwnProperty('metadata')) {
+                obj['metadata'] = ApiClient.convertToType(data['metadata'], [Metadata]);
             }
         }
         return obj;
@@ -133,6 +138,11 @@ UpdateWebhookRequestAllOf.prototype['headers'] = undefined;
  * @member {String} transformerId
  */
 UpdateWebhookRequestAllOf.prototype['transformerId'] = undefined;
+
+/**
+ * @member {Array.<module:model/Metadata>} metadata
+ */
+UpdateWebhookRequestAllOf.prototype['metadata'] = undefined;
 
 
 

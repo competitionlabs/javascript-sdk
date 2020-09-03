@@ -1,11 +1,11 @@
-# @CompetitionlabsJavascriptSdk.RuleDescriptorSubCondition
+# @CompetitionlabsApplicationServicesSdk.RuleDescriptorSubCondition
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **constraints** | **[String]** | The fields constraint | 
-**matchCondition** | [**MatchCondition**](docs/MatchCondition.md) |  | 
-**subFacts** | [**[RuleDescriptorSubFact]**](docs/RuleDescriptorSubFact.md) |  | [optional] 
+**matchCondition** | [**MatchCondition**](MatchCondition.md) |  | 
+**subFacts** | [**[RuleDescriptorSubFact]**](RuleDescriptorSubFact.md) |  | [optional] 
 
 

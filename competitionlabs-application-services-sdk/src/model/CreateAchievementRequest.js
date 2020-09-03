@@ -23,7 +23,7 @@ import Translation from './Translation';
 /**
  * The CreateAchievementRequest model module.
  * @module model/CreateAchievementRequest
- * @version 1.0.1
+ * @version 1.0.4
  */
 class CreateAchievementRequest {
     /**
@@ -42,25 +42,39 @@ class CreateAchievementRequest {
     }
 
     /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
+    static initialize(obj, name, isHidden, icon, ruleSets, scheduling, achievementLiveStatus) { 
+        obj['name'] = name;
+        obj['isHidden'] = isHidden;
+        obj['icon'] = icon;
+        obj['ruleSets'] = ruleSets;
+        obj['scheduling'] = scheduling;
+        obj['achievementLiveStatus'] = achievementLiveStatus;
+    }
+
+    /**
     * Constructs a full object with all available fields.
     */
     model(){
         var obj = {};
 
-        obj['name'] = null;
-        obj['description'] = null;
-        obj['isHidden'] = null;
-        obj['icon'] = null;
-        obj['ruleSets'] = [new RuleSet().model()];
-        obj['dependantOn'] = new DependantOn().model();
-        obj['scheduling'] = new Scheduling().model();
-        obj['achievementLiveStatus'] = new AchievementLiveStatus().model();
-        obj['category'] = [null];
-        obj['memberGroups'] = [null];
-        obj['metadata'] = [new Metadata().model()];
-        obj['translations'] = [new Translation().model()];
-        obj['rewards'] = [new CreateRewardRequest().model()];
-        obj['constraints'] = [null];
+        obj['name'];
+        obj['description'];
+        obj['isHidden'];
+        obj['icon'];
+        obj['ruleSets'];
+        obj['dependantOn'];
+        obj['scheduling'];
+        obj['achievementLiveStatus'];
+        obj['category'];
+        obj['memberGroups'];
+        obj['metadata'];
+        obj['translations'];
+        obj['rewards'];
+        obj['constraints'];
 
         return obj;
     }
@@ -74,44 +88,30 @@ class CreateAchievementRequest {
             "requiredFields": {}
         };
 
-        obj["fields"]['name'] = { "type": 'String', "system": false };
-        obj["fields"]['description'] = { "type": 'String', "system": false };
-        obj["fields"]['isHidden'] = { "type": 'Boolean', "system": false };
-        obj["fields"]['icon'] = { "type": 'String', "system": false };
-        obj["fields"]['ruleSets'] = [new RuleSet().modelMap()];
-        obj["fields"]['dependantOn'] = new DependantOn().modelMap();
-        obj["fields"]['scheduling'] = new Scheduling().modelMap();
-        obj["fields"]['achievementLiveStatus'] = new AchievementLiveStatus().modelMap();
-        obj["fields"]['category'] = [{ "type": 'String', "system": false }];
-        obj["fields"]['memberGroups'] = [{ "type": 'String', "system": false }];
-        obj["fields"]['metadata'] = [new Metadata().modelMap()];
-        obj["fields"]['translations'] = [new Translation().modelMap()];
-        obj["fields"]['rewards'] = [new CreateRewardRequest().modelMap()];
-        obj["fields"]['constraints'] = [{ "type": 'String', "system": false }];
+        obj["fields"]['name'];
+        obj["fields"]['description'];
+        obj["fields"]['isHidden'];
+        obj["fields"]['icon'];
+        obj["fields"]['ruleSets'];
+        obj["fields"]['dependantOn'];
+        obj["fields"]['scheduling'];
+        obj["fields"]['achievementLiveStatus'];
+        obj["fields"]['category'];
+        obj["fields"]['memberGroups'];
+        obj["fields"]['metadata'];
+        obj["fields"]['translations'];
+        obj["fields"]['rewards'];
+        obj["fields"]['constraints'];
 
         
-        obj["requiredFields"]['name'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['isHidden'] = { "type": 'Boolean', "system": false };
-        obj["requiredFields"]['icon'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['ruleSets'] = [new RuleSet().modelMap()];
-        obj["requiredFields"]['scheduling'] = new Scheduling().modelMap();
-        obj["requiredFields"]['achievementLiveStatus'] = new AchievementLiveStatus().modelMap();
+        obj["requiredFields"]['name'];
+        obj["requiredFields"]['isHidden'];
+        obj["requiredFields"]['icon'];
+        obj["requiredFields"]['ruleSets'];
+        obj["requiredFields"]['scheduling'];
+        obj["requiredFields"]['achievementLiveStatus'];
 
         return obj;
-    }
-
-    /**
-     * Initializes the fields of this object.
-     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
-     * Only for internal use.
-     */
-    static initialize(obj, name, isHidden, icon, ruleSets, scheduling, achievementLiveStatus) { 
-        obj['name'] = name;
-        obj['isHidden'] = isHidden;
-        obj['icon'] = icon;
-        obj['ruleSets'] = ruleSets;
-        obj['scheduling'] = scheduling;
-        obj['achievementLiveStatus'] = achievementLiveStatus;
     }
 
     /**
@@ -189,9 +189,8 @@ CreateAchievementRequest.prototype['description'] = undefined;
 /**
  * Informs the state of the achievement. True means hidden and false means revealed
  * @member {Boolean} isHidden
- * @default false
  */
-CreateAchievementRequest.prototype['isHidden'] = false;
+CreateAchievementRequest.prototype['isHidden'] = undefined;
 
 /**
  * An Icon id that has been pre uploaded to the system to display for Achievement

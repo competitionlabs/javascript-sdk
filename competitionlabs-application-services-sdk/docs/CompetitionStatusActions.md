@@ -1,4 +1,4 @@
-# @CompetitionlabsJavascriptSdk.CompetitionStatusActions
+# @CompetitionlabsApplicationServicesSdk.CompetitionStatusActions
 
 ## Enum
 

@@ -12,12 +12,13 @@
  */
 
 import ApiClient from '../ApiClient';
+import Metadata from './Metadata';
 import Role from './Role';
 
 /**
  * The UpdateApiKeyRequestAllOf model module.
  * @module model/UpdateApiKeyRequestAllOf
- * @version 1.0.1
+ * @version 1.0.4
  */
 class UpdateApiKeyRequestAllOf {
     /**
@@ -30,16 +31,26 @@ class UpdateApiKeyRequestAllOf {
     }
 
     /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
+    static initialize(obj) { 
+    }
+
+    /**
     * Constructs a full object with all available fields.
     */
     model(){
         var obj = {};
 
-        obj['active'] = null;
-        obj['description'] = null;
-        obj['whiteListIPs'] = [null];
-        obj['role'] = new Role().model();
-        obj['default'] = null;
+        obj['active'];
+        obj['description'];
+        obj['whiteListIPs'];
+        obj['key'];
+        obj['role'];
+        obj['default'];
+        obj['metadata'];
 
         return obj;
     }
@@ -53,23 +64,17 @@ class UpdateApiKeyRequestAllOf {
             "requiredFields": {}
         };
 
-        obj["fields"]['active'] = { "type": 'Boolean', "system": false };
-        obj["fields"]['description'] = { "type": 'String', "system": false };
-        obj["fields"]['whiteListIPs'] = [{ "type": 'String', "system": false }];
-        obj["fields"]['role'] = new Role().modelMap();
-        obj["fields"]['default'] = { "type": 'Boolean', "system": false };
+        obj["fields"]['active'];
+        obj["fields"]['description'];
+        obj["fields"]['whiteListIPs'];
+        obj["fields"]['key'];
+        obj["fields"]['role'];
+        obj["fields"]['default'];
+        obj["fields"]['metadata'];
 
         
 
         return obj;
-    }
-
-    /**
-     * Initializes the fields of this object.
-     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
-     * Only for internal use.
-     */
-    static initialize(obj) { 
     }
 
     /**
@@ -92,11 +97,17 @@ class UpdateApiKeyRequestAllOf {
             if (data.hasOwnProperty('whiteListIPs')) {
                 obj['whiteListIPs'] = ApiClient.convertToType(data['whiteListIPs'], ['String']);
             }
+            if (data.hasOwnProperty('key')) {
+                obj['key'] = ApiClient.convertToType(data['key'], 'String');
+            }
             if (data.hasOwnProperty('role')) {
                 obj['role'] = Role.constructFromObject(data['role']);
             }
             if (data.hasOwnProperty('default')) {
                 obj['default'] = ApiClient.convertToType(data['default'], 'Boolean');
+            }
+            if (data.hasOwnProperty('metadata')) {
+                obj['metadata'] = ApiClient.convertToType(data['metadata'], [Metadata]);
             }
         }
         return obj;
@@ -108,9 +119,8 @@ class UpdateApiKeyRequestAllOf {
 /**
  * To enable or dissable an Api key
  * @member {Boolean} active
- * @default true
  */
-UpdateApiKeyRequestAllOf.prototype['active'] = true;
+UpdateApiKeyRequestAllOf.prototype['active'] = undefined;
 
 /**
  * The description of an Api key
@@ -125,6 +135,12 @@ UpdateApiKeyRequestAllOf.prototype['description'] = undefined;
 UpdateApiKeyRequestAllOf.prototype['whiteListIPs'] = undefined;
 
 /**
+ * An Api key hash
+ * @member {String} key
+ */
+UpdateApiKeyRequestAllOf.prototype['key'] = undefined;
+
+/**
  * @member {module:model/Role} role
  */
 UpdateApiKeyRequestAllOf.prototype['role'] = undefined;
@@ -132,9 +148,13 @@ UpdateApiKeyRequestAllOf.prototype['role'] = undefined;
 /**
  * To enable the Api key to be default
  * @member {Boolean} default
- * @default false
  */
-UpdateApiKeyRequestAllOf.prototype['default'] = false;
+UpdateApiKeyRequestAllOf.prototype['default'] = undefined;
+
+/**
+ * @member {Array.<module:model/Metadata>} metadata
+ */
+UpdateApiKeyRequestAllOf.prototype['metadata'] = undefined;
 
 
 

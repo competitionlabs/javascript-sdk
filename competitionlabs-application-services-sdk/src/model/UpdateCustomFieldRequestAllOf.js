@@ -12,11 +12,13 @@
  */
 
 import ApiClient from '../ApiClient';
+import AppliesTo from './AppliesTo';
+import FieldType from './FieldType';
 
 /**
  * The UpdateCustomFieldRequestAllOf model module.
  * @module model/UpdateCustomFieldRequestAllOf
- * @version 1.0.1
+ * @version 1.0.4
  */
 class UpdateCustomFieldRequestAllOf {
     /**
@@ -29,13 +31,23 @@ class UpdateCustomFieldRequestAllOf {
     }
 
     /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
+    static initialize(obj) { 
+    }
+
+    /**
     * Constructs a full object with all available fields.
     */
     model(){
         var obj = {};
 
-        obj['name'] = null;
-        obj['description'] = null;
+        obj['name'];
+        obj['description'];
+        obj['fieldType'];
+        obj['appliesTo'];
 
         return obj;
     }
@@ -49,20 +61,14 @@ class UpdateCustomFieldRequestAllOf {
             "requiredFields": {}
         };
 
-        obj["fields"]['name'] = { "type": 'String', "system": false };
-        obj["fields"]['description'] = { "type": 'String', "system": false };
+        obj["fields"]['name'];
+        obj["fields"]['description'];
+        obj["fields"]['fieldType'];
+        obj["fields"]['appliesTo'];
 
         
 
         return obj;
-    }
-
-    /**
-     * Initializes the fields of this object.
-     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
-     * Only for internal use.
-     */
-    static initialize(obj) { 
     }
 
     /**
@@ -82,6 +88,12 @@ class UpdateCustomFieldRequestAllOf {
             if (data.hasOwnProperty('description')) {
                 obj['description'] = ApiClient.convertToType(data['description'], 'String');
             }
+            if (data.hasOwnProperty('fieldType')) {
+                obj['fieldType'] = FieldType.constructFromObject(data['fieldType']);
+            }
+            if (data.hasOwnProperty('appliesTo')) {
+                obj['appliesTo'] = AppliesTo.constructFromObject(data['appliesTo']);
+            }
         }
         return obj;
     }
@@ -100,6 +112,16 @@ UpdateCustomFieldRequestAllOf.prototype['name'] = undefined;
  * @member {String} description
  */
 UpdateCustomFieldRequestAllOf.prototype['description'] = undefined;
+
+/**
+ * @member {module:model/FieldType} fieldType
+ */
+UpdateCustomFieldRequestAllOf.prototype['fieldType'] = undefined;
+
+/**
+ * @member {module:model/AppliesTo} appliesTo
+ */
+UpdateCustomFieldRequestAllOf.prototype['appliesTo'] = undefined;
 
 
 

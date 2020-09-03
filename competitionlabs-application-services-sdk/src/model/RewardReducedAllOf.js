@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RewardReducedAllOf model module.
  * @module model/RewardReducedAllOf
- * @version 1.0.1
+ * @version 1.0.4
  */
 class RewardReducedAllOf {
     /**
@@ -34,16 +34,29 @@ class RewardReducedAllOf {
     }
 
     /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
+    static initialize(obj, rewardRank, rewardName, value, rewardType, rewardTypeId) { 
+        obj['rewardRank'] = rewardRank;
+        obj['rewardName'] = rewardName;
+        obj['value'] = value;
+        obj['rewardType'] = rewardType;
+        obj['rewardTypeId'] = rewardTypeId;
+    }
+
+    /**
     * Constructs a full object with all available fields.
     */
     model(){
         var obj = {};
 
-        obj['rewardRank'] = null;
-        obj['rewardName'] = null;
-        obj['value'] = null;
-        obj['rewardType'] = null;
-        obj['rewardTypeId'] = null;
+        obj['rewardRank'];
+        obj['rewardName'];
+        obj['value'];
+        obj['rewardType'];
+        obj['rewardTypeId'];
 
         return obj;
     }
@@ -57,33 +70,20 @@ class RewardReducedAllOf {
             "requiredFields": {}
         };
 
-        obj["fields"]['rewardRank'] = { "type": 'String', "system": false };
-        obj["fields"]['rewardName'] = { "type": 'String', "system": false };
-        obj["fields"]['value'] = { "type": 'Number', "system": false };
-        obj["fields"]['rewardType'] = { "type": 'String', "system": false };
-        obj["fields"]['rewardTypeId'] = { "type": 'String', "system": false };
+        obj["fields"]['rewardRank'];
+        obj["fields"]['rewardName'];
+        obj["fields"]['value'];
+        obj["fields"]['rewardType'];
+        obj["fields"]['rewardTypeId'];
 
         
-        obj["requiredFields"]['rewardRank'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['rewardName'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['value'] = { "type": 'Number', "system": false };
-        obj["requiredFields"]['rewardType'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['rewardTypeId'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['rewardRank'];
+        obj["requiredFields"]['rewardName'];
+        obj["requiredFields"]['value'];
+        obj["requiredFields"]['rewardType'];
+        obj["requiredFields"]['rewardTypeId'];
 
         return obj;
-    }
-
-    /**
-     * Initializes the fields of this object.
-     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
-     * Only for internal use.
-     */
-    static initialize(obj, rewardRank, rewardName, value, rewardType, rewardTypeId) { 
-        obj['rewardRank'] = rewardRank;
-        obj['rewardName'] = rewardName;
-        obj['value'] = value;
-        obj['rewardType'] = rewardType;
-        obj['rewardTypeId'] = rewardTypeId;
     }
 
     /**

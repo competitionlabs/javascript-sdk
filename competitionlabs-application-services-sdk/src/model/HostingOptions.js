@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The HostingOptions model module.
  * @module model/HostingOptions
- * @version 1.0.1
+ * @version 1.0.4
  */
 class HostingOptions {
     /**
@@ -30,13 +30,21 @@ class HostingOptions {
     }
 
     /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
+    static initialize(obj) { 
+    }
+
+    /**
     * Constructs a full object with all available fields.
     */
     model(){
         var obj = {};
 
-        obj['indexFileName'] = null;
-        obj['errorFileName'] = null;
+        obj['indexFileName'];
+        obj['errorFileName'];
 
         return obj;
     }
@@ -50,20 +58,12 @@ class HostingOptions {
             "requiredFields": {}
         };
 
-        obj["fields"]['indexFileName'] = { "type": 'String', "system": false };
-        obj["fields"]['errorFileName'] = { "type": 'String', "system": false };
+        obj["fields"]['indexFileName'];
+        obj["fields"]['errorFileName'];
 
         
 
         return obj;
-    }
-
-    /**
-     * Initializes the fields of this object.
-     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
-     * Only for internal use.
-     */
-    static initialize(obj) { 
     }
 
     /**

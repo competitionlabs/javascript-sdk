@@ -1,4 +1,4 @@
-# @CompetitionlabsJavascriptSdk.OnRuleSetMatchTrigger
+# @CompetitionlabsApplicationServicesSdk.OnRuleSetMatchTrigger
 
 ## Properties
 

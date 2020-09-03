@@ -25,7 +25,7 @@ import UpdateRewardRequest from './UpdateRewardRequest';
 /**
  * The UpdateAchievementRequest model module.
  * @module model/UpdateAchievementRequest
- * @version 1.0.1
+ * @version 1.0.4
  */
 class UpdateAchievementRequest {
     /**
@@ -41,26 +41,35 @@ class UpdateAchievementRequest {
     }
 
     /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
+    static initialize(obj, id) { 
+        obj['id'] = id;
+    }
+
+    /**
     * Constructs a full object with all available fields.
     */
     model(){
         var obj = {};
 
-        obj['id'] = null;
-        obj['name'] = null;
-        obj['description'] = null;
-        obj['isHidden'] = null;
-        obj['icon'] = null;
-        obj['ruleSets'] = [new RuleSet().model()];
-        obj['dependantOn'] = new DependantOn().model();
-        obj['scheduling'] = new Scheduling().model();
-        obj['achievementLiveStatus'] = new AchievementLiveStatus().model();
-        obj['category'] = [null];
-        obj['memberGroups'] = [null];
-        obj['metadata'] = [new Metadata().model()];
-        obj['translations'] = [new Translation().model()];
-        obj['rewards'] = [new UpdateRewardRequest().model()];
-        obj['constraints'] = [null];
+        obj['id'];
+        obj['name'];
+        obj['description'];
+        obj['isHidden'];
+        obj['icon'];
+        obj['ruleSets'];
+        obj['dependantOn'];
+        obj['scheduling'];
+        obj['achievementLiveStatus'];
+        obj['category'];
+        obj['memberGroups'];
+        obj['metadata'];
+        obj['translations'];
+        obj['rewards'];
+        obj['constraints'];
 
         return obj;
     }
@@ -74,35 +83,26 @@ class UpdateAchievementRequest {
             "requiredFields": {}
         };
 
-        obj["fields"]['id'] = { "type": 'String', "system": true };
-        obj["fields"]['name'] = { "type": 'String', "system": false };
-        obj["fields"]['description'] = { "type": 'String', "system": false };
-        obj["fields"]['isHidden'] = { "type": 'Boolean', "system": false };
-        obj["fields"]['icon'] = { "type": 'String', "system": false };
-        obj["fields"]['ruleSets'] = [new RuleSet().modelMap()];
-        obj["fields"]['dependantOn'] = new DependantOn().modelMap();
-        obj["fields"]['scheduling'] = new Scheduling().modelMap();
-        obj["fields"]['achievementLiveStatus'] = new AchievementLiveStatus().modelMap();
-        obj["fields"]['category'] = [{ "type": 'String', "system": false }];
-        obj["fields"]['memberGroups'] = [{ "type": 'String', "system": false }];
-        obj["fields"]['metadata'] = [new Metadata().modelMap()];
-        obj["fields"]['translations'] = [new Translation().modelMap()];
-        obj["fields"]['rewards'] = [new UpdateRewardRequest().modelMap()];
-        obj["fields"]['constraints'] = [{ "type": 'String', "system": false }];
+        obj["fields"]['id'];
+        obj["fields"]['name'];
+        obj["fields"]['description'];
+        obj["fields"]['isHidden'];
+        obj["fields"]['icon'];
+        obj["fields"]['ruleSets'];
+        obj["fields"]['dependantOn'];
+        obj["fields"]['scheduling'];
+        obj["fields"]['achievementLiveStatus'];
+        obj["fields"]['category'];
+        obj["fields"]['memberGroups'];
+        obj["fields"]['metadata'];
+        obj["fields"]['translations'];
+        obj["fields"]['rewards'];
+        obj["fields"]['constraints'];
 
         
-        obj["requiredFields"]['id'] = { "type": 'String', "system": true };
+        obj["requiredFields"]['id'];
 
         return obj;
-    }
-
-    /**
-     * Initializes the fields of this object.
-     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
-     * Only for internal use.
-     */
-    static initialize(obj, id) { 
-        obj['id'] = id;
     }
 
     /**
@@ -191,9 +191,8 @@ UpdateAchievementRequest.prototype['description'] = undefined;
 /**
  * Informs the state of the achievement. True means hidden and false means revealed
  * @member {Boolean} isHidden
- * @default false
  */
-UpdateAchievementRequest.prototype['isHidden'] = false;
+UpdateAchievementRequest.prototype['isHidden'] = undefined;
 
 /**
  * An Icon id that has been pre uploaded to the system to display for Achievement
@@ -275,9 +274,8 @@ UpdateAchievementRequestAllOf.prototype['description'] = undefined;
 /**
  * Informs the state of the achievement. True means hidden and false means revealed
  * @member {Boolean} isHidden
- * @default false
  */
-UpdateAchievementRequestAllOf.prototype['isHidden'] = false;
+UpdateAchievementRequestAllOf.prototype['isHidden'] = undefined;
 /**
  * An Icon id that has been pre uploaded to the system to display for Achievement
  * @member {String} icon

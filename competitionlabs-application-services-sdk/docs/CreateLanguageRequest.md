@@ -1,4 +1,4 @@
-# @CompetitionlabsJavascriptSdk.CreateLanguageRequest
+# @CompetitionlabsApplicationServicesSdk.CreateLanguageRequest
 
 ## Properties
 

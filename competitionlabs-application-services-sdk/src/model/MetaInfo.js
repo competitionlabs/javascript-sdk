@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The MetaInfo model module.
  * @module model/MetaInfo
- * @version 1.0.1
+ * @version 1.0.4
  */
 class MetaInfo {
     /**
@@ -32,14 +32,25 @@ class MetaInfo {
     }
 
     /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
+    static initialize(obj, objectType, resultCount, errorCount) { 
+        obj['objectType'] = objectType;
+        obj['resultCount'] = resultCount;
+        obj['errorCount'] = errorCount;
+    }
+
+    /**
     * Constructs a full object with all available fields.
     */
     model(){
         var obj = {};
 
-        obj['objectType'] = null;
-        obj['resultCount'] = null;
-        obj['errorCount'] = null;
+        obj['objectType'];
+        obj['resultCount'];
+        obj['errorCount'];
 
         return obj;
     }
@@ -53,27 +64,16 @@ class MetaInfo {
             "requiredFields": {}
         };
 
-        obj["fields"]['objectType'] = { "type": 'String', "system": false };
-        obj["fields"]['resultCount'] = { "type": 'Number', "system": false };
-        obj["fields"]['errorCount'] = { "type": 'Number', "system": false };
+        obj["fields"]['objectType'];
+        obj["fields"]['resultCount'];
+        obj["fields"]['errorCount'];
 
         
-        obj["requiredFields"]['objectType'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['resultCount'] = { "type": 'Number', "system": false };
-        obj["requiredFields"]['errorCount'] = { "type": 'Number', "system": false };
+        obj["requiredFields"]['objectType'];
+        obj["requiredFields"]['resultCount'];
+        obj["requiredFields"]['errorCount'];
 
         return obj;
-    }
-
-    /**
-     * Initializes the fields of this object.
-     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
-     * Only for internal use.
-     */
-    static initialize(obj, objectType, resultCount, errorCount) { 
-        obj['objectType'] = objectType;
-        obj['resultCount'] = resultCount;
-        obj['errorCount'] = errorCount;
     }
 
     /**
