@@ -13,9 +13,9 @@
   "browser": {
     "fs": false
   },
-  "repository":{
-    "type":"git",
-    "url":"https://github.com/competitionlabs/javascript-sdk/tree/master/competitionlabs-application-services-sdk"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/competitionlabs/javascript-sdk/tree/master/competitionlabs-application-services-sdk"
   },
   "dependencies": {
     "@babel/cli": "^7.0.0",
