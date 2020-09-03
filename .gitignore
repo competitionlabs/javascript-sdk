@@ -105,4 +105,4 @@ _*
 *.iml
 .idea
 dist
-package-lock.json
+competitionlabs-application-services-sdk/package-lock.json
