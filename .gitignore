@@ -106,3 +106,4 @@ _*
 .idea
 dist
 competitionlabs-application-services-sdk/package-lock.json
+competitionlabs-insights-services-sdk/package-lock.json
