@@ -4,5 +4,5 @@
 
 # Competition labs SKD repository
 Here you can find our newest API SDk services for the following projects:
-* [**Application services**](competitionlabs-application-services-sdk/README.md)
-* [**Insights services**](competitionlabs-insights-services-sdk/README.md)
+* [**Application services**](competitionlabs-application-services-sdk)
+* [**Insights services**](competitionlabs-insights-services-sdk)
