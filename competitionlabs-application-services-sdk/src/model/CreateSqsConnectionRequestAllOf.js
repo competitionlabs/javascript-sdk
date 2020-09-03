@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateSqsConnectionRequestAllOf model module.
  * @module model/CreateSqsConnectionRequestAllOf
- * @version 1.0.4
+ * @version 1.0.5
  */
 class CreateSqsConnectionRequestAllOf {
     /**
@@ -52,11 +52,11 @@ class CreateSqsConnectionRequestAllOf {
     model(){
         var obj = {};
 
-        obj['name'];
-        obj['uri'];
-        obj['acessKey'];
-        obj['secretKey'];
-        obj['transformerId'];
+        obj['name'] = null;
+        obj['uri'] = null;
+        obj['acessKey'] = null;
+        obj['secretKey'] = null;
+        obj['transformerId'] = null;
 
         return obj;
     }
@@ -70,18 +70,18 @@ class CreateSqsConnectionRequestAllOf {
             "requiredFields": {}
         };
 
-        obj["fields"]['name'];
-        obj["fields"]['uri'];
-        obj["fields"]['acessKey'];
-        obj["fields"]['secretKey'];
-        obj["fields"]['transformerId'];
+        obj["fields"]['name'] = { "type": 'String', "system": false };
+        obj["fields"]['uri'] = { "type": 'String', "system": false };
+        obj["fields"]['acessKey'] = { "type": 'String', "system": false };
+        obj["fields"]['secretKey'] = { "type": 'String', "system": false };
+        obj["fields"]['transformerId'] = { "type": 'String', "system": false };
 
         
-        obj["requiredFields"]['name'];
-        obj["requiredFields"]['uri'];
-        obj["requiredFields"]['acessKey'];
-        obj["requiredFields"]['secretKey'];
-        obj["requiredFields"]['transformerId'];
+        obj["requiredFields"]['name'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['uri'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['acessKey'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['secretKey'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['transformerId'] = { "type": 'String', "system": false };
 
         return obj;
     }

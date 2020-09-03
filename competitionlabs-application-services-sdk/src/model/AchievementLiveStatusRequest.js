@@ -19,7 +19,7 @@ import UpdateModelDefault from './UpdateModelDefault';
 /**
  * The AchievementLiveStatusRequest model module.
  * @module model/AchievementLiveStatusRequest
- * @version 1.0.4
+ * @version 1.0.5
  */
 class AchievementLiveStatusRequest {
     /**
@@ -51,8 +51,8 @@ class AchievementLiveStatusRequest {
     model(){
         var obj = {};
 
-        obj['id'];
-        obj['status'];
+        obj['id'] = null;
+        obj['status'] = new AchievementLiveStatus().model();
 
         return obj;
     }
@@ -66,12 +66,12 @@ class AchievementLiveStatusRequest {
             "requiredFields": {}
         };
 
-        obj["fields"]['id'];
-        obj["fields"]['status'];
+        obj["fields"]['id'] = { "type": 'String', "system": true };
+        obj["fields"]['status'] = new AchievementLiveStatus().modelMap();
 
         
-        obj["requiredFields"]['id'];
-        obj["requiredFields"]['status'];
+        obj["requiredFields"]['id'] = { "type": 'String', "system": true };
+        obj["requiredFields"]['status'] = new AchievementLiveStatus().modelMap();
 
         return obj;
     }

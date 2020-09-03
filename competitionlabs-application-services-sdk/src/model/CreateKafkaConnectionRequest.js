@@ -18,7 +18,7 @@ import CreateKafkaConnectionRequestAllOf from './CreateKafkaConnectionRequestAll
 /**
  * The CreateKafkaConnectionRequest model module.
  * @module model/CreateKafkaConnectionRequest
- * @version 1.0.4
+ * @version 1.0.5
  */
 class CreateKafkaConnectionRequest {
     /**
@@ -58,12 +58,12 @@ class CreateKafkaConnectionRequest {
     model(){
         var obj = {};
 
-        obj['objectType'];
-        obj['name'];
-        obj['brokers'];
-        obj['transformerId'];
-        obj['groupId'];
-        obj['topic'];
+        obj['objectType'] = null;
+        obj['name'] = null;
+        obj['brokers'] = null;
+        obj['transformerId'] = null;
+        obj['groupId'] = null;
+        obj['topic'] = null;
 
         return obj;
     }
@@ -77,20 +77,20 @@ class CreateKafkaConnectionRequest {
             "requiredFields": {}
         };
 
-        obj["fields"]['objectType'];
-        obj["fields"]['name'];
-        obj["fields"]['brokers'];
-        obj["fields"]['transformerId'];
-        obj["fields"]['groupId'];
-        obj["fields"]['topic'];
+        obj["fields"]['objectType'] = { "type": 'String', "system": false };
+        obj["fields"]['name'] = { "type": 'String', "system": false };
+        obj["fields"]['brokers'] = { "type": 'String', "system": false };
+        obj["fields"]['transformerId'] = { "type": 'String', "system": false };
+        obj["fields"]['groupId'] = { "type": 'String', "system": false };
+        obj["fields"]['topic'] = { "type": 'String', "system": false };
 
         
-        obj["requiredFields"]['objectType'];
-        obj["requiredFields"]['name'];
-        obj["requiredFields"]['brokers'];
-        obj["requiredFields"]['transformerId'];
-        obj["requiredFields"]['groupId'];
-        obj["requiredFields"]['topic'];
+        obj["requiredFields"]['objectType'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['name'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['brokers'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['transformerId'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['groupId'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['topic'] = { "type": 'String', "system": false };
 
         return obj;
     }

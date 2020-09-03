@@ -17,7 +17,7 @@ import ErrorDetail from './ErrorDetail';
 /**
  * The Error model module.
  * @module model/Error
- * @version 1.0.4
+ * @version 1.0.5
  */
 class Error {
     /**
@@ -47,10 +47,10 @@ class Error {
     model(){
         var obj = {};
 
-        obj['modelId'];
-        obj['errorCode'];
-        obj['message'];
-        obj['detail'];
+        obj['modelId'] = null;
+        obj['errorCode'] = null;
+        obj['message'] = null;
+        obj['detail'] = [new ErrorDetail().model()];
 
         return obj;
     }
@@ -64,14 +64,14 @@ class Error {
             "requiredFields": {}
         };
 
-        obj["fields"]['modelId'];
-        obj["fields"]['errorCode'];
-        obj["fields"]['message'];
-        obj["fields"]['detail'];
+        obj["fields"]['modelId'] = { "type": 'String', "system": false };
+        obj["fields"]['errorCode'] = { "type": 'Number', "system": false };
+        obj["fields"]['message'] = { "type": 'String', "system": false };
+        obj["fields"]['detail'] = [new ErrorDetail().modelMap()];
 
         
-        obj["requiredFields"]['errorCode'];
-        obj["requiredFields"]['message'];
+        obj["requiredFields"]['errorCode'] = { "type": 'Number', "system": false };
+        obj["requiredFields"]['message'] = { "type": 'String', "system": false };
 
         return obj;
     }

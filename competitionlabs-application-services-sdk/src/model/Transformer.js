@@ -19,7 +19,7 @@ import TransformerAllOf from './TransformerAllOf';
 /**
  * The Transformer model module.
  * @module model/Transformer
- * @version 1.0.4
+ * @version 1.0.5
  */
 class Transformer {
     /**
@@ -59,12 +59,12 @@ class Transformer {
     model(){
         var obj = {};
 
-        obj['id'];
-        obj['spaceName'];
-        obj['created'];
-        obj['name'];
-        obj['source'];
-        obj['sourceLanguage'];
+        obj['id'] = null;
+        obj['spaceName'] = null;
+        obj['created'] = null;
+        obj['name'] = null;
+        obj['source'] = null;
+        obj['sourceLanguage'] = new SourceLanguage().model();
 
         return obj;
     }
@@ -78,20 +78,20 @@ class Transformer {
             "requiredFields": {}
         };
 
-        obj["fields"]['id'];
-        obj["fields"]['spaceName'];
-        obj["fields"]['created'];
-        obj["fields"]['name'];
-        obj["fields"]['source'];
-        obj["fields"]['sourceLanguage'];
+        obj["fields"]['id'] = { "type": 'String', "system": true };
+        obj["fields"]['spaceName'] = { "type": 'String', "system": true };
+        obj["fields"]['created'] = { "type": 'Date', "system": true };
+        obj["fields"]['name'] = { "type": 'String', "system": false };
+        obj["fields"]['source'] = { "type": 'String', "system": false };
+        obj["fields"]['sourceLanguage'] = new SourceLanguage().modelMap();
 
         
-        obj["requiredFields"]['id'];
-        obj["requiredFields"]['spaceName'];
-        obj["requiredFields"]['created'];
-        obj["requiredFields"]['name'];
-        obj["requiredFields"]['source'];
-        obj["requiredFields"]['sourceLanguage'];
+        obj["requiredFields"]['id'] = { "type": 'String', "system": true };
+        obj["requiredFields"]['spaceName'] = { "type": 'String', "system": true };
+        obj["requiredFields"]['created'] = { "type": 'Date', "system": true };
+        obj["requiredFields"]['name'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['source'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['sourceLanguage'] = new SourceLanguage().modelMap();
 
         return obj;
     }

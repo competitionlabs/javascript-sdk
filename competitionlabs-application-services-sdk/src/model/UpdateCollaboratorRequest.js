@@ -19,7 +19,7 @@ import UpdateModelDefault from './UpdateModelDefault';
 /**
  * The UpdateCollaboratorRequest model module.
  * @module model/UpdateCollaboratorRequest
- * @version 1.0.4
+ * @version 1.0.5
  */
 class UpdateCollaboratorRequest {
     /**
@@ -51,8 +51,8 @@ class UpdateCollaboratorRequest {
     model(){
         var obj = {};
 
-        obj['id'];
-        obj['role'];
+        obj['id'] = null;
+        obj['role'] = new Role().model();
 
         return obj;
     }
@@ -66,12 +66,12 @@ class UpdateCollaboratorRequest {
             "requiredFields": {}
         };
 
-        obj["fields"]['id'];
-        obj["fields"]['role'];
+        obj["fields"]['id'] = { "type": 'String', "system": true };
+        obj["fields"]['role'] = new Role().modelMap();
 
         
-        obj["requiredFields"]['id'];
-        obj["requiredFields"]['role'];
+        obj["requiredFields"]['id'] = { "type": 'String', "system": true };
+        obj["requiredFields"]['role'] = new Role().modelMap();
 
         return obj;
     }

@@ -21,7 +21,7 @@ import ModelDefault from './ModelDefault';
 /**
  * The MemberMessage model module.
  * @module model/MemberMessage
- * @version 1.0.4
+ * @version 1.0.5
  */
 class MemberMessage {
     /**
@@ -71,17 +71,17 @@ class MemberMessage {
     model(){
         var obj = {};
 
-        obj['id'];
-        obj['spaceName'];
-        obj['created'];
-        obj['eventRefType'];
-        obj['eventReferenceId'];
-        obj['messageType'];
-        obj['subject'];
-        obj['body'];
-        obj['prize'];
-        obj['status'];
-        obj['expiry'];
+        obj['id'] = null;
+        obj['spaceName'] = null;
+        obj['created'] = null;
+        obj['eventRefType'] = new EventRefType().model();
+        obj['eventReferenceId'] = null;
+        obj['messageType'] = new MessageType().model();
+        obj['subject'] = null;
+        obj['body'] = null;
+        obj['prize'] = null;
+        obj['status'] = new MessageStatus().model();
+        obj['expiry'] = null;
 
         return obj;
     }
@@ -95,30 +95,30 @@ class MemberMessage {
             "requiredFields": {}
         };
 
-        obj["fields"]['id'];
-        obj["fields"]['spaceName'];
-        obj["fields"]['created'];
-        obj["fields"]['eventRefType'];
-        obj["fields"]['eventReferenceId'];
-        obj["fields"]['messageType'];
-        obj["fields"]['subject'];
-        obj["fields"]['body'];
-        obj["fields"]['prize'];
-        obj["fields"]['status'];
-        obj["fields"]['expiry'];
+        obj["fields"]['id'] = { "type": 'String', "system": true };
+        obj["fields"]['spaceName'] = { "type": 'String', "system": true };
+        obj["fields"]['created'] = { "type": 'Date', "system": true };
+        obj["fields"]['eventRefType'] = new EventRefType().modelMap();
+        obj["fields"]['eventReferenceId'] = { "type": 'String', "system": false };
+        obj["fields"]['messageType'] = new MessageType().modelMap();
+        obj["fields"]['subject'] = { "type": 'String', "system": false };
+        obj["fields"]['body'] = { "type": 'String', "system": false };
+        obj["fields"]['prize'] = { "type": 'String', "system": false };
+        obj["fields"]['status'] = new MessageStatus().modelMap();
+        obj["fields"]['expiry'] = { "type": 'Date', "system": false };
 
         
-        obj["requiredFields"]['id'];
-        obj["requiredFields"]['spaceName'];
-        obj["requiredFields"]['created'];
-        obj["requiredFields"]['eventRefType'];
-        obj["requiredFields"]['eventReferenceId'];
-        obj["requiredFields"]['messageType'];
-        obj["requiredFields"]['subject'];
-        obj["requiredFields"]['body'];
-        obj["requiredFields"]['prize'];
-        obj["requiredFields"]['status'];
-        obj["requiredFields"]['expiry'];
+        obj["requiredFields"]['id'] = { "type": 'String', "system": true };
+        obj["requiredFields"]['spaceName'] = { "type": 'String', "system": true };
+        obj["requiredFields"]['created'] = { "type": 'Date', "system": true };
+        obj["requiredFields"]['eventRefType'] = new EventRefType().modelMap();
+        obj["requiredFields"]['eventReferenceId'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['messageType'] = new MessageType().modelMap();
+        obj["requiredFields"]['subject'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['body'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['prize'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['status'] = new MessageStatus().modelMap();
+        obj["requiredFields"]['expiry'] = { "type": 'Date', "system": false };
 
         return obj;
     }

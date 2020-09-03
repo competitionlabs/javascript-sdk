@@ -18,7 +18,7 @@ import UpdateKafkaConnectionRequestAllOf from './UpdateKafkaConnectionRequestAll
 /**
  * The UpdateKafkaConnectionRequest model module.
  * @module model/UpdateKafkaConnectionRequest
- * @version 1.0.4
+ * @version 1.0.5
  */
 class UpdateKafkaConnectionRequest {
     /**
@@ -50,13 +50,13 @@ class UpdateKafkaConnectionRequest {
     model(){
         var obj = {};
 
-        obj['id'];
-        obj['objectType'];
-        obj['name'];
-        obj['brokers'];
-        obj['transformerId'];
-        obj['groupId'];
-        obj['topic'];
+        obj['id'] = null;
+        obj['objectType'] = null;
+        obj['name'] = null;
+        obj['brokers'] = null;
+        obj['transformerId'] = null;
+        obj['groupId'] = null;
+        obj['topic'] = null;
 
         return obj;
     }
@@ -70,17 +70,17 @@ class UpdateKafkaConnectionRequest {
             "requiredFields": {}
         };
 
-        obj["fields"]['id'];
-        obj["fields"]['objectType'];
-        obj["fields"]['name'];
-        obj["fields"]['brokers'];
-        obj["fields"]['transformerId'];
-        obj["fields"]['groupId'];
-        obj["fields"]['topic'];
+        obj["fields"]['id'] = { "type": 'String', "system": true };
+        obj["fields"]['objectType'] = { "type": 'String', "system": false };
+        obj["fields"]['name'] = { "type": 'String', "system": false };
+        obj["fields"]['brokers'] = { "type": 'String', "system": false };
+        obj["fields"]['transformerId'] = { "type": 'String', "system": false };
+        obj["fields"]['groupId'] = { "type": 'String', "system": false };
+        obj["fields"]['topic'] = { "type": 'String', "system": false };
 
         
-        obj["requiredFields"]['id'];
-        obj["requiredFields"]['objectType'];
+        obj["requiredFields"]['id'] = { "type": 'String', "system": true };
+        obj["requiredFields"]['objectType'] = { "type": 'String', "system": false };
 
         return obj;
     }

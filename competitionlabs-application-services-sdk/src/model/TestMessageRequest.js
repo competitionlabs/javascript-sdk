@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TestMessageRequest model module.
  * @module model/TestMessageRequest
- * @version 1.0.4
+ * @version 1.0.5
  */
 class TestMessageRequest {
     /**
@@ -44,7 +44,7 @@ class TestMessageRequest {
     model(){
         var obj = {};
 
-        obj['members'];
+        obj['members'] = [null];
 
         return obj;
     }
@@ -58,10 +58,10 @@ class TestMessageRequest {
             "requiredFields": {}
         };
 
-        obj["fields"]['members'];
+        obj["fields"]['members'] = [{ "type": 'String', "system": false }];
 
         
-        obj["requiredFields"]['members'];
+        obj["requiredFields"]['members'] = [{ "type": 'String', "system": false }];
 
         return obj;
     }

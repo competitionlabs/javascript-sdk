@@ -19,7 +19,7 @@ import ModelDefault from './ModelDefault';
 /**
  * The KafkaConnection model module.
  * @module model/KafkaConnection
- * @version 1.0.4
+ * @version 1.0.5
  */
 class KafkaConnection {
     /**
@@ -68,15 +68,15 @@ class KafkaConnection {
     model(){
         var obj = {};
 
-        obj['id'];
-        obj['spaceName'];
-        obj['created'];
-        obj['name'];
-        obj['brokers'];
-        obj['groupId'];
-        obj['topic'];
-        obj['lastKnownStatus'];
-        obj['lastKnownStatusCode'];
+        obj['id'] = null;
+        obj['spaceName'] = null;
+        obj['created'] = null;
+        obj['name'] = null;
+        obj['brokers'] = [null];
+        obj['groupId'] = null;
+        obj['topic'] = null;
+        obj['lastKnownStatus'] = null;
+        obj['lastKnownStatusCode'] = null;
 
         return obj;
     }
@@ -90,26 +90,26 @@ class KafkaConnection {
             "requiredFields": {}
         };
 
-        obj["fields"]['id'];
-        obj["fields"]['spaceName'];
-        obj["fields"]['created'];
-        obj["fields"]['name'];
-        obj["fields"]['brokers'];
-        obj["fields"]['groupId'];
-        obj["fields"]['topic'];
-        obj["fields"]['lastKnownStatus'];
-        obj["fields"]['lastKnownStatusCode'];
+        obj["fields"]['id'] = { "type": 'String', "system": true };
+        obj["fields"]['spaceName'] = { "type": 'String', "system": true };
+        obj["fields"]['created'] = { "type": 'Date', "system": true };
+        obj["fields"]['name'] = { "type": 'String', "system": false };
+        obj["fields"]['brokers'] = [{ "type": 'String', "system": false }];
+        obj["fields"]['groupId'] = { "type": 'String', "system": false };
+        obj["fields"]['topic'] = { "type": 'String', "system": false };
+        obj["fields"]['lastKnownStatus'] = { "type": 'String', "system": false };
+        obj["fields"]['lastKnownStatusCode'] = { "type": 'Number', "system": false };
 
         
-        obj["requiredFields"]['id'];
-        obj["requiredFields"]['spaceName'];
-        obj["requiredFields"]['created'];
-        obj["requiredFields"]['name'];
-        obj["requiredFields"]['brokers'];
-        obj["requiredFields"]['groupId'];
-        obj["requiredFields"]['topic'];
-        obj["requiredFields"]['lastKnownStatus'];
-        obj["requiredFields"]['lastKnownStatusCode'];
+        obj["requiredFields"]['id'] = { "type": 'String', "system": true };
+        obj["requiredFields"]['spaceName'] = { "type": 'String', "system": true };
+        obj["requiredFields"]['created'] = { "type": 'Date', "system": true };
+        obj["requiredFields"]['name'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['brokers'] = [{ "type": 'String', "system": false }];
+        obj["requiredFields"]['groupId'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['topic'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['lastKnownStatus'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['lastKnownStatusCode'] = { "type": 'Number', "system": false };
 
         return obj;
     }

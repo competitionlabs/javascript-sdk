@@ -17,7 +17,7 @@ import RuleDescriptorSubCondition from './RuleDescriptorSubCondition';
 /**
  * The RuleDescriptorFactAllOf model module.
  * @module model/RuleDescriptorFactAllOf
- * @version 1.0.4
+ * @version 1.0.5
  */
 class RuleDescriptorFactAllOf {
     /**
@@ -45,9 +45,9 @@ class RuleDescriptorFactAllOf {
     model(){
         var obj = {};
 
-        obj['constraints'];
-        obj['fact'];
-        obj['subConditions'];
+        obj['constraints'] = [null];
+        obj['fact'] = null;
+        obj['subConditions'] = [new RuleDescriptorSubCondition().model()];
 
         return obj;
     }
@@ -61,12 +61,12 @@ class RuleDescriptorFactAllOf {
             "requiredFields": {}
         };
 
-        obj["fields"]['constraints'];
-        obj["fields"]['fact'];
-        obj["fields"]['subConditions'];
+        obj["fields"]['constraints'] = [{ "type": 'String', "system": false }];
+        obj["fields"]['fact'] = { "type": 'String', "system": false };
+        obj["fields"]['subConditions'] = [new RuleDescriptorSubCondition().modelMap()];
 
         
-        obj["requiredFields"]['fact'];
+        obj["requiredFields"]['fact'] = { "type": 'String', "system": false };
 
         return obj;
     }

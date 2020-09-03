@@ -22,7 +22,7 @@ import UpdateApiKeyRequest from '../model/UpdateApiKeyRequest';
 /**
 * ApiKeys service.
 * @module api/ApiKeysApi
-* @version 1.0.4
+* @version 1.0.5
 */
 export default class ApiKeysApi {
 

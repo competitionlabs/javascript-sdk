@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The MetaExtendedAllOf model module.
  * @module model/MetaExtendedAllOf
- * @version 1.0.4
+ * @version 1.0.5
  */
 class MetaExtendedAllOf {
     /**
@@ -46,8 +46,8 @@ class MetaExtendedAllOf {
     model(){
         var obj = {};
 
-        obj['skip'];
-        obj['limit'];
+        obj['skip'] = null;
+        obj['limit'] = null;
 
         return obj;
     }
@@ -61,12 +61,12 @@ class MetaExtendedAllOf {
             "requiredFields": {}
         };
 
-        obj["fields"]['skip'];
-        obj["fields"]['limit'];
+        obj["fields"]['skip'] = { "type": 'Number', "system": false };
+        obj["fields"]['limit'] = { "type": 'Number', "system": false };
 
         
-        obj["requiredFields"]['skip'];
-        obj["requiredFields"]['limit'];
+        obj["requiredFields"]['skip'] = { "type": 'Number', "system": false };
+        obj["requiredFields"]['limit'] = { "type": 'Number', "system": false };
 
         return obj;
     }

@@ -24,7 +24,7 @@ import UpdateMessageStatusRequest from '../model/UpdateMessageStatusRequest';
 /**
 * Messages service.
 * @module api/MessagesApi
-* @version 1.0.4
+* @version 1.0.5
 */
 export default class MessagesApi {
 

@@ -17,7 +17,7 @@ import Location from './Location';
 /**
  * The ContactAllOf model module.
  * @module model/ContactAllOf
- * @version 1.0.4
+ * @version 1.0.5
  */
 class ContactAllOf {
     /**
@@ -49,15 +49,15 @@ class ContactAllOf {
     model(){
         var obj = {};
 
-        obj['addressLine1'];
-        obj['addressLine2'];
-        obj['city'];
-        obj['state'];
-        obj['zipPostalCode'];
-        obj['country'];
-        obj['mobileNumber'];
-        obj['phoneNumber'];
-        obj['geoLocation'];
+        obj['addressLine1'] = null;
+        obj['addressLine2'] = null;
+        obj['city'] = null;
+        obj['state'] = null;
+        obj['zipPostalCode'] = null;
+        obj['country'] = null;
+        obj['mobileNumber'] = null;
+        obj['phoneNumber'] = null;
+        obj['geoLocation'] = new Location().model();
 
         return obj;
     }
@@ -71,20 +71,20 @@ class ContactAllOf {
             "requiredFields": {}
         };
 
-        obj["fields"]['addressLine1'];
-        obj["fields"]['addressLine2'];
-        obj["fields"]['city'];
-        obj["fields"]['state'];
-        obj["fields"]['zipPostalCode'];
-        obj["fields"]['country'];
-        obj["fields"]['mobileNumber'];
-        obj["fields"]['phoneNumber'];
-        obj["fields"]['geoLocation'];
+        obj["fields"]['addressLine1'] = { "type": 'String', "system": false };
+        obj["fields"]['addressLine2'] = { "type": 'String', "system": false };
+        obj["fields"]['city'] = { "type": 'String', "system": false };
+        obj["fields"]['state'] = { "type": 'String', "system": false };
+        obj["fields"]['zipPostalCode'] = { "type": 'String', "system": false };
+        obj["fields"]['country'] = { "type": 'String', "system": false };
+        obj["fields"]['mobileNumber'] = { "type": 'String', "system": false };
+        obj["fields"]['phoneNumber'] = { "type": 'String', "system": false };
+        obj["fields"]['geoLocation'] = new Location().modelMap();
 
         
-        obj["requiredFields"]['addressLine1'];
-        obj["requiredFields"]['zipPostalCode'];
-        obj["requiredFields"]['country'];
+        obj["requiredFields"]['addressLine1'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['zipPostalCode'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['country'] = { "type": 'String', "system": false };
 
         return obj;
     }

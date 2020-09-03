@@ -17,7 +17,7 @@ import EventMetadataRequest from './EventMetadataRequest';
 /**
  * The CreateEventRequest model module.
  * @module model/CreateEventRequest
- * @version 1.0.4
+ * @version 1.0.5
  */
 class CreateEventRequest {
     /**
@@ -53,13 +53,13 @@ class CreateEventRequest {
     model(){
         var obj = {};
 
-        obj['memberRefId'];
-        obj['action'];
-        obj['batchId'];
-        obj['entityRefId'];
-        obj['sourceValue'];
-        obj['transactionTimestamp'];
-        obj['metadata'];
+        obj['memberRefId'] = null;
+        obj['action'] = null;
+        obj['batchId'] = null;
+        obj['entityRefId'] = null;
+        obj['sourceValue'] = null;
+        obj['transactionTimestamp'] = null;
+        obj['metadata'] = [new EventMetadataRequest().model()];
 
         return obj;
     }
@@ -73,20 +73,20 @@ class CreateEventRequest {
             "requiredFields": {}
         };
 
-        obj["fields"]['memberRefId'];
-        obj["fields"]['action'];
-        obj["fields"]['batchId'];
-        obj["fields"]['entityRefId'];
-        obj["fields"]['sourceValue'];
-        obj["fields"]['transactionTimestamp'];
-        obj["fields"]['metadata'];
+        obj["fields"]['memberRefId'] = { "type": 'String', "system": false };
+        obj["fields"]['action'] = { "type": 'String', "system": false };
+        obj["fields"]['batchId'] = { "type": 'String', "system": false };
+        obj["fields"]['entityRefId'] = { "type": 'String', "system": false };
+        obj["fields"]['sourceValue'] = { "type": 'Number', "system": false };
+        obj["fields"]['transactionTimestamp'] = { "type": 'Date', "system": false };
+        obj["fields"]['metadata'] = [new EventMetadataRequest().modelMap()];
 
         
-        obj["requiredFields"]['memberRefId'];
-        obj["requiredFields"]['action'];
-        obj["requiredFields"]['entityRefId'];
-        obj["requiredFields"]['sourceValue'];
-        obj["requiredFields"]['transactionTimestamp'];
+        obj["requiredFields"]['memberRefId'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['action'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['entityRefId'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['sourceValue'] = { "type": 'Number', "system": false };
+        obj["requiredFields"]['transactionTimestamp'] = { "type": 'Date', "system": false };
 
         return obj;
     }

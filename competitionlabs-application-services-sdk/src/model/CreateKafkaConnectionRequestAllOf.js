@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateKafkaConnectionRequestAllOf model module.
  * @module model/CreateKafkaConnectionRequestAllOf
- * @version 1.0.4
+ * @version 1.0.5
  */
 class CreateKafkaConnectionRequestAllOf {
     /**
@@ -52,11 +52,11 @@ class CreateKafkaConnectionRequestAllOf {
     model(){
         var obj = {};
 
-        obj['name'];
-        obj['brokers'];
-        obj['transformerId'];
-        obj['groupId'];
-        obj['topic'];
+        obj['name'] = null;
+        obj['brokers'] = null;
+        obj['transformerId'] = null;
+        obj['groupId'] = null;
+        obj['topic'] = null;
 
         return obj;
     }
@@ -70,18 +70,18 @@ class CreateKafkaConnectionRequestAllOf {
             "requiredFields": {}
         };
 
-        obj["fields"]['name'];
-        obj["fields"]['brokers'];
-        obj["fields"]['transformerId'];
-        obj["fields"]['groupId'];
-        obj["fields"]['topic'];
+        obj["fields"]['name'] = { "type": 'String', "system": false };
+        obj["fields"]['brokers'] = { "type": 'String', "system": false };
+        obj["fields"]['transformerId'] = { "type": 'String', "system": false };
+        obj["fields"]['groupId'] = { "type": 'String', "system": false };
+        obj["fields"]['topic'] = { "type": 'String', "system": false };
 
         
-        obj["requiredFields"]['name'];
-        obj["requiredFields"]['brokers'];
-        obj["requiredFields"]['transformerId'];
-        obj["requiredFields"]['groupId'];
-        obj["requiredFields"]['topic'];
+        obj["requiredFields"]['name'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['brokers'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['transformerId'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['groupId'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['topic'] = { "type": 'String', "system": false };
 
         return obj;
     }

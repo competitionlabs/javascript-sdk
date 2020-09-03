@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The EventMetadataRequest model module.
  * @module model/EventMetadataRequest
- * @version 1.0.4
+ * @version 1.0.5
  */
 class EventMetadataRequest {
     /**
@@ -44,11 +44,11 @@ class EventMetadataRequest {
     model(){
         var obj = {};
 
-        obj['key'];
-        obj['textValue'];
-        obj['numberValue'];
-        obj['textArrayValues'];
-        obj['numberArrayValues'];
+        obj['key'] = null;
+        obj['textValue'] = null;
+        obj['numberValue'] = null;
+        obj['textArrayValues'] = [null];
+        obj['numberArrayValues'] = [null];
 
         return obj;
     }
@@ -62,14 +62,14 @@ class EventMetadataRequest {
             "requiredFields": {}
         };
 
-        obj["fields"]['key'];
-        obj["fields"]['textValue'];
-        obj["fields"]['numberValue'];
-        obj["fields"]['textArrayValues'];
-        obj["fields"]['numberArrayValues'];
+        obj["fields"]['key'] = { "type": 'String', "system": false };
+        obj["fields"]['textValue'] = { "type": 'String', "system": false };
+        obj["fields"]['numberValue'] = { "type": 'Number', "system": false };
+        obj["fields"]['textArrayValues'] = [{ "type": 'String', "system": false }];
+        obj["fields"]['numberArrayValues'] = [{ "type": 'Number', "system": false }];
 
         
-        obj["requiredFields"]['key'];
+        obj["requiredFields"]['key'] = { "type": 'String', "system": false };
 
         return obj;
     }

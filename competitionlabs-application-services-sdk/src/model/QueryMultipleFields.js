@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The QueryMultipleFields model module.
  * @module model/QueryMultipleFields
- * @version 1.0.4
+ * @version 1.0.5
  */
 class QueryMultipleFields {
     /**
@@ -46,8 +46,8 @@ class QueryMultipleFields {
     model(){
         var obj = {};
 
-        obj['queryFields'];
-        obj['queryValue'];
+        obj['queryFields'] = [null];
+        obj['queryValue'] = null;
 
         return obj;
     }
@@ -61,12 +61,12 @@ class QueryMultipleFields {
             "requiredFields": {}
         };
 
-        obj["fields"]['queryFields'];
-        obj["fields"]['queryValue'];
+        obj["fields"]['queryFields'] = [{ "type": 'String', "system": false }];
+        obj["fields"]['queryValue'] = { "type": 'String', "system": false };
 
         
-        obj["requiredFields"]['queryFields'];
-        obj["requiredFields"]['queryValue'];
+        obj["requiredFields"]['queryFields'] = [{ "type": 'String', "system": false }];
+        obj["requiredFields"]['queryValue'] = { "type": 'String', "system": false };
 
         return obj;
     }

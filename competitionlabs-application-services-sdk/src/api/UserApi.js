@@ -23,7 +23,7 @@ import UpdateUserRequest from '../model/UpdateUserRequest';
 /**
 * User service.
 * @module api/UserApi
-* @version 1.0.4
+* @version 1.0.5
 */
 export default class UserApi {
 

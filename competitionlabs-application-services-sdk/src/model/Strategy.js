@@ -19,7 +19,7 @@ import StrategyType from './StrategyType';
 /**
  * The Strategy model module.
  * @module model/Strategy
- * @version 1.0.4
+ * @version 1.0.5
  */
 class Strategy {
     /**
@@ -51,9 +51,9 @@ class Strategy {
     model(){
         var obj = {};
 
-        obj['strategyType'];
-        obj['rankingStrategy'];
-        obj['scoringStrategy'];
+        obj['strategyType'] = new StrategyType().model();
+        obj['rankingStrategy'] = new RankingStrategy().model();
+        obj['scoringStrategy'] = new ScoringStrategy().model();
 
         return obj;
     }
@@ -67,14 +67,14 @@ class Strategy {
             "requiredFields": {}
         };
 
-        obj["fields"]['strategyType'];
-        obj["fields"]['rankingStrategy'];
-        obj["fields"]['scoringStrategy'];
+        obj["fields"]['strategyType'] = new StrategyType().modelMap();
+        obj["fields"]['rankingStrategy'] = new RankingStrategy().modelMap();
+        obj["fields"]['scoringStrategy'] = new ScoringStrategy().modelMap();
 
         
-        obj["requiredFields"]['strategyType'];
-        obj["requiredFields"]['rankingStrategy'];
-        obj["requiredFields"]['scoringStrategy'];
+        obj["requiredFields"]['strategyType'] = new StrategyType().modelMap();
+        obj["requiredFields"]['rankingStrategy'] = new RankingStrategy().modelMap();
+        obj["requiredFields"]['scoringStrategy'] = new ScoringStrategy().modelMap();
 
         return obj;
     }

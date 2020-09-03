@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CollaboratorAllOf model module.
  * @module model/CollaboratorAllOf
- * @version 1.0.4
+ * @version 1.0.5
  */
 class CollaboratorAllOf {
     /**
@@ -46,10 +46,10 @@ class CollaboratorAllOf {
     model(){
         var obj = {};
 
-        obj['name'];
-        obj['surname'];
-        obj['email'];
-        obj['role'];
+        obj['name'] = null;
+        obj['surname'] = null;
+        obj['email'] = null;
+        obj['role'] = null;
 
         return obj;
     }
@@ -63,14 +63,14 @@ class CollaboratorAllOf {
             "requiredFields": {}
         };
 
-        obj["fields"]['name'];
-        obj["fields"]['surname'];
-        obj["fields"]['email'];
-        obj["fields"]['role'];
+        obj["fields"]['name'] = { "type": 'String', "system": false };
+        obj["fields"]['surname'] = { "type": 'String', "system": false };
+        obj["fields"]['email'] = { "type": 'String', "system": false };
+        obj["fields"]['role'] = { "type": 'String', "system": false };
 
         
-        obj["requiredFields"]['email'];
-        obj["requiredFields"]['role'];
+        obj["requiredFields"]['email'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['role'] = { "type": 'String', "system": false };
 
         return obj;
     }

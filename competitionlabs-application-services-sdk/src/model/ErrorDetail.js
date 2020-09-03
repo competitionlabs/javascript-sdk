@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ErrorDetail model module.
  * @module model/ErrorDetail
- * @version 1.0.4
+ * @version 1.0.5
  */
 class ErrorDetail {
     /**
@@ -46,9 +46,9 @@ class ErrorDetail {
     model(){
         var obj = {};
 
-        obj['modelId'];
-        obj['errorCode'];
-        obj['message'];
+        obj['modelId'] = null;
+        obj['errorCode'] = null;
+        obj['message'] = null;
 
         return obj;
     }
@@ -62,13 +62,13 @@ class ErrorDetail {
             "requiredFields": {}
         };
 
-        obj["fields"]['modelId'];
-        obj["fields"]['errorCode'];
-        obj["fields"]['message'];
+        obj["fields"]['modelId'] = { "type": 'String', "system": false };
+        obj["fields"]['errorCode'] = { "type": 'Number', "system": false };
+        obj["fields"]['message'] = { "type": 'String', "system": false };
 
         
-        obj["requiredFields"]['errorCode'];
-        obj["requiredFields"]['message'];
+        obj["requiredFields"]['errorCode'] = { "type": 'Number', "system": false };
+        obj["requiredFields"]['message'] = { "type": 'String', "system": false };
 
         return obj;
     }

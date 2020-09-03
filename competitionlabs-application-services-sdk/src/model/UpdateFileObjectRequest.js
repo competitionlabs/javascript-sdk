@@ -19,7 +19,7 @@ import UpdateModelDefault from './UpdateModelDefault';
 /**
  * The UpdateFileObjectRequest model module.
  * @module model/UpdateFileObjectRequest
- * @version 1.0.4
+ * @version 1.0.5
  */
 class UpdateFileObjectRequest {
     /**
@@ -51,13 +51,13 @@ class UpdateFileObjectRequest {
     model(){
         var obj = {};
 
-        obj['id'];
-        obj['tags'];
-        obj['repositoryId'];
-        obj['fileName'];
-        obj['mimeType'];
-        obj['parentFolderPath'];
-        obj['metadata'];
+        obj['id'] = null;
+        obj['tags'] = [null];
+        obj['repositoryId'] = null;
+        obj['fileName'] = null;
+        obj['mimeType'] = null;
+        obj['parentFolderPath'] = null;
+        obj['metadata'] = [new Metadata().model()];
 
         return obj;
     }
@@ -71,17 +71,17 @@ class UpdateFileObjectRequest {
             "requiredFields": {}
         };
 
-        obj["fields"]['id'];
-        obj["fields"]['tags'];
-        obj["fields"]['repositoryId'];
-        obj["fields"]['fileName'];
-        obj["fields"]['mimeType'];
-        obj["fields"]['parentFolderPath'];
-        obj["fields"]['metadata'];
+        obj["fields"]['id'] = { "type": 'String', "system": true };
+        obj["fields"]['tags'] = [{ "type": 'String', "system": false }];
+        obj["fields"]['repositoryId'] = { "type": 'String', "system": false };
+        obj["fields"]['fileName'] = { "type": 'String', "system": false };
+        obj["fields"]['mimeType'] = { "type": 'String', "system": false };
+        obj["fields"]['parentFolderPath'] = { "type": 'String', "system": false };
+        obj["fields"]['metadata'] = [new Metadata().modelMap()];
 
         
-        obj["requiredFields"]['id'];
-        obj["requiredFields"]['repositoryId'];
+        obj["requiredFields"]['id'] = { "type": 'String', "system": true };
+        obj["requiredFields"]['repositoryId'] = { "type": 'String', "system": false };
 
         return obj;
     }

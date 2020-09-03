@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UserModelDefault model module.
  * @module model/UserModelDefault
- * @version 1.0.4
+ * @version 1.0.5
  */
 class UserModelDefault {
     /**
@@ -48,9 +48,9 @@ class UserModelDefault {
     model(){
         var obj = {};
 
-        obj['objectType'];
-        obj['id'];
-        obj['created'];
+        obj['objectType'] = null;
+        obj['id'] = null;
+        obj['created'] = null;
 
         return obj;
     }
@@ -64,14 +64,14 @@ class UserModelDefault {
             "requiredFields": {}
         };
 
-        obj["fields"]['objectType'];
-        obj["fields"]['id'];
-        obj["fields"]['created'];
+        obj["fields"]['objectType'] = { "type": 'String', "system": false };
+        obj["fields"]['id'] = { "type": 'String', "system": true };
+        obj["fields"]['created'] = { "type": 'Date', "system": true };
 
         
-        obj["requiredFields"]['objectType'];
-        obj["requiredFields"]['id'];
-        obj["requiredFields"]['created'];
+        obj["requiredFields"]['objectType'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['id'] = { "type": 'String', "system": true };
+        obj["requiredFields"]['created'] = { "type": 'Date', "system": true };
 
         return obj;
     }

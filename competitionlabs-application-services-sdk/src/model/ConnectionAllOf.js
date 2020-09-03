@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ConnectionAllOf model module.
  * @module model/ConnectionAllOf
- * @version 1.0.4
+ * @version 1.0.5
  */
 class ConnectionAllOf {
     /**
@@ -44,7 +44,7 @@ class ConnectionAllOf {
     model(){
         var obj = {};
 
-        obj['objectType'];
+        obj['objectType'] = null;
 
         return obj;
     }
@@ -58,10 +58,10 @@ class ConnectionAllOf {
             "requiredFields": {}
         };
 
-        obj["fields"]['objectType'];
+        obj["fields"]['objectType'] = { "type": 'String', "system": false };
 
         
-        obj["requiredFields"]['objectType'];
+        obj["requiredFields"]['objectType'] = { "type": 'String', "system": false };
 
         return obj;
     }

@@ -17,7 +17,7 @@ import MessageStatus from './MessageStatus';
 /**
  * The UpdateMessageStatusRequestAllOf model module.
  * @module model/UpdateMessageStatusRequestAllOf
- * @version 1.0.4
+ * @version 1.0.5
  */
 class UpdateMessageStatusRequestAllOf {
     /**
@@ -45,7 +45,7 @@ class UpdateMessageStatusRequestAllOf {
     model(){
         var obj = {};
 
-        obj['status'];
+        obj['status'] = new MessageStatus().model();
 
         return obj;
     }
@@ -59,10 +59,10 @@ class UpdateMessageStatusRequestAllOf {
             "requiredFields": {}
         };
 
-        obj["fields"]['status'];
+        obj["fields"]['status'] = new MessageStatus().modelMap();
 
         
-        obj["requiredFields"]['status'];
+        obj["requiredFields"]['status'] = new MessageStatus().modelMap();
 
         return obj;
     }

@@ -17,7 +17,7 @@ import Metadata from './Metadata';
 /**
  * The CreateFileObjectRequest model module.
  * @module model/CreateFileObjectRequest
- * @version 1.0.4
+ * @version 1.0.5
  */
 class CreateFileObjectRequest {
     /**
@@ -51,12 +51,12 @@ class CreateFileObjectRequest {
     model(){
         var obj = {};
 
-        obj['tags'];
-        obj['repositoryId'];
-        obj['fileName'];
-        obj['mimeType'];
-        obj['parentFolderPath'];
-        obj['metadata'];
+        obj['tags'] = [null];
+        obj['repositoryId'] = null;
+        obj['fileName'] = null;
+        obj['mimeType'] = null;
+        obj['parentFolderPath'] = null;
+        obj['metadata'] = [new Metadata().model()];
 
         return obj;
     }
@@ -70,18 +70,18 @@ class CreateFileObjectRequest {
             "requiredFields": {}
         };
 
-        obj["fields"]['tags'];
-        obj["fields"]['repositoryId'];
-        obj["fields"]['fileName'];
-        obj["fields"]['mimeType'];
-        obj["fields"]['parentFolderPath'];
-        obj["fields"]['metadata'];
+        obj["fields"]['tags'] = [{ "type": 'String', "system": false }];
+        obj["fields"]['repositoryId'] = { "type": 'String', "system": false };
+        obj["fields"]['fileName'] = { "type": 'String', "system": false };
+        obj["fields"]['mimeType'] = { "type": 'String', "system": false };
+        obj["fields"]['parentFolderPath'] = { "type": 'String', "system": false };
+        obj["fields"]['metadata'] = [new Metadata().modelMap()];
 
         
-        obj["requiredFields"]['repositoryId'];
-        obj["requiredFields"]['fileName'];
-        obj["requiredFields"]['mimeType'];
-        obj["requiredFields"]['parentFolderPath'];
+        obj["requiredFields"]['repositoryId'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['fileName'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['mimeType'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['parentFolderPath'] = { "type": 'String', "system": false };
 
         return obj;
     }

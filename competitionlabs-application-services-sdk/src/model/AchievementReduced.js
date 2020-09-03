@@ -19,7 +19,7 @@ import ModelDefault from './ModelDefault';
 /**
  * The AchievementReduced model module.
  * @module model/AchievementReduced
- * @version 1.0.4
+ * @version 1.0.5
  */
 class AchievementReduced {
     /**
@@ -57,13 +57,13 @@ class AchievementReduced {
     model(){
         var obj = {};
 
-        obj['id'];
-        obj['spaceName'];
-        obj['created'];
-        obj['name'];
-        obj['achievementLiveStatus'];
-        obj['category'];
-        obj['memberGroups'];
+        obj['id'] = null;
+        obj['spaceName'] = null;
+        obj['created'] = null;
+        obj['name'] = null;
+        obj['achievementLiveStatus'] = new AchievementLiveStatus().model();
+        obj['category'] = [null];
+        obj['memberGroups'] = [null];
 
         return obj;
     }
@@ -77,20 +77,20 @@ class AchievementReduced {
             "requiredFields": {}
         };
 
-        obj["fields"]['id'];
-        obj["fields"]['spaceName'];
-        obj["fields"]['created'];
-        obj["fields"]['name'];
-        obj["fields"]['achievementLiveStatus'];
-        obj["fields"]['category'];
-        obj["fields"]['memberGroups'];
+        obj["fields"]['id'] = { "type": 'String', "system": true };
+        obj["fields"]['spaceName'] = { "type": 'String', "system": true };
+        obj["fields"]['created'] = { "type": 'Date', "system": true };
+        obj["fields"]['name'] = { "type": 'String', "system": false };
+        obj["fields"]['achievementLiveStatus'] = new AchievementLiveStatus().modelMap();
+        obj["fields"]['category'] = [{ "type": 'String', "system": false }];
+        obj["fields"]['memberGroups'] = [{ "type": 'String', "system": false }];
 
         
-        obj["requiredFields"]['id'];
-        obj["requiredFields"]['spaceName'];
-        obj["requiredFields"]['created'];
-        obj["requiredFields"]['name'];
-        obj["requiredFields"]['achievementLiveStatus'];
+        obj["requiredFields"]['id'] = { "type": 'String', "system": true };
+        obj["requiredFields"]['spaceName'] = { "type": 'String', "system": true };
+        obj["requiredFields"]['created'] = { "type": 'Date', "system": true };
+        obj["requiredFields"]['name'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['achievementLiveStatus'] = new AchievementLiveStatus().modelMap();
 
         return obj;
     }

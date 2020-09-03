@@ -19,7 +19,7 @@ import ModelDefault from './ModelDefault';
 /**
  * The Event model module.
  * @module model/Event
- * @version 1.0.4
+ * @version 1.0.5
  */
 class Event {
     /**
@@ -69,19 +69,19 @@ class Event {
     model(){
         var obj = {};
 
-        obj['id'];
-        obj['spaceName'];
-        obj['created'];
-        obj['memberId'];
-        obj['memberRefId'];
-        obj['action'];
-        obj['batchId'];
-        obj['entityId'];
-        obj['entityRefId'];
-        obj['sourceValue'];
-        obj['points'];
-        obj['transactionTimestamp'];
-        obj['metadata'];
+        obj['id'] = null;
+        obj['spaceName'] = null;
+        obj['created'] = null;
+        obj['memberId'] = null;
+        obj['memberRefId'] = null;
+        obj['action'] = null;
+        obj['batchId'] = null;
+        obj['entityId'] = null;
+        obj['entityRefId'] = null;
+        obj['sourceValue'] = null;
+        obj['points'] = null;
+        obj['transactionTimestamp'] = null;
+        obj['metadata'] = [new EventMetadata().model()];
 
         return obj;
     }
@@ -95,32 +95,32 @@ class Event {
             "requiredFields": {}
         };
 
-        obj["fields"]['id'];
-        obj["fields"]['spaceName'];
-        obj["fields"]['created'];
-        obj["fields"]['memberId'];
-        obj["fields"]['memberRefId'];
-        obj["fields"]['action'];
-        obj["fields"]['batchId'];
-        obj["fields"]['entityId'];
-        obj["fields"]['entityRefId'];
-        obj["fields"]['sourceValue'];
-        obj["fields"]['points'];
-        obj["fields"]['transactionTimestamp'];
-        obj["fields"]['metadata'];
+        obj["fields"]['id'] = { "type": 'String', "system": true };
+        obj["fields"]['spaceName'] = { "type": 'String', "system": true };
+        obj["fields"]['created'] = { "type": 'Date', "system": true };
+        obj["fields"]['memberId'] = { "type": 'String', "system": false };
+        obj["fields"]['memberRefId'] = { "type": 'String', "system": false };
+        obj["fields"]['action'] = { "type": 'String', "system": false };
+        obj["fields"]['batchId'] = { "type": 'String', "system": false };
+        obj["fields"]['entityId'] = { "type": 'String', "system": false };
+        obj["fields"]['entityRefId'] = { "type": 'String', "system": false };
+        obj["fields"]['sourceValue'] = { "type": 'Number', "system": false };
+        obj["fields"]['points'] = { "type": 'Number', "system": false };
+        obj["fields"]['transactionTimestamp'] = { "type": 'Date', "system": false };
+        obj["fields"]['metadata'] = [new EventMetadata().modelMap()];
 
         
-        obj["requiredFields"]['id'];
-        obj["requiredFields"]['spaceName'];
-        obj["requiredFields"]['created'];
-        obj["requiredFields"]['memberId'];
-        obj["requiredFields"]['memberRefId'];
-        obj["requiredFields"]['action'];
-        obj["requiredFields"]['entityId'];
-        obj["requiredFields"]['entityRefId'];
-        obj["requiredFields"]['sourceValue'];
-        obj["requiredFields"]['points'];
-        obj["requiredFields"]['transactionTimestamp'];
+        obj["requiredFields"]['id'] = { "type": 'String', "system": true };
+        obj["requiredFields"]['spaceName'] = { "type": 'String', "system": true };
+        obj["requiredFields"]['created'] = { "type": 'Date', "system": true };
+        obj["requiredFields"]['memberId'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['memberRefId'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['action'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['entityId'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['entityRefId'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['sourceValue'] = { "type": 'Number', "system": false };
+        obj["requiredFields"]['points'] = { "type": 'Number', "system": false };
+        obj["requiredFields"]['transactionTimestamp'] = { "type": 'Date', "system": false };
 
         return obj;
     }

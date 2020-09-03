@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SpaceAllOf model module.
  * @module model/SpaceAllOf
- * @version 1.0.4
+ * @version 1.0.5
  */
 class SpaceAllOf {
     /**
@@ -44,8 +44,8 @@ class SpaceAllOf {
     model(){
         var obj = {};
 
-        obj['accountType'];
-        obj['masterSpace'];
+        obj['accountType'] = null;
+        obj['masterSpace'] = null;
 
         return obj;
     }
@@ -59,11 +59,11 @@ class SpaceAllOf {
             "requiredFields": {}
         };
 
-        obj["fields"]['accountType'];
-        obj["fields"]['masterSpace'];
+        obj["fields"]['accountType'] = { "type": 'String', "system": false };
+        obj["fields"]['masterSpace'] = { "type": 'String', "system": false };
 
         
-        obj["requiredFields"]['accountType'];
+        obj["requiredFields"]['accountType'] = { "type": 'String', "system": false };
 
         return obj;
     }

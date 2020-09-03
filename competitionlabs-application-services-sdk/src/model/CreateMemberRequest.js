@@ -18,7 +18,7 @@ import Metadata from './Metadata';
 /**
  * The CreateMemberRequest model module.
  * @module model/CreateMemberRequest
- * @version 1.0.4
+ * @version 1.0.5
  */
 class CreateMemberRequest {
     /**
@@ -48,11 +48,11 @@ class CreateMemberRequest {
     model(){
         var obj = {};
 
-        obj['name'];
-        obj['memberRefId'];
-        obj['memberType'];
-        obj['groups'];
-        obj['metadata'];
+        obj['name'] = null;
+        obj['memberRefId'] = null;
+        obj['memberType'] = new MemberType().model();
+        obj['groups'] = [null];
+        obj['metadata'] = [new Metadata().model()];
 
         return obj;
     }
@@ -66,15 +66,15 @@ class CreateMemberRequest {
             "requiredFields": {}
         };
 
-        obj["fields"]['name'];
-        obj["fields"]['memberRefId'];
-        obj["fields"]['memberType'];
-        obj["fields"]['groups'];
-        obj["fields"]['metadata'];
+        obj["fields"]['name'] = { "type": 'String', "system": false };
+        obj["fields"]['memberRefId'] = { "type": 'String', "system": false };
+        obj["fields"]['memberType'] = new MemberType().modelMap();
+        obj["fields"]['groups'] = [{ "type": 'String', "system": false }];
+        obj["fields"]['metadata'] = [new Metadata().modelMap()];
 
         
-        obj["requiredFields"]['memberRefId'];
-        obj["requiredFields"]['memberType'];
+        obj["requiredFields"]['memberRefId'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['memberType'] = new MemberType().modelMap();
 
         return obj;
     }

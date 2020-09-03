@@ -18,7 +18,7 @@ import Metadata from './Metadata';
 /**
  * The CreateRepositoryRequest model module.
  * @module model/CreateRepositoryRequest
- * @version 1.0.4
+ * @version 1.0.5
  */
 class CreateRepositoryRequest {
     /**
@@ -51,12 +51,12 @@ class CreateRepositoryRequest {
     model(){
         var obj = {};
 
-        obj['name'];
-        obj['description'];
-        obj['tags'];
-        obj['constraints'];
-        obj['hostingOptions'];
-        obj['metadata'];
+        obj['name'] = null;
+        obj['description'] = null;
+        obj['tags'] = [null];
+        obj['constraints'] = [null];
+        obj['hostingOptions'] = new HostingOptions().model();
+        obj['metadata'] = [new Metadata().model()];
 
         return obj;
     }
@@ -70,17 +70,17 @@ class CreateRepositoryRequest {
             "requiredFields": {}
         };
 
-        obj["fields"]['name'];
-        obj["fields"]['description'];
-        obj["fields"]['tags'];
-        obj["fields"]['constraints'];
-        obj["fields"]['hostingOptions'];
-        obj["fields"]['metadata'];
+        obj["fields"]['name'] = { "type": 'String', "system": false };
+        obj["fields"]['description'] = { "type": 'String', "system": false };
+        obj["fields"]['tags'] = [{ "type": 'String', "system": false }];
+        obj["fields"]['constraints'] = [{ "type": 'String', "system": false }];
+        obj["fields"]['hostingOptions'] = new HostingOptions().modelMap();
+        obj["fields"]['metadata'] = [new Metadata().modelMap()];
 
         
-        obj["requiredFields"]['name'];
-        obj["requiredFields"]['tags'];
-        obj["requiredFields"]['hostingOptions'];
+        obj["requiredFields"]['name'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['tags'] = [{ "type": 'String', "system": false }];
+        obj["requiredFields"]['hostingOptions'] = new HostingOptions().modelMap();
 
         return obj;
     }

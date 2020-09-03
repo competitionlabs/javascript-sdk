@@ -17,7 +17,7 @@ import AchievementLiveStatus from './AchievementLiveStatus';
 /**
  * The AchievementLiveStatusRequestAllOf model module.
  * @module model/AchievementLiveStatusRequestAllOf
- * @version 1.0.4
+ * @version 1.0.5
  */
 class AchievementLiveStatusRequestAllOf {
     /**
@@ -45,7 +45,7 @@ class AchievementLiveStatusRequestAllOf {
     model(){
         var obj = {};
 
-        obj['status'];
+        obj['status'] = new AchievementLiveStatus().model();
 
         return obj;
     }
@@ -59,10 +59,10 @@ class AchievementLiveStatusRequestAllOf {
             "requiredFields": {}
         };
 
-        obj["fields"]['status'];
+        obj["fields"]['status'] = new AchievementLiveStatus().modelMap();
 
         
-        obj["requiredFields"]['status'];
+        obj["requiredFields"]['status'] = new AchievementLiveStatus().modelMap();
 
         return obj;
     }

@@ -17,7 +17,7 @@ import Contact from './Contact';
 /**
  * The UserAllOf model module.
  * @module model/UserAllOf
- * @version 1.0.4
+ * @version 1.0.5
  */
 class UserAllOf {
     /**
@@ -47,12 +47,12 @@ class UserAllOf {
     model(){
         var obj = {};
 
-        obj['firstName'];
-        obj['lastName'];
-        obj['tfaEnabled'];
-        obj['email'];
-        obj['contact'];
-        obj['emailVerified'];
+        obj['firstName'] = null;
+        obj['lastName'] = null;
+        obj['tfaEnabled'] = null;
+        obj['email'] = null;
+        obj['contact'] = new Contact().model();
+        obj['emailVerified'] = null;
 
         return obj;
     }
@@ -66,16 +66,16 @@ class UserAllOf {
             "requiredFields": {}
         };
 
-        obj["fields"]['firstName'];
-        obj["fields"]['lastName'];
-        obj["fields"]['tfaEnabled'];
-        obj["fields"]['email'];
-        obj["fields"]['contact'];
-        obj["fields"]['emailVerified'];
+        obj["fields"]['firstName'] = { "type": 'String', "system": false };
+        obj["fields"]['lastName'] = { "type": 'String', "system": false };
+        obj["fields"]['tfaEnabled'] = { "type": 'Boolean', "system": false };
+        obj["fields"]['email'] = { "type": 'String', "system": false };
+        obj["fields"]['contact'] = new Contact().modelMap();
+        obj["fields"]['emailVerified'] = { "type": 'Boolean', "system": false };
 
         
-        obj["requiredFields"]['tfaEnabled'];
-        obj["requiredFields"]['emailVerified'];
+        obj["requiredFields"]['tfaEnabled'] = { "type": 'Boolean', "system": false };
+        obj["requiredFields"]['emailVerified'] = { "type": 'Boolean', "system": false };
 
         return obj;
     }

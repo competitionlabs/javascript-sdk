@@ -18,7 +18,7 @@ import RuleScope from './RuleScope';
 /**
  * The RuleDescriptor model module.
  * @module model/RuleDescriptor
- * @version 1.0.4
+ * @version 1.0.5
  */
 class RuleDescriptor {
     /**
@@ -48,8 +48,8 @@ class RuleDescriptor {
     model(){
         var obj = {};
 
-        obj['ruleScope'];
-        obj['actions'];
+        obj['ruleScope'] = new RuleScope().model();
+        obj['actions'] = [new RuleDescriptorAction().model()];
 
         return obj;
     }
@@ -63,12 +63,12 @@ class RuleDescriptor {
             "requiredFields": {}
         };
 
-        obj["fields"]['ruleScope'];
-        obj["fields"]['actions'];
+        obj["fields"]['ruleScope'] = new RuleScope().modelMap();
+        obj["fields"]['actions'] = [new RuleDescriptorAction().modelMap()];
 
         
-        obj["requiredFields"]['ruleScope'];
-        obj["requiredFields"]['actions'];
+        obj["requiredFields"]['ruleScope'] = new RuleScope().modelMap();
+        obj["requiredFields"]['actions'] = [new RuleDescriptorAction().modelMap()];
 
         return obj;
     }

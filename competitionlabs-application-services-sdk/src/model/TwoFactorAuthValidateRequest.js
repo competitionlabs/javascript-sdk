@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TwoFactorAuthValidateRequest model module.
  * @module model/TwoFactorAuthValidateRequest
- * @version 1.0.4
+ * @version 1.0.5
  */
 class TwoFactorAuthValidateRequest {
     /**
@@ -46,8 +46,8 @@ class TwoFactorAuthValidateRequest {
     model(){
         var obj = {};
 
-        obj['secretKey'];
-        obj['twoFactorAccessCode'];
+        obj['secretKey'] = null;
+        obj['twoFactorAccessCode'] = null;
 
         return obj;
     }
@@ -61,12 +61,12 @@ class TwoFactorAuthValidateRequest {
             "requiredFields": {}
         };
 
-        obj["fields"]['secretKey'];
-        obj["fields"]['twoFactorAccessCode'];
+        obj["fields"]['secretKey'] = { "type": 'String', "system": false };
+        obj["fields"]['twoFactorAccessCode'] = { "type": 'String', "system": false };
 
         
-        obj["requiredFields"]['secretKey'];
-        obj["requiredFields"]['twoFactorAccessCode'];
+        obj["requiredFields"]['secretKey'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['twoFactorAccessCode'] = { "type": 'String', "system": false };
 
         return obj;
     }

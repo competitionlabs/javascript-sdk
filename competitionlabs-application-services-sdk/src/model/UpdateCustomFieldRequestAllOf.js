@@ -18,7 +18,7 @@ import FieldType from './FieldType';
 /**
  * The UpdateCustomFieldRequestAllOf model module.
  * @module model/UpdateCustomFieldRequestAllOf
- * @version 1.0.4
+ * @version 1.0.5
  */
 class UpdateCustomFieldRequestAllOf {
     /**
@@ -44,10 +44,10 @@ class UpdateCustomFieldRequestAllOf {
     model(){
         var obj = {};
 
-        obj['name'];
-        obj['description'];
-        obj['fieldType'];
-        obj['appliesTo'];
+        obj['name'] = null;
+        obj['description'] = null;
+        obj['fieldType'] = new FieldType().model();
+        obj['appliesTo'] = new AppliesTo().model();
 
         return obj;
     }
@@ -61,10 +61,10 @@ class UpdateCustomFieldRequestAllOf {
             "requiredFields": {}
         };
 
-        obj["fields"]['name'];
-        obj["fields"]['description'];
-        obj["fields"]['fieldType'];
-        obj["fields"]['appliesTo'];
+        obj["fields"]['name'] = { "type": 'String', "system": false };
+        obj["fields"]['description'] = { "type": 'String', "system": false };
+        obj["fields"]['fieldType'] = new FieldType().modelMap();
+        obj["fields"]['appliesTo'] = new AppliesTo().modelMap();
 
         
 

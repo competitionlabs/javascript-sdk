@@ -20,7 +20,7 @@ import UpdateModelDefault from './UpdateModelDefault';
 /**
  * The UpdateApiKeyRequest model module.
  * @module model/UpdateApiKeyRequest
- * @version 1.0.4
+ * @version 1.0.5
  */
 class UpdateApiKeyRequest {
     /**
@@ -50,14 +50,14 @@ class UpdateApiKeyRequest {
     model(){
         var obj = {};
 
-        obj['id'];
-        obj['active'];
-        obj['description'];
-        obj['whiteListIPs'];
-        obj['key'];
-        obj['role'];
-        obj['default'];
-        obj['metadata'];
+        obj['id'] = null;
+        obj['active'] = null;
+        obj['description'] = null;
+        obj['whiteListIPs'] = [null];
+        obj['key'] = null;
+        obj['role'] = new Role().model();
+        obj['default'] = null;
+        obj['metadata'] = [new Metadata().model()];
 
         return obj;
     }
@@ -71,17 +71,17 @@ class UpdateApiKeyRequest {
             "requiredFields": {}
         };
 
-        obj["fields"]['id'];
-        obj["fields"]['active'];
-        obj["fields"]['description'];
-        obj["fields"]['whiteListIPs'];
-        obj["fields"]['key'];
-        obj["fields"]['role'];
-        obj["fields"]['default'];
-        obj["fields"]['metadata'];
+        obj["fields"]['id'] = { "type": 'String', "system": true };
+        obj["fields"]['active'] = { "type": 'Boolean', "system": false };
+        obj["fields"]['description'] = { "type": 'String', "system": false };
+        obj["fields"]['whiteListIPs'] = [{ "type": 'String', "system": false }];
+        obj["fields"]['key'] = { "type": 'String', "system": false };
+        obj["fields"]['role'] = new Role().modelMap();
+        obj["fields"]['default'] = { "type": 'Boolean', "system": false };
+        obj["fields"]['metadata'] = [new Metadata().modelMap()];
 
         
-        obj["requiredFields"]['id'];
+        obj["requiredFields"]['id'] = { "type": 'String', "system": true };
 
         return obj;
     }

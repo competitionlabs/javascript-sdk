@@ -21,7 +21,7 @@ import RangeQuery from './RangeQuery';
 /**
  * The QueryRequest model module.
  * @module model/QueryRequest
- * @version 1.0.4
+ * @version 1.0.5
  */
 class QueryRequest {
     /**
@@ -47,23 +47,23 @@ class QueryRequest {
     model(){
         var obj = {};
 
-        obj['must'];
-        obj['mustNot'];
-        obj['should'];
-        obj['gte'];
-        obj['lte'];
-        obj['gt'];
-        obj['lt'];
-        obj['range'];
-        obj['sortBy'];
-        obj['multiFields'];
-        obj['includeFields'];
-        obj['hasValue'];
-        obj['hasNoValue'];
-        obj['shouldMatch'];
-        obj['skip'];
-        obj['limit'];
-        obj['isCountQuery'];
+        obj['must'] = [new QueryMultiple().model()];
+        obj['mustNot'] = [new QueryMultiple().model()];
+        obj['should'] = [new QueryMultiple().model()];
+        obj['gte'] = [new QuerySingle().model()];
+        obj['lte'] = [new QuerySingle().model()];
+        obj['gt'] = [new QuerySingle().model()];
+        obj['lt'] = [new QuerySingle().model()];
+        obj['range'] = [new RangeQuery().model()];
+        obj['sortBy'] = [new QuerySortBy().model()];
+        obj['multiFields'] = [new QueryMultipleFields().model()];
+        obj['includeFields'] = [null];
+        obj['hasValue'] = [null];
+        obj['hasNoValue'] = [null];
+        obj['shouldMatch'] = null;
+        obj['skip'] = null;
+        obj['limit'] = null;
+        obj['isCountQuery'] = null;
 
         return obj;
     }
@@ -77,23 +77,23 @@ class QueryRequest {
             "requiredFields": {}
         };
 
-        obj["fields"]['must'];
-        obj["fields"]['mustNot'];
-        obj["fields"]['should'];
-        obj["fields"]['gte'];
-        obj["fields"]['lte'];
-        obj["fields"]['gt'];
-        obj["fields"]['lt'];
-        obj["fields"]['range'];
-        obj["fields"]['sortBy'];
-        obj["fields"]['multiFields'];
-        obj["fields"]['includeFields'];
-        obj["fields"]['hasValue'];
-        obj["fields"]['hasNoValue'];
-        obj["fields"]['shouldMatch'];
-        obj["fields"]['skip'];
-        obj["fields"]['limit'];
-        obj["fields"]['isCountQuery'];
+        obj["fields"]['must'] = [new QueryMultiple().modelMap()];
+        obj["fields"]['mustNot'] = [new QueryMultiple().modelMap()];
+        obj["fields"]['should'] = [new QueryMultiple().modelMap()];
+        obj["fields"]['gte'] = [new QuerySingle().modelMap()];
+        obj["fields"]['lte'] = [new QuerySingle().modelMap()];
+        obj["fields"]['gt'] = [new QuerySingle().modelMap()];
+        obj["fields"]['lt'] = [new QuerySingle().modelMap()];
+        obj["fields"]['range'] = [new RangeQuery().modelMap()];
+        obj["fields"]['sortBy'] = [new QuerySortBy().modelMap()];
+        obj["fields"]['multiFields'] = [new QueryMultipleFields().modelMap()];
+        obj["fields"]['includeFields'] = [{ "type": 'String', "system": false }];
+        obj["fields"]['hasValue'] = [{ "type": 'String', "system": false }];
+        obj["fields"]['hasNoValue'] = [{ "type": 'String', "system": false }];
+        obj["fields"]['shouldMatch'] = { "type": 'Number', "system": false };
+        obj["fields"]['skip'] = { "type": 'Number', "system": false };
+        obj["fields"]['limit'] = { "type": 'Number', "system": false };
+        obj["fields"]['isCountQuery'] = { "type": 'Boolean', "system": false };
 
         
 

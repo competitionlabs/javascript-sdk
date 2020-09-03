@@ -18,7 +18,7 @@ import ProductReducedAllOf from './ProductReducedAllOf';
 /**
  * The ProductReduced model module.
  * @module model/ProductReduced
- * @version 1.0.4
+ * @version 1.0.5
  */
 class ProductReduced {
     /**
@@ -56,11 +56,11 @@ class ProductReduced {
     model(){
         var obj = {};
 
-        obj['id'];
-        obj['spaceName'];
-        obj['created'];
-        obj['name'];
-        obj['productRefId'];
+        obj['id'] = null;
+        obj['spaceName'] = null;
+        obj['created'] = null;
+        obj['name'] = null;
+        obj['productRefId'] = null;
 
         return obj;
     }
@@ -74,18 +74,18 @@ class ProductReduced {
             "requiredFields": {}
         };
 
-        obj["fields"]['id'];
-        obj["fields"]['spaceName'];
-        obj["fields"]['created'];
-        obj["fields"]['name'];
-        obj["fields"]['productRefId'];
+        obj["fields"]['id'] = { "type": 'String', "system": true };
+        obj["fields"]['spaceName'] = { "type": 'String', "system": true };
+        obj["fields"]['created'] = { "type": 'Date', "system": true };
+        obj["fields"]['name'] = { "type": 'String', "system": false };
+        obj["fields"]['productRefId'] = { "type": 'String', "system": false };
 
         
-        obj["requiredFields"]['id'];
-        obj["requiredFields"]['spaceName'];
-        obj["requiredFields"]['created'];
-        obj["requiredFields"]['name'];
-        obj["requiredFields"]['productRefId'];
+        obj["requiredFields"]['id'] = { "type": 'String', "system": true };
+        obj["requiredFields"]['spaceName'] = { "type": 'String', "system": true };
+        obj["requiredFields"]['created'] = { "type": 'Date', "system": true };
+        obj["requiredFields"]['name'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['productRefId'] = { "type": 'String', "system": false };
 
         return obj;
     }

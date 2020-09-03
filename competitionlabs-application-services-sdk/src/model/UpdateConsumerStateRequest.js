@@ -19,7 +19,7 @@ import UpdateModelDefault from './UpdateModelDefault';
 /**
  * The UpdateConsumerStateRequest model module.
  * @module model/UpdateConsumerStateRequest
- * @version 1.0.4
+ * @version 1.0.5
  */
 class UpdateConsumerStateRequest {
     /**
@@ -51,8 +51,8 @@ class UpdateConsumerStateRequest {
     model(){
         var obj = {};
 
-        obj['id'];
-        obj['status'];
+        obj['id'] = null;
+        obj['status'] = new ConnectionState().model();
 
         return obj;
     }
@@ -66,12 +66,12 @@ class UpdateConsumerStateRequest {
             "requiredFields": {}
         };
 
-        obj["fields"]['id'];
-        obj["fields"]['status'];
+        obj["fields"]['id'] = { "type": 'String', "system": true };
+        obj["fields"]['status'] = new ConnectionState().modelMap();
 
         
-        obj["requiredFields"]['id'];
-        obj["requiredFields"]['status'];
+        obj["requiredFields"]['id'] = { "type": 'String', "system": true };
+        obj["requiredFields"]['status'] = new ConnectionState().modelMap();
 
         return obj;
     }

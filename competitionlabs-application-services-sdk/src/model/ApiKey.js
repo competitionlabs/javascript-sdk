@@ -20,7 +20,7 @@ import Role from './Role';
 /**
  * The ApiKey model module.
  * @module model/ApiKey
- * @version 1.0.4
+ * @version 1.0.5
  */
 class ApiKey {
     /**
@@ -56,16 +56,16 @@ class ApiKey {
     model(){
         var obj = {};
 
-        obj['id'];
-        obj['spaceName'];
-        obj['created'];
-        obj['active'];
-        obj['description'];
-        obj['whiteListIPs'];
-        obj['key'];
-        obj['role'];
-        obj['default'];
-        obj['metadata'];
+        obj['id'] = null;
+        obj['spaceName'] = null;
+        obj['created'] = null;
+        obj['active'] = null;
+        obj['description'] = null;
+        obj['whiteListIPs'] = [null];
+        obj['key'] = null;
+        obj['role'] = new Role().model();
+        obj['default'] = null;
+        obj['metadata'] = [new Metadata().model()];
 
         return obj;
     }
@@ -79,22 +79,22 @@ class ApiKey {
             "requiredFields": {}
         };
 
-        obj["fields"]['id'];
-        obj["fields"]['spaceName'];
-        obj["fields"]['created'];
-        obj["fields"]['active'];
-        obj["fields"]['description'];
-        obj["fields"]['whiteListIPs'];
-        obj["fields"]['key'];
-        obj["fields"]['role'];
-        obj["fields"]['default'];
-        obj["fields"]['metadata'];
+        obj["fields"]['id'] = { "type": 'String', "system": true };
+        obj["fields"]['spaceName'] = { "type": 'String', "system": true };
+        obj["fields"]['created'] = { "type": 'Date', "system": true };
+        obj["fields"]['active'] = { "type": 'Boolean', "system": false };
+        obj["fields"]['description'] = { "type": 'String', "system": false };
+        obj["fields"]['whiteListIPs'] = [{ "type": 'String', "system": false }];
+        obj["fields"]['key'] = { "type": 'String', "system": false };
+        obj["fields"]['role'] = new Role().modelMap();
+        obj["fields"]['default'] = { "type": 'Boolean', "system": false };
+        obj["fields"]['metadata'] = [new Metadata().modelMap()];
 
         
-        obj["requiredFields"]['id'];
-        obj["requiredFields"]['spaceName'];
-        obj["requiredFields"]['created'];
-        obj["requiredFields"]['active'];
+        obj["requiredFields"]['id'] = { "type": 'String', "system": true };
+        obj["requiredFields"]['spaceName'] = { "type": 'String', "system": true };
+        obj["requiredFields"]['created'] = { "type": 'Date', "system": true };
+        obj["requiredFields"]['active'] = { "type": 'Boolean', "system": false };
 
         return obj;
     }

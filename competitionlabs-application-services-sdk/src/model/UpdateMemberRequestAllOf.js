@@ -18,7 +18,7 @@ import Metadata from './Metadata';
 /**
  * The UpdateMemberRequestAllOf model module.
  * @module model/UpdateMemberRequestAllOf
- * @version 1.0.4
+ * @version 1.0.5
  */
 class UpdateMemberRequestAllOf {
     /**
@@ -44,11 +44,11 @@ class UpdateMemberRequestAllOf {
     model(){
         var obj = {};
 
-        obj['name'];
-        obj['memberRefId'];
-        obj['memberType'];
-        obj['groups'];
-        obj['metadata'];
+        obj['name'] = null;
+        obj['memberRefId'] = null;
+        obj['memberType'] = new MemberType().model();
+        obj['groups'] = [null];
+        obj['metadata'] = [new Metadata().model()];
 
         return obj;
     }
@@ -62,11 +62,11 @@ class UpdateMemberRequestAllOf {
             "requiredFields": {}
         };
 
-        obj["fields"]['name'];
-        obj["fields"]['memberRefId'];
-        obj["fields"]['memberType'];
-        obj["fields"]['groups'];
-        obj["fields"]['metadata'];
+        obj["fields"]['name'] = { "type": 'String', "system": false };
+        obj["fields"]['memberRefId'] = { "type": 'String', "system": false };
+        obj["fields"]['memberType'] = new MemberType().modelMap();
+        obj["fields"]['groups'] = [{ "type": 'String', "system": false }];
+        obj["fields"]['metadata'] = [new Metadata().modelMap()];
 
         
 

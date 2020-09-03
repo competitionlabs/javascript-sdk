@@ -18,7 +18,7 @@ import ApiResponse from '../model/ApiResponse';
 /**
 * Logout service.
 * @module api/LogoutApi
-* @version 1.0.4
+* @version 1.0.5
 */
 export default class LogoutApi {
 

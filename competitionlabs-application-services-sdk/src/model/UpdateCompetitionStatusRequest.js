@@ -19,7 +19,7 @@ import UpdateModelDefault from './UpdateModelDefault';
 /**
  * The UpdateCompetitionStatusRequest model module.
  * @module model/UpdateCompetitionStatusRequest
- * @version 1.0.4
+ * @version 1.0.5
  */
 class UpdateCompetitionStatusRequest {
     /**
@@ -51,8 +51,8 @@ class UpdateCompetitionStatusRequest {
     model(){
         var obj = {};
 
-        obj['id'];
-        obj['status'];
+        obj['id'] = null;
+        obj['status'] = new CompetitionStatusActions().model();
 
         return obj;
     }
@@ -66,12 +66,12 @@ class UpdateCompetitionStatusRequest {
             "requiredFields": {}
         };
 
-        obj["fields"]['id'];
-        obj["fields"]['status'];
+        obj["fields"]['id'] = { "type": 'String', "system": true };
+        obj["fields"]['status'] = new CompetitionStatusActions().modelMap();
 
         
-        obj["requiredFields"]['id'];
-        obj["requiredFields"]['status'];
+        obj["requiredFields"]['id'] = { "type": 'String', "system": true };
+        obj["requiredFields"]['status'] = new CompetitionStatusActions().modelMap();
 
         return obj;
     }

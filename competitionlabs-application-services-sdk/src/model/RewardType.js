@@ -20,7 +20,7 @@ import UnitOfMeasureType from './UnitOfMeasureType';
 /**
  * The RewardType model module.
  * @module model/RewardType
- * @version 1.0.4
+ * @version 1.0.5
  */
 class RewardType {
     /**
@@ -62,16 +62,16 @@ class RewardType {
     model(){
         var obj = {};
 
-        obj['id'];
-        obj['spaceName'];
-        obj['created'];
-        obj['name'];
-        obj['description'];
-        obj['key'];
-        obj['unitOfMeasureType'];
-        obj['system'];
-        obj['metadata'];
-        obj['providers'];
+        obj['id'] = null;
+        obj['spaceName'] = null;
+        obj['created'] = null;
+        obj['name'] = null;
+        obj['description'] = null;
+        obj['key'] = null;
+        obj['unitOfMeasureType'] = new UnitOfMeasureType().model();
+        obj['system'] = null;
+        obj['metadata'] = [new Metadata().model()];
+        obj['providers'] = null;
 
         return obj;
     }
@@ -85,25 +85,25 @@ class RewardType {
             "requiredFields": {}
         };
 
-        obj["fields"]['id'];
-        obj["fields"]['spaceName'];
-        obj["fields"]['created'];
-        obj["fields"]['name'];
-        obj["fields"]['description'];
-        obj["fields"]['key'];
-        obj["fields"]['unitOfMeasureType'];
-        obj["fields"]['system'];
-        obj["fields"]['metadata'];
-        obj["fields"]['providers'];
+        obj["fields"]['id'] = { "type": 'String', "system": true };
+        obj["fields"]['spaceName'] = { "type": 'String', "system": true };
+        obj["fields"]['created'] = { "type": 'Date', "system": true };
+        obj["fields"]['name'] = { "type": 'String', "system": false };
+        obj["fields"]['description'] = { "type": 'String', "system": false };
+        obj["fields"]['key'] = { "type": 'String', "system": false };
+        obj["fields"]['unitOfMeasureType'] = new UnitOfMeasureType().modelMap();
+        obj["fields"]['system'] = { "type": 'Boolean', "system": false };
+        obj["fields"]['metadata'] = [new Metadata().modelMap()];
+        obj["fields"]['providers'] = { "type": 'String', "system": false };
 
         
-        obj["requiredFields"]['id'];
-        obj["requiredFields"]['spaceName'];
-        obj["requiredFields"]['created'];
-        obj["requiredFields"]['name'];
-        obj["requiredFields"]['key'];
-        obj["requiredFields"]['unitOfMeasureType'];
-        obj["requiredFields"]['system'];
+        obj["requiredFields"]['id'] = { "type": 'String', "system": true };
+        obj["requiredFields"]['spaceName'] = { "type": 'String', "system": true };
+        obj["requiredFields"]['created'] = { "type": 'Date', "system": true };
+        obj["requiredFields"]['name'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['key'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['unitOfMeasureType'] = new UnitOfMeasureType().modelMap();
+        obj["requiredFields"]['system'] = { "type": 'Boolean', "system": false };
 
         return obj;
     }

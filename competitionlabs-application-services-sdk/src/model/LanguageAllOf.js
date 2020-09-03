@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The LanguageAllOf model module.
  * @module model/LanguageAllOf
- * @version 1.0.4
+ * @version 1.0.5
  */
 class LanguageAllOf {
     /**
@@ -42,7 +42,7 @@ class LanguageAllOf {
     model(){
         var obj = {};
 
-        obj['references'];
+        obj['references'] = [null];
 
         return obj;
     }
@@ -56,7 +56,7 @@ class LanguageAllOf {
             "requiredFields": {}
         };
 
-        obj["fields"]['references'];
+        obj["fields"]['references'] = [{ "type": 'String', "system": false }];
 
         
 

@@ -18,7 +18,7 @@ import RuleDescriptorSubFact from './RuleDescriptorSubFact';
 /**
  * The RuleDescriptorSubCondition model module.
  * @module model/RuleDescriptorSubCondition
- * @version 1.0.4
+ * @version 1.0.5
  */
 class RuleDescriptorSubCondition {
     /**
@@ -48,9 +48,9 @@ class RuleDescriptorSubCondition {
     model(){
         var obj = {};
 
-        obj['constraints'];
-        obj['matchCondition'];
-        obj['subFacts'];
+        obj['constraints'] = [null];
+        obj['matchCondition'] = new MatchCondition().model();
+        obj['subFacts'] = [new RuleDescriptorSubFact().model()];
 
         return obj;
     }
@@ -64,13 +64,13 @@ class RuleDescriptorSubCondition {
             "requiredFields": {}
         };
 
-        obj["fields"]['constraints'];
-        obj["fields"]['matchCondition'];
-        obj["fields"]['subFacts'];
+        obj["fields"]['constraints'] = [{ "type": 'String', "system": false }];
+        obj["fields"]['matchCondition'] = new MatchCondition().modelMap();
+        obj["fields"]['subFacts'] = [new RuleDescriptorSubFact().modelMap()];
 
         
-        obj["requiredFields"]['constraints'];
-        obj["requiredFields"]['matchCondition'];
+        obj["requiredFields"]['constraints'] = [{ "type": 'String', "system": false }];
+        obj["requiredFields"]['matchCondition'] = new MatchCondition().modelMap();
 
         return obj;
     }

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The HostingOptions model module.
  * @module model/HostingOptions
- * @version 1.0.4
+ * @version 1.0.5
  */
 class HostingOptions {
     /**
@@ -43,8 +43,8 @@ class HostingOptions {
     model(){
         var obj = {};
 
-        obj['indexFileName'];
-        obj['errorFileName'];
+        obj['indexFileName'] = null;
+        obj['errorFileName'] = null;
 
         return obj;
     }
@@ -58,8 +58,8 @@ class HostingOptions {
             "requiredFields": {}
         };
 
-        obj["fields"]['indexFileName'];
-        obj["fields"]['errorFileName'];
+        obj["fields"]['indexFileName'] = { "type": 'String', "system": false };
+        obj["fields"]['errorFileName'] = { "type": 'String', "system": false };
 
         
 

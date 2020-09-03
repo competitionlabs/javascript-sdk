@@ -19,7 +19,7 @@ import Translation from './Translation';
 /**
  * The RewardAllOf model module.
  * @module model/RewardAllOf
- * @version 1.0.4
+ * @version 1.0.5
  */
 class RewardAllOf {
     /**
@@ -63,22 +63,22 @@ class RewardAllOf {
     model(){
         var obj = {};
 
-        obj['entityType'];
-        obj['entityId'];
-        obj['rewardRank'];
-        obj['rewardName'];
-        obj['value'];
-        obj['rewardType'];
-        obj['rewardTypeId'];
-        obj['description'];
-        obj['delay'];
-        obj['icon'];
-        obj['metadata'];
-        obj['pointInTime'];
-        obj['period'];
-        obj['translations'];
-        obj['translatableFields'];
-        obj['constraints'];
+        obj['entityType'] = new EntityType().model();
+        obj['entityId'] = null;
+        obj['rewardRank'] = null;
+        obj['rewardName'] = null;
+        obj['value'] = null;
+        obj['rewardType'] = null;
+        obj['rewardTypeId'] = null;
+        obj['description'] = null;
+        obj['delay'] = null;
+        obj['icon'] = null;
+        obj['metadata'] = [new Metadata().model()];
+        obj['pointInTime'] = null;
+        obj['period'] = null;
+        obj['translations'] = [new Translation().model()];
+        obj['translatableFields'] = [null];
+        obj['constraints'] = [null];
 
         return obj;
     }
@@ -92,33 +92,33 @@ class RewardAllOf {
             "requiredFields": {}
         };
 
-        obj["fields"]['entityType'];
-        obj["fields"]['entityId'];
-        obj["fields"]['rewardRank'];
-        obj["fields"]['rewardName'];
-        obj["fields"]['value'];
-        obj["fields"]['rewardType'];
-        obj["fields"]['rewardTypeId'];
-        obj["fields"]['description'];
-        obj["fields"]['delay'];
-        obj["fields"]['icon'];
-        obj["fields"]['metadata'];
-        obj["fields"]['pointInTime'];
-        obj["fields"]['period'];
-        obj["fields"]['translations'];
-        obj["fields"]['translatableFields'];
-        obj["fields"]['constraints'];
+        obj["fields"]['entityType'] = new EntityType().modelMap();
+        obj["fields"]['entityId'] = { "type": 'String', "system": false };
+        obj["fields"]['rewardRank'] = { "type": 'String', "system": false };
+        obj["fields"]['rewardName'] = { "type": 'String', "system": false };
+        obj["fields"]['value'] = { "type": 'Number', "system": false };
+        obj["fields"]['rewardType'] = { "type": 'String', "system": false };
+        obj["fields"]['rewardTypeId'] = { "type": 'String', "system": false };
+        obj["fields"]['description'] = { "type": 'String', "system": false };
+        obj["fields"]['delay'] = { "type": 'Number', "system": false };
+        obj["fields"]['icon'] = { "type": 'String', "system": false };
+        obj["fields"]['metadata'] = [new Metadata().modelMap()];
+        obj["fields"]['pointInTime'] = { "type": 'Date', "system": false };
+        obj["fields"]['period'] = { "type": 'Number', "system": false };
+        obj["fields"]['translations'] = [new Translation().modelMap()];
+        obj["fields"]['translatableFields'] = [{ "type": 'String', "system": false }];
+        obj["fields"]['constraints'] = [{ "type": 'String', "system": false }];
 
         
-        obj["requiredFields"]['entityType'];
-        obj["requiredFields"]['entityId'];
-        obj["requiredFields"]['rewardRank'];
-        obj["requiredFields"]['rewardName'];
-        obj["requiredFields"]['value'];
-        obj["requiredFields"]['rewardType'];
-        obj["requiredFields"]['rewardTypeId'];
-        obj["requiredFields"]['description'];
-        obj["requiredFields"]['delay'];
+        obj["requiredFields"]['entityType'] = new EntityType().modelMap();
+        obj["requiredFields"]['entityId'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['rewardRank'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['rewardName'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['value'] = { "type": 'Number', "system": false };
+        obj["requiredFields"]['rewardType'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['rewardTypeId'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['description'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['delay'] = { "type": 'Number', "system": false };
 
         return obj;
     }

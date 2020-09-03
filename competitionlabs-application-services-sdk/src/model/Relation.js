@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Relation model module.
  * @module model/Relation
- * @version 1.0.4
+ * @version 1.0.5
  */
 class Relation {
     /**
@@ -46,8 +46,8 @@ class Relation {
     model(){
         var obj = {};
 
-        obj['id'];
-        obj['relationType'];
+        obj['id'] = null;
+        obj['relationType'] = null;
 
         return obj;
     }
@@ -61,12 +61,12 @@ class Relation {
             "requiredFields": {}
         };
 
-        obj["fields"]['id'];
-        obj["fields"]['relationType'];
+        obj["fields"]['id'] = { "type": 'String', "system": true };
+        obj["fields"]['relationType'] = { "type": 'String', "system": false };
 
         
-        obj["requiredFields"]['id'];
-        obj["requiredFields"]['relationType'];
+        obj["requiredFields"]['id'] = { "type": 'String', "system": true };
+        obj["requiredFields"]['relationType'] = { "type": 'String', "system": false };
 
         return obj;
     }

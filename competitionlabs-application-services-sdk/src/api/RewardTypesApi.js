@@ -22,7 +22,7 @@ import UpdateRewardTypeRequest from '../model/UpdateRewardTypeRequest';
 /**
 * RewardTypes service.
 * @module api/RewardTypesApi
-* @version 1.0.4
+* @version 1.0.5
 */
 export default class RewardTypesApi {
 

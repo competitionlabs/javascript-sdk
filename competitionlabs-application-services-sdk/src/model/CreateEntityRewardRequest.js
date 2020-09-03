@@ -19,7 +19,7 @@ import Translation from './Translation';
 /**
  * The CreateEntityRewardRequest model module.
  * @module model/CreateEntityRewardRequest
- * @version 1.0.4
+ * @version 1.0.5
  */
 class CreateEntityRewardRequest {
     /**
@@ -57,20 +57,20 @@ class CreateEntityRewardRequest {
     model(){
         var obj = {};
 
-        obj['entityType'];
-        obj['entityId'];
-        obj['rewardRank'];
-        obj['rewardName'];
-        obj['value'];
-        obj['rewardTypeId'];
-        obj['description'];
-        obj['delay'];
-        obj['icon'];
-        obj['metadata'];
-        obj['pointInTime'];
-        obj['period'];
-        obj['translations'];
-        obj['constraints'];
+        obj['entityType'] = new EntityType().model();
+        obj['entityId'] = null;
+        obj['rewardRank'] = null;
+        obj['rewardName'] = null;
+        obj['value'] = null;
+        obj['rewardTypeId'] = null;
+        obj['description'] = null;
+        obj['delay'] = null;
+        obj['icon'] = null;
+        obj['metadata'] = [new Metadata().model()];
+        obj['pointInTime'] = null;
+        obj['period'] = null;
+        obj['translations'] = [new Translation().model()];
+        obj['constraints'] = [null];
 
         return obj;
     }
@@ -84,28 +84,28 @@ class CreateEntityRewardRequest {
             "requiredFields": {}
         };
 
-        obj["fields"]['entityType'];
-        obj["fields"]['entityId'];
-        obj["fields"]['rewardRank'];
-        obj["fields"]['rewardName'];
-        obj["fields"]['value'];
-        obj["fields"]['rewardTypeId'];
-        obj["fields"]['description'];
-        obj["fields"]['delay'];
-        obj["fields"]['icon'];
-        obj["fields"]['metadata'];
-        obj["fields"]['pointInTime'];
-        obj["fields"]['period'];
-        obj["fields"]['translations'];
-        obj["fields"]['constraints'];
+        obj["fields"]['entityType'] = new EntityType().modelMap();
+        obj["fields"]['entityId'] = { "type": 'String', "system": false };
+        obj["fields"]['rewardRank'] = { "type": 'String', "system": false };
+        obj["fields"]['rewardName'] = { "type": 'String', "system": false };
+        obj["fields"]['value'] = { "type": 'Number', "system": false };
+        obj["fields"]['rewardTypeId'] = { "type": 'String', "system": false };
+        obj["fields"]['description'] = { "type": 'String', "system": false };
+        obj["fields"]['delay'] = { "type": 'Number', "system": false };
+        obj["fields"]['icon'] = { "type": 'String', "system": false };
+        obj["fields"]['metadata'] = [new Metadata().modelMap()];
+        obj["fields"]['pointInTime'] = { "type": 'Date', "system": false };
+        obj["fields"]['period'] = { "type": 'Number', "system": false };
+        obj["fields"]['translations'] = [new Translation().modelMap()];
+        obj["fields"]['constraints'] = [{ "type": 'String', "system": false }];
 
         
-        obj["requiredFields"]['entityType'];
-        obj["requiredFields"]['entityId'];
-        obj["requiredFields"]['rewardRank'];
-        obj["requiredFields"]['rewardName'];
-        obj["requiredFields"]['value'];
-        obj["requiredFields"]['rewardTypeId'];
+        obj["requiredFields"]['entityType'] = new EntityType().modelMap();
+        obj["requiredFields"]['entityId'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['rewardRank'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['rewardName'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['value'] = { "type": 'Number', "system": false };
+        obj["requiredFields"]['rewardTypeId'] = { "type": 'String', "system": false };
 
         return obj;
     }

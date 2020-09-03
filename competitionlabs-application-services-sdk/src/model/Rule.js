@@ -17,7 +17,7 @@ import RuleSubCondition from './RuleSubCondition';
 /**
  * The Rule model module.
  * @module model/Rule
- * @version 1.0.4
+ * @version 1.0.5
  */
 class Rule {
     /**
@@ -53,11 +53,11 @@ class Rule {
     model(){
         var obj = {};
 
-        obj['fact'];
-        obj['operator'];
-        obj['constant'];
-        obj['id'];
-        obj['subConditions'];
+        obj['fact'] = null;
+        obj['operator'] = null;
+        obj['constant'] = null;
+        obj['id'] = null;
+        obj['subConditions'] = [new RuleSubCondition().model()];
 
         return obj;
     }
@@ -71,18 +71,18 @@ class Rule {
             "requiredFields": {}
         };
 
-        obj["fields"]['fact'];
-        obj["fields"]['operator'];
-        obj["fields"]['constant'];
-        obj["fields"]['id'];
-        obj["fields"]['subConditions'];
+        obj["fields"]['fact'] = { "type": 'String', "system": false };
+        obj["fields"]['operator'] = { "type": 'String', "system": false };
+        obj["fields"]['constant'] = { "type": 'String', "system": false };
+        obj["fields"]['id'] = { "type": 'String', "system": true };
+        obj["fields"]['subConditions'] = [new RuleSubCondition().modelMap()];
 
         
-        obj["requiredFields"]['fact'];
-        obj["requiredFields"]['operator'];
-        obj["requiredFields"]['constant'];
-        obj["requiredFields"]['id'];
-        obj["requiredFields"]['subConditions'];
+        obj["requiredFields"]['fact'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['operator'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['constant'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['id'] = { "type": 'String', "system": true };
+        obj["requiredFields"]['subConditions'] = [new RuleSubCondition().modelMap()];
 
         return obj;
     }

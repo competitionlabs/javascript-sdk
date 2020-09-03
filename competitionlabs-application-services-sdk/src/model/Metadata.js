@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Metadata model module.
  * @module model/Metadata
- * @version 1.0.4
+ * @version 1.0.5
  */
 class Metadata {
     /**
@@ -46,8 +46,8 @@ class Metadata {
     model(){
         var obj = {};
 
-        obj['key'];
-        obj['value'];
+        obj['key'] = null;
+        obj['value'] = null;
 
         return obj;
     }
@@ -61,12 +61,12 @@ class Metadata {
             "requiredFields": {}
         };
 
-        obj["fields"]['key'];
-        obj["fields"]['value'];
+        obj["fields"]['key'] = { "type": 'String', "system": false };
+        obj["fields"]['value'] = { "type": 'String', "system": false };
 
         
-        obj["requiredFields"]['key'];
-        obj["requiredFields"]['value'];
+        obj["requiredFields"]['key'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['value'] = { "type": 'String', "system": false };
 
         return obj;
     }

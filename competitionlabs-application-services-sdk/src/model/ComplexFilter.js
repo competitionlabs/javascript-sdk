@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ComplexFilter model module.
  * @module model/ComplexFilter
- * @version 1.0.4
+ * @version 1.0.5
  */
 class ComplexFilter {
     /**
@@ -42,10 +42,10 @@ class ComplexFilter {
     model(){
         var obj = {};
 
-        obj['must'];
-        obj['mustNot'];
-        obj['should'];
-        obj['shouldMatchAtLeast'];
+        obj['must'] = [null];
+        obj['mustNot'] = [null];
+        obj['should'] = [null];
+        obj['shouldMatchAtLeast'] = null;
 
         return obj;
     }
@@ -59,10 +59,10 @@ class ComplexFilter {
             "requiredFields": {}
         };
 
-        obj["fields"]['must'];
-        obj["fields"]['mustNot'];
-        obj["fields"]['should'];
-        obj["fields"]['shouldMatchAtLeast'];
+        obj["fields"]['must'] = [{ "type": 'String', "system": false }];
+        obj["fields"]['mustNot'] = [{ "type": 'String', "system": false }];
+        obj["fields"]['should'] = [{ "type": 'String', "system": false }];
+        obj["fields"]['shouldMatchAtLeast'] = { "type": 'Number', "system": false };
 
         
 

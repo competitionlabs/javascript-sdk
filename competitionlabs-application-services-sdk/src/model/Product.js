@@ -21,7 +21,7 @@ import Translation from './Translation';
 /**
  * The Product model module.
  * @module model/Product
- * @version 1.0.4
+ * @version 1.0.5
  */
 class Product {
     /**
@@ -63,20 +63,20 @@ class Product {
     model(){
         var obj = {};
 
-        obj['id'];
-        obj['spaceName'];
-        obj['created'];
-        obj['name'];
-        obj['productType'];
-        obj['productTypeName'];
-        obj['description'];
-        obj['adjustmentFactor'];
-        obj['productRefId'];
-        obj['actionTypeAdjustmentFactors'];
-        obj['productGroups'];
-        obj['metadata'];
-        obj['translations'];
-        obj['translatableFields'];
+        obj['id'] = null;
+        obj['spaceName'] = null;
+        obj['created'] = null;
+        obj['name'] = null;
+        obj['productType'] = null;
+        obj['productTypeName'] = null;
+        obj['description'] = null;
+        obj['adjustmentFactor'] = null;
+        obj['productRefId'] = null;
+        obj['actionTypeAdjustmentFactors'] = [new ActionTypeAdjustmentFactor().model()];
+        obj['productGroups'] = [null];
+        obj['metadata'] = [new Metadata().model()];
+        obj['translations'] = [new Translation().model()];
+        obj['translatableFields'] = [null];
 
         return obj;
     }
@@ -90,29 +90,29 @@ class Product {
             "requiredFields": {}
         };
 
-        obj["fields"]['id'];
-        obj["fields"]['spaceName'];
-        obj["fields"]['created'];
-        obj["fields"]['name'];
-        obj["fields"]['productType'];
-        obj["fields"]['productTypeName'];
-        obj["fields"]['description'];
-        obj["fields"]['adjustmentFactor'];
-        obj["fields"]['productRefId'];
-        obj["fields"]['actionTypeAdjustmentFactors'];
-        obj["fields"]['productGroups'];
-        obj["fields"]['metadata'];
-        obj["fields"]['translations'];
-        obj["fields"]['translatableFields'];
+        obj["fields"]['id'] = { "type": 'String', "system": true };
+        obj["fields"]['spaceName'] = { "type": 'String', "system": true };
+        obj["fields"]['created'] = { "type": 'Date', "system": true };
+        obj["fields"]['name'] = { "type": 'String', "system": false };
+        obj["fields"]['productType'] = { "type": 'String', "system": false };
+        obj["fields"]['productTypeName'] = { "type": 'String', "system": false };
+        obj["fields"]['description'] = { "type": 'String', "system": false };
+        obj["fields"]['adjustmentFactor'] = { "type": 'Number', "system": false };
+        obj["fields"]['productRefId'] = { "type": 'String', "system": false };
+        obj["fields"]['actionTypeAdjustmentFactors'] = [new ActionTypeAdjustmentFactor().modelMap()];
+        obj["fields"]['productGroups'] = [{ "type": 'String', "system": false }];
+        obj["fields"]['metadata'] = [new Metadata().modelMap()];
+        obj["fields"]['translations'] = [new Translation().modelMap()];
+        obj["fields"]['translatableFields'] = [{ "type": 'String', "system": false }];
 
         
-        obj["requiredFields"]['id'];
-        obj["requiredFields"]['spaceName'];
-        obj["requiredFields"]['created'];
-        obj["requiredFields"]['name'];
-        obj["requiredFields"]['productType'];
-        obj["requiredFields"]['adjustmentFactor'];
-        obj["requiredFields"]['productRefId'];
+        obj["requiredFields"]['id'] = { "type": 'String', "system": true };
+        obj["requiredFields"]['spaceName'] = { "type": 'String', "system": true };
+        obj["requiredFields"]['created'] = { "type": 'Date', "system": true };
+        obj["requiredFields"]['name'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['productType'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['adjustmentFactor'] = { "type": 'Number', "system": false };
+        obj["requiredFields"]['productRefId'] = { "type": 'String', "system": false };
 
         return obj;
     }

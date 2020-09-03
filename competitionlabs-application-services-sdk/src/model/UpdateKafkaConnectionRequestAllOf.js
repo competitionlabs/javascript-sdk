@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateKafkaConnectionRequestAllOf model module.
  * @module model/UpdateKafkaConnectionRequestAllOf
- * @version 1.0.4
+ * @version 1.0.5
  */
 class UpdateKafkaConnectionRequestAllOf {
     /**
@@ -42,11 +42,11 @@ class UpdateKafkaConnectionRequestAllOf {
     model(){
         var obj = {};
 
-        obj['name'];
-        obj['brokers'];
-        obj['transformerId'];
-        obj['groupId'];
-        obj['topic'];
+        obj['name'] = null;
+        obj['brokers'] = null;
+        obj['transformerId'] = null;
+        obj['groupId'] = null;
+        obj['topic'] = null;
 
         return obj;
     }
@@ -60,11 +60,11 @@ class UpdateKafkaConnectionRequestAllOf {
             "requiredFields": {}
         };
 
-        obj["fields"]['name'];
-        obj["fields"]['brokers'];
-        obj["fields"]['transformerId'];
-        obj["fields"]['groupId'];
-        obj["fields"]['topic'];
+        obj["fields"]['name'] = { "type": 'String', "system": false };
+        obj["fields"]['brokers'] = { "type": 'String', "system": false };
+        obj["fields"]['transformerId'] = { "type": 'String', "system": false };
+        obj["fields"]['groupId'] = { "type": 'String', "system": false };
+        obj["fields"]['topic'] = { "type": 'String', "system": false };
 
         
 

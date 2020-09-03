@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The LeaderboardEntry model module.
  * @module model/LeaderboardEntry
- * @version 1.0.4
+ * @version 1.0.5
  */
 class LeaderboardEntry {
     /**
@@ -52,11 +52,11 @@ class LeaderboardEntry {
     model(){
         var obj = {};
 
-        obj['name'];
-        obj['rank'];
-        obj['points'];
-        obj['memberId'];
-        obj['memberRefId'];
+        obj['name'] = null;
+        obj['rank'] = null;
+        obj['points'] = null;
+        obj['memberId'] = null;
+        obj['memberRefId'] = null;
 
         return obj;
     }
@@ -70,18 +70,18 @@ class LeaderboardEntry {
             "requiredFields": {}
         };
 
-        obj["fields"]['name'];
-        obj["fields"]['rank'];
-        obj["fields"]['points'];
-        obj["fields"]['memberId'];
-        obj["fields"]['memberRefId'];
+        obj["fields"]['name'] = { "type": 'String', "system": false };
+        obj["fields"]['rank'] = { "type": 'Number', "system": false };
+        obj["fields"]['points'] = { "type": 'Number', "system": false };
+        obj["fields"]['memberId'] = { "type": 'String', "system": false };
+        obj["fields"]['memberRefId'] = { "type": 'String', "system": false };
 
         
-        obj["requiredFields"]['name'];
-        obj["requiredFields"]['rank'];
-        obj["requiredFields"]['points'];
-        obj["requiredFields"]['memberId'];
-        obj["requiredFields"]['memberRefId'];
+        obj["requiredFields"]['name'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['rank'] = { "type": 'Number', "system": false };
+        obj["requiredFields"]['points'] = { "type": 'Number', "system": false };
+        obj["requiredFields"]['memberId'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['memberRefId'] = { "type": 'String', "system": false };
 
         return obj;
     }

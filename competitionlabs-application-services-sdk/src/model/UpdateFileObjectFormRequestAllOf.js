@@ -17,7 +17,7 @@ import Metadata from './Metadata';
 /**
  * The UpdateFileObjectFormRequestAllOf model module.
  * @module model/UpdateFileObjectFormRequestAllOf
- * @version 1.0.4
+ * @version 1.0.5
  */
 class UpdateFileObjectFormRequestAllOf {
     /**
@@ -45,10 +45,10 @@ class UpdateFileObjectFormRequestAllOf {
     model(){
         var obj = {};
 
-        obj['tags'];
-        obj['parentFolderPath'];
-        obj['metadata'];
-        obj['file'];
+        obj['tags'] = [null];
+        obj['parentFolderPath'] = null;
+        obj['metadata'] = [new Metadata().model()];
+        obj['file'] = [new File().model()];
 
         return obj;
     }
@@ -62,13 +62,13 @@ class UpdateFileObjectFormRequestAllOf {
             "requiredFields": {}
         };
 
-        obj["fields"]['tags'];
-        obj["fields"]['parentFolderPath'];
-        obj["fields"]['metadata'];
-        obj["fields"]['file'];
+        obj["fields"]['tags'] = [{ "type": 'String', "system": false }];
+        obj["fields"]['parentFolderPath'] = { "type": 'String', "system": false };
+        obj["fields"]['metadata'] = [new Metadata().modelMap()];
+        obj["fields"]['file'] = [new File().modelMap()];
 
         
-        obj["requiredFields"]['file'];
+        obj["requiredFields"]['file'] = [new File().modelMap()];
 
         return obj;
     }

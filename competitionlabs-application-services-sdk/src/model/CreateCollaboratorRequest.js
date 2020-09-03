@@ -17,7 +17,7 @@ import Role from './Role';
 /**
  * The CreateCollaboratorRequest model module.
  * @module model/CreateCollaboratorRequest
- * @version 1.0.4
+ * @version 1.0.5
  */
 class CreateCollaboratorRequest {
     /**
@@ -47,8 +47,8 @@ class CreateCollaboratorRequest {
     model(){
         var obj = {};
 
-        obj['email'];
-        obj['role'];
+        obj['email'] = null;
+        obj['role'] = new Role().model();
 
         return obj;
     }
@@ -62,12 +62,12 @@ class CreateCollaboratorRequest {
             "requiredFields": {}
         };
 
-        obj["fields"]['email'];
-        obj["fields"]['role'];
+        obj["fields"]['email'] = { "type": 'String', "system": false };
+        obj["fields"]['role'] = new Role().modelMap();
 
         
-        obj["requiredFields"]['email'];
-        obj["requiredFields"]['role'];
+        obj["requiredFields"]['email'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['role'] = new Role().modelMap();
 
         return obj;
     }

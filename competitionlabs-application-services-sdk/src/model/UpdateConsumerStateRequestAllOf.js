@@ -17,7 +17,7 @@ import ConnectionState from './ConnectionState';
 /**
  * The UpdateConsumerStateRequestAllOf model module.
  * @module model/UpdateConsumerStateRequestAllOf
- * @version 1.0.4
+ * @version 1.0.5
  */
 class UpdateConsumerStateRequestAllOf {
     /**
@@ -45,7 +45,7 @@ class UpdateConsumerStateRequestAllOf {
     model(){
         var obj = {};
 
-        obj['status'];
+        obj['status'] = new ConnectionState().model();
 
         return obj;
     }
@@ -59,10 +59,10 @@ class UpdateConsumerStateRequestAllOf {
             "requiredFields": {}
         };
 
-        obj["fields"]['status'];
+        obj["fields"]['status'] = new ConnectionState().modelMap();
 
         
-        obj["requiredFields"]['status'];
+        obj["requiredFields"]['status'] = new ConnectionState().modelMap();
 
         return obj;
     }

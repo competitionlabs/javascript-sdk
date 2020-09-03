@@ -17,7 +17,7 @@ import MetaInfo from './MetaInfo';
 /**
  * The MetaBasic model module.
  * @module model/MetaBasic
- * @version 1.0.4
+ * @version 1.0.5
  */
 class MetaBasic {
     /**

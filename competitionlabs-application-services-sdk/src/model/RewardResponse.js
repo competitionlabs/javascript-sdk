@@ -19,7 +19,7 @@ import Reward from './Reward';
 /**
  * The RewardResponse model module.
  * @module model/RewardResponse
- * @version 1.0.4
+ * @version 1.0.5
  */
 class RewardResponse {
     /**
@@ -47,9 +47,9 @@ class RewardResponse {
     model(){
         var obj = {};
 
-        obj['meta'];
-        obj['results'];
-        obj['errors'];
+        obj['meta'] = new MetaExtended().model();
+        obj['results'] = [new Reward().model()];
+        obj['errors'] = [new Error().model()];
 
         return obj;
     }
@@ -63,12 +63,12 @@ class RewardResponse {
             "requiredFields": {}
         };
 
-        obj["fields"]['meta'];
-        obj["fields"]['results'];
-        obj["fields"]['errors'];
+        obj["fields"]['meta'] = new MetaExtended().modelMap();
+        obj["fields"]['results'] = [new Reward().modelMap()];
+        obj["fields"]['errors'] = [new Error().modelMap()];
 
         
-        obj["requiredFields"]['meta'];
+        obj["requiredFields"]['meta'] = new MetaExtended().modelMap();
 
         return obj;
     }

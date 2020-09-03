@@ -18,7 +18,7 @@ import Rule from './Rule';
 /**
  * The Condition model module.
  * @module model/Condition
- * @version 1.0.4
+ * @version 1.0.5
  */
 class Condition {
     /**
@@ -50,9 +50,9 @@ class Condition {
     model(){
         var obj = {};
 
-        obj['matchCondition'];
-        obj['mustEvaluateTo'];
-        obj['rules'];
+        obj['matchCondition'] = new MatchCondition().model();
+        obj['mustEvaluateTo'] = null;
+        obj['rules'] = [new Rule().model()];
 
         return obj;
     }
@@ -66,14 +66,14 @@ class Condition {
             "requiredFields": {}
         };
 
-        obj["fields"]['matchCondition'];
-        obj["fields"]['mustEvaluateTo'];
-        obj["fields"]['rules'];
+        obj["fields"]['matchCondition'] = new MatchCondition().modelMap();
+        obj["fields"]['mustEvaluateTo'] = { "type": 'Boolean', "system": false };
+        obj["fields"]['rules'] = [new Rule().modelMap()];
 
         
-        obj["requiredFields"]['matchCondition'];
-        obj["requiredFields"]['mustEvaluateTo'];
-        obj["requiredFields"]['rules'];
+        obj["requiredFields"]['matchCondition'] = new MatchCondition().modelMap();
+        obj["requiredFields"]['mustEvaluateTo'] = { "type": 'Boolean', "system": false };
+        obj["requiredFields"]['rules'] = [new Rule().modelMap()];
 
         return obj;
     }

@@ -18,7 +18,7 @@ import UpdateFileObjectFormRequestAllOf from './UpdateFileObjectFormRequestAllOf
 /**
  * The UpdateFileObjectFormRequest model module.
  * @module model/UpdateFileObjectFormRequest
- * @version 1.0.4
+ * @version 1.0.5
  */
 class UpdateFileObjectFormRequest {
     /**

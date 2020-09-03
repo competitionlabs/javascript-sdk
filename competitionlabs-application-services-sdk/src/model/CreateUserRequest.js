@@ -17,7 +17,7 @@ import Contact from './Contact';
 /**
  * The CreateUserRequest model module.
  * @module model/CreateUserRequest
- * @version 1.0.4
+ * @version 1.0.5
  */
 class CreateUserRequest {
     /**
@@ -51,11 +51,11 @@ class CreateUserRequest {
     model(){
         var obj = {};
 
-        obj['firstName'];
-        obj['lastName'];
-        obj['password'];
-        obj['email'];
-        obj['contact'];
+        obj['firstName'] = null;
+        obj['lastName'] = null;
+        obj['password'] = null;
+        obj['email'] = null;
+        obj['contact'] = new Contact().model();
 
         return obj;
     }
@@ -69,17 +69,17 @@ class CreateUserRequest {
             "requiredFields": {}
         };
 
-        obj["fields"]['firstName'];
-        obj["fields"]['lastName'];
-        obj["fields"]['password'];
-        obj["fields"]['email'];
-        obj["fields"]['contact'];
+        obj["fields"]['firstName'] = { "type": 'String', "system": false };
+        obj["fields"]['lastName'] = { "type": 'String', "system": false };
+        obj["fields"]['password'] = { "type": 'String', "system": false };
+        obj["fields"]['email'] = { "type": 'String', "system": false };
+        obj["fields"]['contact'] = new Contact().modelMap();
 
         
-        obj["requiredFields"]['firstName'];
-        obj["requiredFields"]['lastName'];
-        obj["requiredFields"]['password'];
-        obj["requiredFields"]['email'];
+        obj["requiredFields"]['firstName'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['lastName'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['password'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['email'] = { "type": 'String', "system": false };
 
         return obj;
     }

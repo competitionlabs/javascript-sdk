@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateLanguageRequest model module.
  * @module model/CreateLanguageRequest
- * @version 1.0.4
+ * @version 1.0.5
  */
 class CreateLanguageRequest {
     /**
@@ -44,8 +44,8 @@ class CreateLanguageRequest {
     model(){
         var obj = {};
 
-        obj['languageKey'];
-        obj['references'];
+        obj['languageKey'] = null;
+        obj['references'] = [null];
 
         return obj;
     }
@@ -59,11 +59,11 @@ class CreateLanguageRequest {
             "requiredFields": {}
         };
 
-        obj["fields"]['languageKey'];
-        obj["fields"]['references'];
+        obj["fields"]['languageKey'] = { "type": 'String', "system": false };
+        obj["fields"]['references'] = [{ "type": 'String', "system": false }];
 
         
-        obj["requiredFields"]['languageKey'];
+        obj["requiredFields"]['languageKey'] = { "type": 'String', "system": false };
 
         return obj;
     }

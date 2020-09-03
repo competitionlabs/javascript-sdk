@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ModelDefault model module.
  * @module model/ModelDefault
- * @version 1.0.4
+ * @version 1.0.5
  */
 class ModelDefault {
     /**
@@ -48,9 +48,9 @@ class ModelDefault {
     model(){
         var obj = {};
 
-        obj['id'];
-        obj['spaceName'];
-        obj['created'];
+        obj['id'] = null;
+        obj['spaceName'] = null;
+        obj['created'] = null;
 
         return obj;
     }
@@ -64,14 +64,14 @@ class ModelDefault {
             "requiredFields": {}
         };
 
-        obj["fields"]['id'];
-        obj["fields"]['spaceName'];
-        obj["fields"]['created'];
+        obj["fields"]['id'] = { "type": 'String', "system": true };
+        obj["fields"]['spaceName'] = { "type": 'String', "system": true };
+        obj["fields"]['created'] = { "type": 'Date', "system": true };
 
         
-        obj["requiredFields"]['id'];
-        obj["requiredFields"]['spaceName'];
-        obj["requiredFields"]['created'];
+        obj["requiredFields"]['id'] = { "type": 'String', "system": true };
+        obj["requiredFields"]['spaceName'] = { "type": 'String', "system": true };
+        obj["requiredFields"]['created'] = { "type": 'Date', "system": true };
 
         return obj;
     }

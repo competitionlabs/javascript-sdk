@@ -17,7 +17,7 @@ import CompetitionStatusActions from './CompetitionStatusActions';
 /**
  * The UpdateCompetitionStatusRequestAllOf model module.
  * @module model/UpdateCompetitionStatusRequestAllOf
- * @version 1.0.4
+ * @version 1.0.5
  */
 class UpdateCompetitionStatusRequestAllOf {
     /**
@@ -45,7 +45,7 @@ class UpdateCompetitionStatusRequestAllOf {
     model(){
         var obj = {};
 
-        obj['status'];
+        obj['status'] = new CompetitionStatusActions().model();
 
         return obj;
     }
@@ -59,10 +59,10 @@ class UpdateCompetitionStatusRequestAllOf {
             "requiredFields": {}
         };
 
-        obj["fields"]['status'];
+        obj["fields"]['status'] = new CompetitionStatusActions().modelMap();
 
         
-        obj["requiredFields"]['status'];
+        obj["requiredFields"]['status'] = new CompetitionStatusActions().modelMap();
 
         return obj;
     }

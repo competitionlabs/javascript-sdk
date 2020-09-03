@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RuleDescriptorSubFactAllOf model module.
  * @module model/RuleDescriptorSubFactAllOf
- * @version 1.0.4
+ * @version 1.0.5
  */
 class RuleDescriptorSubFactAllOf {
     /**
@@ -44,7 +44,7 @@ class RuleDescriptorSubFactAllOf {
     model(){
         var obj = {};
 
-        obj['subFact'];
+        obj['subFact'] = null;
 
         return obj;
     }
@@ -58,10 +58,10 @@ class RuleDescriptorSubFactAllOf {
             "requiredFields": {}
         };
 
-        obj["fields"]['subFact'];
+        obj["fields"]['subFact'] = { "type": 'String', "system": false };
 
         
-        obj["requiredFields"]['subFact'];
+        obj["requiredFields"]['subFact'] = { "type": 'String', "system": false };
 
         return obj;
     }

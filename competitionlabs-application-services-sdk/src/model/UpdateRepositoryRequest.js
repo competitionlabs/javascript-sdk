@@ -20,7 +20,7 @@ import UpdateRepositoryRequestAllOf from './UpdateRepositoryRequestAllOf';
 /**
  * The UpdateRepositoryRequest model module.
  * @module model/UpdateRepositoryRequest
- * @version 1.0.4
+ * @version 1.0.5
  */
 class UpdateRepositoryRequest {
     /**
@@ -50,13 +50,13 @@ class UpdateRepositoryRequest {
     model(){
         var obj = {};
 
-        obj['id'];
-        obj['name'];
-        obj['description'];
-        obj['tags'];
-        obj['constraints'];
-        obj['hostingOptions'];
-        obj['metadata'];
+        obj['id'] = null;
+        obj['name'] = null;
+        obj['description'] = null;
+        obj['tags'] = [null];
+        obj['constraints'] = [null];
+        obj['hostingOptions'] = new HostingOptions().model();
+        obj['metadata'] = [new Metadata().model()];
 
         return obj;
     }
@@ -70,16 +70,16 @@ class UpdateRepositoryRequest {
             "requiredFields": {}
         };
 
-        obj["fields"]['id'];
-        obj["fields"]['name'];
-        obj["fields"]['description'];
-        obj["fields"]['tags'];
-        obj["fields"]['constraints'];
-        obj["fields"]['hostingOptions'];
-        obj["fields"]['metadata'];
+        obj["fields"]['id'] = { "type": 'String', "system": true };
+        obj["fields"]['name'] = { "type": 'String', "system": false };
+        obj["fields"]['description'] = { "type": 'String', "system": false };
+        obj["fields"]['tags'] = [{ "type": 'String', "system": false }];
+        obj["fields"]['constraints'] = [{ "type": 'String', "system": false }];
+        obj["fields"]['hostingOptions'] = new HostingOptions().modelMap();
+        obj["fields"]['metadata'] = [new Metadata().modelMap()];
 
         
-        obj["requiredFields"]['id'];
+        obj["requiredFields"]['id'] = { "type": 'String', "system": true };
 
         return obj;
     }

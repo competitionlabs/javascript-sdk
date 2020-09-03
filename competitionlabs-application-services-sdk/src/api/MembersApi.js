@@ -27,7 +27,7 @@ import UpdateMemberRequest from '../model/UpdateMemberRequest';
 /**
 * Members service.
 * @module api/MembersApi
-* @version 1.0.4
+* @version 1.0.5
 */
 export default class MembersApi {
 

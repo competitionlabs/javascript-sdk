@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ChangePasswordRequest model module.
  * @module model/ChangePasswordRequest
- * @version 1.0.4
+ * @version 1.0.5
  */
 class ChangePasswordRequest {
     /**
@@ -50,11 +50,11 @@ class ChangePasswordRequest {
     model(){
         var obj = {};
 
-        obj['email'];
-        obj['password'];
-        obj['newPassword'];
-        obj['confirmPassword'];
-        obj['twoFactorAccessCode'];
+        obj['email'] = null;
+        obj['password'] = null;
+        obj['newPassword'] = null;
+        obj['confirmPassword'] = null;
+        obj['twoFactorAccessCode'] = null;
 
         return obj;
     }
@@ -68,17 +68,17 @@ class ChangePasswordRequest {
             "requiredFields": {}
         };
 
-        obj["fields"]['email'];
-        obj["fields"]['password'];
-        obj["fields"]['newPassword'];
-        obj["fields"]['confirmPassword'];
-        obj["fields"]['twoFactorAccessCode'];
+        obj["fields"]['email'] = { "type": 'String', "system": false };
+        obj["fields"]['password'] = { "type": 'String', "system": false };
+        obj["fields"]['newPassword'] = { "type": 'String', "system": false };
+        obj["fields"]['confirmPassword'] = { "type": 'String', "system": false };
+        obj["fields"]['twoFactorAccessCode'] = { "type": 'String', "system": false };
 
         
-        obj["requiredFields"]['email'];
-        obj["requiredFields"]['password'];
-        obj["requiredFields"]['newPassword'];
-        obj["requiredFields"]['confirmPassword'];
+        obj["requiredFields"]['email'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['password'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['newPassword'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['confirmPassword'] = { "type": 'String', "system": false };
 
         return obj;
     }

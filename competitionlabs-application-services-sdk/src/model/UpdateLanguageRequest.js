@@ -18,7 +18,7 @@ import UpdateModelDefault from './UpdateModelDefault';
 /**
  * The UpdateLanguageRequest model module.
  * @module model/UpdateLanguageRequest
- * @version 1.0.4
+ * @version 1.0.5
  */
 class UpdateLanguageRequest {
     /**
@@ -48,9 +48,9 @@ class UpdateLanguageRequest {
     model(){
         var obj = {};
 
-        obj['id'];
-        obj['languageKey'];
-        obj['references'];
+        obj['id'] = null;
+        obj['languageKey'] = null;
+        obj['references'] = [null];
 
         return obj;
     }
@@ -64,12 +64,12 @@ class UpdateLanguageRequest {
             "requiredFields": {}
         };
 
-        obj["fields"]['id'];
-        obj["fields"]['languageKey'];
-        obj["fields"]['references'];
+        obj["fields"]['id'] = { "type": 'String', "system": true };
+        obj["fields"]['languageKey'] = { "type": 'String', "system": false };
+        obj["fields"]['references'] = [{ "type": 'String', "system": false }];
 
         
-        obj["requiredFields"]['id'];
+        obj["requiredFields"]['id'] = { "type": 'String', "system": true };
 
         return obj;
     }

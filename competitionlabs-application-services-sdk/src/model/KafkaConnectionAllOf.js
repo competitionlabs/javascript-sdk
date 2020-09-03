@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The KafkaConnectionAllOf model module.
  * @module model/KafkaConnectionAllOf
- * @version 1.0.4
+ * @version 1.0.5
  */
 class KafkaConnectionAllOf {
     /**
@@ -54,12 +54,12 @@ class KafkaConnectionAllOf {
     model(){
         var obj = {};
 
-        obj['name'];
-        obj['brokers'];
-        obj['groupId'];
-        obj['topic'];
-        obj['lastKnownStatus'];
-        obj['lastKnownStatusCode'];
+        obj['name'] = null;
+        obj['brokers'] = [null];
+        obj['groupId'] = null;
+        obj['topic'] = null;
+        obj['lastKnownStatus'] = null;
+        obj['lastKnownStatusCode'] = null;
 
         return obj;
     }
@@ -73,20 +73,20 @@ class KafkaConnectionAllOf {
             "requiredFields": {}
         };
 
-        obj["fields"]['name'];
-        obj["fields"]['brokers'];
-        obj["fields"]['groupId'];
-        obj["fields"]['topic'];
-        obj["fields"]['lastKnownStatus'];
-        obj["fields"]['lastKnownStatusCode'];
+        obj["fields"]['name'] = { "type": 'String', "system": false };
+        obj["fields"]['brokers'] = [{ "type": 'String', "system": false }];
+        obj["fields"]['groupId'] = { "type": 'String', "system": false };
+        obj["fields"]['topic'] = { "type": 'String', "system": false };
+        obj["fields"]['lastKnownStatus'] = { "type": 'String', "system": false };
+        obj["fields"]['lastKnownStatusCode'] = { "type": 'Number', "system": false };
 
         
-        obj["requiredFields"]['name'];
-        obj["requiredFields"]['brokers'];
-        obj["requiredFields"]['groupId'];
-        obj["requiredFields"]['topic'];
-        obj["requiredFields"]['lastKnownStatus'];
-        obj["requiredFields"]['lastKnownStatusCode'];
+        obj["requiredFields"]['name'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['brokers'] = [{ "type": 'String', "system": false }];
+        obj["requiredFields"]['groupId'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['topic'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['lastKnownStatus'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['lastKnownStatusCode'] = { "type": 'Number', "system": false };
 
         return obj;
     }

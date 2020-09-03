@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ScoringStrategy model module.
  * @module model/ScoringStrategy
- * @version 1.0.4
+ * @version 1.0.5
  */
 class ScoringStrategy {
     /**
@@ -50,10 +50,10 @@ class ScoringStrategy {
     model(){
         var obj = {};
 
-        obj['limitUpdatesTo'];
-        obj['sumBestXOf'];
-        obj['lastUpdateTimeStamp'];
-        obj['recordTimeWhenSumReaches'];
+        obj['limitUpdatesTo'] = null;
+        obj['sumBestXOf'] = null;
+        obj['lastUpdateTimeStamp'] = null;
+        obj['recordTimeWhenSumReaches'] = null;
 
         return obj;
     }
@@ -67,16 +67,16 @@ class ScoringStrategy {
             "requiredFields": {}
         };
 
-        obj["fields"]['limitUpdatesTo'];
-        obj["fields"]['sumBestXOf'];
-        obj["fields"]['lastUpdateTimeStamp'];
-        obj["fields"]['recordTimeWhenSumReaches'];
+        obj["fields"]['limitUpdatesTo'] = { "type": 'Number', "system": false };
+        obj["fields"]['sumBestXOf'] = { "type": 'Number', "system": false };
+        obj["fields"]['lastUpdateTimeStamp'] = { "type": 'Number', "system": false };
+        obj["fields"]['recordTimeWhenSumReaches'] = { "type": 'Number', "system": false };
 
         
-        obj["requiredFields"]['limitUpdatesTo'];
-        obj["requiredFields"]['sumBestXOf'];
-        obj["requiredFields"]['lastUpdateTimeStamp'];
-        obj["requiredFields"]['recordTimeWhenSumReaches'];
+        obj["requiredFields"]['limitUpdatesTo'] = { "type": 'Number', "system": false };
+        obj["requiredFields"]['sumBestXOf'] = { "type": 'Number', "system": false };
+        obj["requiredFields"]['lastUpdateTimeStamp'] = { "type": 'Number', "system": false };
+        obj["requiredFields"]['recordTimeWhenSumReaches'] = { "type": 'Number', "system": false };
 
         return obj;
     }

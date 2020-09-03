@@ -21,7 +21,7 @@ import QueryRequest from '../model/QueryRequest';
 /**
 * Events service.
 * @module api/EventsApi
-* @version 1.0.4
+* @version 1.0.5
 */
 export default class EventsApi {
 

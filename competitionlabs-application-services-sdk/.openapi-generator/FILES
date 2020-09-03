@@ -634,12 +634,3 @@ src/model/UserResponse.js
 src/model/Webhook.js
 src/model/WebhookAllOf.js
 src/model/WebhookResponse.js
-test/model/AchievementLiveStatusRequestAllOf.spec.js
-test/model/EventMetadataRequest.spec.js
-test/model/LeaderboardAllOf.spec.js
-test/model/LeaderboardEntry.spec.js
-test/model/MessageStatus.spec.js
-test/model/UpdateCompetitionStatusRequestAllOf.spec.js
-test/model/UpdateConsumerStateRequestAllOf.spec.js
-test/model/UpdateLanguageRequestAllOf.spec.js
-test/model/UpdateMessageStatusRequestAllOf.spec.js

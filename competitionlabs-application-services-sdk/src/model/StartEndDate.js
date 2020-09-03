@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The StartEndDate model module.
  * @module model/StartEndDate
- * @version 1.0.4
+ * @version 1.0.5
  */
 class StartEndDate {
     /**
@@ -44,8 +44,8 @@ class StartEndDate {
     model(){
         var obj = {};
 
-        obj['start'];
-        obj['end'];
+        obj['start'] = null;
+        obj['end'] = null;
 
         return obj;
     }
@@ -59,11 +59,11 @@ class StartEndDate {
             "requiredFields": {}
         };
 
-        obj["fields"]['start'];
-        obj["fields"]['end'];
+        obj["fields"]['start'] = { "type": 'Date', "system": false };
+        obj["fields"]['end'] = { "type": 'Date', "system": false };
 
         
-        obj["requiredFields"]['start'];
+        obj["requiredFields"]['start'] = { "type": 'Date', "system": false };
 
         return obj;
     }

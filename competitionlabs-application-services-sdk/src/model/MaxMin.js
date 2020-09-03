@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The MaxMin model module.
  * @module model/MaxMin
- * @version 1.0.4
+ * @version 1.0.5
  */
 class MaxMin {
     /**
@@ -44,8 +44,8 @@ class MaxMin {
     model(){
         var obj = {};
 
-        obj['maximum'];
-        obj['minimum'];
+        obj['maximum'] = null;
+        obj['minimum'] = null;
 
         return obj;
     }
@@ -59,11 +59,11 @@ class MaxMin {
             "requiredFields": {}
         };
 
-        obj["fields"]['maximum'];
-        obj["fields"]['minimum'];
+        obj["fields"]['maximum'] = { "type": 'Number', "system": false };
+        obj["fields"]['minimum'] = { "type": 'Number', "system": false };
 
         
-        obj["requiredFields"]['minimum'];
+        obj["requiredFields"]['minimum'] = { "type": 'Number', "system": false };
 
         return obj;
     }

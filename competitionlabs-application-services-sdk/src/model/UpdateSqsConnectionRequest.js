@@ -18,7 +18,7 @@ import UpdateSqsConnectionRequestAllOf from './UpdateSqsConnectionRequestAllOf';
 /**
  * The UpdateSqsConnectionRequest model module.
  * @module model/UpdateSqsConnectionRequest
- * @version 1.0.4
+ * @version 1.0.5
  */
 class UpdateSqsConnectionRequest {
     /**
@@ -50,13 +50,13 @@ class UpdateSqsConnectionRequest {
     model(){
         var obj = {};
 
-        obj['id'];
-        obj['objectType'];
-        obj['name'];
-        obj['uri'];
-        obj['acessKey'];
-        obj['secretKey'];
-        obj['transformerId'];
+        obj['id'] = null;
+        obj['objectType'] = null;
+        obj['name'] = null;
+        obj['uri'] = null;
+        obj['acessKey'] = null;
+        obj['secretKey'] = null;
+        obj['transformerId'] = null;
 
         return obj;
     }
@@ -70,17 +70,17 @@ class UpdateSqsConnectionRequest {
             "requiredFields": {}
         };
 
-        obj["fields"]['id'];
-        obj["fields"]['objectType'];
-        obj["fields"]['name'];
-        obj["fields"]['uri'];
-        obj["fields"]['acessKey'];
-        obj["fields"]['secretKey'];
-        obj["fields"]['transformerId'];
+        obj["fields"]['id'] = { "type": 'String', "system": true };
+        obj["fields"]['objectType'] = { "type": 'String', "system": false };
+        obj["fields"]['name'] = { "type": 'String', "system": false };
+        obj["fields"]['uri'] = { "type": 'String', "system": false };
+        obj["fields"]['acessKey'] = { "type": 'String', "system": false };
+        obj["fields"]['secretKey'] = { "type": 'String', "system": false };
+        obj["fields"]['transformerId'] = { "type": 'String', "system": false };
 
         
-        obj["requiredFields"]['id'];
-        obj["requiredFields"]['objectType'];
+        obj["requiredFields"]['id'] = { "type": 'String', "system": true };
+        obj["requiredFields"]['objectType'] = { "type": 'String', "system": false };
 
         return obj;
     }

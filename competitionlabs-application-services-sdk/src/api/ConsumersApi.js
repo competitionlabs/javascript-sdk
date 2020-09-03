@@ -23,7 +23,7 @@ import UpdateConsumerStateRequest from '../model/UpdateConsumerStateRequest';
 /**
 * Consumers service.
 * @module api/ConsumersApi
-* @version 1.0.4
+* @version 1.0.5
 */
 export default class ConsumersApi {
 

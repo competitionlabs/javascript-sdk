@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateLanguageRequestAllOf model module.
  * @module model/UpdateLanguageRequestAllOf
- * @version 1.0.4
+ * @version 1.0.5
  */
 class UpdateLanguageRequestAllOf {
     /**
@@ -42,8 +42,8 @@ class UpdateLanguageRequestAllOf {
     model(){
         var obj = {};
 
-        obj['languageKey'];
-        obj['references'];
+        obj['languageKey'] = null;
+        obj['references'] = [null];
 
         return obj;
     }
@@ -57,8 +57,8 @@ class UpdateLanguageRequestAllOf {
             "requiredFields": {}
         };
 
-        obj["fields"]['languageKey'];
-        obj["fields"]['references'];
+        obj["fields"]['languageKey'] = { "type": 'String', "system": false };
+        obj["fields"]['references'] = [{ "type": 'String', "system": false }];
 
         
 

@@ -18,7 +18,7 @@ import UpdateModelDefault from './UpdateModelDefault';
 /**
  * The UpdateConnectionRequest model module.
  * @module model/UpdateConnectionRequest
- * @version 1.0.4
+ * @version 1.0.5
  */
 class UpdateConnectionRequest {
     /**
@@ -50,8 +50,8 @@ class UpdateConnectionRequest {
     model(){
         var obj = {};
 
-        obj['id'];
-        obj['objectType'];
+        obj['id'] = null;
+        obj['objectType'] = null;
 
         return obj;
     }
@@ -65,12 +65,12 @@ class UpdateConnectionRequest {
             "requiredFields": {}
         };
 
-        obj["fields"]['id'];
-        obj["fields"]['objectType'];
+        obj["fields"]['id'] = { "type": 'String', "system": true };
+        obj["fields"]['objectType'] = { "type": 'String', "system": false };
 
         
-        obj["requiredFields"]['id'];
-        obj["requiredFields"]['objectType'];
+        obj["requiredFields"]['id'] = { "type": 'String', "system": true };
+        obj["requiredFields"]['objectType'] = { "type": 'String', "system": false };
 
         return obj;
     }

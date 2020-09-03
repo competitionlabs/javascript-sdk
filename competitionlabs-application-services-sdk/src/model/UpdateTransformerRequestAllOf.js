@@ -17,7 +17,7 @@ import SourceLanguage from './SourceLanguage';
 /**
  * The UpdateTransformerRequestAllOf model module.
  * @module model/UpdateTransformerRequestAllOf
- * @version 1.0.4
+ * @version 1.0.5
  */
 class UpdateTransformerRequestAllOf {
     /**
@@ -43,9 +43,9 @@ class UpdateTransformerRequestAllOf {
     model(){
         var obj = {};
 
-        obj['name'];
-        obj['source'];
-        obj['sourceLanguage'];
+        obj['name'] = null;
+        obj['source'] = null;
+        obj['sourceLanguage'] = new SourceLanguage().model();
 
         return obj;
     }
@@ -59,9 +59,9 @@ class UpdateTransformerRequestAllOf {
             "requiredFields": {}
         };
 
-        obj["fields"]['name'];
-        obj["fields"]['source'];
-        obj["fields"]['sourceLanguage'];
+        obj["fields"]['name'] = { "type": 'String', "system": false };
+        obj["fields"]['source'] = { "type": 'String', "system": false };
+        obj["fields"]['sourceLanguage'] = new SourceLanguage().modelMap();
 
         
 

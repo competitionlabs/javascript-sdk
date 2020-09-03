@@ -17,7 +17,7 @@ import SortOrder from './SortOrder';
 /**
  * The QuerySortBy model module.
  * @module model/QuerySortBy
- * @version 1.0.4
+ * @version 1.0.5
  */
 class QuerySortBy {
     /**
@@ -47,8 +47,8 @@ class QuerySortBy {
     model(){
         var obj = {};
 
-        obj['queryField'];
-        obj['order'];
+        obj['queryField'] = null;
+        obj['order'] = new SortOrder().model();
 
         return obj;
     }
@@ -62,12 +62,12 @@ class QuerySortBy {
             "requiredFields": {}
         };
 
-        obj["fields"]['queryField'];
-        obj["fields"]['order'];
+        obj["fields"]['queryField'] = { "type": 'String', "system": false };
+        obj["fields"]['order'] = new SortOrder().modelMap();
 
         
-        obj["requiredFields"]['queryField'];
-        obj["requiredFields"]['order'];
+        obj["requiredFields"]['queryField'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['order'] = new SortOrder().modelMap();
 
         return obj;
     }

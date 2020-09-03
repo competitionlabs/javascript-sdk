@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Macro model module.
  * @module model/Macro
- * @version 1.0.4
+ * @version 1.0.5
  */
 class Macro {
     /**
@@ -46,8 +46,8 @@ class Macro {
     model(){
         var obj = {};
 
-        obj['name'];
-        obj['macroValue'];
+        obj['name'] = null;
+        obj['macroValue'] = null;
 
         return obj;
     }
@@ -61,12 +61,12 @@ class Macro {
             "requiredFields": {}
         };
 
-        obj["fields"]['name'];
-        obj["fields"]['macroValue'];
+        obj["fields"]['name'] = { "type": 'String', "system": false };
+        obj["fields"]['macroValue'] = { "type": 'String', "system": false };
 
         
-        obj["requiredFields"]['name'];
-        obj["requiredFields"]['macroValue'];
+        obj["requiredFields"]['name'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['macroValue'] = { "type": 'String', "system": false };
 
         return obj;
     }

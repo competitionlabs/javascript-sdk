@@ -19,7 +19,7 @@ import ModelDefault from './ModelDefault';
 /**
  * The Language model module.
  * @module model/Language
- * @version 1.0.4
+ * @version 1.0.5
  */
 class Language {
     /**
@@ -58,12 +58,12 @@ class Language {
     model(){
         var obj = {};
 
-        obj['id'];
-        obj['spaceName'];
-        obj['created'];
-        obj['key'];
-        obj['name'];
-        obj['references'];
+        obj['id'] = null;
+        obj['spaceName'] = null;
+        obj['created'] = null;
+        obj['key'] = null;
+        obj['name'] = null;
+        obj['references'] = [null];
 
         return obj;
     }
@@ -77,19 +77,19 @@ class Language {
             "requiredFields": {}
         };
 
-        obj["fields"]['id'];
-        obj["fields"]['spaceName'];
-        obj["fields"]['created'];
-        obj["fields"]['key'];
-        obj["fields"]['name'];
-        obj["fields"]['references'];
+        obj["fields"]['id'] = { "type": 'String', "system": true };
+        obj["fields"]['spaceName'] = { "type": 'String', "system": true };
+        obj["fields"]['created'] = { "type": 'Date', "system": true };
+        obj["fields"]['key'] = { "type": 'String', "system": false };
+        obj["fields"]['name'] = { "type": 'String', "system": false };
+        obj["fields"]['references'] = [{ "type": 'String', "system": false }];
 
         
-        obj["requiredFields"]['id'];
-        obj["requiredFields"]['spaceName'];
-        obj["requiredFields"]['created'];
-        obj["requiredFields"]['key'];
-        obj["requiredFields"]['name'];
+        obj["requiredFields"]['id'] = { "type": 'String', "system": true };
+        obj["requiredFields"]['spaceName'] = { "type": 'String', "system": true };
+        obj["requiredFields"]['created'] = { "type": 'Date', "system": true };
+        obj["requiredFields"]['key'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['name'] = { "type": 'String', "system": false };
 
         return obj;
     }

@@ -22,7 +22,7 @@ import UpdateUnitOfMeasureRequest from '../model/UpdateUnitOfMeasureRequest';
 /**
 * UnitsOfMeasure service.
 * @module api/UnitsOfMeasureApi
-* @version 1.0.4
+* @version 1.0.5
 */
 export default class UnitsOfMeasureApi {
 

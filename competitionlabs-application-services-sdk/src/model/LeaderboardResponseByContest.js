@@ -17,7 +17,7 @@ import Leaderboard from './Leaderboard';
 /**
  * The LeaderboardResponseByContest model module.
  * @module model/LeaderboardResponseByContest
- * @version 1.0.4
+ * @version 1.0.5
  */
 class LeaderboardResponseByContest {
     /**
@@ -49,10 +49,10 @@ class LeaderboardResponseByContest {
     model(){
         var obj = {};
 
-        obj['contestId'];
-        obj['name'];
-        obj['round'];
-        obj['leaderboard'];
+        obj['contestId'] = null;
+        obj['name'] = null;
+        obj['round'] = null;
+        obj['leaderboard'] = [new Leaderboard().model()];
 
         return obj;
     }
@@ -66,15 +66,15 @@ class LeaderboardResponseByContest {
             "requiredFields": {}
         };
 
-        obj["fields"]['contestId'];
-        obj["fields"]['name'];
-        obj["fields"]['round'];
-        obj["fields"]['leaderboard'];
+        obj["fields"]['contestId'] = { "type": 'String', "system": false };
+        obj["fields"]['name'] = { "type": 'String', "system": false };
+        obj["fields"]['round'] = { "type": 'Number', "system": false };
+        obj["fields"]['leaderboard'] = [new Leaderboard().modelMap()];
 
         
-        obj["requiredFields"]['contestId'];
-        obj["requiredFields"]['name'];
-        obj["requiredFields"]['round'];
+        obj["requiredFields"]['contestId'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['name'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['round'] = { "type": 'Number', "system": false };
 
         return obj;
     }

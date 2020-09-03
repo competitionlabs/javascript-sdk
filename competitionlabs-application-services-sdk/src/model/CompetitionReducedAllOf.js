@@ -20,7 +20,7 @@ import ProductReduced from './ProductReduced';
 /**
  * The CompetitionReducedAllOf model module.
  * @module model/CompetitionReducedAllOf
- * @version 1.0.4
+ * @version 1.0.5
  */
 class CompetitionReducedAllOf {
     /**
@@ -64,18 +64,18 @@ class CompetitionReducedAllOf {
     model(){
         var obj = {};
 
-        obj['competitionType'];
-        obj['numberOfRounds'];
-        obj['name'];
-        obj['includeEntrantsWhere'];
-        obj['optinRequiredForEntrants'];
-        obj['status'];
-        obj['statusCode'];
-        obj['products'];
-        obj['scheduledStartDate'];
-        obj['scheduledEndDate'];
-        obj['actualStartDate'];
-        obj['actualEndDate'];
+        obj['competitionType'] = new CompetitionType().model();
+        obj['numberOfRounds'] = null;
+        obj['name'] = null;
+        obj['includeEntrantsWhere'] = new ComplexFilter().model();
+        obj['optinRequiredForEntrants'] = null;
+        obj['status'] = new CompetitionStatus().model();
+        obj['statusCode'] = null;
+        obj['products'] = [new ProductReduced().model()];
+        obj['scheduledStartDate'] = null;
+        obj['scheduledEndDate'] = null;
+        obj['actualStartDate'] = null;
+        obj['actualEndDate'] = null;
 
         return obj;
     }
@@ -89,29 +89,29 @@ class CompetitionReducedAllOf {
             "requiredFields": {}
         };
 
-        obj["fields"]['competitionType'];
-        obj["fields"]['numberOfRounds'];
-        obj["fields"]['name'];
-        obj["fields"]['includeEntrantsWhere'];
-        obj["fields"]['optinRequiredForEntrants'];
-        obj["fields"]['status'];
-        obj["fields"]['statusCode'];
-        obj["fields"]['products'];
-        obj["fields"]['scheduledStartDate'];
-        obj["fields"]['scheduledEndDate'];
-        obj["fields"]['actualStartDate'];
-        obj["fields"]['actualEndDate'];
+        obj["fields"]['competitionType'] = new CompetitionType().modelMap();
+        obj["fields"]['numberOfRounds'] = { "type": 'Number', "system": false };
+        obj["fields"]['name'] = { "type": 'String', "system": false };
+        obj["fields"]['includeEntrantsWhere'] = new ComplexFilter().modelMap();
+        obj["fields"]['optinRequiredForEntrants'] = { "type": 'Boolean', "system": false };
+        obj["fields"]['status'] = new CompetitionStatus().modelMap();
+        obj["fields"]['statusCode'] = { "type": 'Number', "system": false };
+        obj["fields"]['products'] = [new ProductReduced().modelMap()];
+        obj["fields"]['scheduledStartDate'] = { "type": 'Date', "system": false };
+        obj["fields"]['scheduledEndDate'] = { "type": 'Date', "system": false };
+        obj["fields"]['actualStartDate'] = { "type": 'Date', "system": false };
+        obj["fields"]['actualEndDate'] = { "type": 'Date', "system": false };
 
         
-        obj["requiredFields"]['competitionType'];
-        obj["requiredFields"]['numberOfRounds'];
-        obj["requiredFields"]['name'];
-        obj["requiredFields"]['optinRequiredForEntrants'];
-        obj["requiredFields"]['status'];
-        obj["requiredFields"]['statusCode'];
-        obj["requiredFields"]['products'];
-        obj["requiredFields"]['scheduledStartDate'];
-        obj["requiredFields"]['scheduledEndDate'];
+        obj["requiredFields"]['competitionType'] = new CompetitionType().modelMap();
+        obj["requiredFields"]['numberOfRounds'] = { "type": 'Number', "system": false };
+        obj["requiredFields"]['name'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['optinRequiredForEntrants'] = { "type": 'Boolean', "system": false };
+        obj["requiredFields"]['status'] = new CompetitionStatus().modelMap();
+        obj["requiredFields"]['statusCode'] = { "type": 'Number', "system": false };
+        obj["requiredFields"]['products'] = [new ProductReduced().modelMap()];
+        obj["requiredFields"]['scheduledStartDate'] = { "type": 'Date', "system": false };
+        obj["requiredFields"]['scheduledEndDate'] = { "type": 'Date', "system": false };
 
         return obj;
     }

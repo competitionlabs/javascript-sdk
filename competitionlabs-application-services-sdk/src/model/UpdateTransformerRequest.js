@@ -19,7 +19,7 @@ import UpdateTransformerRequestAllOf from './UpdateTransformerRequestAllOf';
 /**
  * The UpdateTransformerRequest model module.
  * @module model/UpdateTransformerRequest
- * @version 1.0.4
+ * @version 1.0.5
  */
 class UpdateTransformerRequest {
     /**
@@ -49,10 +49,10 @@ class UpdateTransformerRequest {
     model(){
         var obj = {};
 
-        obj['id'];
-        obj['name'];
-        obj['source'];
-        obj['sourceLanguage'];
+        obj['id'] = null;
+        obj['name'] = null;
+        obj['source'] = null;
+        obj['sourceLanguage'] = new SourceLanguage().model();
 
         return obj;
     }
@@ -66,13 +66,13 @@ class UpdateTransformerRequest {
             "requiredFields": {}
         };
 
-        obj["fields"]['id'];
-        obj["fields"]['name'];
-        obj["fields"]['source'];
-        obj["fields"]['sourceLanguage'];
+        obj["fields"]['id'] = { "type": 'String', "system": true };
+        obj["fields"]['name'] = { "type": 'String', "system": false };
+        obj["fields"]['source'] = { "type": 'String', "system": false };
+        obj["fields"]['sourceLanguage'] = new SourceLanguage().modelMap();
 
         
-        obj["requiredFields"]['id'];
+        obj["requiredFields"]['id'] = { "type": 'String', "system": true };
 
         return obj;
     }

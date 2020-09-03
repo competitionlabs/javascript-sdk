@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RabbitMqConnectionAllOf model module.
  * @module model/RabbitMqConnectionAllOf
- * @version 1.0.4
+ * @version 1.0.5
  */
 class RabbitMqConnectionAllOf {
     /**
@@ -62,18 +62,18 @@ class RabbitMqConnectionAllOf {
     model(){
         var obj = {};
 
-        obj['name'];
-        obj['uri'];
-        obj['virtualHost'];
-        obj['port'];
-        obj['useSsl'];
-        obj['username'];
-        obj['password'];
-        obj['queueName'];
-        obj['exchange'];
-        obj['routingKey'];
-        obj['lastKnownStatus'];
-        obj['lastKnownStatusCode'];
+        obj['name'] = null;
+        obj['uri'] = null;
+        obj['virtualHost'] = null;
+        obj['port'] = null;
+        obj['useSsl'] = null;
+        obj['username'] = null;
+        obj['password'] = null;
+        obj['queueName'] = null;
+        obj['exchange'] = null;
+        obj['routingKey'] = null;
+        obj['lastKnownStatus'] = null;
+        obj['lastKnownStatusCode'] = null;
 
         return obj;
     }
@@ -87,30 +87,30 @@ class RabbitMqConnectionAllOf {
             "requiredFields": {}
         };
 
-        obj["fields"]['name'];
-        obj["fields"]['uri'];
-        obj["fields"]['virtualHost'];
-        obj["fields"]['port'];
-        obj["fields"]['useSsl'];
-        obj["fields"]['username'];
-        obj["fields"]['password'];
-        obj["fields"]['queueName'];
-        obj["fields"]['exchange'];
-        obj["fields"]['routingKey'];
-        obj["fields"]['lastKnownStatus'];
-        obj["fields"]['lastKnownStatusCode'];
+        obj["fields"]['name'] = { "type": 'String', "system": false };
+        obj["fields"]['uri'] = { "type": 'String', "system": false };
+        obj["fields"]['virtualHost'] = { "type": 'String', "system": false };
+        obj["fields"]['port'] = { "type": 'Number', "system": false };
+        obj["fields"]['useSsl'] = { "type": 'Boolean', "system": false };
+        obj["fields"]['username'] = { "type": 'String', "system": false };
+        obj["fields"]['password'] = { "type": 'String', "system": false };
+        obj["fields"]['queueName'] = { "type": 'String', "system": false };
+        obj["fields"]['exchange'] = { "type": 'String', "system": false };
+        obj["fields"]['routingKey'] = { "type": 'String', "system": false };
+        obj["fields"]['lastKnownStatus'] = { "type": 'String', "system": false };
+        obj["fields"]['lastKnownStatusCode'] = { "type": 'Number', "system": false };
 
         
-        obj["requiredFields"]['name'];
-        obj["requiredFields"]['uri'];
-        obj["requiredFields"]['virtualHost'];
-        obj["requiredFields"]['port'];
-        obj["requiredFields"]['useSsl'];
-        obj["requiredFields"]['username'];
-        obj["requiredFields"]['password'];
-        obj["requiredFields"]['queueName'];
-        obj["requiredFields"]['lastKnownStatus'];
-        obj["requiredFields"]['lastKnownStatusCode'];
+        obj["requiredFields"]['name'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['uri'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['virtualHost'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['port'] = { "type": 'Number', "system": false };
+        obj["requiredFields"]['useSsl'] = { "type": 'Boolean', "system": false };
+        obj["requiredFields"]['username'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['password'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['queueName'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['lastKnownStatus'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['lastKnownStatusCode'] = { "type": 'Number', "system": false };
 
         return obj;
     }

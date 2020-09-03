@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SpaceTokenRequest model module.
  * @module model/SpaceTokenRequest
- * @version 1.0.4
+ * @version 1.0.5
  */
 class SpaceTokenRequest {
     /**
@@ -44,8 +44,8 @@ class SpaceTokenRequest {
     model(){
         var obj = {};
 
-        obj['userToken'];
-        obj['spaceName'];
+        obj['userToken'] = null;
+        obj['spaceName'] = null;
 
         return obj;
     }
@@ -59,11 +59,11 @@ class SpaceTokenRequest {
             "requiredFields": {}
         };
 
-        obj["fields"]['userToken'];
-        obj["fields"]['spaceName'];
+        obj["fields"]['userToken'] = { "type": 'String', "system": false };
+        obj["fields"]['spaceName'] = { "type": 'String', "system": true };
 
         
-        obj["requiredFields"]['spaceName'];
+        obj["requiredFields"]['spaceName'] = { "type": 'String', "system": true };
 
         return obj;
     }

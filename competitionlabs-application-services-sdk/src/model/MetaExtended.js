@@ -18,7 +18,7 @@ import MetaInfo from './MetaInfo';
 /**
  * The MetaExtended model module.
  * @module model/MetaExtended
- * @version 1.0.4
+ * @version 1.0.5
  */
 class MetaExtended {
     /**
@@ -56,11 +56,11 @@ class MetaExtended {
     model(){
         var obj = {};
 
-        obj['objectType'];
-        obj['resultCount'];
-        obj['errorCount'];
-        obj['skip'];
-        obj['limit'];
+        obj['objectType'] = null;
+        obj['resultCount'] = null;
+        obj['errorCount'] = null;
+        obj['skip'] = null;
+        obj['limit'] = null;
 
         return obj;
     }
@@ -74,18 +74,18 @@ class MetaExtended {
             "requiredFields": {}
         };
 
-        obj["fields"]['objectType'];
-        obj["fields"]['resultCount'];
-        obj["fields"]['errorCount'];
-        obj["fields"]['skip'];
-        obj["fields"]['limit'];
+        obj["fields"]['objectType'] = { "type": 'String', "system": false };
+        obj["fields"]['resultCount'] = { "type": 'Number', "system": false };
+        obj["fields"]['errorCount'] = { "type": 'Number', "system": false };
+        obj["fields"]['skip'] = { "type": 'Number', "system": false };
+        obj["fields"]['limit'] = { "type": 'Number', "system": false };
 
         
-        obj["requiredFields"]['objectType'];
-        obj["requiredFields"]['resultCount'];
-        obj["requiredFields"]['errorCount'];
-        obj["requiredFields"]['skip'];
-        obj["requiredFields"]['limit'];
+        obj["requiredFields"]['objectType'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['resultCount'] = { "type": 'Number', "system": false };
+        obj["requiredFields"]['errorCount'] = { "type": 'Number', "system": false };
+        obj["requiredFields"]['skip'] = { "type": 'Number', "system": false };
+        obj["requiredFields"]['limit'] = { "type": 'Number', "system": false };
 
         return obj;
     }

@@ -17,7 +17,7 @@ import ScheduleType from './ScheduleType';
 /**
  * The Scheduling model module.
  * @module model/Scheduling
- * @version 1.0.4
+ * @version 1.0.5
  */
 class Scheduling {
     /**
@@ -51,12 +51,12 @@ class Scheduling {
     model(){
         var obj = {};
 
-        obj['scheduleType'];
-        obj['scheduleOccurrencesLimit'];
-        obj['every'];
-        obj['startDate'];
-        obj['endDate'];
-        obj['onlyAggregateOnActiveDays'];
+        obj['scheduleType'] = new ScheduleType().model();
+        obj['scheduleOccurrencesLimit'] = null;
+        obj['every'] = [null];
+        obj['startDate'] = null;
+        obj['endDate'] = null;
+        obj['onlyAggregateOnActiveDays'] = null;
 
         return obj;
     }
@@ -70,18 +70,18 @@ class Scheduling {
             "requiredFields": {}
         };
 
-        obj["fields"]['scheduleType'];
-        obj["fields"]['scheduleOccurrencesLimit'];
-        obj["fields"]['every'];
-        obj["fields"]['startDate'];
-        obj["fields"]['endDate'];
-        obj["fields"]['onlyAggregateOnActiveDays'];
+        obj["fields"]['scheduleType'] = new ScheduleType().modelMap();
+        obj["fields"]['scheduleOccurrencesLimit'] = { "type": 'Number', "system": false };
+        obj["fields"]['every'] = [{ "type": 'Number', "system": false }];
+        obj["fields"]['startDate'] = { "type": 'Date', "system": false };
+        obj["fields"]['endDate'] = { "type": 'Date', "system": false };
+        obj["fields"]['onlyAggregateOnActiveDays'] = { "type": 'Boolean', "system": false };
 
         
-        obj["requiredFields"]['scheduleType'];
-        obj["requiredFields"]['scheduleOccurrencesLimit'];
-        obj["requiredFields"]['every'];
-        obj["requiredFields"]['startDate'];
+        obj["requiredFields"]['scheduleType'] = new ScheduleType().modelMap();
+        obj["requiredFields"]['scheduleOccurrencesLimit'] = { "type": 'Number', "system": false };
+        obj["requiredFields"]['every'] = [{ "type": 'Number', "system": false }];
+        obj["requiredFields"]['startDate'] = { "type": 'Date', "system": false };
 
         return obj;
     }

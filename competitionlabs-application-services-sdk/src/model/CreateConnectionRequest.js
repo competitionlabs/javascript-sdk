@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateConnectionRequest model module.
  * @module model/CreateConnectionRequest
- * @version 1.0.4
+ * @version 1.0.5
  */
 class CreateConnectionRequest {
     /**
@@ -44,7 +44,7 @@ class CreateConnectionRequest {
     model(){
         var obj = {};
 
-        obj['objectType'];
+        obj['objectType'] = null;
 
         return obj;
     }
@@ -58,10 +58,10 @@ class CreateConnectionRequest {
             "requiredFields": {}
         };
 
-        obj["fields"]['objectType'];
+        obj["fields"]['objectType'] = { "type": 'String', "system": false };
 
         
-        obj["requiredFields"]['objectType'];
+        obj["requiredFields"]['objectType'] = { "type": 'String', "system": false };
 
         return obj;
     }

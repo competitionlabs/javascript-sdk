@@ -17,7 +17,7 @@ import AchievementLiveStatus from './AchievementLiveStatus';
 /**
  * The AchievementReducedAllOf model module.
  * @module model/AchievementReducedAllOf
- * @version 1.0.4
+ * @version 1.0.5
  */
 class AchievementReducedAllOf {
     /**
@@ -47,10 +47,10 @@ class AchievementReducedAllOf {
     model(){
         var obj = {};
 
-        obj['name'];
-        obj['achievementLiveStatus'];
-        obj['category'];
-        obj['memberGroups'];
+        obj['name'] = null;
+        obj['achievementLiveStatus'] = new AchievementLiveStatus().model();
+        obj['category'] = [null];
+        obj['memberGroups'] = [null];
 
         return obj;
     }
@@ -64,14 +64,14 @@ class AchievementReducedAllOf {
             "requiredFields": {}
         };
 
-        obj["fields"]['name'];
-        obj["fields"]['achievementLiveStatus'];
-        obj["fields"]['category'];
-        obj["fields"]['memberGroups'];
+        obj["fields"]['name'] = { "type": 'String', "system": false };
+        obj["fields"]['achievementLiveStatus'] = new AchievementLiveStatus().modelMap();
+        obj["fields"]['category'] = [{ "type": 'String', "system": false }];
+        obj["fields"]['memberGroups'] = [{ "type": 'String', "system": false }];
 
         
-        obj["requiredFields"]['name'];
-        obj["requiredFields"]['achievementLiveStatus'];
+        obj["requiredFields"]['name'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['achievementLiveStatus'] = new AchievementLiveStatus().modelMap();
 
         return obj;
     }

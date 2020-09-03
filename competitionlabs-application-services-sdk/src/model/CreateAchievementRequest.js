@@ -23,7 +23,7 @@ import Translation from './Translation';
 /**
  * The CreateAchievementRequest model module.
  * @module model/CreateAchievementRequest
- * @version 1.0.4
+ * @version 1.0.5
  */
 class CreateAchievementRequest {
     /**
@@ -61,20 +61,20 @@ class CreateAchievementRequest {
     model(){
         var obj = {};
 
-        obj['name'];
-        obj['description'];
-        obj['isHidden'];
-        obj['icon'];
-        obj['ruleSets'];
-        obj['dependantOn'];
-        obj['scheduling'];
-        obj['achievementLiveStatus'];
-        obj['category'];
-        obj['memberGroups'];
-        obj['metadata'];
-        obj['translations'];
-        obj['rewards'];
-        obj['constraints'];
+        obj['name'] = null;
+        obj['description'] = null;
+        obj['isHidden'] = null;
+        obj['icon'] = null;
+        obj['ruleSets'] = [new RuleSet().model()];
+        obj['dependantOn'] = new DependantOn().model();
+        obj['scheduling'] = new Scheduling().model();
+        obj['achievementLiveStatus'] = new AchievementLiveStatus().model();
+        obj['category'] = [null];
+        obj['memberGroups'] = [null];
+        obj['metadata'] = [new Metadata().model()];
+        obj['translations'] = [new Translation().model()];
+        obj['rewards'] = [new CreateRewardRequest().model()];
+        obj['constraints'] = [null];
 
         return obj;
     }
@@ -88,28 +88,28 @@ class CreateAchievementRequest {
             "requiredFields": {}
         };
 
-        obj["fields"]['name'];
-        obj["fields"]['description'];
-        obj["fields"]['isHidden'];
-        obj["fields"]['icon'];
-        obj["fields"]['ruleSets'];
-        obj["fields"]['dependantOn'];
-        obj["fields"]['scheduling'];
-        obj["fields"]['achievementLiveStatus'];
-        obj["fields"]['category'];
-        obj["fields"]['memberGroups'];
-        obj["fields"]['metadata'];
-        obj["fields"]['translations'];
-        obj["fields"]['rewards'];
-        obj["fields"]['constraints'];
+        obj["fields"]['name'] = { "type": 'String', "system": false };
+        obj["fields"]['description'] = { "type": 'String', "system": false };
+        obj["fields"]['isHidden'] = { "type": 'Boolean', "system": false };
+        obj["fields"]['icon'] = { "type": 'String', "system": false };
+        obj["fields"]['ruleSets'] = [new RuleSet().modelMap()];
+        obj["fields"]['dependantOn'] = new DependantOn().modelMap();
+        obj["fields"]['scheduling'] = new Scheduling().modelMap();
+        obj["fields"]['achievementLiveStatus'] = new AchievementLiveStatus().modelMap();
+        obj["fields"]['category'] = [{ "type": 'String', "system": false }];
+        obj["fields"]['memberGroups'] = [{ "type": 'String', "system": false }];
+        obj["fields"]['metadata'] = [new Metadata().modelMap()];
+        obj["fields"]['translations'] = [new Translation().modelMap()];
+        obj["fields"]['rewards'] = [new CreateRewardRequest().modelMap()];
+        obj["fields"]['constraints'] = [{ "type": 'String', "system": false }];
 
         
-        obj["requiredFields"]['name'];
-        obj["requiredFields"]['isHidden'];
-        obj["requiredFields"]['icon'];
-        obj["requiredFields"]['ruleSets'];
-        obj["requiredFields"]['scheduling'];
-        obj["requiredFields"]['achievementLiveStatus'];
+        obj["requiredFields"]['name'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['isHidden'] = { "type": 'Boolean', "system": false };
+        obj["requiredFields"]['icon'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['ruleSets'] = [new RuleSet().modelMap()];
+        obj["requiredFields"]['scheduling'] = new Scheduling().modelMap();
+        obj["requiredFields"]['achievementLiveStatus'] = new AchievementLiveStatus().modelMap();
 
         return obj;
     }

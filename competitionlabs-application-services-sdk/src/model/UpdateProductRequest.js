@@ -21,7 +21,7 @@ import UpdateProductRequestAllOf from './UpdateProductRequestAllOf';
 /**
  * The UpdateProductRequest model module.
  * @module model/UpdateProductRequest
- * @version 1.0.4
+ * @version 1.0.5
  */
 class UpdateProductRequest {
     /**
@@ -51,17 +51,17 @@ class UpdateProductRequest {
     model(){
         var obj = {};
 
-        obj['id'];
-        obj['name'];
-        obj['productType'];
-        obj['productTypeName'];
-        obj['description'];
-        obj['adjustmentFactor'];
-        obj['productRefId'];
-        obj['actionTypeAdjustmentFactors'];
-        obj['productGroups'];
-        obj['metadata'];
-        obj['translations'];
+        obj['id'] = null;
+        obj['name'] = null;
+        obj['productType'] = null;
+        obj['productTypeName'] = null;
+        obj['description'] = null;
+        obj['adjustmentFactor'] = null;
+        obj['productRefId'] = null;
+        obj['actionTypeAdjustmentFactors'] = [new ActionTypeAdjustmentFactor().model()];
+        obj['productGroups'] = [null];
+        obj['metadata'] = [new Metadata().model()];
+        obj['translations'] = [new Translation().model()];
 
         return obj;
     }
@@ -75,20 +75,20 @@ class UpdateProductRequest {
             "requiredFields": {}
         };
 
-        obj["fields"]['id'];
-        obj["fields"]['name'];
-        obj["fields"]['productType'];
-        obj["fields"]['productTypeName'];
-        obj["fields"]['description'];
-        obj["fields"]['adjustmentFactor'];
-        obj["fields"]['productRefId'];
-        obj["fields"]['actionTypeAdjustmentFactors'];
-        obj["fields"]['productGroups'];
-        obj["fields"]['metadata'];
-        obj["fields"]['translations'];
+        obj["fields"]['id'] = { "type": 'String', "system": true };
+        obj["fields"]['name'] = { "type": 'String', "system": false };
+        obj["fields"]['productType'] = { "type": 'String', "system": false };
+        obj["fields"]['productTypeName'] = { "type": 'String', "system": false };
+        obj["fields"]['description'] = { "type": 'String', "system": false };
+        obj["fields"]['adjustmentFactor'] = { "type": 'Number', "system": false };
+        obj["fields"]['productRefId'] = { "type": 'String', "system": false };
+        obj["fields"]['actionTypeAdjustmentFactors'] = [new ActionTypeAdjustmentFactor().modelMap()];
+        obj["fields"]['productGroups'] = [{ "type": 'String', "system": false }];
+        obj["fields"]['metadata'] = [new Metadata().modelMap()];
+        obj["fields"]['translations'] = [new Translation().modelMap()];
 
         
-        obj["requiredFields"]['id'];
+        obj["requiredFields"]['id'] = { "type": 'String', "system": true };
 
         return obj;
     }

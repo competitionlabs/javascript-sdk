@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ProductReducedAllOf model module.
  * @module model/ProductReducedAllOf
- * @version 1.0.4
+ * @version 1.0.5
  */
 class ProductReducedAllOf {
     /**
@@ -46,8 +46,8 @@ class ProductReducedAllOf {
     model(){
         var obj = {};
 
-        obj['name'];
-        obj['productRefId'];
+        obj['name'] = null;
+        obj['productRefId'] = null;
 
         return obj;
     }
@@ -61,12 +61,12 @@ class ProductReducedAllOf {
             "requiredFields": {}
         };
 
-        obj["fields"]['name'];
-        obj["fields"]['productRefId'];
+        obj["fields"]['name'] = { "type": 'String', "system": false };
+        obj["fields"]['productRefId'] = { "type": 'String', "system": false };
 
         
-        obj["requiredFields"]['name'];
-        obj["requiredFields"]['productRefId'];
+        obj["requiredFields"]['name'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['productRefId'] = { "type": 'String', "system": false };
 
         return obj;
     }

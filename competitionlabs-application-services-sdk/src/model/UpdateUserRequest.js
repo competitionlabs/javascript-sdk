@@ -19,7 +19,7 @@ import UpdateUserRequestAllOf from './UpdateUserRequestAllOf';
 /**
  * The UpdateUserRequest model module.
  * @module model/UpdateUserRequest
- * @version 1.0.4
+ * @version 1.0.5
  */
 class UpdateUserRequest {
     /**
@@ -49,11 +49,11 @@ class UpdateUserRequest {
     model(){
         var obj = {};
 
-        obj['id'];
-        obj['firstName'];
-        obj['lastName'];
-        obj['email'];
-        obj['contact'];
+        obj['id'] = null;
+        obj['firstName'] = null;
+        obj['lastName'] = null;
+        obj['email'] = null;
+        obj['contact'] = new Contact().model();
 
         return obj;
     }
@@ -67,14 +67,14 @@ class UpdateUserRequest {
             "requiredFields": {}
         };
 
-        obj["fields"]['id'];
-        obj["fields"]['firstName'];
-        obj["fields"]['lastName'];
-        obj["fields"]['email'];
-        obj["fields"]['contact'];
+        obj["fields"]['id'] = { "type": 'String', "system": true };
+        obj["fields"]['firstName'] = { "type": 'String', "system": false };
+        obj["fields"]['lastName'] = { "type": 'String', "system": false };
+        obj["fields"]['email'] = { "type": 'String', "system": false };
+        obj["fields"]['contact'] = new Contact().modelMap();
 
         
-        obj["requiredFields"]['id'];
+        obj["requiredFields"]['id'] = { "type": 'String', "system": true };
 
         return obj;
     }

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TwoFactorAuthQrCode model module.
  * @module model/TwoFactorAuthQrCode
- * @version 1.0.4
+ * @version 1.0.5
  */
 class TwoFactorAuthQrCode {
     /**
@@ -46,8 +46,8 @@ class TwoFactorAuthQrCode {
     model(){
         var obj = {};
 
-        obj['barcodeUrl'];
-        obj['secretKey'];
+        obj['barcodeUrl'] = null;
+        obj['secretKey'] = null;
 
         return obj;
     }
@@ -61,12 +61,12 @@ class TwoFactorAuthQrCode {
             "requiredFields": {}
         };
 
-        obj["fields"]['barcodeUrl'];
-        obj["fields"]['secretKey'];
+        obj["fields"]['barcodeUrl'] = { "type": 'String', "system": false };
+        obj["fields"]['secretKey'] = { "type": 'String', "system": false };
 
         
-        obj["requiredFields"]['barcodeUrl'];
-        obj["requiredFields"]['secretKey'];
+        obj["requiredFields"]['barcodeUrl'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['secretKey'] = { "type": 'String', "system": false };
 
         return obj;
     }

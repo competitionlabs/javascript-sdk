@@ -22,7 +22,7 @@ import UpdateTransformerRequest from '../model/UpdateTransformerRequest';
 /**
 * Transformers service.
 * @module api/TransformersApi
-* @version 1.0.4
+* @version 1.0.5
 */
 export default class TransformersApi {
 

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Languages model module.
  * @module model/Languages
- * @version 1.0.4
+ * @version 1.0.5
  */
 class Languages {
     /**
@@ -46,8 +46,8 @@ class Languages {
     model(){
         var obj = {};
 
-        obj['key'];
-        obj['name'];
+        obj['key'] = null;
+        obj['name'] = null;
 
         return obj;
     }
@@ -61,12 +61,12 @@ class Languages {
             "requiredFields": {}
         };
 
-        obj["fields"]['key'];
-        obj["fields"]['name'];
+        obj["fields"]['key'] = { "type": 'String', "system": false };
+        obj["fields"]['name'] = { "type": 'String', "system": false };
 
         
-        obj["requiredFields"]['key'];
-        obj["requiredFields"]['name'];
+        obj["requiredFields"]['key'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['name'] = { "type": 'String', "system": false };
 
         return obj;
     }

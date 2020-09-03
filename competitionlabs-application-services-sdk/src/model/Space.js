@@ -18,7 +18,7 @@ import SpaceAllOf from './SpaceAllOf';
 /**
  * The Space model module.
  * @module model/Space
- * @version 1.0.4
+ * @version 1.0.5
  */
 class Space {
     /**
@@ -54,11 +54,11 @@ class Space {
     model(){
         var obj = {};
 
-        obj['id'];
-        obj['spaceName'];
-        obj['created'];
-        obj['accountType'];
-        obj['masterSpace'];
+        obj['id'] = null;
+        obj['spaceName'] = null;
+        obj['created'] = null;
+        obj['accountType'] = null;
+        obj['masterSpace'] = null;
 
         return obj;
     }
@@ -72,17 +72,17 @@ class Space {
             "requiredFields": {}
         };
 
-        obj["fields"]['id'];
-        obj["fields"]['spaceName'];
-        obj["fields"]['created'];
-        obj["fields"]['accountType'];
-        obj["fields"]['masterSpace'];
+        obj["fields"]['id'] = { "type": 'String', "system": true };
+        obj["fields"]['spaceName'] = { "type": 'String', "system": true };
+        obj["fields"]['created'] = { "type": 'Date', "system": true };
+        obj["fields"]['accountType'] = { "type": 'String', "system": false };
+        obj["fields"]['masterSpace'] = { "type": 'String', "system": false };
 
         
-        obj["requiredFields"]['id'];
-        obj["requiredFields"]['spaceName'];
-        obj["requiredFields"]['created'];
-        obj["requiredFields"]['accountType'];
+        obj["requiredFields"]['id'] = { "type": 'String', "system": true };
+        obj["requiredFields"]['spaceName'] = { "type": 'String', "system": true };
+        obj["requiredFields"]['created'] = { "type": 'Date', "system": true };
+        obj["requiredFields"]['accountType'] = { "type": 'String', "system": false };
 
         return obj;
     }

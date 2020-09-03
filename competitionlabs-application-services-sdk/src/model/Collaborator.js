@@ -18,7 +18,7 @@ import ModelDefault from './ModelDefault';
 /**
  * The Collaborator model module.
  * @module model/Collaborator
- * @version 1.0.4
+ * @version 1.0.5
  */
 class Collaborator {
     /**
@@ -56,13 +56,13 @@ class Collaborator {
     model(){
         var obj = {};
 
-        obj['id'];
-        obj['spaceName'];
-        obj['created'];
-        obj['name'];
-        obj['surname'];
-        obj['email'];
-        obj['role'];
+        obj['id'] = null;
+        obj['spaceName'] = null;
+        obj['created'] = null;
+        obj['name'] = null;
+        obj['surname'] = null;
+        obj['email'] = null;
+        obj['role'] = null;
 
         return obj;
     }
@@ -76,20 +76,20 @@ class Collaborator {
             "requiredFields": {}
         };
 
-        obj["fields"]['id'];
-        obj["fields"]['spaceName'];
-        obj["fields"]['created'];
-        obj["fields"]['name'];
-        obj["fields"]['surname'];
-        obj["fields"]['email'];
-        obj["fields"]['role'];
+        obj["fields"]['id'] = { "type": 'String', "system": true };
+        obj["fields"]['spaceName'] = { "type": 'String', "system": true };
+        obj["fields"]['created'] = { "type": 'Date', "system": true };
+        obj["fields"]['name'] = { "type": 'String', "system": false };
+        obj["fields"]['surname'] = { "type": 'String', "system": false };
+        obj["fields"]['email'] = { "type": 'String', "system": false };
+        obj["fields"]['role'] = { "type": 'String', "system": false };
 
         
-        obj["requiredFields"]['id'];
-        obj["requiredFields"]['spaceName'];
-        obj["requiredFields"]['created'];
-        obj["requiredFields"]['email'];
-        obj["requiredFields"]['role'];
+        obj["requiredFields"]['id'] = { "type": 'String', "system": true };
+        obj["requiredFields"]['spaceName'] = { "type": 'String', "system": true };
+        obj["requiredFields"]['created'] = { "type": 'Date', "system": true };
+        obj["requiredFields"]['email'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['role'] = { "type": 'String', "system": false };
 
         return obj;
     }

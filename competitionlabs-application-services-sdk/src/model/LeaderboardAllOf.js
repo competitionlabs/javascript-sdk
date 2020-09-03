@@ -17,7 +17,7 @@ import Leaderboard from './Leaderboard';
 /**
  * The LeaderboardAllOf model module.
  * @module model/LeaderboardAllOf
- * @version 1.0.4
+ * @version 1.0.5
  */
 class LeaderboardAllOf {
     /**
@@ -57,14 +57,14 @@ class LeaderboardAllOf {
     model(){
         var obj = {};
 
-        obj['memberId'];
-        obj['points'];
-        obj['rank'];
-        obj['memberRefId'];
-        obj['name'];
-        obj['change'];
-        obj['goalReached'];
-        obj['timestamp'];
+        obj['memberId'] = null;
+        obj['points'] = null;
+        obj['rank'] = null;
+        obj['memberRefId'] = null;
+        obj['name'] = null;
+        obj['change'] = [new Leaderboard().model()];
+        obj['goalReached'] = null;
+        obj['timestamp'] = null;
 
         return obj;
     }
@@ -78,23 +78,23 @@ class LeaderboardAllOf {
             "requiredFields": {}
         };
 
-        obj["fields"]['memberId'];
-        obj["fields"]['points'];
-        obj["fields"]['rank'];
-        obj["fields"]['memberRefId'];
-        obj["fields"]['name'];
-        obj["fields"]['change'];
-        obj["fields"]['goalReached'];
-        obj["fields"]['timestamp'];
+        obj["fields"]['memberId'] = { "type": 'String', "system": false };
+        obj["fields"]['points'] = { "type": 'Number', "system": false };
+        obj["fields"]['rank'] = { "type": 'Number', "system": false };
+        obj["fields"]['memberRefId'] = { "type": 'String', "system": false };
+        obj["fields"]['name'] = { "type": 'String', "system": false };
+        obj["fields"]['change'] = [new Leaderboard().modelMap()];
+        obj["fields"]['goalReached'] = { "type": 'Boolean', "system": false };
+        obj["fields"]['timestamp'] = { "type": 'Date', "system": false };
 
         
-        obj["requiredFields"]['memberId'];
-        obj["requiredFields"]['points'];
-        obj["requiredFields"]['rank'];
-        obj["requiredFields"]['memberRefId'];
-        obj["requiredFields"]['name'];
-        obj["requiredFields"]['goalReached'];
-        obj["requiredFields"]['timestamp'];
+        obj["requiredFields"]['memberId'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['points'] = { "type": 'Number', "system": false };
+        obj["requiredFields"]['rank'] = { "type": 'Number', "system": false };
+        obj["requiredFields"]['memberRefId'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['name'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['goalReached'] = { "type": 'Boolean', "system": false };
+        obj["requiredFields"]['timestamp'] = { "type": 'Date', "system": false };
 
         return obj;
     }

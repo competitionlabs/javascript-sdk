@@ -19,7 +19,7 @@ import RuleDescriptorFact from './RuleDescriptorFact';
 /**
  * The RuleDescriptorAction model module.
  * @module model/RuleDescriptorAction
- * @version 1.0.4
+ * @version 1.0.5
  */
 class RuleDescriptorAction {
     /**
@@ -53,13 +53,13 @@ class RuleDescriptorAction {
     model(){
         var obj = {};
 
-        obj['constraints'];
-        obj['name'];
-        obj['description'];
-        obj['matchCondition'];
-        obj['operatability'];
-        obj['onRuleSetMatchTriggers'];
-        obj['facts'];
+        obj['constraints'] = [null];
+        obj['name'] = null;
+        obj['description'] = null;
+        obj['matchCondition'] = null;
+        obj['operatability'] = new MatchCondition().model();
+        obj['onRuleSetMatchTriggers'] = [new OnRuleSetMatchTrigger().model()];
+        obj['facts'] = [new RuleDescriptorFact().model()];
 
         return obj;
     }
@@ -73,19 +73,19 @@ class RuleDescriptorAction {
             "requiredFields": {}
         };
 
-        obj["fields"]['constraints'];
-        obj["fields"]['name'];
-        obj["fields"]['description'];
-        obj["fields"]['matchCondition'];
-        obj["fields"]['operatability'];
-        obj["fields"]['onRuleSetMatchTriggers'];
-        obj["fields"]['facts'];
+        obj["fields"]['constraints'] = [{ "type": 'String', "system": false }];
+        obj["fields"]['name'] = { "type": 'String', "system": false };
+        obj["fields"]['description'] = { "type": 'String', "system": false };
+        obj["fields"]['matchCondition'] = { "type": 'String', "system": false };
+        obj["fields"]['operatability'] = new MatchCondition().modelMap();
+        obj["fields"]['onRuleSetMatchTriggers'] = [new OnRuleSetMatchTrigger().modelMap()];
+        obj["fields"]['facts'] = [new RuleDescriptorFact().modelMap()];
 
         
-        obj["requiredFields"]['constraints'];
-        obj["requiredFields"]['name'];
-        obj["requiredFields"]['operatability'];
-        obj["requiredFields"]['facts'];
+        obj["requiredFields"]['constraints'] = [{ "type": 'String', "system": false }];
+        obj["requiredFields"]['name'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['operatability'] = new MatchCondition().modelMap();
+        obj["requiredFields"]['facts'] = [new RuleDescriptorFact().modelMap()];
 
         return obj;
     }

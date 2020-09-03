@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The OnRuleSetMatchTrigger model module.
  * @module model/OnRuleSetMatchTrigger
- * @version 1.0.4
+ * @version 1.0.5
  */
 class OnRuleSetMatchTrigger {
     /**
@@ -50,11 +50,11 @@ class OnRuleSetMatchTrigger {
     model(){
         var obj = {};
 
-        obj['constraints'];
-        obj['key'];
-        obj['name'];
-        obj['description'];
-        obj['inputValueType'];
+        obj['constraints'] = [null];
+        obj['key'] = null;
+        obj['name'] = null;
+        obj['description'] = null;
+        obj['inputValueType'] = null;
 
         return obj;
     }
@@ -68,17 +68,17 @@ class OnRuleSetMatchTrigger {
             "requiredFields": {}
         };
 
-        obj["fields"]['constraints'];
-        obj["fields"]['key'];
-        obj["fields"]['name'];
-        obj["fields"]['description'];
-        obj["fields"]['inputValueType'];
+        obj["fields"]['constraints'] = [{ "type": 'String', "system": false }];
+        obj["fields"]['key'] = { "type": 'String', "system": false };
+        obj["fields"]['name'] = { "type": 'String', "system": false };
+        obj["fields"]['description'] = { "type": 'String', "system": false };
+        obj["fields"]['inputValueType'] = { "type": 'String', "system": false };
 
         
-        obj["requiredFields"]['constraints'];
-        obj["requiredFields"]['key'];
-        obj["requiredFields"]['name'];
-        obj["requiredFields"]['inputValueType'];
+        obj["requiredFields"]['constraints'] = [{ "type": 'String', "system": false }];
+        obj["requiredFields"]['key'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['name'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['inputValueType'] = { "type": 'String', "system": false };
 
         return obj;
     }

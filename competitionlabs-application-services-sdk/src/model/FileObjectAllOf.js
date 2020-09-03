@@ -17,7 +17,7 @@ import Metadata from './Metadata';
 /**
  * The FileObjectAllOf model module.
  * @module model/FileObjectAllOf
- * @version 1.0.4
+ * @version 1.0.5
  */
 class FileObjectAllOf {
     /**
@@ -53,16 +53,16 @@ class FileObjectAllOf {
     model(){
         var obj = {};
 
-        obj['tags'];
-        obj['repositoryId'];
-        obj['fileName'];
-        obj['mimeType'];
-        obj['extension'];
-        obj['path'];
-        obj['parentFolderPath'];
-        obj['uri'];
-        obj['size'];
-        obj['metadata'];
+        obj['tags'] = [null];
+        obj['repositoryId'] = null;
+        obj['fileName'] = null;
+        obj['mimeType'] = null;
+        obj['extension'] = null;
+        obj['path'] = null;
+        obj['parentFolderPath'] = null;
+        obj['uri'] = null;
+        obj['size'] = null;
+        obj['metadata'] = [new Metadata().model()];
 
         return obj;
     }
@@ -76,23 +76,23 @@ class FileObjectAllOf {
             "requiredFields": {}
         };
 
-        obj["fields"]['tags'];
-        obj["fields"]['repositoryId'];
-        obj["fields"]['fileName'];
-        obj["fields"]['mimeType'];
-        obj["fields"]['extension'];
-        obj["fields"]['path'];
-        obj["fields"]['parentFolderPath'];
-        obj["fields"]['uri'];
-        obj["fields"]['size'];
-        obj["fields"]['metadata'];
+        obj["fields"]['tags'] = [{ "type": 'String', "system": false }];
+        obj["fields"]['repositoryId'] = { "type": 'String', "system": false };
+        obj["fields"]['fileName'] = { "type": 'String', "system": false };
+        obj["fields"]['mimeType'] = { "type": 'String', "system": false };
+        obj["fields"]['extension'] = { "type": 'String', "system": false };
+        obj["fields"]['path'] = { "type": 'String', "system": false };
+        obj["fields"]['parentFolderPath'] = { "type": 'String', "system": false };
+        obj["fields"]['uri'] = { "type": 'String', "system": false };
+        obj["fields"]['size'] = { "type": 'Number', "system": false };
+        obj["fields"]['metadata'] = [new Metadata().modelMap()];
 
         
-        obj["requiredFields"]['repositoryId'];
-        obj["requiredFields"]['fileName'];
-        obj["requiredFields"]['mimeType'];
-        obj["requiredFields"]['path'];
-        obj["requiredFields"]['parentFolderPath'];
+        obj["requiredFields"]['repositoryId'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['fileName'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['mimeType'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['path'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['parentFolderPath'] = { "type": 'String', "system": false };
 
         return obj;
     }

@@ -19,7 +19,7 @@ import MetaExtended from './MetaExtended';
 /**
  * The CompetitionResponse model module.
  * @module model/CompetitionResponse
- * @version 1.0.4
+ * @version 1.0.5
  */
 class CompetitionResponse {
     /**
@@ -47,9 +47,9 @@ class CompetitionResponse {
     model(){
         var obj = {};
 
-        obj['meta'];
-        obj['results'];
-        obj['errors'];
+        obj['meta'] = new MetaExtended().model();
+        obj['results'] = [new Competition().model()];
+        obj['errors'] = [new Error().model()];
 
         return obj;
     }
@@ -63,12 +63,12 @@ class CompetitionResponse {
             "requiredFields": {}
         };
 
-        obj["fields"]['meta'];
-        obj["fields"]['results'];
-        obj["fields"]['errors'];
+        obj["fields"]['meta'] = new MetaExtended().modelMap();
+        obj["fields"]['results'] = [new Competition().modelMap()];
+        obj["fields"]['errors'] = [new Error().modelMap()];
 
         
-        obj["requiredFields"]['meta'];
+        obj["requiredFields"]['meta'] = new MetaExtended().modelMap();
 
         return obj;
     }

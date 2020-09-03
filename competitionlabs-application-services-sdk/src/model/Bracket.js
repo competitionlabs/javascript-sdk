@@ -17,7 +17,7 @@ import ContestReduced from './ContestReduced';
 /**
  * The Bracket model module.
  * @module model/Bracket
- * @version 1.0.4
+ * @version 1.0.5
  */
 class Bracket {
     /**
@@ -47,8 +47,8 @@ class Bracket {
     model(){
         var obj = {};
 
-        obj['rounds'];
-        obj['contests'];
+        obj['rounds'] = null;
+        obj['contests'] = [new ContestReduced().model()];
 
         return obj;
     }
@@ -62,12 +62,12 @@ class Bracket {
             "requiredFields": {}
         };
 
-        obj["fields"]['rounds'];
-        obj["fields"]['contests'];
+        obj["fields"]['rounds'] = { "type": 'Number', "system": false };
+        obj["fields"]['contests'] = [new ContestReduced().modelMap()];
 
         
-        obj["requiredFields"]['rounds'];
-        obj["requiredFields"]['contests'];
+        obj["requiredFields"]['rounds'] = { "type": 'Number', "system": false };
+        obj["requiredFields"]['contests'] = [new ContestReduced().modelMap()];
 
         return obj;
     }

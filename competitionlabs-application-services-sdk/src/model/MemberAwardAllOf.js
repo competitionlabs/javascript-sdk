@@ -17,7 +17,7 @@ import EntityType from './EntityType';
 /**
  * The MemberAwardAllOf model module.
  * @module model/MemberAwardAllOf
- * @version 1.0.4
+ * @version 1.0.5
  */
 class MemberAwardAllOf {
     /**
@@ -57,17 +57,17 @@ class MemberAwardAllOf {
     model(){
         var obj = {};
 
-        obj['rewardId'];
-        obj['rewardTypeKey'];
-        obj['rewardTypeId'];
-        obj['rewardValue'];
-        obj['memberAcknowledgmentRequired'];
-        obj['claimed'];
-        obj['delay'];
-        obj['entityType'];
-        obj['entityId'];
-        obj['pointInTime'];
-        obj['period'];
+        obj['rewardId'] = null;
+        obj['rewardTypeKey'] = null;
+        obj['rewardTypeId'] = null;
+        obj['rewardValue'] = null;
+        obj['memberAcknowledgmentRequired'] = null;
+        obj['claimed'] = null;
+        obj['delay'] = null;
+        obj['entityType'] = new EntityType().model();
+        obj['entityId'] = null;
+        obj['pointInTime'] = null;
+        obj['period'] = null;
 
         return obj;
     }
@@ -81,26 +81,26 @@ class MemberAwardAllOf {
             "requiredFields": {}
         };
 
-        obj["fields"]['rewardId'];
-        obj["fields"]['rewardTypeKey'];
-        obj["fields"]['rewardTypeId'];
-        obj["fields"]['rewardValue'];
-        obj["fields"]['memberAcknowledgmentRequired'];
-        obj["fields"]['claimed'];
-        obj["fields"]['delay'];
-        obj["fields"]['entityType'];
-        obj["fields"]['entityId'];
-        obj["fields"]['pointInTime'];
-        obj["fields"]['period'];
+        obj["fields"]['rewardId'] = { "type": 'String', "system": false };
+        obj["fields"]['rewardTypeKey'] = { "type": 'String', "system": false };
+        obj["fields"]['rewardTypeId'] = { "type": 'String', "system": false };
+        obj["fields"]['rewardValue'] = { "type": 'Number', "system": false };
+        obj["fields"]['memberAcknowledgmentRequired'] = { "type": 'Boolean', "system": false };
+        obj["fields"]['claimed'] = { "type": 'Boolean', "system": false };
+        obj["fields"]['delay'] = { "type": 'Number', "system": false };
+        obj["fields"]['entityType'] = new EntityType().modelMap();
+        obj["fields"]['entityId'] = { "type": 'String', "system": false };
+        obj["fields"]['pointInTime'] = { "type": 'Date', "system": false };
+        obj["fields"]['period'] = { "type": 'Number', "system": false };
 
         
-        obj["requiredFields"]['rewardId'];
-        obj["requiredFields"]['rewardTypeKey'];
-        obj["requiredFields"]['rewardTypeId'];
-        obj["requiredFields"]['rewardValue'];
-        obj["requiredFields"]['claimed'];
-        obj["requiredFields"]['entityType'];
-        obj["requiredFields"]['entityId'];
+        obj["requiredFields"]['rewardId'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['rewardTypeKey'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['rewardTypeId'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['rewardValue'] = { "type": 'Number', "system": false };
+        obj["requiredFields"]['claimed'] = { "type": 'Boolean', "system": false };
+        obj["requiredFields"]['entityType'] = new EntityType().modelMap();
+        obj["requiredFields"]['entityId'] = { "type": 'String', "system": false };
 
         return obj;
     }

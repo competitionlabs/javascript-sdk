@@ -20,7 +20,7 @@ import UnitOfMeasureType from './UnitOfMeasureType';
 /**
  * The ActionType model module.
  * @module model/ActionType
- * @version 1.0.4
+ * @version 1.0.5
  */
 class ActionType {
     /**
@@ -60,15 +60,15 @@ class ActionType {
     model(){
         var obj = {};
 
-        obj['id'];
-        obj['spaceName'];
-        obj['created'];
-        obj['name'];
-        obj['key'];
-        obj['description'];
-        obj['system'];
-        obj['unitOfMeasureType'];
-        obj['metadata'];
+        obj['id'] = null;
+        obj['spaceName'] = null;
+        obj['created'] = null;
+        obj['name'] = null;
+        obj['key'] = null;
+        obj['description'] = null;
+        obj['system'] = null;
+        obj['unitOfMeasureType'] = new UnitOfMeasureType().model();
+        obj['metadata'] = [new Metadata().model()];
 
         return obj;
     }
@@ -82,23 +82,23 @@ class ActionType {
             "requiredFields": {}
         };
 
-        obj["fields"]['id'];
-        obj["fields"]['spaceName'];
-        obj["fields"]['created'];
-        obj["fields"]['name'];
-        obj["fields"]['key'];
-        obj["fields"]['description'];
-        obj["fields"]['system'];
-        obj["fields"]['unitOfMeasureType'];
-        obj["fields"]['metadata'];
+        obj["fields"]['id'] = { "type": 'String', "system": true };
+        obj["fields"]['spaceName'] = { "type": 'String', "system": true };
+        obj["fields"]['created'] = { "type": 'Date', "system": true };
+        obj["fields"]['name'] = { "type": 'String', "system": false };
+        obj["fields"]['key'] = { "type": 'String', "system": false };
+        obj["fields"]['description'] = { "type": 'String', "system": false };
+        obj["fields"]['system'] = { "type": 'Boolean', "system": false };
+        obj["fields"]['unitOfMeasureType'] = new UnitOfMeasureType().modelMap();
+        obj["fields"]['metadata'] = [new Metadata().modelMap()];
 
         
-        obj["requiredFields"]['id'];
-        obj["requiredFields"]['spaceName'];
-        obj["requiredFields"]['created'];
-        obj["requiredFields"]['name'];
-        obj["requiredFields"]['key'];
-        obj["requiredFields"]['unitOfMeasureType'];
+        obj["requiredFields"]['id'] = { "type": 'String', "system": true };
+        obj["requiredFields"]['spaceName'] = { "type": 'String', "system": true };
+        obj["requiredFields"]['created'] = { "type": 'Date', "system": true };
+        obj["requiredFields"]['name'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['key'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['unitOfMeasureType'] = new UnitOfMeasureType().modelMap();
 
         return obj;
     }

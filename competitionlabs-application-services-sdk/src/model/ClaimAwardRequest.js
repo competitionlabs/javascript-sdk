@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ClaimAwardRequest model module.
  * @module model/ClaimAwardRequest
- * @version 1.0.4
+ * @version 1.0.5
  */
 class ClaimAwardRequest {
     /**
@@ -44,8 +44,8 @@ class ClaimAwardRequest {
     model(){
         var obj = {};
 
-        obj['id'];
-        obj['constraints'];
+        obj['id'] = null;
+        obj['constraints'] = [null];
 
         return obj;
     }
@@ -59,11 +59,11 @@ class ClaimAwardRequest {
             "requiredFields": {}
         };
 
-        obj["fields"]['id'];
-        obj["fields"]['constraints'];
+        obj["fields"]['id'] = { "type": 'String', "system": true };
+        obj["fields"]['constraints'] = [{ "type": 'String', "system": false }];
 
         
-        obj["requiredFields"]['id'];
+        obj["requiredFields"]['id'] = { "type": 'String', "system": true };
 
         return obj;
     }

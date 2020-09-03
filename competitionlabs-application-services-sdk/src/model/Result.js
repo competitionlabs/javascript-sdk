@@ -17,7 +17,7 @@ import Relation from './Relation';
 /**
  * The Result model module.
  * @module model/Result
- * @version 1.0.4
+ * @version 1.0.5
  */
 class Result {
     /**
@@ -47,10 +47,10 @@ class Result {
     model(){
         var obj = {};
 
-        obj['id'];
-        obj['externalReference'];
-        obj['result'];
-        obj['relations'];
+        obj['id'] = null;
+        obj['externalReference'] = null;
+        obj['result'] = null;
+        obj['relations'] = [new Relation().model()];
 
         return obj;
     }
@@ -64,14 +64,14 @@ class Result {
             "requiredFields": {}
         };
 
-        obj["fields"]['id'];
-        obj["fields"]['externalReference'];
-        obj["fields"]['result'];
-        obj["fields"]['relations'];
+        obj["fields"]['id'] = { "type": 'String', "system": true };
+        obj["fields"]['externalReference'] = { "type": 'String', "system": false };
+        obj["fields"]['result'] = { "type": 'String', "system": false };
+        obj["fields"]['relations'] = [new Relation().modelMap()];
 
         
-        obj["requiredFields"]['id'];
-        obj["requiredFields"]['result'];
+        obj["requiredFields"]['id'] = { "type": 'String', "system": true };
+        obj["requiredFields"]['result'] = { "type": 'String', "system": false };
 
         return obj;
     }

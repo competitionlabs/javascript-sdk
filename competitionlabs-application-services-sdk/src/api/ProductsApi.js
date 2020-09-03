@@ -25,7 +25,7 @@ import UpdateProductRequest from '../model/UpdateProductRequest';
 /**
 * Products service.
 * @module api/ProductsApi
-* @version 1.0.4
+* @version 1.0.5
 */
 export default class ProductsApi {
 

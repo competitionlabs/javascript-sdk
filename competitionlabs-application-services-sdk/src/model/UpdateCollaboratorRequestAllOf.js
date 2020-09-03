@@ -17,7 +17,7 @@ import Role from './Role';
 /**
  * The UpdateCollaboratorRequestAllOf model module.
  * @module model/UpdateCollaboratorRequestAllOf
- * @version 1.0.4
+ * @version 1.0.5
  */
 class UpdateCollaboratorRequestAllOf {
     /**
@@ -45,7 +45,7 @@ class UpdateCollaboratorRequestAllOf {
     model(){
         var obj = {};
 
-        obj['role'];
+        obj['role'] = new Role().model();
 
         return obj;
     }
@@ -59,10 +59,10 @@ class UpdateCollaboratorRequestAllOf {
             "requiredFields": {}
         };
 
-        obj["fields"]['role'];
+        obj["fields"]['role'] = new Role().modelMap();
 
         
-        obj["requiredFields"]['role'];
+        obj["requiredFields"]['role'] = new Role().modelMap();
 
         return obj;
     }

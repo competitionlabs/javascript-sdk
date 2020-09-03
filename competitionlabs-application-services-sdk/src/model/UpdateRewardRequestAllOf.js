@@ -18,7 +18,7 @@ import Translation from './Translation';
 /**
  * The UpdateRewardRequestAllOf model module.
  * @module model/UpdateRewardRequestAllOf
- * @version 1.0.4
+ * @version 1.0.5
  */
 class UpdateRewardRequestAllOf {
     /**
@@ -44,19 +44,19 @@ class UpdateRewardRequestAllOf {
     model(){
         var obj = {};
 
-        obj['rewardRank'];
-        obj['rewardName'];
-        obj['value'];
-        obj['rewardType'];
-        obj['rewardTypeId'];
-        obj['description'];
-        obj['delay'];
-        obj['icon'];
-        obj['metadata'];
-        obj['pointInTime'];
-        obj['period'];
-        obj['translations'];
-        obj['constraints'];
+        obj['rewardRank'] = null;
+        obj['rewardName'] = null;
+        obj['value'] = null;
+        obj['rewardType'] = null;
+        obj['rewardTypeId'] = null;
+        obj['description'] = null;
+        obj['delay'] = null;
+        obj['icon'] = null;
+        obj['metadata'] = [new Metadata().model()];
+        obj['pointInTime'] = null;
+        obj['period'] = null;
+        obj['translations'] = [new Translation().model()];
+        obj['constraints'] = [null];
 
         return obj;
     }
@@ -70,19 +70,19 @@ class UpdateRewardRequestAllOf {
             "requiredFields": {}
         };
 
-        obj["fields"]['rewardRank'];
-        obj["fields"]['rewardName'];
-        obj["fields"]['value'];
-        obj["fields"]['rewardType'];
-        obj["fields"]['rewardTypeId'];
-        obj["fields"]['description'];
-        obj["fields"]['delay'];
-        obj["fields"]['icon'];
-        obj["fields"]['metadata'];
-        obj["fields"]['pointInTime'];
-        obj["fields"]['period'];
-        obj["fields"]['translations'];
-        obj["fields"]['constraints'];
+        obj["fields"]['rewardRank'] = { "type": 'String', "system": false };
+        obj["fields"]['rewardName'] = { "type": 'String', "system": false };
+        obj["fields"]['value'] = { "type": 'Number', "system": false };
+        obj["fields"]['rewardType'] = { "type": 'String', "system": false };
+        obj["fields"]['rewardTypeId'] = { "type": 'String', "system": false };
+        obj["fields"]['description'] = { "type": 'String', "system": false };
+        obj["fields"]['delay'] = { "type": 'Number', "system": false };
+        obj["fields"]['icon'] = { "type": 'String', "system": false };
+        obj["fields"]['metadata'] = [new Metadata().modelMap()];
+        obj["fields"]['pointInTime'] = { "type": 'Date', "system": false };
+        obj["fields"]['period'] = { "type": 'Number', "system": false };
+        obj["fields"]['translations'] = [new Translation().modelMap()];
+        obj["fields"]['constraints'] = [{ "type": 'String', "system": false }];
 
         
 

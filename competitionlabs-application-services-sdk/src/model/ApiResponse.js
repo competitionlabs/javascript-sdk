@@ -19,7 +19,7 @@ import Result from './Result';
 /**
  * The ApiResponse model module.
  * @module model/ApiResponse
- * @version 1.0.4
+ * @version 1.0.5
  */
 class ApiResponse {
     /**
@@ -47,9 +47,9 @@ class ApiResponse {
     model(){
         var obj = {};
 
-        obj['meta'];
-        obj['results'];
-        obj['errors'];
+        obj['meta'] = new MetaBasic().model();
+        obj['results'] = [new Result().model()];
+        obj['errors'] = [new Error().model()];
 
         return obj;
     }
@@ -63,12 +63,12 @@ class ApiResponse {
             "requiredFields": {}
         };
 
-        obj["fields"]['meta'];
-        obj["fields"]['results'];
-        obj["fields"]['errors'];
+        obj["fields"]['meta'] = new MetaBasic().modelMap();
+        obj["fields"]['results'] = [new Result().modelMap()];
+        obj["fields"]['errors'] = [new Error().modelMap()];
 
         
-        obj["requiredFields"]['meta'];
+        obj["requiredFields"]['meta'] = new MetaBasic().modelMap();
 
         return obj;
     }

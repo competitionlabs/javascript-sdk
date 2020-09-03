@@ -19,7 +19,7 @@ import RuleDescriptorSubFactAllOf from './RuleDescriptorSubFactAllOf';
 /**
  * The RuleDescriptorSubFact model module.
  * @module model/RuleDescriptorSubFact
- * @version 1.0.4
+ * @version 1.0.5
  */
 class RuleDescriptorSubFact {
     /**
@@ -55,12 +55,12 @@ class RuleDescriptorSubFact {
     model(){
         var obj = {};
 
-        obj['operators'];
-        obj['constantType'];
-        obj['constantExample'];
-        obj['defaultVale'];
-        obj['macros'];
-        obj['subFact'];
+        obj['operators'] = [null];
+        obj['constantType'] = null;
+        obj['constantExample'] = null;
+        obj['defaultVale'] = null;
+        obj['macros'] = [new Macro().model()];
+        obj['subFact'] = null;
 
         return obj;
     }
@@ -74,18 +74,18 @@ class RuleDescriptorSubFact {
             "requiredFields": {}
         };
 
-        obj["fields"]['operators'];
-        obj["fields"]['constantType'];
-        obj["fields"]['constantExample'];
-        obj["fields"]['defaultVale'];
-        obj["fields"]['macros'];
-        obj["fields"]['subFact'];
+        obj["fields"]['operators'] = [{ "type": 'String', "system": false }];
+        obj["fields"]['constantType'] = { "type": 'String', "system": false };
+        obj["fields"]['constantExample'] = { "type": 'String', "system": false };
+        obj["fields"]['defaultVale'] = { "type": 'String', "system": false };
+        obj["fields"]['macros'] = [new Macro().modelMap()];
+        obj["fields"]['subFact'] = { "type": 'String', "system": false };
 
         
-        obj["requiredFields"]['operators'];
-        obj["requiredFields"]['constantType'];
-        obj["requiredFields"]['constantExample'];
-        obj["requiredFields"]['subFact'];
+        obj["requiredFields"]['operators'] = [{ "type": 'String', "system": false }];
+        obj["requiredFields"]['constantType'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['constantExample'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['subFact'] = { "type": 'String', "system": false };
 
         return obj;
     }

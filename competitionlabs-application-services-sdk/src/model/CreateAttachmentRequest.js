@@ -17,7 +17,7 @@ import Metadata from './Metadata';
 /**
  * The CreateAttachmentRequest model module.
  * @module model/CreateAttachmentRequest
- * @version 1.0.4
+ * @version 1.0.5
  */
 class CreateAttachmentRequest {
     /**
@@ -49,11 +49,11 @@ class CreateAttachmentRequest {
     model(){
         var obj = {};
 
-        obj['fileName'];
-        obj['mimeType'];
-        obj['extension'];
-        obj['permission'];
-        obj['metadata'];
+        obj['fileName'] = null;
+        obj['mimeType'] = null;
+        obj['extension'] = null;
+        obj['permission'] = null;
+        obj['metadata'] = [new Metadata().model()];
 
         return obj;
     }
@@ -67,16 +67,16 @@ class CreateAttachmentRequest {
             "requiredFields": {}
         };
 
-        obj["fields"]['fileName'];
-        obj["fields"]['mimeType'];
-        obj["fields"]['extension'];
-        obj["fields"]['permission'];
-        obj["fields"]['metadata'];
+        obj["fields"]['fileName'] = { "type": 'String', "system": false };
+        obj["fields"]['mimeType'] = { "type": 'String', "system": false };
+        obj["fields"]['extension'] = { "type": 'String', "system": false };
+        obj["fields"]['permission'] = { "type": 'Number', "system": false };
+        obj["fields"]['metadata'] = [new Metadata().modelMap()];
 
         
-        obj["requiredFields"]['fileName'];
-        obj["requiredFields"]['mimeType'];
-        obj["requiredFields"]['extension'];
+        obj["requiredFields"]['fileName'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['mimeType'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['extension'] = { "type": 'String', "system": false };
 
         return obj;
     }

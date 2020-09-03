@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RankingStrategy model module.
  * @module model/RankingStrategy
- * @version 1.0.4
+ * @version 1.0.5
  */
 class RankingStrategy {
     /**
@@ -52,11 +52,11 @@ class RankingStrategy {
     model(){
         var obj = {};
 
-        obj['scoreDesc'];
-        obj['timeDesc'];
-        obj['scoreFirst'];
-        obj['ignoreTime'];
-        obj['ignoreScore'];
+        obj['scoreDesc'] = null;
+        obj['timeDesc'] = null;
+        obj['scoreFirst'] = null;
+        obj['ignoreTime'] = null;
+        obj['ignoreScore'] = null;
 
         return obj;
     }
@@ -70,18 +70,18 @@ class RankingStrategy {
             "requiredFields": {}
         };
 
-        obj["fields"]['scoreDesc'];
-        obj["fields"]['timeDesc'];
-        obj["fields"]['scoreFirst'];
-        obj["fields"]['ignoreTime'];
-        obj["fields"]['ignoreScore'];
+        obj["fields"]['scoreDesc'] = { "type": 'Boolean', "system": false };
+        obj["fields"]['timeDesc'] = { "type": 'Boolean', "system": false };
+        obj["fields"]['scoreFirst'] = { "type": 'Boolean', "system": false };
+        obj["fields"]['ignoreTime'] = { "type": 'Boolean', "system": false };
+        obj["fields"]['ignoreScore'] = { "type": 'Boolean', "system": false };
 
         
-        obj["requiredFields"]['scoreDesc'];
-        obj["requiredFields"]['timeDesc'];
-        obj["requiredFields"]['scoreFirst'];
-        obj["requiredFields"]['ignoreTime'];
-        obj["requiredFields"]['ignoreScore'];
+        obj["requiredFields"]['scoreDesc'] = { "type": 'Boolean', "system": false };
+        obj["requiredFields"]['timeDesc'] = { "type": 'Boolean', "system": false };
+        obj["requiredFields"]['scoreFirst'] = { "type": 'Boolean', "system": false };
+        obj["requiredFields"]['ignoreTime'] = { "type": 'Boolean', "system": false };
+        obj["requiredFields"]['ignoreScore'] = { "type": 'Boolean', "system": false };
 
         return obj;
     }

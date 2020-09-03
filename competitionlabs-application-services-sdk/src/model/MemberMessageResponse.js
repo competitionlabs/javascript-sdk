@@ -19,7 +19,7 @@ import MetaExtended from './MetaExtended';
 /**
  * The MemberMessageResponse model module.
  * @module model/MemberMessageResponse
- * @version 1.0.4
+ * @version 1.0.5
  */
 class MemberMessageResponse {
     /**
@@ -47,9 +47,9 @@ class MemberMessageResponse {
     model(){
         var obj = {};
 
-        obj['meta'];
-        obj['results'];
-        obj['errors'];
+        obj['meta'] = new MetaExtended().model();
+        obj['results'] = [new MemberMessage().model()];
+        obj['errors'] = [new Error().model()];
 
         return obj;
     }
@@ -63,12 +63,12 @@ class MemberMessageResponse {
             "requiredFields": {}
         };
 
-        obj["fields"]['meta'];
-        obj["fields"]['results'];
-        obj["fields"]['errors'];
+        obj["fields"]['meta'] = new MetaExtended().modelMap();
+        obj["fields"]['results'] = [new MemberMessage().modelMap()];
+        obj["fields"]['errors'] = [new Error().modelMap()];
 
         
-        obj["requiredFields"]['meta'];
+        obj["requiredFields"]['meta'] = new MetaExtended().modelMap();
 
         return obj;
     }

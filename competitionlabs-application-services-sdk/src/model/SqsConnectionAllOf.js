@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SqsConnectionAllOf model module.
  * @module model/SqsConnectionAllOf
- * @version 1.0.4
+ * @version 1.0.5
  */
 class SqsConnectionAllOf {
     /**
@@ -52,11 +52,11 @@ class SqsConnectionAllOf {
     model(){
         var obj = {};
 
-        obj['name'];
-        obj['uri'];
-        obj['acessKey'];
-        obj['lastKnownStatus'];
-        obj['lastKnownStatusCode'];
+        obj['name'] = null;
+        obj['uri'] = null;
+        obj['acessKey'] = null;
+        obj['lastKnownStatus'] = null;
+        obj['lastKnownStatusCode'] = null;
 
         return obj;
     }
@@ -70,18 +70,18 @@ class SqsConnectionAllOf {
             "requiredFields": {}
         };
 
-        obj["fields"]['name'];
-        obj["fields"]['uri'];
-        obj["fields"]['acessKey'];
-        obj["fields"]['lastKnownStatus'];
-        obj["fields"]['lastKnownStatusCode'];
+        obj["fields"]['name'] = { "type": 'String', "system": false };
+        obj["fields"]['uri'] = { "type": 'String', "system": false };
+        obj["fields"]['acessKey'] = { "type": 'String', "system": false };
+        obj["fields"]['lastKnownStatus'] = { "type": 'String', "system": false };
+        obj["fields"]['lastKnownStatusCode'] = { "type": 'Number', "system": false };
 
         
-        obj["requiredFields"]['name'];
-        obj["requiredFields"]['uri'];
-        obj["requiredFields"]['acessKey'];
-        obj["requiredFields"]['lastKnownStatus'];
-        obj["requiredFields"]['lastKnownStatusCode'];
+        obj["requiredFields"]['name'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['uri'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['acessKey'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['lastKnownStatus'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['lastKnownStatusCode'] = { "type": 'Number', "system": false };
 
         return obj;
     }

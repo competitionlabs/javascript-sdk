@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RewardReducedAllOf model module.
  * @module model/RewardReducedAllOf
- * @version 1.0.4
+ * @version 1.0.5
  */
 class RewardReducedAllOf {
     /**
@@ -52,11 +52,11 @@ class RewardReducedAllOf {
     model(){
         var obj = {};
 
-        obj['rewardRank'];
-        obj['rewardName'];
-        obj['value'];
-        obj['rewardType'];
-        obj['rewardTypeId'];
+        obj['rewardRank'] = null;
+        obj['rewardName'] = null;
+        obj['value'] = null;
+        obj['rewardType'] = null;
+        obj['rewardTypeId'] = null;
 
         return obj;
     }
@@ -70,18 +70,18 @@ class RewardReducedAllOf {
             "requiredFields": {}
         };
 
-        obj["fields"]['rewardRank'];
-        obj["fields"]['rewardName'];
-        obj["fields"]['value'];
-        obj["fields"]['rewardType'];
-        obj["fields"]['rewardTypeId'];
+        obj["fields"]['rewardRank'] = { "type": 'String', "system": false };
+        obj["fields"]['rewardName'] = { "type": 'String', "system": false };
+        obj["fields"]['value'] = { "type": 'Number', "system": false };
+        obj["fields"]['rewardType'] = { "type": 'String', "system": false };
+        obj["fields"]['rewardTypeId'] = { "type": 'String', "system": false };
 
         
-        obj["requiredFields"]['rewardRank'];
-        obj["requiredFields"]['rewardName'];
-        obj["requiredFields"]['value'];
-        obj["requiredFields"]['rewardType'];
-        obj["requiredFields"]['rewardTypeId'];
+        obj["requiredFields"]['rewardRank'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['rewardName'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['value'] = { "type": 'Number', "system": false };
+        obj["requiredFields"]['rewardType'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['rewardTypeId'] = { "type": 'String', "system": false };
 
         return obj;
     }

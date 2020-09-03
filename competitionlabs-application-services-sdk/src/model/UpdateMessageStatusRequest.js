@@ -19,7 +19,7 @@ import UpdateModelDefault from './UpdateModelDefault';
 /**
  * The UpdateMessageStatusRequest model module.
  * @module model/UpdateMessageStatusRequest
- * @version 1.0.4
+ * @version 1.0.5
  */
 class UpdateMessageStatusRequest {
     /**
@@ -51,8 +51,8 @@ class UpdateMessageStatusRequest {
     model(){
         var obj = {};
 
-        obj['id'];
-        obj['status'];
+        obj['id'] = null;
+        obj['status'] = new MessageStatus().model();
 
         return obj;
     }
@@ -66,12 +66,12 @@ class UpdateMessageStatusRequest {
             "requiredFields": {}
         };
 
-        obj["fields"]['id'];
-        obj["fields"]['status'];
+        obj["fields"]['id'] = { "type": 'String', "system": true };
+        obj["fields"]['status'] = new MessageStatus().modelMap();
 
         
-        obj["requiredFields"]['id'];
-        obj["requiredFields"]['status'];
+        obj["requiredFields"]['id'] = { "type": 'String', "system": true };
+        obj["requiredFields"]['status'] = new MessageStatus().modelMap();
 
         return obj;
     }

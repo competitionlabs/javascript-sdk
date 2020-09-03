@@ -20,7 +20,7 @@ import RepositoryAllOf from './RepositoryAllOf';
 /**
  * The Repository model module.
  * @module model/Repository
- * @version 1.0.4
+ * @version 1.0.5
  */
 class Repository {
     /**
@@ -60,15 +60,15 @@ class Repository {
     model(){
         var obj = {};
 
-        obj['id'];
-        obj['spaceName'];
-        obj['created'];
-        obj['name'];
-        obj['description'];
-        obj['constraints'];
-        obj['tags'];
-        obj['hostingOptions'];
-        obj['metadata'];
+        obj['id'] = null;
+        obj['spaceName'] = null;
+        obj['created'] = null;
+        obj['name'] = null;
+        obj['description'] = null;
+        obj['constraints'] = [null];
+        obj['tags'] = [null];
+        obj['hostingOptions'] = new HostingOptions().model();
+        obj['metadata'] = [new Metadata().model()];
 
         return obj;
     }
@@ -82,23 +82,23 @@ class Repository {
             "requiredFields": {}
         };
 
-        obj["fields"]['id'];
-        obj["fields"]['spaceName'];
-        obj["fields"]['created'];
-        obj["fields"]['name'];
-        obj["fields"]['description'];
-        obj["fields"]['constraints'];
-        obj["fields"]['tags'];
-        obj["fields"]['hostingOptions'];
-        obj["fields"]['metadata'];
+        obj["fields"]['id'] = { "type": 'String', "system": true };
+        obj["fields"]['spaceName'] = { "type": 'String', "system": true };
+        obj["fields"]['created'] = { "type": 'Date', "system": true };
+        obj["fields"]['name'] = { "type": 'String', "system": false };
+        obj["fields"]['description'] = { "type": 'String', "system": false };
+        obj["fields"]['constraints'] = [{ "type": 'String', "system": false }];
+        obj["fields"]['tags'] = [{ "type": 'String', "system": false }];
+        obj["fields"]['hostingOptions'] = new HostingOptions().modelMap();
+        obj["fields"]['metadata'] = [new Metadata().modelMap()];
 
         
-        obj["requiredFields"]['id'];
-        obj["requiredFields"]['spaceName'];
-        obj["requiredFields"]['created'];
-        obj["requiredFields"]['name'];
-        obj["requiredFields"]['tags'];
-        obj["requiredFields"]['hostingOptions'];
+        obj["requiredFields"]['id'] = { "type": 'String', "system": true };
+        obj["requiredFields"]['spaceName'] = { "type": 'String', "system": true };
+        obj["requiredFields"]['created'] = { "type": 'Date', "system": true };
+        obj["requiredFields"]['name'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['tags'] = [{ "type": 'String', "system": false }];
+        obj["requiredFields"]['hostingOptions'] = new HostingOptions().modelMap();
 
         return obj;
     }

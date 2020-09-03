@@ -18,7 +18,7 @@ import MemberAchievementCountAllOf from './MemberAchievementCountAllOf';
 /**
  * The MemberAchievementCount model module.
  * @module model/MemberAchievementCount
- * @version 1.0.4
+ * @version 1.0.5
  */
 class MemberAchievementCount {
     /**
@@ -58,12 +58,12 @@ class MemberAchievementCount {
     model(){
         var obj = {};
 
-        obj['entityId'];
-        obj['countValue'];
-        obj['name'];
-        obj['memberId'];
-        obj['memberRefId'];
-        obj['latestIssuedTimestamp'];
+        obj['entityId'] = null;
+        obj['countValue'] = null;
+        obj['name'] = null;
+        obj['memberId'] = null;
+        obj['memberRefId'] = null;
+        obj['latestIssuedTimestamp'] = null;
 
         return obj;
     }
@@ -77,20 +77,20 @@ class MemberAchievementCount {
             "requiredFields": {}
         };
 
-        obj["fields"]['entityId'];
-        obj["fields"]['countValue'];
-        obj["fields"]['name'];
-        obj["fields"]['memberId'];
-        obj["fields"]['memberRefId'];
-        obj["fields"]['latestIssuedTimestamp'];
+        obj["fields"]['entityId'] = { "type": 'String', "system": false };
+        obj["fields"]['countValue'] = { "type": 'Number', "system": false };
+        obj["fields"]['name'] = { "type": 'String', "system": false };
+        obj["fields"]['memberId'] = { "type": 'String', "system": false };
+        obj["fields"]['memberRefId'] = { "type": 'String', "system": false };
+        obj["fields"]['latestIssuedTimestamp'] = { "type": 'Date', "system": false };
 
         
-        obj["requiredFields"]['entityId'];
-        obj["requiredFields"]['countValue'];
-        obj["requiredFields"]['name'];
-        obj["requiredFields"]['memberId'];
-        obj["requiredFields"]['memberRefId'];
-        obj["requiredFields"]['latestIssuedTimestamp'];
+        obj["requiredFields"]['entityId'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['countValue'] = { "type": 'Number', "system": false };
+        obj["requiredFields"]['name'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['memberId'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['memberRefId'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['latestIssuedTimestamp'] = { "type": 'Date', "system": false };
 
         return obj;
     }

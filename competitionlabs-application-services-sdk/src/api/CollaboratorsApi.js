@@ -21,7 +21,7 @@ import UpdateCollaboratorRequest from '../model/UpdateCollaboratorRequest';
 /**
 * Collaborators service.
 * @module api/CollaboratorsApi
-* @version 1.0.4
+* @version 1.0.5
 */
 export default class CollaboratorsApi {
 

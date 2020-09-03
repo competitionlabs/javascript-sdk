@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateRabbitMqConnectionRequestAllOf model module.
  * @module model/UpdateRabbitMqConnectionRequestAllOf
- * @version 1.0.4
+ * @version 1.0.5
  */
 class UpdateRabbitMqConnectionRequestAllOf {
     /**
@@ -42,17 +42,17 @@ class UpdateRabbitMqConnectionRequestAllOf {
     model(){
         var obj = {};
 
-        obj['name'];
-        obj['uri'];
-        obj['virtualHost'];
-        obj['port'];
-        obj['useSsl'];
-        obj['username'];
-        obj['password'];
-        obj['queueName'];
-        obj['exchange'];
-        obj['routingKey'];
-        obj['transformerId'];
+        obj['name'] = null;
+        obj['uri'] = null;
+        obj['virtualHost'] = null;
+        obj['port'] = null;
+        obj['useSsl'] = null;
+        obj['username'] = null;
+        obj['password'] = null;
+        obj['queueName'] = null;
+        obj['exchange'] = null;
+        obj['routingKey'] = null;
+        obj['transformerId'] = null;
 
         return obj;
     }
@@ -66,17 +66,17 @@ class UpdateRabbitMqConnectionRequestAllOf {
             "requiredFields": {}
         };
 
-        obj["fields"]['name'];
-        obj["fields"]['uri'];
-        obj["fields"]['virtualHost'];
-        obj["fields"]['port'];
-        obj["fields"]['useSsl'];
-        obj["fields"]['username'];
-        obj["fields"]['password'];
-        obj["fields"]['queueName'];
-        obj["fields"]['exchange'];
-        obj["fields"]['routingKey'];
-        obj["fields"]['transformerId'];
+        obj["fields"]['name'] = { "type": 'String', "system": false };
+        obj["fields"]['uri'] = { "type": 'String', "system": false };
+        obj["fields"]['virtualHost'] = { "type": 'String', "system": false };
+        obj["fields"]['port'] = { "type": 'Number', "system": false };
+        obj["fields"]['useSsl'] = { "type": 'Boolean', "system": false };
+        obj["fields"]['username'] = { "type": 'String', "system": false };
+        obj["fields"]['password'] = { "type": 'String', "system": false };
+        obj["fields"]['queueName'] = { "type": 'String', "system": false };
+        obj["fields"]['exchange'] = { "type": 'String', "system": false };
+        obj["fields"]['routingKey'] = { "type": 'String', "system": false };
+        obj["fields"]['transformerId'] = { "type": 'String', "system": false };
 
         
 

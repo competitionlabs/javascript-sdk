@@ -22,7 +22,7 @@ import Scheduling from './Scheduling';
 /**
  * The Message model module.
  * @module model/Message
- * @version 1.0.4
+ * @version 1.0.5
  */
 class Message {
     /**
@@ -70,18 +70,18 @@ class Message {
     model(){
         var obj = {};
 
-        obj['id'];
-        obj['spaceName'];
-        obj['created'];
-        obj['memberGroup'];
-        obj['members'];
-        obj['messageType'];
-        obj['subject'];
-        obj['body'];
-        obj['status'];
-        obj['scheduling'];
-        obj['deprecated'];
-        obj['metadata'];
+        obj['id'] = null;
+        obj['spaceName'] = null;
+        obj['created'] = null;
+        obj['memberGroup'] = [null];
+        obj['members'] = [null];
+        obj['messageType'] = new MessageType().model();
+        obj['subject'] = null;
+        obj['body'] = null;
+        obj['status'] = new MessageStatus().model();
+        obj['scheduling'] = new Scheduling().model();
+        obj['deprecated'] = null;
+        obj['metadata'] = [new Metadata().model()];
 
         return obj;
     }
@@ -95,30 +95,30 @@ class Message {
             "requiredFields": {}
         };
 
-        obj["fields"]['id'];
-        obj["fields"]['spaceName'];
-        obj["fields"]['created'];
-        obj["fields"]['memberGroup'];
-        obj["fields"]['members'];
-        obj["fields"]['messageType'];
-        obj["fields"]['subject'];
-        obj["fields"]['body'];
-        obj["fields"]['status'];
-        obj["fields"]['scheduling'];
-        obj["fields"]['deprecated'];
-        obj["fields"]['metadata'];
+        obj["fields"]['id'] = { "type": 'String', "system": true };
+        obj["fields"]['spaceName'] = { "type": 'String', "system": true };
+        obj["fields"]['created'] = { "type": 'Date', "system": true };
+        obj["fields"]['memberGroup'] = [{ "type": 'String', "system": false }];
+        obj["fields"]['members'] = [{ "type": 'String', "system": false }];
+        obj["fields"]['messageType'] = new MessageType().modelMap();
+        obj["fields"]['subject'] = { "type": 'String', "system": false };
+        obj["fields"]['body'] = { "type": 'String', "system": false };
+        obj["fields"]['status'] = new MessageStatus().modelMap();
+        obj["fields"]['scheduling'] = new Scheduling().modelMap();
+        obj["fields"]['deprecated'] = { "type": 'Boolean', "system": false };
+        obj["fields"]['metadata'] = [new Metadata().modelMap()];
 
         
-        obj["requiredFields"]['id'];
-        obj["requiredFields"]['spaceName'];
-        obj["requiredFields"]['created'];
-        obj["requiredFields"]['members'];
-        obj["requiredFields"]['messageType'];
-        obj["requiredFields"]['subject'];
-        obj["requiredFields"]['body'];
-        obj["requiredFields"]['status'];
-        obj["requiredFields"]['scheduling'];
-        obj["requiredFields"]['deprecated'];
+        obj["requiredFields"]['id'] = { "type": 'String', "system": true };
+        obj["requiredFields"]['spaceName'] = { "type": 'String', "system": true };
+        obj["requiredFields"]['created'] = { "type": 'Date', "system": true };
+        obj["requiredFields"]['members'] = [{ "type": 'String', "system": false }];
+        obj["requiredFields"]['messageType'] = new MessageType().modelMap();
+        obj["requiredFields"]['subject'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['body'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['status'] = new MessageStatus().modelMap();
+        obj["requiredFields"]['scheduling'] = new Scheduling().modelMap();
+        obj["requiredFields"]['deprecated'] = { "type": 'Boolean', "system": false };
 
         return obj;
     }

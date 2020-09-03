@@ -25,7 +25,7 @@ import Translation from './Translation';
 /**
  * The Contest model module.
  * @module model/Contest
- * @version 1.0.4
+ * @version 1.0.5
  */
 class Contest {
     /**
@@ -85,35 +85,35 @@ class Contest {
     model(){
         var obj = {};
 
-        obj['id'];
-        obj['spaceName'];
-        obj['created'];
-        obj['competitionId'];
-        obj['number'];
-        obj['name'];
-        obj['description'];
-        obj['termsConditions'];
-        obj['round'];
-        obj['roundType'];
-        obj['groupStage'];
-        obj['groupStageLabel'];
-        obj['entrantsFromContest'];
-        obj['maxNumberOfEntrants'];
-        obj['minNumberOfEntrants'];
-        obj['ruleSets'];
-        obj['isPublic'];
-        obj['autoStart'];
-        obj['scheduledStartDate'];
-        obj['scheduledEndDate'];
-        obj['actualStartDate'];
-        obj['actualEndDate'];
-        obj['strategies'];
-        obj['metadata'];
-        obj['translations'];
-        obj['translatableFields'];
-        obj['status'];
-        obj['statusCode'];
-        obj['rewards'];
+        obj['id'] = null;
+        obj['spaceName'] = null;
+        obj['created'] = null;
+        obj['competitionId'] = null;
+        obj['number'] = null;
+        obj['name'] = null;
+        obj['description'] = null;
+        obj['termsConditions'] = null;
+        obj['round'] = null;
+        obj['roundType'] = new RoundType().model();
+        obj['groupStage'] = null;
+        obj['groupStageLabel'] = null;
+        obj['entrantsFromContest'] = [null];
+        obj['maxNumberOfEntrants'] = null;
+        obj['minNumberOfEntrants'] = null;
+        obj['ruleSets'] = [new RuleSet().model()];
+        obj['isPublic'] = null;
+        obj['autoStart'] = null;
+        obj['scheduledStartDate'] = null;
+        obj['scheduledEndDate'] = null;
+        obj['actualStartDate'] = null;
+        obj['actualEndDate'] = null;
+        obj['strategies'] = new Strategy().model();
+        obj['metadata'] = [new Metadata().model()];
+        obj['translations'] = [new Translation().model()];
+        obj['translatableFields'] = [null];
+        obj['status'] = new ContestStatus().model();
+        obj['statusCode'] = null;
+        obj['rewards'] = [new RewardReduced().model()];
 
         return obj;
     }
@@ -127,53 +127,53 @@ class Contest {
             "requiredFields": {}
         };
 
-        obj["fields"]['id'];
-        obj["fields"]['spaceName'];
-        obj["fields"]['created'];
-        obj["fields"]['competitionId'];
-        obj["fields"]['number'];
-        obj["fields"]['name'];
-        obj["fields"]['description'];
-        obj["fields"]['termsConditions'];
-        obj["fields"]['round'];
-        obj["fields"]['roundType'];
-        obj["fields"]['groupStage'];
-        obj["fields"]['groupStageLabel'];
-        obj["fields"]['entrantsFromContest'];
-        obj["fields"]['maxNumberOfEntrants'];
-        obj["fields"]['minNumberOfEntrants'];
-        obj["fields"]['ruleSets'];
-        obj["fields"]['isPublic'];
-        obj["fields"]['autoStart'];
-        obj["fields"]['scheduledStartDate'];
-        obj["fields"]['scheduledEndDate'];
-        obj["fields"]['actualStartDate'];
-        obj["fields"]['actualEndDate'];
-        obj["fields"]['strategies'];
-        obj["fields"]['metadata'];
-        obj["fields"]['translations'];
-        obj["fields"]['translatableFields'];
-        obj["fields"]['status'];
-        obj["fields"]['statusCode'];
-        obj["fields"]['rewards'];
+        obj["fields"]['id'] = { "type": 'String', "system": true };
+        obj["fields"]['spaceName'] = { "type": 'String', "system": true };
+        obj["fields"]['created'] = { "type": 'Date', "system": true };
+        obj["fields"]['competitionId'] = { "type": 'String', "system": false };
+        obj["fields"]['number'] = { "type": 'Number', "system": false };
+        obj["fields"]['name'] = { "type": 'String', "system": false };
+        obj["fields"]['description'] = { "type": 'String', "system": false };
+        obj["fields"]['termsConditions'] = { "type": 'String', "system": false };
+        obj["fields"]['round'] = { "type": 'Number', "system": false };
+        obj["fields"]['roundType'] = new RoundType().modelMap();
+        obj["fields"]['groupStage'] = { "type": 'Number', "system": false };
+        obj["fields"]['groupStageLabel'] = { "type": 'String', "system": false };
+        obj["fields"]['entrantsFromContest'] = [{ "type": 'String', "system": false }];
+        obj["fields"]['maxNumberOfEntrants'] = { "type": 'Number', "system": false };
+        obj["fields"]['minNumberOfEntrants'] = { "type": 'Number', "system": false };
+        obj["fields"]['ruleSets'] = [new RuleSet().modelMap()];
+        obj["fields"]['isPublic'] = { "type": 'Boolean', "system": false };
+        obj["fields"]['autoStart'] = { "type": 'Boolean', "system": false };
+        obj["fields"]['scheduledStartDate'] = { "type": 'Date', "system": false };
+        obj["fields"]['scheduledEndDate'] = { "type": 'Date', "system": false };
+        obj["fields"]['actualStartDate'] = { "type": 'Date', "system": false };
+        obj["fields"]['actualEndDate'] = { "type": 'Date', "system": false };
+        obj["fields"]['strategies'] = new Strategy().modelMap();
+        obj["fields"]['metadata'] = [new Metadata().modelMap()];
+        obj["fields"]['translations'] = [new Translation().modelMap()];
+        obj["fields"]['translatableFields'] = [{ "type": 'String', "system": false }];
+        obj["fields"]['status'] = new ContestStatus().modelMap();
+        obj["fields"]['statusCode'] = { "type": 'Number', "system": false };
+        obj["fields"]['rewards'] = [new RewardReduced().modelMap()];
 
         
-        obj["requiredFields"]['id'];
-        obj["requiredFields"]['spaceName'];
-        obj["requiredFields"]['created'];
-        obj["requiredFields"]['competitionId'];
-        obj["requiredFields"]['number'];
-        obj["requiredFields"]['name'];
-        obj["requiredFields"]['round'];
-        obj["requiredFields"]['roundType'];
-        obj["requiredFields"]['entrantsFromContest'];
-        obj["requiredFields"]['minNumberOfEntrants'];
-        obj["requiredFields"]['ruleSets'];
-        obj["requiredFields"]['isPublic'];
-        obj["requiredFields"]['scheduledStartDate'];
-        obj["requiredFields"]['scheduledEndDate'];
-        obj["requiredFields"]['status'];
-        obj["requiredFields"]['statusCode'];
+        obj["requiredFields"]['id'] = { "type": 'String', "system": true };
+        obj["requiredFields"]['spaceName'] = { "type": 'String', "system": true };
+        obj["requiredFields"]['created'] = { "type": 'Date', "system": true };
+        obj["requiredFields"]['competitionId'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['number'] = { "type": 'Number', "system": false };
+        obj["requiredFields"]['name'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['round'] = { "type": 'Number', "system": false };
+        obj["requiredFields"]['roundType'] = new RoundType().modelMap();
+        obj["requiredFields"]['entrantsFromContest'] = [{ "type": 'String', "system": false }];
+        obj["requiredFields"]['minNumberOfEntrants'] = { "type": 'Number', "system": false };
+        obj["requiredFields"]['ruleSets'] = [new RuleSet().modelMap()];
+        obj["requiredFields"]['isPublic'] = { "type": 'Boolean', "system": false };
+        obj["requiredFields"]['scheduledStartDate'] = { "type": 'Date', "system": false };
+        obj["requiredFields"]['scheduledEndDate'] = { "type": 'Date', "system": false };
+        obj["requiredFields"]['status'] = new ContestStatus().modelMap();
+        obj["requiredFields"]['statusCode'] = { "type": 'Number', "system": false };
 
         return obj;
     }

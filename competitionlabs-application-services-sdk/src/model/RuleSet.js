@@ -18,7 +18,7 @@ import RuleScope from './RuleScope';
 /**
  * The RuleSet model module.
  * @module model/RuleSet
- * @version 1.0.4
+ * @version 1.0.5
  */
 class RuleSet {
     /**
@@ -52,12 +52,12 @@ class RuleSet {
     model(){
         var obj = {};
 
-        obj['priority'];
-        obj['scope'];
-        obj['action'];
-        obj['conditions'];
-        obj['onMatchThen'];
-        obj['onMatchConstant'];
+        obj['priority'] = null;
+        obj['scope'] = new RuleScope().model();
+        obj['action'] = null;
+        obj['conditions'] = [new Condition().model()];
+        obj['onMatchThen'] = null;
+        obj['onMatchConstant'] = null;
 
         return obj;
     }
@@ -71,18 +71,18 @@ class RuleSet {
             "requiredFields": {}
         };
 
-        obj["fields"]['priority'];
-        obj["fields"]['scope'];
-        obj["fields"]['action'];
-        obj["fields"]['conditions'];
-        obj["fields"]['onMatchThen'];
-        obj["fields"]['onMatchConstant'];
+        obj["fields"]['priority'] = { "type": 'Number', "system": false };
+        obj["fields"]['scope'] = new RuleScope().modelMap();
+        obj["fields"]['action'] = { "type": 'String', "system": false };
+        obj["fields"]['conditions'] = [new Condition().modelMap()];
+        obj["fields"]['onMatchThen'] = { "type": 'String', "system": false };
+        obj["fields"]['onMatchConstant'] = { "type": 'String', "system": false };
 
         
-        obj["requiredFields"]['priority'];
-        obj["requiredFields"]['scope'];
-        obj["requiredFields"]['action'];
-        obj["requiredFields"]['conditions'];
+        obj["requiredFields"]['priority'] = { "type": 'Number', "system": false };
+        obj["requiredFields"]['scope'] = new RuleScope().modelMap();
+        obj["requiredFields"]['action'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['conditions'] = [new Condition().modelMap()];
 
         return obj;
     }

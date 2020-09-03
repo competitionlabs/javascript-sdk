@@ -18,7 +18,7 @@ import ModelDefault from './ModelDefault';
 /**
  * The Leaderboard model module.
  * @module model/Leaderboard
- * @version 1.0.4
+ * @version 1.0.5
  */
 class Leaderboard {
     /**
@@ -66,17 +66,17 @@ class Leaderboard {
     model(){
         var obj = {};
 
-        obj['id'];
-        obj['spaceName'];
-        obj['created'];
-        obj['memberId'];
-        obj['points'];
-        obj['rank'];
-        obj['memberRefId'];
-        obj['name'];
-        obj['change'];
-        obj['goalReached'];
-        obj['timestamp'];
+        obj['id'] = null;
+        obj['spaceName'] = null;
+        obj['created'] = null;
+        obj['memberId'] = null;
+        obj['points'] = null;
+        obj['rank'] = null;
+        obj['memberRefId'] = null;
+        obj['name'] = null;
+        obj['change'] = [new Leaderboard().model()];
+        obj['goalReached'] = null;
+        obj['timestamp'] = null;
 
         return obj;
     }
@@ -90,29 +90,29 @@ class Leaderboard {
             "requiredFields": {}
         };
 
-        obj["fields"]['id'];
-        obj["fields"]['spaceName'];
-        obj["fields"]['created'];
-        obj["fields"]['memberId'];
-        obj["fields"]['points'];
-        obj["fields"]['rank'];
-        obj["fields"]['memberRefId'];
-        obj["fields"]['name'];
-        obj["fields"]['change'];
-        obj["fields"]['goalReached'];
-        obj["fields"]['timestamp'];
+        obj["fields"]['id'] = { "type": 'String', "system": true };
+        obj["fields"]['spaceName'] = { "type": 'String', "system": true };
+        obj["fields"]['created'] = { "type": 'Date', "system": true };
+        obj["fields"]['memberId'] = { "type": 'String', "system": false };
+        obj["fields"]['points'] = { "type": 'Number', "system": false };
+        obj["fields"]['rank'] = { "type": 'Number', "system": false };
+        obj["fields"]['memberRefId'] = { "type": 'String', "system": false };
+        obj["fields"]['name'] = { "type": 'String', "system": false };
+        obj["fields"]['change'] = [new Leaderboard().modelMap()];
+        obj["fields"]['goalReached'] = { "type": 'Boolean', "system": false };
+        obj["fields"]['timestamp'] = { "type": 'Date', "system": false };
 
         
-        obj["requiredFields"]['id'];
-        obj["requiredFields"]['spaceName'];
-        obj["requiredFields"]['created'];
-        obj["requiredFields"]['memberId'];
-        obj["requiredFields"]['points'];
-        obj["requiredFields"]['rank'];
-        obj["requiredFields"]['memberRefId'];
-        obj["requiredFields"]['name'];
-        obj["requiredFields"]['goalReached'];
-        obj["requiredFields"]['timestamp'];
+        obj["requiredFields"]['id'] = { "type": 'String', "system": true };
+        obj["requiredFields"]['spaceName'] = { "type": 'String', "system": true };
+        obj["requiredFields"]['created'] = { "type": 'Date', "system": true };
+        obj["requiredFields"]['memberId'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['points'] = { "type": 'Number', "system": false };
+        obj["requiredFields"]['rank'] = { "type": 'Number', "system": false };
+        obj["requiredFields"]['memberRefId'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['name'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['goalReached'] = { "type": 'Boolean', "system": false };
+        obj["requiredFields"]['timestamp'] = { "type": 'Date', "system": false };
 
         return obj;
     }

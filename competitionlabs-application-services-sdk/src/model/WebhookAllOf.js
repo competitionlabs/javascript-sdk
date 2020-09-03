@@ -17,7 +17,7 @@ import Metadata from './Metadata';
 /**
  * The WebhookAllOf model module.
  * @module model/WebhookAllOf
- * @version 1.0.4
+ * @version 1.0.5
  */
 class WebhookAllOf {
     /**
@@ -47,12 +47,12 @@ class WebhookAllOf {
     model(){
         var obj = {};
 
-        obj['postToUrl'];
-        obj['triggers'];
-        obj['description'];
-        obj['headers'];
-        obj['transformerId'];
-        obj['metadata'];
+        obj['postToUrl'] = null;
+        obj['triggers'] = [null];
+        obj['description'] = null;
+        obj['headers'] = [new Metadata().model()];
+        obj['transformerId'] = null;
+        obj['metadata'] = [new Metadata().model()];
 
         return obj;
     }
@@ -66,16 +66,16 @@ class WebhookAllOf {
             "requiredFields": {}
         };
 
-        obj["fields"]['postToUrl'];
-        obj["fields"]['triggers'];
-        obj["fields"]['description'];
-        obj["fields"]['headers'];
-        obj["fields"]['transformerId'];
-        obj["fields"]['metadata'];
+        obj["fields"]['postToUrl'] = { "type": 'String', "system": false };
+        obj["fields"]['triggers'] = [{ "type": 'String', "system": false }];
+        obj["fields"]['description'] = { "type": 'String', "system": false };
+        obj["fields"]['headers'] = [new Metadata().modelMap()];
+        obj["fields"]['transformerId'] = { "type": 'String', "system": false };
+        obj["fields"]['metadata'] = [new Metadata().modelMap()];
 
         
-        obj["requiredFields"]['postToUrl'];
-        obj["requiredFields"]['triggers'];
+        obj["requiredFields"]['postToUrl'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['triggers'] = [{ "type": 'String', "system": false }];
 
         return obj;
     }

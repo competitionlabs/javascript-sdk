@@ -20,7 +20,7 @@ import UpdateUnitOfMeasureRequestAllOf from './UpdateUnitOfMeasureRequestAllOf';
 /**
  * The UpdateUnitOfMeasureRequest model module.
  * @module model/UpdateUnitOfMeasureRequest
- * @version 1.0.4
+ * @version 1.0.5
  */
 class UpdateUnitOfMeasureRequest {
     /**
@@ -50,15 +50,15 @@ class UpdateUnitOfMeasureRequest {
     model(){
         var obj = {};
 
-        obj['id'];
-        obj['name'];
-        obj['description'];
-        obj['key'];
-        obj['isoCode'];
-        obj['symbol'];
-        obj['multiplier'];
-        obj['unitOfMeasureType'];
-        obj['metadata'];
+        obj['id'] = null;
+        obj['name'] = null;
+        obj['description'] = null;
+        obj['key'] = null;
+        obj['isoCode'] = null;
+        obj['symbol'] = null;
+        obj['multiplier'] = null;
+        obj['unitOfMeasureType'] = new UnitOfMeasureType().model();
+        obj['metadata'] = [new Metadata().model()];
 
         return obj;
     }
@@ -72,18 +72,18 @@ class UpdateUnitOfMeasureRequest {
             "requiredFields": {}
         };
 
-        obj["fields"]['id'];
-        obj["fields"]['name'];
-        obj["fields"]['description'];
-        obj["fields"]['key'];
-        obj["fields"]['isoCode'];
-        obj["fields"]['symbol'];
-        obj["fields"]['multiplier'];
-        obj["fields"]['unitOfMeasureType'];
-        obj["fields"]['metadata'];
+        obj["fields"]['id'] = { "type": 'String', "system": true };
+        obj["fields"]['name'] = { "type": 'String', "system": false };
+        obj["fields"]['description'] = { "type": 'String', "system": false };
+        obj["fields"]['key'] = { "type": 'String', "system": false };
+        obj["fields"]['isoCode'] = { "type": 'String', "system": false };
+        obj["fields"]['symbol'] = { "type": 'String', "system": false };
+        obj["fields"]['multiplier'] = { "type": 'Number', "system": false };
+        obj["fields"]['unitOfMeasureType'] = new UnitOfMeasureType().modelMap();
+        obj["fields"]['metadata'] = [new Metadata().modelMap()];
 
         
-        obj["requiredFields"]['id'];
+        obj["requiredFields"]['id'] = { "type": 'String', "system": true };
 
         return obj;
     }

@@ -18,7 +18,7 @@ import FieldType from './FieldType';
 /**
  * The CustomFieldAllOf model module.
  * @module model/CustomFieldAllOf
- * @version 1.0.4
+ * @version 1.0.5
  */
 class CustomFieldAllOf {
     /**
@@ -52,11 +52,11 @@ class CustomFieldAllOf {
     model(){
         var obj = {};
 
-        obj['name'];
-        obj['term'];
-        obj['description'];
-        obj['fieldType'];
-        obj['appliesTo'];
+        obj['name'] = null;
+        obj['term'] = null;
+        obj['description'] = null;
+        obj['fieldType'] = new FieldType().model();
+        obj['appliesTo'] = new AppliesTo().model();
 
         return obj;
     }
@@ -70,17 +70,17 @@ class CustomFieldAllOf {
             "requiredFields": {}
         };
 
-        obj["fields"]['name'];
-        obj["fields"]['term'];
-        obj["fields"]['description'];
-        obj["fields"]['fieldType'];
-        obj["fields"]['appliesTo'];
+        obj["fields"]['name'] = { "type": 'String', "system": false };
+        obj["fields"]['term'] = { "type": 'String', "system": false };
+        obj["fields"]['description'] = { "type": 'String', "system": false };
+        obj["fields"]['fieldType'] = new FieldType().modelMap();
+        obj["fields"]['appliesTo'] = new AppliesTo().modelMap();
 
         
-        obj["requiredFields"]['name'];
-        obj["requiredFields"]['term'];
-        obj["requiredFields"]['fieldType'];
-        obj["requiredFields"]['appliesTo'];
+        obj["requiredFields"]['name'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['term'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['fieldType'] = new FieldType().modelMap();
+        obj["requiredFields"]['appliesTo'] = new AppliesTo().modelMap();
 
         return obj;
     }

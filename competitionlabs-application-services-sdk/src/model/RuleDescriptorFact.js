@@ -20,7 +20,7 @@ import RuleDescriptorSubCondition from './RuleDescriptorSubCondition';
 /**
  * The RuleDescriptorFact model module.
  * @module model/RuleDescriptorFact
- * @version 1.0.4
+ * @version 1.0.5
  */
 class RuleDescriptorFact {
     /**
@@ -56,14 +56,14 @@ class RuleDescriptorFact {
     model(){
         var obj = {};
 
-        obj['operators'];
-        obj['constantType'];
-        obj['constantExample'];
-        obj['defaultVale'];
-        obj['macros'];
-        obj['constraints'];
-        obj['fact'];
-        obj['subConditions'];
+        obj['operators'] = [null];
+        obj['constantType'] = null;
+        obj['constantExample'] = null;
+        obj['defaultVale'] = null;
+        obj['macros'] = [new Macro().model()];
+        obj['constraints'] = [null];
+        obj['fact'] = null;
+        obj['subConditions'] = [new RuleDescriptorSubCondition().model()];
 
         return obj;
     }
@@ -77,20 +77,20 @@ class RuleDescriptorFact {
             "requiredFields": {}
         };
 
-        obj["fields"]['operators'];
-        obj["fields"]['constantType'];
-        obj["fields"]['constantExample'];
-        obj["fields"]['defaultVale'];
-        obj["fields"]['macros'];
-        obj["fields"]['constraints'];
-        obj["fields"]['fact'];
-        obj["fields"]['subConditions'];
+        obj["fields"]['operators'] = [{ "type": 'String', "system": false }];
+        obj["fields"]['constantType'] = { "type": 'String', "system": false };
+        obj["fields"]['constantExample'] = { "type": 'String', "system": false };
+        obj["fields"]['defaultVale'] = { "type": 'String', "system": false };
+        obj["fields"]['macros'] = [new Macro().modelMap()];
+        obj["fields"]['constraints'] = [{ "type": 'String', "system": false }];
+        obj["fields"]['fact'] = { "type": 'String', "system": false };
+        obj["fields"]['subConditions'] = [new RuleDescriptorSubCondition().modelMap()];
 
         
-        obj["requiredFields"]['operators'];
-        obj["requiredFields"]['constantType'];
-        obj["requiredFields"]['constantExample'];
-        obj["requiredFields"]['fact'];
+        obj["requiredFields"]['operators'] = [{ "type": 'String', "system": false }];
+        obj["requiredFields"]['constantType'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['constantExample'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['fact'] = { "type": 'String', "system": false };
 
         return obj;
     }

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RangeQuery model module.
  * @module model/RangeQuery
- * @version 1.0.4
+ * @version 1.0.5
  */
 class RangeQuery {
     /**
@@ -48,10 +48,10 @@ class RangeQuery {
     model(){
         var obj = {};
 
-        obj['queryField'];
-        obj['gt'];
-        obj['lt'];
-        obj['includeBounds'];
+        obj['queryField'] = null;
+        obj['gt'] = null;
+        obj['lt'] = null;
+        obj['includeBounds'] = null;
 
         return obj;
     }
@@ -65,15 +65,15 @@ class RangeQuery {
             "requiredFields": {}
         };
 
-        obj["fields"]['queryField'];
-        obj["fields"]['gt'];
-        obj["fields"]['lt'];
-        obj["fields"]['includeBounds'];
+        obj["fields"]['queryField'] = { "type": 'String', "system": false };
+        obj["fields"]['gt'] = { "type": 'String', "system": false };
+        obj["fields"]['lt'] = { "type": 'String', "system": false };
+        obj["fields"]['includeBounds'] = { "type": 'Boolean', "system": false };
 
         
-        obj["requiredFields"]['queryField'];
-        obj["requiredFields"]['gt'];
-        obj["requiredFields"]['lt'];
+        obj["requiredFields"]['queryField'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['gt'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['lt'] = { "type": 'String', "system": false };
 
         return obj;
     }

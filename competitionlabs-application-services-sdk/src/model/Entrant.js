@@ -19,7 +19,7 @@ import EntrantStatus from './EntrantStatus';
 /**
  * The Entrant model module.
  * @module model/Entrant
- * @version 1.0.4
+ * @version 1.0.5
  */
 class Entrant {
     /**
@@ -51,12 +51,12 @@ class Entrant {
     model(){
         var obj = {};
 
-        obj['entrantAction'];
-        obj['memberId'];
-        obj['memberRefId'];
-        obj['entrantStatus'];
-        obj['entityId'];
-        obj['entityType'];
+        obj['entrantAction'] = new EntrantAction().model();
+        obj['memberId'] = null;
+        obj['memberRefId'] = null;
+        obj['entrantStatus'] = new EntrantStatus().model();
+        obj['entityId'] = null;
+        obj['entityType'] = new EntityType().model();
 
         return obj;
     }
@@ -70,17 +70,17 @@ class Entrant {
             "requiredFields": {}
         };
 
-        obj["fields"]['entrantAction'];
-        obj["fields"]['memberId'];
-        obj["fields"]['memberRefId'];
-        obj["fields"]['entrantStatus'];
-        obj["fields"]['entityId'];
-        obj["fields"]['entityType'];
+        obj["fields"]['entrantAction'] = new EntrantAction().modelMap();
+        obj["fields"]['memberId'] = { "type": 'String', "system": false };
+        obj["fields"]['memberRefId'] = { "type": 'String', "system": false };
+        obj["fields"]['entrantStatus'] = new EntrantStatus().modelMap();
+        obj["fields"]['entityId'] = { "type": 'String', "system": false };
+        obj["fields"]['entityType'] = new EntityType().modelMap();
 
         
-        obj["requiredFields"]['memberId'];
-        obj["requiredFields"]['memberRefId'];
-        obj["requiredFields"]['entrantStatus'];
+        obj["requiredFields"]['memberId'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['memberRefId'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['entrantStatus'] = new EntrantStatus().modelMap();
 
         return obj;
     }

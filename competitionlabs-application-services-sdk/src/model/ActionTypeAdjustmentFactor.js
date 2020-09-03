@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ActionTypeAdjustmentFactor model module.
  * @module model/ActionTypeAdjustmentFactor
- * @version 1.0.4
+ * @version 1.0.5
  */
 class ActionTypeAdjustmentFactor {
     /**
@@ -46,8 +46,8 @@ class ActionTypeAdjustmentFactor {
     model(){
         var obj = {};
 
-        obj['adjustmentFactor'];
-        obj['actionTypeId'];
+        obj['adjustmentFactor'] = null;
+        obj['actionTypeId'] = null;
 
         return obj;
     }
@@ -61,12 +61,12 @@ class ActionTypeAdjustmentFactor {
             "requiredFields": {}
         };
 
-        obj["fields"]['adjustmentFactor'];
-        obj["fields"]['actionTypeId'];
+        obj["fields"]['adjustmentFactor'] = { "type": 'Number', "system": false };
+        obj["fields"]['actionTypeId'] = { "type": 'String', "system": false };
 
         
-        obj["requiredFields"]['adjustmentFactor'];
-        obj["requiredFields"]['actionTypeId'];
+        obj["requiredFields"]['adjustmentFactor'] = { "type": 'Number', "system": false };
+        obj["requiredFields"]['actionTypeId'] = { "type": 'String', "system": false };
 
         return obj;
     }

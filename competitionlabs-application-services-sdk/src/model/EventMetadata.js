@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The EventMetadata model module.
  * @module model/EventMetadata
- * @version 1.0.4
+ * @version 1.0.5
  */
 class EventMetadata {
     /**
@@ -44,9 +44,9 @@ class EventMetadata {
     model(){
         var obj = {};
 
-        obj['key'];
-        obj['textArray'];
-        obj['numberArray'];
+        obj['key'] = null;
+        obj['textArray'] = [null];
+        obj['numberArray'] = [null];
 
         return obj;
     }
@@ -60,12 +60,12 @@ class EventMetadata {
             "requiredFields": {}
         };
 
-        obj["fields"]['key'];
-        obj["fields"]['textArray'];
-        obj["fields"]['numberArray'];
+        obj["fields"]['key'] = { "type": 'String', "system": false };
+        obj["fields"]['textArray'] = [{ "type": 'String', "system": false }];
+        obj["fields"]['numberArray'] = [{ "type": 'Number', "system": false }];
 
         
-        obj["requiredFields"]['key'];
+        obj["requiredFields"]['key'] = { "type": 'String', "system": false };
 
         return obj;
     }

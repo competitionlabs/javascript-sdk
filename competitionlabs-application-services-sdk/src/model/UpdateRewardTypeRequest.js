@@ -20,7 +20,7 @@ import UpdateRewardTypeRequestAllOf from './UpdateRewardTypeRequestAllOf';
 /**
  * The UpdateRewardTypeRequest model module.
  * @module model/UpdateRewardTypeRequest
- * @version 1.0.4
+ * @version 1.0.5
  */
 class UpdateRewardTypeRequest {
     /**
@@ -50,13 +50,13 @@ class UpdateRewardTypeRequest {
     model(){
         var obj = {};
 
-        obj['id'];
-        obj['name'];
-        obj['description'];
-        obj['key'];
-        obj['unitOfMeasureType'];
-        obj['metadata'];
-        obj['providers'];
+        obj['id'] = null;
+        obj['name'] = null;
+        obj['description'] = null;
+        obj['key'] = null;
+        obj['unitOfMeasureType'] = new UnitOfMeasureType().model();
+        obj['metadata'] = [new Metadata().model()];
+        obj['providers'] = null;
 
         return obj;
     }
@@ -70,16 +70,16 @@ class UpdateRewardTypeRequest {
             "requiredFields": {}
         };
 
-        obj["fields"]['id'];
-        obj["fields"]['name'];
-        obj["fields"]['description'];
-        obj["fields"]['key'];
-        obj["fields"]['unitOfMeasureType'];
-        obj["fields"]['metadata'];
-        obj["fields"]['providers'];
+        obj["fields"]['id'] = { "type": 'String', "system": true };
+        obj["fields"]['name'] = { "type": 'String', "system": false };
+        obj["fields"]['description'] = { "type": 'String', "system": false };
+        obj["fields"]['key'] = { "type": 'String', "system": false };
+        obj["fields"]['unitOfMeasureType'] = new UnitOfMeasureType().modelMap();
+        obj["fields"]['metadata'] = [new Metadata().modelMap()];
+        obj["fields"]['providers'] = { "type": 'String', "system": false };
 
         
-        obj["requiredFields"]['id'];
+        obj["requiredFields"]['id'] = { "type": 'String', "system": true };
 
         return obj;
     }

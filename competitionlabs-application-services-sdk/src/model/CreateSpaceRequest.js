@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateSpaceRequest model module.
  * @module model/CreateSpaceRequest
- * @version 1.0.4
+ * @version 1.0.5
  */
 class CreateSpaceRequest {
     /**
@@ -46,9 +46,9 @@ class CreateSpaceRequest {
     model(){
         var obj = {};
 
-        obj['name'];
-        obj['accountType'];
-        obj['masterSpace'];
+        obj['name'] = null;
+        obj['accountType'] = null;
+        obj['masterSpace'] = null;
 
         return obj;
     }
@@ -62,13 +62,13 @@ class CreateSpaceRequest {
             "requiredFields": {}
         };
 
-        obj["fields"]['name'];
-        obj["fields"]['accountType'];
-        obj["fields"]['masterSpace'];
+        obj["fields"]['name'] = { "type": 'String', "system": false };
+        obj["fields"]['accountType'] = { "type": 'String', "system": false };
+        obj["fields"]['masterSpace'] = { "type": 'String', "system": false };
 
         
-        obj["requiredFields"]['name'];
-        obj["requiredFields"]['accountType'];
+        obj["requiredFields"]['name'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['accountType'] = { "type": 'String', "system": false };
 
         return obj;
     }

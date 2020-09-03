@@ -17,7 +17,7 @@ import ContestStateOperations from './ContestStateOperations';
 /**
  * The UpdateContestStateRequest model module.
  * @module model/UpdateContestStateRequest
- * @version 1.0.4
+ * @version 1.0.5
  */
 class UpdateContestStateRequest {
     /**
@@ -47,8 +47,8 @@ class UpdateContestStateRequest {
     model(){
         var obj = {};
 
-        obj['contestId'];
-        obj['status'];
+        obj['contestId'] = null;
+        obj['status'] = new ContestStateOperations().model();
 
         return obj;
     }
@@ -62,12 +62,12 @@ class UpdateContestStateRequest {
             "requiredFields": {}
         };
 
-        obj["fields"]['contestId'];
-        obj["fields"]['status'];
+        obj["fields"]['contestId'] = { "type": 'String', "system": false };
+        obj["fields"]['status'] = new ContestStateOperations().modelMap();
 
         
-        obj["requiredFields"]['contestId'];
-        obj["requiredFields"]['status'];
+        obj["requiredFields"]['contestId'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['status'] = new ContestStateOperations().modelMap();
 
         return obj;
     }

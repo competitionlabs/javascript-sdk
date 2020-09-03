@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TranslatedField model module.
  * @module model/TranslatedField
- * @version 1.0.4
+ * @version 1.0.5
  */
 class TranslatedField {
     /**
@@ -46,8 +46,8 @@ class TranslatedField {
     model(){
         var obj = {};
 
-        obj['fieldName'];
-        obj['text'];
+        obj['fieldName'] = null;
+        obj['text'] = null;
 
         return obj;
     }
@@ -61,12 +61,12 @@ class TranslatedField {
             "requiredFields": {}
         };
 
-        obj["fields"]['fieldName'];
-        obj["fields"]['text'];
+        obj["fields"]['fieldName'] = { "type": 'String', "system": false };
+        obj["fields"]['text'] = { "type": 'String', "system": false };
 
         
-        obj["requiredFields"]['fieldName'];
-        obj["requiredFields"]['text'];
+        obj["requiredFields"]['fieldName'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['text'] = { "type": 'String', "system": false };
 
         return obj;
     }

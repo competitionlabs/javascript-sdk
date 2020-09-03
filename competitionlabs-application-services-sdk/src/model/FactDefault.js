@@ -17,7 +17,7 @@ import Macro from './Macro';
 /**
  * The FactDefault model module.
  * @module model/FactDefault
- * @version 1.0.4
+ * @version 1.0.5
  */
 class FactDefault {
     /**
@@ -49,11 +49,11 @@ class FactDefault {
     model(){
         var obj = {};
 
-        obj['operators'];
-        obj['constantType'];
-        obj['constantExample'];
-        obj['defaultVale'];
-        obj['macros'];
+        obj['operators'] = [null];
+        obj['constantType'] = null;
+        obj['constantExample'] = null;
+        obj['defaultVale'] = null;
+        obj['macros'] = [new Macro().model()];
 
         return obj;
     }
@@ -67,16 +67,16 @@ class FactDefault {
             "requiredFields": {}
         };
 
-        obj["fields"]['operators'];
-        obj["fields"]['constantType'];
-        obj["fields"]['constantExample'];
-        obj["fields"]['defaultVale'];
-        obj["fields"]['macros'];
+        obj["fields"]['operators'] = [{ "type": 'String', "system": false }];
+        obj["fields"]['constantType'] = { "type": 'String', "system": false };
+        obj["fields"]['constantExample'] = { "type": 'String', "system": false };
+        obj["fields"]['defaultVale'] = { "type": 'String', "system": false };
+        obj["fields"]['macros'] = [new Macro().modelMap()];
 
         
-        obj["requiredFields"]['operators'];
-        obj["requiredFields"]['constantType'];
-        obj["requiredFields"]['constantExample'];
+        obj["requiredFields"]['operators'] = [{ "type": 'String', "system": false }];
+        obj["requiredFields"]['constantType'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['constantExample'] = { "type": 'String', "system": false };
 
         return obj;
     }

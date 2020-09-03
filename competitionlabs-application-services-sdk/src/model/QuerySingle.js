@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The QuerySingle model module.
  * @module model/QuerySingle
- * @version 1.0.4
+ * @version 1.0.5
  */
 class QuerySingle {
     /**
@@ -46,8 +46,8 @@ class QuerySingle {
     model(){
         var obj = {};
 
-        obj['queryField'];
-        obj['queryValue'];
+        obj['queryField'] = null;
+        obj['queryValue'] = null;
 
         return obj;
     }
@@ -61,12 +61,12 @@ class QuerySingle {
             "requiredFields": {}
         };
 
-        obj["fields"]['queryField'];
-        obj["fields"]['queryValue'];
+        obj["fields"]['queryField'] = { "type": 'String', "system": false };
+        obj["fields"]['queryValue'] = { "type": 'String', "system": false };
 
         
-        obj["requiredFields"]['queryField'];
-        obj["requiredFields"]['queryValue'];
+        obj["requiredFields"]['queryField'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['queryValue'] = { "type": 'String', "system": false };
 
         return obj;
     }

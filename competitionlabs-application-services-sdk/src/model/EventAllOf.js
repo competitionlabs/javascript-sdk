@@ -17,7 +17,7 @@ import EventMetadata from './EventMetadata';
 /**
  * The EventAllOf model module.
  * @module model/EventAllOf
- * @version 1.0.4
+ * @version 1.0.5
  */
 class EventAllOf {
     /**
@@ -59,16 +59,16 @@ class EventAllOf {
     model(){
         var obj = {};
 
-        obj['memberId'];
-        obj['memberRefId'];
-        obj['action'];
-        obj['batchId'];
-        obj['entityId'];
-        obj['entityRefId'];
-        obj['sourceValue'];
-        obj['points'];
-        obj['transactionTimestamp'];
-        obj['metadata'];
+        obj['memberId'] = null;
+        obj['memberRefId'] = null;
+        obj['action'] = null;
+        obj['batchId'] = null;
+        obj['entityId'] = null;
+        obj['entityRefId'] = null;
+        obj['sourceValue'] = null;
+        obj['points'] = null;
+        obj['transactionTimestamp'] = null;
+        obj['metadata'] = [new EventMetadata().model()];
 
         return obj;
     }
@@ -82,26 +82,26 @@ class EventAllOf {
             "requiredFields": {}
         };
 
-        obj["fields"]['memberId'];
-        obj["fields"]['memberRefId'];
-        obj["fields"]['action'];
-        obj["fields"]['batchId'];
-        obj["fields"]['entityId'];
-        obj["fields"]['entityRefId'];
-        obj["fields"]['sourceValue'];
-        obj["fields"]['points'];
-        obj["fields"]['transactionTimestamp'];
-        obj["fields"]['metadata'];
+        obj["fields"]['memberId'] = { "type": 'String', "system": false };
+        obj["fields"]['memberRefId'] = { "type": 'String', "system": false };
+        obj["fields"]['action'] = { "type": 'String', "system": false };
+        obj["fields"]['batchId'] = { "type": 'String', "system": false };
+        obj["fields"]['entityId'] = { "type": 'String', "system": false };
+        obj["fields"]['entityRefId'] = { "type": 'String', "system": false };
+        obj["fields"]['sourceValue'] = { "type": 'Number', "system": false };
+        obj["fields"]['points'] = { "type": 'Number', "system": false };
+        obj["fields"]['transactionTimestamp'] = { "type": 'Date', "system": false };
+        obj["fields"]['metadata'] = [new EventMetadata().modelMap()];
 
         
-        obj["requiredFields"]['memberId'];
-        obj["requiredFields"]['memberRefId'];
-        obj["requiredFields"]['action'];
-        obj["requiredFields"]['entityId'];
-        obj["requiredFields"]['entityRefId'];
-        obj["requiredFields"]['sourceValue'];
-        obj["requiredFields"]['points'];
-        obj["requiredFields"]['transactionTimestamp'];
+        obj["requiredFields"]['memberId'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['memberRefId'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['action'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['entityId'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['entityRefId'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['sourceValue'] = { "type": 'Number', "system": false };
+        obj["requiredFields"]['points'] = { "type": 'Number', "system": false };
+        obj["requiredFields"]['transactionTimestamp'] = { "type": 'Date', "system": false };
 
         return obj;
     }

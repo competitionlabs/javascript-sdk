@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateModelDefault model module.
  * @module model/UpdateModelDefault
- * @version 1.0.4
+ * @version 1.0.5
  */
 class UpdateModelDefault {
     /**
@@ -44,7 +44,7 @@ class UpdateModelDefault {
     model(){
         var obj = {};
 
-        obj['id'];
+        obj['id'] = null;
 
         return obj;
     }
@@ -58,10 +58,10 @@ class UpdateModelDefault {
             "requiredFields": {}
         };
 
-        obj["fields"]['id'];
+        obj["fields"]['id'] = { "type": 'String', "system": true };
 
         
-        obj["requiredFields"]['id'];
+        obj["requiredFields"]['id'] = { "type": 'String', "system": true };
 
         return obj;
     }

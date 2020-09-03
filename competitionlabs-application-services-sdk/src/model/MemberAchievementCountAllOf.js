@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The MemberAchievementCountAllOf model module.
  * @module model/MemberAchievementCountAllOf
- * @version 1.0.4
+ * @version 1.0.5
  */
 class MemberAchievementCountAllOf {
     /**
@@ -50,10 +50,10 @@ class MemberAchievementCountAllOf {
     model(){
         var obj = {};
 
-        obj['name'];
-        obj['memberId'];
-        obj['memberRefId'];
-        obj['latestIssuedTimestamp'];
+        obj['name'] = null;
+        obj['memberId'] = null;
+        obj['memberRefId'] = null;
+        obj['latestIssuedTimestamp'] = null;
 
         return obj;
     }
@@ -67,16 +67,16 @@ class MemberAchievementCountAllOf {
             "requiredFields": {}
         };
 
-        obj["fields"]['name'];
-        obj["fields"]['memberId'];
-        obj["fields"]['memberRefId'];
-        obj["fields"]['latestIssuedTimestamp'];
+        obj["fields"]['name'] = { "type": 'String', "system": false };
+        obj["fields"]['memberId'] = { "type": 'String', "system": false };
+        obj["fields"]['memberRefId'] = { "type": 'String', "system": false };
+        obj["fields"]['latestIssuedTimestamp'] = { "type": 'Date', "system": false };
 
         
-        obj["requiredFields"]['name'];
-        obj["requiredFields"]['memberId'];
-        obj["requiredFields"]['memberRefId'];
-        obj["requiredFields"]['latestIssuedTimestamp'];
+        obj["requiredFields"]['name'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['memberId'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['memberRefId'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['latestIssuedTimestamp'] = { "type": 'Date', "system": false };
 
         return obj;
     }

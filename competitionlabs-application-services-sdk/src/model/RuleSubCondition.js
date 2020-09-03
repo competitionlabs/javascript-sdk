@@ -18,7 +18,7 @@ import SubRule from './SubRule';
 /**
  * The RuleSubCondition model module.
  * @module model/RuleSubCondition
- * @version 1.0.4
+ * @version 1.0.5
  */
 class RuleSubCondition {
     /**
@@ -50,9 +50,9 @@ class RuleSubCondition {
     model(){
         var obj = {};
 
-        obj['matchCondition'];
-        obj['mustEvaluateTo'];
-        obj['subRules'];
+        obj['matchCondition'] = new MatchCondition().model();
+        obj['mustEvaluateTo'] = null;
+        obj['subRules'] = [new SubRule().model()];
 
         return obj;
     }
@@ -66,14 +66,14 @@ class RuleSubCondition {
             "requiredFields": {}
         };
 
-        obj["fields"]['matchCondition'];
-        obj["fields"]['mustEvaluateTo'];
-        obj["fields"]['subRules'];
+        obj["fields"]['matchCondition'] = new MatchCondition().modelMap();
+        obj["fields"]['mustEvaluateTo'] = { "type": 'Boolean', "system": false };
+        obj["fields"]['subRules'] = [new SubRule().modelMap()];
 
         
-        obj["requiredFields"]['matchCondition'];
-        obj["requiredFields"]['mustEvaluateTo'];
-        obj["requiredFields"]['subRules'];
+        obj["requiredFields"]['matchCondition'] = new MatchCondition().modelMap();
+        obj["requiredFields"]['mustEvaluateTo'] = { "type": 'Boolean', "system": false };
+        obj["requiredFields"]['subRules'] = [new SubRule().modelMap()];
 
         return obj;
     }

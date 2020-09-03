@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateSqsConnectionRequestAllOf model module.
  * @module model/UpdateSqsConnectionRequestAllOf
- * @version 1.0.4
+ * @version 1.0.5
  */
 class UpdateSqsConnectionRequestAllOf {
     /**
@@ -42,11 +42,11 @@ class UpdateSqsConnectionRequestAllOf {
     model(){
         var obj = {};
 
-        obj['name'];
-        obj['uri'];
-        obj['acessKey'];
-        obj['secretKey'];
-        obj['transformerId'];
+        obj['name'] = null;
+        obj['uri'] = null;
+        obj['acessKey'] = null;
+        obj['secretKey'] = null;
+        obj['transformerId'] = null;
 
         return obj;
     }
@@ -60,11 +60,11 @@ class UpdateSqsConnectionRequestAllOf {
             "requiredFields": {}
         };
 
-        obj["fields"]['name'];
-        obj["fields"]['uri'];
-        obj["fields"]['acessKey'];
-        obj["fields"]['secretKey'];
-        obj["fields"]['transformerId'];
+        obj["fields"]['name'] = { "type": 'String', "system": false };
+        obj["fields"]['uri'] = { "type": 'String', "system": false };
+        obj["fields"]['acessKey'] = { "type": 'String', "system": false };
+        obj["fields"]['secretKey'] = { "type": 'String', "system": false };
+        obj["fields"]['transformerId'] = { "type": 'String', "system": false };
 
         
 

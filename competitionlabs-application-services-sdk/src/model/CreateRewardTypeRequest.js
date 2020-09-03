@@ -18,7 +18,7 @@ import UnitOfMeasureType from './UnitOfMeasureType';
 /**
  * The CreateRewardTypeRequest model module.
  * @module model/CreateRewardTypeRequest
- * @version 1.0.4
+ * @version 1.0.5
  */
 class CreateRewardTypeRequest {
     /**
@@ -50,12 +50,12 @@ class CreateRewardTypeRequest {
     model(){
         var obj = {};
 
-        obj['name'];
-        obj['description'];
-        obj['key'];
-        obj['unitOfMeasureType'];
-        obj['metadata'];
-        obj['providers'];
+        obj['name'] = null;
+        obj['description'] = null;
+        obj['key'] = null;
+        obj['unitOfMeasureType'] = new UnitOfMeasureType().model();
+        obj['metadata'] = [new Metadata().model()];
+        obj['providers'] = null;
 
         return obj;
     }
@@ -69,17 +69,17 @@ class CreateRewardTypeRequest {
             "requiredFields": {}
         };
 
-        obj["fields"]['name'];
-        obj["fields"]['description'];
-        obj["fields"]['key'];
-        obj["fields"]['unitOfMeasureType'];
-        obj["fields"]['metadata'];
-        obj["fields"]['providers'];
+        obj["fields"]['name'] = { "type": 'String', "system": false };
+        obj["fields"]['description'] = { "type": 'String', "system": false };
+        obj["fields"]['key'] = { "type": 'String', "system": false };
+        obj["fields"]['unitOfMeasureType'] = new UnitOfMeasureType().modelMap();
+        obj["fields"]['metadata'] = [new Metadata().modelMap()];
+        obj["fields"]['providers'] = { "type": 'String', "system": false };
 
         
-        obj["requiredFields"]['name'];
-        obj["requiredFields"]['key'];
-        obj["requiredFields"]['unitOfMeasureType'];
+        obj["requiredFields"]['name'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['key'] = { "type": 'String', "system": false };
+        obj["requiredFields"]['unitOfMeasureType'] = new UnitOfMeasureType().modelMap();
 
         return obj;
     }

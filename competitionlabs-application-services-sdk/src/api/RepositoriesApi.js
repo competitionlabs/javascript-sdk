@@ -22,7 +22,7 @@ import UpdateRepositoryRequest from '../model/UpdateRepositoryRequest';
 /**
 * Repositories service.
 * @module api/RepositoriesApi
-* @version 1.0.4
+* @version 1.0.5
 */
 export default class RepositoriesApi {
 

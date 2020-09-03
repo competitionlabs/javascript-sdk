@@ -18,7 +18,7 @@ import Metadata from './Metadata';
 /**
  * The UpdateRepositoryRequestAllOf model module.
  * @module model/UpdateRepositoryRequestAllOf
- * @version 1.0.4
+ * @version 1.0.5
  */
 class UpdateRepositoryRequestAllOf {
     /**
@@ -44,12 +44,12 @@ class UpdateRepositoryRequestAllOf {
     model(){
         var obj = {};
 
-        obj['name'];
-        obj['description'];
-        obj['tags'];
-        obj['constraints'];
-        obj['hostingOptions'];
-        obj['metadata'];
+        obj['name'] = null;
+        obj['description'] = null;
+        obj['tags'] = [null];
+        obj['constraints'] = [null];
+        obj['hostingOptions'] = new HostingOptions().model();
+        obj['metadata'] = [new Metadata().model()];
 
         return obj;
     }
@@ -63,12 +63,12 @@ class UpdateRepositoryRequestAllOf {
             "requiredFields": {}
         };
 
-        obj["fields"]['name'];
-        obj["fields"]['description'];
-        obj["fields"]['tags'];
-        obj["fields"]['constraints'];
-        obj["fields"]['hostingOptions'];
-        obj["fields"]['metadata'];
+        obj["fields"]['name'] = { "type": 'String', "system": false };
+        obj["fields"]['description'] = { "type": 'String', "system": false };
+        obj["fields"]['tags'] = [{ "type": 'String', "system": false }];
+        obj["fields"]['constraints'] = [{ "type": 'String', "system": false }];
+        obj["fields"]['hostingOptions'] = new HostingOptions().modelMap();
+        obj["fields"]['metadata'] = [new Metadata().modelMap()];
 
         
 

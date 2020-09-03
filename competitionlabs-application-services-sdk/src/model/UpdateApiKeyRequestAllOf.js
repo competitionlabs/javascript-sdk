@@ -18,7 +18,7 @@ import Role from './Role';
 /**
  * The UpdateApiKeyRequestAllOf model module.
  * @module model/UpdateApiKeyRequestAllOf
- * @version 1.0.4
+ * @version 1.0.5
  */
 class UpdateApiKeyRequestAllOf {
     /**
@@ -44,13 +44,13 @@ class UpdateApiKeyRequestAllOf {
     model(){
         var obj = {};
 
-        obj['active'];
-        obj['description'];
-        obj['whiteListIPs'];
-        obj['key'];
-        obj['role'];
-        obj['default'];
-        obj['metadata'];
+        obj['active'] = null;
+        obj['description'] = null;
+        obj['whiteListIPs'] = [null];
+        obj['key'] = null;
+        obj['role'] = new Role().model();
+        obj['default'] = null;
+        obj['metadata'] = [new Metadata().model()];
 
         return obj;
     }
@@ -64,13 +64,13 @@ class UpdateApiKeyRequestAllOf {
             "requiredFields": {}
         };
 
-        obj["fields"]['active'];
-        obj["fields"]['description'];
-        obj["fields"]['whiteListIPs'];
-        obj["fields"]['key'];
-        obj["fields"]['role'];
-        obj["fields"]['default'];
-        obj["fields"]['metadata'];
+        obj["fields"]['active'] = { "type": 'Boolean', "system": false };
+        obj["fields"]['description'] = { "type": 'String', "system": false };
+        obj["fields"]['whiteListIPs'] = [{ "type": 'String', "system": false }];
+        obj["fields"]['key'] = { "type": 'String', "system": false };
+        obj["fields"]['role'] = new Role().modelMap();
+        obj["fields"]['default'] = { "type": 'Boolean', "system": false };
+        obj["fields"]['metadata'] = [new Metadata().modelMap()];
 
         
 

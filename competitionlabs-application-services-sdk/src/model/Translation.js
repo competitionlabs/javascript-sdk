@@ -17,7 +17,7 @@ import TranslatedField from './TranslatedField';
 /**
  * The Translation model module.
  * @module model/Translation
- * @version 1.0.4
+ * @version 1.0.5
  */
 class Translation {
     /**
@@ -43,8 +43,8 @@ class Translation {
     model(){
         var obj = {};
 
-        obj['languageKey'];
-        obj['translatedFields'];
+        obj['languageKey'] = null;
+        obj['translatedFields'] = [new TranslatedField().model()];
 
         return obj;
     }
@@ -58,8 +58,8 @@ class Translation {
             "requiredFields": {}
         };
 
-        obj["fields"]['languageKey'];
-        obj["fields"]['translatedFields'];
+        obj["fields"]['languageKey'] = { "type": 'String', "system": false };
+        obj["fields"]['translatedFields'] = [new TranslatedField().modelMap()];
 
         
 

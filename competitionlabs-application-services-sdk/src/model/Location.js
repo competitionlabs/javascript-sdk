@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Location model module.
  * @module model/Location
- * @version 1.0.4
+ * @version 1.0.5
  */
 class Location {
     /**
@@ -46,8 +46,8 @@ class Location {
     model(){
         var obj = {};
 
-        obj['lat'];
-        obj['lon'];
+        obj['lat'] = null;
+        obj['lon'] = null;
 
         return obj;
     }
@@ -61,12 +61,12 @@ class Location {
             "requiredFields": {}
         };
 
-        obj["fields"]['lat'];
-        obj["fields"]['lon'];
+        obj["fields"]['lat'] = { "type": 'Number', "system": false };
+        obj["fields"]['lon'] = { "type": 'Number', "system": false };
 
         
-        obj["requiredFields"]['lat'];
-        obj["requiredFields"]['lon'];
+        obj["requiredFields"]['lat'] = { "type": 'Number', "system": false };
+        obj["requiredFields"]['lon'] = { "type": 'Number', "system": false };
 
         return obj;
     }
