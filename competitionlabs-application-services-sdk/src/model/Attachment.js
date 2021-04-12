@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -13,35 +13,39 @@
 
 import ApiClient from '../ApiClient';
 import AttachmentAllOf from './AttachmentAllOf';
+import CustomFieldReduced from './CustomFieldReduced';
 import Metadata from './Metadata';
 import ModelDefault from './ModelDefault';
+import OptParamModels from './OptParamModels';
+import TagsReduced from './TagsReduced';
 
 /**
  * The Attachment model module.
  * @module model/Attachment
- * @version 1.0.5
+ * @version 1.0.0
  */
 class Attachment {
     /**
      * Constructs a new <code>Attachment</code>.
      * @alias module:model/Attachment
      * @implements module:model/ModelDefault
+     * @implements module:model/OptParamModels
      * @implements module:model/AttachmentAllOf
      * @param id {String} A unique system generated identifier
      * @param spaceName {String} This is the space name which is linked to the account
      * @param created {Date} ISO8601 timestamp for when a Model was created. All records are stored in UTC time zone
      * @param attachmentType {String} A type of an attachement
      * @param md5Hash {String} Hash of the file contents to identify duplicates
-     * @param fileName {String} Name of the original file uploaded
+     * @param name {String} Name of the original file uploaded
      * @param mimeType {String} Mime type of the file. Valid mime types - text/csv or application/vmd.ms-excel
      * @param extension {String} Extension of the file uploaded. Valid extensions supported - csv, xlsx, xls
      * @param locationKey {String} The name of the attachment within the bucket
      * @param locationFolder {String} The folder name containing the attachment within the bucket
      * @param permission {Number} 
      */
-    constructor(id, spaceName, created, attachmentType, md5Hash, fileName, mimeType, extension, locationKey, locationFolder, permission) { 
-        ModelDefault.initialize(this, id, spaceName, created);AttachmentAllOf.initialize(this, attachmentType, md5Hash, fileName, mimeType, extension, locationKey, locationFolder, permission);
-        Attachment.initialize(this, id, spaceName, created, attachmentType, md5Hash, fileName, mimeType, extension, locationKey, locationFolder, permission);
+    constructor(id, spaceName, created, attachmentType, md5Hash, name, mimeType, extension, locationKey, locationFolder, permission) { 
+        ModelDefault.initialize(this, id, spaceName, created);OptParamModels.initialize(this);AttachmentAllOf.initialize(this, attachmentType, md5Hash, name, mimeType, extension, locationKey, locationFolder, permission);
+        Attachment.initialize(this, id, spaceName, created, attachmentType, md5Hash, name, mimeType, extension, locationKey, locationFolder, permission);
     }
 
     /**
@@ -49,78 +53,18 @@ class Attachment {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, id, spaceName, created, attachmentType, md5Hash, fileName, mimeType, extension, locationKey, locationFolder, permission) { 
+    static initialize(obj, id, spaceName, created, attachmentType, md5Hash, name, mimeType, extension, locationKey, locationFolder, permission) { 
         obj['id'] = id;
         obj['spaceName'] = spaceName;
         obj['created'] = created;
         obj['attachmentType'] = attachmentType;
         obj['md5Hash'] = md5Hash;
-        obj['fileName'] = fileName;
+        obj['name'] = name;
         obj['mimeType'] = mimeType;
         obj['extension'] = extension;
         obj['locationKey'] = locationKey;
         obj['locationFolder'] = locationFolder;
         obj['permission'] = permission;
-    }
-
-    /**
-    * Constructs a full object with all available fields.
-    */
-    model(){
-        var obj = {};
-
-        obj['id'] = null;
-        obj['spaceName'] = null;
-        obj['created'] = null;
-        obj['attachmentType'] = null;
-        obj['md5Hash'] = null;
-        obj['fileName'] = null;
-        obj['mimeType'] = null;
-        obj['extension'] = null;
-        obj['locationKey'] = null;
-        obj['locationFolder'] = null;
-        obj['permission'] = null;
-        obj['metadata'] = [new Metadata().model()];
-
-        return obj;
-    }
-
-    /**
-    * Constructs a full object Map for all available fields.
-    */
-    modelMap(){
-        var obj = {
-            "fields": {},
-            "requiredFields": {}
-        };
-
-        obj["fields"]['id'] = { "type": 'String', "system": true };
-        obj["fields"]['spaceName'] = { "type": 'String', "system": true };
-        obj["fields"]['created'] = { "type": 'Date', "system": true };
-        obj["fields"]['attachmentType'] = { "type": 'String', "system": false };
-        obj["fields"]['md5Hash'] = { "type": 'String', "system": false };
-        obj["fields"]['fileName'] = { "type": 'String', "system": false };
-        obj["fields"]['mimeType'] = { "type": 'String', "system": false };
-        obj["fields"]['extension'] = { "type": 'String', "system": false };
-        obj["fields"]['locationKey'] = { "type": 'String', "system": false };
-        obj["fields"]['locationFolder'] = { "type": 'String', "system": false };
-        obj["fields"]['permission'] = { "type": 'Number', "system": false };
-        obj["fields"]['metadata'] = [new Metadata().modelMap()];
-
-        
-        obj["requiredFields"]['id'] = { "type": 'String', "system": true };
-        obj["requiredFields"]['spaceName'] = { "type": 'String', "system": true };
-        obj["requiredFields"]['created'] = { "type": 'Date', "system": true };
-        obj["requiredFields"]['attachmentType'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['md5Hash'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['fileName'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['mimeType'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['extension'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['locationKey'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['locationFolder'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['permission'] = { "type": 'Number', "system": false };
-
-        return obj;
     }
 
     /**
@@ -134,6 +78,7 @@ class Attachment {
         if (data) {
             obj = obj || new Attachment();
             ModelDefault.constructFromObject(data, obj);
+            OptParamModels.constructFromObject(data, obj);
             AttachmentAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('id')) {
@@ -145,14 +90,23 @@ class Attachment {
             if (data.hasOwnProperty('created')) {
                 obj['created'] = ApiClient.convertToType(data['created'], 'Date');
             }
+            if (data.hasOwnProperty('customFields')) {
+                obj['customFields'] = ApiClient.convertToType(data['customFields'], [CustomFieldReduced]);
+            }
+            if (data.hasOwnProperty('tags')) {
+                obj['tags'] = ApiClient.convertToType(data['tags'], [TagsReduced]);
+            }
+            if (data.hasOwnProperty('metadata')) {
+                obj['metadata'] = ApiClient.convertToType(data['metadata'], [Metadata]);
+            }
             if (data.hasOwnProperty('attachmentType')) {
                 obj['attachmentType'] = ApiClient.convertToType(data['attachmentType'], 'String');
             }
             if (data.hasOwnProperty('md5Hash')) {
                 obj['md5Hash'] = ApiClient.convertToType(data['md5Hash'], 'String');
             }
-            if (data.hasOwnProperty('fileName')) {
-                obj['fileName'] = ApiClient.convertToType(data['fileName'], 'String');
+            if (data.hasOwnProperty('name')) {
+                obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
             if (data.hasOwnProperty('mimeType')) {
                 obj['mimeType'] = ApiClient.convertToType(data['mimeType'], 'String');
@@ -168,9 +122,6 @@ class Attachment {
             }
             if (data.hasOwnProperty('permission')) {
                 obj['permission'] = ApiClient.convertToType(data['permission'], 'Number');
-            }
-            if (data.hasOwnProperty('metadata')) {
-                obj['metadata'] = ApiClient.convertToType(data['metadata'], [Metadata]);
             }
         }
         return obj;
@@ -198,6 +149,22 @@ Attachment.prototype['spaceName'] = undefined;
 Attachment.prototype['created'] = undefined;
 
 /**
+ * @member {Array.<module:model/CustomFieldReduced>} customFields
+ */
+Attachment.prototype['customFields'] = undefined;
+
+/**
+ * A list of id's used to tag models
+ * @member {Array.<module:model/TagsReduced>} tags
+ */
+Attachment.prototype['tags'] = undefined;
+
+/**
+ * @member {Array.<module:model/Metadata>} metadata
+ */
+Attachment.prototype['metadata'] = undefined;
+
+/**
  * A type of an attachement
  * @member {String} attachmentType
  */
@@ -211,9 +178,9 @@ Attachment.prototype['md5Hash'] = undefined;
 
 /**
  * Name of the original file uploaded
- * @member {String} fileName
+ * @member {String} name
  */
-Attachment.prototype['fileName'] = undefined;
+Attachment.prototype['name'] = undefined;
 
 /**
  * Mime type of the file. Valid mime types - text/csv or application/vmd.ms-excel
@@ -244,11 +211,6 @@ Attachment.prototype['locationFolder'] = undefined;
  */
 Attachment.prototype['permission'] = undefined;
 
-/**
- * @member {Array.<module:model/Metadata>} metadata
- */
-Attachment.prototype['metadata'] = undefined;
-
 
 // Implement ModelDefault interface:
 /**
@@ -266,6 +228,20 @@ ModelDefault.prototype['spaceName'] = undefined;
  * @member {Date} created
  */
 ModelDefault.prototype['created'] = undefined;
+// Implement OptParamModels interface:
+/**
+ * @member {Array.<module:model/CustomFieldReduced>} customFields
+ */
+OptParamModels.prototype['customFields'] = undefined;
+/**
+ * A list of id's used to tag models
+ * @member {Array.<module:model/TagsReduced>} tags
+ */
+OptParamModels.prototype['tags'] = undefined;
+/**
+ * @member {Array.<module:model/Metadata>} metadata
+ */
+OptParamModels.prototype['metadata'] = undefined;
 // Implement AttachmentAllOf interface:
 /**
  * A type of an attachement
@@ -279,9 +255,9 @@ AttachmentAllOf.prototype['attachmentType'] = undefined;
 AttachmentAllOf.prototype['md5Hash'] = undefined;
 /**
  * Name of the original file uploaded
- * @member {String} fileName
+ * @member {String} name
  */
-AttachmentAllOf.prototype['fileName'] = undefined;
+AttachmentAllOf.prototype['name'] = undefined;
 /**
  * Mime type of the file. Valid mime types - text/csv or application/vmd.ms-excel
  * @member {String} mimeType
@@ -306,10 +282,6 @@ AttachmentAllOf.prototype['locationFolder'] = undefined;
  * @member {Number} permission
  */
 AttachmentAllOf.prototype['permission'] = undefined;
-/**
- * @member {Array.<module:model/Metadata>} metadata
- */
-AttachmentAllOf.prototype['metadata'] = undefined;
 
 
 

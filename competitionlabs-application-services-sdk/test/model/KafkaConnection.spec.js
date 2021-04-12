@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.@CompetitionlabsJavascriptSdk);
+    factory(root.expect, root.CompetitionLabsApplicationServices);
   }
-}(this, function(expect, @CompetitionlabsJavascriptSdk) {
+}(this, function(expect, CompetitionLabsApplicationServices) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new @CompetitionlabsJavascriptSdk.KafkaConnection();
+    instance = new CompetitionLabsApplicationServices.KafkaConnection();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,61 +50,85 @@
   describe('KafkaConnection', function() {
     it('should create an instance of KafkaConnection', function() {
       // uncomment below and update the code to test KafkaConnection
-      //var instane = new @CompetitionlabsJavascriptSdk.KafkaConnection();
-      //expect(instance).to.be.a(@CompetitionlabsJavascriptSdk.KafkaConnection);
+      //var instane = new CompetitionLabsApplicationServices.KafkaConnection();
+      //expect(instance).to.be.a(CompetitionLabsApplicationServices.KafkaConnection);
     });
 
     it('should have the property id (base name: "id")', function() {
       // uncomment below and update the code to test the property id
-      //var instane = new @CompetitionlabsJavascriptSdk.KafkaConnection();
+      //var instance = new CompetitionLabsApplicationServices.KafkaConnection();
       //expect(instance).to.be();
     });
 
     it('should have the property spaceName (base name: "spaceName")', function() {
       // uncomment below and update the code to test the property spaceName
-      //var instane = new @CompetitionlabsJavascriptSdk.KafkaConnection();
+      //var instance = new CompetitionLabsApplicationServices.KafkaConnection();
       //expect(instance).to.be();
     });
 
     it('should have the property created (base name: "created")', function() {
       // uncomment below and update the code to test the property created
-      //var instane = new @CompetitionlabsJavascriptSdk.KafkaConnection();
+      //var instance = new CompetitionLabsApplicationServices.KafkaConnection();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property customFields (base name: "customFields")', function() {
+      // uncomment below and update the code to test the property customFields
+      //var instance = new CompetitionLabsApplicationServices.KafkaConnection();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property tags (base name: "tags")', function() {
+      // uncomment below and update the code to test the property tags
+      //var instance = new CompetitionLabsApplicationServices.KafkaConnection();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property metadata (base name: "metadata")', function() {
+      // uncomment below and update the code to test the property metadata
+      //var instance = new CompetitionLabsApplicationServices.KafkaConnection();
       //expect(instance).to.be();
     });
 
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
-      //var instane = new @CompetitionlabsJavascriptSdk.KafkaConnection();
+      //var instance = new CompetitionLabsApplicationServices.KafkaConnection();
       //expect(instance).to.be();
     });
 
     it('should have the property brokers (base name: "brokers")', function() {
       // uncomment below and update the code to test the property brokers
-      //var instane = new @CompetitionlabsJavascriptSdk.KafkaConnection();
+      //var instance = new CompetitionLabsApplicationServices.KafkaConnection();
       //expect(instance).to.be();
     });
 
     it('should have the property groupId (base name: "groupId")', function() {
       // uncomment below and update the code to test the property groupId
-      //var instane = new @CompetitionlabsJavascriptSdk.KafkaConnection();
+      //var instance = new CompetitionLabsApplicationServices.KafkaConnection();
       //expect(instance).to.be();
     });
 
     it('should have the property topic (base name: "topic")', function() {
       // uncomment below and update the code to test the property topic
-      //var instane = new @CompetitionlabsJavascriptSdk.KafkaConnection();
+      //var instance = new CompetitionLabsApplicationServices.KafkaConnection();
       //expect(instance).to.be();
     });
 
     it('should have the property lastKnownStatus (base name: "lastKnownStatus")', function() {
       // uncomment below and update the code to test the property lastKnownStatus
-      //var instane = new @CompetitionlabsJavascriptSdk.KafkaConnection();
+      //var instance = new CompetitionLabsApplicationServices.KafkaConnection();
       //expect(instance).to.be();
     });
 
     it('should have the property lastKnownStatusCode (base name: "lastKnownStatusCode")', function() {
       // uncomment below and update the code to test the property lastKnownStatusCode
-      //var instane = new @CompetitionlabsJavascriptSdk.KafkaConnection();
+      //var instance = new CompetitionLabsApplicationServices.KafkaConnection();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property transformerId (base name: "transformerId")', function() {
+      // uncomment below and update the code to test the property transformerId
+      //var instance = new CompetitionLabsApplicationServices.KafkaConnection();
       //expect(instance).to.be();
     });
 

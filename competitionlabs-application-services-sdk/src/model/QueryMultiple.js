@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The QueryMultiple model module.
  * @module model/QueryMultiple
- * @version 1.0.5
+ * @version 1.0.0
  */
 class QueryMultiple {
     /**
@@ -38,37 +38,6 @@ class QueryMultiple {
     static initialize(obj, queryField, queryValues) { 
         obj['queryField'] = queryField;
         obj['queryValues'] = queryValues;
-    }
-
-    /**
-    * Constructs a full object with all available fields.
-    */
-    model(){
-        var obj = {};
-
-        obj['queryField'] = null;
-        obj['queryValues'] = [null];
-
-        return obj;
-    }
-
-    /**
-    * Constructs a full object Map for all available fields.
-    */
-    modelMap(){
-        var obj = {
-            "fields": {},
-            "requiredFields": {}
-        };
-
-        obj["fields"]['queryField'] = { "type": 'String', "system": false };
-        obj["fields"]['queryValues'] = [{ "type": 'String', "system": false }];
-
-        
-        obj["requiredFields"]['queryField'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['queryValues'] = [{ "type": 'String', "system": false }];
-
-        return obj;
     }
 
     /**

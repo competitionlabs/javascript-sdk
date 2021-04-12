@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -15,24 +15,29 @@ import ApiClient from '../ApiClient';
 import Metadata from './Metadata';
 import UnitOfMeasureType from './UnitOfMeasureType';
 import UpdateModelDefault from './UpdateModelDefault';
+import UpdateOptParamModels from './UpdateOptParamModels';
 import UpdateUnitOfMeasureRequestAllOf from './UpdateUnitOfMeasureRequestAllOf';
 
 /**
  * The UpdateUnitOfMeasureRequest model module.
  * @module model/UpdateUnitOfMeasureRequest
- * @version 1.0.5
+ * @version 1.0.0
  */
 class UpdateUnitOfMeasureRequest {
     /**
      * Constructs a new <code>UpdateUnitOfMeasureRequest</code>.
      * @alias module:model/UpdateUnitOfMeasureRequest
      * @implements module:model/UpdateModelDefault
+     * @implements module:model/UpdateOptParamModels
      * @implements module:model/UpdateUnitOfMeasureRequestAllOf
      * @param id {String} A unique system generated identifier
+     * @param name {String} The name of a unit of measure
+     * @param multiplier {Number} Is used to multiply the value from the standardised one that is being used
+     * @param unitOfMeasureType {module:model/UnitOfMeasureType} 
      */
-    constructor(id) { 
-        UpdateModelDefault.initialize(this, id);UpdateUnitOfMeasureRequestAllOf.initialize(this);
-        UpdateUnitOfMeasureRequest.initialize(this, id);
+    constructor(id, name, multiplier, unitOfMeasureType) { 
+        UpdateModelDefault.initialize(this, id);UpdateOptParamModels.initialize(this);UpdateUnitOfMeasureRequestAllOf.initialize(this, name, multiplier, unitOfMeasureType);
+        UpdateUnitOfMeasureRequest.initialize(this, id, name, multiplier, unitOfMeasureType);
     }
 
     /**
@@ -40,52 +45,11 @@ class UpdateUnitOfMeasureRequest {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, id) { 
+    static initialize(obj, id, name, multiplier, unitOfMeasureType) { 
         obj['id'] = id;
-    }
-
-    /**
-    * Constructs a full object with all available fields.
-    */
-    model(){
-        var obj = {};
-
-        obj['id'] = null;
-        obj['name'] = null;
-        obj['description'] = null;
-        obj['key'] = null;
-        obj['isoCode'] = null;
-        obj['symbol'] = null;
-        obj['multiplier'] = null;
-        obj['unitOfMeasureType'] = new UnitOfMeasureType().model();
-        obj['metadata'] = [new Metadata().model()];
-
-        return obj;
-    }
-
-    /**
-    * Constructs a full object Map for all available fields.
-    */
-    modelMap(){
-        var obj = {
-            "fields": {},
-            "requiredFields": {}
-        };
-
-        obj["fields"]['id'] = { "type": 'String', "system": true };
-        obj["fields"]['name'] = { "type": 'String', "system": false };
-        obj["fields"]['description'] = { "type": 'String', "system": false };
-        obj["fields"]['key'] = { "type": 'String', "system": false };
-        obj["fields"]['isoCode'] = { "type": 'String', "system": false };
-        obj["fields"]['symbol'] = { "type": 'String', "system": false };
-        obj["fields"]['multiplier'] = { "type": 'Number', "system": false };
-        obj["fields"]['unitOfMeasureType'] = new UnitOfMeasureType().modelMap();
-        obj["fields"]['metadata'] = [new Metadata().modelMap()];
-
-        
-        obj["requiredFields"]['id'] = { "type": 'String', "system": true };
-
-        return obj;
+        obj['name'] = name;
+        obj['multiplier'] = multiplier;
+        obj['unitOfMeasureType'] = unitOfMeasureType;
     }
 
     /**
@@ -99,19 +63,26 @@ class UpdateUnitOfMeasureRequest {
         if (data) {
             obj = obj || new UpdateUnitOfMeasureRequest();
             UpdateModelDefault.constructFromObject(data, obj);
+            UpdateOptParamModels.constructFromObject(data, obj);
             UpdateUnitOfMeasureRequestAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'String');
+            }
+            if (data.hasOwnProperty('customFields')) {
+                obj['customFields'] = ApiClient.convertToType(data['customFields'], ['String']);
+            }
+            if (data.hasOwnProperty('tags')) {
+                obj['tags'] = ApiClient.convertToType(data['tags'], ['String']);
+            }
+            if (data.hasOwnProperty('metadata')) {
+                obj['metadata'] = ApiClient.convertToType(data['metadata'], [Metadata]);
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
             if (data.hasOwnProperty('description')) {
                 obj['description'] = ApiClient.convertToType(data['description'], 'String');
-            }
-            if (data.hasOwnProperty('key')) {
-                obj['key'] = ApiClient.convertToType(data['key'], 'String');
             }
             if (data.hasOwnProperty('isoCode')) {
                 obj['isoCode'] = ApiClient.convertToType(data['isoCode'], 'String');
@@ -124,9 +95,6 @@ class UpdateUnitOfMeasureRequest {
             }
             if (data.hasOwnProperty('unitOfMeasureType')) {
                 obj['unitOfMeasureType'] = UnitOfMeasureType.constructFromObject(data['unitOfMeasureType']);
-            }
-            if (data.hasOwnProperty('metadata')) {
-                obj['metadata'] = ApiClient.convertToType(data['metadata'], [Metadata]);
             }
         }
         return obj;
@@ -142,6 +110,23 @@ class UpdateUnitOfMeasureRequest {
 UpdateUnitOfMeasureRequest.prototype['id'] = undefined;
 
 /**
+ * A list of id's used to add cutom fields
+ * @member {Array.<String>} customFields
+ */
+UpdateUnitOfMeasureRequest.prototype['customFields'] = undefined;
+
+/**
+ * A list of id's used to tag models
+ * @member {Array.<String>} tags
+ */
+UpdateUnitOfMeasureRequest.prototype['tags'] = undefined;
+
+/**
+ * @member {Array.<module:model/Metadata>} metadata
+ */
+UpdateUnitOfMeasureRequest.prototype['metadata'] = undefined;
+
+/**
  * The name of a unit of measure
  * @member {String} name
  */
@@ -152,12 +137,6 @@ UpdateUnitOfMeasureRequest.prototype['name'] = undefined;
  * @member {String} description
  */
 UpdateUnitOfMeasureRequest.prototype['description'] = undefined;
-
-/**
- * The reference to the unit of measure in your system
- * @member {String} key
- */
-UpdateUnitOfMeasureRequest.prototype['key'] = undefined;
 
 /**
  * An alphabetical or numerical code to identify a unit of measure
@@ -182,11 +161,6 @@ UpdateUnitOfMeasureRequest.prototype['multiplier'] = undefined;
  */
 UpdateUnitOfMeasureRequest.prototype['unitOfMeasureType'] = undefined;
 
-/**
- * @member {Array.<module:model/Metadata>} metadata
- */
-UpdateUnitOfMeasureRequest.prototype['metadata'] = undefined;
-
 
 // Implement UpdateModelDefault interface:
 /**
@@ -194,6 +168,21 @@ UpdateUnitOfMeasureRequest.prototype['metadata'] = undefined;
  * @member {String} id
  */
 UpdateModelDefault.prototype['id'] = undefined;
+// Implement UpdateOptParamModels interface:
+/**
+ * A list of id's used to add cutom fields
+ * @member {Array.<String>} customFields
+ */
+UpdateOptParamModels.prototype['customFields'] = undefined;
+/**
+ * A list of id's used to tag models
+ * @member {Array.<String>} tags
+ */
+UpdateOptParamModels.prototype['tags'] = undefined;
+/**
+ * @member {Array.<module:model/Metadata>} metadata
+ */
+UpdateOptParamModels.prototype['metadata'] = undefined;
 // Implement UpdateUnitOfMeasureRequestAllOf interface:
 /**
  * The name of a unit of measure
@@ -205,11 +194,6 @@ UpdateUnitOfMeasureRequestAllOf.prototype['name'] = undefined;
  * @member {String} description
  */
 UpdateUnitOfMeasureRequestAllOf.prototype['description'] = undefined;
-/**
- * The reference to the unit of measure in your system
- * @member {String} key
- */
-UpdateUnitOfMeasureRequestAllOf.prototype['key'] = undefined;
 /**
  * An alphabetical or numerical code to identify a unit of measure
  * @member {String} isoCode
@@ -229,10 +213,6 @@ UpdateUnitOfMeasureRequestAllOf.prototype['multiplier'] = undefined;
  * @member {module:model/UnitOfMeasureType} unitOfMeasureType
  */
 UpdateUnitOfMeasureRequestAllOf.prototype['unitOfMeasureType'] = undefined;
-/**
- * @member {Array.<module:model/Metadata>} metadata
- */
-UpdateUnitOfMeasureRequestAllOf.prototype['metadata'] = undefined;
 
 
 

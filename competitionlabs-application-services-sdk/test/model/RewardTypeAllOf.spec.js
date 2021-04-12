@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.@CompetitionlabsJavascriptSdk);
+    factory(root.expect, root.CompetitionLabsApplicationServices);
   }
-}(this, function(expect, @CompetitionlabsJavascriptSdk) {
+}(this, function(expect, CompetitionLabsApplicationServices) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new @CompetitionlabsJavascriptSdk.RewardTypeAllOf();
+    instance = new CompetitionLabsApplicationServices.RewardTypeAllOf();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,49 +50,43 @@
   describe('RewardTypeAllOf', function() {
     it('should create an instance of RewardTypeAllOf', function() {
       // uncomment below and update the code to test RewardTypeAllOf
-      //var instane = new @CompetitionlabsJavascriptSdk.RewardTypeAllOf();
-      //expect(instance).to.be.a(@CompetitionlabsJavascriptSdk.RewardTypeAllOf);
+      //var instane = new CompetitionLabsApplicationServices.RewardTypeAllOf();
+      //expect(instance).to.be.a(CompetitionLabsApplicationServices.RewardTypeAllOf);
     });
 
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
-      //var instane = new @CompetitionlabsJavascriptSdk.RewardTypeAllOf();
+      //var instance = new CompetitionLabsApplicationServices.RewardTypeAllOf();
       //expect(instance).to.be();
     });
 
     it('should have the property description (base name: "description")', function() {
       // uncomment below and update the code to test the property description
-      //var instane = new @CompetitionlabsJavascriptSdk.RewardTypeAllOf();
+      //var instance = new CompetitionLabsApplicationServices.RewardTypeAllOf();
       //expect(instance).to.be();
     });
 
     it('should have the property key (base name: "key")', function() {
       // uncomment below and update the code to test the property key
-      //var instane = new @CompetitionlabsJavascriptSdk.RewardTypeAllOf();
+      //var instance = new CompetitionLabsApplicationServices.RewardTypeAllOf();
       //expect(instance).to.be();
     });
 
     it('should have the property unitOfMeasureType (base name: "unitOfMeasureType")', function() {
       // uncomment below and update the code to test the property unitOfMeasureType
-      //var instane = new @CompetitionlabsJavascriptSdk.RewardTypeAllOf();
+      //var instance = new CompetitionLabsApplicationServices.RewardTypeAllOf();
       //expect(instance).to.be();
     });
 
-    it('should have the property system (base name: "system")', function() {
-      // uncomment below and update the code to test the property system
-      //var instane = new @CompetitionlabsJavascriptSdk.RewardTypeAllOf();
+    it('should have the property translations (base name: "translations")', function() {
+      // uncomment below and update the code to test the property translations
+      //var instance = new CompetitionLabsApplicationServices.RewardTypeAllOf();
       //expect(instance).to.be();
     });
 
-    it('should have the property metadata (base name: "metadata")', function() {
-      // uncomment below and update the code to test the property metadata
-      //var instane = new @CompetitionlabsJavascriptSdk.RewardTypeAllOf();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property providers (base name: "providers")', function() {
-      // uncomment below and update the code to test the property providers
-      //var instane = new @CompetitionlabsJavascriptSdk.RewardTypeAllOf();
+    it('should have the property constraints (base name: "constraints")', function() {
+      // uncomment below and update the code to test the property constraints
+      //var instance = new CompetitionLabsApplicationServices.RewardTypeAllOf();
       //expect(instance).to.be();
     });
 

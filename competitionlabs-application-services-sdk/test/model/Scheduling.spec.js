@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.@CompetitionlabsJavascriptSdk);
+    factory(root.expect, root.CompetitionLabsApplicationServices);
   }
-}(this, function(expect, @CompetitionlabsJavascriptSdk) {
+}(this, function(expect, CompetitionLabsApplicationServices) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new @CompetitionlabsJavascriptSdk.Scheduling();
+    instance = new CompetitionLabsApplicationServices.Scheduling();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,43 +50,43 @@
   describe('Scheduling', function() {
     it('should create an instance of Scheduling', function() {
       // uncomment below and update the code to test Scheduling
-      //var instane = new @CompetitionlabsJavascriptSdk.Scheduling();
-      //expect(instance).to.be.a(@CompetitionlabsJavascriptSdk.Scheduling);
+      //var instane = new CompetitionLabsApplicationServices.Scheduling();
+      //expect(instance).to.be.a(CompetitionLabsApplicationServices.Scheduling);
     });
 
     it('should have the property scheduleType (base name: "scheduleType")', function() {
       // uncomment below and update the code to test the property scheduleType
-      //var instane = new @CompetitionlabsJavascriptSdk.Scheduling();
+      //var instance = new CompetitionLabsApplicationServices.Scheduling();
       //expect(instance).to.be();
     });
 
     it('should have the property scheduleOccurrencesLimit (base name: "scheduleOccurrencesLimit")', function() {
       // uncomment below and update the code to test the property scheduleOccurrencesLimit
-      //var instane = new @CompetitionlabsJavascriptSdk.Scheduling();
+      //var instance = new CompetitionLabsApplicationServices.Scheduling();
       //expect(instance).to.be();
     });
 
     it('should have the property every (base name: "every")', function() {
       // uncomment below and update the code to test the property every
-      //var instane = new @CompetitionlabsJavascriptSdk.Scheduling();
+      //var instance = new CompetitionLabsApplicationServices.Scheduling();
       //expect(instance).to.be();
     });
 
     it('should have the property startDate (base name: "startDate")', function() {
       // uncomment below and update the code to test the property startDate
-      //var instane = new @CompetitionlabsJavascriptSdk.Scheduling();
+      //var instance = new CompetitionLabsApplicationServices.Scheduling();
       //expect(instance).to.be();
     });
 
     it('should have the property endDate (base name: "endDate")', function() {
       // uncomment below and update the code to test the property endDate
-      //var instane = new @CompetitionlabsJavascriptSdk.Scheduling();
+      //var instance = new CompetitionLabsApplicationServices.Scheduling();
       //expect(instance).to.be();
     });
 
-    it('should have the property onlyAggregateOnActiveDays (base name: "onlyAggregateOnActiveDays")', function() {
-      // uncomment below and update the code to test the property onlyAggregateOnActiveDays
-      //var instane = new @CompetitionlabsJavascriptSdk.Scheduling();
+    it('should have the property constraints (base name: "constraints")', function() {
+      // uncomment below and update the code to test the property constraints
+      //var instance = new CompetitionLabsApplicationServices.Scheduling();
       //expect(instance).to.be();
     });
 

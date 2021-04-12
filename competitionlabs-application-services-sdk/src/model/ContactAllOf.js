@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -17,7 +17,7 @@ import Location from './Location';
 /**
  * The ContactAllOf model module.
  * @module model/ContactAllOf
- * @version 1.0.5
+ * @version 1.0.0
  */
 class ContactAllOf {
     /**
@@ -41,52 +41,6 @@ class ContactAllOf {
         obj['addressLine1'] = addressLine1;
         obj['zipPostalCode'] = zipPostalCode;
         obj['country'] = country;
-    }
-
-    /**
-    * Constructs a full object with all available fields.
-    */
-    model(){
-        var obj = {};
-
-        obj['addressLine1'] = null;
-        obj['addressLine2'] = null;
-        obj['city'] = null;
-        obj['state'] = null;
-        obj['zipPostalCode'] = null;
-        obj['country'] = null;
-        obj['mobileNumber'] = null;
-        obj['phoneNumber'] = null;
-        obj['geoLocation'] = new Location().model();
-
-        return obj;
-    }
-
-    /**
-    * Constructs a full object Map for all available fields.
-    */
-    modelMap(){
-        var obj = {
-            "fields": {},
-            "requiredFields": {}
-        };
-
-        obj["fields"]['addressLine1'] = { "type": 'String', "system": false };
-        obj["fields"]['addressLine2'] = { "type": 'String', "system": false };
-        obj["fields"]['city'] = { "type": 'String', "system": false };
-        obj["fields"]['state'] = { "type": 'String', "system": false };
-        obj["fields"]['zipPostalCode'] = { "type": 'String', "system": false };
-        obj["fields"]['country'] = { "type": 'String', "system": false };
-        obj["fields"]['mobileNumber'] = { "type": 'String', "system": false };
-        obj["fields"]['phoneNumber'] = { "type": 'String', "system": false };
-        obj["fields"]['geoLocation'] = new Location().modelMap();
-
-        
-        obj["requiredFields"]['addressLine1'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['zipPostalCode'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['country'] = { "type": 'String', "system": false };
-
-        return obj;
     }
 
     /**

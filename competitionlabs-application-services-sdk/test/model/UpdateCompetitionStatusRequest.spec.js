@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.@CompetitionlabsJavascriptSdk);
+    factory(root.expect, root.CompetitionLabsApplicationServices);
   }
-}(this, function(expect, @CompetitionlabsJavascriptSdk) {
+}(this, function(expect, CompetitionLabsApplicationServices) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new @CompetitionlabsJavascriptSdk.UpdateCompetitionStatusRequest();
+    instance = new CompetitionLabsApplicationServices.UpdateCompetitionStatusRequest();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,19 +50,19 @@
   describe('UpdateCompetitionStatusRequest', function() {
     it('should create an instance of UpdateCompetitionStatusRequest', function() {
       // uncomment below and update the code to test UpdateCompetitionStatusRequest
-      //var instane = new @CompetitionlabsJavascriptSdk.UpdateCompetitionStatusRequest();
-      //expect(instance).to.be.a(@CompetitionlabsJavascriptSdk.UpdateCompetitionStatusRequest);
+      //var instane = new CompetitionLabsApplicationServices.UpdateCompetitionStatusRequest();
+      //expect(instance).to.be.a(CompetitionLabsApplicationServices.UpdateCompetitionStatusRequest);
     });
 
-    it('should have the property competitionId (base name: "competitionId")', function() {
-      // uncomment below and update the code to test the property competitionId
-      //var instane = new @CompetitionlabsJavascriptSdk.UpdateCompetitionStatusRequest();
+    it('should have the property id (base name: "id")', function() {
+      // uncomment below and update the code to test the property id
+      //var instance = new CompetitionLabsApplicationServices.UpdateCompetitionStatusRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property status (base name: "status")', function() {
       // uncomment below and update the code to test the property status
-      //var instane = new @CompetitionlabsJavascriptSdk.UpdateCompetitionStatusRequest();
+      //var instance = new CompetitionLabsApplicationServices.UpdateCompetitionStatusRequest();
       //expect(instance).to.be();
     });
 

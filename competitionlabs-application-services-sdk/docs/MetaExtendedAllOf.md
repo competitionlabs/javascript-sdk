@@ -1,4 +1,4 @@
-# @CompetitionlabsApplicationServicesSdk.MetaExtendedAllOf
+# CompetitionLabsApplicationServices.MetaExtendedAllOf
 
 ## Properties
 

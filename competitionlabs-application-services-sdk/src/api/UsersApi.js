@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -21,7 +21,7 @@ import UserResponse from '../model/UserResponse';
 /**
 * Users service.
 * @module api/UsersApi
-* @version 1.0.5
+* @version 1.0.0
 */
 export default class UsersApi {
 
@@ -47,27 +47,21 @@ export default class UsersApi {
 
     /**
      * Create a new user in the CompetitionLabs system
-     * @param {String} spaceName This is the space name which is linked to the account
      * @param {module:model/CreateUserRequest} body Create a User in the CompetitionLabs system
      * @param {Object} opts Optional parameters
      * @param {String} opts.X_API_KEY The admin API Key generated from CompetitionLabs back office
      * @param {module:api/UsersApi~createUserCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ApiResponse}
      */
-    createUser(spaceName, body, opts, callback) {
+    createUser(body, opts, callback) {
       opts = opts || {};
       let postBody = body;
-      // verify the required parameter 'spaceName' is set
-      if (spaceName === undefined || spaceName === null) {
-        throw new Error("Missing the required parameter 'spaceName' when calling createUser");
-      }
       // verify the required parameter 'body' is set
       if (body === undefined || body === null) {
         throw new Error("Missing the required parameter 'body' when calling createUser");
       }
 
       let pathParams = {
-        'spaceName': spaceName
       };
       let queryParams = {
       };
@@ -77,7 +71,7 @@ export default class UsersApi {
       let formParams = {
       };
 
-      let authNames = ['adminApiKey'];
+      let authNames = ['AdminApiKey', 'OAuth2'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = ApiResponse;
@@ -91,7 +85,7 @@ export default class UsersApi {
       }
 
       return this.apiClient.callApi(
-        '/users/{spaceName}', 'POST',
+        '/users', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, basePath, callback
       );
@@ -108,27 +102,21 @@ export default class UsersApi {
     /**
      * Delete a User from the CompetitionLabs
      * @param {String} id Unique identifier of the resource
-     * @param {String} spaceName This is the space name which is linked to the account
      * @param {Object} opts Optional parameters
      * @param {String} opts.X_API_KEY The admin API Key generated from CompetitionLabs back office
      * @param {module:api/UsersApi~deleteUserForSpaceCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ApiResponse}
      */
-    deleteUserForSpace(id, spaceName, opts, callback) {
+    deleteUserForSpace(id, opts, callback) {
       opts = opts || {};
       let postBody = null;
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
         throw new Error("Missing the required parameter 'id' when calling deleteUserForSpace");
       }
-      // verify the required parameter 'spaceName' is set
-      if (spaceName === undefined || spaceName === null) {
-        throw new Error("Missing the required parameter 'spaceName' when calling deleteUserForSpace");
-      }
 
       let pathParams = {
-        'id': id,
-        'spaceName': spaceName
+        'id': id
       };
       let queryParams = {
       };
@@ -138,7 +126,7 @@ export default class UsersApi {
       let formParams = {
       };
 
-      let authNames = ['adminApiKey'];
+      let authNames = ['AdminApiKey', 'OAuth2'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = ApiResponse;
@@ -152,7 +140,7 @@ export default class UsersApi {
       }
 
       return this.apiClient.callApi(
-        '/users/{spaceName}/{id}', 'DELETE',
+        '/users/{id}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, basePath, callback
       );
@@ -168,7 +156,6 @@ export default class UsersApi {
 
     /**
      * Get a list of user profiles owned by this space. This assumes that a user has first been uploaded via a POST request or web console
-     * @param {String} spaceName This is the space name which is linked to the account
      * @param {String} id Unique identifier of the resource
      * @param {Object} opts Optional parameters
      * @param {String} opts.X_API_KEY The admin API Key generated from CompetitionLabs back office
@@ -176,20 +163,15 @@ export default class UsersApi {
      * @param {module:api/UsersApi~getUserForSpaceCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/UserResponse}
      */
-    getUserForSpace(spaceName, id, opts, callback) {
+    getUserForSpace(id, opts, callback) {
       opts = opts || {};
       let postBody = null;
-      // verify the required parameter 'spaceName' is set
-      if (spaceName === undefined || spaceName === null) {
-        throw new Error("Missing the required parameter 'spaceName' when calling getUserForSpace");
-      }
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
         throw new Error("Missing the required parameter 'id' when calling getUserForSpace");
       }
 
       let pathParams = {
-        'spaceName': spaceName,
         'id': id
       };
       let queryParams = {
@@ -201,7 +183,7 @@ export default class UsersApi {
       let formParams = {
       };
 
-      let authNames = ['adminApiKey'];
+      let authNames = ['AdminApiKey', 'OAuth2'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = UserResponse;
@@ -215,7 +197,7 @@ export default class UsersApi {
       }
 
       return this.apiClient.callApi(
-        '/users/{spaceName}/{id}', 'GET',
+        '/users/{id}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, basePath, callback
       );
@@ -231,23 +213,17 @@ export default class UsersApi {
 
     /**
      * Get a list of user profiles owned by this space. This assumes that a user has first been uploaded via a POST request or web console
-     * @param {String} spaceName This is the space name which is linked to the account
      * @param {Object} opts Optional parameters
      * @param {String} opts.X_API_KEY The admin API Key generated from CompetitionLabs back office
      * @param {Boolean} opts.includeSpaces Include Spaces
      * @param {module:api/UsersApi~getUsersForSpaceCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/UserResponse}
      */
-    getUsersForSpace(spaceName, opts, callback) {
+    getUsersForSpace(opts, callback) {
       opts = opts || {};
       let postBody = null;
-      // verify the required parameter 'spaceName' is set
-      if (spaceName === undefined || spaceName === null) {
-        throw new Error("Missing the required parameter 'spaceName' when calling getUsersForSpace");
-      }
 
       let pathParams = {
-        'spaceName': spaceName
       };
       let queryParams = {
         'includeSpaces': opts['includeSpaces']
@@ -258,7 +234,7 @@ export default class UsersApi {
       let formParams = {
       };
 
-      let authNames = ['adminApiKey'];
+      let authNames = ['AdminApiKey', 'OAuth2'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = UserResponse;
@@ -272,7 +248,7 @@ export default class UsersApi {
       }
 
       return this.apiClient.callApi(
-        '/users/{spaceName}', 'GET',
+        '/users', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, basePath, callback
       );
@@ -288,27 +264,21 @@ export default class UsersApi {
 
     /**
      * Update an existing User in the CompetitionLabs system
-     * @param {String} spaceName This is the space name which is linked to the account
      * @param {module:model/UpdateUserRequest} body Update a User in the CompetitionLabs system. * Any Put body Parameters that are excluded in the Request body field will be considered as empty and updated with an empty field
      * @param {Object} opts Optional parameters
      * @param {String} opts.X_API_KEY The admin API Key generated from CompetitionLabs back office
      * @param {module:api/UsersApi~updateUserForSpaceCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ApiResponse}
      */
-    updateUserForSpace(spaceName, body, opts, callback) {
+    updateUserForSpace(body, opts, callback) {
       opts = opts || {};
       let postBody = body;
-      // verify the required parameter 'spaceName' is set
-      if (spaceName === undefined || spaceName === null) {
-        throw new Error("Missing the required parameter 'spaceName' when calling updateUserForSpace");
-      }
       // verify the required parameter 'body' is set
       if (body === undefined || body === null) {
         throw new Error("Missing the required parameter 'body' when calling updateUserForSpace");
       }
 
       let pathParams = {
-        'spaceName': spaceName
       };
       let queryParams = {
       };
@@ -318,7 +288,7 @@ export default class UsersApi {
       let formParams = {
       };
 
-      let authNames = ['adminApiKey'];
+      let authNames = ['AdminApiKey', 'OAuth2'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = ApiResponse;
@@ -332,7 +302,7 @@ export default class UsersApi {
       }
 
       return this.apiClient.callApi(
-        '/users/{spaceName}', 'PUT',
+        '/users', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, basePath, callback
       );

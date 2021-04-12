@@ -1,4 +1,4 @@
-# @CompetitionlabsApplicationServicesSdk.SpacesApi
+# CompetitionLabsApplicationServices.SpacesApi
 
 All URIs are relative to *https://api.competitionlabs.com*
 
@@ -23,16 +23,19 @@ Create a new Space for the user in the CompetitionLabs
 ### Example
 
 ```javascript
-import @CompetitionlabsApplicationServicesSdk from '@competitionlabs/application-services-sdk';
-let defaultClient = @CompetitionlabsApplicationServicesSdk.ApiClient.instance;
-// Configure API key authorization: adminApiKey
-let adminApiKey = defaultClient.authentications['adminApiKey'];
-adminApiKey.apiKey = 'YOUR API KEY';
+import CompetitionLabsApplicationServices from 'competition_labs_application_services';
+let defaultClient = CompetitionLabsApplicationServices.ApiClient.instance;
+// Configure API key authorization: AdminApiKey
+let AdminApiKey = defaultClient.authentications['AdminApiKey'];
+AdminApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//adminApiKey.apiKeyPrefix = 'Token';
+//AdminApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: OAuth2
+let OAuth2 = defaultClient.authentications['OAuth2'];
+OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new @CompetitionlabsApplicationServicesSdk.SpacesApi();
-let body = new @CompetitionlabsApplicationServicesSdk.CreateSpaceRequest(); // CreateSpaceRequest | Create a Space for the user in the CompetitionLabs
+let apiInstance = new CompetitionLabsApplicationServices.SpacesApi();
+let body = new CompetitionLabsApplicationServices.CreateSpaceRequest(); // CreateSpaceRequest | Create a Space for the user in the CompetitionLabs
 let opts = {
   'X_API_KEY': "X_API_KEY_example" // String | The admin API Key generated from CompetitionLabs back office
 };
@@ -59,7 +62,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[adminApiKey](../README.md#adminApiKey)
+[AdminApiKey](../README.md#AdminApiKey), [OAuth2](../README.md#OAuth2)
 
 ### HTTP request headers
 
@@ -78,15 +81,18 @@ Delete the Space for the given Space Name provided
 ### Example
 
 ```javascript
-import @CompetitionlabsApplicationServicesSdk from '@competitionlabs/application-services-sdk';
-let defaultClient = @CompetitionlabsApplicationServicesSdk.ApiClient.instance;
-// Configure API key authorization: adminApiKey
-let adminApiKey = defaultClient.authentications['adminApiKey'];
-adminApiKey.apiKey = 'YOUR API KEY';
+import CompetitionLabsApplicationServices from 'competition_labs_application_services';
+let defaultClient = CompetitionLabsApplicationServices.ApiClient.instance;
+// Configure API key authorization: AdminApiKey
+let AdminApiKey = defaultClient.authentications['AdminApiKey'];
+AdminApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//adminApiKey.apiKeyPrefix = 'Token';
+//AdminApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: OAuth2
+let OAuth2 = defaultClient.authentications['OAuth2'];
+OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new @CompetitionlabsApplicationServicesSdk.SpacesApi();
+let apiInstance = new CompetitionLabsApplicationServices.SpacesApi();
 let spaceName = "spaceName_example"; // String | This is the space name which will be deleted
 let opts = {
   'X_API_KEY': "X_API_KEY_example" // String | The admin API Key generated from CompetitionLabs back office
@@ -114,7 +120,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[adminApiKey](../README.md#adminApiKey)
+[AdminApiKey](../README.md#AdminApiKey), [OAuth2](../README.md#OAuth2)
 
 ### HTTP request headers
 
@@ -133,15 +139,18 @@ Returns a list of Spaces for the current session
 ### Example
 
 ```javascript
-import @CompetitionlabsApplicationServicesSdk from '@competitionlabs/application-services-sdk';
-let defaultClient = @CompetitionlabsApplicationServicesSdk.ApiClient.instance;
-// Configure API key authorization: adminApiKey
-let adminApiKey = defaultClient.authentications['adminApiKey'];
-adminApiKey.apiKey = 'YOUR API KEY';
+import CompetitionLabsApplicationServices from 'competition_labs_application_services';
+let defaultClient = CompetitionLabsApplicationServices.ApiClient.instance;
+// Configure API key authorization: AdminApiKey
+let AdminApiKey = defaultClient.authentications['AdminApiKey'];
+AdminApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//adminApiKey.apiKeyPrefix = 'Token';
+//AdminApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: OAuth2
+let OAuth2 = defaultClient.authentications['OAuth2'];
+OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new @CompetitionlabsApplicationServicesSdk.SpacesApi();
+let apiInstance = new CompetitionLabsApplicationServices.SpacesApi();
 let opts = {
   'X_API_KEY': "X_API_KEY_example", // String | The admin API Key generated from CompetitionLabs back office
   'limit': 56, // Number | Limit the returned total records found
@@ -171,7 +180,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[adminApiKey](../README.md#adminApiKey)
+[AdminApiKey](../README.md#AdminApiKey), [OAuth2](../README.md#OAuth2)
 
 ### HTTP request headers
 
@@ -190,15 +199,18 @@ Return a list of sub-spaces for the given Space Name provided
 ### Example
 
 ```javascript
-import @CompetitionlabsApplicationServicesSdk from '@competitionlabs/application-services-sdk';
-let defaultClient = @CompetitionlabsApplicationServicesSdk.ApiClient.instance;
-// Configure API key authorization: adminApiKey
-let adminApiKey = defaultClient.authentications['adminApiKey'];
-adminApiKey.apiKey = 'YOUR API KEY';
+import CompetitionLabsApplicationServices from 'competition_labs_application_services';
+let defaultClient = CompetitionLabsApplicationServices.ApiClient.instance;
+// Configure API key authorization: AdminApiKey
+let AdminApiKey = defaultClient.authentications['AdminApiKey'];
+AdminApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//adminApiKey.apiKeyPrefix = 'Token';
+//AdminApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: OAuth2
+let OAuth2 = defaultClient.authentications['OAuth2'];
+OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new @CompetitionlabsApplicationServicesSdk.SpacesApi();
+let apiInstance = new CompetitionLabsApplicationServices.SpacesApi();
 let spaceName = "spaceName_example"; // String | This is the space name which is linked to the account
 let opts = {
   'X_API_KEY': "X_API_KEY_example", // String | The admin API Key generated from CompetitionLabs back office
@@ -230,7 +242,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[adminApiKey](../README.md#adminApiKey)
+[AdminApiKey](../README.md#AdminApiKey), [OAuth2](../README.md#OAuth2)
 
 ### HTTP request headers
 
@@ -249,16 +261,19 @@ Update a  Space for the user in the CompetitionLabs
 ### Example
 
 ```javascript
-import @CompetitionlabsApplicationServicesSdk from '@competitionlabs/application-services-sdk';
-let defaultClient = @CompetitionlabsApplicationServicesSdk.ApiClient.instance;
-// Configure API key authorization: adminApiKey
-let adminApiKey = defaultClient.authentications['adminApiKey'];
-adminApiKey.apiKey = 'YOUR API KEY';
+import CompetitionLabsApplicationServices from 'competition_labs_application_services';
+let defaultClient = CompetitionLabsApplicationServices.ApiClient.instance;
+// Configure API key authorization: AdminApiKey
+let AdminApiKey = defaultClient.authentications['AdminApiKey'];
+AdminApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//adminApiKey.apiKeyPrefix = 'Token';
+//AdminApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: OAuth2
+let OAuth2 = defaultClient.authentications['OAuth2'];
+OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new @CompetitionlabsApplicationServicesSdk.SpacesApi();
-let body = new @CompetitionlabsApplicationServicesSdk.CreateSpaceRequest(); // CreateSpaceRequest | Create a Space for the user in the CompetitionLabs
+let apiInstance = new CompetitionLabsApplicationServices.SpacesApi();
+let body = new CompetitionLabsApplicationServices.CreateSpaceRequest(); // CreateSpaceRequest | Create a Space for the user in the CompetitionLabs
 let opts = {
   'X_API_KEY': "X_API_KEY_example" // String | The admin API Key generated from CompetitionLabs back office
 };
@@ -285,7 +300,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[adminApiKey](../README.md#adminApiKey)
+[AdminApiKey](../README.md#AdminApiKey), [OAuth2](../README.md#OAuth2)
 
 ### HTTP request headers
 

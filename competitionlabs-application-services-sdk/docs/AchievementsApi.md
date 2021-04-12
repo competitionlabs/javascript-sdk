@@ -1,28 +1,29 @@
-# @CompetitionlabsApplicationServicesSdk.AchievementsApi
+# CompetitionLabsApplicationServices.AchievementsApi
 
 All URIs are relative to *https://api.competitionlabs.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createAchievements**](AchievementsApi.md#createAchievements) | **POST** /achievements/{spaceName} | 
-[**deleteAchievements**](AchievementsApi.md#deleteAchievements) | **DELETE** /achievements/{spaceName} | 
-[**deleteAchievementsByQuery**](AchievementsApi.md#deleteAchievementsByQuery) | **POST** /achievements/{spaceName}/delete | 
-[**getAchievementIconList**](AchievementsApi.md#getAchievementIconList) | **GET** /achievements/{spaceName}/icons | NOT AVAILABLE IN CURRENT RELEASE
-[**getAchievements**](AchievementsApi.md#getAchievements) | **GET** /achievements/{spaceName} | 
-[**getAchievementsByQuery**](AchievementsApi.md#getAchievementsByQuery) | **POST** /achievements/{spaceName}/query | 
-[**getAntecendentsForAchievement**](AchievementsApi.md#getAntecendentsForAchievement) | **GET** /achievements/{spaceName}/{id}/antecedents | NOT AVAILABLE IN CURRENT RELEASE
-[**getDesendentsForAchievement**](AchievementsApi.md#getDesendentsForAchievement) | **GET** /achievements/{spaceName}/{id}/descendents | NOT AVAILABLE IN CURRENT RELEASE
-[**getIssuedAchievementsCountById**](AchievementsApi.md#getIssuedAchievementsCountById) | **GET** /achievements/{spaceName}/{id}/issued | 
-[**getMembersAchievementsDetails**](AchievementsApi.md#getMembersAchievementsDetails) | **GET** /achievements/{spaceName}/{id}/members | 
-[**updateAchievements**](AchievementsApi.md#updateAchievements) | **PUT** /achievements/{spaceName} | 
-[**updateAchievementsLiveStatus**](AchievementsApi.md#updateAchievementsLiveStatus) | **PUT** /achievements/{spaceName}/state | 
-[**uploadAchievementsIcon**](AchievementsApi.md#uploadAchievementsIcon) | **POST** /achievements/{spaceName}/icons | NOT AVAILABLE IN CURRENT RELEASE
+[**createAchievements**](AchievementsApi.md#createAchievements) | **POST** /achievements | 
+[**deleteAchievements**](AchievementsApi.md#deleteAchievements) | **DELETE** /achievements | 
+[**deleteAchievementsByQuery**](AchievementsApi.md#deleteAchievementsByQuery) | **POST** /achievements/delete | 
+[**getAchievementIconList**](AchievementsApi.md#getAchievementIconList) | **GET** /achievements/icons | NOT AVAILABLE IN CURRENT RELEASE
+[**getAchievementToClone**](AchievementsApi.md#getAchievementToClone) | **GET** /achievements/{id}/clone | 
+[**getAchievements**](AchievementsApi.md#getAchievements) | **GET** /achievements | 
+[**getAchievementsByQuery**](AchievementsApi.md#getAchievementsByQuery) | **POST** /achievements/query | 
+[**getAntecendentsForAchievement**](AchievementsApi.md#getAntecendentsForAchievement) | **GET** /achievements/{id}/antecedents | NOT AVAILABLE IN CURRENT RELEASE
+[**getDesendentsForAchievement**](AchievementsApi.md#getDesendentsForAchievement) | **GET** /achievements/{id}/descendents | NOT AVAILABLE IN CURRENT RELEASE
+[**getIssuedAchievementsCountById**](AchievementsApi.md#getIssuedAchievementsCountById) | **GET** /achievements/{id}/issued | 
+[**getMembersAchievementsDetails**](AchievementsApi.md#getMembersAchievementsDetails) | **GET** /achievements/{id}/members | 
+[**updateAchievements**](AchievementsApi.md#updateAchievements) | **PUT** /achievements | 
+[**updateAchievementsLiveStatus**](AchievementsApi.md#updateAchievementsLiveStatus) | **PUT** /achievements/state | 
+[**uploadAchievementsIcon**](AchievementsApi.md#uploadAchievementsIcon) | **POST** /achievements/icons | NOT AVAILABLE IN CURRENT RELEASE
 
 
 
 ## createAchievements
 
-> ApiResponse createAchievements(spaceName, body, opts)
+> ApiResponse createAchievements(body, opts)
 
 
 
@@ -31,21 +32,23 @@ Create Achievements in the CompetitionLabs database
 ### Example
 
 ```javascript
-import @CompetitionlabsApplicationServicesSdk from '@competitionlabs/application-services-sdk';
-let defaultClient = @CompetitionlabsApplicationServicesSdk.ApiClient.instance;
-// Configure API key authorization: adminApiKey
-let adminApiKey = defaultClient.authentications['adminApiKey'];
-adminApiKey.apiKey = 'YOUR API KEY';
+import CompetitionLabsApplicationServices from 'competition_labs_application_services';
+let defaultClient = CompetitionLabsApplicationServices.ApiClient.instance;
+// Configure API key authorization: AdminApiKey
+let AdminApiKey = defaultClient.authentications['AdminApiKey'];
+AdminApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//adminApiKey.apiKeyPrefix = 'Token';
+//AdminApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: OAuth2
+let OAuth2 = defaultClient.authentications['OAuth2'];
+OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new @CompetitionlabsApplicationServicesSdk.AchievementsApi();
-let spaceName = "spaceName_example"; // String | This is the space name which is linked to the account
-let body = [new @CompetitionlabsApplicationServicesSdk.CreateAchievementRequest()]; // [CreateAchievementRequest] | Create Achievements in the CompetitionLabs database
+let apiInstance = new CompetitionLabsApplicationServices.AchievementsApi();
+let body = [new CompetitionLabsApplicationServices.CreateAchievementRequest()]; // [CreateAchievementRequest] | Create Achievements in the CompetitionLabs database
 let opts = {
   'X_API_KEY': "X_API_KEY_example" // String | The admin API Key generated from CompetitionLabs back office
 };
-apiInstance.createAchievements(spaceName, body, opts, (error, data, response) => {
+apiInstance.createAchievements(body, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -59,7 +62,6 @@ apiInstance.createAchievements(spaceName, body, opts, (error, data, response) =>
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **spaceName** | **String**| This is the space name which is linked to the account | 
  **body** | [**[CreateAchievementRequest]**](CreateAchievementRequest.md)| Create Achievements in the CompetitionLabs database | 
  **X_API_KEY** | **String**| The admin API Key generated from CompetitionLabs back office | [optional] 
 
@@ -69,7 +71,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[adminApiKey](../README.md#adminApiKey)
+[AdminApiKey](../README.md#AdminApiKey), [OAuth2](../README.md#OAuth2)
 
 ### HTTP request headers
 
@@ -79,7 +81,7 @@ Name | Type | Description  | Notes
 
 ## deleteAchievements
 
-> ApiResponse deleteAchievements(spaceName, opts)
+> ApiResponse deleteAchievements(opts)
 
 
 
@@ -88,21 +90,23 @@ Delete Achievements for a given identifier specified
 ### Example
 
 ```javascript
-import @CompetitionlabsApplicationServicesSdk from '@competitionlabs/application-services-sdk';
-let defaultClient = @CompetitionlabsApplicationServicesSdk.ApiClient.instance;
-// Configure API key authorization: adminApiKey
-let adminApiKey = defaultClient.authentications['adminApiKey'];
-adminApiKey.apiKey = 'YOUR API KEY';
+import CompetitionLabsApplicationServices from 'competition_labs_application_services';
+let defaultClient = CompetitionLabsApplicationServices.ApiClient.instance;
+// Configure API key authorization: AdminApiKey
+let AdminApiKey = defaultClient.authentications['AdminApiKey'];
+AdminApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//adminApiKey.apiKeyPrefix = 'Token';
+//AdminApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: OAuth2
+let OAuth2 = defaultClient.authentications['OAuth2'];
+OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new @CompetitionlabsApplicationServicesSdk.AchievementsApi();
-let spaceName = "spaceName_example"; // String | This is the space name which is linked to the account
+let apiInstance = new CompetitionLabsApplicationServices.AchievementsApi();
 let opts = {
   'X_API_KEY': "X_API_KEY_example", // String | The admin API Key generated from CompetitionLabs back office
   'id': ["null"] // [String] | The unique identifiers of the resources
 };
-apiInstance.deleteAchievements(spaceName, opts, (error, data, response) => {
+apiInstance.deleteAchievements(opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -116,7 +120,6 @@ apiInstance.deleteAchievements(spaceName, opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **spaceName** | **String**| This is the space name which is linked to the account | 
  **X_API_KEY** | **String**| The admin API Key generated from CompetitionLabs back office | [optional] 
  **id** | [**[String]**](String.md)| The unique identifiers of the resources | [optional] 
 
@@ -126,7 +129,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[adminApiKey](../README.md#adminApiKey)
+[AdminApiKey](../README.md#AdminApiKey), [OAuth2](../README.md#OAuth2)
 
 ### HTTP request headers
 
@@ -136,7 +139,7 @@ Name | Type | Description  | Notes
 
 ## deleteAchievementsByQuery
 
-> ApiResponse deleteAchievementsByQuery(spaceName, opts)
+> ApiResponse deleteAchievementsByQuery(opts)
 
 
 
@@ -145,21 +148,23 @@ Delete Achievements from CompetitionLabs database by unique Achievements ID&#39;
 ### Example
 
 ```javascript
-import @CompetitionlabsApplicationServicesSdk from '@competitionlabs/application-services-sdk';
-let defaultClient = @CompetitionlabsApplicationServicesSdk.ApiClient.instance;
-// Configure API key authorization: adminApiKey
-let adminApiKey = defaultClient.authentications['adminApiKey'];
-adminApiKey.apiKey = 'YOUR API KEY';
+import CompetitionLabsApplicationServices from 'competition_labs_application_services';
+let defaultClient = CompetitionLabsApplicationServices.ApiClient.instance;
+// Configure API key authorization: AdminApiKey
+let AdminApiKey = defaultClient.authentications['AdminApiKey'];
+AdminApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//adminApiKey.apiKeyPrefix = 'Token';
+//AdminApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: OAuth2
+let OAuth2 = defaultClient.authentications['OAuth2'];
+OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new @CompetitionlabsApplicationServicesSdk.AchievementsApi();
-let spaceName = "spaceName_example"; // String | This is the space name which is linked to the account
+let apiInstance = new CompetitionLabsApplicationServices.AchievementsApi();
 let opts = {
   'X_API_KEY': "X_API_KEY_example", // String | The admin API Key generated from CompetitionLabs back office
-  'body': new @CompetitionlabsApplicationServicesSdk.QueryRequest() // QueryRequest | Delete Achievements from CompetitionLabs database by unique Achievements ID's or any other Post body parameters using the POST method
+  'body': new CompetitionLabsApplicationServices.QueryRequest() // QueryRequest | Delete Achievements from CompetitionLabs database by unique Achievements ID's or any other Post body parameters using the POST method
 };
-apiInstance.deleteAchievementsByQuery(spaceName, opts, (error, data, response) => {
+apiInstance.deleteAchievementsByQuery(opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -173,7 +178,6 @@ apiInstance.deleteAchievementsByQuery(spaceName, opts, (error, data, response) =
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **spaceName** | **String**| This is the space name which is linked to the account | 
  **X_API_KEY** | **String**| The admin API Key generated from CompetitionLabs back office | [optional] 
  **body** | [**QueryRequest**](QueryRequest.md)| Delete Achievements from CompetitionLabs database by unique Achievements ID&#39;s or any other Post body parameters using the POST method | [optional] 
 
@@ -183,7 +187,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[adminApiKey](../README.md#adminApiKey)
+[AdminApiKey](../README.md#AdminApiKey), [OAuth2](../README.md#OAuth2)
 
 ### HTTP request headers
 
@@ -193,7 +197,7 @@ Name | Type | Description  | Notes
 
 ## getAchievementIconList
 
-> AttachmentResponse getAchievementIconList(spaceName, opts)
+> AttachmentResponse getAchievementIconList(opts)
 
 NOT AVAILABLE IN CURRENT RELEASE
 
@@ -202,22 +206,24 @@ Returns a list of Icons. This assumes that icons have first been uploaded via a 
 ### Example
 
 ```javascript
-import @CompetitionlabsApplicationServicesSdk from '@competitionlabs/application-services-sdk';
-let defaultClient = @CompetitionlabsApplicationServicesSdk.ApiClient.instance;
-// Configure API key authorization: adminApiKey
-let adminApiKey = defaultClient.authentications['adminApiKey'];
-adminApiKey.apiKey = 'YOUR API KEY';
+import CompetitionLabsApplicationServices from 'competition_labs_application_services';
+let defaultClient = CompetitionLabsApplicationServices.ApiClient.instance;
+// Configure API key authorization: AdminApiKey
+let AdminApiKey = defaultClient.authentications['AdminApiKey'];
+AdminApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//adminApiKey.apiKeyPrefix = 'Token';
+//AdminApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: OAuth2
+let OAuth2 = defaultClient.authentications['OAuth2'];
+OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new @CompetitionlabsApplicationServicesSdk.AchievementsApi();
-let spaceName = "spaceName_example"; // String | This is the space name which is linked to the account
+let apiInstance = new CompetitionLabsApplicationServices.AchievementsApi();
 let opts = {
   'X_API_KEY': "X_API_KEY_example", // String | The admin API Key generated from CompetitionLabs back office
   'limit': 56, // Number | Limit the returned total records found
   'skip': 56 // Number | Skip the returned records found and return the next batch of records
 };
-apiInstance.getAchievementIconList(spaceName, opts, (error, data, response) => {
+apiInstance.getAchievementIconList(opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -231,7 +237,6 @@ apiInstance.getAchievementIconList(spaceName, opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **spaceName** | **String**| This is the space name which is linked to the account | 
  **X_API_KEY** | **String**| The admin API Key generated from CompetitionLabs back office | [optional] 
  **limit** | **Number**| Limit the returned total records found | [optional] 
  **skip** | **Number**| Skip the returned records found and return the next batch of records | [optional] 
@@ -242,7 +247,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[adminApiKey](../README.md#adminApiKey)
+[AdminApiKey](../README.md#AdminApiKey), [OAuth2](../README.md#OAuth2)
 
 ### HTTP request headers
 
@@ -250,34 +255,34 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
-## getAchievements
+## getAchievementToClone
 
-> AchievementResponse getAchievements(spaceName, opts)
+> CloneAchievementResponse getAchievementToClone(id, opts)
 
 
 
-Returns a list of Achievements. This assumes that achievements have first been uploaded via a POST request or web console
+Clones an Achievement for the identifier provided
 
 ### Example
 
 ```javascript
-import @CompetitionlabsApplicationServicesSdk from '@competitionlabs/application-services-sdk';
-let defaultClient = @CompetitionlabsApplicationServicesSdk.ApiClient.instance;
-// Configure API key authorization: adminApiKey
-let adminApiKey = defaultClient.authentications['adminApiKey'];
-adminApiKey.apiKey = 'YOUR API KEY';
+import CompetitionLabsApplicationServices from 'competition_labs_application_services';
+let defaultClient = CompetitionLabsApplicationServices.ApiClient.instance;
+// Configure API key authorization: AdminApiKey
+let AdminApiKey = defaultClient.authentications['AdminApiKey'];
+AdminApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//adminApiKey.apiKeyPrefix = 'Token';
+//AdminApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: OAuth2
+let OAuth2 = defaultClient.authentications['OAuth2'];
+OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new @CompetitionlabsApplicationServicesSdk.AchievementsApi();
-let spaceName = "spaceName_example"; // String | This is the space name which is linked to the account
+let apiInstance = new CompetitionLabsApplicationServices.AchievementsApi();
+let id = "id_example"; // String | Unique identifier of the resource
 let opts = {
-  'X_API_KEY': "X_API_KEY_example", // String | The admin API Key generated from CompetitionLabs back office
-  'id': ["null"], // [String] | The unique identifiers of the resources
-  'limit': 56, // Number | Limit the returned total records found
-  'skip': 56 // Number | Skip the returned records found and return the next batch of records
+  'X_API_KEY': "X_API_KEY_example" // String | The admin API Key generated from CompetitionLabs back office
 };
-apiInstance.getAchievements(spaceName, opts, (error, data, response) => {
+apiInstance.getAchievementToClone(id, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -291,7 +296,66 @@ apiInstance.getAchievements(spaceName, opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **spaceName** | **String**| This is the space name which is linked to the account | 
+ **id** | **String**| Unique identifier of the resource | 
+ **X_API_KEY** | **String**| The admin API Key generated from CompetitionLabs back office | [optional] 
+
+### Return type
+
+[**CloneAchievementResponse**](CloneAchievementResponse.md)
+
+### Authorization
+
+[AdminApiKey](../README.md#AdminApiKey), [OAuth2](../README.md#OAuth2)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## getAchievements
+
+> AchievementResponse getAchievements(opts)
+
+
+
+Returns a list of Achievements. This assumes that achievements have first been uploaded via a POST request or web console
+
+### Example
+
+```javascript
+import CompetitionLabsApplicationServices from 'competition_labs_application_services';
+let defaultClient = CompetitionLabsApplicationServices.ApiClient.instance;
+// Configure API key authorization: AdminApiKey
+let AdminApiKey = defaultClient.authentications['AdminApiKey'];
+AdminApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//AdminApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: OAuth2
+let OAuth2 = defaultClient.authentications['OAuth2'];
+OAuth2.accessToken = 'YOUR ACCESS TOKEN';
+
+let apiInstance = new CompetitionLabsApplicationServices.AchievementsApi();
+let opts = {
+  'X_API_KEY': "X_API_KEY_example", // String | The admin API Key generated from CompetitionLabs back office
+  'id': ["null"], // [String] | The unique identifiers of the resources
+  'limit': 56, // Number | Limit the returned total records found
+  'skip': 56 // Number | Skip the returned records found and return the next batch of records
+};
+apiInstance.getAchievements(opts, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
  **X_API_KEY** | **String**| The admin API Key generated from CompetitionLabs back office | [optional] 
  **id** | [**[String]**](String.md)| The unique identifiers of the resources | [optional] 
  **limit** | **Number**| Limit the returned total records found | [optional] 
@@ -303,7 +367,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[adminApiKey](../README.md#adminApiKey)
+[AdminApiKey](../README.md#AdminApiKey), [OAuth2](../README.md#OAuth2)
 
 ### HTTP request headers
 
@@ -313,7 +377,7 @@ Name | Type | Description  | Notes
 
 ## getAchievementsByQuery
 
-> AchievementResponse getAchievementsByQuery(spaceName, opts)
+> AchievementResponse getAchievementsByQuery(opts)
 
 
 
@@ -322,21 +386,23 @@ Retrieve Achievements from CompetitionLabs database by unique Achievements ID&#3
 ### Example
 
 ```javascript
-import @CompetitionlabsApplicationServicesSdk from '@competitionlabs/application-services-sdk';
-let defaultClient = @CompetitionlabsApplicationServicesSdk.ApiClient.instance;
-// Configure API key authorization: adminApiKey
-let adminApiKey = defaultClient.authentications['adminApiKey'];
-adminApiKey.apiKey = 'YOUR API KEY';
+import CompetitionLabsApplicationServices from 'competition_labs_application_services';
+let defaultClient = CompetitionLabsApplicationServices.ApiClient.instance;
+// Configure API key authorization: AdminApiKey
+let AdminApiKey = defaultClient.authentications['AdminApiKey'];
+AdminApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//adminApiKey.apiKeyPrefix = 'Token';
+//AdminApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: OAuth2
+let OAuth2 = defaultClient.authentications['OAuth2'];
+OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new @CompetitionlabsApplicationServicesSdk.AchievementsApi();
-let spaceName = "spaceName_example"; // String | This is the space name which is linked to the account
+let apiInstance = new CompetitionLabsApplicationServices.AchievementsApi();
 let opts = {
   'X_API_KEY': "X_API_KEY_example", // String | The admin API Key generated from CompetitionLabs back office
-  'body': new @CompetitionlabsApplicationServicesSdk.QueryRequest() // QueryRequest | Retrieve Achievements from CompetitionLabs database by unique Achievements ID's or any other Post body parameters using the POST method
+  'body': new CompetitionLabsApplicationServices.QueryRequest() // QueryRequest | Retrieve Achievements from CompetitionLabs database by unique Achievements ID's or any other Post body parameters using the POST method
 };
-apiInstance.getAchievementsByQuery(spaceName, opts, (error, data, response) => {
+apiInstance.getAchievementsByQuery(opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -350,7 +416,6 @@ apiInstance.getAchievementsByQuery(spaceName, opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **spaceName** | **String**| This is the space name which is linked to the account | 
  **X_API_KEY** | **String**| The admin API Key generated from CompetitionLabs back office | [optional] 
  **body** | [**QueryRequest**](QueryRequest.md)| Retrieve Achievements from CompetitionLabs database by unique Achievements ID&#39;s or any other Post body parameters using the POST method | [optional] 
 
@@ -360,7 +425,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[adminApiKey](../README.md#adminApiKey)
+[AdminApiKey](../README.md#AdminApiKey), [OAuth2](../README.md#OAuth2)
 
 ### HTTP request headers
 
@@ -370,7 +435,7 @@ Name | Type | Description  | Notes
 
 ## getAntecendentsForAchievement
 
-> AchievementResponse getAntecendentsForAchievement(spaceName, id, opts)
+> AchievementResponse getAntecendentsForAchievement(id, opts)
 
 NOT AVAILABLE IN CURRENT RELEASE
 
@@ -379,23 +444,25 @@ Receive a list of Antecedent Achievements for the Achievement identified provide
 ### Example
 
 ```javascript
-import @CompetitionlabsApplicationServicesSdk from '@competitionlabs/application-services-sdk';
-let defaultClient = @CompetitionlabsApplicationServicesSdk.ApiClient.instance;
-// Configure API key authorization: adminApiKey
-let adminApiKey = defaultClient.authentications['adminApiKey'];
-adminApiKey.apiKey = 'YOUR API KEY';
+import CompetitionLabsApplicationServices from 'competition_labs_application_services';
+let defaultClient = CompetitionLabsApplicationServices.ApiClient.instance;
+// Configure API key authorization: AdminApiKey
+let AdminApiKey = defaultClient.authentications['AdminApiKey'];
+AdminApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//adminApiKey.apiKeyPrefix = 'Token';
+//AdminApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: OAuth2
+let OAuth2 = defaultClient.authentications['OAuth2'];
+OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new @CompetitionlabsApplicationServicesSdk.AchievementsApi();
-let spaceName = "spaceName_example"; // String | This is the space name which is linked to the account
+let apiInstance = new CompetitionLabsApplicationServices.AchievementsApi();
 let id = "id_example"; // String | Unique identifier of the resource
 let opts = {
   'X_API_KEY': "X_API_KEY_example", // String | The admin API Key generated from CompetitionLabs back office
   'limit': 56, // Number | Limit the returned total records found
   'skip': 56 // Number | Skip the returned records found and return the next batch of records
 };
-apiInstance.getAntecendentsForAchievement(spaceName, id, opts, (error, data, response) => {
+apiInstance.getAntecendentsForAchievement(id, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -409,7 +476,6 @@ apiInstance.getAntecendentsForAchievement(spaceName, id, opts, (error, data, res
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **spaceName** | **String**| This is the space name which is linked to the account | 
  **id** | **String**| Unique identifier of the resource | 
  **X_API_KEY** | **String**| The admin API Key generated from CompetitionLabs back office | [optional] 
  **limit** | **Number**| Limit the returned total records found | [optional] 
@@ -421,7 +487,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[adminApiKey](../README.md#adminApiKey)
+[AdminApiKey](../README.md#AdminApiKey), [OAuth2](../README.md#OAuth2)
 
 ### HTTP request headers
 
@@ -431,7 +497,7 @@ Name | Type | Description  | Notes
 
 ## getDesendentsForAchievement
 
-> AchievementResponse getDesendentsForAchievement(spaceName, id, opts)
+> AchievementResponse getDesendentsForAchievement(id, opts)
 
 NOT AVAILABLE IN CURRENT RELEASE
 
@@ -440,23 +506,25 @@ Receive a list of Descendent Achievements for the Achievement identified provide
 ### Example
 
 ```javascript
-import @CompetitionlabsApplicationServicesSdk from '@competitionlabs/application-services-sdk';
-let defaultClient = @CompetitionlabsApplicationServicesSdk.ApiClient.instance;
-// Configure API key authorization: adminApiKey
-let adminApiKey = defaultClient.authentications['adminApiKey'];
-adminApiKey.apiKey = 'YOUR API KEY';
+import CompetitionLabsApplicationServices from 'competition_labs_application_services';
+let defaultClient = CompetitionLabsApplicationServices.ApiClient.instance;
+// Configure API key authorization: AdminApiKey
+let AdminApiKey = defaultClient.authentications['AdminApiKey'];
+AdminApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//adminApiKey.apiKeyPrefix = 'Token';
+//AdminApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: OAuth2
+let OAuth2 = defaultClient.authentications['OAuth2'];
+OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new @CompetitionlabsApplicationServicesSdk.AchievementsApi();
-let spaceName = "spaceName_example"; // String | This is the space name which is linked to the account
+let apiInstance = new CompetitionLabsApplicationServices.AchievementsApi();
 let id = "id_example"; // String | Unique identifier of the resource
 let opts = {
   'X_API_KEY': "X_API_KEY_example", // String | The admin API Key generated from CompetitionLabs back office
   'limit': 56, // Number | Limit the returned total records found
   'skip': 56 // Number | Skip the returned records found and return the next batch of records
 };
-apiInstance.getDesendentsForAchievement(spaceName, id, opts, (error, data, response) => {
+apiInstance.getDesendentsForAchievement(id, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -470,7 +538,6 @@ apiInstance.getDesendentsForAchievement(spaceName, id, opts, (error, data, respo
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **spaceName** | **String**| This is the space name which is linked to the account | 
  **id** | **String**| Unique identifier of the resource | 
  **X_API_KEY** | **String**| The admin API Key generated from CompetitionLabs back office | [optional] 
  **limit** | **Number**| Limit the returned total records found | [optional] 
@@ -482,7 +549,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[adminApiKey](../README.md#adminApiKey)
+[AdminApiKey](../README.md#AdminApiKey), [OAuth2](../README.md#OAuth2)
 
 ### HTTP request headers
 
@@ -492,7 +559,7 @@ Name | Type | Description  | Notes
 
 ## getIssuedAchievementsCountById
 
-> AchievementIssuedResponse getIssuedAchievementsCountById(spaceName, id, opts)
+> AchievementIssuedResponse getIssuedAchievementsCountById(id, opts)
 
 
 
@@ -501,21 +568,23 @@ Receive a count of Issued Achievements by identifier provided
 ### Example
 
 ```javascript
-import @CompetitionlabsApplicationServicesSdk from '@competitionlabs/application-services-sdk';
-let defaultClient = @CompetitionlabsApplicationServicesSdk.ApiClient.instance;
-// Configure API key authorization: adminApiKey
-let adminApiKey = defaultClient.authentications['adminApiKey'];
-adminApiKey.apiKey = 'YOUR API KEY';
+import CompetitionLabsApplicationServices from 'competition_labs_application_services';
+let defaultClient = CompetitionLabsApplicationServices.ApiClient.instance;
+// Configure API key authorization: AdminApiKey
+let AdminApiKey = defaultClient.authentications['AdminApiKey'];
+AdminApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//adminApiKey.apiKeyPrefix = 'Token';
+//AdminApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: OAuth2
+let OAuth2 = defaultClient.authentications['OAuth2'];
+OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new @CompetitionlabsApplicationServicesSdk.AchievementsApi();
-let spaceName = "spaceName_example"; // String | This is the space name which is linked to the account
+let apiInstance = new CompetitionLabsApplicationServices.AchievementsApi();
 let id = "id_example"; // String | Unique identifier of the resource
 let opts = {
   'X_API_KEY': "X_API_KEY_example" // String | The admin API Key generated from CompetitionLabs back office
 };
-apiInstance.getIssuedAchievementsCountById(spaceName, id, opts, (error, data, response) => {
+apiInstance.getIssuedAchievementsCountById(id, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -529,7 +598,6 @@ apiInstance.getIssuedAchievementsCountById(spaceName, id, opts, (error, data, re
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **spaceName** | **String**| This is the space name which is linked to the account | 
  **id** | **String**| Unique identifier of the resource | 
  **X_API_KEY** | **String**| The admin API Key generated from CompetitionLabs back office | [optional] 
 
@@ -539,7 +607,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[adminApiKey](../README.md#adminApiKey)
+[AdminApiKey](../README.md#AdminApiKey), [OAuth2](../README.md#OAuth2)
 
 ### HTTP request headers
 
@@ -549,7 +617,7 @@ Name | Type | Description  | Notes
 
 ## getMembersAchievementsDetails
 
-> MemberAchievementIssuedResponse getMembersAchievementsDetails(spaceName, id, opts)
+> MemberAchievementIssuedResponse getMembersAchievementsDetails(id, opts)
 
 
 
@@ -558,16 +626,18 @@ Receive a list of members that had an Achievement issued for the Achievement ide
 ### Example
 
 ```javascript
-import @CompetitionlabsApplicationServicesSdk from '@competitionlabs/application-services-sdk';
-let defaultClient = @CompetitionlabsApplicationServicesSdk.ApiClient.instance;
-// Configure API key authorization: adminApiKey
-let adminApiKey = defaultClient.authentications['adminApiKey'];
-adminApiKey.apiKey = 'YOUR API KEY';
+import CompetitionLabsApplicationServices from 'competition_labs_application_services';
+let defaultClient = CompetitionLabsApplicationServices.ApiClient.instance;
+// Configure API key authorization: AdminApiKey
+let AdminApiKey = defaultClient.authentications['AdminApiKey'];
+AdminApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//adminApiKey.apiKeyPrefix = 'Token';
+//AdminApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: OAuth2
+let OAuth2 = defaultClient.authentications['OAuth2'];
+OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new @CompetitionlabsApplicationServicesSdk.AchievementsApi();
-let spaceName = "spaceName_example"; // String | This is the space name which is linked to the account
+let apiInstance = new CompetitionLabsApplicationServices.AchievementsApi();
 let id = "id_example"; // String | Unique identifier of the resource
 let opts = {
   'X_API_KEY': "X_API_KEY_example", // String | The admin API Key generated from CompetitionLabs back office
@@ -575,7 +645,7 @@ let opts = {
   'limit': 56, // Number | Limit the returned total records found
   'skip': 56 // Number | Skip the returned records found and return the next batch of records
 };
-apiInstance.getMembersAchievementsDetails(spaceName, id, opts, (error, data, response) => {
+apiInstance.getMembersAchievementsDetails(id, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -589,7 +659,6 @@ apiInstance.getMembersAchievementsDetails(spaceName, id, opts, (error, data, res
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **spaceName** | **String**| This is the space name which is linked to the account | 
  **id** | **String**| Unique identifier of the resource | 
  **X_API_KEY** | **String**| The admin API Key generated from CompetitionLabs back office | [optional] 
  **memberId** | **String**| Id of a member | [optional] 
@@ -602,7 +671,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[adminApiKey](../README.md#adminApiKey)
+[AdminApiKey](../README.md#AdminApiKey), [OAuth2](../README.md#OAuth2)
 
 ### HTTP request headers
 
@@ -612,7 +681,7 @@ Name | Type | Description  | Notes
 
 ## updateAchievements
 
-> ApiResponse updateAchievements(spaceName, body, opts)
+> ApiResponse updateAchievements(body, opts)
 
 
 
@@ -621,21 +690,23 @@ Update existing Achievements in the CompetitionLabs database
 ### Example
 
 ```javascript
-import @CompetitionlabsApplicationServicesSdk from '@competitionlabs/application-services-sdk';
-let defaultClient = @CompetitionlabsApplicationServicesSdk.ApiClient.instance;
-// Configure API key authorization: adminApiKey
-let adminApiKey = defaultClient.authentications['adminApiKey'];
-adminApiKey.apiKey = 'YOUR API KEY';
+import CompetitionLabsApplicationServices from 'competition_labs_application_services';
+let defaultClient = CompetitionLabsApplicationServices.ApiClient.instance;
+// Configure API key authorization: AdminApiKey
+let AdminApiKey = defaultClient.authentications['AdminApiKey'];
+AdminApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//adminApiKey.apiKeyPrefix = 'Token';
+//AdminApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: OAuth2
+let OAuth2 = defaultClient.authentications['OAuth2'];
+OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new @CompetitionlabsApplicationServicesSdk.AchievementsApi();
-let spaceName = "spaceName_example"; // String | This is the space name which is linked to the account
-let body = [new @CompetitionlabsApplicationServicesSdk.UpdateAchievementRequest()]; // [UpdateAchievementRequest] | Update Achievements in the CompetitionLabs database. * An Achievement Id must exist in the CompetitionLabs database for update
+let apiInstance = new CompetitionLabsApplicationServices.AchievementsApi();
+let body = [new CompetitionLabsApplicationServices.UpdateAchievementRequest()]; // [UpdateAchievementRequest] | Update Achievements in the CompetitionLabs database. * An Achievement Id must exist in the CompetitionLabs database for update
 let opts = {
   'X_API_KEY': "X_API_KEY_example" // String | The admin API Key generated from CompetitionLabs back office
 };
-apiInstance.updateAchievements(spaceName, body, opts, (error, data, response) => {
+apiInstance.updateAchievements(body, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -649,7 +720,6 @@ apiInstance.updateAchievements(spaceName, body, opts, (error, data, response) =>
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **spaceName** | **String**| This is the space name which is linked to the account | 
  **body** | [**[UpdateAchievementRequest]**](UpdateAchievementRequest.md)| Update Achievements in the CompetitionLabs database. * An Achievement Id must exist in the CompetitionLabs database for update | 
  **X_API_KEY** | **String**| The admin API Key generated from CompetitionLabs back office | [optional] 
 
@@ -659,7 +729,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[adminApiKey](../README.md#adminApiKey)
+[AdminApiKey](../README.md#AdminApiKey), [OAuth2](../README.md#OAuth2)
 
 ### HTTP request headers
 
@@ -669,7 +739,7 @@ Name | Type | Description  | Notes
 
 ## updateAchievementsLiveStatus
 
-> ApiResponse updateAchievementsLiveStatus(spaceName, opts)
+> ApiResponse updateAchievementsLiveStatus(opts)
 
 
 
@@ -678,21 +748,23 @@ Manage the state of achievement - Draft, Live, Archived
 ### Example
 
 ```javascript
-import @CompetitionlabsApplicationServicesSdk from '@competitionlabs/application-services-sdk';
-let defaultClient = @CompetitionlabsApplicationServicesSdk.ApiClient.instance;
-// Configure API key authorization: adminApiKey
-let adminApiKey = defaultClient.authentications['adminApiKey'];
-adminApiKey.apiKey = 'YOUR API KEY';
+import CompetitionLabsApplicationServices from 'competition_labs_application_services';
+let defaultClient = CompetitionLabsApplicationServices.ApiClient.instance;
+// Configure API key authorization: AdminApiKey
+let AdminApiKey = defaultClient.authentications['AdminApiKey'];
+AdminApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//adminApiKey.apiKeyPrefix = 'Token';
+//AdminApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: OAuth2
+let OAuth2 = defaultClient.authentications['OAuth2'];
+OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new @CompetitionlabsApplicationServicesSdk.AchievementsApi();
-let spaceName = "spaceName_example"; // String | This is the space name which is linked to the account
+let apiInstance = new CompetitionLabsApplicationServices.AchievementsApi();
 let opts = {
   'X_API_KEY': "X_API_KEY_example", // String | The admin API Key generated from CompetitionLabs back office
-  'body': [new @CompetitionlabsApplicationServicesSdk.AchievementLiveStatusRequest()] // [AchievementLiveStatusRequest] | Updates the state of the Achievement
+  'body': [new CompetitionLabsApplicationServices.AchievementLiveStatusRequest()] // [AchievementLiveStatusRequest] | Updates the state of the Achievement
 };
-apiInstance.updateAchievementsLiveStatus(spaceName, opts, (error, data, response) => {
+apiInstance.updateAchievementsLiveStatus(opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -706,7 +778,6 @@ apiInstance.updateAchievementsLiveStatus(spaceName, opts, (error, data, response
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **spaceName** | **String**| This is the space name which is linked to the account | 
  **X_API_KEY** | **String**| The admin API Key generated from CompetitionLabs back office | [optional] 
  **body** | [**[AchievementLiveStatusRequest]**](AchievementLiveStatusRequest.md)| Updates the state of the Achievement | [optional] 
 
@@ -716,7 +787,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[adminApiKey](../README.md#adminApiKey)
+[AdminApiKey](../README.md#AdminApiKey), [OAuth2](../README.md#OAuth2)
 
 ### HTTP request headers
 
@@ -726,7 +797,7 @@ Name | Type | Description  | Notes
 
 ## uploadAchievementsIcon
 
-> ApiResponse uploadAchievementsIcon(spaceName, opts)
+> ApiResponse uploadAchievementsIcon(opts)
 
 NOT AVAILABLE IN CURRENT RELEASE
 
@@ -735,21 +806,23 @@ Upload Achievements Icons into the CompetitionLabs database
 ### Example
 
 ```javascript
-import @CompetitionlabsApplicationServicesSdk from '@competitionlabs/application-services-sdk';
-let defaultClient = @CompetitionlabsApplicationServicesSdk.ApiClient.instance;
-// Configure API key authorization: adminApiKey
-let adminApiKey = defaultClient.authentications['adminApiKey'];
-adminApiKey.apiKey = 'YOUR API KEY';
+import CompetitionLabsApplicationServices from 'competition_labs_application_services';
+let defaultClient = CompetitionLabsApplicationServices.ApiClient.instance;
+// Configure API key authorization: AdminApiKey
+let AdminApiKey = defaultClient.authentications['AdminApiKey'];
+AdminApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//adminApiKey.apiKeyPrefix = 'Token';
+//AdminApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: OAuth2
+let OAuth2 = defaultClient.authentications['OAuth2'];
+OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new @CompetitionlabsApplicationServicesSdk.AchievementsApi();
-let spaceName = "spaceName_example"; // String | This is the space name which is linked to the account
+let apiInstance = new CompetitionLabsApplicationServices.AchievementsApi();
 let opts = {
   'X_API_KEY': "X_API_KEY_example", // String | The admin API Key generated from CompetitionLabs back office
-  'body': [new @CompetitionlabsApplicationServicesSdk.CreateAttachmentRequest()] // [CreateAttachmentRequest] | Upload Achievements Icons into the CompetitionLabs database
+  'body': [new CompetitionLabsApplicationServices.CreateAttachmentRequest()] // [CreateAttachmentRequest] | Upload Achievements Icons into the CompetitionLabs database
 };
-apiInstance.uploadAchievementsIcon(spaceName, opts, (error, data, response) => {
+apiInstance.uploadAchievementsIcon(opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -763,7 +836,6 @@ apiInstance.uploadAchievementsIcon(spaceName, opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **spaceName** | **String**| This is the space name which is linked to the account | 
  **X_API_KEY** | **String**| The admin API Key generated from CompetitionLabs back office | [optional] 
  **body** | [**[CreateAttachmentRequest]**](CreateAttachmentRequest.md)| Upload Achievements Icons into the CompetitionLabs database | [optional] 
 
@@ -773,7 +845,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[adminApiKey](../README.md#adminApiKey)
+[AdminApiKey](../README.md#AdminApiKey), [OAuth2](../README.md#OAuth2)
 
 ### HTTP request headers
 

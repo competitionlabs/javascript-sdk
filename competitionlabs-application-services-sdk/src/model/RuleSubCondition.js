@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -18,19 +18,19 @@ import SubRule from './SubRule';
 /**
  * The RuleSubCondition model module.
  * @module model/RuleSubCondition
- * @version 1.0.5
+ * @version 1.0.0
  */
 class RuleSubCondition {
     /**
      * Constructs a new <code>RuleSubCondition</code>.
      * @alias module:model/RuleSubCondition
      * @param matchCondition {module:model/MatchCondition} 
-     * @param mustEvaluateTo {Boolean} The value the rule(s) must evaluate to for the rule to be satisfied
      * @param subRules {Array.<module:model/SubRule>} 
+     * @param constraints {Array.<String>} Additional constraints
      */
-    constructor(matchCondition, mustEvaluateTo, subRules) { 
+    constructor(matchCondition, subRules, constraints) { 
         
-        RuleSubCondition.initialize(this, matchCondition, mustEvaluateTo, subRules);
+        RuleSubCondition.initialize(this, matchCondition, subRules, constraints);
     }
 
     /**
@@ -38,44 +38,10 @@ class RuleSubCondition {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, matchCondition, mustEvaluateTo, subRules) { 
+    static initialize(obj, matchCondition, subRules, constraints) { 
         obj['matchCondition'] = matchCondition;
-        obj['mustEvaluateTo'] = mustEvaluateTo;
         obj['subRules'] = subRules;
-    }
-
-    /**
-    * Constructs a full object with all available fields.
-    */
-    model(){
-        var obj = {};
-
-        obj['matchCondition'] = new MatchCondition().model();
-        obj['mustEvaluateTo'] = null;
-        obj['subRules'] = [new SubRule().model()];
-
-        return obj;
-    }
-
-    /**
-    * Constructs a full object Map for all available fields.
-    */
-    modelMap(){
-        var obj = {
-            "fields": {},
-            "requiredFields": {}
-        };
-
-        obj["fields"]['matchCondition'] = new MatchCondition().modelMap();
-        obj["fields"]['mustEvaluateTo'] = { "type": 'Boolean', "system": false };
-        obj["fields"]['subRules'] = [new SubRule().modelMap()];
-
-        
-        obj["requiredFields"]['matchCondition'] = new MatchCondition().modelMap();
-        obj["requiredFields"]['mustEvaluateTo'] = { "type": 'Boolean', "system": false };
-        obj["requiredFields"]['subRules'] = [new SubRule().modelMap()];
-
-        return obj;
+        obj['constraints'] = constraints;
     }
 
     /**
@@ -92,11 +58,11 @@ class RuleSubCondition {
             if (data.hasOwnProperty('matchCondition')) {
                 obj['matchCondition'] = MatchCondition.constructFromObject(data['matchCondition']);
             }
-            if (data.hasOwnProperty('mustEvaluateTo')) {
-                obj['mustEvaluateTo'] = ApiClient.convertToType(data['mustEvaluateTo'], 'Boolean');
-            }
             if (data.hasOwnProperty('subRules')) {
                 obj['subRules'] = ApiClient.convertToType(data['subRules'], [SubRule]);
+            }
+            if (data.hasOwnProperty('constraints')) {
+                obj['constraints'] = ApiClient.convertToType(data['constraints'], ['String']);
             }
         }
         return obj;
@@ -111,15 +77,15 @@ class RuleSubCondition {
 RuleSubCondition.prototype['matchCondition'] = undefined;
 
 /**
- * The value the rule(s) must evaluate to for the rule to be satisfied
- * @member {Boolean} mustEvaluateTo
- */
-RuleSubCondition.prototype['mustEvaluateTo'] = undefined;
-
-/**
  * @member {Array.<module:model/SubRule>} subRules
  */
 RuleSubCondition.prototype['subRules'] = undefined;
+
+/**
+ * Additional constraints
+ * @member {Array.<String>} constraints
+ */
+RuleSubCondition.prototype['constraints'] = undefined;
 
 
 

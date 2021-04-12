@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ErrorDetail model module.
  * @module model/ErrorDetail
- * @version 1.0.5
+ * @version 1.0.0
  */
 class ErrorDetail {
     /**
@@ -38,39 +38,6 @@ class ErrorDetail {
     static initialize(obj, errorCode, message) { 
         obj['errorCode'] = errorCode;
         obj['message'] = message;
-    }
-
-    /**
-    * Constructs a full object with all available fields.
-    */
-    model(){
-        var obj = {};
-
-        obj['modelId'] = null;
-        obj['errorCode'] = null;
-        obj['message'] = null;
-
-        return obj;
-    }
-
-    /**
-    * Constructs a full object Map for all available fields.
-    */
-    modelMap(){
-        var obj = {
-            "fields": {},
-            "requiredFields": {}
-        };
-
-        obj["fields"]['modelId'] = { "type": 'String', "system": false };
-        obj["fields"]['errorCode'] = { "type": 'Number', "system": false };
-        obj["fields"]['message'] = { "type": 'String', "system": false };
-
-        
-        obj["requiredFields"]['errorCode'] = { "type": 'Number', "system": false };
-        obj["requiredFields"]['message'] = { "type": 'String', "system": false };
-
-        return obj;
     }
 
     /**

@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RuleDescriptorSubFactAllOf model module.
  * @module model/RuleDescriptorSubFactAllOf
- * @version 1.0.5
+ * @version 1.0.0
  */
 class RuleDescriptorSubFactAllOf {
     /**
@@ -36,34 +36,6 @@ class RuleDescriptorSubFactAllOf {
      */
     static initialize(obj, subFact) { 
         obj['subFact'] = subFact;
-    }
-
-    /**
-    * Constructs a full object with all available fields.
-    */
-    model(){
-        var obj = {};
-
-        obj['subFact'] = null;
-
-        return obj;
-    }
-
-    /**
-    * Constructs a full object Map for all available fields.
-    */
-    modelMap(){
-        var obj = {
-            "fields": {},
-            "requiredFields": {}
-        };
-
-        obj["fields"]['subFact'] = { "type": 'String', "system": false };
-
-        
-        obj["requiredFields"]['subFact'] = { "type": 'String', "system": false };
-
-        return obj;
     }
 
     /**

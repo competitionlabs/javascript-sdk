@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.@CompetitionlabsApplicationServicesSdk);
+    factory(root.expect, root.CompetitionLabsApplicationServices);
   }
-}(this, function(expect, @CompetitionlabsApplicationServicesSdk) {
+}(this, function(expect, CompetitionLabsApplicationServices) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new @CompetitionlabsApplicationServicesSdk.UpdateConsumerStateRequestAllOf();
+    instance = new CompetitionLabsApplicationServices.UpdateConsumerStateRequestAllOf();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,13 +50,13 @@
   describe('UpdateConsumerStateRequestAllOf', function() {
     it('should create an instance of UpdateConsumerStateRequestAllOf', function() {
       // uncomment below and update the code to test UpdateConsumerStateRequestAllOf
-      //var instane = new @CompetitionlabsApplicationServicesSdk.UpdateConsumerStateRequestAllOf();
-      //expect(instance).to.be.a(@CompetitionlabsApplicationServicesSdk.UpdateConsumerStateRequestAllOf);
+      //var instane = new CompetitionLabsApplicationServices.UpdateConsumerStateRequestAllOf();
+      //expect(instance).to.be.a(CompetitionLabsApplicationServices.UpdateConsumerStateRequestAllOf);
     });
 
     it('should have the property status (base name: "status")', function() {
       // uncomment below and update the code to test the property status
-      //var instane = new @CompetitionlabsApplicationServicesSdk.UpdateConsumerStateRequestAllOf();
+      //var instance = new CompetitionLabsApplicationServices.UpdateConsumerStateRequestAllOf();
       //expect(instance).to.be();
     });
 

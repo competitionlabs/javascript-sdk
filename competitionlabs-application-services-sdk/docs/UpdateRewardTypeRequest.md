@@ -1,15 +1,17 @@
-# @CompetitionlabsApplicationServicesSdk.UpdateRewardTypeRequest
+# CompetitionLabsApplicationServices.UpdateRewardTypeRequest
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **String** | A unique system generated identifier | 
-**name** | **String** | The name of the Reward type | [optional] 
-**description** | **String** | The description of a reward type | [optional] 
-**key** | **String** | A unique key that represents the reward type | [optional] [readonly] 
-**unitOfMeasureType** | [**UnitOfMeasureType**](UnitOfMeasureType.md) |  | [optional] 
+**customFields** | **[String]** | A list of id&#39;s used to add cutom fields | [optional] 
+**tags** | **[String]** | A list of id&#39;s used to tag models | [optional] 
 **metadata** | [**[Metadata]**](Metadata.md) |  | [optional] 
-**providers** | **String** | The providers of the reward type | [optional] 
+**name** | **String** | The name of the Reward type | 
+**description** | **String** | The description of a reward type | [optional] 
+**unitOfMeasureType** | [**UnitOfMeasureType**](UnitOfMeasureType.md) |  | 
+**translations** | **[Object]** |  | [optional] 
+**constraints** | **[String]** | Additional constraints, if the value is present it means the | 
 
 

@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.@CompetitionlabsJavascriptSdk);
+    factory(root.expect, root.CompetitionLabsApplicationServices);
   }
-}(this, function(expect, @CompetitionlabsJavascriptSdk) {
+}(this, function(expect, CompetitionLabsApplicationServices) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new @CompetitionlabsJavascriptSdk.RankingStrategy();
+    instance = new CompetitionLabsApplicationServices.RankingStrategy();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,37 +50,13 @@
   describe('RankingStrategy', function() {
     it('should create an instance of RankingStrategy', function() {
       // uncomment below and update the code to test RankingStrategy
-      //var instane = new @CompetitionlabsJavascriptSdk.RankingStrategy();
-      //expect(instance).to.be.a(@CompetitionlabsJavascriptSdk.RankingStrategy);
+      //var instane = new CompetitionLabsApplicationServices.RankingStrategy();
+      //expect(instance).to.be.a(CompetitionLabsApplicationServices.RankingStrategy);
     });
 
-    it('should have the property scoreDesc (base name: "scoreDesc")', function() {
-      // uncomment below and update the code to test the property scoreDesc
-      //var instane = new @CompetitionlabsJavascriptSdk.RankingStrategy();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property timeDesc (base name: "timeDesc")', function() {
-      // uncomment below and update the code to test the property timeDesc
-      //var instane = new @CompetitionlabsJavascriptSdk.RankingStrategy();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property scoreFirst (base name: "scoreFirst")', function() {
-      // uncomment below and update the code to test the property scoreFirst
-      //var instane = new @CompetitionlabsJavascriptSdk.RankingStrategy();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property ignoreTime (base name: "ignoreTime")', function() {
-      // uncomment below and update the code to test the property ignoreTime
-      //var instane = new @CompetitionlabsJavascriptSdk.RankingStrategy();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property ignoreScore (base name: "ignoreScore")', function() {
-      // uncomment below and update the code to test the property ignoreScore
-      //var instane = new @CompetitionlabsJavascriptSdk.RankingStrategy();
+    it('should have the property constraints (base name: "constraints")', function() {
+      // uncomment below and update the code to test the property constraints
+      //var instance = new CompetitionLabsApplicationServices.RankingStrategy();
       //expect(instance).to.be();
     });
 

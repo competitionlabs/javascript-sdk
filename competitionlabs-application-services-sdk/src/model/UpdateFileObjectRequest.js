@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -15,24 +15,29 @@ import ApiClient from '../ApiClient';
 import Metadata from './Metadata';
 import UpdateFileObjectRequestAllOf from './UpdateFileObjectRequestAllOf';
 import UpdateModelDefault from './UpdateModelDefault';
+import UpdateOptParamModels from './UpdateOptParamModels';
 
 /**
  * The UpdateFileObjectRequest model module.
  * @module model/UpdateFileObjectRequest
- * @version 1.0.5
+ * @version 1.0.0
  */
 class UpdateFileObjectRequest {
     /**
      * Constructs a new <code>UpdateFileObjectRequest</code>.
      * @alias module:model/UpdateFileObjectRequest
      * @implements module:model/UpdateModelDefault
+     * @implements module:model/UpdateOptParamModels
      * @implements module:model/UpdateFileObjectRequestAllOf
      * @param id {String} A unique system generated identifier
      * @param repositoryId {String} The repository identifier this file belongs too
+     * @param name {String} Name of the original file uploaded
+     * @param mimeType {String} Mime type of the file. Valid mime types - text/csv or application/vmd.ms-excel
+     * @param parentFolderPath {String} The folder containing the attachment within the repository
      */
-    constructor(id, repositoryId) { 
-        UpdateModelDefault.initialize(this, id);UpdateFileObjectRequestAllOf.initialize(this, repositoryId);
-        UpdateFileObjectRequest.initialize(this, id, repositoryId);
+    constructor(id, repositoryId, name, mimeType, parentFolderPath) { 
+        UpdateModelDefault.initialize(this, id);UpdateOptParamModels.initialize(this);UpdateFileObjectRequestAllOf.initialize(this, repositoryId, name, mimeType, parentFolderPath);
+        UpdateFileObjectRequest.initialize(this, id, repositoryId, name, mimeType, parentFolderPath);
     }
 
     /**
@@ -40,50 +45,12 @@ class UpdateFileObjectRequest {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, id, repositoryId) { 
+    static initialize(obj, id, repositoryId, name, mimeType, parentFolderPath) { 
         obj['id'] = id;
         obj['repositoryId'] = repositoryId;
-    }
-
-    /**
-    * Constructs a full object with all available fields.
-    */
-    model(){
-        var obj = {};
-
-        obj['id'] = null;
-        obj['tags'] = [null];
-        obj['repositoryId'] = null;
-        obj['fileName'] = null;
-        obj['mimeType'] = null;
-        obj['parentFolderPath'] = null;
-        obj['metadata'] = [new Metadata().model()];
-
-        return obj;
-    }
-
-    /**
-    * Constructs a full object Map for all available fields.
-    */
-    modelMap(){
-        var obj = {
-            "fields": {},
-            "requiredFields": {}
-        };
-
-        obj["fields"]['id'] = { "type": 'String', "system": true };
-        obj["fields"]['tags'] = [{ "type": 'String', "system": false }];
-        obj["fields"]['repositoryId'] = { "type": 'String', "system": false };
-        obj["fields"]['fileName'] = { "type": 'String', "system": false };
-        obj["fields"]['mimeType'] = { "type": 'String', "system": false };
-        obj["fields"]['parentFolderPath'] = { "type": 'String', "system": false };
-        obj["fields"]['metadata'] = [new Metadata().modelMap()];
-
-        
-        obj["requiredFields"]['id'] = { "type": 'String', "system": true };
-        obj["requiredFields"]['repositoryId'] = { "type": 'String', "system": false };
-
-        return obj;
+        obj['name'] = name;
+        obj['mimeType'] = mimeType;
+        obj['parentFolderPath'] = parentFolderPath;
     }
 
     /**
@@ -97,28 +64,32 @@ class UpdateFileObjectRequest {
         if (data) {
             obj = obj || new UpdateFileObjectRequest();
             UpdateModelDefault.constructFromObject(data, obj);
+            UpdateOptParamModels.constructFromObject(data, obj);
             UpdateFileObjectRequestAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'String');
             }
+            if (data.hasOwnProperty('customFields')) {
+                obj['customFields'] = ApiClient.convertToType(data['customFields'], ['String']);
+            }
             if (data.hasOwnProperty('tags')) {
                 obj['tags'] = ApiClient.convertToType(data['tags'], ['String']);
+            }
+            if (data.hasOwnProperty('metadata')) {
+                obj['metadata'] = ApiClient.convertToType(data['metadata'], [Metadata]);
             }
             if (data.hasOwnProperty('repositoryId')) {
                 obj['repositoryId'] = ApiClient.convertToType(data['repositoryId'], 'String');
             }
-            if (data.hasOwnProperty('fileName')) {
-                obj['fileName'] = ApiClient.convertToType(data['fileName'], 'String');
+            if (data.hasOwnProperty('name')) {
+                obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
             if (data.hasOwnProperty('mimeType')) {
                 obj['mimeType'] = ApiClient.convertToType(data['mimeType'], 'String');
             }
             if (data.hasOwnProperty('parentFolderPath')) {
                 obj['parentFolderPath'] = ApiClient.convertToType(data['parentFolderPath'], 'String');
-            }
-            if (data.hasOwnProperty('metadata')) {
-                obj['metadata'] = ApiClient.convertToType(data['metadata'], [Metadata]);
             }
         }
         return obj;
@@ -134,10 +105,21 @@ class UpdateFileObjectRequest {
 UpdateFileObjectRequest.prototype['id'] = undefined;
 
 /**
- * The tags associated with this file object
+ * A list of id's used to add cutom fields
+ * @member {Array.<String>} customFields
+ */
+UpdateFileObjectRequest.prototype['customFields'] = undefined;
+
+/**
+ * A list of id's used to tag models
  * @member {Array.<String>} tags
  */
 UpdateFileObjectRequest.prototype['tags'] = undefined;
+
+/**
+ * @member {Array.<module:model/Metadata>} metadata
+ */
+UpdateFileObjectRequest.prototype['metadata'] = undefined;
 
 /**
  * The repository identifier this file belongs too
@@ -147,9 +129,9 @@ UpdateFileObjectRequest.prototype['repositoryId'] = undefined;
 
 /**
  * Name of the original file uploaded
- * @member {String} fileName
+ * @member {String} name
  */
-UpdateFileObjectRequest.prototype['fileName'] = undefined;
+UpdateFileObjectRequest.prototype['name'] = undefined;
 
 /**
  * Mime type of the file. Valid mime types - text/csv or application/vmd.ms-excel
@@ -163,11 +145,6 @@ UpdateFileObjectRequest.prototype['mimeType'] = undefined;
  */
 UpdateFileObjectRequest.prototype['parentFolderPath'] = undefined;
 
-/**
- * @member {Array.<module:model/Metadata>} metadata
- */
-UpdateFileObjectRequest.prototype['metadata'] = undefined;
-
 
 // Implement UpdateModelDefault interface:
 /**
@@ -175,12 +152,22 @@ UpdateFileObjectRequest.prototype['metadata'] = undefined;
  * @member {String} id
  */
 UpdateModelDefault.prototype['id'] = undefined;
-// Implement UpdateFileObjectRequestAllOf interface:
+// Implement UpdateOptParamModels interface:
 /**
- * The tags associated with this file object
+ * A list of id's used to add cutom fields
+ * @member {Array.<String>} customFields
+ */
+UpdateOptParamModels.prototype['customFields'] = undefined;
+/**
+ * A list of id's used to tag models
  * @member {Array.<String>} tags
  */
-UpdateFileObjectRequestAllOf.prototype['tags'] = undefined;
+UpdateOptParamModels.prototype['tags'] = undefined;
+/**
+ * @member {Array.<module:model/Metadata>} metadata
+ */
+UpdateOptParamModels.prototype['metadata'] = undefined;
+// Implement UpdateFileObjectRequestAllOf interface:
 /**
  * The repository identifier this file belongs too
  * @member {String} repositoryId
@@ -188,9 +175,9 @@ UpdateFileObjectRequestAllOf.prototype['tags'] = undefined;
 UpdateFileObjectRequestAllOf.prototype['repositoryId'] = undefined;
 /**
  * Name of the original file uploaded
- * @member {String} fileName
+ * @member {String} name
  */
-UpdateFileObjectRequestAllOf.prototype['fileName'] = undefined;
+UpdateFileObjectRequestAllOf.prototype['name'] = undefined;
 /**
  * Mime type of the file. Valid mime types - text/csv or application/vmd.ms-excel
  * @member {String} mimeType
@@ -201,10 +188,6 @@ UpdateFileObjectRequestAllOf.prototype['mimeType'] = undefined;
  * @member {String} parentFolderPath
  */
 UpdateFileObjectRequestAllOf.prototype['parentFolderPath'] = undefined;
-/**
- * @member {Array.<module:model/Metadata>} metadata
- */
-UpdateFileObjectRequestAllOf.prototype['metadata'] = undefined;
 
 
 

@@ -1,4 +1,4 @@
-# @CompetitionlabsApplicationServicesSdk.WebhookResponse
+# CompetitionLabsApplicationServices.WebhookResponse
 
 ## Properties
 

@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TwoFactorAuthQrCode model module.
  * @module model/TwoFactorAuthQrCode
- * @version 1.0.5
+ * @version 1.0.0
  */
 class TwoFactorAuthQrCode {
     /**
@@ -38,37 +38,6 @@ class TwoFactorAuthQrCode {
     static initialize(obj, barcodeUrl, secretKey) { 
         obj['barcodeUrl'] = barcodeUrl;
         obj['secretKey'] = secretKey;
-    }
-
-    /**
-    * Constructs a full object with all available fields.
-    */
-    model(){
-        var obj = {};
-
-        obj['barcodeUrl'] = null;
-        obj['secretKey'] = null;
-
-        return obj;
-    }
-
-    /**
-    * Constructs a full object Map for all available fields.
-    */
-    modelMap(){
-        var obj = {
-            "fields": {},
-            "requiredFields": {}
-        };
-
-        obj["fields"]['barcodeUrl'] = { "type": 'String', "system": false };
-        obj["fields"]['secretKey'] = { "type": 'String', "system": false };
-
-        
-        obj["requiredFields"]['barcodeUrl'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['secretKey'] = { "type": 'String', "system": false };
-
-        return obj;
     }
 
     /**

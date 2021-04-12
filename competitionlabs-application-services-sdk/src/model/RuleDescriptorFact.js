@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -20,7 +20,7 @@ import RuleDescriptorSubCondition from './RuleDescriptorSubCondition';
 /**
  * The RuleDescriptorFact model module.
  * @module model/RuleDescriptorFact
- * @version 1.0.5
+ * @version 1.0.0
  */
 class RuleDescriptorFact {
     /**
@@ -31,11 +31,12 @@ class RuleDescriptorFact {
      * @param operators {Array.<String>} The operators supported by the fact
      * @param constantType {String} The data type of the constant
      * @param constantExample {String} Example of the constant
+     * @param constraints {Array.<String>} The fields constraint
      * @param fact {String} The name of the fact
      */
-    constructor(operators, constantType, constantExample, fact) { 
-        FactDefault.initialize(this, operators, constantType, constantExample);RuleDescriptorFactAllOf.initialize(this, fact);
-        RuleDescriptorFact.initialize(this, operators, constantType, constantExample, fact);
+    constructor(operators, constantType, constantExample, constraints, fact) { 
+        FactDefault.initialize(this, operators, constantType, constantExample);RuleDescriptorFactAllOf.initialize(this, constraints, fact);
+        RuleDescriptorFact.initialize(this, operators, constantType, constantExample, constraints, fact);
     }
 
     /**
@@ -43,56 +44,12 @@ class RuleDescriptorFact {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, operators, constantType, constantExample, fact) { 
+    static initialize(obj, operators, constantType, constantExample, constraints, fact) { 
         obj['operators'] = operators;
         obj['constantType'] = constantType;
         obj['constantExample'] = constantExample;
+        obj['constraints'] = constraints;
         obj['fact'] = fact;
-    }
-
-    /**
-    * Constructs a full object with all available fields.
-    */
-    model(){
-        var obj = {};
-
-        obj['operators'] = [null];
-        obj['constantType'] = null;
-        obj['constantExample'] = null;
-        obj['defaultVale'] = null;
-        obj['macros'] = [new Macro().model()];
-        obj['constraints'] = [null];
-        obj['fact'] = null;
-        obj['subConditions'] = [new RuleDescriptorSubCondition().model()];
-
-        return obj;
-    }
-
-    /**
-    * Constructs a full object Map for all available fields.
-    */
-    modelMap(){
-        var obj = {
-            "fields": {},
-            "requiredFields": {}
-        };
-
-        obj["fields"]['operators'] = [{ "type": 'String', "system": false }];
-        obj["fields"]['constantType'] = { "type": 'String', "system": false };
-        obj["fields"]['constantExample'] = { "type": 'String', "system": false };
-        obj["fields"]['defaultVale'] = { "type": 'String', "system": false };
-        obj["fields"]['macros'] = [new Macro().modelMap()];
-        obj["fields"]['constraints'] = [{ "type": 'String', "system": false }];
-        obj["fields"]['fact'] = { "type": 'String', "system": false };
-        obj["fields"]['subConditions'] = [new RuleDescriptorSubCondition().modelMap()];
-
-        
-        obj["requiredFields"]['operators'] = [{ "type": 'String', "system": false }];
-        obj["requiredFields"]['constantType'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['constantExample'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['fact'] = { "type": 'String', "system": false };
-
-        return obj;
     }
 
     /**

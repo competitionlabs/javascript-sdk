@@ -1,4 +1,4 @@
-# @CompetitionlabsApplicationServicesSdk.Scheduling
+# CompetitionLabsApplicationServices.Scheduling
 
 ## Properties
 
@@ -9,6 +9,6 @@ Name | Type | Description | Notes
 **every** | **[Number]** |  | 
 **startDate** | **Date** | The start date and time of a schedule. ISO8601 timestamp | 
 **endDate** | **Date** | The end date and time of a schedule. ISO8601 timestamp | [optional] 
-**onlyAggregateOnActiveDays** | **Boolean** |  | [optional] 
+**constraints** | **[String]** | Additional constraints | 
 
 

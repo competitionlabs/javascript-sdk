@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -12,25 +12,30 @@
  */
 
 import ApiClient from '../ApiClient';
+import ActionTypeAllOf from './ActionTypeAllOf';
+import CreateOptParamModels from './CreateOptParamModels';
 import Metadata from './Metadata';
 import UnitOfMeasureType from './UnitOfMeasureType';
 
 /**
  * The CreateActionTypeRequest model module.
  * @module model/CreateActionTypeRequest
- * @version 1.0.5
+ * @version 1.0.0
  */
 class CreateActionTypeRequest {
     /**
      * Constructs a new <code>CreateActionTypeRequest</code>.
      * @alias module:model/CreateActionTypeRequest
+     * @implements module:model/CreateOptParamModels
+     * @implements module:model/ActionTypeAllOf
      * @param name {String} The name of the Action Helper
      * @param key {String} A unique key that represents an action helper
      * @param unitOfMeasureType {module:model/UnitOfMeasureType} 
+     * @param constraints {Array.<String>} Additional constraints, if the value is present it means the
      */
-    constructor(name, key, unitOfMeasureType) { 
-        
-        CreateActionTypeRequest.initialize(this, name, key, unitOfMeasureType);
+    constructor(name, key, unitOfMeasureType, constraints) { 
+        CreateOptParamModels.initialize(this);ActionTypeAllOf.initialize(this, name, key, unitOfMeasureType, constraints);
+        CreateActionTypeRequest.initialize(this, name, key, unitOfMeasureType, constraints);
     }
 
     /**
@@ -38,48 +43,11 @@ class CreateActionTypeRequest {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, name, key, unitOfMeasureType) { 
+    static initialize(obj, name, key, unitOfMeasureType, constraints) { 
         obj['name'] = name;
         obj['key'] = key;
         obj['unitOfMeasureType'] = unitOfMeasureType;
-    }
-
-    /**
-    * Constructs a full object with all available fields.
-    */
-    model(){
-        var obj = {};
-
-        obj['name'] = null;
-        obj['key'] = null;
-        obj['description'] = null;
-        obj['unitOfMeasureType'] = new UnitOfMeasureType().model();
-        obj['metadata'] = [new Metadata().model()];
-
-        return obj;
-    }
-
-    /**
-    * Constructs a full object Map for all available fields.
-    */
-    modelMap(){
-        var obj = {
-            "fields": {},
-            "requiredFields": {}
-        };
-
-        obj["fields"]['name'] = { "type": 'String', "system": false };
-        obj["fields"]['key'] = { "type": 'String', "system": false };
-        obj["fields"]['description'] = { "type": 'String', "system": false };
-        obj["fields"]['unitOfMeasureType'] = new UnitOfMeasureType().modelMap();
-        obj["fields"]['metadata'] = [new Metadata().modelMap()];
-
-        
-        obj["requiredFields"]['name'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['key'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['unitOfMeasureType'] = new UnitOfMeasureType().modelMap();
-
-        return obj;
+        obj['constraints'] = constraints;
     }
 
     /**
@@ -92,7 +60,18 @@ class CreateActionTypeRequest {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new CreateActionTypeRequest();
+            CreateOptParamModels.constructFromObject(data, obj);
+            ActionTypeAllOf.constructFromObject(data, obj);
 
+            if (data.hasOwnProperty('customFields')) {
+                obj['customFields'] = ApiClient.convertToType(data['customFields'], ['String']);
+            }
+            if (data.hasOwnProperty('tags')) {
+                obj['tags'] = ApiClient.convertToType(data['tags'], ['String']);
+            }
+            if (data.hasOwnProperty('metadata')) {
+                obj['metadata'] = ApiClient.convertToType(data['metadata'], [Metadata]);
+            }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
@@ -105,8 +84,8 @@ class CreateActionTypeRequest {
             if (data.hasOwnProperty('unitOfMeasureType')) {
                 obj['unitOfMeasureType'] = UnitOfMeasureType.constructFromObject(data['unitOfMeasureType']);
             }
-            if (data.hasOwnProperty('metadata')) {
-                obj['metadata'] = ApiClient.convertToType(data['metadata'], [Metadata]);
+            if (data.hasOwnProperty('constraints')) {
+                obj['constraints'] = ApiClient.convertToType(data['constraints'], ['String']);
             }
         }
         return obj;
@@ -114,6 +93,23 @@ class CreateActionTypeRequest {
 
 
 }
+
+/**
+ * A list of id's used to add cutom fields
+ * @member {Array.<String>} customFields
+ */
+CreateActionTypeRequest.prototype['customFields'] = undefined;
+
+/**
+ * A list of id's used to tag models
+ * @member {Array.<String>} tags
+ */
+CreateActionTypeRequest.prototype['tags'] = undefined;
+
+/**
+ * @member {Array.<module:model/Metadata>} metadata
+ */
+CreateActionTypeRequest.prototype['metadata'] = undefined;
 
 /**
  * The name of the Action Helper
@@ -139,11 +135,52 @@ CreateActionTypeRequest.prototype['description'] = undefined;
 CreateActionTypeRequest.prototype['unitOfMeasureType'] = undefined;
 
 /**
+ * Additional constraints, if the value is present it means the
+ * @member {Array.<String>} constraints
+ */
+CreateActionTypeRequest.prototype['constraints'] = undefined;
+
+
+// Implement CreateOptParamModels interface:
+/**
+ * A list of id's used to add cutom fields
+ * @member {Array.<String>} customFields
+ */
+CreateOptParamModels.prototype['customFields'] = undefined;
+/**
+ * A list of id's used to tag models
+ * @member {Array.<String>} tags
+ */
+CreateOptParamModels.prototype['tags'] = undefined;
+/**
  * @member {Array.<module:model/Metadata>} metadata
  */
-CreateActionTypeRequest.prototype['metadata'] = undefined;
-
-
+CreateOptParamModels.prototype['metadata'] = undefined;
+// Implement ActionTypeAllOf interface:
+/**
+ * The name of the Action Helper
+ * @member {String} name
+ */
+ActionTypeAllOf.prototype['name'] = undefined;
+/**
+ * A unique key that represents an action helper
+ * @member {String} key
+ */
+ActionTypeAllOf.prototype['key'] = undefined;
+/**
+ * The description of the rule action helper for your reference
+ * @member {String} description
+ */
+ActionTypeAllOf.prototype['description'] = undefined;
+/**
+ * @member {module:model/UnitOfMeasureType} unitOfMeasureType
+ */
+ActionTypeAllOf.prototype['unitOfMeasureType'] = undefined;
+/**
+ * Additional constraints, if the value is present it means the
+ * @member {Array.<String>} constraints
+ */
+ActionTypeAllOf.prototype['constraints'] = undefined;
 
 
 

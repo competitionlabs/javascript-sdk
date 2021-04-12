@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -19,7 +19,7 @@ import RuleDescriptorFact from './RuleDescriptorFact';
 /**
  * The RuleDescriptorAction model module.
  * @module model/RuleDescriptorAction
- * @version 1.0.5
+ * @version 1.0.0
  */
 class RuleDescriptorAction {
     /**
@@ -45,49 +45,6 @@ class RuleDescriptorAction {
         obj['name'] = name;
         obj['operatability'] = operatability;
         obj['facts'] = facts;
-    }
-
-    /**
-    * Constructs a full object with all available fields.
-    */
-    model(){
-        var obj = {};
-
-        obj['constraints'] = [null];
-        obj['name'] = null;
-        obj['description'] = null;
-        obj['matchCondition'] = null;
-        obj['operatability'] = new MatchCondition().model();
-        obj['onRuleSetMatchTriggers'] = [new OnRuleSetMatchTrigger().model()];
-        obj['facts'] = [new RuleDescriptorFact().model()];
-
-        return obj;
-    }
-
-    /**
-    * Constructs a full object Map for all available fields.
-    */
-    modelMap(){
-        var obj = {
-            "fields": {},
-            "requiredFields": {}
-        };
-
-        obj["fields"]['constraints'] = [{ "type": 'String', "system": false }];
-        obj["fields"]['name'] = { "type": 'String', "system": false };
-        obj["fields"]['description'] = { "type": 'String', "system": false };
-        obj["fields"]['matchCondition'] = { "type": 'String', "system": false };
-        obj["fields"]['operatability'] = new MatchCondition().modelMap();
-        obj["fields"]['onRuleSetMatchTriggers'] = [new OnRuleSetMatchTrigger().modelMap()];
-        obj["fields"]['facts'] = [new RuleDescriptorFact().modelMap()];
-
-        
-        obj["requiredFields"]['constraints'] = [{ "type": 'String', "system": false }];
-        obj["requiredFields"]['name'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['operatability'] = new MatchCondition().modelMap();
-        obj["requiredFields"]['facts'] = [new RuleDescriptorFact().modelMap()];
-
-        return obj;
     }
 
     /**

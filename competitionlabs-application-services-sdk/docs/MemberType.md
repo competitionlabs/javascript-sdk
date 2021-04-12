@@ -1,4 +1,4 @@
-# @CompetitionlabsApplicationServicesSdk.MemberType
+# CompetitionLabsApplicationServices.MemberType
 
 ## Enum
 

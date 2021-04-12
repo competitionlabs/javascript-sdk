@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.@CompetitionlabsJavascriptSdk);
+    factory(root.expect, root.CompetitionLabsApplicationServices);
   }
-}(this, function(expect, @CompetitionlabsJavascriptSdk) {
+}(this, function(expect, CompetitionLabsApplicationServices) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new @CompetitionlabsJavascriptSdk.ScoringStrategy();
+    instance = new CompetitionLabsApplicationServices.ScoringStrategy();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,31 +50,31 @@
   describe('ScoringStrategy', function() {
     it('should create an instance of ScoringStrategy', function() {
       // uncomment below and update the code to test ScoringStrategy
-      //var instane = new @CompetitionlabsJavascriptSdk.ScoringStrategy();
-      //expect(instance).to.be.a(@CompetitionlabsJavascriptSdk.ScoringStrategy);
+      //var instane = new CompetitionLabsApplicationServices.ScoringStrategy();
+      //expect(instance).to.be.a(CompetitionLabsApplicationServices.ScoringStrategy);
     });
 
     it('should have the property limitUpdatesTo (base name: "limitUpdatesTo")', function() {
       // uncomment below and update the code to test the property limitUpdatesTo
-      //var instane = new @CompetitionlabsJavascriptSdk.ScoringStrategy();
+      //var instance = new CompetitionLabsApplicationServices.ScoringStrategy();
       //expect(instance).to.be();
     });
 
     it('should have the property sumBestXOf (base name: "sumBestXOf")', function() {
       // uncomment below and update the code to test the property sumBestXOf
-      //var instane = new @CompetitionlabsJavascriptSdk.ScoringStrategy();
+      //var instance = new CompetitionLabsApplicationServices.ScoringStrategy();
       //expect(instance).to.be();
     });
 
     it('should have the property lastUpdateTimeStamp (base name: "lastUpdateTimeStamp")', function() {
       // uncomment below and update the code to test the property lastUpdateTimeStamp
-      //var instane = new @CompetitionlabsJavascriptSdk.ScoringStrategy();
+      //var instance = new CompetitionLabsApplicationServices.ScoringStrategy();
       //expect(instance).to.be();
     });
 
     it('should have the property recordTimeWhenSumReaches (base name: "recordTimeWhenSumReaches")', function() {
       // uncomment below and update the code to test the property recordTimeWhenSumReaches
-      //var instane = new @CompetitionlabsJavascriptSdk.ScoringStrategy();
+      //var instance = new CompetitionLabsApplicationServices.ScoringStrategy();
       //expect(instance).to.be();
     });
 

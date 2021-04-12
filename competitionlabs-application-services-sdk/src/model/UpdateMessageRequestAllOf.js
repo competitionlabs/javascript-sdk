@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -13,22 +13,29 @@
 
 import ApiClient from '../ApiClient';
 import MessageType from './MessageType';
-import Metadata from './Metadata';
 import Scheduling from './Scheduling';
+import TagsReduced from './TagsReduced';
+import TranslationValue from './TranslationValue';
 
 /**
  * The UpdateMessageRequestAllOf model module.
  * @module model/UpdateMessageRequestAllOf
- * @version 1.0.5
+ * @version 1.0.0
  */
 class UpdateMessageRequestAllOf {
     /**
      * Constructs a new <code>UpdateMessageRequestAllOf</code>.
      * @alias module:model/UpdateMessageRequestAllOf
+     * @param members {Array.<String>} A list of specified members to which the message will be sent
+     * @param messageType {module:model/MessageType} 
+     * @param subject {String} The title of the message
+     * @param body {String} The context of the message
+     * @param scheduling {module:model/Scheduling} 
+     * @param constraints {Array.<String>} Additional constraints, if the value is present it means the
      */
-    constructor() { 
+    constructor(members, messageType, subject, body, scheduling, constraints) { 
         
-        UpdateMessageRequestAllOf.initialize(this);
+        UpdateMessageRequestAllOf.initialize(this, members, messageType, subject, body, scheduling, constraints);
     }
 
     /**
@@ -36,46 +43,13 @@ class UpdateMessageRequestAllOf {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj) { 
-    }
-
-    /**
-    * Constructs a full object with all available fields.
-    */
-    model(){
-        var obj = {};
-
-        obj['memberGroup'] = [null];
-        obj['members'] = [null];
-        obj['messageType'] = new MessageType().model();
-        obj['subject'] = null;
-        obj['body'] = null;
-        obj['scheduling'] = new Scheduling().model();
-        obj['metadata'] = [new Metadata().model()];
-
-        return obj;
-    }
-
-    /**
-    * Constructs a full object Map for all available fields.
-    */
-    modelMap(){
-        var obj = {
-            "fields": {},
-            "requiredFields": {}
-        };
-
-        obj["fields"]['memberGroup'] = [{ "type": 'String', "system": false }];
-        obj["fields"]['members'] = [{ "type": 'String', "system": false }];
-        obj["fields"]['messageType'] = new MessageType().modelMap();
-        obj["fields"]['subject'] = { "type": 'String', "system": false };
-        obj["fields"]['body'] = { "type": 'String', "system": false };
-        obj["fields"]['scheduling'] = new Scheduling().modelMap();
-        obj["fields"]['metadata'] = [new Metadata().modelMap()];
-
-        
-
-        return obj;
+    static initialize(obj, members, messageType, subject, body, scheduling, constraints) { 
+        obj['members'] = members;
+        obj['messageType'] = messageType;
+        obj['subject'] = subject;
+        obj['body'] = body;
+        obj['scheduling'] = scheduling;
+        obj['constraints'] = constraints;
     }
 
     /**
@@ -90,7 +64,7 @@ class UpdateMessageRequestAllOf {
             obj = obj || new UpdateMessageRequestAllOf();
 
             if (data.hasOwnProperty('memberGroup')) {
-                obj['memberGroup'] = ApiClient.convertToType(data['memberGroup'], ['String']);
+                obj['memberGroup'] = ApiClient.convertToType(data['memberGroup'], [TagsReduced]);
             }
             if (data.hasOwnProperty('members')) {
                 obj['members'] = ApiClient.convertToType(data['members'], ['String']);
@@ -107,8 +81,11 @@ class UpdateMessageRequestAllOf {
             if (data.hasOwnProperty('scheduling')) {
                 obj['scheduling'] = Scheduling.constructFromObject(data['scheduling']);
             }
-            if (data.hasOwnProperty('metadata')) {
-                obj['metadata'] = ApiClient.convertToType(data['metadata'], [Metadata]);
+            if (data.hasOwnProperty('translations')) {
+                obj['translations'] = ApiClient.convertToType(data['translations'], [Object]);
+            }
+            if (data.hasOwnProperty('constraints')) {
+                obj['constraints'] = ApiClient.convertToType(data['constraints'], ['String']);
             }
         }
         return obj;
@@ -119,7 +96,7 @@ class UpdateMessageRequestAllOf {
 
 /**
  * To which member groups the message will be sent
- * @member {Array.<String>} memberGroup
+ * @member {Array.<module:model/TagsReduced>} memberGroup
  */
 UpdateMessageRequestAllOf.prototype['memberGroup'] = undefined;
 
@@ -152,9 +129,15 @@ UpdateMessageRequestAllOf.prototype['body'] = undefined;
 UpdateMessageRequestAllOf.prototype['scheduling'] = undefined;
 
 /**
- * @member {Array.<module:model/Metadata>} metadata
+ * @member {Array.<Object.<String, module:model/TranslationValue>>} translations
  */
-UpdateMessageRequestAllOf.prototype['metadata'] = undefined;
+UpdateMessageRequestAllOf.prototype['translations'] = undefined;
+
+/**
+ * Additional constraints, if the value is present it means the
+ * @member {Array.<String>} constraints
+ */
+UpdateMessageRequestAllOf.prototype['constraints'] = undefined;
 
 
 

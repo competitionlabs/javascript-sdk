@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -82,71 +82,6 @@ export default class UnitOfMeasureType {
         "Distance" = "Distance";
 
     
-
-    /**
-    * Constructs a full object with all available fields.
-    */
-    list(){
-        var obj = {};
-
-        
-        obj['Other'] = "Other";
-        
-        obj['Currency'] = "Currency";
-        
-        obj['Mass'] = "Mass";
-        
-        obj['Time'] = "Time";
-        
-        obj['Temperature'] = "Temperature";
-        
-        obj['ElectricCurrent'] = "ElectricCurrent";
-        
-        obj['AmountOfSubstance'] = "AmountOfSubstance";
-        
-        obj['LuminousIntensity'] = "LuminousIntensity";
-        
-        obj['Distance'] = "Distance";
-        
-
-        return obj;
-    }
-
-    /**
-    * Constructs a full object with all available fields.
-    */
-    model(){
-        var obj = {};
-
-        
-        obj['Other'] = null;
-        
-        obj['Currency'] = null;
-        
-        obj['Mass'] = null;
-        
-        obj['Time'] = null;
-        
-        obj['Temperature'] = null;
-        
-        obj['ElectricCurrent'] = null;
-        
-        obj['AmountOfSubstance'] = null;
-        
-        obj['LuminousIntensity'] = null;
-        
-        obj['Distance'] = null;
-        
-
-        return obj;
-    }
-
-    /**
-    * Constructs a full object Map for all available fields.
-    */
-    modelMap(){
-        return {"type": 'String'};
-    }
 
     /**
     * Returns a <code>UnitOfMeasureType</code> enum value from a Javascript object name.

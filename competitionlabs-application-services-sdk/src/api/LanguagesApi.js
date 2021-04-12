@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -22,7 +22,7 @@ import UpdateLanguageRequest from '../model/UpdateLanguageRequest';
 /**
 * Languages service.
 * @module api/LanguagesApi
-* @version 1.0.5
+* @version 1.0.0
 */
 export default class LanguagesApi {
 
@@ -48,27 +48,21 @@ export default class LanguagesApi {
 
     /**
      * Create a new Language in the CompetitionLabs database
-     * @param {String} spaceName This is the space name which is linked to the account
      * @param {Array.<module:model/CreateLanguageRequest>} body Create a Language in the CompetitionLabs database
      * @param {Object} opts Optional parameters
      * @param {String} opts.X_API_KEY The admin API Key generated from CompetitionLabs back office
      * @param {module:api/LanguagesApi~createLanguagesCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ApiResponse}
      */
-    createLanguages(spaceName, body, opts, callback) {
+    createLanguages(body, opts, callback) {
       opts = opts || {};
       let postBody = body;
-      // verify the required parameter 'spaceName' is set
-      if (spaceName === undefined || spaceName === null) {
-        throw new Error("Missing the required parameter 'spaceName' when calling createLanguages");
-      }
       // verify the required parameter 'body' is set
       if (body === undefined || body === null) {
         throw new Error("Missing the required parameter 'body' when calling createLanguages");
       }
 
       let pathParams = {
-        'spaceName': spaceName
       };
       let queryParams = {
       };
@@ -78,12 +72,12 @@ export default class LanguagesApi {
       let formParams = {
       };
 
-      let authNames = ['adminApiKey'];
+      let authNames = ['AdminApiKey', 'OAuth2'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = ApiResponse;
       return this.apiClient.callApi(
-        '/languages/{spaceName}', 'POST',
+        '/languages', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
@@ -99,23 +93,17 @@ export default class LanguagesApi {
 
     /**
      * Delete Languages for a given identifier specified
-     * @param {String} spaceName This is the space name which is linked to the account
      * @param {Object} opts Optional parameters
      * @param {String} opts.X_API_KEY The admin API Key generated from CompetitionLabs back office
      * @param {Array.<String>} opts.id The unique identifiers of the resources
      * @param {module:api/LanguagesApi~deleteLanguagesCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ApiResponse}
      */
-    deleteLanguages(spaceName, opts, callback) {
+    deleteLanguages(opts, callback) {
       opts = opts || {};
       let postBody = null;
-      // verify the required parameter 'spaceName' is set
-      if (spaceName === undefined || spaceName === null) {
-        throw new Error("Missing the required parameter 'spaceName' when calling deleteLanguages");
-      }
 
       let pathParams = {
-        'spaceName': spaceName
       };
       let queryParams = {
         'id': this.apiClient.buildCollectionParam(opts['id'], 'multi')
@@ -126,12 +114,12 @@ export default class LanguagesApi {
       let formParams = {
       };
 
-      let authNames = ['adminApiKey'];
+      let authNames = ['AdminApiKey', 'OAuth2'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = ApiResponse;
       return this.apiClient.callApi(
-        '/languages/{spaceName}', 'DELETE',
+        '/languages', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
@@ -147,23 +135,17 @@ export default class LanguagesApi {
 
     /**
      * Delete Languages from CompetitionLabs database by unique Language ID's or any other POST body parameters using the POST method
-     * @param {String} spaceName This is the space name which is linked to the account
      * @param {Object} opts Optional parameters
      * @param {String} opts.X_API_KEY The admin API Key generated from CompetitionLabs back office
      * @param {module:model/QueryRequest} opts.body Delete Languages from CompetitionLabs database by unique Language ID's or any other POST body parameters using the POST method
      * @param {module:api/LanguagesApi~deleteLanguagesByQueryCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ApiResponse}
      */
-    deleteLanguagesByQuery(spaceName, opts, callback) {
+    deleteLanguagesByQuery(opts, callback) {
       opts = opts || {};
       let postBody = opts['body'];
-      // verify the required parameter 'spaceName' is set
-      if (spaceName === undefined || spaceName === null) {
-        throw new Error("Missing the required parameter 'spaceName' when calling deleteLanguagesByQuery");
-      }
 
       let pathParams = {
-        'spaceName': spaceName
       };
       let queryParams = {
       };
@@ -173,12 +155,12 @@ export default class LanguagesApi {
       let formParams = {
       };
 
-      let authNames = ['adminApiKey'];
+      let authNames = ['AdminApiKey', 'OAuth2'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = ApiResponse;
       return this.apiClient.callApi(
-        '/languages/{spaceName}/delete', 'POST',
+        '/languages/delete', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
@@ -194,7 +176,6 @@ export default class LanguagesApi {
 
     /**
      * Returns a list of Languages available in the space. This assumes that languages have first been uploaded via a POST request or web console
-     * @param {String} spaceName This is the space name which is linked to the account
      * @param {Object} opts Optional parameters
      * @param {String} opts.X_API_KEY The admin API Key generated from CompetitionLabs back office
      * @param {Array.<String>} opts.id The unique identifiers of the resources
@@ -203,16 +184,11 @@ export default class LanguagesApi {
      * @param {module:api/LanguagesApi~getLanguagesCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/LanguageResponse}
      */
-    getLanguages(spaceName, opts, callback) {
+    getLanguages(opts, callback) {
       opts = opts || {};
       let postBody = null;
-      // verify the required parameter 'spaceName' is set
-      if (spaceName === undefined || spaceName === null) {
-        throw new Error("Missing the required parameter 'spaceName' when calling getLanguages");
-      }
 
       let pathParams = {
-        'spaceName': spaceName
       };
       let queryParams = {
         'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),
@@ -225,12 +201,12 @@ export default class LanguagesApi {
       let formParams = {
       };
 
-      let authNames = ['adminApiKey'];
+      let authNames = ['AdminApiKey', 'OAuth2'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = LanguageResponse;
       return this.apiClient.callApi(
-        '/languages/{spaceName}', 'GET',
+        '/languages', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
@@ -246,23 +222,17 @@ export default class LanguagesApi {
 
     /**
      * Retrieve Languages from CompetitionLabs database by unique Language ID's or any other POST body parameters using the POST method
-     * @param {String} spaceName This is the space name which is linked to the account
      * @param {Object} opts Optional parameters
      * @param {String} opts.X_API_KEY The admin API Key generated from CompetitionLabs back office
      * @param {module:model/QueryRequest} opts.body Retrieve Languages from CompetitionLabs database by unique Language ID's or any other Post body parameters using the POST method
      * @param {module:api/LanguagesApi~getLanguagesByQueryCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/LanguageResponse}
      */
-    getLanguagesByQuery(spaceName, opts, callback) {
+    getLanguagesByQuery(opts, callback) {
       opts = opts || {};
       let postBody = opts['body'];
-      // verify the required parameter 'spaceName' is set
-      if (spaceName === undefined || spaceName === null) {
-        throw new Error("Missing the required parameter 'spaceName' when calling getLanguagesByQuery");
-      }
 
       let pathParams = {
-        'spaceName': spaceName
       };
       let queryParams = {
       };
@@ -272,12 +242,12 @@ export default class LanguagesApi {
       let formParams = {
       };
 
-      let authNames = ['adminApiKey'];
+      let authNames = ['AdminApiKey', 'OAuth2'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = LanguageResponse;
       return this.apiClient.callApi(
-        '/languages/{spaceName}/query', 'POST',
+        '/languages/query', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
@@ -293,7 +263,6 @@ export default class LanguagesApi {
 
     /**
      * Returns a list of all avaialable Languages
-     * @param {String} spaceName This is the space name which is linked to the account
      * @param {Object} opts Optional parameters
      * @param {String} opts.X_API_KEY The admin API Key generated from CompetitionLabs back office
      * @param {Number} opts.limit Limit the returned total records found
@@ -301,16 +270,11 @@ export default class LanguagesApi {
      * @param {module:api/LanguagesApi~getListOfAllLanguagesCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/LanguageResponse}
      */
-    getListOfAllLanguages(spaceName, opts, callback) {
+    getListOfAllLanguages(opts, callback) {
       opts = opts || {};
       let postBody = null;
-      // verify the required parameter 'spaceName' is set
-      if (spaceName === undefined || spaceName === null) {
-        throw new Error("Missing the required parameter 'spaceName' when calling getListOfAllLanguages");
-      }
 
       let pathParams = {
-        'spaceName': spaceName
       };
       let queryParams = {
         '_limit': opts['limit'],
@@ -322,12 +286,12 @@ export default class LanguagesApi {
       let formParams = {
       };
 
-      let authNames = ['adminApiKey'];
+      let authNames = ['AdminApiKey', 'OAuth2'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = LanguageResponse;
       return this.apiClient.callApi(
-        '/languages/{spaceName}/available', 'GET',
+        '/languages/available', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
@@ -343,27 +307,21 @@ export default class LanguagesApi {
 
     /**
      * Update an existing Language in the CompetitionLabs database
-     * @param {String} spaceName This is the space name which is linked to the account
      * @param {Array.<module:model/UpdateLanguageRequest>} body Update Language details in the CompetitionLabs database
      * @param {Object} opts Optional parameters
      * @param {String} opts.X_API_KEY The admin API Key generated from CompetitionLabs back office
      * @param {module:api/LanguagesApi~updateLanguagesCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ApiResponse}
      */
-    updateLanguages(spaceName, body, opts, callback) {
+    updateLanguages(body, opts, callback) {
       opts = opts || {};
       let postBody = body;
-      // verify the required parameter 'spaceName' is set
-      if (spaceName === undefined || spaceName === null) {
-        throw new Error("Missing the required parameter 'spaceName' when calling updateLanguages");
-      }
       // verify the required parameter 'body' is set
       if (body === undefined || body === null) {
         throw new Error("Missing the required parameter 'body' when calling updateLanguages");
       }
 
       let pathParams = {
-        'spaceName': spaceName
       };
       let queryParams = {
       };
@@ -373,12 +331,12 @@ export default class LanguagesApi {
       let formParams = {
       };
 
-      let authNames = ['adminApiKey'];
+      let authNames = ['AdminApiKey', 'OAuth2'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = ApiResponse;
       return this.apiClient.callApi(
-        '/languages/{spaceName}', 'PUT',
+        '/languages', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );

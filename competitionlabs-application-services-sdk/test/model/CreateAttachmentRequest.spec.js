@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.@CompetitionlabsJavascriptSdk);
+    factory(root.expect, root.CompetitionLabsApplicationServices);
   }
-}(this, function(expect, @CompetitionlabsJavascriptSdk) {
+}(this, function(expect, CompetitionLabsApplicationServices) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new @CompetitionlabsJavascriptSdk.CreateAttachmentRequest();
+    instance = new CompetitionLabsApplicationServices.CreateAttachmentRequest();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,37 +50,49 @@
   describe('CreateAttachmentRequest', function() {
     it('should create an instance of CreateAttachmentRequest', function() {
       // uncomment below and update the code to test CreateAttachmentRequest
-      //var instane = new @CompetitionlabsJavascriptSdk.CreateAttachmentRequest();
-      //expect(instance).to.be.a(@CompetitionlabsJavascriptSdk.CreateAttachmentRequest);
+      //var instane = new CompetitionLabsApplicationServices.CreateAttachmentRequest();
+      //expect(instance).to.be.a(CompetitionLabsApplicationServices.CreateAttachmentRequest);
     });
 
-    it('should have the property fileName (base name: "fileName")', function() {
-      // uncomment below and update the code to test the property fileName
-      //var instane = new @CompetitionlabsJavascriptSdk.CreateAttachmentRequest();
+    it('should have the property customFields (base name: "customFields")', function() {
+      // uncomment below and update the code to test the property customFields
+      //var instance = new CompetitionLabsApplicationServices.CreateAttachmentRequest();
       //expect(instance).to.be();
     });
 
-    it('should have the property mimeType (base name: "mimeType")', function() {
-      // uncomment below and update the code to test the property mimeType
-      //var instane = new @CompetitionlabsJavascriptSdk.CreateAttachmentRequest();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property extension (base name: "extension")', function() {
-      // uncomment below and update the code to test the property extension
-      //var instane = new @CompetitionlabsJavascriptSdk.CreateAttachmentRequest();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property permission (base name: "permission")', function() {
-      // uncomment below and update the code to test the property permission
-      //var instane = new @CompetitionlabsJavascriptSdk.CreateAttachmentRequest();
+    it('should have the property tags (base name: "tags")', function() {
+      // uncomment below and update the code to test the property tags
+      //var instance = new CompetitionLabsApplicationServices.CreateAttachmentRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property metadata (base name: "metadata")', function() {
       // uncomment below and update the code to test the property metadata
-      //var instane = new @CompetitionlabsJavascriptSdk.CreateAttachmentRequest();
+      //var instance = new CompetitionLabsApplicationServices.CreateAttachmentRequest();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property name (base name: "name")', function() {
+      // uncomment below and update the code to test the property name
+      //var instance = new CompetitionLabsApplicationServices.CreateAttachmentRequest();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property mimeType (base name: "mimeType")', function() {
+      // uncomment below and update the code to test the property mimeType
+      //var instance = new CompetitionLabsApplicationServices.CreateAttachmentRequest();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property extension (base name: "extension")', function() {
+      // uncomment below and update the code to test the property extension
+      //var instance = new CompetitionLabsApplicationServices.CreateAttachmentRequest();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property permission (base name: "permission")', function() {
+      // uncomment below and update the code to test the property permission
+      //var instance = new CompetitionLabsApplicationServices.CreateAttachmentRequest();
       //expect(instance).to.be();
     });
 

@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -28,7 +28,7 @@ import UpdateCompetitionStatusRequest from '../model/UpdateCompetitionStatusRequ
 /**
 * Competitions service.
 * @module api/CompetitionsApi
-* @version 1.0.5
+* @version 1.0.0
 */
 export default class CompetitionsApi {
 
@@ -55,27 +55,21 @@ export default class CompetitionsApi {
     /**
      * NOT AVAILABLE IN CURRENT RELEASE
      * Create a new Competition in the CompetitionLabs database
-     * @param {String} spaceName This is the space name which is linked to the account
      * @param {module:model/CreateCompetitionRequest} body Create a Competition in the CompetitionLabs database
      * @param {Object} opts Optional parameters
      * @param {String} opts.X_API_KEY The admin API Key generated from CompetitionLabs back office
      * @param {module:api/CompetitionsApi~createCompetitionsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ApiResponse}
      */
-    createCompetitions(spaceName, body, opts, callback) {
+    createCompetitions(body, opts, callback) {
       opts = opts || {};
       let postBody = body;
-      // verify the required parameter 'spaceName' is set
-      if (spaceName === undefined || spaceName === null) {
-        throw new Error("Missing the required parameter 'spaceName' when calling createCompetitions");
-      }
       // verify the required parameter 'body' is set
       if (body === undefined || body === null) {
         throw new Error("Missing the required parameter 'body' when calling createCompetitions");
       }
 
       let pathParams = {
-        'spaceName': spaceName
       };
       let queryParams = {
       };
@@ -85,60 +79,12 @@ export default class CompetitionsApi {
       let formParams = {
       };
 
-      let authNames = ['adminApiKey'];
+      let authNames = ['AdminApiKey', 'OAuth2'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = ApiResponse;
       return this.apiClient.callApi(
-        '/competitions/{spaceName}', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the deleteCompetitionsByQuery operation.
-     * @callback module:api/CompetitionsApi~deleteCompetitionsByQueryCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/ApiResponse} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * NOT AVAILABLE IN CURRENT RELEASE
-     * Delete Competitions from CompetitionLabs database by unique Competition ID's or any other POST body parameters using the POST method
-     * @param {String} spaceName This is the space name which is linked to the account
-     * @param {Object} opts Optional parameters
-     * @param {String} opts.X_API_KEY The admin API Key generated from CompetitionLabs back office
-     * @param {module:model/QueryRequest} opts.body Delete Competitions from CompetitionLabs database by unique Competition ID's or any other POST body parameters using the POST method
-     * @param {module:api/CompetitionsApi~deleteCompetitionsByQueryCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/ApiResponse}
-     */
-    deleteCompetitionsByQuery(spaceName, opts, callback) {
-      opts = opts || {};
-      let postBody = opts['body'];
-      // verify the required parameter 'spaceName' is set
-      if (spaceName === undefined || spaceName === null) {
-        throw new Error("Missing the required parameter 'spaceName' when calling deleteCompetitionsByQuery");
-      }
-
-      let pathParams = {
-        'spaceName': spaceName
-      };
-      let queryParams = {
-      };
-      let headerParams = {
-        'X-API-KEY': opts['X_API_KEY']
-      };
-      let formParams = {
-      };
-
-      let authNames = ['adminApiKey'];
-      let contentTypes = ['application/json'];
-      let accepts = ['application/json'];
-      let returnType = ApiResponse;
-      return this.apiClient.callApi(
-        '/competitions/{spaceName}/delete', 'POST',
+        '/competitions', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
@@ -155,7 +101,6 @@ export default class CompetitionsApi {
     /**
      * NOT AVAILABLE IN CURRENT RELEASE
      * Returns a list of Competitions. This assumes that competitions have first been uploaded via a POST request or web console
-     * @param {String} spaceName This is the space name which is linked to the account
      * @param {Object} opts Optional parameters
      * @param {String} opts.X_API_KEY The admin API Key generated from CompetitionLabs back office
      * @param {Array.<String>} opts.id The unique identifiers of the resources
@@ -164,16 +109,11 @@ export default class CompetitionsApi {
      * @param {module:api/CompetitionsApi~getCompetitionsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/CompetitionResponse}
      */
-    getCompetitions(spaceName, opts, callback) {
+    getCompetitions(opts, callback) {
       opts = opts || {};
       let postBody = null;
-      // verify the required parameter 'spaceName' is set
-      if (spaceName === undefined || spaceName === null) {
-        throw new Error("Missing the required parameter 'spaceName' when calling getCompetitions");
-      }
 
       let pathParams = {
-        'spaceName': spaceName
       };
       let queryParams = {
         'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),
@@ -186,12 +126,12 @@ export default class CompetitionsApi {
       let formParams = {
       };
 
-      let authNames = ['adminApiKey'];
+      let authNames = ['AdminApiKey', 'OAuth2'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = CompetitionResponse;
       return this.apiClient.callApi(
-        '/competitions/{spaceName}', 'GET',
+        '/competitions', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
@@ -208,7 +148,6 @@ export default class CompetitionsApi {
     /**
      * NOT AVAILABLE IN CURRENT RELEASE
      * Returns all Contests for the Competition id provided in Brackets
-     * @param {String} spaceName This is the space name which is linked to the account
      * @param {String} id Unique identifier of the resource
      * @param {Object} opts Optional parameters
      * @param {String} opts.X_API_KEY The admin API Key generated from CompetitionLabs back office
@@ -217,20 +156,15 @@ export default class CompetitionsApi {
      * @param {module:api/CompetitionsApi~getCompetitionsBracketsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/BracketResponse}
      */
-    getCompetitionsBrackets(spaceName, id, opts, callback) {
+    getCompetitionsBrackets(id, opts, callback) {
       opts = opts || {};
       let postBody = null;
-      // verify the required parameter 'spaceName' is set
-      if (spaceName === undefined || spaceName === null) {
-        throw new Error("Missing the required parameter 'spaceName' when calling getCompetitionsBrackets");
-      }
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
         throw new Error("Missing the required parameter 'id' when calling getCompetitionsBrackets");
       }
 
       let pathParams = {
-        'spaceName': spaceName,
         'id': id
       };
       let queryParams = {
@@ -243,12 +177,12 @@ export default class CompetitionsApi {
       let formParams = {
       };
 
-      let authNames = ['adminApiKey'];
+      let authNames = ['AdminApiKey', 'OAuth2'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = BracketResponse;
       return this.apiClient.callApi(
-        '/competitions/{spaceName}/{id}/brackets', 'GET',
+        '/competitions/{id}/brackets', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
@@ -265,23 +199,17 @@ export default class CompetitionsApi {
     /**
      * NOT AVAILABLE IN CURRENT RELEASE
      * Retrieve Competitions from CompetitionLabs database by unique Competition ID's or any other POST body parameters using the POST method
-     * @param {String} spaceName This is the space name which is linked to the account
      * @param {Object} opts Optional parameters
      * @param {String} opts.X_API_KEY The admin API Key generated from CompetitionLabs back office
      * @param {module:model/QueryRequest} opts.body Retrieve Competitions from CompetitionLabs database by unique Competition ID's or any other POST body parameters using the POST method
      * @param {module:api/CompetitionsApi~getCompetitionsByQueryCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/CompetitionResponse}
      */
-    getCompetitionsByQuery(spaceName, opts, callback) {
+    getCompetitionsByQuery(opts, callback) {
       opts = opts || {};
       let postBody = opts['body'];
-      // verify the required parameter 'spaceName' is set
-      if (spaceName === undefined || spaceName === null) {
-        throw new Error("Missing the required parameter 'spaceName' when calling getCompetitionsByQuery");
-      }
 
       let pathParams = {
-        'spaceName': spaceName
       };
       let queryParams = {
       };
@@ -291,12 +219,12 @@ export default class CompetitionsApi {
       let formParams = {
       };
 
-      let authNames = ['adminApiKey'];
+      let authNames = ['AdminApiKey', 'OAuth2'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = CompetitionResponse;
       return this.apiClient.callApi(
-        '/competitions/{spaceName}/query', 'POST',
+        '/competitions/query', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
@@ -313,27 +241,21 @@ export default class CompetitionsApi {
     /**
      * NOT AVAILABLE IN CURRENT RELEASE
      * Clones a Competition for the identifier provided
-     * @param {String} spaceName This is the space name which is linked to the account
      * @param {String} id Unique identifier of the resource
      * @param {Object} opts Optional parameters
      * @param {String} opts.X_API_KEY The admin API Key generated from CompetitionLabs back office
      * @param {module:api/CompetitionsApi~getCompetitionsToCloneCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/CreateCompetitionRequest}
      */
-    getCompetitionsToClone(spaceName, id, opts, callback) {
+    getCompetitionsToClone(id, opts, callback) {
       opts = opts || {};
       let postBody = null;
-      // verify the required parameter 'spaceName' is set
-      if (spaceName === undefined || spaceName === null) {
-        throw new Error("Missing the required parameter 'spaceName' when calling getCompetitionsToClone");
-      }
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
         throw new Error("Missing the required parameter 'id' when calling getCompetitionsToClone");
       }
 
       let pathParams = {
-        'spaceName': spaceName,
         'id': id
       };
       let queryParams = {
@@ -344,12 +266,12 @@ export default class CompetitionsApi {
       let formParams = {
       };
 
-      let authNames = ['adminApiKey'];
+      let authNames = ['AdminApiKey', 'OAuth2'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = CreateCompetitionRequest;
       return this.apiClient.callApi(
-        '/competitions/{spaceName}/{id}/clone', 'GET',
+        '/competitions/{id}/clone', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
@@ -366,7 +288,6 @@ export default class CompetitionsApi {
     /**
      * NOT AVAILABLE IN CURRENT RELEASE
      * Returns all Contests for the Competition id provided
-     * @param {String} spaceName This is the space name which is linked to the account
      * @param {String} id Unique identifier of the resource
      * @param {Object} opts Optional parameters
      * @param {String} opts.X_API_KEY The admin API Key generated from CompetitionLabs back office
@@ -375,20 +296,15 @@ export default class CompetitionsApi {
      * @param {module:api/CompetitionsApi~getContestsForCompetitionsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ContestReducedResponse}
      */
-    getContestsForCompetitions(spaceName, id, opts, callback) {
+    getContestsForCompetitions(id, opts, callback) {
       opts = opts || {};
       let postBody = null;
-      // verify the required parameter 'spaceName' is set
-      if (spaceName === undefined || spaceName === null) {
-        throw new Error("Missing the required parameter 'spaceName' when calling getContestsForCompetitions");
-      }
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
         throw new Error("Missing the required parameter 'id' when calling getContestsForCompetitions");
       }
 
       let pathParams = {
-        'spaceName': spaceName,
         'id': id
       };
       let queryParams = {
@@ -401,12 +317,12 @@ export default class CompetitionsApi {
       let formParams = {
       };
 
-      let authNames = ['adminApiKey'];
+      let authNames = ['AdminApiKey', 'OAuth2'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = ContestReducedResponse;
       return this.apiClient.callApi(
-        '/competitions/{spaceName}/{id}/contests', 'GET',
+        '/competitions/{id}/contests', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
@@ -423,7 +339,6 @@ export default class CompetitionsApi {
     /**
      * NOT AVAILABLE IN CURRENT RELEASE
      * Returns a list of Leaderborads for the Competition id provided
-     * @param {String} spaceName This is the space name which is linked to the account
      * @param {String} id Unique identifier of the resource
      * @param {Object} opts Optional parameters
      * @param {String} opts.X_API_KEY The admin API Key generated from CompetitionLabs back office
@@ -432,20 +347,15 @@ export default class CompetitionsApi {
      * @param {module:api/CompetitionsApi~getLeaderboardByCompetitionIdCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/CompetitionLeaderboardResponse}
      */
-    getLeaderboardByCompetitionId(spaceName, id, opts, callback) {
+    getLeaderboardByCompetitionId(id, opts, callback) {
       opts = opts || {};
       let postBody = null;
-      // verify the required parameter 'spaceName' is set
-      if (spaceName === undefined || spaceName === null) {
-        throw new Error("Missing the required parameter 'spaceName' when calling getLeaderboardByCompetitionId");
-      }
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
         throw new Error("Missing the required parameter 'id' when calling getLeaderboardByCompetitionId");
       }
 
       let pathParams = {
-        'spaceName': spaceName,
         'id': id
       };
       let queryParams = {
@@ -458,12 +368,12 @@ export default class CompetitionsApi {
       let formParams = {
       };
 
-      let authNames = ['adminApiKey'];
+      let authNames = ['AdminApiKey', 'OAuth2'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = CompetitionLeaderboardResponse;
       return this.apiClient.callApi(
-        '/competitions/{spaceName}/{id}/leaderboards', 'GET',
+        '/competitions/{id}/leaderboards', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
@@ -480,7 +390,6 @@ export default class CompetitionsApi {
     /**
      * NOT AVAILABLE IN CURRENT RELEASE
      * Returns all Entries for the Competition id provided
-     * @param {String} spaceName This is the space name which is linked to the account
      * @param {String} id Unique identifier of the resource
      * @param {Object} opts Optional parameters
      * @param {String} opts.X_API_KEY The admin API Key generated from CompetitionLabs back office
@@ -489,20 +398,15 @@ export default class CompetitionsApi {
      * @param {module:api/CompetitionsApi~getListOfEntrantsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/EntrantResponse}
      */
-    getListOfEntrants(spaceName, id, opts, callback) {
+    getListOfEntrants(id, opts, callback) {
       opts = opts || {};
       let postBody = null;
-      // verify the required parameter 'spaceName' is set
-      if (spaceName === undefined || spaceName === null) {
-        throw new Error("Missing the required parameter 'spaceName' when calling getListOfEntrants");
-      }
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
         throw new Error("Missing the required parameter 'id' when calling getListOfEntrants");
       }
 
       let pathParams = {
-        'spaceName': spaceName,
         'id': id
       };
       let queryParams = {
@@ -515,12 +419,12 @@ export default class CompetitionsApi {
       let formParams = {
       };
 
-      let authNames = ['adminApiKey'];
+      let authNames = ['AdminApiKey', 'OAuth2'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = EntrantResponse;
       return this.apiClient.callApi(
-        '/competitions/{spaceName}/{id}/entries', 'GET',
+        '/competitions/{id}/entries', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
@@ -537,27 +441,21 @@ export default class CompetitionsApi {
     /**
      * NOT AVAILABLE IN CURRENT RELEASE
      * Update an existing Competition in the CompetitionLabs database
-     * @param {String} spaceName This is the space name which is linked to the account
      * @param {module:model/UpdateCompetitionRequest} body Update a Competition in the CompetitionLabs database. * A Competitions Id must exist in the CompetitionLabs database for update
      * @param {Object} opts Optional parameters
      * @param {String} opts.X_API_KEY The admin API Key generated from CompetitionLabs back office
      * @param {module:api/CompetitionsApi~updateCompetitionsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ApiResponse}
      */
-    updateCompetitions(spaceName, body, opts, callback) {
+    updateCompetitions(body, opts, callback) {
       opts = opts || {};
       let postBody = body;
-      // verify the required parameter 'spaceName' is set
-      if (spaceName === undefined || spaceName === null) {
-        throw new Error("Missing the required parameter 'spaceName' when calling updateCompetitions");
-      }
       // verify the required parameter 'body' is set
       if (body === undefined || body === null) {
         throw new Error("Missing the required parameter 'body' when calling updateCompetitions");
       }
 
       let pathParams = {
-        'spaceName': spaceName
       };
       let queryParams = {
       };
@@ -567,12 +465,12 @@ export default class CompetitionsApi {
       let formParams = {
       };
 
-      let authNames = ['adminApiKey'];
+      let authNames = ['AdminApiKey', 'OAuth2'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = ApiResponse;
       return this.apiClient.callApi(
-        '/competitions/{spaceName}', 'PUT',
+        '/competitions', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
@@ -589,23 +487,17 @@ export default class CompetitionsApi {
     /**
      * NOT AVAILABLE IN CURRENT RELEASE
      * Updates the status of the Entrants for a Competition id provided
-     * @param {String} spaceName This is the space name which is linked to the account
      * @param {Object} opts Optional parameters
      * @param {String} opts.X_API_KEY The admin API Key generated from CompetitionLabs back office
      * @param {Array.<module:model/EntrantRequest>} opts.body Updates the status of the Entrants
      * @param {module:api/CompetitionsApi~updateCompetitionsEntriesCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ApiResponse}
      */
-    updateCompetitionsEntries(spaceName, opts, callback) {
+    updateCompetitionsEntries(opts, callback) {
       opts = opts || {};
       let postBody = opts['body'];
-      // verify the required parameter 'spaceName' is set
-      if (spaceName === undefined || spaceName === null) {
-        throw new Error("Missing the required parameter 'spaceName' when calling updateCompetitionsEntries");
-      }
 
       let pathParams = {
-        'spaceName': spaceName
       };
       let queryParams = {
       };
@@ -615,12 +507,12 @@ export default class CompetitionsApi {
       let formParams = {
       };
 
-      let authNames = ['adminApiKey'];
+      let authNames = ['AdminApiKey', 'OAuth2'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = ApiResponse;
       return this.apiClient.callApi(
-        '/competitions/{spaceName}/entries', 'PUT',
+        '/competitions/entries', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
@@ -637,23 +529,17 @@ export default class CompetitionsApi {
     /**
      * NOT AVAILABLE IN CURRENT RELEASE
      * Manages the Competitions state
-     * @param {String} spaceName This is the space name which is linked to the account
      * @param {Object} opts Optional parameters
      * @param {String} opts.X_API_KEY The admin API Key generated from CompetitionLabs back office
      * @param {Array.<module:model/UpdateCompetitionStatusRequest>} opts.body Updates the state of the Competition
      * @param {module:api/CompetitionsApi~updateCompetitionsStateCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ApiResponse}
      */
-    updateCompetitionsState(spaceName, opts, callback) {
+    updateCompetitionsState(opts, callback) {
       opts = opts || {};
       let postBody = opts['body'];
-      // verify the required parameter 'spaceName' is set
-      if (spaceName === undefined || spaceName === null) {
-        throw new Error("Missing the required parameter 'spaceName' when calling updateCompetitionsState");
-      }
 
       let pathParams = {
-        'spaceName': spaceName
       };
       let queryParams = {
       };
@@ -663,12 +549,12 @@ export default class CompetitionsApi {
       let formParams = {
       };
 
-      let authNames = ['adminApiKey'];
+      let authNames = ['AdminApiKey', 'OAuth2'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = ApiResponse;
       return this.apiClient.callApi(
-        '/competitions/{spaceName}/state', 'PUT',
+        '/competitions/state', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );

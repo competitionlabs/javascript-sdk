@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -12,25 +12,31 @@
  */
 
 import ApiClient from '../ApiClient';
+import CreateOptParamModels from './CreateOptParamModels';
 import Metadata from './Metadata';
+import RewardTypeAllOf from './RewardTypeAllOf';
+import TranslationValue from './TranslationValue';
 import UnitOfMeasureType from './UnitOfMeasureType';
 
 /**
  * The CreateRewardTypeRequest model module.
  * @module model/CreateRewardTypeRequest
- * @version 1.0.5
+ * @version 1.0.0
  */
 class CreateRewardTypeRequest {
     /**
      * Constructs a new <code>CreateRewardTypeRequest</code>.
      * @alias module:model/CreateRewardTypeRequest
+     * @implements module:model/CreateOptParamModels
+     * @implements module:model/RewardTypeAllOf
      * @param name {String} The name of the Reward type
      * @param key {String} A unique key that represents the reward type
      * @param unitOfMeasureType {module:model/UnitOfMeasureType} 
+     * @param constraints {Array.<String>} Additional constraints, if the value is present it means the
      */
-    constructor(name, key, unitOfMeasureType) { 
-        
-        CreateRewardTypeRequest.initialize(this, name, key, unitOfMeasureType);
+    constructor(name, key, unitOfMeasureType, constraints) { 
+        CreateOptParamModels.initialize(this);RewardTypeAllOf.initialize(this, name, key, unitOfMeasureType, constraints);
+        CreateRewardTypeRequest.initialize(this, name, key, unitOfMeasureType, constraints);
     }
 
     /**
@@ -38,50 +44,11 @@ class CreateRewardTypeRequest {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, name, key, unitOfMeasureType) { 
+    static initialize(obj, name, key, unitOfMeasureType, constraints) { 
         obj['name'] = name;
         obj['key'] = key;
         obj['unitOfMeasureType'] = unitOfMeasureType;
-    }
-
-    /**
-    * Constructs a full object with all available fields.
-    */
-    model(){
-        var obj = {};
-
-        obj['name'] = null;
-        obj['description'] = null;
-        obj['key'] = null;
-        obj['unitOfMeasureType'] = new UnitOfMeasureType().model();
-        obj['metadata'] = [new Metadata().model()];
-        obj['providers'] = null;
-
-        return obj;
-    }
-
-    /**
-    * Constructs a full object Map for all available fields.
-    */
-    modelMap(){
-        var obj = {
-            "fields": {},
-            "requiredFields": {}
-        };
-
-        obj["fields"]['name'] = { "type": 'String', "system": false };
-        obj["fields"]['description'] = { "type": 'String', "system": false };
-        obj["fields"]['key'] = { "type": 'String', "system": false };
-        obj["fields"]['unitOfMeasureType'] = new UnitOfMeasureType().modelMap();
-        obj["fields"]['metadata'] = [new Metadata().modelMap()];
-        obj["fields"]['providers'] = { "type": 'String', "system": false };
-
-        
-        obj["requiredFields"]['name'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['key'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['unitOfMeasureType'] = new UnitOfMeasureType().modelMap();
-
-        return obj;
+        obj['constraints'] = constraints;
     }
 
     /**
@@ -94,7 +61,18 @@ class CreateRewardTypeRequest {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new CreateRewardTypeRequest();
+            CreateOptParamModels.constructFromObject(data, obj);
+            RewardTypeAllOf.constructFromObject(data, obj);
 
+            if (data.hasOwnProperty('customFields')) {
+                obj['customFields'] = ApiClient.convertToType(data['customFields'], ['String']);
+            }
+            if (data.hasOwnProperty('tags')) {
+                obj['tags'] = ApiClient.convertToType(data['tags'], ['String']);
+            }
+            if (data.hasOwnProperty('metadata')) {
+                obj['metadata'] = ApiClient.convertToType(data['metadata'], [Metadata]);
+            }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
@@ -107,11 +85,11 @@ class CreateRewardTypeRequest {
             if (data.hasOwnProperty('unitOfMeasureType')) {
                 obj['unitOfMeasureType'] = UnitOfMeasureType.constructFromObject(data['unitOfMeasureType']);
             }
-            if (data.hasOwnProperty('metadata')) {
-                obj['metadata'] = ApiClient.convertToType(data['metadata'], [Metadata]);
+            if (data.hasOwnProperty('translations')) {
+                obj['translations'] = ApiClient.convertToType(data['translations'], [Object]);
             }
-            if (data.hasOwnProperty('providers')) {
-                obj['providers'] = ApiClient.convertToType(data['providers'], 'String');
+            if (data.hasOwnProperty('constraints')) {
+                obj['constraints'] = ApiClient.convertToType(data['constraints'], ['String']);
             }
         }
         return obj;
@@ -119,6 +97,23 @@ class CreateRewardTypeRequest {
 
 
 }
+
+/**
+ * A list of id's used to add cutom fields
+ * @member {Array.<String>} customFields
+ */
+CreateRewardTypeRequest.prototype['customFields'] = undefined;
+
+/**
+ * A list of id's used to tag models
+ * @member {Array.<String>} tags
+ */
+CreateRewardTypeRequest.prototype['tags'] = undefined;
+
+/**
+ * @member {Array.<module:model/Metadata>} metadata
+ */
+CreateRewardTypeRequest.prototype['metadata'] = undefined;
 
 /**
  * The name of the Reward type
@@ -144,17 +139,61 @@ CreateRewardTypeRequest.prototype['key'] = undefined;
 CreateRewardTypeRequest.prototype['unitOfMeasureType'] = undefined;
 
 /**
- * @member {Array.<module:model/Metadata>} metadata
+ * @member {Array.<Object.<String, module:model/TranslationValue>>} translations
  */
-CreateRewardTypeRequest.prototype['metadata'] = undefined;
+CreateRewardTypeRequest.prototype['translations'] = undefined;
 
 /**
- * The providers of the reward type
- * @member {String} providers
+ * Additional constraints, if the value is present it means the
+ * @member {Array.<String>} constraints
  */
-CreateRewardTypeRequest.prototype['providers'] = undefined;
+CreateRewardTypeRequest.prototype['constraints'] = undefined;
 
 
+// Implement CreateOptParamModels interface:
+/**
+ * A list of id's used to add cutom fields
+ * @member {Array.<String>} customFields
+ */
+CreateOptParamModels.prototype['customFields'] = undefined;
+/**
+ * A list of id's used to tag models
+ * @member {Array.<String>} tags
+ */
+CreateOptParamModels.prototype['tags'] = undefined;
+/**
+ * @member {Array.<module:model/Metadata>} metadata
+ */
+CreateOptParamModels.prototype['metadata'] = undefined;
+// Implement RewardTypeAllOf interface:
+/**
+ * The name of the Reward type
+ * @member {String} name
+ */
+RewardTypeAllOf.prototype['name'] = undefined;
+/**
+ * The description of a reward type
+ * @member {String} description
+ */
+RewardTypeAllOf.prototype['description'] = undefined;
+/**
+ * A unique key that represents the reward type
+ * @member {String} key
+ */
+RewardTypeAllOf.prototype['key'] = undefined;
+/**
+ * @member {module:model/UnitOfMeasureType} unitOfMeasureType
+ */
+RewardTypeAllOf.prototype['unitOfMeasureType'] = undefined;
+/**
+ * @member {Array.<Object.<String, module:model/TranslationValue>>} translations
+ */
+RewardTypeAllOf.prototype['translations'] = undefined;
+/**
+ * Additional constraints, if the value is present it means the
+ * @member {Array.<String>} constraints
+ */
+RewardTypeAllOf.prototype['constraints'] = undefined;
 
 
 

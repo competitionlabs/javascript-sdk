@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.@CompetitionlabsJavascriptSdk);
+    factory(root.expect, root.CompetitionLabsApplicationServices);
   }
-}(this, function(expect, @CompetitionlabsJavascriptSdk) {
+}(this, function(expect, CompetitionLabsApplicationServices) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new @CompetitionlabsJavascriptSdk.MemberAchievementCountAllOf();
+    instance = new CompetitionLabsApplicationServices.MemberAchievementCountAllOf();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,31 +50,31 @@
   describe('MemberAchievementCountAllOf', function() {
     it('should create an instance of MemberAchievementCountAllOf', function() {
       // uncomment below and update the code to test MemberAchievementCountAllOf
-      //var instane = new @CompetitionlabsJavascriptSdk.MemberAchievementCountAllOf();
-      //expect(instance).to.be.a(@CompetitionlabsJavascriptSdk.MemberAchievementCountAllOf);
+      //var instane = new CompetitionLabsApplicationServices.MemberAchievementCountAllOf();
+      //expect(instance).to.be.a(CompetitionLabsApplicationServices.MemberAchievementCountAllOf);
     });
 
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
-      //var instane = new @CompetitionlabsJavascriptSdk.MemberAchievementCountAllOf();
+      //var instance = new CompetitionLabsApplicationServices.MemberAchievementCountAllOf();
       //expect(instance).to.be();
     });
 
     it('should have the property memberId (base name: "memberId")', function() {
       // uncomment below and update the code to test the property memberId
-      //var instane = new @CompetitionlabsJavascriptSdk.MemberAchievementCountAllOf();
+      //var instance = new CompetitionLabsApplicationServices.MemberAchievementCountAllOf();
       //expect(instance).to.be();
     });
 
     it('should have the property memberRefId (base name: "memberRefId")', function() {
       // uncomment below and update the code to test the property memberRefId
-      //var instane = new @CompetitionlabsJavascriptSdk.MemberAchievementCountAllOf();
+      //var instance = new CompetitionLabsApplicationServices.MemberAchievementCountAllOf();
       //expect(instance).to.be();
     });
 
     it('should have the property latestIssuedTimestamp (base name: "latestIssuedTimestamp")', function() {
       // uncomment below and update the code to test the property latestIssuedTimestamp
-      //var instane = new @CompetitionlabsJavascriptSdk.MemberAchievementCountAllOf();
+      //var instance = new CompetitionLabsApplicationServices.MemberAchievementCountAllOf();
       //expect(instance).to.be();
     });
 

@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -19,7 +19,7 @@ import UpdateModelDefault from './UpdateModelDefault';
 /**
  * The UpdateMessageStatusRequest model module.
  * @module model/UpdateMessageStatusRequest
- * @version 1.0.5
+ * @version 1.0.0
  */
 class UpdateMessageStatusRequest {
     /**
@@ -43,37 +43,6 @@ class UpdateMessageStatusRequest {
     static initialize(obj, id, status) { 
         obj['id'] = id;
         obj['status'] = status;
-    }
-
-    /**
-    * Constructs a full object with all available fields.
-    */
-    model(){
-        var obj = {};
-
-        obj['id'] = null;
-        obj['status'] = new MessageStatus().model();
-
-        return obj;
-    }
-
-    /**
-    * Constructs a full object Map for all available fields.
-    */
-    modelMap(){
-        var obj = {
-            "fields": {},
-            "requiredFields": {}
-        };
-
-        obj["fields"]['id'] = { "type": 'String', "system": true };
-        obj["fields"]['status'] = new MessageStatus().modelMap();
-
-        
-        obj["requiredFields"]['id'] = { "type": 'String', "system": true };
-        obj["requiredFields"]['status'] = new MessageStatus().modelMap();
-
-        return obj;
     }
 
     /**

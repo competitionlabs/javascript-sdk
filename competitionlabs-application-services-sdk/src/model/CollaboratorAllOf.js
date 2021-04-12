@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CollaboratorAllOf model module.
  * @module model/CollaboratorAllOf
- * @version 1.0.5
+ * @version 1.0.0
  */
 class CollaboratorAllOf {
     /**
@@ -38,41 +38,6 @@ class CollaboratorAllOf {
     static initialize(obj, email, role) { 
         obj['email'] = email;
         obj['role'] = role;
-    }
-
-    /**
-    * Constructs a full object with all available fields.
-    */
-    model(){
-        var obj = {};
-
-        obj['name'] = null;
-        obj['surname'] = null;
-        obj['email'] = null;
-        obj['role'] = null;
-
-        return obj;
-    }
-
-    /**
-    * Constructs a full object Map for all available fields.
-    */
-    modelMap(){
-        var obj = {
-            "fields": {},
-            "requiredFields": {}
-        };
-
-        obj["fields"]['name'] = { "type": 'String', "system": false };
-        obj["fields"]['surname'] = { "type": 'String', "system": false };
-        obj["fields"]['email'] = { "type": 'String', "system": false };
-        obj["fields"]['role'] = { "type": 'String', "system": false };
-
-        
-        obj["requiredFields"]['email'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['role'] = { "type": 'String', "system": false };
-
-        return obj;
     }
 
     /**

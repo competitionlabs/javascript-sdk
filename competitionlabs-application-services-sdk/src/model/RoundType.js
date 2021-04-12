@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -26,39 +26,6 @@ export default class RoundType {
         "TimeBound" = "TimeBound";
 
     
-
-    /**
-    * Constructs a full object with all available fields.
-    */
-    list(){
-        var obj = {};
-
-        
-        obj['TimeBound'] = "TimeBound";
-        
-
-        return obj;
-    }
-
-    /**
-    * Constructs a full object with all available fields.
-    */
-    model(){
-        var obj = {};
-
-        
-        obj['TimeBound'] = null;
-        
-
-        return obj;
-    }
-
-    /**
-    * Constructs a full object Map for all available fields.
-    */
-    modelMap(){
-        return {"type": 'String'};
-    }
 
     /**
     * Returns a <code>RoundType</code> enum value from a Javascript object name.

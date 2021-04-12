@@ -1,4 +1,4 @@
-# @CompetitionlabsApplicationServicesSdk.SourceLanguage
+# CompetitionLabsApplicationServices.SourceLanguage
 
 ## Enum
 

@@ -1,4 +1,4 @@
-# @CompetitionlabsApplicationServicesSdk.KafkaConnectionAllOf
+# CompetitionLabsApplicationServices.KafkaConnectionAllOf
 
 ## Properties
 
@@ -10,5 +10,6 @@ Name | Type | Description | Notes
 **topic** | **String** | Topic name | 
 **lastKnownStatus** | **String** | Last known status of the connection | 
 **lastKnownStatusCode** | **Number** | Status code correspoding to the last known status | 
+**transformerId** | **String** | The identifier of the transformer | 
 
 

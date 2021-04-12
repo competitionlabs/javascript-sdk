@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -13,18 +13,21 @@
 
 import ApiClient from '../ApiClient';
 import CreateConnectionRequest from './CreateConnectionRequest';
+import CreateOptParamModels from './CreateOptParamModels';
 import CreateSqsConnectionRequestAllOf from './CreateSqsConnectionRequestAllOf';
+import Metadata from './Metadata';
 
 /**
  * The CreateSqsConnectionRequest model module.
  * @module model/CreateSqsConnectionRequest
- * @version 1.0.5
+ * @version 1.0.0
  */
 class CreateSqsConnectionRequest {
     /**
      * Constructs a new <code>CreateSqsConnectionRequest</code>.
      * @alias module:model/CreateSqsConnectionRequest
      * @implements module:model/CreateConnectionRequest
+     * @implements module:model/CreateOptParamModels
      * @implements module:model/CreateSqsConnectionRequestAllOf
      * @param objectType {String} The type of consumer to create like Kafka, RabbitMQ or SQS
      * @param name {String} The name of the consumer
@@ -34,7 +37,7 @@ class CreateSqsConnectionRequest {
      * @param transformerId {String} The id of the transformer to handle incoming messages
      */
     constructor(objectType, name, uri, acessKey, secretKey, transformerId) { 
-        CreateConnectionRequest.initialize(this, objectType);CreateSqsConnectionRequestAllOf.initialize(this, name, uri, acessKey, secretKey, transformerId);
+        CreateConnectionRequest.initialize(this, objectType);CreateOptParamModels.initialize(this);CreateSqsConnectionRequestAllOf.initialize(this, name, uri, acessKey, secretKey, transformerId);
         CreateSqsConnectionRequest.initialize(this, objectType, name, uri, acessKey, secretKey, transformerId);
     }
 
@@ -53,49 +56,6 @@ class CreateSqsConnectionRequest {
     }
 
     /**
-    * Constructs a full object with all available fields.
-    */
-    model(){
-        var obj = {};
-
-        obj['objectType'] = null;
-        obj['name'] = null;
-        obj['uri'] = null;
-        obj['acessKey'] = null;
-        obj['secretKey'] = null;
-        obj['transformerId'] = null;
-
-        return obj;
-    }
-
-    /**
-    * Constructs a full object Map for all available fields.
-    */
-    modelMap(){
-        var obj = {
-            "fields": {},
-            "requiredFields": {}
-        };
-
-        obj["fields"]['objectType'] = { "type": 'String', "system": false };
-        obj["fields"]['name'] = { "type": 'String', "system": false };
-        obj["fields"]['uri'] = { "type": 'String', "system": false };
-        obj["fields"]['acessKey'] = { "type": 'String', "system": false };
-        obj["fields"]['secretKey'] = { "type": 'String', "system": false };
-        obj["fields"]['transformerId'] = { "type": 'String', "system": false };
-
-        
-        obj["requiredFields"]['objectType'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['name'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['uri'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['acessKey'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['secretKey'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['transformerId'] = { "type": 'String', "system": false };
-
-        return obj;
-    }
-
-    /**
      * Constructs a <code>CreateSqsConnectionRequest</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
@@ -106,10 +66,20 @@ class CreateSqsConnectionRequest {
         if (data) {
             obj = obj || new CreateSqsConnectionRequest();
             CreateConnectionRequest.constructFromObject(data, obj);
+            CreateOptParamModels.constructFromObject(data, obj);
             CreateSqsConnectionRequestAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('objectType')) {
                 obj['objectType'] = ApiClient.convertToType(data['objectType'], 'String');
+            }
+            if (data.hasOwnProperty('customFields')) {
+                obj['customFields'] = ApiClient.convertToType(data['customFields'], ['String']);
+            }
+            if (data.hasOwnProperty('tags')) {
+                obj['tags'] = ApiClient.convertToType(data['tags'], ['String']);
+            }
+            if (data.hasOwnProperty('metadata')) {
+                obj['metadata'] = ApiClient.convertToType(data['metadata'], [Metadata]);
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
@@ -138,6 +108,23 @@ class CreateSqsConnectionRequest {
  * @member {String} objectType
  */
 CreateSqsConnectionRequest.prototype['objectType'] = undefined;
+
+/**
+ * A list of id's used to add cutom fields
+ * @member {Array.<String>} customFields
+ */
+CreateSqsConnectionRequest.prototype['customFields'] = undefined;
+
+/**
+ * A list of id's used to tag models
+ * @member {Array.<String>} tags
+ */
+CreateSqsConnectionRequest.prototype['tags'] = undefined;
+
+/**
+ * @member {Array.<module:model/Metadata>} metadata
+ */
+CreateSqsConnectionRequest.prototype['metadata'] = undefined;
 
 /**
  * The name of the consumer
@@ -176,6 +163,21 @@ CreateSqsConnectionRequest.prototype['transformerId'] = undefined;
  * @member {String} objectType
  */
 CreateConnectionRequest.prototype['objectType'] = undefined;
+// Implement CreateOptParamModels interface:
+/**
+ * A list of id's used to add cutom fields
+ * @member {Array.<String>} customFields
+ */
+CreateOptParamModels.prototype['customFields'] = undefined;
+/**
+ * A list of id's used to tag models
+ * @member {Array.<String>} tags
+ */
+CreateOptParamModels.prototype['tags'] = undefined;
+/**
+ * @member {Array.<module:model/Metadata>} metadata
+ */
+CreateOptParamModels.prototype['metadata'] = undefined;
 // Implement CreateSqsConnectionRequestAllOf interface:
 /**
  * The name of the consumer

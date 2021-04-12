@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -17,17 +17,18 @@ import RuleDescriptorSubCondition from './RuleDescriptorSubCondition';
 /**
  * The RuleDescriptorFactAllOf model module.
  * @module model/RuleDescriptorFactAllOf
- * @version 1.0.5
+ * @version 1.0.0
  */
 class RuleDescriptorFactAllOf {
     /**
      * Constructs a new <code>RuleDescriptorFactAllOf</code>.
      * @alias module:model/RuleDescriptorFactAllOf
+     * @param constraints {Array.<String>} The fields constraint
      * @param fact {String} The name of the fact
      */
-    constructor(fact) { 
+    constructor(constraints, fact) { 
         
-        RuleDescriptorFactAllOf.initialize(this, fact);
+        RuleDescriptorFactAllOf.initialize(this, constraints, fact);
     }
 
     /**
@@ -35,40 +36,9 @@ class RuleDescriptorFactAllOf {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, fact) { 
+    static initialize(obj, constraints, fact) { 
+        obj['constraints'] = constraints;
         obj['fact'] = fact;
-    }
-
-    /**
-    * Constructs a full object with all available fields.
-    */
-    model(){
-        var obj = {};
-
-        obj['constraints'] = [null];
-        obj['fact'] = null;
-        obj['subConditions'] = [new RuleDescriptorSubCondition().model()];
-
-        return obj;
-    }
-
-    /**
-    * Constructs a full object Map for all available fields.
-    */
-    modelMap(){
-        var obj = {
-            "fields": {},
-            "requiredFields": {}
-        };
-
-        obj["fields"]['constraints'] = [{ "type": 'String', "system": false }];
-        obj["fields"]['fact'] = { "type": 'String', "system": false };
-        obj["fields"]['subConditions'] = [new RuleDescriptorSubCondition().modelMap()];
-
-        
-        obj["requiredFields"]['fact'] = { "type": 'String', "system": false };
-
-        return obj;
     }
 
     /**

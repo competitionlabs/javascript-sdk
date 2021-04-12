@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -12,12 +12,13 @@
  */
 
 import ApiClient from '../ApiClient';
+import ConnectionState from './ConnectionState';
 import Metadata from './Metadata';
 
 /**
  * The WebhookAllOf model module.
  * @module model/WebhookAllOf
- * @version 1.0.5
+ * @version 1.0.0
  */
 class WebhookAllOf {
     /**
@@ -25,10 +26,12 @@ class WebhookAllOf {
      * @alias module:model/WebhookAllOf
      * @param postToUrl {String} A URL to post the webhook to
      * @param triggers {Array.<String>} A list of event triggers
+     * @param transformerId {String} The identifier of the transformer
+     * @param status {module:model/ConnectionState} 
      */
-    constructor(postToUrl, triggers) { 
+    constructor(postToUrl, triggers, transformerId, status) { 
         
-        WebhookAllOf.initialize(this, postToUrl, triggers);
+        WebhookAllOf.initialize(this, postToUrl, triggers, transformerId, status);
     }
 
     /**
@@ -36,48 +39,11 @@ class WebhookAllOf {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, postToUrl, triggers) { 
+    static initialize(obj, postToUrl, triggers, transformerId, status) { 
         obj['postToUrl'] = postToUrl;
         obj['triggers'] = triggers;
-    }
-
-    /**
-    * Constructs a full object with all available fields.
-    */
-    model(){
-        var obj = {};
-
-        obj['postToUrl'] = null;
-        obj['triggers'] = [null];
-        obj['description'] = null;
-        obj['headers'] = [new Metadata().model()];
-        obj['transformerId'] = null;
-        obj['metadata'] = [new Metadata().model()];
-
-        return obj;
-    }
-
-    /**
-    * Constructs a full object Map for all available fields.
-    */
-    modelMap(){
-        var obj = {
-            "fields": {},
-            "requiredFields": {}
-        };
-
-        obj["fields"]['postToUrl'] = { "type": 'String', "system": false };
-        obj["fields"]['triggers'] = [{ "type": 'String', "system": false }];
-        obj["fields"]['description'] = { "type": 'String', "system": false };
-        obj["fields"]['headers'] = [new Metadata().modelMap()];
-        obj["fields"]['transformerId'] = { "type": 'String', "system": false };
-        obj["fields"]['metadata'] = [new Metadata().modelMap()];
-
-        
-        obj["requiredFields"]['postToUrl'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['triggers'] = [{ "type": 'String', "system": false }];
-
-        return obj;
+        obj['transformerId'] = transformerId;
+        obj['status'] = status;
     }
 
     /**
@@ -106,8 +72,8 @@ class WebhookAllOf {
             if (data.hasOwnProperty('transformerId')) {
                 obj['transformerId'] = ApiClient.convertToType(data['transformerId'], 'String');
             }
-            if (data.hasOwnProperty('metadata')) {
-                obj['metadata'] = ApiClient.convertToType(data['metadata'], [Metadata]);
+            if (data.hasOwnProperty('status')) {
+                obj['status'] = ConnectionState.constructFromObject(data['status']);
             }
         }
         return obj;
@@ -146,9 +112,9 @@ WebhookAllOf.prototype['headers'] = undefined;
 WebhookAllOf.prototype['transformerId'] = undefined;
 
 /**
- * @member {Array.<module:model/Metadata>} metadata
+ * @member {module:model/ConnectionState} status
  */
-WebhookAllOf.prototype['metadata'] = undefined;
+WebhookAllOf.prototype['status'] = undefined;
 
 
 

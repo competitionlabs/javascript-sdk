@@ -1,4 +1,4 @@
-# @CompetitionlabsApplicationServicesSdk.RuleDescriptorSubFactAllOf
+# CompetitionLabsApplicationServices.RuleDescriptorSubFactAllOf
 
 ## Properties
 

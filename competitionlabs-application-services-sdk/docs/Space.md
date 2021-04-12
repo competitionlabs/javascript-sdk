@@ -1,4 +1,4 @@
-# @CompetitionlabsApplicationServicesSdk.Space
+# CompetitionLabsApplicationServices.Space
 
 ## Properties
 

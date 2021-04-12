@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -17,14 +17,14 @@ import ContestStatus from './ContestStatus';
 /**
  * The ContestReducedAllOf model module.
  * @module model/ContestReducedAllOf
- * @version 1.0.5
+ * @version 1.0.0
  */
 class ContestReducedAllOf {
     /**
      * Constructs a new <code>ContestReducedAllOf</code>.
      * @alias module:model/ContestReducedAllOf
      * @param competitionId {String} A unique identifier of a Competition
-     * @param _number {Number} The row number for displaying the Contest in a table
+     * @param row {Number} The row number for displaying the Contest in a table
      * @param name {String} A name for the Contest. Can be translated
      * @param round {Number} To what round does the contest belong
      * @param groupStage {Number} Is used for more complex Competitions e.g. multi round competitions where round 1 group stage matched round 2
@@ -34,9 +34,9 @@ class ContestReducedAllOf {
      * @param scheduledStartDate {Date} ISO8601 timestamp for when a Contest should start. All records are stored in UTC time zone
      * @param scheduledEndDate {Date} ISO8601 timestamp for when a Contest should end. All records are stored in UTC time zone
      */
-    constructor(competitionId, _number, name, round, groupStage, entrantsFromContest, status, statusCode, scheduledStartDate, scheduledEndDate) { 
+    constructor(competitionId, row, name, round, groupStage, entrantsFromContest, status, statusCode, scheduledStartDate, scheduledEndDate) { 
         
-        ContestReducedAllOf.initialize(this, competitionId, _number, name, round, groupStage, entrantsFromContest, status, statusCode, scheduledStartDate, scheduledEndDate);
+        ContestReducedAllOf.initialize(this, competitionId, row, name, round, groupStage, entrantsFromContest, status, statusCode, scheduledStartDate, scheduledEndDate);
     }
 
     /**
@@ -44,9 +44,9 @@ class ContestReducedAllOf {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, competitionId, _number, name, round, groupStage, entrantsFromContest, status, statusCode, scheduledStartDate, scheduledEndDate) { 
+    static initialize(obj, competitionId, row, name, round, groupStage, entrantsFromContest, status, statusCode, scheduledStartDate, scheduledEndDate) { 
         obj['competitionId'] = competitionId;
-        obj['number'] = _number;
+        obj['row'] = row;
         obj['name'] = name;
         obj['round'] = round;
         obj['groupStage'] = groupStage;
@@ -55,65 +55,6 @@ class ContestReducedAllOf {
         obj['statusCode'] = statusCode;
         obj['scheduledStartDate'] = scheduledStartDate;
         obj['scheduledEndDate'] = scheduledEndDate;
-    }
-
-    /**
-    * Constructs a full object with all available fields.
-    */
-    model(){
-        var obj = {};
-
-        obj['competitionId'] = null;
-        obj['number'] = null;
-        obj['name'] = null;
-        obj['round'] = null;
-        obj['groupStage'] = null;
-        obj['entrantsFromContest'] = [null];
-        obj['status'] = new ContestStatus().model();
-        obj['statusCode'] = null;
-        obj['scheduledStartDate'] = null;
-        obj['scheduledEndDate'] = null;
-        obj['actualStartDate'] = null;
-        obj['actualEndDate'] = null;
-
-        return obj;
-    }
-
-    /**
-    * Constructs a full object Map for all available fields.
-    */
-    modelMap(){
-        var obj = {
-            "fields": {},
-            "requiredFields": {}
-        };
-
-        obj["fields"]['competitionId'] = { "type": 'String', "system": false };
-        obj["fields"]['number'] = { "type": 'Number', "system": false };
-        obj["fields"]['name'] = { "type": 'String', "system": false };
-        obj["fields"]['round'] = { "type": 'Number', "system": false };
-        obj["fields"]['groupStage'] = { "type": 'Number', "system": false };
-        obj["fields"]['entrantsFromContest'] = [{ "type": 'String', "system": false }];
-        obj["fields"]['status'] = new ContestStatus().modelMap();
-        obj["fields"]['statusCode'] = { "type": 'Number', "system": false };
-        obj["fields"]['scheduledStartDate'] = { "type": 'Date', "system": false };
-        obj["fields"]['scheduledEndDate'] = { "type": 'Date', "system": false };
-        obj["fields"]['actualStartDate'] = { "type": 'Date', "system": false };
-        obj["fields"]['actualEndDate'] = { "type": 'Date', "system": false };
-
-        
-        obj["requiredFields"]['competitionId'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['number'] = { "type": 'Number', "system": false };
-        obj["requiredFields"]['name'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['round'] = { "type": 'Number', "system": false };
-        obj["requiredFields"]['groupStage'] = { "type": 'Number', "system": false };
-        obj["requiredFields"]['entrantsFromContest'] = [{ "type": 'String', "system": false }];
-        obj["requiredFields"]['status'] = new ContestStatus().modelMap();
-        obj["requiredFields"]['statusCode'] = { "type": 'Number', "system": false };
-        obj["requiredFields"]['scheduledStartDate'] = { "type": 'Date', "system": false };
-        obj["requiredFields"]['scheduledEndDate'] = { "type": 'Date', "system": false };
-
-        return obj;
     }
 
     /**
@@ -130,8 +71,8 @@ class ContestReducedAllOf {
             if (data.hasOwnProperty('competitionId')) {
                 obj['competitionId'] = ApiClient.convertToType(data['competitionId'], 'String');
             }
-            if (data.hasOwnProperty('number')) {
-                obj['number'] = ApiClient.convertToType(data['number'], 'Number');
+            if (data.hasOwnProperty('row')) {
+                obj['row'] = ApiClient.convertToType(data['row'], 'Number');
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
@@ -163,6 +104,9 @@ class ContestReducedAllOf {
             if (data.hasOwnProperty('actualEndDate')) {
                 obj['actualEndDate'] = ApiClient.convertToType(data['actualEndDate'], 'Date');
             }
+            if (data.hasOwnProperty('tags')) {
+                obj['tags'] = ApiClient.convertToType(data['tags'], ['String']);
+            }
         }
         return obj;
     }
@@ -178,9 +122,9 @@ ContestReducedAllOf.prototype['competitionId'] = undefined;
 
 /**
  * The row number for displaying the Contest in a table
- * @member {Number} number
+ * @member {Number} row
  */
-ContestReducedAllOf.prototype['number'] = undefined;
+ContestReducedAllOf.prototype['row'] = undefined;
 
 /**
  * A name for the Contest. Can be translated
@@ -240,6 +184,12 @@ ContestReducedAllOf.prototype['actualStartDate'] = undefined;
  * @member {Date} actualEndDate
  */
 ContestReducedAllOf.prototype['actualEndDate'] = undefined;
+
+/**
+ * A list of id's used to tag
+ * @member {Array.<String>} tags
+ */
+ContestReducedAllOf.prototype['tags'] = undefined;
 
 
 

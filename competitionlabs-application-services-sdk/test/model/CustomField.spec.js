@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.@CompetitionlabsJavascriptSdk);
+    factory(root.expect, root.CompetitionLabsApplicationServices);
   }
-}(this, function(expect, @CompetitionlabsJavascriptSdk) {
+}(this, function(expect, CompetitionLabsApplicationServices) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new @CompetitionlabsJavascriptSdk.CustomField();
+    instance = new CompetitionLabsApplicationServices.CustomField();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,55 +50,55 @@
   describe('CustomField', function() {
     it('should create an instance of CustomField', function() {
       // uncomment below and update the code to test CustomField
-      //var instane = new @CompetitionlabsJavascriptSdk.CustomField();
-      //expect(instance).to.be.a(@CompetitionlabsJavascriptSdk.CustomField);
+      //var instane = new CompetitionLabsApplicationServices.CustomField();
+      //expect(instance).to.be.a(CompetitionLabsApplicationServices.CustomField);
     });
 
     it('should have the property id (base name: "id")', function() {
       // uncomment below and update the code to test the property id
-      //var instane = new @CompetitionlabsJavascriptSdk.CustomField();
+      //var instance = new CompetitionLabsApplicationServices.CustomField();
       //expect(instance).to.be();
     });
 
     it('should have the property spaceName (base name: "spaceName")', function() {
       // uncomment below and update the code to test the property spaceName
-      //var instane = new @CompetitionlabsJavascriptSdk.CustomField();
+      //var instance = new CompetitionLabsApplicationServices.CustomField();
       //expect(instance).to.be();
     });
 
     it('should have the property created (base name: "created")', function() {
       // uncomment below and update the code to test the property created
-      //var instane = new @CompetitionlabsJavascriptSdk.CustomField();
+      //var instance = new CompetitionLabsApplicationServices.CustomField();
       //expect(instance).to.be();
     });
 
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
-      //var instane = new @CompetitionlabsJavascriptSdk.CustomField();
+      //var instance = new CompetitionLabsApplicationServices.CustomField();
       //expect(instance).to.be();
     });
 
-    it('should have the property term (base name: "term")', function() {
-      // uncomment below and update the code to test the property term
-      //var instane = new @CompetitionlabsJavascriptSdk.CustomField();
+    it('should have the property key (base name: "key")', function() {
+      // uncomment below and update the code to test the property key
+      //var instance = new CompetitionLabsApplicationServices.CustomField();
       //expect(instance).to.be();
     });
 
     it('should have the property description (base name: "description")', function() {
       // uncomment below and update the code to test the property description
-      //var instane = new @CompetitionlabsJavascriptSdk.CustomField();
+      //var instance = new CompetitionLabsApplicationServices.CustomField();
       //expect(instance).to.be();
     });
 
     it('should have the property fieldType (base name: "fieldType")', function() {
       // uncomment below and update the code to test the property fieldType
-      //var instane = new @CompetitionlabsJavascriptSdk.CustomField();
+      //var instance = new CompetitionLabsApplicationServices.CustomField();
       //expect(instance).to.be();
     });
 
     it('should have the property appliesTo (base name: "appliesTo")', function() {
       // uncomment below and update the code to test the property appliesTo
-      //var instane = new @CompetitionlabsJavascriptSdk.CustomField();
+      //var instance = new CompetitionLabsApplicationServices.CustomField();
       //expect(instance).to.be();
     });
 

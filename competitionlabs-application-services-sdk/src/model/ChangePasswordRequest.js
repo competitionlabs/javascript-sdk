@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ChangePasswordRequest model module.
  * @module model/ChangePasswordRequest
- * @version 1.0.5
+ * @version 1.0.0
  */
 class ChangePasswordRequest {
     /**
@@ -42,45 +42,6 @@ class ChangePasswordRequest {
         obj['password'] = password;
         obj['newPassword'] = newPassword;
         obj['confirmPassword'] = confirmPassword;
-    }
-
-    /**
-    * Constructs a full object with all available fields.
-    */
-    model(){
-        var obj = {};
-
-        obj['email'] = null;
-        obj['password'] = null;
-        obj['newPassword'] = null;
-        obj['confirmPassword'] = null;
-        obj['twoFactorAccessCode'] = null;
-
-        return obj;
-    }
-
-    /**
-    * Constructs a full object Map for all available fields.
-    */
-    modelMap(){
-        var obj = {
-            "fields": {},
-            "requiredFields": {}
-        };
-
-        obj["fields"]['email'] = { "type": 'String', "system": false };
-        obj["fields"]['password'] = { "type": 'String', "system": false };
-        obj["fields"]['newPassword'] = { "type": 'String', "system": false };
-        obj["fields"]['confirmPassword'] = { "type": 'String', "system": false };
-        obj["fields"]['twoFactorAccessCode'] = { "type": 'String', "system": false };
-
-        
-        obj["requiredFields"]['email'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['password'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['newPassword'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['confirmPassword'] = { "type": 'String', "system": false };
-
-        return obj;
     }
 
     /**

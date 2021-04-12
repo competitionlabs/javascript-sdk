@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -14,29 +14,30 @@
 import ApiClient from '../ApiClient';
 import MessageStatus from './MessageStatus';
 import MessageType from './MessageType';
-import Metadata from './Metadata';
 import Scheduling from './Scheduling';
+import TagsReduced from './TagsReduced';
+import TranslationValue from './TranslationValue';
 
 /**
  * The MessageAllOf model module.
  * @module model/MessageAllOf
- * @version 1.0.5
+ * @version 1.0.0
  */
 class MessageAllOf {
     /**
      * Constructs a new <code>MessageAllOf</code>.
      * @alias module:model/MessageAllOf
-     * @param members {Array.<String>} A list of specified members to which the message will be sent
+     * @param members {Array.<String>} A list of member id's to which the message will be sent
      * @param messageType {module:model/MessageType} 
      * @param subject {String} The title of the message
      * @param body {String} The context of the message
      * @param status {module:model/MessageStatus} 
      * @param scheduling {module:model/Scheduling} 
-     * @param deprecated {Boolean} A boolean value (true/false) that represents the message state
+     * @param constraints {Array.<String>} Additional constraints, if the value is present it means the
      */
-    constructor(members, messageType, subject, body, status, scheduling, deprecated) { 
+    constructor(members, messageType, subject, body, status, scheduling, constraints) { 
         
-        MessageAllOf.initialize(this, members, messageType, subject, body, status, scheduling, deprecated);
+        MessageAllOf.initialize(this, members, messageType, subject, body, status, scheduling, constraints);
     }
 
     /**
@@ -44,64 +45,14 @@ class MessageAllOf {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, members, messageType, subject, body, status, scheduling, deprecated) { 
+    static initialize(obj, members, messageType, subject, body, status, scheduling, constraints) { 
         obj['members'] = members;
         obj['messageType'] = messageType;
         obj['subject'] = subject;
         obj['body'] = body;
         obj['status'] = status;
         obj['scheduling'] = scheduling;
-        obj['deprecated'] = deprecated;
-    }
-
-    /**
-    * Constructs a full object with all available fields.
-    */
-    model(){
-        var obj = {};
-
-        obj['memberGroup'] = [null];
-        obj['members'] = [null];
-        obj['messageType'] = new MessageType().model();
-        obj['subject'] = null;
-        obj['body'] = null;
-        obj['status'] = new MessageStatus().model();
-        obj['scheduling'] = new Scheduling().model();
-        obj['deprecated'] = null;
-        obj['metadata'] = [new Metadata().model()];
-
-        return obj;
-    }
-
-    /**
-    * Constructs a full object Map for all available fields.
-    */
-    modelMap(){
-        var obj = {
-            "fields": {},
-            "requiredFields": {}
-        };
-
-        obj["fields"]['memberGroup'] = [{ "type": 'String', "system": false }];
-        obj["fields"]['members'] = [{ "type": 'String', "system": false }];
-        obj["fields"]['messageType'] = new MessageType().modelMap();
-        obj["fields"]['subject'] = { "type": 'String', "system": false };
-        obj["fields"]['body'] = { "type": 'String', "system": false };
-        obj["fields"]['status'] = new MessageStatus().modelMap();
-        obj["fields"]['scheduling'] = new Scheduling().modelMap();
-        obj["fields"]['deprecated'] = { "type": 'Boolean', "system": false };
-        obj["fields"]['metadata'] = [new Metadata().modelMap()];
-
-        
-        obj["requiredFields"]['members'] = [{ "type": 'String', "system": false }];
-        obj["requiredFields"]['messageType'] = new MessageType().modelMap();
-        obj["requiredFields"]['subject'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['body'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['status'] = new MessageStatus().modelMap();
-        obj["requiredFields"]['scheduling'] = new Scheduling().modelMap();
-        obj["requiredFields"]['deprecated'] = { "type": 'Boolean', "system": false };
-
-        return obj;
+        obj['constraints'] = constraints;
     }
 
     /**
@@ -116,7 +67,7 @@ class MessageAllOf {
             obj = obj || new MessageAllOf();
 
             if (data.hasOwnProperty('memberGroup')) {
-                obj['memberGroup'] = ApiClient.convertToType(data['memberGroup'], ['String']);
+                obj['memberGroup'] = ApiClient.convertToType(data['memberGroup'], [TagsReduced]);
             }
             if (data.hasOwnProperty('members')) {
                 obj['members'] = ApiClient.convertToType(data['members'], ['String']);
@@ -136,11 +87,14 @@ class MessageAllOf {
             if (data.hasOwnProperty('scheduling')) {
                 obj['scheduling'] = Scheduling.constructFromObject(data['scheduling']);
             }
-            if (data.hasOwnProperty('deprecated')) {
-                obj['deprecated'] = ApiClient.convertToType(data['deprecated'], 'Boolean');
+            if (data.hasOwnProperty('translations')) {
+                obj['translations'] = ApiClient.convertToType(data['translations'], [Object]);
             }
-            if (data.hasOwnProperty('metadata')) {
-                obj['metadata'] = ApiClient.convertToType(data['metadata'], [Metadata]);
+            if (data.hasOwnProperty('translatableFields')) {
+                obj['translatableFields'] = ApiClient.convertToType(data['translatableFields'], ['String']);
+            }
+            if (data.hasOwnProperty('constraints')) {
+                obj['constraints'] = ApiClient.convertToType(data['constraints'], ['String']);
             }
         }
         return obj;
@@ -150,13 +104,13 @@ class MessageAllOf {
 }
 
 /**
- * To which member groups the message will be sent
- * @member {Array.<String>} memberGroup
+ * A list of tag models of member groups t5o which the message will be sent
+ * @member {Array.<module:model/TagsReduced>} memberGroup
  */
 MessageAllOf.prototype['memberGroup'] = undefined;
 
 /**
- * A list of specified members to which the message will be sent
+ * A list of member id's to which the message will be sent
  * @member {Array.<String>} members
  */
 MessageAllOf.prototype['members'] = undefined;
@@ -189,15 +143,21 @@ MessageAllOf.prototype['status'] = undefined;
 MessageAllOf.prototype['scheduling'] = undefined;
 
 /**
- * A boolean value (true/false) that represents the message state
- * @member {Boolean} deprecated
+ * @member {Array.<Object.<String, module:model/TranslationValue>>} translations
  */
-MessageAllOf.prototype['deprecated'] = undefined;
+MessageAllOf.prototype['translations'] = undefined;
 
 /**
- * @member {Array.<module:model/Metadata>} metadata
+ * Message translatable fields
+ * @member {Array.<String>} translatableFields
  */
-MessageAllOf.prototype['metadata'] = undefined;
+MessageAllOf.prototype['translatableFields'] = undefined;
+
+/**
+ * Additional constraints, if the value is present it means the
+ * @member {Array.<String>} constraints
+ */
+MessageAllOf.prototype['constraints'] = undefined;
 
 
 

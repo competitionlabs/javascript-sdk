@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -16,16 +16,25 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateRabbitMqConnectionRequestAllOf model module.
  * @module model/UpdateRabbitMqConnectionRequestAllOf
- * @version 1.0.5
+ * @version 1.0.0
  */
 class UpdateRabbitMqConnectionRequestAllOf {
     /**
      * Constructs a new <code>UpdateRabbitMqConnectionRequestAllOf</code>.
      * @alias module:model/UpdateRabbitMqConnectionRequestAllOf
+     * @param name {String} The name of the consumer
+     * @param uri {String} The SQS endpoint.
+     * @param virtualHost {String} The virtual host of the rabbitmq broker
+     * @param port {Number} The port number on which consumer will connect on rabbitmq broker
+     * @param userName {String} Consumer username for authentication
+     * @param password {String} Consumer password for authentication
+     * @param queueName {String} Name of the queue
+     * @param transformerId {String} The id of the transformer to handle incoming messages
+     * @param constraints {Array.<String>} Additional constraints
      */
-    constructor() { 
+    constructor(name, uri, virtualHost, port, userName, password, queueName, transformerId, constraints) { 
         
-        UpdateRabbitMqConnectionRequestAllOf.initialize(this);
+        UpdateRabbitMqConnectionRequestAllOf.initialize(this, name, uri, virtualHost, port, userName, password, queueName, transformerId, constraints);
     }
 
     /**
@@ -33,54 +42,16 @@ class UpdateRabbitMqConnectionRequestAllOf {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj) { 
-    }
-
-    /**
-    * Constructs a full object with all available fields.
-    */
-    model(){
-        var obj = {};
-
-        obj['name'] = null;
-        obj['uri'] = null;
-        obj['virtualHost'] = null;
-        obj['port'] = null;
-        obj['useSsl'] = null;
-        obj['username'] = null;
-        obj['password'] = null;
-        obj['queueName'] = null;
-        obj['exchange'] = null;
-        obj['routingKey'] = null;
-        obj['transformerId'] = null;
-
-        return obj;
-    }
-
-    /**
-    * Constructs a full object Map for all available fields.
-    */
-    modelMap(){
-        var obj = {
-            "fields": {},
-            "requiredFields": {}
-        };
-
-        obj["fields"]['name'] = { "type": 'String', "system": false };
-        obj["fields"]['uri'] = { "type": 'String', "system": false };
-        obj["fields"]['virtualHost'] = { "type": 'String', "system": false };
-        obj["fields"]['port'] = { "type": 'Number', "system": false };
-        obj["fields"]['useSsl'] = { "type": 'Boolean', "system": false };
-        obj["fields"]['username'] = { "type": 'String', "system": false };
-        obj["fields"]['password'] = { "type": 'String', "system": false };
-        obj["fields"]['queueName'] = { "type": 'String', "system": false };
-        obj["fields"]['exchange'] = { "type": 'String', "system": false };
-        obj["fields"]['routingKey'] = { "type": 'String', "system": false };
-        obj["fields"]['transformerId'] = { "type": 'String', "system": false };
-
-        
-
-        return obj;
+    static initialize(obj, name, uri, virtualHost, port, userName, password, queueName, transformerId, constraints) { 
+        obj['name'] = name;
+        obj['uri'] = uri;
+        obj['virtualHost'] = virtualHost;
+        obj['port'] = port;
+        obj['userName'] = userName;
+        obj['password'] = password;
+        obj['queueName'] = queueName;
+        obj['transformerId'] = transformerId;
+        obj['constraints'] = constraints;
     }
 
     /**
@@ -106,11 +77,8 @@ class UpdateRabbitMqConnectionRequestAllOf {
             if (data.hasOwnProperty('port')) {
                 obj['port'] = ApiClient.convertToType(data['port'], 'Number');
             }
-            if (data.hasOwnProperty('useSsl')) {
-                obj['useSsl'] = ApiClient.convertToType(data['useSsl'], 'Boolean');
-            }
-            if (data.hasOwnProperty('username')) {
-                obj['username'] = ApiClient.convertToType(data['username'], 'String');
+            if (data.hasOwnProperty('userName')) {
+                obj['userName'] = ApiClient.convertToType(data['userName'], 'String');
             }
             if (data.hasOwnProperty('password')) {
                 obj['password'] = ApiClient.convertToType(data['password'], 'String');
@@ -126,6 +94,9 @@ class UpdateRabbitMqConnectionRequestAllOf {
             }
             if (data.hasOwnProperty('transformerId')) {
                 obj['transformerId'] = ApiClient.convertToType(data['transformerId'], 'String');
+            }
+            if (data.hasOwnProperty('constraints')) {
+                obj['constraints'] = ApiClient.convertToType(data['constraints'], ['String']);
             }
         }
         return obj;
@@ -159,16 +130,10 @@ UpdateRabbitMqConnectionRequestAllOf.prototype['virtualHost'] = undefined;
 UpdateRabbitMqConnectionRequestAllOf.prototype['port'] = undefined;
 
 /**
- * Whether the connection is SSL enabled or not
- * @member {Boolean} useSsl
- */
-UpdateRabbitMqConnectionRequestAllOf.prototype['useSsl'] = undefined;
-
-/**
  * Consumer username for authentication
- * @member {String} username
+ * @member {String} userName
  */
-UpdateRabbitMqConnectionRequestAllOf.prototype['username'] = undefined;
+UpdateRabbitMqConnectionRequestAllOf.prototype['userName'] = undefined;
 
 /**
  * Consumer password for authentication
@@ -199,6 +164,12 @@ UpdateRabbitMqConnectionRequestAllOf.prototype['routingKey'] = undefined;
  * @member {String} transformerId
  */
 UpdateRabbitMqConnectionRequestAllOf.prototype['transformerId'] = undefined;
+
+/**
+ * Additional constraints
+ * @member {Array.<String>} constraints
+ */
+UpdateRabbitMqConnectionRequestAllOf.prototype['constraints'] = undefined;
 
 
 

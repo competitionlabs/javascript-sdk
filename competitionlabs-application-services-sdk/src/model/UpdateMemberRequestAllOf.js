@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -13,21 +13,22 @@
 
 import ApiClient from '../ApiClient';
 import MemberType from './MemberType';
-import Metadata from './Metadata';
 
 /**
  * The UpdateMemberRequestAllOf model module.
  * @module model/UpdateMemberRequestAllOf
- * @version 1.0.5
+ * @version 1.0.0
  */
 class UpdateMemberRequestAllOf {
     /**
      * Constructs a new <code>UpdateMemberRequestAllOf</code>.
      * @alias module:model/UpdateMemberRequestAllOf
+     * @param name {String} The name of the member that is used on leader boards and public displays
+     * @param memberType {module:model/MemberType} 
      */
-    constructor() { 
+    constructor(name, memberType) { 
         
-        UpdateMemberRequestAllOf.initialize(this);
+        UpdateMemberRequestAllOf.initialize(this, name, memberType);
     }
 
     /**
@@ -35,42 +36,9 @@ class UpdateMemberRequestAllOf {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj) { 
-    }
-
-    /**
-    * Constructs a full object with all available fields.
-    */
-    model(){
-        var obj = {};
-
-        obj['name'] = null;
-        obj['memberRefId'] = null;
-        obj['memberType'] = new MemberType().model();
-        obj['groups'] = [null];
-        obj['metadata'] = [new Metadata().model()];
-
-        return obj;
-    }
-
-    /**
-    * Constructs a full object Map for all available fields.
-    */
-    modelMap(){
-        var obj = {
-            "fields": {},
-            "requiredFields": {}
-        };
-
-        obj["fields"]['name'] = { "type": 'String', "system": false };
-        obj["fields"]['memberRefId'] = { "type": 'String', "system": false };
-        obj["fields"]['memberType'] = new MemberType().modelMap();
-        obj["fields"]['groups'] = [{ "type": 'String', "system": false }];
-        obj["fields"]['metadata'] = [new Metadata().modelMap()];
-
-        
-
-        return obj;
+    static initialize(obj, name, memberType) { 
+        obj['name'] = name;
+        obj['memberType'] = memberType;
     }
 
     /**
@@ -87,17 +55,11 @@ class UpdateMemberRequestAllOf {
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
-            if (data.hasOwnProperty('memberRefId')) {
-                obj['memberRefId'] = ApiClient.convertToType(data['memberRefId'], 'String');
-            }
             if (data.hasOwnProperty('memberType')) {
                 obj['memberType'] = MemberType.constructFromObject(data['memberType']);
             }
-            if (data.hasOwnProperty('groups')) {
-                obj['groups'] = ApiClient.convertToType(data['groups'], ['String']);
-            }
-            if (data.hasOwnProperty('metadata')) {
-                obj['metadata'] = ApiClient.convertToType(data['metadata'], [Metadata]);
+            if (data.hasOwnProperty('teamMembers')) {
+                obj['teamMembers'] = ApiClient.convertToType(data['teamMembers'], ['String']);
             }
         }
         return obj;
@@ -113,26 +75,15 @@ class UpdateMemberRequestAllOf {
 UpdateMemberRequestAllOf.prototype['name'] = undefined;
 
 /**
- * The reference to this member in your system
- * @member {String} memberRefId
- */
-UpdateMemberRequestAllOf.prototype['memberRefId'] = undefined;
-
-/**
  * @member {module:model/MemberType} memberType
  */
 UpdateMemberRequestAllOf.prototype['memberType'] = undefined;
 
 /**
- * A list of Strings of groups that the member belongs to. It could be marketing segments or social friend groups
- * @member {Array.<String>} groups
+ * A social group like Guilds
+ * @member {Array.<String>} teamMembers
  */
-UpdateMemberRequestAllOf.prototype['groups'] = undefined;
-
-/**
- * @member {Array.<module:model/Metadata>} metadata
- */
-UpdateMemberRequestAllOf.prototype['metadata'] = undefined;
+UpdateMemberRequestAllOf.prototype['teamMembers'] = undefined;
 
 
 

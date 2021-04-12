@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TranslatedField model module.
  * @module model/TranslatedField
- * @version 1.0.5
+ * @version 1.0.0
  */
 class TranslatedField {
     /**
@@ -38,37 +38,6 @@ class TranslatedField {
     static initialize(obj, fieldName, text) { 
         obj['fieldName'] = fieldName;
         obj['text'] = text;
-    }
-
-    /**
-    * Constructs a full object with all available fields.
-    */
-    model(){
-        var obj = {};
-
-        obj['fieldName'] = null;
-        obj['text'] = null;
-
-        return obj;
-    }
-
-    /**
-    * Constructs a full object Map for all available fields.
-    */
-    modelMap(){
-        var obj = {
-            "fields": {},
-            "requiredFields": {}
-        };
-
-        obj["fields"]['fieldName'] = { "type": 'String', "system": false };
-        obj["fields"]['text'] = { "type": 'String', "system": false };
-
-        
-        obj["requiredFields"]['fieldName'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['text'] = { "type": 'String', "system": false };
-
-        return obj;
     }
 
     /**

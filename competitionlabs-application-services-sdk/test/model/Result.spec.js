@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.@CompetitionlabsJavascriptSdk);
+    factory(root.expect, root.CompetitionLabsApplicationServices);
   }
-}(this, function(expect, @CompetitionlabsJavascriptSdk) {
+}(this, function(expect, CompetitionLabsApplicationServices) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new @CompetitionlabsJavascriptSdk.Result();
+    instance = new CompetitionLabsApplicationServices.Result();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,31 +50,31 @@
   describe('Result', function() {
     it('should create an instance of Result', function() {
       // uncomment below and update the code to test Result
-      //var instane = new @CompetitionlabsJavascriptSdk.Result();
-      //expect(instance).to.be.a(@CompetitionlabsJavascriptSdk.Result);
+      //var instane = new CompetitionLabsApplicationServices.Result();
+      //expect(instance).to.be.a(CompetitionLabsApplicationServices.Result);
     });
 
     it('should have the property id (base name: "id")', function() {
       // uncomment below and update the code to test the property id
-      //var instane = new @CompetitionlabsJavascriptSdk.Result();
+      //var instance = new CompetitionLabsApplicationServices.Result();
       //expect(instance).to.be();
     });
 
     it('should have the property externalReference (base name: "externalReference")', function() {
       // uncomment below and update the code to test the property externalReference
-      //var instane = new @CompetitionlabsJavascriptSdk.Result();
+      //var instance = new CompetitionLabsApplicationServices.Result();
       //expect(instance).to.be();
     });
 
     it('should have the property result (base name: "result")', function() {
       // uncomment below and update the code to test the property result
-      //var instane = new @CompetitionlabsJavascriptSdk.Result();
+      //var instance = new CompetitionLabsApplicationServices.Result();
       //expect(instance).to.be();
     });
 
     it('should have the property relations (base name: "relations")', function() {
       // uncomment below and update the code to test the property relations
-      //var instane = new @CompetitionlabsJavascriptSdk.Result();
+      //var instance = new CompetitionLabsApplicationServices.Result();
       //expect(instance).to.be();
     });
 

@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -12,21 +12,25 @@
  */
 
 import ApiClient from '../ApiClient';
+import CustomFieldReduced from './CustomFieldReduced';
 import Metadata from './Metadata';
 import ModelDefault from './ModelDefault';
+import OptParamModels from './OptParamModels';
+import TagsReduced from './TagsReduced';
 import UnitOfMeasureAllOf from './UnitOfMeasureAllOf';
 import UnitOfMeasureType from './UnitOfMeasureType';
 
 /**
  * The UnitOfMeasure model module.
  * @module model/UnitOfMeasure
- * @version 1.0.5
+ * @version 1.0.0
  */
 class UnitOfMeasure {
     /**
      * Constructs a new <code>UnitOfMeasure</code>.
      * @alias module:model/UnitOfMeasure
      * @implements module:model/ModelDefault
+     * @implements module:model/OptParamModels
      * @implements module:model/UnitOfMeasureAllOf
      * @param id {String} A unique system generated identifier
      * @param spaceName {String} This is the space name which is linked to the account
@@ -37,7 +41,7 @@ class UnitOfMeasure {
      * @param unitOfMeasureType {module:model/UnitOfMeasureType} 
      */
     constructor(id, spaceName, created, name, key, multiplier, unitOfMeasureType) { 
-        ModelDefault.initialize(this, id, spaceName, created);UnitOfMeasureAllOf.initialize(this, name, key, multiplier, unitOfMeasureType);
+        ModelDefault.initialize(this, id, spaceName, created);OptParamModels.initialize(this);UnitOfMeasureAllOf.initialize(this, name, key, multiplier, unitOfMeasureType);
         UnitOfMeasure.initialize(this, id, spaceName, created, name, key, multiplier, unitOfMeasureType);
     }
 
@@ -57,60 +61,6 @@ class UnitOfMeasure {
     }
 
     /**
-    * Constructs a full object with all available fields.
-    */
-    model(){
-        var obj = {};
-
-        obj['id'] = null;
-        obj['spaceName'] = null;
-        obj['created'] = null;
-        obj['name'] = null;
-        obj['key'] = null;
-        obj['description'] = null;
-        obj['isoCode'] = null;
-        obj['symbol'] = null;
-        obj['multiplier'] = null;
-        obj['unitOfMeasureType'] = new UnitOfMeasureType().model();
-        obj['metadata'] = [new Metadata().model()];
-
-        return obj;
-    }
-
-    /**
-    * Constructs a full object Map for all available fields.
-    */
-    modelMap(){
-        var obj = {
-            "fields": {},
-            "requiredFields": {}
-        };
-
-        obj["fields"]['id'] = { "type": 'String', "system": true };
-        obj["fields"]['spaceName'] = { "type": 'String', "system": true };
-        obj["fields"]['created'] = { "type": 'Date', "system": true };
-        obj["fields"]['name'] = { "type": 'String', "system": false };
-        obj["fields"]['key'] = { "type": 'String', "system": false };
-        obj["fields"]['description'] = { "type": 'String', "system": false };
-        obj["fields"]['isoCode'] = { "type": 'String', "system": false };
-        obj["fields"]['symbol'] = { "type": 'String', "system": false };
-        obj["fields"]['multiplier'] = { "type": 'Number', "system": false };
-        obj["fields"]['unitOfMeasureType'] = new UnitOfMeasureType().modelMap();
-        obj["fields"]['metadata'] = [new Metadata().modelMap()];
-
-        
-        obj["requiredFields"]['id'] = { "type": 'String', "system": true };
-        obj["requiredFields"]['spaceName'] = { "type": 'String', "system": true };
-        obj["requiredFields"]['created'] = { "type": 'Date', "system": true };
-        obj["requiredFields"]['name'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['key'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['multiplier'] = { "type": 'Number', "system": false };
-        obj["requiredFields"]['unitOfMeasureType'] = new UnitOfMeasureType().modelMap();
-
-        return obj;
-    }
-
-    /**
      * Constructs a <code>UnitOfMeasure</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
@@ -121,6 +71,7 @@ class UnitOfMeasure {
         if (data) {
             obj = obj || new UnitOfMeasure();
             ModelDefault.constructFromObject(data, obj);
+            OptParamModels.constructFromObject(data, obj);
             UnitOfMeasureAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('id')) {
@@ -131,6 +82,15 @@ class UnitOfMeasure {
             }
             if (data.hasOwnProperty('created')) {
                 obj['created'] = ApiClient.convertToType(data['created'], 'Date');
+            }
+            if (data.hasOwnProperty('customFields')) {
+                obj['customFields'] = ApiClient.convertToType(data['customFields'], [CustomFieldReduced]);
+            }
+            if (data.hasOwnProperty('tags')) {
+                obj['tags'] = ApiClient.convertToType(data['tags'], [TagsReduced]);
+            }
+            if (data.hasOwnProperty('metadata')) {
+                obj['metadata'] = ApiClient.convertToType(data['metadata'], [Metadata]);
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
@@ -152,9 +112,6 @@ class UnitOfMeasure {
             }
             if (data.hasOwnProperty('unitOfMeasureType')) {
                 obj['unitOfMeasureType'] = UnitOfMeasureType.constructFromObject(data['unitOfMeasureType']);
-            }
-            if (data.hasOwnProperty('metadata')) {
-                obj['metadata'] = ApiClient.convertToType(data['metadata'], [Metadata]);
             }
         }
         return obj;
@@ -180,6 +137,22 @@ UnitOfMeasure.prototype['spaceName'] = undefined;
  * @member {Date} created
  */
 UnitOfMeasure.prototype['created'] = undefined;
+
+/**
+ * @member {Array.<module:model/CustomFieldReduced>} customFields
+ */
+UnitOfMeasure.prototype['customFields'] = undefined;
+
+/**
+ * A list of id's used to tag models
+ * @member {Array.<module:model/TagsReduced>} tags
+ */
+UnitOfMeasure.prototype['tags'] = undefined;
+
+/**
+ * @member {Array.<module:model/Metadata>} metadata
+ */
+UnitOfMeasure.prototype['metadata'] = undefined;
 
 /**
  * The name of a unit of measure
@@ -222,11 +195,6 @@ UnitOfMeasure.prototype['multiplier'] = undefined;
  */
 UnitOfMeasure.prototype['unitOfMeasureType'] = undefined;
 
-/**
- * @member {Array.<module:model/Metadata>} metadata
- */
-UnitOfMeasure.prototype['metadata'] = undefined;
-
 
 // Implement ModelDefault interface:
 /**
@@ -244,6 +212,20 @@ ModelDefault.prototype['spaceName'] = undefined;
  * @member {Date} created
  */
 ModelDefault.prototype['created'] = undefined;
+// Implement OptParamModels interface:
+/**
+ * @member {Array.<module:model/CustomFieldReduced>} customFields
+ */
+OptParamModels.prototype['customFields'] = undefined;
+/**
+ * A list of id's used to tag models
+ * @member {Array.<module:model/TagsReduced>} tags
+ */
+OptParamModels.prototype['tags'] = undefined;
+/**
+ * @member {Array.<module:model/Metadata>} metadata
+ */
+OptParamModels.prototype['metadata'] = undefined;
 // Implement UnitOfMeasureAllOf interface:
 /**
  * The name of a unit of measure
@@ -279,10 +261,6 @@ UnitOfMeasureAllOf.prototype['multiplier'] = undefined;
  * @member {module:model/UnitOfMeasureType} unitOfMeasureType
  */
 UnitOfMeasureAllOf.prototype['unitOfMeasureType'] = undefined;
-/**
- * @member {Array.<module:model/Metadata>} metadata
- */
-UnitOfMeasureAllOf.prototype['metadata'] = undefined;
 
 
 

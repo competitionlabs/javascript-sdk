@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -13,32 +13,37 @@
 
 import ApiClient from '../ApiClient';
 import AchievementLiveStatus from './AchievementLiveStatus';
+import CreateAchievementRequestAllOf from './CreateAchievementRequestAllOf';
+import CreateOptParamModels from './CreateOptParamModels';
 import CreateRewardRequest from './CreateRewardRequest';
 import DependantOn from './DependantOn';
 import Metadata from './Metadata';
 import RuleSet from './RuleSet';
 import Scheduling from './Scheduling';
-import Translation from './Translation';
+import TranslationValue from './TranslationValue';
 
 /**
  * The CreateAchievementRequest model module.
  * @module model/CreateAchievementRequest
- * @version 1.0.5
+ * @version 1.0.0
  */
 class CreateAchievementRequest {
     /**
      * Constructs a new <code>CreateAchievementRequest</code>.
      * @alias module:model/CreateAchievementRequest
+     * @implements module:model/CreateOptParamModels
+     * @implements module:model/CreateAchievementRequestAllOf
      * @param name {String} A name for the Achievement. Can be translated
-     * @param isHidden {Boolean} Informs the state of the achievement. True means hidden and false means revealed
      * @param icon {String} An Icon id that has been pre uploaded to the system to display for Achievement
      * @param ruleSets {Array.<module:model/RuleSet>} 
      * @param scheduling {module:model/Scheduling} 
      * @param achievementLiveStatus {module:model/AchievementLiveStatus} 
+     * @param memberGroups {Array.<String>} A group of members that can receive the achievement
+     * @param constraints {Array.<String>} Additional constraints
      */
-    constructor(name, isHidden, icon, ruleSets, scheduling, achievementLiveStatus) { 
-        
-        CreateAchievementRequest.initialize(this, name, isHidden, icon, ruleSets, scheduling, achievementLiveStatus);
+    constructor(name, icon, ruleSets, scheduling, achievementLiveStatus, memberGroups, constraints) { 
+        CreateOptParamModels.initialize(this);CreateAchievementRequestAllOf.initialize(this, name, icon, ruleSets, scheduling, achievementLiveStatus, memberGroups, constraints);
+        CreateAchievementRequest.initialize(this, name, icon, ruleSets, scheduling, achievementLiveStatus, memberGroups, constraints);
     }
 
     /**
@@ -46,72 +51,14 @@ class CreateAchievementRequest {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, name, isHidden, icon, ruleSets, scheduling, achievementLiveStatus) { 
+    static initialize(obj, name, icon, ruleSets, scheduling, achievementLiveStatus, memberGroups, constraints) { 
         obj['name'] = name;
-        obj['isHidden'] = isHidden;
         obj['icon'] = icon;
         obj['ruleSets'] = ruleSets;
         obj['scheduling'] = scheduling;
         obj['achievementLiveStatus'] = achievementLiveStatus;
-    }
-
-    /**
-    * Constructs a full object with all available fields.
-    */
-    model(){
-        var obj = {};
-
-        obj['name'] = null;
-        obj['description'] = null;
-        obj['isHidden'] = null;
-        obj['icon'] = null;
-        obj['ruleSets'] = [new RuleSet().model()];
-        obj['dependantOn'] = new DependantOn().model();
-        obj['scheduling'] = new Scheduling().model();
-        obj['achievementLiveStatus'] = new AchievementLiveStatus().model();
-        obj['category'] = [null];
-        obj['memberGroups'] = [null];
-        obj['metadata'] = [new Metadata().model()];
-        obj['translations'] = [new Translation().model()];
-        obj['rewards'] = [new CreateRewardRequest().model()];
-        obj['constraints'] = [null];
-
-        return obj;
-    }
-
-    /**
-    * Constructs a full object Map for all available fields.
-    */
-    modelMap(){
-        var obj = {
-            "fields": {},
-            "requiredFields": {}
-        };
-
-        obj["fields"]['name'] = { "type": 'String', "system": false };
-        obj["fields"]['description'] = { "type": 'String', "system": false };
-        obj["fields"]['isHidden'] = { "type": 'Boolean', "system": false };
-        obj["fields"]['icon'] = { "type": 'String', "system": false };
-        obj["fields"]['ruleSets'] = [new RuleSet().modelMap()];
-        obj["fields"]['dependantOn'] = new DependantOn().modelMap();
-        obj["fields"]['scheduling'] = new Scheduling().modelMap();
-        obj["fields"]['achievementLiveStatus'] = new AchievementLiveStatus().modelMap();
-        obj["fields"]['category'] = [{ "type": 'String', "system": false }];
-        obj["fields"]['memberGroups'] = [{ "type": 'String', "system": false }];
-        obj["fields"]['metadata'] = [new Metadata().modelMap()];
-        obj["fields"]['translations'] = [new Translation().modelMap()];
-        obj["fields"]['rewards'] = [new CreateRewardRequest().modelMap()];
-        obj["fields"]['constraints'] = [{ "type": 'String', "system": false }];
-
-        
-        obj["requiredFields"]['name'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['isHidden'] = { "type": 'Boolean', "system": false };
-        obj["requiredFields"]['icon'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['ruleSets'] = [new RuleSet().modelMap()];
-        obj["requiredFields"]['scheduling'] = new Scheduling().modelMap();
-        obj["requiredFields"]['achievementLiveStatus'] = new AchievementLiveStatus().modelMap();
-
-        return obj;
+        obj['memberGroups'] = memberGroups;
+        obj['constraints'] = constraints;
     }
 
     /**
@@ -124,15 +71,26 @@ class CreateAchievementRequest {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new CreateAchievementRequest();
+            CreateOptParamModels.constructFromObject(data, obj);
+            CreateAchievementRequestAllOf.constructFromObject(data, obj);
 
+            if (data.hasOwnProperty('customFields')) {
+                obj['customFields'] = ApiClient.convertToType(data['customFields'], ['String']);
+            }
+            if (data.hasOwnProperty('tags')) {
+                obj['tags'] = ApiClient.convertToType(data['tags'], ['String']);
+            }
+            if (data.hasOwnProperty('metadata')) {
+                obj['metadata'] = ApiClient.convertToType(data['metadata'], [Metadata]);
+            }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
             if (data.hasOwnProperty('description')) {
                 obj['description'] = ApiClient.convertToType(data['description'], 'String');
             }
-            if (data.hasOwnProperty('isHidden')) {
-                obj['isHidden'] = ApiClient.convertToType(data['isHidden'], 'Boolean');
+            if (data.hasOwnProperty('termsAndConditions')) {
+                obj['termsAndConditions'] = ApiClient.convertToType(data['termsAndConditions'], 'String');
             }
             if (data.hasOwnProperty('icon')) {
                 obj['icon'] = ApiClient.convertToType(data['icon'], 'String');
@@ -149,17 +107,14 @@ class CreateAchievementRequest {
             if (data.hasOwnProperty('achievementLiveStatus')) {
                 obj['achievementLiveStatus'] = AchievementLiveStatus.constructFromObject(data['achievementLiveStatus']);
             }
-            if (data.hasOwnProperty('category')) {
-                obj['category'] = ApiClient.convertToType(data['category'], ['String']);
-            }
             if (data.hasOwnProperty('memberGroups')) {
                 obj['memberGroups'] = ApiClient.convertToType(data['memberGroups'], ['String']);
             }
-            if (data.hasOwnProperty('metadata')) {
-                obj['metadata'] = ApiClient.convertToType(data['metadata'], [Metadata]);
+            if (data.hasOwnProperty('maxNumberOfissues')) {
+                obj['maxNumberOfissues'] = ApiClient.convertToType(data['maxNumberOfissues'], 'Number');
             }
             if (data.hasOwnProperty('translations')) {
-                obj['translations'] = ApiClient.convertToType(data['translations'], [Translation]);
+                obj['translations'] = ApiClient.convertToType(data['translations'], [Object]);
             }
             if (data.hasOwnProperty('rewards')) {
                 obj['rewards'] = ApiClient.convertToType(data['rewards'], [CreateRewardRequest]);
@@ -175,6 +130,23 @@ class CreateAchievementRequest {
 }
 
 /**
+ * A list of id's used to add cutom fields
+ * @member {Array.<String>} customFields
+ */
+CreateAchievementRequest.prototype['customFields'] = undefined;
+
+/**
+ * A list of id's used to tag models
+ * @member {Array.<String>} tags
+ */
+CreateAchievementRequest.prototype['tags'] = undefined;
+
+/**
+ * @member {Array.<module:model/Metadata>} metadata
+ */
+CreateAchievementRequest.prototype['metadata'] = undefined;
+
+/**
  * A name for the Achievement. Can be translated
  * @member {String} name
  */
@@ -187,10 +159,10 @@ CreateAchievementRequest.prototype['name'] = undefined;
 CreateAchievementRequest.prototype['description'] = undefined;
 
 /**
- * Informs the state of the achievement. True means hidden and false means revealed
- * @member {Boolean} isHidden
+ * Terms and conditions of an achievement. Can be translated
+ * @member {String} termsAndConditions
  */
-CreateAchievementRequest.prototype['isHidden'] = undefined;
+CreateAchievementRequest.prototype['termsAndConditions'] = undefined;
 
 /**
  * An Icon id that has been pre uploaded to the system to display for Achievement
@@ -219,24 +191,19 @@ CreateAchievementRequest.prototype['scheduling'] = undefined;
 CreateAchievementRequest.prototype['achievementLiveStatus'] = undefined;
 
 /**
- * Categorisation of the achievements
- * @member {Array.<String>} category
- */
-CreateAchievementRequest.prototype['category'] = undefined;
-
-/**
  * A group of members that can receive the achievement
  * @member {Array.<String>} memberGroups
  */
 CreateAchievementRequest.prototype['memberGroups'] = undefined;
 
 /**
- * @member {Array.<module:model/Metadata>} metadata
+ * Maximum number of issued achievements
+ * @member {Number} maxNumberOfissues
  */
-CreateAchievementRequest.prototype['metadata'] = undefined;
+CreateAchievementRequest.prototype['maxNumberOfissues'] = undefined;
 
 /**
- * @member {Array.<module:model/Translation>} translations
+ * @member {Array.<Object.<String, module:model/TranslationValue>>} translations
  */
 CreateAchievementRequest.prototype['translations'] = undefined;
 
@@ -252,6 +219,81 @@ CreateAchievementRequest.prototype['rewards'] = undefined;
 CreateAchievementRequest.prototype['constraints'] = undefined;
 
 
+// Implement CreateOptParamModels interface:
+/**
+ * A list of id's used to add cutom fields
+ * @member {Array.<String>} customFields
+ */
+CreateOptParamModels.prototype['customFields'] = undefined;
+/**
+ * A list of id's used to tag models
+ * @member {Array.<String>} tags
+ */
+CreateOptParamModels.prototype['tags'] = undefined;
+/**
+ * @member {Array.<module:model/Metadata>} metadata
+ */
+CreateOptParamModels.prototype['metadata'] = undefined;
+// Implement CreateAchievementRequestAllOf interface:
+/**
+ * A name for the Achievement. Can be translated
+ * @member {String} name
+ */
+CreateAchievementRequestAllOf.prototype['name'] = undefined;
+/**
+ * A name for the Achievement. Can be translated
+ * @member {String} description
+ */
+CreateAchievementRequestAllOf.prototype['description'] = undefined;
+/**
+ * Terms and conditions of an achievement. Can be translated
+ * @member {String} termsAndConditions
+ */
+CreateAchievementRequestAllOf.prototype['termsAndConditions'] = undefined;
+/**
+ * An Icon id that has been pre uploaded to the system to display for Achievement
+ * @member {String} icon
+ */
+CreateAchievementRequestAllOf.prototype['icon'] = undefined;
+/**
+ * @member {Array.<module:model/RuleSet>} ruleSets
+ */
+CreateAchievementRequestAllOf.prototype['ruleSets'] = undefined;
+/**
+ * @member {module:model/DependantOn} dependantOn
+ */
+CreateAchievementRequestAllOf.prototype['dependantOn'] = undefined;
+/**
+ * @member {module:model/Scheduling} scheduling
+ */
+CreateAchievementRequestAllOf.prototype['scheduling'] = undefined;
+/**
+ * @member {module:model/AchievementLiveStatus} achievementLiveStatus
+ */
+CreateAchievementRequestAllOf.prototype['achievementLiveStatus'] = undefined;
+/**
+ * A group of members that can receive the achievement
+ * @member {Array.<String>} memberGroups
+ */
+CreateAchievementRequestAllOf.prototype['memberGroups'] = undefined;
+/**
+ * Maximum number of issued achievements
+ * @member {Number} maxNumberOfissues
+ */
+CreateAchievementRequestAllOf.prototype['maxNumberOfissues'] = undefined;
+/**
+ * @member {Array.<Object.<String, module:model/TranslationValue>>} translations
+ */
+CreateAchievementRequestAllOf.prototype['translations'] = undefined;
+/**
+ * @member {Array.<module:model/CreateRewardRequest>} rewards
+ */
+CreateAchievementRequestAllOf.prototype['rewards'] = undefined;
+/**
+ * Additional constraints
+ * @member {Array.<String>} constraints
+ */
+CreateAchievementRequestAllOf.prototype['constraints'] = undefined;
 
 
 

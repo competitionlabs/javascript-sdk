@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -17,23 +17,27 @@ import CompetitionStatus from './CompetitionStatus';
 import CompetitionType from './CompetitionType';
 import ComplexFilter from './ComplexFilter';
 import ContestReduced from './ContestReduced';
+import CustomFieldReduced from './CustomFieldReduced';
 import Metadata from './Metadata';
 import ModelDefault from './ModelDefault';
+import OptParamModels from './OptParamModels';
 import ProductReduced from './ProductReduced';
 import RewardReduced from './RewardReduced';
 import RuleSet from './RuleSet';
-import Translation from './Translation';
+import TagsReduced from './TagsReduced';
+import TranslationValue from './TranslationValue';
 
 /**
  * The Competition model module.
  * @module model/Competition
- * @version 1.0.5
+ * @version 1.0.0
  */
 class Competition {
     /**
      * Constructs a new <code>Competition</code>.
      * @alias module:model/Competition
      * @implements module:model/ModelDefault
+     * @implements module:model/OptParamModels
      * @implements module:model/CompetitionAllOf
      * @param id {String} A unique system generated identifier
      * @param spaceName {String} This is the space name which is linked to the account
@@ -44,17 +48,14 @@ class Competition {
      * @param minNumberOfEntrants {Number} Maximum number of partiipants allowed in a competition
      * @param products {Array.<module:model/ProductReduced>} 
      * @param ruleSets {Array.<module:model/RuleSet>} 
-     * @param isPublic {Boolean} Is the event publicly exposed depending on the event model
-     * @param autoStart {Boolean} Is the event publicly exposed depending on the event model
      * @param scheduledStartDate {Date} ISO8601 timestamp for when a Competition should start. All records are stored in UTC time zone
      * @param scheduledEndDate {Date} ISO8601 timestamp for when a Competition should end. All records are stored in UTC time zone
-     * @param optinRequiredForEntrants {Boolean} If True, members must Opt in before they can acquire points in the contest
      * @param status {module:model/CompetitionStatus} 
-     * @param statusCode {Number} The code of the competition
+     * @param constraints {Array.<String>} Additional constraints
      */
-    constructor(id, spaceName, created, competitionType, numberOfRounds, name, minNumberOfEntrants, products, ruleSets, isPublic, autoStart, scheduledStartDate, scheduledEndDate, optinRequiredForEntrants, status, statusCode) { 
-        ModelDefault.initialize(this, id, spaceName, created);CompetitionAllOf.initialize(this, competitionType, numberOfRounds, name, minNumberOfEntrants, products, ruleSets, isPublic, autoStart, scheduledStartDate, scheduledEndDate, optinRequiredForEntrants, status, statusCode);
-        Competition.initialize(this, id, spaceName, created, competitionType, numberOfRounds, name, minNumberOfEntrants, products, ruleSets, isPublic, autoStart, scheduledStartDate, scheduledEndDate, optinRequiredForEntrants, status, statusCode);
+    constructor(id, spaceName, created, competitionType, numberOfRounds, name, minNumberOfEntrants, products, ruleSets, scheduledStartDate, scheduledEndDate, status, constraints) { 
+        ModelDefault.initialize(this, id, spaceName, created);OptParamModels.initialize(this);CompetitionAllOf.initialize(this, competitionType, numberOfRounds, name, minNumberOfEntrants, products, ruleSets, scheduledStartDate, scheduledEndDate, status, constraints);
+        Competition.initialize(this, id, spaceName, created, competitionType, numberOfRounds, name, minNumberOfEntrants, products, ruleSets, scheduledStartDate, scheduledEndDate, status, constraints);
     }
 
     /**
@@ -62,7 +63,7 @@ class Competition {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, id, spaceName, created, competitionType, numberOfRounds, name, minNumberOfEntrants, products, ruleSets, isPublic, autoStart, scheduledStartDate, scheduledEndDate, optinRequiredForEntrants, status, statusCode) { 
+    static initialize(obj, id, spaceName, created, competitionType, numberOfRounds, name, minNumberOfEntrants, products, ruleSets, scheduledStartDate, scheduledEndDate, status, constraints) { 
         obj['id'] = id;
         obj['spaceName'] = spaceName;
         obj['created'] = created;
@@ -72,110 +73,10 @@ class Competition {
         obj['minNumberOfEntrants'] = minNumberOfEntrants;
         obj['products'] = products;
         obj['ruleSets'] = ruleSets;
-        obj['isPublic'] = isPublic;
-        obj['autoStart'] = autoStart;
         obj['scheduledStartDate'] = scheduledStartDate;
         obj['scheduledEndDate'] = scheduledEndDate;
-        obj['optinRequiredForEntrants'] = optinRequiredForEntrants;
         obj['status'] = status;
-        obj['statusCode'] = statusCode;
-    }
-
-    /**
-    * Constructs a full object with all available fields.
-    */
-    model(){
-        var obj = {};
-
-        obj['id'] = null;
-        obj['spaceName'] = null;
-        obj['created'] = null;
-        obj['competitionType'] = new CompetitionType().model();
-        obj['numberOfRounds'] = null;
-        obj['numberOfGroupStages'] = null;
-        obj['name'] = null;
-        obj['description'] = null;
-        obj['termsConditions'] = null;
-        obj['maxNumberOfEntrants'] = null;
-        obj['minNumberOfEntrants'] = null;
-        obj['products'] = [new ProductReduced().model()];
-        obj['ruleSets'] = [new RuleSet().model()];
-        obj['isPublic'] = null;
-        obj['autoStart'] = null;
-        obj['scheduledStartDate'] = null;
-        obj['scheduledEndDate'] = null;
-        obj['actualStartDate'] = null;
-        obj['actualEndDate'] = null;
-        obj['includeEntrantsWhere'] = new ComplexFilter().model();
-        obj['optinRequiredForEntrants'] = null;
-        obj['metadata'] = [new Metadata().model()];
-        obj['translations'] = [new Translation().model()];
-        obj['status'] = new CompetitionStatus().model();
-        obj['statusCode'] = null;
-        obj['contests'] = [new ContestReduced().model()];
-        obj['rewards'] = [new RewardReduced().model()];
-        obj['constraints'] = [null];
-
-        return obj;
-    }
-
-    /**
-    * Constructs a full object Map for all available fields.
-    */
-    modelMap(){
-        var obj = {
-            "fields": {},
-            "requiredFields": {}
-        };
-
-        obj["fields"]['id'] = { "type": 'String', "system": true };
-        obj["fields"]['spaceName'] = { "type": 'String', "system": true };
-        obj["fields"]['created'] = { "type": 'Date', "system": true };
-        obj["fields"]['competitionType'] = new CompetitionType().modelMap();
-        obj["fields"]['numberOfRounds'] = { "type": 'Number', "system": false };
-        obj["fields"]['numberOfGroupStages'] = { "type": 'Number', "system": false };
-        obj["fields"]['name'] = { "type": 'String', "system": false };
-        obj["fields"]['description'] = { "type": 'String', "system": false };
-        obj["fields"]['termsConditions'] = { "type": 'String', "system": false };
-        obj["fields"]['maxNumberOfEntrants'] = { "type": 'Number', "system": false };
-        obj["fields"]['minNumberOfEntrants'] = { "type": 'Number', "system": false };
-        obj["fields"]['products'] = [new ProductReduced().modelMap()];
-        obj["fields"]['ruleSets'] = [new RuleSet().modelMap()];
-        obj["fields"]['isPublic'] = { "type": 'Boolean', "system": false };
-        obj["fields"]['autoStart'] = { "type": 'Boolean', "system": false };
-        obj["fields"]['scheduledStartDate'] = { "type": 'Date', "system": false };
-        obj["fields"]['scheduledEndDate'] = { "type": 'Date', "system": false };
-        obj["fields"]['actualStartDate'] = { "type": 'Date', "system": false };
-        obj["fields"]['actualEndDate'] = { "type": 'Date', "system": false };
-        obj["fields"]['includeEntrantsWhere'] = new ComplexFilter().modelMap();
-        obj["fields"]['optinRequiredForEntrants'] = { "type": 'Boolean', "system": false };
-        obj["fields"]['metadata'] = [new Metadata().modelMap()];
-        obj["fields"]['translations'] = [new Translation().modelMap()];
-        obj["fields"]['status'] = new CompetitionStatus().modelMap();
-        obj["fields"]['statusCode'] = { "type": 'Number', "system": false };
-        obj["fields"]['contests'] = [new ContestReduced().modelMap()];
-        obj["fields"]['rewards'] = [new RewardReduced().modelMap()];
-        obj["fields"]['constraints'] = [{ "type": 'String', "system": false }];
-
-        
-        obj["requiredFields"]['id'] = { "type": 'String', "system": true };
-        obj["requiredFields"]['spaceName'] = { "type": 'String', "system": true };
-        obj["requiredFields"]['created'] = { "type": 'Date', "system": true };
-        obj["requiredFields"]['competitionType'] = new CompetitionType().modelMap();
-        obj["requiredFields"]['numberOfRounds'] = { "type": 'Number', "system": false };
-        obj["requiredFields"]['name'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['minNumberOfEntrants'] = { "type": 'Number', "system": false };
-        obj["requiredFields"]['products'] = [new ProductReduced().modelMap()];
-        obj["requiredFields"]['ruleSets'] = [new RuleSet().modelMap()];
-        obj["requiredFields"]['isPublic'] = { "type": 'Boolean', "system": false };
-        obj["requiredFields"]['autoStart'] = { "type": 'Boolean', "system": false };
-        obj["requiredFields"]['scheduledStartDate'] = { "type": 'Date', "system": false };
-        obj["requiredFields"]['scheduledEndDate'] = { "type": 'Date', "system": false };
-        obj["requiredFields"]['optinRequiredForEntrants'] = { "type": 'Boolean', "system": false };
-        obj["requiredFields"]['status'] = new CompetitionStatus().modelMap();
-        obj["requiredFields"]['statusCode'] = { "type": 'Number', "system": false };
-
-        return obj;
+        obj['constraints'] = constraints;
     }
 
     /**
@@ -189,6 +90,7 @@ class Competition {
         if (data) {
             obj = obj || new Competition();
             ModelDefault.constructFromObject(data, obj);
+            OptParamModels.constructFromObject(data, obj);
             CompetitionAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('id')) {
@@ -199,6 +101,15 @@ class Competition {
             }
             if (data.hasOwnProperty('created')) {
                 obj['created'] = ApiClient.convertToType(data['created'], 'Date');
+            }
+            if (data.hasOwnProperty('customFields')) {
+                obj['customFields'] = ApiClient.convertToType(data['customFields'], [CustomFieldReduced]);
+            }
+            if (data.hasOwnProperty('tags')) {
+                obj['tags'] = ApiClient.convertToType(data['tags'], [TagsReduced]);
+            }
+            if (data.hasOwnProperty('metadata')) {
+                obj['metadata'] = ApiClient.convertToType(data['metadata'], [Metadata]);
             }
             if (data.hasOwnProperty('competitionType')) {
                 obj['competitionType'] = CompetitionType.constructFromObject(data['competitionType']);
@@ -215,8 +126,8 @@ class Competition {
             if (data.hasOwnProperty('description')) {
                 obj['description'] = ApiClient.convertToType(data['description'], 'String');
             }
-            if (data.hasOwnProperty('termsConditions')) {
-                obj['termsConditions'] = ApiClient.convertToType(data['termsConditions'], 'String');
+            if (data.hasOwnProperty('termsAndConditions')) {
+                obj['termsAndConditions'] = ApiClient.convertToType(data['termsAndConditions'], 'String');
             }
             if (data.hasOwnProperty('maxNumberOfEntrants')) {
                 obj['maxNumberOfEntrants'] = ApiClient.convertToType(data['maxNumberOfEntrants'], 'Number');
@@ -229,12 +140,6 @@ class Competition {
             }
             if (data.hasOwnProperty('ruleSets')) {
                 obj['ruleSets'] = ApiClient.convertToType(data['ruleSets'], [RuleSet]);
-            }
-            if (data.hasOwnProperty('isPublic')) {
-                obj['isPublic'] = ApiClient.convertToType(data['isPublic'], 'Boolean');
-            }
-            if (data.hasOwnProperty('autoStart')) {
-                obj['autoStart'] = ApiClient.convertToType(data['autoStart'], 'Boolean');
             }
             if (data.hasOwnProperty('scheduledStartDate')) {
                 obj['scheduledStartDate'] = ApiClient.convertToType(data['scheduledStartDate'], 'Date');
@@ -251,14 +156,11 @@ class Competition {
             if (data.hasOwnProperty('includeEntrantsWhere')) {
                 obj['includeEntrantsWhere'] = ComplexFilter.constructFromObject(data['includeEntrantsWhere']);
             }
-            if (data.hasOwnProperty('optinRequiredForEntrants')) {
-                obj['optinRequiredForEntrants'] = ApiClient.convertToType(data['optinRequiredForEntrants'], 'Boolean');
-            }
-            if (data.hasOwnProperty('metadata')) {
-                obj['metadata'] = ApiClient.convertToType(data['metadata'], [Metadata]);
-            }
             if (data.hasOwnProperty('translations')) {
-                obj['translations'] = ApiClient.convertToType(data['translations'], [Translation]);
+                obj['translations'] = ApiClient.convertToType(data['translations'], [Object]);
+            }
+            if (data.hasOwnProperty('translatableFields')) {
+                obj['translatableFields'] = ApiClient.convertToType(data['translatableFields'], ['String']);
             }
             if (data.hasOwnProperty('status')) {
                 obj['status'] = CompetitionStatus.constructFromObject(data['status']);
@@ -301,6 +203,22 @@ Competition.prototype['spaceName'] = undefined;
 Competition.prototype['created'] = undefined;
 
 /**
+ * @member {Array.<module:model/CustomFieldReduced>} customFields
+ */
+Competition.prototype['customFields'] = undefined;
+
+/**
+ * A list of id's used to tag models
+ * @member {Array.<module:model/TagsReduced>} tags
+ */
+Competition.prototype['tags'] = undefined;
+
+/**
+ * @member {Array.<module:model/Metadata>} metadata
+ */
+Competition.prototype['metadata'] = undefined;
+
+/**
  * @member {module:model/CompetitionType} competitionType
  */
 Competition.prototype['competitionType'] = undefined;
@@ -331,9 +249,9 @@ Competition.prototype['description'] = undefined;
 
 /**
  * Terms and conditions of a competition. Can be translated
- * @member {String} termsConditions
+ * @member {String} termsAndConditions
  */
-Competition.prototype['termsConditions'] = undefined;
+Competition.prototype['termsAndConditions'] = undefined;
 
 /**
  * Maximum number of partiipants allowed in a competition
@@ -356,18 +274,6 @@ Competition.prototype['products'] = undefined;
  * @member {Array.<module:model/RuleSet>} ruleSets
  */
 Competition.prototype['ruleSets'] = undefined;
-
-/**
- * Is the event publicly exposed depending on the event model
- * @member {Boolean} isPublic
- */
-Competition.prototype['isPublic'] = undefined;
-
-/**
- * Is the event publicly exposed depending on the event model
- * @member {Boolean} autoStart
- */
-Competition.prototype['autoStart'] = undefined;
 
 /**
  * ISO8601 timestamp for when a Competition should start. All records are stored in UTC time zone
@@ -399,20 +305,15 @@ Competition.prototype['actualEndDate'] = undefined;
 Competition.prototype['includeEntrantsWhere'] = undefined;
 
 /**
- * If True, members must Opt in before they can acquire points in the contest
- * @member {Boolean} optinRequiredForEntrants
- */
-Competition.prototype['optinRequiredForEntrants'] = undefined;
-
-/**
- * @member {Array.<module:model/Metadata>} metadata
- */
-Competition.prototype['metadata'] = undefined;
-
-/**
- * @member {Array.<module:model/Translation>} translations
+ * @member {Array.<Object.<String, module:model/TranslationValue>>} translations
  */
 Competition.prototype['translations'] = undefined;
+
+/**
+ * ActionType translatable fields
+ * @member {Array.<String>} translatableFields
+ */
+Competition.prototype['translatableFields'] = undefined;
 
 /**
  * @member {module:model/CompetitionStatus} status
@@ -458,6 +359,20 @@ ModelDefault.prototype['spaceName'] = undefined;
  * @member {Date} created
  */
 ModelDefault.prototype['created'] = undefined;
+// Implement OptParamModels interface:
+/**
+ * @member {Array.<module:model/CustomFieldReduced>} customFields
+ */
+OptParamModels.prototype['customFields'] = undefined;
+/**
+ * A list of id's used to tag models
+ * @member {Array.<module:model/TagsReduced>} tags
+ */
+OptParamModels.prototype['tags'] = undefined;
+/**
+ * @member {Array.<module:model/Metadata>} metadata
+ */
+OptParamModels.prototype['metadata'] = undefined;
 // Implement CompetitionAllOf interface:
 /**
  * @member {module:model/CompetitionType} competitionType
@@ -485,9 +400,9 @@ CompetitionAllOf.prototype['name'] = undefined;
 CompetitionAllOf.prototype['description'] = undefined;
 /**
  * Terms and conditions of a competition. Can be translated
- * @member {String} termsConditions
+ * @member {String} termsAndConditions
  */
-CompetitionAllOf.prototype['termsConditions'] = undefined;
+CompetitionAllOf.prototype['termsAndConditions'] = undefined;
 /**
  * Maximum number of partiipants allowed in a competition
  * @member {Number} maxNumberOfEntrants
@@ -506,16 +421,6 @@ CompetitionAllOf.prototype['products'] = undefined;
  * @member {Array.<module:model/RuleSet>} ruleSets
  */
 CompetitionAllOf.prototype['ruleSets'] = undefined;
-/**
- * Is the event publicly exposed depending on the event model
- * @member {Boolean} isPublic
- */
-CompetitionAllOf.prototype['isPublic'] = undefined;
-/**
- * Is the event publicly exposed depending on the event model
- * @member {Boolean} autoStart
- */
-CompetitionAllOf.prototype['autoStart'] = undefined;
 /**
  * ISO8601 timestamp for when a Competition should start. All records are stored in UTC time zone
  * @member {Date} scheduledStartDate
@@ -541,18 +446,14 @@ CompetitionAllOf.prototype['actualEndDate'] = undefined;
  */
 CompetitionAllOf.prototype['includeEntrantsWhere'] = undefined;
 /**
- * If True, members must Opt in before they can acquire points in the contest
- * @member {Boolean} optinRequiredForEntrants
- */
-CompetitionAllOf.prototype['optinRequiredForEntrants'] = undefined;
-/**
- * @member {Array.<module:model/Metadata>} metadata
- */
-CompetitionAllOf.prototype['metadata'] = undefined;
-/**
- * @member {Array.<module:model/Translation>} translations
+ * @member {Array.<Object.<String, module:model/TranslationValue>>} translations
  */
 CompetitionAllOf.prototype['translations'] = undefined;
+/**
+ * ActionType translatable fields
+ * @member {Array.<String>} translatableFields
+ */
+CompetitionAllOf.prototype['translatableFields'] = undefined;
 /**
  * @member {module:model/CompetitionStatus} status
  */

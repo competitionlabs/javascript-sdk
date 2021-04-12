@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -13,24 +13,31 @@
 
 import ApiClient from '../ApiClient';
 import Condition from './Condition';
+import CustomFieldReduced from './CustomFieldReduced';
+import Metadata from './Metadata';
+import OptParamModels from './OptParamModels';
 import RuleScope from './RuleScope';
+import RuleSetAllOf from './RuleSetAllOf';
+import TagsReduced from './TagsReduced';
 
 /**
  * The RuleSet model module.
  * @module model/RuleSet
- * @version 1.0.5
+ * @version 1.0.0
  */
 class RuleSet {
     /**
      * Constructs a new <code>RuleSet</code>.
      * @alias module:model/RuleSet
+     * @implements module:model/OptParamModels
+     * @implements module:model/RuleSetAllOf
      * @param priority {Number} Indicates which rule is prioritised first so that the rules work in a sequence
      * @param scope {module:model/RuleScope} 
      * @param action {String} Action of this ruleset. Reference of Action schemma
      * @param conditions {Array.<module:model/Condition>} 
      */
     constructor(priority, scope, action, conditions) { 
-        
+        OptParamModels.initialize(this);RuleSetAllOf.initialize(this, priority, scope, action, conditions);
         RuleSet.initialize(this, priority, scope, action, conditions);
     }
 
@@ -47,47 +54,6 @@ class RuleSet {
     }
 
     /**
-    * Constructs a full object with all available fields.
-    */
-    model(){
-        var obj = {};
-
-        obj['priority'] = null;
-        obj['scope'] = new RuleScope().model();
-        obj['action'] = null;
-        obj['conditions'] = [new Condition().model()];
-        obj['onMatchThen'] = null;
-        obj['onMatchConstant'] = null;
-
-        return obj;
-    }
-
-    /**
-    * Constructs a full object Map for all available fields.
-    */
-    modelMap(){
-        var obj = {
-            "fields": {},
-            "requiredFields": {}
-        };
-
-        obj["fields"]['priority'] = { "type": 'Number', "system": false };
-        obj["fields"]['scope'] = new RuleScope().modelMap();
-        obj["fields"]['action'] = { "type": 'String', "system": false };
-        obj["fields"]['conditions'] = [new Condition().modelMap()];
-        obj["fields"]['onMatchThen'] = { "type": 'String', "system": false };
-        obj["fields"]['onMatchConstant'] = { "type": 'String', "system": false };
-
-        
-        obj["requiredFields"]['priority'] = { "type": 'Number', "system": false };
-        obj["requiredFields"]['scope'] = new RuleScope().modelMap();
-        obj["requiredFields"]['action'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['conditions'] = [new Condition().modelMap()];
-
-        return obj;
-    }
-
-    /**
      * Constructs a <code>RuleSet</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
@@ -97,7 +63,18 @@ class RuleSet {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new RuleSet();
+            OptParamModels.constructFromObject(data, obj);
+            RuleSetAllOf.constructFromObject(data, obj);
 
+            if (data.hasOwnProperty('customFields')) {
+                obj['customFields'] = ApiClient.convertToType(data['customFields'], [CustomFieldReduced]);
+            }
+            if (data.hasOwnProperty('tags')) {
+                obj['tags'] = ApiClient.convertToType(data['tags'], [TagsReduced]);
+            }
+            if (data.hasOwnProperty('metadata')) {
+                obj['metadata'] = ApiClient.convertToType(data['metadata'], [Metadata]);
+            }
             if (data.hasOwnProperty('priority')) {
                 obj['priority'] = ApiClient.convertToType(data['priority'], 'Number');
             }
@@ -122,6 +99,22 @@ class RuleSet {
 
 
 }
+
+/**
+ * @member {Array.<module:model/CustomFieldReduced>} customFields
+ */
+RuleSet.prototype['customFields'] = undefined;
+
+/**
+ * A list of id's used to tag models
+ * @member {Array.<module:model/TagsReduced>} tags
+ */
+RuleSet.prototype['tags'] = undefined;
+
+/**
+ * @member {Array.<module:model/Metadata>} metadata
+ */
+RuleSet.prototype['metadata'] = undefined;
 
 /**
  * Indicates which rule is prioritised first so that the rules work in a sequence
@@ -158,6 +151,49 @@ RuleSet.prototype['onMatchThen'] = undefined;
 RuleSet.prototype['onMatchConstant'] = undefined;
 
 
+// Implement OptParamModels interface:
+/**
+ * @member {Array.<module:model/CustomFieldReduced>} customFields
+ */
+OptParamModels.prototype['customFields'] = undefined;
+/**
+ * A list of id's used to tag models
+ * @member {Array.<module:model/TagsReduced>} tags
+ */
+OptParamModels.prototype['tags'] = undefined;
+/**
+ * @member {Array.<module:model/Metadata>} metadata
+ */
+OptParamModels.prototype['metadata'] = undefined;
+// Implement RuleSetAllOf interface:
+/**
+ * Indicates which rule is prioritised first so that the rules work in a sequence
+ * @member {Number} priority
+ */
+RuleSetAllOf.prototype['priority'] = undefined;
+/**
+ * @member {module:model/RuleScope} scope
+ */
+RuleSetAllOf.prototype['scope'] = undefined;
+/**
+ * Action of this ruleset. Reference of Action schemma
+ * @member {String} action
+ */
+RuleSetAllOf.prototype['action'] = undefined;
+/**
+ * @member {Array.<module:model/Condition>} conditions
+ */
+RuleSetAllOf.prototype['conditions'] = undefined;
+/**
+ * Only Required when \"Custom points\" action is selected Allowed values: * add: Add points when the rules are met * subtract: Subtract points when the rules are met * multiply.points: Multiply event points by a value that will be selected * multiply.source: Use my adjustment factor that overwites the existing product adjustment factor 
+ * @member {String} onMatchThen
+ */
+RuleSetAllOf.prototype['onMatchThen'] = undefined;
+/**
+ * Only Required when \"Custom points\" action is selected. It’s a value that represent how many points will be added, subtracted or multiplied
+ * @member {String} onMatchConstant
+ */
+RuleSetAllOf.prototype['onMatchConstant'] = undefined;
 
 
 

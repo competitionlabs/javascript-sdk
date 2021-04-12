@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -17,7 +17,7 @@ import SortOrder from './SortOrder';
 /**
  * The QuerySortBy model module.
  * @module model/QuerySortBy
- * @version 1.0.5
+ * @version 1.0.0
  */
 class QuerySortBy {
     /**
@@ -39,37 +39,6 @@ class QuerySortBy {
     static initialize(obj, queryField, order) { 
         obj['queryField'] = queryField;
         obj['order'] = order;
-    }
-
-    /**
-    * Constructs a full object with all available fields.
-    */
-    model(){
-        var obj = {};
-
-        obj['queryField'] = null;
-        obj['order'] = new SortOrder().model();
-
-        return obj;
-    }
-
-    /**
-    * Constructs a full object Map for all available fields.
-    */
-    modelMap(){
-        var obj = {
-            "fields": {},
-            "requiredFields": {}
-        };
-
-        obj["fields"]['queryField'] = { "type": 'String', "system": false };
-        obj["fields"]['order'] = new SortOrder().modelMap();
-
-        
-        obj["requiredFields"]['queryField'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['order'] = new SortOrder().modelMap();
-
-        return obj;
     }
 
     /**

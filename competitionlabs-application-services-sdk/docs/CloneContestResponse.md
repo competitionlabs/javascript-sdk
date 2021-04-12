@@ -1,4 +1,4 @@
-# @CompetitionlabsApplicationServicesSdk.CloneContestResponse
+# CompetitionLabsApplicationServices.CloneContestResponse
 
 ## Properties
 

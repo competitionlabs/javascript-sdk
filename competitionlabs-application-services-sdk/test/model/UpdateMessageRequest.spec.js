@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.@CompetitionlabsJavascriptSdk);
+    factory(root.expect, root.CompetitionLabsApplicationServices);
   }
-}(this, function(expect, @CompetitionlabsJavascriptSdk) {
+}(this, function(expect, CompetitionLabsApplicationServices) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new @CompetitionlabsJavascriptSdk.UpdateMessageRequest();
+    instance = new CompetitionLabsApplicationServices.UpdateMessageRequest();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,55 +50,79 @@
   describe('UpdateMessageRequest', function() {
     it('should create an instance of UpdateMessageRequest', function() {
       // uncomment below and update the code to test UpdateMessageRequest
-      //var instane = new @CompetitionlabsJavascriptSdk.UpdateMessageRequest();
-      //expect(instance).to.be.a(@CompetitionlabsJavascriptSdk.UpdateMessageRequest);
+      //var instane = new CompetitionLabsApplicationServices.UpdateMessageRequest();
+      //expect(instance).to.be.a(CompetitionLabsApplicationServices.UpdateMessageRequest);
     });
 
     it('should have the property id (base name: "id")', function() {
       // uncomment below and update the code to test the property id
-      //var instane = new @CompetitionlabsJavascriptSdk.UpdateMessageRequest();
+      //var instance = new CompetitionLabsApplicationServices.UpdateMessageRequest();
       //expect(instance).to.be();
     });
 
-    it('should have the property memberGroup (base name: "memberGroup")', function() {
-      // uncomment below and update the code to test the property memberGroup
-      //var instane = new @CompetitionlabsJavascriptSdk.UpdateMessageRequest();
+    it('should have the property customFields (base name: "customFields")', function() {
+      // uncomment below and update the code to test the property customFields
+      //var instance = new CompetitionLabsApplicationServices.UpdateMessageRequest();
       //expect(instance).to.be();
     });
 
-    it('should have the property members (base name: "members")', function() {
-      // uncomment below and update the code to test the property members
-      //var instane = new @CompetitionlabsJavascriptSdk.UpdateMessageRequest();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property messageType (base name: "messageType")', function() {
-      // uncomment below and update the code to test the property messageType
-      //var instane = new @CompetitionlabsJavascriptSdk.UpdateMessageRequest();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property subject (base name: "subject")', function() {
-      // uncomment below and update the code to test the property subject
-      //var instane = new @CompetitionlabsJavascriptSdk.UpdateMessageRequest();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property body (base name: "body")', function() {
-      // uncomment below and update the code to test the property body
-      //var instane = new @CompetitionlabsJavascriptSdk.UpdateMessageRequest();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property scheduling (base name: "scheduling")', function() {
-      // uncomment below and update the code to test the property scheduling
-      //var instane = new @CompetitionlabsJavascriptSdk.UpdateMessageRequest();
+    it('should have the property tags (base name: "tags")', function() {
+      // uncomment below and update the code to test the property tags
+      //var instance = new CompetitionLabsApplicationServices.UpdateMessageRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property metadata (base name: "metadata")', function() {
       // uncomment below and update the code to test the property metadata
-      //var instane = new @CompetitionlabsJavascriptSdk.UpdateMessageRequest();
+      //var instance = new CompetitionLabsApplicationServices.UpdateMessageRequest();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property memberGroup (base name: "memberGroup")', function() {
+      // uncomment below and update the code to test the property memberGroup
+      //var instance = new CompetitionLabsApplicationServices.UpdateMessageRequest();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property members (base name: "members")', function() {
+      // uncomment below and update the code to test the property members
+      //var instance = new CompetitionLabsApplicationServices.UpdateMessageRequest();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property messageType (base name: "messageType")', function() {
+      // uncomment below and update the code to test the property messageType
+      //var instance = new CompetitionLabsApplicationServices.UpdateMessageRequest();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property subject (base name: "subject")', function() {
+      // uncomment below and update the code to test the property subject
+      //var instance = new CompetitionLabsApplicationServices.UpdateMessageRequest();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property body (base name: "body")', function() {
+      // uncomment below and update the code to test the property body
+      //var instance = new CompetitionLabsApplicationServices.UpdateMessageRequest();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property scheduling (base name: "scheduling")', function() {
+      // uncomment below and update the code to test the property scheduling
+      //var instance = new CompetitionLabsApplicationServices.UpdateMessageRequest();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property translations (base name: "translations")', function() {
+      // uncomment below and update the code to test the property translations
+      //var instance = new CompetitionLabsApplicationServices.UpdateMessageRequest();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property constraints (base name: "constraints")', function() {
+      // uncomment below and update the code to test the property constraints
+      //var instance = new CompetitionLabsApplicationServices.UpdateMessageRequest();
       //expect(instance).to.be();
     });
 

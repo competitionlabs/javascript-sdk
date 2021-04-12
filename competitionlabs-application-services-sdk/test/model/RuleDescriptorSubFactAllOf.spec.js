@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.@CompetitionlabsJavascriptSdk);
+    factory(root.expect, root.CompetitionLabsApplicationServices);
   }
-}(this, function(expect, @CompetitionlabsJavascriptSdk) {
+}(this, function(expect, CompetitionLabsApplicationServices) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new @CompetitionlabsJavascriptSdk.RuleDescriptorSubFactAllOf();
+    instance = new CompetitionLabsApplicationServices.RuleDescriptorSubFactAllOf();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,13 +50,13 @@
   describe('RuleDescriptorSubFactAllOf', function() {
     it('should create an instance of RuleDescriptorSubFactAllOf', function() {
       // uncomment below and update the code to test RuleDescriptorSubFactAllOf
-      //var instane = new @CompetitionlabsJavascriptSdk.RuleDescriptorSubFactAllOf();
-      //expect(instance).to.be.a(@CompetitionlabsJavascriptSdk.RuleDescriptorSubFactAllOf);
+      //var instane = new CompetitionLabsApplicationServices.RuleDescriptorSubFactAllOf();
+      //expect(instance).to.be.a(CompetitionLabsApplicationServices.RuleDescriptorSubFactAllOf);
     });
 
     it('should have the property subFact (base name: "subFact")', function() {
       // uncomment below and update the code to test the property subFact
-      //var instane = new @CompetitionlabsJavascriptSdk.RuleDescriptorSubFactAllOf();
+      //var instance = new CompetitionLabsApplicationServices.RuleDescriptorSubFactAllOf();
       //expect(instance).to.be();
     });
 

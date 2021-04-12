@@ -1,4 +1,4 @@
-# @CompetitionlabsApplicationServicesSdk.BracketResponse
+# CompetitionLabsApplicationServices.BracketResponse
 
 ## Properties
 

@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.@CompetitionlabsApplicationServicesSdk);
+    factory(root.expect, root.CompetitionLabsApplicationServices);
   }
-}(this, function(expect, @CompetitionlabsApplicationServicesSdk) {
+}(this, function(expect, CompetitionLabsApplicationServices) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new @CompetitionlabsApplicationServicesSdk.AchievementLiveStatusRequestAllOf();
+    instance = new CompetitionLabsApplicationServices.AchievementLiveStatusRequestAllOf();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,13 +50,13 @@
   describe('AchievementLiveStatusRequestAllOf', function() {
     it('should create an instance of AchievementLiveStatusRequestAllOf', function() {
       // uncomment below and update the code to test AchievementLiveStatusRequestAllOf
-      //var instane = new @CompetitionlabsApplicationServicesSdk.AchievementLiveStatusRequestAllOf();
-      //expect(instance).to.be.a(@CompetitionlabsApplicationServicesSdk.AchievementLiveStatusRequestAllOf);
+      //var instane = new CompetitionLabsApplicationServices.AchievementLiveStatusRequestAllOf();
+      //expect(instance).to.be.a(CompetitionLabsApplicationServices.AchievementLiveStatusRequestAllOf);
     });
 
     it('should have the property status (base name: "status")', function() {
       // uncomment below and update the code to test the property status
-      //var instane = new @CompetitionlabsApplicationServicesSdk.AchievementLiveStatusRequestAllOf();
+      //var instance = new CompetitionLabsApplicationServices.AchievementLiveStatusRequestAllOf();
       //expect(instance).to.be();
     });
 

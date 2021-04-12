@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -23,7 +23,7 @@ import UpdateUserRequest from '../model/UpdateUserRequest';
 /**
 * User service.
 * @module api/UserApi
-* @version 1.0.5
+* @version 1.0.0
 */
 export default class UserApi {
 
@@ -71,7 +71,7 @@ export default class UserApi {
       let formParams = {
       };
 
-      let authNames = ['adminApiKey'];
+      let authNames = ['AdminApiKey', 'OAuth2'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = ApiResponse;
@@ -121,7 +121,7 @@ export default class UserApi {
       let formParams = {
       };
 
-      let authNames = ['adminApiKey'];
+      let authNames = ['AdminApiKey', 'OAuth2'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = ApiResponse;
@@ -172,7 +172,7 @@ export default class UserApi {
       let formParams = {
       };
 
-      let authNames = ['adminApiKey'];
+      let authNames = ['AdminApiKey', 'OAuth2'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = ProfileResponse;
@@ -226,7 +226,7 @@ export default class UserApi {
       let formParams = {
       };
 
-      let authNames = ['adminApiKey'];
+      let authNames = ['AdminApiKey', 'OAuth2'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = MessageResponse;
@@ -282,7 +282,7 @@ export default class UserApi {
       let formParams = {
       };
 
-      let authNames = ['adminApiKey'];
+      let authNames = ['AdminApiKey', 'OAuth2'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = MessageResponse;
@@ -337,7 +337,7 @@ export default class UserApi {
       let formParams = {
       };
 
-      let authNames = ['adminApiKey'];
+      let authNames = ['AdminApiKey', 'OAuth2'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = ApiResponse;
@@ -392,7 +392,7 @@ export default class UserApi {
       let formParams = {
       };
 
-      let authNames = ['adminApiKey'];
+      let authNames = ['AdminApiKey', 'OAuth2'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = ApiResponse;

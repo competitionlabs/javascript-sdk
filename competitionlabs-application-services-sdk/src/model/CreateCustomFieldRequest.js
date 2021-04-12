@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -18,20 +18,20 @@ import FieldType from './FieldType';
 /**
  * The CreateCustomFieldRequest model module.
  * @module model/CreateCustomFieldRequest
- * @version 1.0.5
+ * @version 1.0.0
  */
 class CreateCustomFieldRequest {
     /**
      * Constructs a new <code>CreateCustomFieldRequest</code>.
      * @alias module:model/CreateCustomFieldRequest
      * @param name {String} The name of a Custom field
-     * @param term {String} The key of a Custom field
+     * @param key {String} The key of a Custom field
      * @param fieldType {module:model/FieldType} 
      * @param appliesTo {module:model/AppliesTo} 
      */
-    constructor(name, term, fieldType, appliesTo) { 
+    constructor(name, key, fieldType, appliesTo) { 
         
-        CreateCustomFieldRequest.initialize(this, name, term, fieldType, appliesTo);
+        CreateCustomFieldRequest.initialize(this, name, key, fieldType, appliesTo);
     }
 
     /**
@@ -39,50 +39,11 @@ class CreateCustomFieldRequest {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, name, term, fieldType, appliesTo) { 
+    static initialize(obj, name, key, fieldType, appliesTo) { 
         obj['name'] = name;
-        obj['term'] = term;
+        obj['key'] = key;
         obj['fieldType'] = fieldType;
         obj['appliesTo'] = appliesTo;
-    }
-
-    /**
-    * Constructs a full object with all available fields.
-    */
-    model(){
-        var obj = {};
-
-        obj['name'] = null;
-        obj['term'] = null;
-        obj['description'] = null;
-        obj['fieldType'] = new FieldType().model();
-        obj['appliesTo'] = new AppliesTo().model();
-
-        return obj;
-    }
-
-    /**
-    * Constructs a full object Map for all available fields.
-    */
-    modelMap(){
-        var obj = {
-            "fields": {},
-            "requiredFields": {}
-        };
-
-        obj["fields"]['name'] = { "type": 'String', "system": false };
-        obj["fields"]['term'] = { "type": 'String', "system": false };
-        obj["fields"]['description'] = { "type": 'String', "system": false };
-        obj["fields"]['fieldType'] = new FieldType().modelMap();
-        obj["fields"]['appliesTo'] = new AppliesTo().modelMap();
-
-        
-        obj["requiredFields"]['name'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['term'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['fieldType'] = new FieldType().modelMap();
-        obj["requiredFields"]['appliesTo'] = new AppliesTo().modelMap();
-
-        return obj;
     }
 
     /**
@@ -99,8 +60,8 @@ class CreateCustomFieldRequest {
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
-            if (data.hasOwnProperty('term')) {
-                obj['term'] = ApiClient.convertToType(data['term'], 'String');
+            if (data.hasOwnProperty('key')) {
+                obj['key'] = ApiClient.convertToType(data['key'], 'String');
             }
             if (data.hasOwnProperty('description')) {
                 obj['description'] = ApiClient.convertToType(data['description'], 'String');
@@ -126,9 +87,9 @@ CreateCustomFieldRequest.prototype['name'] = undefined;
 
 /**
  * The key of a Custom field
- * @member {String} term
+ * @member {String} key
  */
-CreateCustomFieldRequest.prototype['term'] = undefined;
+CreateCustomFieldRequest.prototype['key'] = undefined;
 
 /**
  * The description of a Custom field

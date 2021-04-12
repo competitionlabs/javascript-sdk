@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -14,24 +14,28 @@
 import ApiClient from '../ApiClient';
 import AchievementAllOf from './AchievementAllOf';
 import AchievementLiveStatus from './AchievementLiveStatus';
+import CustomFieldReduced from './CustomFieldReduced';
 import DependantOn from './DependantOn';
 import Metadata from './Metadata';
 import ModelDefault from './ModelDefault';
+import OptParamModels from './OptParamModels';
 import RewardReduced from './RewardReduced';
 import RuleSet from './RuleSet';
 import Scheduling from './Scheduling';
-import Translation from './Translation';
+import TagsReduced from './TagsReduced';
+import TranslationValue from './TranslationValue';
 
 /**
  * The Achievement model module.
  * @module model/Achievement
- * @version 1.0.5
+ * @version 1.0.0
  */
 class Achievement {
     /**
      * Constructs a new <code>Achievement</code>.
      * @alias module:model/Achievement
      * @implements module:model/ModelDefault
+     * @implements module:model/OptParamModels
      * @implements module:model/AchievementAllOf
      * @param id {String} A unique system generated identifier
      * @param spaceName {String} This is the space name which is linked to the account
@@ -41,10 +45,12 @@ class Achievement {
      * @param ruleSets {Array.<module:model/RuleSet>} 
      * @param scheduling {module:model/Scheduling} 
      * @param achievementLiveStatus {module:model/AchievementLiveStatus} 
+     * @param memberGroups {Array.<module:model/TagsReduced>} A group of members that can receive the achievement
+     * @param constraints {Array.<String>} Additional constraints, if set means true
      */
-    constructor(id, spaceName, created, name, icon, ruleSets, scheduling, achievementLiveStatus) { 
-        ModelDefault.initialize(this, id, spaceName, created);AchievementAllOf.initialize(this, name, icon, ruleSets, scheduling, achievementLiveStatus);
-        Achievement.initialize(this, id, spaceName, created, name, icon, ruleSets, scheduling, achievementLiveStatus);
+    constructor(id, spaceName, created, name, icon, ruleSets, scheduling, achievementLiveStatus, memberGroups, constraints) { 
+        ModelDefault.initialize(this, id, spaceName, created);OptParamModels.initialize(this);AchievementAllOf.initialize(this, name, icon, ruleSets, scheduling, achievementLiveStatus, memberGroups, constraints);
+        Achievement.initialize(this, id, spaceName, created, name, icon, ruleSets, scheduling, achievementLiveStatus, memberGroups, constraints);
     }
 
     /**
@@ -52,7 +58,7 @@ class Achievement {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, id, spaceName, created, name, icon, ruleSets, scheduling, achievementLiveStatus) { 
+    static initialize(obj, id, spaceName, created, name, icon, ruleSets, scheduling, achievementLiveStatus, memberGroups, constraints) { 
         obj['id'] = id;
         obj['spaceName'] = spaceName;
         obj['created'] = created;
@@ -61,73 +67,8 @@ class Achievement {
         obj['ruleSets'] = ruleSets;
         obj['scheduling'] = scheduling;
         obj['achievementLiveStatus'] = achievementLiveStatus;
-    }
-
-    /**
-    * Constructs a full object with all available fields.
-    */
-    model(){
-        var obj = {};
-
-        obj['id'] = null;
-        obj['spaceName'] = null;
-        obj['created'] = null;
-        obj['name'] = null;
-        obj['description'] = null;
-        obj['icon'] = null;
-        obj['ruleSets'] = [new RuleSet().model()];
-        obj['dependantOn'] = new DependantOn().model();
-        obj['scheduling'] = new Scheduling().model();
-        obj['achievementLiveStatus'] = new AchievementLiveStatus().model();
-        obj['category'] = [null];
-        obj['memberGroups'] = [null];
-        obj['metadata'] = [new Metadata().model()];
-        obj['translations'] = [new Translation().model()];
-        obj['translatableFields'] = [null];
-        obj['rewards'] = [new RewardReduced().model()];
-        obj['constraints'] = [null];
-
-        return obj;
-    }
-
-    /**
-    * Constructs a full object Map for all available fields.
-    */
-    modelMap(){
-        var obj = {
-            "fields": {},
-            "requiredFields": {}
-        };
-
-        obj["fields"]['id'] = { "type": 'String', "system": true };
-        obj["fields"]['spaceName'] = { "type": 'String', "system": true };
-        obj["fields"]['created'] = { "type": 'Date', "system": true };
-        obj["fields"]['name'] = { "type": 'String', "system": false };
-        obj["fields"]['description'] = { "type": 'String', "system": false };
-        obj["fields"]['icon'] = { "type": 'String', "system": false };
-        obj["fields"]['ruleSets'] = [new RuleSet().modelMap()];
-        obj["fields"]['dependantOn'] = new DependantOn().modelMap();
-        obj["fields"]['scheduling'] = new Scheduling().modelMap();
-        obj["fields"]['achievementLiveStatus'] = new AchievementLiveStatus().modelMap();
-        obj["fields"]['category'] = [{ "type": 'String', "system": false }];
-        obj["fields"]['memberGroups'] = [{ "type": 'String', "system": false }];
-        obj["fields"]['metadata'] = [new Metadata().modelMap()];
-        obj["fields"]['translations'] = [new Translation().modelMap()];
-        obj["fields"]['translatableFields'] = [{ "type": 'String', "system": false }];
-        obj["fields"]['rewards'] = [new RewardReduced().modelMap()];
-        obj["fields"]['constraints'] = [{ "type": 'String', "system": false }];
-
-        
-        obj["requiredFields"]['id'] = { "type": 'String', "system": true };
-        obj["requiredFields"]['spaceName'] = { "type": 'String', "system": true };
-        obj["requiredFields"]['created'] = { "type": 'Date', "system": true };
-        obj["requiredFields"]['name'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['icon'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['ruleSets'] = [new RuleSet().modelMap()];
-        obj["requiredFields"]['scheduling'] = new Scheduling().modelMap();
-        obj["requiredFields"]['achievementLiveStatus'] = new AchievementLiveStatus().modelMap();
-
-        return obj;
+        obj['memberGroups'] = memberGroups;
+        obj['constraints'] = constraints;
     }
 
     /**
@@ -141,6 +82,7 @@ class Achievement {
         if (data) {
             obj = obj || new Achievement();
             ModelDefault.constructFromObject(data, obj);
+            OptParamModels.constructFromObject(data, obj);
             AchievementAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('id')) {
@@ -152,11 +94,23 @@ class Achievement {
             if (data.hasOwnProperty('created')) {
                 obj['created'] = ApiClient.convertToType(data['created'], 'Date');
             }
+            if (data.hasOwnProperty('customFields')) {
+                obj['customFields'] = ApiClient.convertToType(data['customFields'], [CustomFieldReduced]);
+            }
+            if (data.hasOwnProperty('tags')) {
+                obj['tags'] = ApiClient.convertToType(data['tags'], [TagsReduced]);
+            }
+            if (data.hasOwnProperty('metadata')) {
+                obj['metadata'] = ApiClient.convertToType(data['metadata'], [Metadata]);
+            }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
             if (data.hasOwnProperty('description')) {
                 obj['description'] = ApiClient.convertToType(data['description'], 'String');
+            }
+            if (data.hasOwnProperty('termsAndConditions')) {
+                obj['termsAndConditions'] = ApiClient.convertToType(data['termsAndConditions'], 'String');
             }
             if (data.hasOwnProperty('icon')) {
                 obj['icon'] = ApiClient.convertToType(data['icon'], 'String');
@@ -173,17 +127,14 @@ class Achievement {
             if (data.hasOwnProperty('achievementLiveStatus')) {
                 obj['achievementLiveStatus'] = AchievementLiveStatus.constructFromObject(data['achievementLiveStatus']);
             }
-            if (data.hasOwnProperty('category')) {
-                obj['category'] = ApiClient.convertToType(data['category'], ['String']);
-            }
             if (data.hasOwnProperty('memberGroups')) {
-                obj['memberGroups'] = ApiClient.convertToType(data['memberGroups'], ['String']);
+                obj['memberGroups'] = ApiClient.convertToType(data['memberGroups'], [TagsReduced]);
             }
-            if (data.hasOwnProperty('metadata')) {
-                obj['metadata'] = ApiClient.convertToType(data['metadata'], [Metadata]);
+            if (data.hasOwnProperty('maxNumberOfissues')) {
+                obj['maxNumberOfissues'] = ApiClient.convertToType(data['maxNumberOfissues'], 'Number');
             }
             if (data.hasOwnProperty('translations')) {
-                obj['translations'] = ApiClient.convertToType(data['translations'], [Translation]);
+                obj['translations'] = ApiClient.convertToType(data['translations'], [Object]);
             }
             if (data.hasOwnProperty('translatableFields')) {
                 obj['translatableFields'] = ApiClient.convertToType(data['translatableFields'], ['String']);
@@ -220,6 +171,22 @@ Achievement.prototype['spaceName'] = undefined;
 Achievement.prototype['created'] = undefined;
 
 /**
+ * @member {Array.<module:model/CustomFieldReduced>} customFields
+ */
+Achievement.prototype['customFields'] = undefined;
+
+/**
+ * A list of id's used to tag models
+ * @member {Array.<module:model/TagsReduced>} tags
+ */
+Achievement.prototype['tags'] = undefined;
+
+/**
+ * @member {Array.<module:model/Metadata>} metadata
+ */
+Achievement.prototype['metadata'] = undefined;
+
+/**
  * A name for the Achievement. Can be translated
  * @member {String} name
  */
@@ -230,6 +197,12 @@ Achievement.prototype['name'] = undefined;
  * @member {String} description
  */
 Achievement.prototype['description'] = undefined;
+
+/**
+ * Terms and conditions of an achievement. Can be translated
+ * @member {String} termsAndConditions
+ */
+Achievement.prototype['termsAndConditions'] = undefined;
 
 /**
  * An Icon id that has been pre uploaded to the system to display for Achievement
@@ -258,24 +231,19 @@ Achievement.prototype['scheduling'] = undefined;
 Achievement.prototype['achievementLiveStatus'] = undefined;
 
 /**
- * Categorisation of the achievements
- * @member {Array.<String>} category
- */
-Achievement.prototype['category'] = undefined;
-
-/**
  * A group of members that can receive the achievement
- * @member {Array.<String>} memberGroups
+ * @member {Array.<module:model/TagsReduced>} memberGroups
  */
 Achievement.prototype['memberGroups'] = undefined;
 
 /**
- * @member {Array.<module:model/Metadata>} metadata
+ * Maximum number of issued achievements
+ * @member {Number} maxNumberOfissues
  */
-Achievement.prototype['metadata'] = undefined;
+Achievement.prototype['maxNumberOfissues'] = undefined;
 
 /**
- * @member {Array.<module:model/Translation>} translations
+ * @member {Array.<Object.<String, module:model/TranslationValue>>} translations
  */
 Achievement.prototype['translations'] = undefined;
 
@@ -313,6 +281,20 @@ ModelDefault.prototype['spaceName'] = undefined;
  * @member {Date} created
  */
 ModelDefault.prototype['created'] = undefined;
+// Implement OptParamModels interface:
+/**
+ * @member {Array.<module:model/CustomFieldReduced>} customFields
+ */
+OptParamModels.prototype['customFields'] = undefined;
+/**
+ * A list of id's used to tag models
+ * @member {Array.<module:model/TagsReduced>} tags
+ */
+OptParamModels.prototype['tags'] = undefined;
+/**
+ * @member {Array.<module:model/Metadata>} metadata
+ */
+OptParamModels.prototype['metadata'] = undefined;
 // Implement AchievementAllOf interface:
 /**
  * A name for the Achievement. Can be translated
@@ -324,6 +306,11 @@ AchievementAllOf.prototype['name'] = undefined;
  * @member {String} description
  */
 AchievementAllOf.prototype['description'] = undefined;
+/**
+ * Terms and conditions of an achievement. Can be translated
+ * @member {String} termsAndConditions
+ */
+AchievementAllOf.prototype['termsAndConditions'] = undefined;
 /**
  * An Icon id that has been pre uploaded to the system to display for Achievement
  * @member {String} icon
@@ -346,21 +333,17 @@ AchievementAllOf.prototype['scheduling'] = undefined;
  */
 AchievementAllOf.prototype['achievementLiveStatus'] = undefined;
 /**
- * Categorisation of the achievements
- * @member {Array.<String>} category
- */
-AchievementAllOf.prototype['category'] = undefined;
-/**
  * A group of members that can receive the achievement
- * @member {Array.<String>} memberGroups
+ * @member {Array.<module:model/TagsReduced>} memberGroups
  */
 AchievementAllOf.prototype['memberGroups'] = undefined;
 /**
- * @member {Array.<module:model/Metadata>} metadata
+ * Maximum number of issued achievements
+ * @member {Number} maxNumberOfissues
  */
-AchievementAllOf.prototype['metadata'] = undefined;
+AchievementAllOf.prototype['maxNumberOfissues'] = undefined;
 /**
- * @member {Array.<module:model/Translation>} translations
+ * @member {Array.<Object.<String, module:model/TranslationValue>>} translations
  */
 AchievementAllOf.prototype['translations'] = undefined;
 /**

@@ -1,21 +1,21 @@
-# @CompetitionlabsApplicationServicesSdk.UnitsOfMeasureApi
+# CompetitionLabsApplicationServices.UnitsOfMeasureApi
 
 All URIs are relative to *https://api.competitionlabs.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createUnitsOfMeasure**](UnitsOfMeasureApi.md#createUnitsOfMeasure) | **POST** /units-of-measure/{spaceName} | 
-[**deleteUnitsOfMeasure**](UnitsOfMeasureApi.md#deleteUnitsOfMeasure) | **DELETE** /units-of-measure/{spaceName} | 
-[**deleteUnitsOfMeasureByQuery**](UnitsOfMeasureApi.md#deleteUnitsOfMeasureByQuery) | **POST** /units-of-measure/{spaceName}/delete | 
-[**getUnitsOfMeasure**](UnitsOfMeasureApi.md#getUnitsOfMeasure) | **GET** /units-of-measure/{spaceName} | 
-[**getUnitsOfMeasureByQuery**](UnitsOfMeasureApi.md#getUnitsOfMeasureByQuery) | **POST** /units-of-measure/{spaceName}/query | 
-[**updateUnitsOfMeasure**](UnitsOfMeasureApi.md#updateUnitsOfMeasure) | **PUT** /units-of-measure/{spaceName} | 
+[**createUnitsOfMeasure**](UnitsOfMeasureApi.md#createUnitsOfMeasure) | **POST** /units-of-measure | 
+[**deleteUnitsOfMeasure**](UnitsOfMeasureApi.md#deleteUnitsOfMeasure) | **DELETE** /units-of-measure | 
+[**deleteUnitsOfMeasureByQuery**](UnitsOfMeasureApi.md#deleteUnitsOfMeasureByQuery) | **POST** /units-of-measure/delete | 
+[**getUnitsOfMeasure**](UnitsOfMeasureApi.md#getUnitsOfMeasure) | **GET** /units-of-measure | 
+[**getUnitsOfMeasureByQuery**](UnitsOfMeasureApi.md#getUnitsOfMeasureByQuery) | **POST** /units-of-measure/query | 
+[**updateUnitsOfMeasure**](UnitsOfMeasureApi.md#updateUnitsOfMeasure) | **PUT** /units-of-measure | 
 
 
 
 ## createUnitsOfMeasure
 
-> ApiResponse createUnitsOfMeasure(spaceName, body, opts)
+> ApiResponse createUnitsOfMeasure(body, opts)
 
 
 
@@ -24,21 +24,23 @@ Create a new Unit of measure in the CompetitionLabs database
 ### Example
 
 ```javascript
-import @CompetitionlabsApplicationServicesSdk from '@competitionlabs/application-services-sdk';
-let defaultClient = @CompetitionlabsApplicationServicesSdk.ApiClient.instance;
-// Configure API key authorization: adminApiKey
-let adminApiKey = defaultClient.authentications['adminApiKey'];
-adminApiKey.apiKey = 'YOUR API KEY';
+import CompetitionLabsApplicationServices from 'competition_labs_application_services';
+let defaultClient = CompetitionLabsApplicationServices.ApiClient.instance;
+// Configure API key authorization: AdminApiKey
+let AdminApiKey = defaultClient.authentications['AdminApiKey'];
+AdminApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//adminApiKey.apiKeyPrefix = 'Token';
+//AdminApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: OAuth2
+let OAuth2 = defaultClient.authentications['OAuth2'];
+OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new @CompetitionlabsApplicationServicesSdk.UnitsOfMeasureApi();
-let spaceName = "spaceName_example"; // String | This is the space name which is linked to the account
-let body = [new @CompetitionlabsApplicationServicesSdk.CreateUnitOfMeasureRequest()]; // [CreateUnitOfMeasureRequest] | Create a Unit of measure in the CompetitionLabs database
+let apiInstance = new CompetitionLabsApplicationServices.UnitsOfMeasureApi();
+let body = [new CompetitionLabsApplicationServices.CreateUnitOfMeasureRequest()]; // [CreateUnitOfMeasureRequest] | Create a Unit of measure in the CompetitionLabs database
 let opts = {
   'X_API_KEY': "X_API_KEY_example" // String | The admin API Key generated from CompetitionLabs back office
 };
-apiInstance.createUnitsOfMeasure(spaceName, body, opts, (error, data, response) => {
+apiInstance.createUnitsOfMeasure(body, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -52,7 +54,6 @@ apiInstance.createUnitsOfMeasure(spaceName, body, opts, (error, data, response) 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **spaceName** | **String**| This is the space name which is linked to the account | 
  **body** | [**[CreateUnitOfMeasureRequest]**](CreateUnitOfMeasureRequest.md)| Create a Unit of measure in the CompetitionLabs database | 
  **X_API_KEY** | **String**| The admin API Key generated from CompetitionLabs back office | [optional] 
 
@@ -62,7 +63,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[adminApiKey](../README.md#adminApiKey)
+[AdminApiKey](../README.md#AdminApiKey), [OAuth2](../README.md#OAuth2)
 
 ### HTTP request headers
 
@@ -72,7 +73,7 @@ Name | Type | Description  | Notes
 
 ## deleteUnitsOfMeasure
 
-> ApiResponse deleteUnitsOfMeasure(spaceName, opts)
+> ApiResponse deleteUnitsOfMeasure(opts)
 
 
 
@@ -81,21 +82,23 @@ Delete the Unit of measured for a given identifier specified
 ### Example
 
 ```javascript
-import @CompetitionlabsApplicationServicesSdk from '@competitionlabs/application-services-sdk';
-let defaultClient = @CompetitionlabsApplicationServicesSdk.ApiClient.instance;
-// Configure API key authorization: adminApiKey
-let adminApiKey = defaultClient.authentications['adminApiKey'];
-adminApiKey.apiKey = 'YOUR API KEY';
+import CompetitionLabsApplicationServices from 'competition_labs_application_services';
+let defaultClient = CompetitionLabsApplicationServices.ApiClient.instance;
+// Configure API key authorization: AdminApiKey
+let AdminApiKey = defaultClient.authentications['AdminApiKey'];
+AdminApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//adminApiKey.apiKeyPrefix = 'Token';
+//AdminApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: OAuth2
+let OAuth2 = defaultClient.authentications['OAuth2'];
+OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new @CompetitionlabsApplicationServicesSdk.UnitsOfMeasureApi();
-let spaceName = "spaceName_example"; // String | This is the space name which is linked to the account
+let apiInstance = new CompetitionLabsApplicationServices.UnitsOfMeasureApi();
 let opts = {
   'X_API_KEY': "X_API_KEY_example", // String | The admin API Key generated from CompetitionLabs back office
   'id': ["null"] // [String] | The unique identifiers of the resources
 };
-apiInstance.deleteUnitsOfMeasure(spaceName, opts, (error, data, response) => {
+apiInstance.deleteUnitsOfMeasure(opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -109,7 +112,6 @@ apiInstance.deleteUnitsOfMeasure(spaceName, opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **spaceName** | **String**| This is the space name which is linked to the account | 
  **X_API_KEY** | **String**| The admin API Key generated from CompetitionLabs back office | [optional] 
  **id** | [**[String]**](String.md)| The unique identifiers of the resources | [optional] 
 
@@ -119,7 +121,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[adminApiKey](../README.md#adminApiKey)
+[AdminApiKey](../README.md#AdminApiKey), [OAuth2](../README.md#OAuth2)
 
 ### HTTP request headers
 
@@ -129,7 +131,7 @@ Name | Type | Description  | Notes
 
 ## deleteUnitsOfMeasureByQuery
 
-> ApiResponse deleteUnitsOfMeasureByQuery(spaceName, opts)
+> ApiResponse deleteUnitsOfMeasureByQuery(opts)
 
 
 
@@ -138,21 +140,23 @@ Delete Units of measure from CompetitionLabs database by unique Unit of measure 
 ### Example
 
 ```javascript
-import @CompetitionlabsApplicationServicesSdk from '@competitionlabs/application-services-sdk';
-let defaultClient = @CompetitionlabsApplicationServicesSdk.ApiClient.instance;
-// Configure API key authorization: adminApiKey
-let adminApiKey = defaultClient.authentications['adminApiKey'];
-adminApiKey.apiKey = 'YOUR API KEY';
+import CompetitionLabsApplicationServices from 'competition_labs_application_services';
+let defaultClient = CompetitionLabsApplicationServices.ApiClient.instance;
+// Configure API key authorization: AdminApiKey
+let AdminApiKey = defaultClient.authentications['AdminApiKey'];
+AdminApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//adminApiKey.apiKeyPrefix = 'Token';
+//AdminApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: OAuth2
+let OAuth2 = defaultClient.authentications['OAuth2'];
+OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new @CompetitionlabsApplicationServicesSdk.UnitsOfMeasureApi();
-let spaceName = "spaceName_example"; // String | This is the space name which is linked to the account
+let apiInstance = new CompetitionLabsApplicationServices.UnitsOfMeasureApi();
 let opts = {
   'X_API_KEY': "X_API_KEY_example", // String | The admin API Key generated from CompetitionLabs back office
-  'body': new @CompetitionlabsApplicationServicesSdk.QueryRequest() // QueryRequest | Delete Units of measure from CompetitionLabs database by unique Unit of measure ID's or any other POST body parameters using the POST method
+  'body': new CompetitionLabsApplicationServices.QueryRequest() // QueryRequest | Delete Units of measure from CompetitionLabs database by unique Unit of measure ID's or any other POST body parameters using the POST method
 };
-apiInstance.deleteUnitsOfMeasureByQuery(spaceName, opts, (error, data, response) => {
+apiInstance.deleteUnitsOfMeasureByQuery(opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -166,7 +170,6 @@ apiInstance.deleteUnitsOfMeasureByQuery(spaceName, opts, (error, data, response)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **spaceName** | **String**| This is the space name which is linked to the account | 
  **X_API_KEY** | **String**| The admin API Key generated from CompetitionLabs back office | [optional] 
  **body** | [**QueryRequest**](QueryRequest.md)| Delete Units of measure from CompetitionLabs database by unique Unit of measure ID&#39;s or any other POST body parameters using the POST method | [optional] 
 
@@ -176,7 +179,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[adminApiKey](../README.md#adminApiKey)
+[AdminApiKey](../README.md#AdminApiKey), [OAuth2](../README.md#OAuth2)
 
 ### HTTP request headers
 
@@ -186,7 +189,7 @@ Name | Type | Description  | Notes
 
 ## getUnitsOfMeasure
 
-> UnitOfMeasureResponse getUnitsOfMeasure(spaceName, opts)
+> UnitOfMeasureResponse getUnitsOfMeasure(opts)
 
 
 
@@ -195,23 +198,25 @@ Returns a list of Units of measure. This assumes that units of measure have firs
 ### Example
 
 ```javascript
-import @CompetitionlabsApplicationServicesSdk from '@competitionlabs/application-services-sdk';
-let defaultClient = @CompetitionlabsApplicationServicesSdk.ApiClient.instance;
-// Configure API key authorization: adminApiKey
-let adminApiKey = defaultClient.authentications['adminApiKey'];
-adminApiKey.apiKey = 'YOUR API KEY';
+import CompetitionLabsApplicationServices from 'competition_labs_application_services';
+let defaultClient = CompetitionLabsApplicationServices.ApiClient.instance;
+// Configure API key authorization: AdminApiKey
+let AdminApiKey = defaultClient.authentications['AdminApiKey'];
+AdminApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//adminApiKey.apiKeyPrefix = 'Token';
+//AdminApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: OAuth2
+let OAuth2 = defaultClient.authentications['OAuth2'];
+OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new @CompetitionlabsApplicationServicesSdk.UnitsOfMeasureApi();
-let spaceName = "spaceName_example"; // String | This is the space name which is linked to the account
+let apiInstance = new CompetitionLabsApplicationServices.UnitsOfMeasureApi();
 let opts = {
   'X_API_KEY': "X_API_KEY_example", // String | The admin API Key generated from CompetitionLabs back office
   'id': ["null"], // [String] | The unique identifiers of the resources
   'limit': 56, // Number | Limit the returned total records found
   'skip': 56 // Number | Skip the returned records found and return the next batch of records
 };
-apiInstance.getUnitsOfMeasure(spaceName, opts, (error, data, response) => {
+apiInstance.getUnitsOfMeasure(opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -225,7 +230,6 @@ apiInstance.getUnitsOfMeasure(spaceName, opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **spaceName** | **String**| This is the space name which is linked to the account | 
  **X_API_KEY** | **String**| The admin API Key generated from CompetitionLabs back office | [optional] 
  **id** | [**[String]**](String.md)| The unique identifiers of the resources | [optional] 
  **limit** | **Number**| Limit the returned total records found | [optional] 
@@ -237,7 +241,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[adminApiKey](../README.md#adminApiKey)
+[AdminApiKey](../README.md#AdminApiKey), [OAuth2](../README.md#OAuth2)
 
 ### HTTP request headers
 
@@ -247,7 +251,7 @@ Name | Type | Description  | Notes
 
 ## getUnitsOfMeasureByQuery
 
-> UnitOfMeasureResponse getUnitsOfMeasureByQuery(spaceName, opts)
+> UnitOfMeasureResponse getUnitsOfMeasureByQuery(opts)
 
 
 
@@ -256,21 +260,23 @@ Retrieve Units of measure from CompetitionLabs database by unique Unit of measur
 ### Example
 
 ```javascript
-import @CompetitionlabsApplicationServicesSdk from '@competitionlabs/application-services-sdk';
-let defaultClient = @CompetitionlabsApplicationServicesSdk.ApiClient.instance;
-// Configure API key authorization: adminApiKey
-let adminApiKey = defaultClient.authentications['adminApiKey'];
-adminApiKey.apiKey = 'YOUR API KEY';
+import CompetitionLabsApplicationServices from 'competition_labs_application_services';
+let defaultClient = CompetitionLabsApplicationServices.ApiClient.instance;
+// Configure API key authorization: AdminApiKey
+let AdminApiKey = defaultClient.authentications['AdminApiKey'];
+AdminApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//adminApiKey.apiKeyPrefix = 'Token';
+//AdminApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: OAuth2
+let OAuth2 = defaultClient.authentications['OAuth2'];
+OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new @CompetitionlabsApplicationServicesSdk.UnitsOfMeasureApi();
-let spaceName = "spaceName_example"; // String | This is the space name which is linked to the account
+let apiInstance = new CompetitionLabsApplicationServices.UnitsOfMeasureApi();
 let opts = {
   'X_API_KEY': "X_API_KEY_example", // String | The admin API Key generated from CompetitionLabs back office
-  'body': new @CompetitionlabsApplicationServicesSdk.QueryRequest() // QueryRequest | Retrieve Units of measure from CompetitionLabs database by unique Unit of measure ID's or any other POST body parameters using the POST method
+  'body': new CompetitionLabsApplicationServices.QueryRequest() // QueryRequest | Retrieve Units of measure from CompetitionLabs database by unique Unit of measure ID's or any other POST body parameters using the POST method
 };
-apiInstance.getUnitsOfMeasureByQuery(spaceName, opts, (error, data, response) => {
+apiInstance.getUnitsOfMeasureByQuery(opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -284,7 +290,6 @@ apiInstance.getUnitsOfMeasureByQuery(spaceName, opts, (error, data, response) =>
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **spaceName** | **String**| This is the space name which is linked to the account | 
  **X_API_KEY** | **String**| The admin API Key generated from CompetitionLabs back office | [optional] 
  **body** | [**QueryRequest**](QueryRequest.md)| Retrieve Units of measure from CompetitionLabs database by unique Unit of measure ID&#39;s or any other POST body parameters using the POST method | [optional] 
 
@@ -294,7 +299,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[adminApiKey](../README.md#adminApiKey)
+[AdminApiKey](../README.md#AdminApiKey), [OAuth2](../README.md#OAuth2)
 
 ### HTTP request headers
 
@@ -304,7 +309,7 @@ Name | Type | Description  | Notes
 
 ## updateUnitsOfMeasure
 
-> ApiResponse updateUnitsOfMeasure(spaceName, body, opts)
+> ApiResponse updateUnitsOfMeasure(body, opts)
 
 
 
@@ -313,21 +318,23 @@ Update an existing Unit of measure in the CompetitionLabs database
 ### Example
 
 ```javascript
-import @CompetitionlabsApplicationServicesSdk from '@competitionlabs/application-services-sdk';
-let defaultClient = @CompetitionlabsApplicationServicesSdk.ApiClient.instance;
-// Configure API key authorization: adminApiKey
-let adminApiKey = defaultClient.authentications['adminApiKey'];
-adminApiKey.apiKey = 'YOUR API KEY';
+import CompetitionLabsApplicationServices from 'competition_labs_application_services';
+let defaultClient = CompetitionLabsApplicationServices.ApiClient.instance;
+// Configure API key authorization: AdminApiKey
+let AdminApiKey = defaultClient.authentications['AdminApiKey'];
+AdminApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//adminApiKey.apiKeyPrefix = 'Token';
+//AdminApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: OAuth2
+let OAuth2 = defaultClient.authentications['OAuth2'];
+OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new @CompetitionlabsApplicationServicesSdk.UnitsOfMeasureApi();
-let spaceName = "spaceName_example"; // String | This is the space name which is linked to the account
-let body = [new @CompetitionlabsApplicationServicesSdk.UpdateUnitOfMeasureRequest()]; // [UpdateUnitOfMeasureRequest] | Update a Unit of measure in the CompetitionLabs database.
+let apiInstance = new CompetitionLabsApplicationServices.UnitsOfMeasureApi();
+let body = [new CompetitionLabsApplicationServices.UpdateUnitOfMeasureRequest()]; // [UpdateUnitOfMeasureRequest] | Update a Unit of measure in the CompetitionLabs database.
 let opts = {
   'X_API_KEY': "X_API_KEY_example" // String | The admin API Key generated from CompetitionLabs back office
 };
-apiInstance.updateUnitsOfMeasure(spaceName, body, opts, (error, data, response) => {
+apiInstance.updateUnitsOfMeasure(body, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -341,7 +348,6 @@ apiInstance.updateUnitsOfMeasure(spaceName, body, opts, (error, data, response) 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **spaceName** | **String**| This is the space name which is linked to the account | 
  **body** | [**[UpdateUnitOfMeasureRequest]**](UpdateUnitOfMeasureRequest.md)| Update a Unit of measure in the CompetitionLabs database. | 
  **X_API_KEY** | **String**| The admin API Key generated from CompetitionLabs back office | [optional] 
 
@@ -351,7 +357,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[adminApiKey](../README.md#adminApiKey)
+[AdminApiKey](../README.md#AdminApiKey), [OAuth2](../README.md#OAuth2)
 
 ### HTTP request headers
 

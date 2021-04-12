@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -13,23 +13,23 @@
 
 import ApiClient from '../ApiClient';
 import MemberType from './MemberType';
-import Metadata from './Metadata';
 
 /**
  * The MemberAllOf model module.
  * @module model/MemberAllOf
- * @version 1.0.5
+ * @version 1.0.0
  */
 class MemberAllOf {
     /**
      * Constructs a new <code>MemberAllOf</code>.
      * @alias module:model/MemberAllOf
+     * @param name {String} The name of the member that is used on leader boards and public displays
      * @param memberRefId {String} The reference to this member in your system
      * @param memberType {module:model/MemberType} 
      */
-    constructor(memberRefId, memberType) { 
+    constructor(name, memberRefId, memberType) { 
         
-        MemberAllOf.initialize(this, memberRefId, memberType);
+        MemberAllOf.initialize(this, name, memberRefId, memberType);
     }
 
     /**
@@ -37,48 +37,10 @@ class MemberAllOf {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, memberRefId, memberType) { 
+    static initialize(obj, name, memberRefId, memberType) { 
+        obj['name'] = name;
         obj['memberRefId'] = memberRefId;
         obj['memberType'] = memberType;
-    }
-
-    /**
-    * Constructs a full object with all available fields.
-    */
-    model(){
-        var obj = {};
-
-        obj['name'] = null;
-        obj['memberRefId'] = null;
-        obj['memberType'] = new MemberType().model();
-        obj['teamMembers'] = [null];
-        obj['groups'] = [null];
-        obj['metadata'] = [new Metadata().model()];
-
-        return obj;
-    }
-
-    /**
-    * Constructs a full object Map for all available fields.
-    */
-    modelMap(){
-        var obj = {
-            "fields": {},
-            "requiredFields": {}
-        };
-
-        obj["fields"]['name'] = { "type": 'String', "system": false };
-        obj["fields"]['memberRefId'] = { "type": 'String', "system": false };
-        obj["fields"]['memberType'] = new MemberType().modelMap();
-        obj["fields"]['teamMembers'] = [{ "type": 'String', "system": false }];
-        obj["fields"]['groups'] = [{ "type": 'String', "system": false }];
-        obj["fields"]['metadata'] = [new Metadata().modelMap()];
-
-        
-        obj["requiredFields"]['memberRefId'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['memberType'] = new MemberType().modelMap();
-
-        return obj;
     }
 
     /**
@@ -103,12 +65,6 @@ class MemberAllOf {
             }
             if (data.hasOwnProperty('teamMembers')) {
                 obj['teamMembers'] = ApiClient.convertToType(data['teamMembers'], ['String']);
-            }
-            if (data.hasOwnProperty('groups')) {
-                obj['groups'] = ApiClient.convertToType(data['groups'], ['String']);
-            }
-            if (data.hasOwnProperty('metadata')) {
-                obj['metadata'] = ApiClient.convertToType(data['metadata'], [Metadata]);
             }
         }
         return obj;
@@ -139,17 +95,6 @@ MemberAllOf.prototype['memberType'] = undefined;
  * @member {Array.<String>} teamMembers
  */
 MemberAllOf.prototype['teamMembers'] = undefined;
-
-/**
- * A list of Strings of groups that the member belongs to. It could be marketing segments or social friend groups
- * @member {Array.<String>} groups
- */
-MemberAllOf.prototype['groups'] = undefined;
-
-/**
- * @member {Array.<module:model/Metadata>} metadata
- */
-MemberAllOf.prototype['metadata'] = undefined;
 
 
 

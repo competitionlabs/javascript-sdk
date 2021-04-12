@@ -1,4 +1,4 @@
-# @CompetitionlabsApplicationServicesSdk.AppliesTo
+# CompetitionLabsApplicationServices.AppliesTo
 
 ## Enum
 

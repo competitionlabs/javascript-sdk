@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RangeQuery model module.
  * @module model/RangeQuery
- * @version 1.0.5
+ * @version 1.0.0
  */
 class RangeQuery {
     /**
@@ -25,10 +25,11 @@ class RangeQuery {
      * @param queryField {String} The key of the parameter that is being searched
      * @param gt {String} Greater than value
      * @param lt {String} Less than value
+     * @param constraints {Array.<String>} Additional constraints
      */
-    constructor(queryField, gt, lt) { 
+    constructor(queryField, gt, lt, constraints) { 
         
-        RangeQuery.initialize(this, queryField, gt, lt);
+        RangeQuery.initialize(this, queryField, gt, lt, constraints);
     }
 
     /**
@@ -36,46 +37,11 @@ class RangeQuery {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, queryField, gt, lt) { 
+    static initialize(obj, queryField, gt, lt, constraints) { 
         obj['queryField'] = queryField;
         obj['gt'] = gt;
         obj['lt'] = lt;
-    }
-
-    /**
-    * Constructs a full object with all available fields.
-    */
-    model(){
-        var obj = {};
-
-        obj['queryField'] = null;
-        obj['gt'] = null;
-        obj['lt'] = null;
-        obj['includeBounds'] = null;
-
-        return obj;
-    }
-
-    /**
-    * Constructs a full object Map for all available fields.
-    */
-    modelMap(){
-        var obj = {
-            "fields": {},
-            "requiredFields": {}
-        };
-
-        obj["fields"]['queryField'] = { "type": 'String', "system": false };
-        obj["fields"]['gt'] = { "type": 'String', "system": false };
-        obj["fields"]['lt'] = { "type": 'String', "system": false };
-        obj["fields"]['includeBounds'] = { "type": 'Boolean', "system": false };
-
-        
-        obj["requiredFields"]['queryField'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['gt'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['lt'] = { "type": 'String', "system": false };
-
-        return obj;
+        obj['constraints'] = constraints;
     }
 
     /**
@@ -98,8 +64,8 @@ class RangeQuery {
             if (data.hasOwnProperty('lt')) {
                 obj['lt'] = ApiClient.convertToType(data['lt'], 'String');
             }
-            if (data.hasOwnProperty('includeBounds')) {
-                obj['includeBounds'] = ApiClient.convertToType(data['includeBounds'], 'Boolean');
+            if (data.hasOwnProperty('constraints')) {
+                obj['constraints'] = ApiClient.convertToType(data['constraints'], ['String']);
             }
         }
         return obj;
@@ -127,10 +93,10 @@ RangeQuery.prototype['gt'] = undefined;
 RangeQuery.prototype['lt'] = undefined;
 
 /**
- * Determined whether to include bounds, to treat it as greater than equal or less than equal
- * @member {Boolean} includeBounds
+ * Additional constraints
+ * @member {Array.<String>} constraints
  */
-RangeQuery.prototype['includeBounds'] = undefined;
+RangeQuery.prototype['constraints'] = undefined;
 
 
 

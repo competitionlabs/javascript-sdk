@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.@CompetitionlabsJavascriptSdk);
+    factory(root.expect, root.CompetitionLabsApplicationServices);
   }
-}(this, function(expect, @CompetitionlabsJavascriptSdk) {
+}(this, function(expect, CompetitionLabsApplicationServices) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new @CompetitionlabsJavascriptSdk.TranslatedField();
+    instance = new CompetitionLabsApplicationServices.TranslatedField();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,19 +50,19 @@
   describe('TranslatedField', function() {
     it('should create an instance of TranslatedField', function() {
       // uncomment below and update the code to test TranslatedField
-      //var instane = new @CompetitionlabsJavascriptSdk.TranslatedField();
-      //expect(instance).to.be.a(@CompetitionlabsJavascriptSdk.TranslatedField);
+      //var instane = new CompetitionLabsApplicationServices.TranslatedField();
+      //expect(instance).to.be.a(CompetitionLabsApplicationServices.TranslatedField);
     });
 
     it('should have the property fieldName (base name: "fieldName")', function() {
       // uncomment below and update the code to test the property fieldName
-      //var instane = new @CompetitionlabsJavascriptSdk.TranslatedField();
+      //var instance = new CompetitionLabsApplicationServices.TranslatedField();
       //expect(instance).to.be();
     });
 
     it('should have the property text (base name: "text")', function() {
       // uncomment below and update the code to test the property text
-      //var instane = new @CompetitionlabsJavascriptSdk.TranslatedField();
+      //var instance = new CompetitionLabsApplicationServices.TranslatedField();
       //expect(instance).to.be();
     });
 

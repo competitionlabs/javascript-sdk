@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The OnRuleSetMatchTrigger model module.
  * @module model/OnRuleSetMatchTrigger
- * @version 1.0.5
+ * @version 1.0.0
  */
 class OnRuleSetMatchTrigger {
     /**
@@ -42,45 +42,6 @@ class OnRuleSetMatchTrigger {
         obj['key'] = key;
         obj['name'] = name;
         obj['inputValueType'] = inputValueType;
-    }
-
-    /**
-    * Constructs a full object with all available fields.
-    */
-    model(){
-        var obj = {};
-
-        obj['constraints'] = [null];
-        obj['key'] = null;
-        obj['name'] = null;
-        obj['description'] = null;
-        obj['inputValueType'] = null;
-
-        return obj;
-    }
-
-    /**
-    * Constructs a full object Map for all available fields.
-    */
-    modelMap(){
-        var obj = {
-            "fields": {},
-            "requiredFields": {}
-        };
-
-        obj["fields"]['constraints'] = [{ "type": 'String', "system": false }];
-        obj["fields"]['key'] = { "type": 'String', "system": false };
-        obj["fields"]['name'] = { "type": 'String', "system": false };
-        obj["fields"]['description'] = { "type": 'String', "system": false };
-        obj["fields"]['inputValueType'] = { "type": 'String', "system": false };
-
-        
-        obj["requiredFields"]['constraints'] = [{ "type": 'String', "system": false }];
-        obj["requiredFields"]['key'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['name'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['inputValueType'] = { "type": 'String', "system": false };
-
-        return obj;
     }
 
     /**

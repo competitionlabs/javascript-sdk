@@ -1,4 +1,4 @@
-# @CompetitionlabsApplicationServicesSdk.UpdateTransformerRequest
+# CompetitionLabsApplicationServices.UpdateTransformerRequest
 
 ## Properties
 

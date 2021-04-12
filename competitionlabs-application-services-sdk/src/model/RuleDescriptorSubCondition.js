@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -18,7 +18,7 @@ import RuleDescriptorSubFact from './RuleDescriptorSubFact';
 /**
  * The RuleDescriptorSubCondition model module.
  * @module model/RuleDescriptorSubCondition
- * @version 1.0.5
+ * @version 1.0.0
  */
 class RuleDescriptorSubCondition {
     /**
@@ -40,39 +40,6 @@ class RuleDescriptorSubCondition {
     static initialize(obj, constraints, matchCondition) { 
         obj['constraints'] = constraints;
         obj['matchCondition'] = matchCondition;
-    }
-
-    /**
-    * Constructs a full object with all available fields.
-    */
-    model(){
-        var obj = {};
-
-        obj['constraints'] = [null];
-        obj['matchCondition'] = new MatchCondition().model();
-        obj['subFacts'] = [new RuleDescriptorSubFact().model()];
-
-        return obj;
-    }
-
-    /**
-    * Constructs a full object Map for all available fields.
-    */
-    modelMap(){
-        var obj = {
-            "fields": {},
-            "requiredFields": {}
-        };
-
-        obj["fields"]['constraints'] = [{ "type": 'String', "system": false }];
-        obj["fields"]['matchCondition'] = new MatchCondition().modelMap();
-        obj["fields"]['subFacts'] = [new RuleDescriptorSubFact().modelMap()];
-
-        
-        obj["requiredFields"]['constraints'] = [{ "type": 'String', "system": false }];
-        obj["requiredFields"]['matchCondition'] = new MatchCondition().modelMap();
-
-        return obj;
     }
 
     /**

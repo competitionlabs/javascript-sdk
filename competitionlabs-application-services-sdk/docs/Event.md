@@ -1,4 +1,4 @@
-# @CompetitionlabsApplicationServicesSdk.Event
+# CompetitionLabsApplicationServices.Event
 
 ## Properties
 
@@ -16,6 +16,8 @@ Name | Type | Description | Notes
 **sourceValue** | **Number** | The actual numerical value related to the event | 
 **points** | **Number** | A value derived from the source value field. In the context of Product additionally an adjustment factor will be applied | 
 **transactionTimestamp** | **Date** | ISO8601 timestamp for when this event happened. All records are stored in UTC time zone | 
-**metadata** | [**[EventMetadata]**](EventMetadata.md) |  | [optional] 
+**metadata** | **{String: Object}** |  | [optional] 
+**customFields** | [**[CustomFieldReduced]**](CustomFieldReduced.md) |  | [optional] 
+**tags** | [**[TagsReduced]**](TagsReduced.md) | A list of Strings of groups that the tag belongs to | [optional] 
 
 

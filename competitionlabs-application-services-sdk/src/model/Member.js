@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -12,31 +12,36 @@
  */
 
 import ApiClient from '../ApiClient';
+import CustomFieldReduced from './CustomFieldReduced';
 import MemberAllOf from './MemberAllOf';
 import MemberType from './MemberType';
 import Metadata from './Metadata';
 import ModelDefault from './ModelDefault';
+import OptParamModels from './OptParamModels';
+import TagsReduced from './TagsReduced';
 
 /**
  * The Member model module.
  * @module model/Member
- * @version 1.0.5
+ * @version 1.0.0
  */
 class Member {
     /**
      * Constructs a new <code>Member</code>.
      * @alias module:model/Member
      * @implements module:model/ModelDefault
+     * @implements module:model/OptParamModels
      * @implements module:model/MemberAllOf
      * @param id {String} A unique system generated identifier
      * @param spaceName {String} This is the space name which is linked to the account
      * @param created {Date} ISO8601 timestamp for when a Model was created. All records are stored in UTC time zone
+     * @param name {String} The name of the member that is used on leader boards and public displays
      * @param memberRefId {String} The reference to this member in your system
      * @param memberType {module:model/MemberType} 
      */
-    constructor(id, spaceName, created, memberRefId, memberType) { 
-        ModelDefault.initialize(this, id, spaceName, created);MemberAllOf.initialize(this, memberRefId, memberType);
-        Member.initialize(this, id, spaceName, created, memberRefId, memberType);
+    constructor(id, spaceName, created, name, memberRefId, memberType) { 
+        ModelDefault.initialize(this, id, spaceName, created);OptParamModels.initialize(this);MemberAllOf.initialize(this, name, memberRefId, memberType);
+        Member.initialize(this, id, spaceName, created, name, memberRefId, memberType);
     }
 
     /**
@@ -44,60 +49,13 @@ class Member {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, id, spaceName, created, memberRefId, memberType) { 
+    static initialize(obj, id, spaceName, created, name, memberRefId, memberType) { 
         obj['id'] = id;
         obj['spaceName'] = spaceName;
         obj['created'] = created;
+        obj['name'] = name;
         obj['memberRefId'] = memberRefId;
         obj['memberType'] = memberType;
-    }
-
-    /**
-    * Constructs a full object with all available fields.
-    */
-    model(){
-        var obj = {};
-
-        obj['id'] = null;
-        obj['spaceName'] = null;
-        obj['created'] = null;
-        obj['name'] = null;
-        obj['memberRefId'] = null;
-        obj['memberType'] = new MemberType().model();
-        obj['teamMembers'] = [null];
-        obj['groups'] = [null];
-        obj['metadata'] = [new Metadata().model()];
-
-        return obj;
-    }
-
-    /**
-    * Constructs a full object Map for all available fields.
-    */
-    modelMap(){
-        var obj = {
-            "fields": {},
-            "requiredFields": {}
-        };
-
-        obj["fields"]['id'] = { "type": 'String', "system": true };
-        obj["fields"]['spaceName'] = { "type": 'String', "system": true };
-        obj["fields"]['created'] = { "type": 'Date', "system": true };
-        obj["fields"]['name'] = { "type": 'String', "system": false };
-        obj["fields"]['memberRefId'] = { "type": 'String', "system": false };
-        obj["fields"]['memberType'] = new MemberType().modelMap();
-        obj["fields"]['teamMembers'] = [{ "type": 'String', "system": false }];
-        obj["fields"]['groups'] = [{ "type": 'String', "system": false }];
-        obj["fields"]['metadata'] = [new Metadata().modelMap()];
-
-        
-        obj["requiredFields"]['id'] = { "type": 'String', "system": true };
-        obj["requiredFields"]['spaceName'] = { "type": 'String', "system": true };
-        obj["requiredFields"]['created'] = { "type": 'Date', "system": true };
-        obj["requiredFields"]['memberRefId'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['memberType'] = new MemberType().modelMap();
-
-        return obj;
     }
 
     /**
@@ -111,6 +69,7 @@ class Member {
         if (data) {
             obj = obj || new Member();
             ModelDefault.constructFromObject(data, obj);
+            OptParamModels.constructFromObject(data, obj);
             MemberAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('id')) {
@@ -121,6 +80,15 @@ class Member {
             }
             if (data.hasOwnProperty('created')) {
                 obj['created'] = ApiClient.convertToType(data['created'], 'Date');
+            }
+            if (data.hasOwnProperty('customFields')) {
+                obj['customFields'] = ApiClient.convertToType(data['customFields'], [CustomFieldReduced]);
+            }
+            if (data.hasOwnProperty('tags')) {
+                obj['tags'] = ApiClient.convertToType(data['tags'], [TagsReduced]);
+            }
+            if (data.hasOwnProperty('metadata')) {
+                obj['metadata'] = ApiClient.convertToType(data['metadata'], [Metadata]);
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
@@ -133,12 +101,6 @@ class Member {
             }
             if (data.hasOwnProperty('teamMembers')) {
                 obj['teamMembers'] = ApiClient.convertToType(data['teamMembers'], ['String']);
-            }
-            if (data.hasOwnProperty('groups')) {
-                obj['groups'] = ApiClient.convertToType(data['groups'], ['String']);
-            }
-            if (data.hasOwnProperty('metadata')) {
-                obj['metadata'] = ApiClient.convertToType(data['metadata'], [Metadata]);
             }
         }
         return obj;
@@ -166,6 +128,22 @@ Member.prototype['spaceName'] = undefined;
 Member.prototype['created'] = undefined;
 
 /**
+ * @member {Array.<module:model/CustomFieldReduced>} customFields
+ */
+Member.prototype['customFields'] = undefined;
+
+/**
+ * A list of id's used to tag models
+ * @member {Array.<module:model/TagsReduced>} tags
+ */
+Member.prototype['tags'] = undefined;
+
+/**
+ * @member {Array.<module:model/Metadata>} metadata
+ */
+Member.prototype['metadata'] = undefined;
+
+/**
  * The name of the member that is used on leader boards and public displays
  * @member {String} name
  */
@@ -188,17 +166,6 @@ Member.prototype['memberType'] = undefined;
  */
 Member.prototype['teamMembers'] = undefined;
 
-/**
- * A list of Strings of groups that the member belongs to. It could be marketing segments or social friend groups
- * @member {Array.<String>} groups
- */
-Member.prototype['groups'] = undefined;
-
-/**
- * @member {Array.<module:model/Metadata>} metadata
- */
-Member.prototype['metadata'] = undefined;
-
 
 // Implement ModelDefault interface:
 /**
@@ -216,6 +183,20 @@ ModelDefault.prototype['spaceName'] = undefined;
  * @member {Date} created
  */
 ModelDefault.prototype['created'] = undefined;
+// Implement OptParamModels interface:
+/**
+ * @member {Array.<module:model/CustomFieldReduced>} customFields
+ */
+OptParamModels.prototype['customFields'] = undefined;
+/**
+ * A list of id's used to tag models
+ * @member {Array.<module:model/TagsReduced>} tags
+ */
+OptParamModels.prototype['tags'] = undefined;
+/**
+ * @member {Array.<module:model/Metadata>} metadata
+ */
+OptParamModels.prototype['metadata'] = undefined;
 // Implement MemberAllOf interface:
 /**
  * The name of the member that is used on leader boards and public displays
@@ -236,15 +217,6 @@ MemberAllOf.prototype['memberType'] = undefined;
  * @member {Array.<String>} teamMembers
  */
 MemberAllOf.prototype['teamMembers'] = undefined;
-/**
- * A list of Strings of groups that the member belongs to. It could be marketing segments or social friend groups
- * @member {Array.<String>} groups
- */
-MemberAllOf.prototype['groups'] = undefined;
-/**
- * @member {Array.<module:model/Metadata>} metadata
- */
-MemberAllOf.prototype['metadata'] = undefined;
 
 
 

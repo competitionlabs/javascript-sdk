@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.@CompetitionlabsJavascriptSdk);
+    factory(root.expect, root.CompetitionLabsApplicationServices);
   }
-}(this, function(expect, @CompetitionlabsJavascriptSdk) {
+}(this, function(expect, CompetitionLabsApplicationServices) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new @CompetitionlabsJavascriptSdk.KafkaConnectionAllOf();
+    instance = new CompetitionLabsApplicationServices.KafkaConnectionAllOf();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,43 +50,49 @@
   describe('KafkaConnectionAllOf', function() {
     it('should create an instance of KafkaConnectionAllOf', function() {
       // uncomment below and update the code to test KafkaConnectionAllOf
-      //var instane = new @CompetitionlabsJavascriptSdk.KafkaConnectionAllOf();
-      //expect(instance).to.be.a(@CompetitionlabsJavascriptSdk.KafkaConnectionAllOf);
+      //var instane = new CompetitionLabsApplicationServices.KafkaConnectionAllOf();
+      //expect(instance).to.be.a(CompetitionLabsApplicationServices.KafkaConnectionAllOf);
     });
 
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
-      //var instane = new @CompetitionlabsJavascriptSdk.KafkaConnectionAllOf();
+      //var instance = new CompetitionLabsApplicationServices.KafkaConnectionAllOf();
       //expect(instance).to.be();
     });
 
     it('should have the property brokers (base name: "brokers")', function() {
       // uncomment below and update the code to test the property brokers
-      //var instane = new @CompetitionlabsJavascriptSdk.KafkaConnectionAllOf();
+      //var instance = new CompetitionLabsApplicationServices.KafkaConnectionAllOf();
       //expect(instance).to.be();
     });
 
     it('should have the property groupId (base name: "groupId")', function() {
       // uncomment below and update the code to test the property groupId
-      //var instane = new @CompetitionlabsJavascriptSdk.KafkaConnectionAllOf();
+      //var instance = new CompetitionLabsApplicationServices.KafkaConnectionAllOf();
       //expect(instance).to.be();
     });
 
     it('should have the property topic (base name: "topic")', function() {
       // uncomment below and update the code to test the property topic
-      //var instane = new @CompetitionlabsJavascriptSdk.KafkaConnectionAllOf();
+      //var instance = new CompetitionLabsApplicationServices.KafkaConnectionAllOf();
       //expect(instance).to.be();
     });
 
     it('should have the property lastKnownStatus (base name: "lastKnownStatus")', function() {
       // uncomment below and update the code to test the property lastKnownStatus
-      //var instane = new @CompetitionlabsJavascriptSdk.KafkaConnectionAllOf();
+      //var instance = new CompetitionLabsApplicationServices.KafkaConnectionAllOf();
       //expect(instance).to.be();
     });
 
     it('should have the property lastKnownStatusCode (base name: "lastKnownStatusCode")', function() {
       // uncomment below and update the code to test the property lastKnownStatusCode
-      //var instane = new @CompetitionlabsJavascriptSdk.KafkaConnectionAllOf();
+      //var instance = new CompetitionLabsApplicationServices.KafkaConnectionAllOf();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property transformerId (base name: "transformerId")', function() {
+      // uncomment below and update the code to test the property transformerId
+      //var instance = new CompetitionLabsApplicationServices.KafkaConnectionAllOf();
       //expect(instance).to.be();
     });
 

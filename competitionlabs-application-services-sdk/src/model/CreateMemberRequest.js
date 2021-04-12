@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -12,24 +12,29 @@
  */
 
 import ApiClient from '../ApiClient';
+import CreateOptParamModels from './CreateOptParamModels';
+import MemberAllOf from './MemberAllOf';
 import MemberType from './MemberType';
 import Metadata from './Metadata';
 
 /**
  * The CreateMemberRequest model module.
  * @module model/CreateMemberRequest
- * @version 1.0.5
+ * @version 1.0.0
  */
 class CreateMemberRequest {
     /**
      * Constructs a new <code>CreateMemberRequest</code>.
      * @alias module:model/CreateMemberRequest
+     * @implements module:model/CreateOptParamModels
+     * @implements module:model/MemberAllOf
+     * @param name {String} The name of the member that is used on leader boards and public displays
      * @param memberRefId {String} The reference to this member in your system
      * @param memberType {module:model/MemberType} 
      */
-    constructor(memberRefId, memberType) { 
-        
-        CreateMemberRequest.initialize(this, memberRefId, memberType);
+    constructor(name, memberRefId, memberType) { 
+        CreateOptParamModels.initialize(this);MemberAllOf.initialize(this, name, memberRefId, memberType);
+        CreateMemberRequest.initialize(this, name, memberRefId, memberType);
     }
 
     /**
@@ -37,46 +42,10 @@ class CreateMemberRequest {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, memberRefId, memberType) { 
+    static initialize(obj, name, memberRefId, memberType) { 
+        obj['name'] = name;
         obj['memberRefId'] = memberRefId;
         obj['memberType'] = memberType;
-    }
-
-    /**
-    * Constructs a full object with all available fields.
-    */
-    model(){
-        var obj = {};
-
-        obj['name'] = null;
-        obj['memberRefId'] = null;
-        obj['memberType'] = new MemberType().model();
-        obj['groups'] = [null];
-        obj['metadata'] = [new Metadata().model()];
-
-        return obj;
-    }
-
-    /**
-    * Constructs a full object Map for all available fields.
-    */
-    modelMap(){
-        var obj = {
-            "fields": {},
-            "requiredFields": {}
-        };
-
-        obj["fields"]['name'] = { "type": 'String', "system": false };
-        obj["fields"]['memberRefId'] = { "type": 'String', "system": false };
-        obj["fields"]['memberType'] = new MemberType().modelMap();
-        obj["fields"]['groups'] = [{ "type": 'String', "system": false }];
-        obj["fields"]['metadata'] = [new Metadata().modelMap()];
-
-        
-        obj["requiredFields"]['memberRefId'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['memberType'] = new MemberType().modelMap();
-
-        return obj;
     }
 
     /**
@@ -89,7 +58,18 @@ class CreateMemberRequest {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new CreateMemberRequest();
+            CreateOptParamModels.constructFromObject(data, obj);
+            MemberAllOf.constructFromObject(data, obj);
 
+            if (data.hasOwnProperty('customFields')) {
+                obj['customFields'] = ApiClient.convertToType(data['customFields'], ['String']);
+            }
+            if (data.hasOwnProperty('tags')) {
+                obj['tags'] = ApiClient.convertToType(data['tags'], ['String']);
+            }
+            if (data.hasOwnProperty('metadata')) {
+                obj['metadata'] = ApiClient.convertToType(data['metadata'], [Metadata]);
+            }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
@@ -99,11 +79,8 @@ class CreateMemberRequest {
             if (data.hasOwnProperty('memberType')) {
                 obj['memberType'] = MemberType.constructFromObject(data['memberType']);
             }
-            if (data.hasOwnProperty('groups')) {
-                obj['groups'] = ApiClient.convertToType(data['groups'], ['String']);
-            }
-            if (data.hasOwnProperty('metadata')) {
-                obj['metadata'] = ApiClient.convertToType(data['metadata'], [Metadata]);
+            if (data.hasOwnProperty('teamMembers')) {
+                obj['teamMembers'] = ApiClient.convertToType(data['teamMembers'], ['String']);
             }
         }
         return obj;
@@ -111,6 +88,23 @@ class CreateMemberRequest {
 
 
 }
+
+/**
+ * A list of id's used to add cutom fields
+ * @member {Array.<String>} customFields
+ */
+CreateMemberRequest.prototype['customFields'] = undefined;
+
+/**
+ * A list of id's used to tag models
+ * @member {Array.<String>} tags
+ */
+CreateMemberRequest.prototype['tags'] = undefined;
+
+/**
+ * @member {Array.<module:model/Metadata>} metadata
+ */
+CreateMemberRequest.prototype['metadata'] = undefined;
 
 /**
  * The name of the member that is used on leader boards and public displays
@@ -130,17 +124,47 @@ CreateMemberRequest.prototype['memberRefId'] = undefined;
 CreateMemberRequest.prototype['memberType'] = undefined;
 
 /**
- * A list of Strings of groups that the member belongs to. It could be marketing segments or social friend groups
- * @member {Array.<String>} groups
+ * A social group like Guilds
+ * @member {Array.<String>} teamMembers
  */
-CreateMemberRequest.prototype['groups'] = undefined;
+CreateMemberRequest.prototype['teamMembers'] = undefined;
 
+
+// Implement CreateOptParamModels interface:
+/**
+ * A list of id's used to add cutom fields
+ * @member {Array.<String>} customFields
+ */
+CreateOptParamModels.prototype['customFields'] = undefined;
+/**
+ * A list of id's used to tag models
+ * @member {Array.<String>} tags
+ */
+CreateOptParamModels.prototype['tags'] = undefined;
 /**
  * @member {Array.<module:model/Metadata>} metadata
  */
-CreateMemberRequest.prototype['metadata'] = undefined;
-
-
+CreateOptParamModels.prototype['metadata'] = undefined;
+// Implement MemberAllOf interface:
+/**
+ * The name of the member that is used on leader boards and public displays
+ * @member {String} name
+ */
+MemberAllOf.prototype['name'] = undefined;
+/**
+ * The reference to this member in your system
+ * @member {String} memberRefId
+ */
+MemberAllOf.prototype['memberRefId'] = undefined;
+/**
+ * @member {module:model/MemberType} memberType
+ */
+MemberAllOf.prototype['memberType'] = undefined;
+/**
+ * A social group like Guilds
+ * @member {Array.<String>} teamMembers
+ */
+MemberAllOf.prototype['teamMembers'] = undefined;
 
 
 

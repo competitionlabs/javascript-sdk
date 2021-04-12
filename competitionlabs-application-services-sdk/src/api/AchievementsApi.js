@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -18,6 +18,7 @@ import AchievementLiveStatusRequest from '../model/AchievementLiveStatusRequest'
 import AchievementResponse from '../model/AchievementResponse';
 import ApiResponse from '../model/ApiResponse';
 import AttachmentResponse from '../model/AttachmentResponse';
+import CloneAchievementResponse from '../model/CloneAchievementResponse';
 import CreateAchievementRequest from '../model/CreateAchievementRequest';
 import CreateAttachmentRequest from '../model/CreateAttachmentRequest';
 import MemberAchievementIssuedResponse from '../model/MemberAchievementIssuedResponse';
@@ -27,7 +28,7 @@ import UpdateAchievementRequest from '../model/UpdateAchievementRequest';
 /**
 * Achievements service.
 * @module api/AchievementsApi
-* @version 1.0.5
+* @version 1.0.0
 */
 export default class AchievementsApi {
 
@@ -53,27 +54,21 @@ export default class AchievementsApi {
 
     /**
      * Create Achievements in the CompetitionLabs database
-     * @param {String} spaceName This is the space name which is linked to the account
      * @param {Array.<module:model/CreateAchievementRequest>} body Create Achievements in the CompetitionLabs database
      * @param {Object} opts Optional parameters
      * @param {String} opts.X_API_KEY The admin API Key generated from CompetitionLabs back office
      * @param {module:api/AchievementsApi~createAchievementsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ApiResponse}
      */
-    createAchievements(spaceName, body, opts, callback) {
+    createAchievements(body, opts, callback) {
       opts = opts || {};
       let postBody = body;
-      // verify the required parameter 'spaceName' is set
-      if (spaceName === undefined || spaceName === null) {
-        throw new Error("Missing the required parameter 'spaceName' when calling createAchievements");
-      }
       // verify the required parameter 'body' is set
       if (body === undefined || body === null) {
         throw new Error("Missing the required parameter 'body' when calling createAchievements");
       }
 
       let pathParams = {
-        'spaceName': spaceName
       };
       let queryParams = {
       };
@@ -83,12 +78,12 @@ export default class AchievementsApi {
       let formParams = {
       };
 
-      let authNames = ['adminApiKey'];
+      let authNames = ['AdminApiKey', 'OAuth2'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = ApiResponse;
       return this.apiClient.callApi(
-        '/achievements/{spaceName}', 'POST',
+        '/achievements', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
@@ -104,23 +99,17 @@ export default class AchievementsApi {
 
     /**
      * Delete Achievements for a given identifier specified
-     * @param {String} spaceName This is the space name which is linked to the account
      * @param {Object} opts Optional parameters
      * @param {String} opts.X_API_KEY The admin API Key generated from CompetitionLabs back office
      * @param {Array.<String>} opts.id The unique identifiers of the resources
      * @param {module:api/AchievementsApi~deleteAchievementsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ApiResponse}
      */
-    deleteAchievements(spaceName, opts, callback) {
+    deleteAchievements(opts, callback) {
       opts = opts || {};
       let postBody = null;
-      // verify the required parameter 'spaceName' is set
-      if (spaceName === undefined || spaceName === null) {
-        throw new Error("Missing the required parameter 'spaceName' when calling deleteAchievements");
-      }
 
       let pathParams = {
-        'spaceName': spaceName
       };
       let queryParams = {
         'id': this.apiClient.buildCollectionParam(opts['id'], 'multi')
@@ -131,12 +120,12 @@ export default class AchievementsApi {
       let formParams = {
       };
 
-      let authNames = ['adminApiKey'];
+      let authNames = ['AdminApiKey', 'OAuth2'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = ApiResponse;
       return this.apiClient.callApi(
-        '/achievements/{spaceName}', 'DELETE',
+        '/achievements', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
@@ -152,23 +141,17 @@ export default class AchievementsApi {
 
     /**
      * Delete Achievements from CompetitionLabs database by unique Achievements ID's or any other POST body parameters using the POST method
-     * @param {String} spaceName This is the space name which is linked to the account
      * @param {Object} opts Optional parameters
      * @param {String} opts.X_API_KEY The admin API Key generated from CompetitionLabs back office
      * @param {module:model/QueryRequest} opts.body Delete Achievements from CompetitionLabs database by unique Achievements ID's or any other Post body parameters using the POST method
      * @param {module:api/AchievementsApi~deleteAchievementsByQueryCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ApiResponse}
      */
-    deleteAchievementsByQuery(spaceName, opts, callback) {
+    deleteAchievementsByQuery(opts, callback) {
       opts = opts || {};
       let postBody = opts['body'];
-      // verify the required parameter 'spaceName' is set
-      if (spaceName === undefined || spaceName === null) {
-        throw new Error("Missing the required parameter 'spaceName' when calling deleteAchievementsByQuery");
-      }
 
       let pathParams = {
-        'spaceName': spaceName
       };
       let queryParams = {
       };
@@ -178,12 +161,12 @@ export default class AchievementsApi {
       let formParams = {
       };
 
-      let authNames = ['adminApiKey'];
+      let authNames = ['AdminApiKey', 'OAuth2'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = ApiResponse;
       return this.apiClient.callApi(
-        '/achievements/{spaceName}/delete', 'POST',
+        '/achievements/delete', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
@@ -200,7 +183,6 @@ export default class AchievementsApi {
     /**
      * NOT AVAILABLE IN CURRENT RELEASE
      * Returns a list of Icons. This assumes that icons have first been uploaded via a POST request or web console
-     * @param {String} spaceName This is the space name which is linked to the account
      * @param {Object} opts Optional parameters
      * @param {String} opts.X_API_KEY The admin API Key generated from CompetitionLabs back office
      * @param {Number} opts.limit Limit the returned total records found
@@ -208,16 +190,11 @@ export default class AchievementsApi {
      * @param {module:api/AchievementsApi~getAchievementIconListCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/AttachmentResponse}
      */
-    getAchievementIconList(spaceName, opts, callback) {
+    getAchievementIconList(opts, callback) {
       opts = opts || {};
       let postBody = null;
-      // verify the required parameter 'spaceName' is set
-      if (spaceName === undefined || spaceName === null) {
-        throw new Error("Missing the required parameter 'spaceName' when calling getAchievementIconList");
-      }
 
       let pathParams = {
-        'spaceName': spaceName
       };
       let queryParams = {
         '_limit': opts['limit'],
@@ -229,12 +206,58 @@ export default class AchievementsApi {
       let formParams = {
       };
 
-      let authNames = ['adminApiKey'];
+      let authNames = ['AdminApiKey', 'OAuth2'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = AttachmentResponse;
       return this.apiClient.callApi(
-        '/achievements/{spaceName}/icons', 'GET',
+        '/achievements/icons', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the getAchievementToClone operation.
+     * @callback module:api/AchievementsApi~getAchievementToCloneCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/CloneAchievementResponse} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Clones an Achievement for the identifier provided
+     * @param {String} id Unique identifier of the resource
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.X_API_KEY The admin API Key generated from CompetitionLabs back office
+     * @param {module:api/AchievementsApi~getAchievementToCloneCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/CloneAchievementResponse}
+     */
+    getAchievementToClone(id, opts, callback) {
+      opts = opts || {};
+      let postBody = null;
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling getAchievementToClone");
+      }
+
+      let pathParams = {
+        'id': id
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+        'X-API-KEY': opts['X_API_KEY']
+      };
+      let formParams = {
+      };
+
+      let authNames = ['AdminApiKey', 'OAuth2'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = CloneAchievementResponse;
+      return this.apiClient.callApi(
+        '/achievements/{id}/clone', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
@@ -250,7 +273,6 @@ export default class AchievementsApi {
 
     /**
      * Returns a list of Achievements. This assumes that achievements have first been uploaded via a POST request or web console
-     * @param {String} spaceName This is the space name which is linked to the account
      * @param {Object} opts Optional parameters
      * @param {String} opts.X_API_KEY The admin API Key generated from CompetitionLabs back office
      * @param {Array.<String>} opts.id The unique identifiers of the resources
@@ -259,16 +281,11 @@ export default class AchievementsApi {
      * @param {module:api/AchievementsApi~getAchievementsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/AchievementResponse}
      */
-    getAchievements(spaceName, opts, callback) {
+    getAchievements(opts, callback) {
       opts = opts || {};
       let postBody = null;
-      // verify the required parameter 'spaceName' is set
-      if (spaceName === undefined || spaceName === null) {
-        throw new Error("Missing the required parameter 'spaceName' when calling getAchievements");
-      }
 
       let pathParams = {
-        'spaceName': spaceName
       };
       let queryParams = {
         'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),
@@ -281,12 +298,12 @@ export default class AchievementsApi {
       let formParams = {
       };
 
-      let authNames = ['adminApiKey'];
+      let authNames = ['AdminApiKey', 'OAuth2'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = AchievementResponse;
       return this.apiClient.callApi(
-        '/achievements/{spaceName}', 'GET',
+        '/achievements', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
@@ -302,23 +319,17 @@ export default class AchievementsApi {
 
     /**
      * Retrieve Achievements from CompetitionLabs database by unique Achievements ID's or any other POST body parameters using the POST method
-     * @param {String} spaceName This is the space name which is linked to the account
      * @param {Object} opts Optional parameters
      * @param {String} opts.X_API_KEY The admin API Key generated from CompetitionLabs back office
      * @param {module:model/QueryRequest} opts.body Retrieve Achievements from CompetitionLabs database by unique Achievements ID's or any other Post body parameters using the POST method
      * @param {module:api/AchievementsApi~getAchievementsByQueryCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/AchievementResponse}
      */
-    getAchievementsByQuery(spaceName, opts, callback) {
+    getAchievementsByQuery(opts, callback) {
       opts = opts || {};
       let postBody = opts['body'];
-      // verify the required parameter 'spaceName' is set
-      if (spaceName === undefined || spaceName === null) {
-        throw new Error("Missing the required parameter 'spaceName' when calling getAchievementsByQuery");
-      }
 
       let pathParams = {
-        'spaceName': spaceName
       };
       let queryParams = {
       };
@@ -328,12 +339,12 @@ export default class AchievementsApi {
       let formParams = {
       };
 
-      let authNames = ['adminApiKey'];
+      let authNames = ['AdminApiKey', 'OAuth2'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = AchievementResponse;
       return this.apiClient.callApi(
-        '/achievements/{spaceName}/query', 'POST',
+        '/achievements/query', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
@@ -350,7 +361,6 @@ export default class AchievementsApi {
     /**
      * NOT AVAILABLE IN CURRENT RELEASE
      * Receive a list of Antecedent Achievements for the Achievement identified provided
-     * @param {String} spaceName This is the space name which is linked to the account
      * @param {String} id Unique identifier of the resource
      * @param {Object} opts Optional parameters
      * @param {String} opts.X_API_KEY The admin API Key generated from CompetitionLabs back office
@@ -359,20 +369,15 @@ export default class AchievementsApi {
      * @param {module:api/AchievementsApi~getAntecendentsForAchievementCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/AchievementResponse}
      */
-    getAntecendentsForAchievement(spaceName, id, opts, callback) {
+    getAntecendentsForAchievement(id, opts, callback) {
       opts = opts || {};
       let postBody = null;
-      // verify the required parameter 'spaceName' is set
-      if (spaceName === undefined || spaceName === null) {
-        throw new Error("Missing the required parameter 'spaceName' when calling getAntecendentsForAchievement");
-      }
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
         throw new Error("Missing the required parameter 'id' when calling getAntecendentsForAchievement");
       }
 
       let pathParams = {
-        'spaceName': spaceName,
         'id': id
       };
       let queryParams = {
@@ -385,12 +390,12 @@ export default class AchievementsApi {
       let formParams = {
       };
 
-      let authNames = ['adminApiKey'];
+      let authNames = ['AdminApiKey', 'OAuth2'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = AchievementResponse;
       return this.apiClient.callApi(
-        '/achievements/{spaceName}/{id}/antecedents', 'GET',
+        '/achievements/{id}/antecedents', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
@@ -407,7 +412,6 @@ export default class AchievementsApi {
     /**
      * NOT AVAILABLE IN CURRENT RELEASE
      * Receive a list of Descendent Achievements for the Achievement identified provided
-     * @param {String} spaceName This is the space name which is linked to the account
      * @param {String} id Unique identifier of the resource
      * @param {Object} opts Optional parameters
      * @param {String} opts.X_API_KEY The admin API Key generated from CompetitionLabs back office
@@ -416,20 +420,15 @@ export default class AchievementsApi {
      * @param {module:api/AchievementsApi~getDesendentsForAchievementCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/AchievementResponse}
      */
-    getDesendentsForAchievement(spaceName, id, opts, callback) {
+    getDesendentsForAchievement(id, opts, callback) {
       opts = opts || {};
       let postBody = null;
-      // verify the required parameter 'spaceName' is set
-      if (spaceName === undefined || spaceName === null) {
-        throw new Error("Missing the required parameter 'spaceName' when calling getDesendentsForAchievement");
-      }
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
         throw new Error("Missing the required parameter 'id' when calling getDesendentsForAchievement");
       }
 
       let pathParams = {
-        'spaceName': spaceName,
         'id': id
       };
       let queryParams = {
@@ -442,12 +441,12 @@ export default class AchievementsApi {
       let formParams = {
       };
 
-      let authNames = ['adminApiKey'];
+      let authNames = ['AdminApiKey', 'OAuth2'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = AchievementResponse;
       return this.apiClient.callApi(
-        '/achievements/{spaceName}/{id}/descendents', 'GET',
+        '/achievements/{id}/descendents', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
@@ -463,27 +462,21 @@ export default class AchievementsApi {
 
     /**
      * Receive a count of Issued Achievements by identifier provided
-     * @param {String} spaceName This is the space name which is linked to the account
      * @param {String} id Unique identifier of the resource
      * @param {Object} opts Optional parameters
      * @param {String} opts.X_API_KEY The admin API Key generated from CompetitionLabs back office
      * @param {module:api/AchievementsApi~getIssuedAchievementsCountByIdCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/AchievementIssuedResponse}
      */
-    getIssuedAchievementsCountById(spaceName, id, opts, callback) {
+    getIssuedAchievementsCountById(id, opts, callback) {
       opts = opts || {};
       let postBody = null;
-      // verify the required parameter 'spaceName' is set
-      if (spaceName === undefined || spaceName === null) {
-        throw new Error("Missing the required parameter 'spaceName' when calling getIssuedAchievementsCountById");
-      }
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
         throw new Error("Missing the required parameter 'id' when calling getIssuedAchievementsCountById");
       }
 
       let pathParams = {
-        'spaceName': spaceName,
         'id': id
       };
       let queryParams = {
@@ -494,12 +487,12 @@ export default class AchievementsApi {
       let formParams = {
       };
 
-      let authNames = ['adminApiKey'];
+      let authNames = ['AdminApiKey', 'OAuth2'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = AchievementIssuedResponse;
       return this.apiClient.callApi(
-        '/achievements/{spaceName}/{id}/issued', 'GET',
+        '/achievements/{id}/issued', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
@@ -515,7 +508,6 @@ export default class AchievementsApi {
 
     /**
      * Receive a list of members that had an Achievement issued for the Achievement identified provided
-     * @param {String} spaceName This is the space name which is linked to the account
      * @param {String} id Unique identifier of the resource
      * @param {Object} opts Optional parameters
      * @param {String} opts.X_API_KEY The admin API Key generated from CompetitionLabs back office
@@ -525,20 +517,15 @@ export default class AchievementsApi {
      * @param {module:api/AchievementsApi~getMembersAchievementsDetailsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/MemberAchievementIssuedResponse}
      */
-    getMembersAchievementsDetails(spaceName, id, opts, callback) {
+    getMembersAchievementsDetails(id, opts, callback) {
       opts = opts || {};
       let postBody = null;
-      // verify the required parameter 'spaceName' is set
-      if (spaceName === undefined || spaceName === null) {
-        throw new Error("Missing the required parameter 'spaceName' when calling getMembersAchievementsDetails");
-      }
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
         throw new Error("Missing the required parameter 'id' when calling getMembersAchievementsDetails");
       }
 
       let pathParams = {
-        'spaceName': spaceName,
         'id': id
       };
       let queryParams = {
@@ -552,12 +539,12 @@ export default class AchievementsApi {
       let formParams = {
       };
 
-      let authNames = ['adminApiKey'];
+      let authNames = ['AdminApiKey', 'OAuth2'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = MemberAchievementIssuedResponse;
       return this.apiClient.callApi(
-        '/achievements/{spaceName}/{id}/members', 'GET',
+        '/achievements/{id}/members', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
@@ -573,27 +560,21 @@ export default class AchievementsApi {
 
     /**
      * Update existing Achievements in the CompetitionLabs database
-     * @param {String} spaceName This is the space name which is linked to the account
      * @param {Array.<module:model/UpdateAchievementRequest>} body Update Achievements in the CompetitionLabs database. * An Achievement Id must exist in the CompetitionLabs database for update
      * @param {Object} opts Optional parameters
      * @param {String} opts.X_API_KEY The admin API Key generated from CompetitionLabs back office
      * @param {module:api/AchievementsApi~updateAchievementsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ApiResponse}
      */
-    updateAchievements(spaceName, body, opts, callback) {
+    updateAchievements(body, opts, callback) {
       opts = opts || {};
       let postBody = body;
-      // verify the required parameter 'spaceName' is set
-      if (spaceName === undefined || spaceName === null) {
-        throw new Error("Missing the required parameter 'spaceName' when calling updateAchievements");
-      }
       // verify the required parameter 'body' is set
       if (body === undefined || body === null) {
         throw new Error("Missing the required parameter 'body' when calling updateAchievements");
       }
 
       let pathParams = {
-        'spaceName': spaceName
       };
       let queryParams = {
       };
@@ -603,12 +584,12 @@ export default class AchievementsApi {
       let formParams = {
       };
 
-      let authNames = ['adminApiKey'];
+      let authNames = ['AdminApiKey', 'OAuth2'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = ApiResponse;
       return this.apiClient.callApi(
-        '/achievements/{spaceName}', 'PUT',
+        '/achievements', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
@@ -624,23 +605,17 @@ export default class AchievementsApi {
 
     /**
      * Manage the state of achievement - Draft, Live, Archived
-     * @param {String} spaceName This is the space name which is linked to the account
      * @param {Object} opts Optional parameters
      * @param {String} opts.X_API_KEY The admin API Key generated from CompetitionLabs back office
      * @param {Array.<module:model/AchievementLiveStatusRequest>} opts.body Updates the state of the Achievement
      * @param {module:api/AchievementsApi~updateAchievementsLiveStatusCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ApiResponse}
      */
-    updateAchievementsLiveStatus(spaceName, opts, callback) {
+    updateAchievementsLiveStatus(opts, callback) {
       opts = opts || {};
       let postBody = opts['body'];
-      // verify the required parameter 'spaceName' is set
-      if (spaceName === undefined || spaceName === null) {
-        throw new Error("Missing the required parameter 'spaceName' when calling updateAchievementsLiveStatus");
-      }
 
       let pathParams = {
-        'spaceName': spaceName
       };
       let queryParams = {
       };
@@ -650,12 +625,12 @@ export default class AchievementsApi {
       let formParams = {
       };
 
-      let authNames = ['adminApiKey'];
+      let authNames = ['AdminApiKey', 'OAuth2'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = ApiResponse;
       return this.apiClient.callApi(
-        '/achievements/{spaceName}/state', 'PUT',
+        '/achievements/state', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
@@ -672,23 +647,17 @@ export default class AchievementsApi {
     /**
      * NOT AVAILABLE IN CURRENT RELEASE
      * Upload Achievements Icons into the CompetitionLabs database
-     * @param {String} spaceName This is the space name which is linked to the account
      * @param {Object} opts Optional parameters
      * @param {String} opts.X_API_KEY The admin API Key generated from CompetitionLabs back office
      * @param {Array.<module:model/CreateAttachmentRequest>} opts.body Upload Achievements Icons into the CompetitionLabs database
      * @param {module:api/AchievementsApi~uploadAchievementsIconCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ApiResponse}
      */
-    uploadAchievementsIcon(spaceName, opts, callback) {
+    uploadAchievementsIcon(opts, callback) {
       opts = opts || {};
       let postBody = opts['body'];
-      // verify the required parameter 'spaceName' is set
-      if (spaceName === undefined || spaceName === null) {
-        throw new Error("Missing the required parameter 'spaceName' when calling uploadAchievementsIcon");
-      }
 
       let pathParams = {
-        'spaceName': spaceName
       };
       let queryParams = {
       };
@@ -698,12 +667,12 @@ export default class AchievementsApi {
       let formParams = {
       };
 
-      let authNames = ['adminApiKey'];
+      let authNames = ['AdminApiKey', 'OAuth2'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = ApiResponse;
       return this.apiClient.callApi(
-        '/achievements/{spaceName}/icons', 'POST',
+        '/achievements/icons', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );

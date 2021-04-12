@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -12,22 +12,24 @@
  */
 
 import ApiClient from '../ApiClient';
-import Metadata from './Metadata';
 import UnitOfMeasureType from './UnitOfMeasureType';
 
 /**
  * The UpdateUnitOfMeasureRequestAllOf model module.
  * @module model/UpdateUnitOfMeasureRequestAllOf
- * @version 1.0.5
+ * @version 1.0.0
  */
 class UpdateUnitOfMeasureRequestAllOf {
     /**
      * Constructs a new <code>UpdateUnitOfMeasureRequestAllOf</code>.
      * @alias module:model/UpdateUnitOfMeasureRequestAllOf
+     * @param name {String} The name of a unit of measure
+     * @param multiplier {Number} Is used to multiply the value from the standardised one that is being used
+     * @param unitOfMeasureType {module:model/UnitOfMeasureType} 
      */
-    constructor() { 
+    constructor(name, multiplier, unitOfMeasureType) { 
         
-        UpdateUnitOfMeasureRequestAllOf.initialize(this);
+        UpdateUnitOfMeasureRequestAllOf.initialize(this, name, multiplier, unitOfMeasureType);
     }
 
     /**
@@ -35,48 +37,10 @@ class UpdateUnitOfMeasureRequestAllOf {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj) { 
-    }
-
-    /**
-    * Constructs a full object with all available fields.
-    */
-    model(){
-        var obj = {};
-
-        obj['name'] = null;
-        obj['description'] = null;
-        obj['key'] = null;
-        obj['isoCode'] = null;
-        obj['symbol'] = null;
-        obj['multiplier'] = null;
-        obj['unitOfMeasureType'] = new UnitOfMeasureType().model();
-        obj['metadata'] = [new Metadata().model()];
-
-        return obj;
-    }
-
-    /**
-    * Constructs a full object Map for all available fields.
-    */
-    modelMap(){
-        var obj = {
-            "fields": {},
-            "requiredFields": {}
-        };
-
-        obj["fields"]['name'] = { "type": 'String', "system": false };
-        obj["fields"]['description'] = { "type": 'String', "system": false };
-        obj["fields"]['key'] = { "type": 'String', "system": false };
-        obj["fields"]['isoCode'] = { "type": 'String', "system": false };
-        obj["fields"]['symbol'] = { "type": 'String', "system": false };
-        obj["fields"]['multiplier'] = { "type": 'Number', "system": false };
-        obj["fields"]['unitOfMeasureType'] = new UnitOfMeasureType().modelMap();
-        obj["fields"]['metadata'] = [new Metadata().modelMap()];
-
-        
-
-        return obj;
+    static initialize(obj, name, multiplier, unitOfMeasureType) { 
+        obj['name'] = name;
+        obj['multiplier'] = multiplier;
+        obj['unitOfMeasureType'] = unitOfMeasureType;
     }
 
     /**
@@ -96,9 +60,6 @@ class UpdateUnitOfMeasureRequestAllOf {
             if (data.hasOwnProperty('description')) {
                 obj['description'] = ApiClient.convertToType(data['description'], 'String');
             }
-            if (data.hasOwnProperty('key')) {
-                obj['key'] = ApiClient.convertToType(data['key'], 'String');
-            }
             if (data.hasOwnProperty('isoCode')) {
                 obj['isoCode'] = ApiClient.convertToType(data['isoCode'], 'String');
             }
@@ -110,9 +71,6 @@ class UpdateUnitOfMeasureRequestAllOf {
             }
             if (data.hasOwnProperty('unitOfMeasureType')) {
                 obj['unitOfMeasureType'] = UnitOfMeasureType.constructFromObject(data['unitOfMeasureType']);
-            }
-            if (data.hasOwnProperty('metadata')) {
-                obj['metadata'] = ApiClient.convertToType(data['metadata'], [Metadata]);
             }
         }
         return obj;
@@ -132,12 +90,6 @@ UpdateUnitOfMeasureRequestAllOf.prototype['name'] = undefined;
  * @member {String} description
  */
 UpdateUnitOfMeasureRequestAllOf.prototype['description'] = undefined;
-
-/**
- * The reference to the unit of measure in your system
- * @member {String} key
- */
-UpdateUnitOfMeasureRequestAllOf.prototype['key'] = undefined;
 
 /**
  * An alphabetical or numerical code to identify a unit of measure
@@ -161,11 +113,6 @@ UpdateUnitOfMeasureRequestAllOf.prototype['multiplier'] = undefined;
  * @member {module:model/UnitOfMeasureType} unitOfMeasureType
  */
 UpdateUnitOfMeasureRequestAllOf.prototype['unitOfMeasureType'] = undefined;
-
-/**
- * @member {Array.<module:model/Metadata>} metadata
- */
-UpdateUnitOfMeasureRequestAllOf.prototype['metadata'] = undefined;
 
 
 

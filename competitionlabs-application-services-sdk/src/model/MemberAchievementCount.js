@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -18,7 +18,7 @@ import MemberAchievementCountAllOf from './MemberAchievementCountAllOf';
 /**
  * The MemberAchievementCount model module.
  * @module model/MemberAchievementCount
- * @version 1.0.5
+ * @version 1.0.0
  */
 class MemberAchievementCount {
     /**
@@ -50,49 +50,6 @@ class MemberAchievementCount {
         obj['memberId'] = memberId;
         obj['memberRefId'] = memberRefId;
         obj['latestIssuedTimestamp'] = latestIssuedTimestamp;
-    }
-
-    /**
-    * Constructs a full object with all available fields.
-    */
-    model(){
-        var obj = {};
-
-        obj['entityId'] = null;
-        obj['countValue'] = null;
-        obj['name'] = null;
-        obj['memberId'] = null;
-        obj['memberRefId'] = null;
-        obj['latestIssuedTimestamp'] = null;
-
-        return obj;
-    }
-
-    /**
-    * Constructs a full object Map for all available fields.
-    */
-    modelMap(){
-        var obj = {
-            "fields": {},
-            "requiredFields": {}
-        };
-
-        obj["fields"]['entityId'] = { "type": 'String', "system": false };
-        obj["fields"]['countValue'] = { "type": 'Number', "system": false };
-        obj["fields"]['name'] = { "type": 'String', "system": false };
-        obj["fields"]['memberId'] = { "type": 'String', "system": false };
-        obj["fields"]['memberRefId'] = { "type": 'String', "system": false };
-        obj["fields"]['latestIssuedTimestamp'] = { "type": 'Date', "system": false };
-
-        
-        obj["requiredFields"]['entityId'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['countValue'] = { "type": 'Number', "system": false };
-        obj["requiredFields"]['name'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['memberId'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['memberRefId'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['latestIssuedTimestamp'] = { "type": 'Date', "system": false };
-
-        return obj;
     }
 
     /**

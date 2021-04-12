@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.@CompetitionlabsJavascriptSdk);
+    factory(root.expect, root.CompetitionLabsApplicationServices);
   }
-}(this, function(expect, @CompetitionlabsJavascriptSdk) {
+}(this, function(expect, CompetitionLabsApplicationServices) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new @CompetitionlabsJavascriptSdk.CreateLanguageRequest();
+    instance = new CompetitionLabsApplicationServices.CreateLanguageRequest();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,19 +50,31 @@
   describe('CreateLanguageRequest', function() {
     it('should create an instance of CreateLanguageRequest', function() {
       // uncomment below and update the code to test CreateLanguageRequest
-      //var instane = new @CompetitionlabsJavascriptSdk.CreateLanguageRequest();
-      //expect(instance).to.be.a(@CompetitionlabsJavascriptSdk.CreateLanguageRequest);
+      //var instane = new CompetitionLabsApplicationServices.CreateLanguageRequest();
+      //expect(instance).to.be.a(CompetitionLabsApplicationServices.CreateLanguageRequest);
     });
 
-    it('should have the property languageKey (base name: "languageKey")', function() {
-      // uncomment below and update the code to test the property languageKey
-      //var instane = new @CompetitionlabsJavascriptSdk.CreateLanguageRequest();
+    it('should have the property customFields (base name: "customFields")', function() {
+      // uncomment below and update the code to test the property customFields
+      //var instance = new CompetitionLabsApplicationServices.CreateLanguageRequest();
       //expect(instance).to.be();
     });
 
-    it('should have the property references (base name: "references")', function() {
-      // uncomment below and update the code to test the property references
-      //var instane = new @CompetitionlabsJavascriptSdk.CreateLanguageRequest();
+    it('should have the property tags (base name: "tags")', function() {
+      // uncomment below and update the code to test the property tags
+      //var instance = new CompetitionLabsApplicationServices.CreateLanguageRequest();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property metadata (base name: "metadata")', function() {
+      // uncomment below and update the code to test the property metadata
+      //var instance = new CompetitionLabsApplicationServices.CreateLanguageRequest();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property key (base name: "key")', function() {
+      // uncomment below and update the code to test the property key
+      //var instance = new CompetitionLabsApplicationServices.CreateLanguageRequest();
       //expect(instance).to.be();
     });
 

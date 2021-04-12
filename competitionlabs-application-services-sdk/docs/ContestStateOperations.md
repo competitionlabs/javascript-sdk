@@ -1,4 +1,4 @@
-# @CompetitionlabsApplicationServicesSdk.ContestStateOperations
+# CompetitionLabsApplicationServices.ContestStateOperations
 
 ## Enum
 

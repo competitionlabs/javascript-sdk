@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -12,26 +12,38 @@
  */
 
 import ApiClient from '../ApiClient';
+import Metadata from './Metadata';
 import UpdateConnectionRequest from './UpdateConnectionRequest';
+import UpdateOptParamModels from './UpdateOptParamModels';
 import UpdateRabbitMqConnectionRequestAllOf from './UpdateRabbitMqConnectionRequestAllOf';
 
 /**
  * The UpdateRabbitMqConnectionRequest model module.
  * @module model/UpdateRabbitMqConnectionRequest
- * @version 1.0.5
+ * @version 1.0.0
  */
 class UpdateRabbitMqConnectionRequest {
     /**
      * Constructs a new <code>UpdateRabbitMqConnectionRequest</code>.
      * @alias module:model/UpdateRabbitMqConnectionRequest
      * @implements module:model/UpdateConnectionRequest
+     * @implements module:model/UpdateOptParamModels
      * @implements module:model/UpdateRabbitMqConnectionRequestAllOf
      * @param id {String} A unique system generated identifier
      * @param objectType {String} The type of consumer to create
+     * @param name {String} The name of the consumer
+     * @param uri {String} The SQS endpoint.
+     * @param virtualHost {String} The virtual host of the rabbitmq broker
+     * @param port {Number} The port number on which consumer will connect on rabbitmq broker
+     * @param userName {String} Consumer username for authentication
+     * @param password {String} Consumer password for authentication
+     * @param queueName {String} Name of the queue
+     * @param transformerId {String} The id of the transformer to handle incoming messages
+     * @param constraints {Array.<String>} Additional constraints
      */
-    constructor(id, objectType) { 
-        UpdateConnectionRequest.initialize(this, id, objectType);UpdateRabbitMqConnectionRequestAllOf.initialize(this);
-        UpdateRabbitMqConnectionRequest.initialize(this, id, objectType);
+    constructor(id, objectType, name, uri, virtualHost, port, userName, password, queueName, transformerId, constraints) { 
+        UpdateConnectionRequest.initialize(this, id, objectType);UpdateOptParamModels.initialize(this);UpdateRabbitMqConnectionRequestAllOf.initialize(this, name, uri, virtualHost, port, userName, password, queueName, transformerId, constraints);
+        UpdateRabbitMqConnectionRequest.initialize(this, id, objectType, name, uri, virtualHost, port, userName, password, queueName, transformerId, constraints);
     }
 
     /**
@@ -39,62 +51,18 @@ class UpdateRabbitMqConnectionRequest {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, id, objectType) { 
+    static initialize(obj, id, objectType, name, uri, virtualHost, port, userName, password, queueName, transformerId, constraints) { 
         obj['id'] = id;
         obj['objectType'] = objectType;
-    }
-
-    /**
-    * Constructs a full object with all available fields.
-    */
-    model(){
-        var obj = {};
-
-        obj['id'] = null;
-        obj['objectType'] = null;
-        obj['name'] = null;
-        obj['uri'] = null;
-        obj['virtualHost'] = null;
-        obj['port'] = null;
-        obj['useSsl'] = null;
-        obj['username'] = null;
-        obj['password'] = null;
-        obj['queueName'] = null;
-        obj['exchange'] = null;
-        obj['routingKey'] = null;
-        obj['transformerId'] = null;
-
-        return obj;
-    }
-
-    /**
-    * Constructs a full object Map for all available fields.
-    */
-    modelMap(){
-        var obj = {
-            "fields": {},
-            "requiredFields": {}
-        };
-
-        obj["fields"]['id'] = { "type": 'String', "system": true };
-        obj["fields"]['objectType'] = { "type": 'String', "system": false };
-        obj["fields"]['name'] = { "type": 'String', "system": false };
-        obj["fields"]['uri'] = { "type": 'String', "system": false };
-        obj["fields"]['virtualHost'] = { "type": 'String', "system": false };
-        obj["fields"]['port'] = { "type": 'Number', "system": false };
-        obj["fields"]['useSsl'] = { "type": 'Boolean', "system": false };
-        obj["fields"]['username'] = { "type": 'String', "system": false };
-        obj["fields"]['password'] = { "type": 'String', "system": false };
-        obj["fields"]['queueName'] = { "type": 'String', "system": false };
-        obj["fields"]['exchange'] = { "type": 'String', "system": false };
-        obj["fields"]['routingKey'] = { "type": 'String', "system": false };
-        obj["fields"]['transformerId'] = { "type": 'String', "system": false };
-
-        
-        obj["requiredFields"]['id'] = { "type": 'String', "system": true };
-        obj["requiredFields"]['objectType'] = { "type": 'String', "system": false };
-
-        return obj;
+        obj['name'] = name;
+        obj['uri'] = uri;
+        obj['virtualHost'] = virtualHost;
+        obj['port'] = port;
+        obj['userName'] = userName;
+        obj['password'] = password;
+        obj['queueName'] = queueName;
+        obj['transformerId'] = transformerId;
+        obj['constraints'] = constraints;
     }
 
     /**
@@ -108,6 +76,7 @@ class UpdateRabbitMqConnectionRequest {
         if (data) {
             obj = obj || new UpdateRabbitMqConnectionRequest();
             UpdateConnectionRequest.constructFromObject(data, obj);
+            UpdateOptParamModels.constructFromObject(data, obj);
             UpdateRabbitMqConnectionRequestAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('id')) {
@@ -115,6 +84,15 @@ class UpdateRabbitMqConnectionRequest {
             }
             if (data.hasOwnProperty('objectType')) {
                 obj['objectType'] = ApiClient.convertToType(data['objectType'], 'String');
+            }
+            if (data.hasOwnProperty('customFields')) {
+                obj['customFields'] = ApiClient.convertToType(data['customFields'], ['String']);
+            }
+            if (data.hasOwnProperty('tags')) {
+                obj['tags'] = ApiClient.convertToType(data['tags'], ['String']);
+            }
+            if (data.hasOwnProperty('metadata')) {
+                obj['metadata'] = ApiClient.convertToType(data['metadata'], [Metadata]);
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
@@ -128,11 +106,8 @@ class UpdateRabbitMqConnectionRequest {
             if (data.hasOwnProperty('port')) {
                 obj['port'] = ApiClient.convertToType(data['port'], 'Number');
             }
-            if (data.hasOwnProperty('useSsl')) {
-                obj['useSsl'] = ApiClient.convertToType(data['useSsl'], 'Boolean');
-            }
-            if (data.hasOwnProperty('username')) {
-                obj['username'] = ApiClient.convertToType(data['username'], 'String');
+            if (data.hasOwnProperty('userName')) {
+                obj['userName'] = ApiClient.convertToType(data['userName'], 'String');
             }
             if (data.hasOwnProperty('password')) {
                 obj['password'] = ApiClient.convertToType(data['password'], 'String');
@@ -148,6 +123,9 @@ class UpdateRabbitMqConnectionRequest {
             }
             if (data.hasOwnProperty('transformerId')) {
                 obj['transformerId'] = ApiClient.convertToType(data['transformerId'], 'String');
+            }
+            if (data.hasOwnProperty('constraints')) {
+                obj['constraints'] = ApiClient.convertToType(data['constraints'], ['String']);
             }
         }
         return obj;
@@ -167,6 +145,23 @@ UpdateRabbitMqConnectionRequest.prototype['id'] = undefined;
  * @member {String} objectType
  */
 UpdateRabbitMqConnectionRequest.prototype['objectType'] = undefined;
+
+/**
+ * A list of id's used to add cutom fields
+ * @member {Array.<String>} customFields
+ */
+UpdateRabbitMqConnectionRequest.prototype['customFields'] = undefined;
+
+/**
+ * A list of id's used to tag models
+ * @member {Array.<String>} tags
+ */
+UpdateRabbitMqConnectionRequest.prototype['tags'] = undefined;
+
+/**
+ * @member {Array.<module:model/Metadata>} metadata
+ */
+UpdateRabbitMqConnectionRequest.prototype['metadata'] = undefined;
 
 /**
  * The name of the consumer
@@ -193,16 +188,10 @@ UpdateRabbitMqConnectionRequest.prototype['virtualHost'] = undefined;
 UpdateRabbitMqConnectionRequest.prototype['port'] = undefined;
 
 /**
- * Whether the connection is SSL enabled or not
- * @member {Boolean} useSsl
- */
-UpdateRabbitMqConnectionRequest.prototype['useSsl'] = undefined;
-
-/**
  * Consumer username for authentication
- * @member {String} username
+ * @member {String} userName
  */
-UpdateRabbitMqConnectionRequest.prototype['username'] = undefined;
+UpdateRabbitMqConnectionRequest.prototype['userName'] = undefined;
 
 /**
  * Consumer password for authentication
@@ -234,6 +223,12 @@ UpdateRabbitMqConnectionRequest.prototype['routingKey'] = undefined;
  */
 UpdateRabbitMqConnectionRequest.prototype['transformerId'] = undefined;
 
+/**
+ * Additional constraints
+ * @member {Array.<String>} constraints
+ */
+UpdateRabbitMqConnectionRequest.prototype['constraints'] = undefined;
+
 
 // Implement UpdateConnectionRequest interface:
 /**
@@ -246,6 +241,21 @@ UpdateConnectionRequest.prototype['id'] = undefined;
  * @member {String} objectType
  */
 UpdateConnectionRequest.prototype['objectType'] = undefined;
+// Implement UpdateOptParamModels interface:
+/**
+ * A list of id's used to add cutom fields
+ * @member {Array.<String>} customFields
+ */
+UpdateOptParamModels.prototype['customFields'] = undefined;
+/**
+ * A list of id's used to tag models
+ * @member {Array.<String>} tags
+ */
+UpdateOptParamModels.prototype['tags'] = undefined;
+/**
+ * @member {Array.<module:model/Metadata>} metadata
+ */
+UpdateOptParamModels.prototype['metadata'] = undefined;
 // Implement UpdateRabbitMqConnectionRequestAllOf interface:
 /**
  * The name of the consumer
@@ -268,15 +278,10 @@ UpdateRabbitMqConnectionRequestAllOf.prototype['virtualHost'] = undefined;
  */
 UpdateRabbitMqConnectionRequestAllOf.prototype['port'] = undefined;
 /**
- * Whether the connection is SSL enabled or not
- * @member {Boolean} useSsl
- */
-UpdateRabbitMqConnectionRequestAllOf.prototype['useSsl'] = undefined;
-/**
  * Consumer username for authentication
- * @member {String} username
+ * @member {String} userName
  */
-UpdateRabbitMqConnectionRequestAllOf.prototype['username'] = undefined;
+UpdateRabbitMqConnectionRequestAllOf.prototype['userName'] = undefined;
 /**
  * Consumer password for authentication
  * @member {String} password
@@ -302,6 +307,11 @@ UpdateRabbitMqConnectionRequestAllOf.prototype['routingKey'] = undefined;
  * @member {String} transformerId
  */
 UpdateRabbitMqConnectionRequestAllOf.prototype['transformerId'] = undefined;
+/**
+ * Additional constraints
+ * @member {Array.<String>} constraints
+ */
+UpdateRabbitMqConnectionRequestAllOf.prototype['constraints'] = undefined;
 
 
 

@@ -1,4 +1,4 @@
-# @CompetitionlabsApplicationServicesSdk.Metadata
+# CompetitionLabsApplicationServices.Metadata
 
 ## Properties
 

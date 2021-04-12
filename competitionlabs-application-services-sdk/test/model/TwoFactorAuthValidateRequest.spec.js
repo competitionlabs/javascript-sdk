@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.@CompetitionlabsJavascriptSdk);
+    factory(root.expect, root.CompetitionLabsApplicationServices);
   }
-}(this, function(expect, @CompetitionlabsJavascriptSdk) {
+}(this, function(expect, CompetitionLabsApplicationServices) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new @CompetitionlabsJavascriptSdk.TwoFactorAuthValidateRequest();
+    instance = new CompetitionLabsApplicationServices.TwoFactorAuthValidateRequest();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,19 +50,19 @@
   describe('TwoFactorAuthValidateRequest', function() {
     it('should create an instance of TwoFactorAuthValidateRequest', function() {
       // uncomment below and update the code to test TwoFactorAuthValidateRequest
-      //var instane = new @CompetitionlabsJavascriptSdk.TwoFactorAuthValidateRequest();
-      //expect(instance).to.be.a(@CompetitionlabsJavascriptSdk.TwoFactorAuthValidateRequest);
+      //var instane = new CompetitionLabsApplicationServices.TwoFactorAuthValidateRequest();
+      //expect(instance).to.be.a(CompetitionLabsApplicationServices.TwoFactorAuthValidateRequest);
     });
 
     it('should have the property secretKey (base name: "secretKey")', function() {
       // uncomment below and update the code to test the property secretKey
-      //var instane = new @CompetitionlabsJavascriptSdk.TwoFactorAuthValidateRequest();
+      //var instance = new CompetitionLabsApplicationServices.TwoFactorAuthValidateRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property twoFactorAccessCode (base name: "twoFactorAccessCode")', function() {
       // uncomment below and update the code to test the property twoFactorAccessCode
-      //var instane = new @CompetitionlabsJavascriptSdk.TwoFactorAuthValidateRequest();
+      //var instance = new CompetitionLabsApplicationServices.TwoFactorAuthValidateRequest();
       //expect(instance).to.be();
     });
 

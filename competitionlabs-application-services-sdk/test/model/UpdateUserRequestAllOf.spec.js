@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.@CompetitionlabsJavascriptSdk);
+    factory(root.expect, root.CompetitionLabsApplicationServices);
   }
-}(this, function(expect, @CompetitionlabsJavascriptSdk) {
+}(this, function(expect, CompetitionLabsApplicationServices) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new @CompetitionlabsJavascriptSdk.UpdateUserRequestAllOf();
+    instance = new CompetitionLabsApplicationServices.UpdateUserRequestAllOf();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,31 +50,31 @@
   describe('UpdateUserRequestAllOf', function() {
     it('should create an instance of UpdateUserRequestAllOf', function() {
       // uncomment below and update the code to test UpdateUserRequestAllOf
-      //var instane = new @CompetitionlabsJavascriptSdk.UpdateUserRequestAllOf();
-      //expect(instance).to.be.a(@CompetitionlabsJavascriptSdk.UpdateUserRequestAllOf);
+      //var instane = new CompetitionLabsApplicationServices.UpdateUserRequestAllOf();
+      //expect(instance).to.be.a(CompetitionLabsApplicationServices.UpdateUserRequestAllOf);
     });
 
     it('should have the property firstName (base name: "firstName")', function() {
       // uncomment below and update the code to test the property firstName
-      //var instane = new @CompetitionlabsJavascriptSdk.UpdateUserRequestAllOf();
+      //var instance = new CompetitionLabsApplicationServices.UpdateUserRequestAllOf();
       //expect(instance).to.be();
     });
 
     it('should have the property lastName (base name: "lastName")', function() {
       // uncomment below and update the code to test the property lastName
-      //var instane = new @CompetitionlabsJavascriptSdk.UpdateUserRequestAllOf();
+      //var instance = new CompetitionLabsApplicationServices.UpdateUserRequestAllOf();
       //expect(instance).to.be();
     });
 
     it('should have the property email (base name: "email")', function() {
       // uncomment below and update the code to test the property email
-      //var instane = new @CompetitionlabsJavascriptSdk.UpdateUserRequestAllOf();
+      //var instance = new CompetitionLabsApplicationServices.UpdateUserRequestAllOf();
       //expect(instance).to.be();
     });
 
     it('should have the property contact (base name: "contact")', function() {
       // uncomment below and update the code to test the property contact
-      //var instane = new @CompetitionlabsJavascriptSdk.UpdateUserRequestAllOf();
+      //var instance = new CompetitionLabsApplicationServices.UpdateUserRequestAllOf();
       //expect(instance).to.be();
     });
 

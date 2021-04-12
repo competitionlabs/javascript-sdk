@@ -1,22 +1,22 @@
-# @CompetitionlabsApplicationServicesSdk.ConsumersApi
+# CompetitionLabsApplicationServices.ConsumersApi
 
 All URIs are relative to *https://api.competitionlabs.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createConsumers**](ConsumersApi.md#createConsumers) | **POST** /consumers/{spaceName} | NOT AVAILABLE IN CURRENT RELEASE
-[**deleteConsumers**](ConsumersApi.md#deleteConsumers) | **DELETE** /consumers/{spaceName} | 
-[**deleteConsumersByQuery**](ConsumersApi.md#deleteConsumersByQuery) | **POST** /consumers/{spaceName}/delete | 
-[**getConsumers**](ConsumersApi.md#getConsumers) | **GET** /consumers/{spaceName} | 
-[**getConsumersByQuery**](ConsumersApi.md#getConsumersByQuery) | **POST** /consumers/{spaceName}/query | 
-[**updateConsumers**](ConsumersApi.md#updateConsumers) | **PUT** /consumers/{spaceName} | NOT AVAILABLE IN CURRENT RELEASE
-[**updateConsumersState**](ConsumersApi.md#updateConsumersState) | **POST** /consumers/{spaceName}/state | 
+[**createConsumers**](ConsumersApi.md#createConsumers) | **POST** /consumers | NOT AVAILABLE IN CURRENT RELEASE
+[**deleteConsumers**](ConsumersApi.md#deleteConsumers) | **DELETE** /consumers | 
+[**deleteConsumersByQuery**](ConsumersApi.md#deleteConsumersByQuery) | **POST** /consumers/delete | 
+[**getConsumers**](ConsumersApi.md#getConsumers) | **GET** /consumers | 
+[**getConsumersByQuery**](ConsumersApi.md#getConsumersByQuery) | **POST** /consumers/query | 
+[**updateConsumers**](ConsumersApi.md#updateConsumers) | **PUT** /consumers | NOT AVAILABLE IN CURRENT RELEASE
+[**updateConsumersState**](ConsumersApi.md#updateConsumersState) | **POST** /consumers/state | 
 
 
 
 ## createConsumers
 
-> ApiResponse createConsumers(spaceName, body, opts)
+> ApiResponse createConsumers(body, opts)
 
 NOT AVAILABLE IN CURRENT RELEASE
 
@@ -25,21 +25,23 @@ Create a new consumer in the CompetitionLabs system
 ### Example
 
 ```javascript
-import @CompetitionlabsApplicationServicesSdk from '@competitionlabs/application-services-sdk';
-let defaultClient = @CompetitionlabsApplicationServicesSdk.ApiClient.instance;
-// Configure API key authorization: adminApiKey
-let adminApiKey = defaultClient.authentications['adminApiKey'];
-adminApiKey.apiKey = 'YOUR API KEY';
+import CompetitionLabsApplicationServices from 'competition_labs_application_services';
+let defaultClient = CompetitionLabsApplicationServices.ApiClient.instance;
+// Configure API key authorization: AdminApiKey
+let AdminApiKey = defaultClient.authentications['AdminApiKey'];
+AdminApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//adminApiKey.apiKeyPrefix = 'Token';
+//AdminApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: OAuth2
+let OAuth2 = defaultClient.authentications['OAuth2'];
+OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new @CompetitionlabsApplicationServicesSdk.ConsumersApi();
-let spaceName = "spaceName_example"; // String | This is the space name which is linked to the account
-let body = new @CompetitionlabsApplicationServicesSdk.CreateConnectionRequest(); // CreateConnectionRequest | Create a consumer in the CompetitionLabs system
+let apiInstance = new CompetitionLabsApplicationServices.ConsumersApi();
+let body = new CompetitionLabsApplicationServices.CreateConnectionRequest(); // CreateConnectionRequest | Create a consumer in the CompetitionLabs system
 let opts = {
   'X_API_KEY': "X_API_KEY_example" // String | The admin API Key generated from CompetitionLabs back office
 };
-apiInstance.createConsumers(spaceName, body, opts, (error, data, response) => {
+apiInstance.createConsumers(body, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -53,7 +55,6 @@ apiInstance.createConsumers(spaceName, body, opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **spaceName** | **String**| This is the space name which is linked to the account | 
  **body** | [**CreateConnectionRequest**](CreateConnectionRequest.md)| Create a consumer in the CompetitionLabs system | 
  **X_API_KEY** | **String**| The admin API Key generated from CompetitionLabs back office | [optional] 
 
@@ -63,7 +64,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[adminApiKey](../README.md#adminApiKey)
+[AdminApiKey](../README.md#AdminApiKey), [OAuth2](../README.md#OAuth2)
 
 ### HTTP request headers
 
@@ -73,7 +74,7 @@ Name | Type | Description  | Notes
 
 ## deleteConsumers
 
-> ApiResponse deleteConsumers(spaceName, opts)
+> ApiResponse deleteConsumers(opts)
 
 
 
@@ -82,21 +83,23 @@ Delete the Consumers for a given identifier specified
 ### Example
 
 ```javascript
-import @CompetitionlabsApplicationServicesSdk from '@competitionlabs/application-services-sdk';
-let defaultClient = @CompetitionlabsApplicationServicesSdk.ApiClient.instance;
-// Configure API key authorization: adminApiKey
-let adminApiKey = defaultClient.authentications['adminApiKey'];
-adminApiKey.apiKey = 'YOUR API KEY';
+import CompetitionLabsApplicationServices from 'competition_labs_application_services';
+let defaultClient = CompetitionLabsApplicationServices.ApiClient.instance;
+// Configure API key authorization: AdminApiKey
+let AdminApiKey = defaultClient.authentications['AdminApiKey'];
+AdminApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//adminApiKey.apiKeyPrefix = 'Token';
+//AdminApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: OAuth2
+let OAuth2 = defaultClient.authentications['OAuth2'];
+OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new @CompetitionlabsApplicationServicesSdk.ConsumersApi();
-let spaceName = "spaceName_example"; // String | This is the space name which is linked to the account
+let apiInstance = new CompetitionLabsApplicationServices.ConsumersApi();
 let opts = {
   'X_API_KEY': "X_API_KEY_example", // String | The admin API Key generated from CompetitionLabs back office
   'id': ["null"] // [String] | The unique identifiers of the resources
 };
-apiInstance.deleteConsumers(spaceName, opts, (error, data, response) => {
+apiInstance.deleteConsumers(opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -110,7 +113,6 @@ apiInstance.deleteConsumers(spaceName, opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **spaceName** | **String**| This is the space name which is linked to the account | 
  **X_API_KEY** | **String**| The admin API Key generated from CompetitionLabs back office | [optional] 
  **id** | [**[String]**](String.md)| The unique identifiers of the resources | [optional] 
 
@@ -120,7 +122,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[adminApiKey](../README.md#adminApiKey)
+[AdminApiKey](../README.md#AdminApiKey), [OAuth2](../README.md#OAuth2)
 
 ### HTTP request headers
 
@@ -130,7 +132,7 @@ Name | Type | Description  | Notes
 
 ## deleteConsumersByQuery
 
-> ApiResponse deleteConsumersByQuery(spaceName, opts)
+> ApiResponse deleteConsumersByQuery(opts)
 
 
 
@@ -139,21 +141,23 @@ Delete a Consumer or a list of Consumers from CompetitionLabs by unique Consumer
 ### Example
 
 ```javascript
-import @CompetitionlabsApplicationServicesSdk from '@competitionlabs/application-services-sdk';
-let defaultClient = @CompetitionlabsApplicationServicesSdk.ApiClient.instance;
-// Configure API key authorization: adminApiKey
-let adminApiKey = defaultClient.authentications['adminApiKey'];
-adminApiKey.apiKey = 'YOUR API KEY';
+import CompetitionLabsApplicationServices from 'competition_labs_application_services';
+let defaultClient = CompetitionLabsApplicationServices.ApiClient.instance;
+// Configure API key authorization: AdminApiKey
+let AdminApiKey = defaultClient.authentications['AdminApiKey'];
+AdminApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//adminApiKey.apiKeyPrefix = 'Token';
+//AdminApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: OAuth2
+let OAuth2 = defaultClient.authentications['OAuth2'];
+OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new @CompetitionlabsApplicationServicesSdk.ConsumersApi();
-let spaceName = "spaceName_example"; // String | This is the space name which is linked to the account
+let apiInstance = new CompetitionLabsApplicationServices.ConsumersApi();
 let opts = {
   'X_API_KEY': null, // String | The admin API Key generated from CompetitionLabs back office
-  'body': new @CompetitionlabsApplicationServicesSdk.QueryRequest() // QueryRequest | Delete a Consumer or a list of Consumers from CompetitionLabs by unique Consumer ID's or any other POST body parameters using the POST method
+  'body': new CompetitionLabsApplicationServices.QueryRequest() // QueryRequest | Delete a Consumer or a list of Consumers from CompetitionLabs by unique Consumer ID's or any other POST body parameters using the POST method
 };
-apiInstance.deleteConsumersByQuery(spaceName, opts, (error, data, response) => {
+apiInstance.deleteConsumersByQuery(opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -167,7 +171,6 @@ apiInstance.deleteConsumersByQuery(spaceName, opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **spaceName** | **String**| This is the space name which is linked to the account | 
  **X_API_KEY** | [**String**](.md)| The admin API Key generated from CompetitionLabs back office | [optional] 
  **body** | [**QueryRequest**](QueryRequest.md)| Delete a Consumer or a list of Consumers from CompetitionLabs by unique Consumer ID&#39;s or any other POST body parameters using the POST method | [optional] 
 
@@ -177,7 +180,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[adminApiKey](../README.md#adminApiKey)
+[AdminApiKey](../README.md#AdminApiKey), [OAuth2](../README.md#OAuth2)
 
 ### HTTP request headers
 
@@ -187,7 +190,7 @@ Name | Type | Description  | Notes
 
 ## getConsumers
 
-> ConnectionResponse getConsumers(spaceName, opts)
+> ConnectionResponse getConsumers(opts)
 
 
 
@@ -196,23 +199,25 @@ Return a list of Consumers
 ### Example
 
 ```javascript
-import @CompetitionlabsApplicationServicesSdk from '@competitionlabs/application-services-sdk';
-let defaultClient = @CompetitionlabsApplicationServicesSdk.ApiClient.instance;
-// Configure API key authorization: adminApiKey
-let adminApiKey = defaultClient.authentications['adminApiKey'];
-adminApiKey.apiKey = 'YOUR API KEY';
+import CompetitionLabsApplicationServices from 'competition_labs_application_services';
+let defaultClient = CompetitionLabsApplicationServices.ApiClient.instance;
+// Configure API key authorization: AdminApiKey
+let AdminApiKey = defaultClient.authentications['AdminApiKey'];
+AdminApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//adminApiKey.apiKeyPrefix = 'Token';
+//AdminApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: OAuth2
+let OAuth2 = defaultClient.authentications['OAuth2'];
+OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new @CompetitionlabsApplicationServicesSdk.ConsumersApi();
-let spaceName = "spaceName_example"; // String | This is the space name which is linked to the account
+let apiInstance = new CompetitionLabsApplicationServices.ConsumersApi();
 let opts = {
   'X_API_KEY': "X_API_KEY_example", // String | The admin API Key generated from CompetitionLabs back office
   'id': ["null"], // [String] | The unique identifiers of the resources
   'limit': 56, // Number | Limit the returned total records found
   'skip': 56 // Number | Skip the returned records found and return the next batch of records
 };
-apiInstance.getConsumers(spaceName, opts, (error, data, response) => {
+apiInstance.getConsumers(opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -226,7 +231,6 @@ apiInstance.getConsumers(spaceName, opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **spaceName** | **String**| This is the space name which is linked to the account | 
  **X_API_KEY** | **String**| The admin API Key generated from CompetitionLabs back office | [optional] 
  **id** | [**[String]**](String.md)| The unique identifiers of the resources | [optional] 
  **limit** | **Number**| Limit the returned total records found | [optional] 
@@ -238,7 +242,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[adminApiKey](../README.md#adminApiKey)
+[AdminApiKey](../README.md#AdminApiKey), [OAuth2](../README.md#OAuth2)
 
 ### HTTP request headers
 
@@ -248,7 +252,7 @@ Name | Type | Description  | Notes
 
 ## getConsumersByQuery
 
-> ConnectionResponse getConsumersByQuery(spaceName, opts)
+> ConnectionResponse getConsumersByQuery(opts)
 
 
 
@@ -257,21 +261,23 @@ Retrieve a Consumer or a list of Consumers from CompetitionLabs by unique Consum
 ### Example
 
 ```javascript
-import @CompetitionlabsApplicationServicesSdk from '@competitionlabs/application-services-sdk';
-let defaultClient = @CompetitionlabsApplicationServicesSdk.ApiClient.instance;
-// Configure API key authorization: adminApiKey
-let adminApiKey = defaultClient.authentications['adminApiKey'];
-adminApiKey.apiKey = 'YOUR API KEY';
+import CompetitionLabsApplicationServices from 'competition_labs_application_services';
+let defaultClient = CompetitionLabsApplicationServices.ApiClient.instance;
+// Configure API key authorization: AdminApiKey
+let AdminApiKey = defaultClient.authentications['AdminApiKey'];
+AdminApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//adminApiKey.apiKeyPrefix = 'Token';
+//AdminApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: OAuth2
+let OAuth2 = defaultClient.authentications['OAuth2'];
+OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new @CompetitionlabsApplicationServicesSdk.ConsumersApi();
-let spaceName = "spaceName_example"; // String | This is the space name which is linked to the account
+let apiInstance = new CompetitionLabsApplicationServices.ConsumersApi();
 let opts = {
   'X_API_KEY': "X_API_KEY_example", // String | The admin API Key generated from CompetitionLabs back office
-  'body': new @CompetitionlabsApplicationServicesSdk.QueryRequest() // QueryRequest | Retrieve a Consumer or a list of Consumers from CompetitionLabs by unique Consumer ID's or any other Post body parameters using the POST method
+  'body': new CompetitionLabsApplicationServices.QueryRequest() // QueryRequest | Retrieve a Consumer or a list of Consumers from CompetitionLabs by unique Consumer ID's or any other Post body parameters using the POST method
 };
-apiInstance.getConsumersByQuery(spaceName, opts, (error, data, response) => {
+apiInstance.getConsumersByQuery(opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -285,7 +291,6 @@ apiInstance.getConsumersByQuery(spaceName, opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **spaceName** | **String**| This is the space name which is linked to the account | 
  **X_API_KEY** | **String**| The admin API Key generated from CompetitionLabs back office | [optional] 
  **body** | [**QueryRequest**](QueryRequest.md)| Retrieve a Consumer or a list of Consumers from CompetitionLabs by unique Consumer ID&#39;s or any other Post body parameters using the POST method | [optional] 
 
@@ -295,7 +300,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[adminApiKey](../README.md#adminApiKey)
+[AdminApiKey](../README.md#AdminApiKey), [OAuth2](../README.md#OAuth2)
 
 ### HTTP request headers
 
@@ -305,7 +310,7 @@ Name | Type | Description  | Notes
 
 ## updateConsumers
 
-> ApiResponse updateConsumers(spaceName, body, opts)
+> ApiResponse updateConsumers(body, opts)
 
 NOT AVAILABLE IN CURRENT RELEASE
 
@@ -314,21 +319,23 @@ Update an existing Consumer in the CompetitionLabs system
 ### Example
 
 ```javascript
-import @CompetitionlabsApplicationServicesSdk from '@competitionlabs/application-services-sdk';
-let defaultClient = @CompetitionlabsApplicationServicesSdk.ApiClient.instance;
-// Configure API key authorization: adminApiKey
-let adminApiKey = defaultClient.authentications['adminApiKey'];
-adminApiKey.apiKey = 'YOUR API KEY';
+import CompetitionLabsApplicationServices from 'competition_labs_application_services';
+let defaultClient = CompetitionLabsApplicationServices.ApiClient.instance;
+// Configure API key authorization: AdminApiKey
+let AdminApiKey = defaultClient.authentications['AdminApiKey'];
+AdminApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//adminApiKey.apiKeyPrefix = 'Token';
+//AdminApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: OAuth2
+let OAuth2 = defaultClient.authentications['OAuth2'];
+OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new @CompetitionlabsApplicationServicesSdk.ConsumersApi();
-let spaceName = "spaceName_example"; // String | This is the space name which is linked to the account
-let body = new @CompetitionlabsApplicationServicesSdk.UpdateConnectionRequest(); // UpdateConnectionRequest | Update Consumer details in the CompetitionLabs system
+let apiInstance = new CompetitionLabsApplicationServices.ConsumersApi();
+let body = new CompetitionLabsApplicationServices.UpdateConnectionRequest(); // UpdateConnectionRequest | Update Consumer details in the CompetitionLabs system
 let opts = {
   'X_API_KEY': "X_API_KEY_example" // String | The admin API Key generated from CompetitionLabs back office
 };
-apiInstance.updateConsumers(spaceName, body, opts, (error, data, response) => {
+apiInstance.updateConsumers(body, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -342,7 +349,6 @@ apiInstance.updateConsumers(spaceName, body, opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **spaceName** | **String**| This is the space name which is linked to the account | 
  **body** | [**UpdateConnectionRequest**](UpdateConnectionRequest.md)| Update Consumer details in the CompetitionLabs system | 
  **X_API_KEY** | **String**| The admin API Key generated from CompetitionLabs back office | [optional] 
 
@@ -352,7 +358,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[adminApiKey](../README.md#adminApiKey)
+[AdminApiKey](../README.md#AdminApiKey), [OAuth2](../README.md#OAuth2)
 
 ### HTTP request headers
 
@@ -362,7 +368,7 @@ Name | Type | Description  | Notes
 
 ## updateConsumersState
 
-> ApiResponse updateConsumersState(spaceName, opts)
+> ApiResponse updateConsumersState(opts)
 
 
 
@@ -371,21 +377,23 @@ Update the state of a Consumer using the POST method
 ### Example
 
 ```javascript
-import @CompetitionlabsApplicationServicesSdk from '@competitionlabs/application-services-sdk';
-let defaultClient = @CompetitionlabsApplicationServicesSdk.ApiClient.instance;
-// Configure API key authorization: adminApiKey
-let adminApiKey = defaultClient.authentications['adminApiKey'];
-adminApiKey.apiKey = 'YOUR API KEY';
+import CompetitionLabsApplicationServices from 'competition_labs_application_services';
+let defaultClient = CompetitionLabsApplicationServices.ApiClient.instance;
+// Configure API key authorization: AdminApiKey
+let AdminApiKey = defaultClient.authentications['AdminApiKey'];
+AdminApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//adminApiKey.apiKeyPrefix = 'Token';
+//AdminApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: OAuth2
+let OAuth2 = defaultClient.authentications['OAuth2'];
+OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new @CompetitionlabsApplicationServicesSdk.ConsumersApi();
-let spaceName = "spaceName_example"; // String | This is the space name which is linked to the account
+let apiInstance = new CompetitionLabsApplicationServices.ConsumersApi();
 let opts = {
   'X_API_KEY': "X_API_KEY_example", // String | The admin API Key generated from CompetitionLabs back office
-  'body': [new @CompetitionlabsApplicationServicesSdk.UpdateConsumerStateRequest()] // [UpdateConsumerStateRequest] | Update the state of a Consumer using the POST method
+  'body': [new CompetitionLabsApplicationServices.UpdateConsumerStateRequest()] // [UpdateConsumerStateRequest] | Update the state of a Consumer using the POST method
 };
-apiInstance.updateConsumersState(spaceName, opts, (error, data, response) => {
+apiInstance.updateConsumersState(opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -399,7 +407,6 @@ apiInstance.updateConsumersState(spaceName, opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **spaceName** | **String**| This is the space name which is linked to the account | 
  **X_API_KEY** | **String**| The admin API Key generated from CompetitionLabs back office | [optional] 
  **body** | [**[UpdateConsumerStateRequest]**](UpdateConsumerStateRequest.md)| Update the state of a Consumer using the POST method | [optional] 
 
@@ -409,7 +416,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[adminApiKey](../README.md#adminApiKey)
+[AdminApiKey](../README.md#AdminApiKey), [OAuth2](../README.md#OAuth2)
 
 ### HTTP request headers
 

@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -13,24 +13,23 @@
 
 import ApiClient from '../ApiClient';
 import HostingOptions from './HostingOptions';
-import Metadata from './Metadata';
 
 /**
  * The RepositoryAllOf model module.
  * @module model/RepositoryAllOf
- * @version 1.0.5
+ * @version 1.0.0
  */
 class RepositoryAllOf {
     /**
      * Constructs a new <code>RepositoryAllOf</code>.
      * @alias module:model/RepositoryAllOf
      * @param name {String} The name of the repository. This cannot contain spaces or specil characters.
-     * @param tags {Array.<String>} The tags associated with this repository
+     * @param constraints {Array.<String>} Additional constraints
      * @param hostingOptions {module:model/HostingOptions} 
      */
-    constructor(name, tags, hostingOptions) { 
+    constructor(name, constraints, hostingOptions) { 
         
-        RepositoryAllOf.initialize(this, name, tags, hostingOptions);
+        RepositoryAllOf.initialize(this, name, constraints, hostingOptions);
     }
 
     /**
@@ -38,50 +37,10 @@ class RepositoryAllOf {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, name, tags, hostingOptions) { 
+    static initialize(obj, name, constraints, hostingOptions) { 
         obj['name'] = name;
-        obj['tags'] = tags;
+        obj['constraints'] = constraints;
         obj['hostingOptions'] = hostingOptions;
-    }
-
-    /**
-    * Constructs a full object with all available fields.
-    */
-    model(){
-        var obj = {};
-
-        obj['name'] = null;
-        obj['description'] = null;
-        obj['constraints'] = [null];
-        obj['tags'] = [null];
-        obj['hostingOptions'] = new HostingOptions().model();
-        obj['metadata'] = [new Metadata().model()];
-
-        return obj;
-    }
-
-    /**
-    * Constructs a full object Map for all available fields.
-    */
-    modelMap(){
-        var obj = {
-            "fields": {},
-            "requiredFields": {}
-        };
-
-        obj["fields"]['name'] = { "type": 'String', "system": false };
-        obj["fields"]['description'] = { "type": 'String', "system": false };
-        obj["fields"]['constraints'] = [{ "type": 'String', "system": false }];
-        obj["fields"]['tags'] = [{ "type": 'String', "system": false }];
-        obj["fields"]['hostingOptions'] = new HostingOptions().modelMap();
-        obj["fields"]['metadata'] = [new Metadata().modelMap()];
-
-        
-        obj["requiredFields"]['name'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['tags'] = [{ "type": 'String', "system": false }];
-        obj["requiredFields"]['hostingOptions'] = new HostingOptions().modelMap();
-
-        return obj;
     }
 
     /**
@@ -104,14 +63,8 @@ class RepositoryAllOf {
             if (data.hasOwnProperty('constraints')) {
                 obj['constraints'] = ApiClient.convertToType(data['constraints'], ['String']);
             }
-            if (data.hasOwnProperty('tags')) {
-                obj['tags'] = ApiClient.convertToType(data['tags'], ['String']);
-            }
             if (data.hasOwnProperty('hostingOptions')) {
                 obj['hostingOptions'] = HostingOptions.constructFromObject(data['hostingOptions']);
-            }
-            if (data.hasOwnProperty('metadata')) {
-                obj['metadata'] = ApiClient.convertToType(data['metadata'], [Metadata]);
             }
         }
         return obj;
@@ -139,21 +92,9 @@ RepositoryAllOf.prototype['description'] = undefined;
 RepositoryAllOf.prototype['constraints'] = undefined;
 
 /**
- * The tags associated with this repository
- * @member {Array.<String>} tags
- */
-RepositoryAllOf.prototype['tags'] = undefined;
-
-/**
  * @member {module:model/HostingOptions} hostingOptions
  */
 RepositoryAllOf.prototype['hostingOptions'] = undefined;
-
-/**
- * Metadata used to describe this file. Content type application/json
- * @member {Array.<module:model/Metadata>} metadata
- */
-RepositoryAllOf.prototype['metadata'] = undefined;
 
 
 

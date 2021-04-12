@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -54,55 +54,6 @@ export default class EventRefType {
         "MemberMessageType" = "MemberMessageType";
 
     
-
-    /**
-    * Constructs a full object with all available fields.
-    */
-    list(){
-        var obj = {};
-
-        
-        obj['CompetitionType'] = "CompetitionType";
-        
-        obj['ContestType'] = "ContestType";
-        
-        obj['AchievementType'] = "AchievementType";
-        
-        obj['UserTypeType'] = "UserTypeType";
-        
-        obj['MemberMessageType'] = "MemberMessageType";
-        
-
-        return obj;
-    }
-
-    /**
-    * Constructs a full object with all available fields.
-    */
-    model(){
-        var obj = {};
-
-        
-        obj['CompetitionType'] = null;
-        
-        obj['ContestType'] = null;
-        
-        obj['AchievementType'] = null;
-        
-        obj['UserTypeType'] = null;
-        
-        obj['MemberMessageType'] = null;
-        
-
-        return obj;
-    }
-
-    /**
-    * Constructs a full object Map for all available fields.
-    */
-    modelMap(){
-        return {"type": 'String'};
-    }
 
     /**
     * Returns a <code>EventRefType</code> enum value from a Javascript object name.

@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CountResponse model module.
  * @module model/CountResponse
- * @version 1.0.5
+ * @version 1.0.0
  */
 class CountResponse {
     /**
@@ -38,37 +38,6 @@ class CountResponse {
     static initialize(obj, entityId, countValue) { 
         obj['entityId'] = entityId;
         obj['countValue'] = countValue;
-    }
-
-    /**
-    * Constructs a full object with all available fields.
-    */
-    model(){
-        var obj = {};
-
-        obj['entityId'] = null;
-        obj['countValue'] = null;
-
-        return obj;
-    }
-
-    /**
-    * Constructs a full object Map for all available fields.
-    */
-    modelMap(){
-        var obj = {
-            "fields": {},
-            "requiredFields": {}
-        };
-
-        obj["fields"]['entityId'] = { "type": 'String', "system": false };
-        obj["fields"]['countValue'] = { "type": 'Number', "system": false };
-
-        
-        obj["requiredFields"]['entityId'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['countValue'] = { "type": 'Number', "system": false };
-
-        return obj;
     }
 
     /**

@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -19,7 +19,7 @@ import UpdateUserRequestAllOf from './UpdateUserRequestAllOf';
 /**
  * The UpdateUserRequest model module.
  * @module model/UpdateUserRequest
- * @version 1.0.5
+ * @version 1.0.0
  */
 class UpdateUserRequest {
     /**
@@ -41,42 +41,6 @@ class UpdateUserRequest {
      */
     static initialize(obj, id) { 
         obj['id'] = id;
-    }
-
-    /**
-    * Constructs a full object with all available fields.
-    */
-    model(){
-        var obj = {};
-
-        obj['id'] = null;
-        obj['firstName'] = null;
-        obj['lastName'] = null;
-        obj['email'] = null;
-        obj['contact'] = new Contact().model();
-
-        return obj;
-    }
-
-    /**
-    * Constructs a full object Map for all available fields.
-    */
-    modelMap(){
-        var obj = {
-            "fields": {},
-            "requiredFields": {}
-        };
-
-        obj["fields"]['id'] = { "type": 'String', "system": true };
-        obj["fields"]['firstName'] = { "type": 'String', "system": false };
-        obj["fields"]['lastName'] = { "type": 'String', "system": false };
-        obj["fields"]['email'] = { "type": 'String', "system": false };
-        obj["fields"]['contact'] = new Contact().modelMap();
-
-        
-        obj["requiredFields"]['id'] = { "type": 'String', "system": true };
-
-        return obj;
     }
 
     /**

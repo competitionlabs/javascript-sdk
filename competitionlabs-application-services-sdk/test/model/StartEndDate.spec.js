@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.@CompetitionlabsJavascriptSdk);
+    factory(root.expect, root.CompetitionLabsApplicationServices);
   }
-}(this, function(expect, @CompetitionlabsJavascriptSdk) {
+}(this, function(expect, CompetitionLabsApplicationServices) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new @CompetitionlabsJavascriptSdk.StartEndDate();
+    instance = new CompetitionLabsApplicationServices.StartEndDate();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,19 +50,19 @@
   describe('StartEndDate', function() {
     it('should create an instance of StartEndDate', function() {
       // uncomment below and update the code to test StartEndDate
-      //var instane = new @CompetitionlabsJavascriptSdk.StartEndDate();
-      //expect(instance).to.be.a(@CompetitionlabsJavascriptSdk.StartEndDate);
+      //var instane = new CompetitionLabsApplicationServices.StartEndDate();
+      //expect(instance).to.be.a(CompetitionLabsApplicationServices.StartEndDate);
     });
 
     it('should have the property start (base name: "start")', function() {
       // uncomment below and update the code to test the property start
-      //var instane = new @CompetitionlabsJavascriptSdk.StartEndDate();
+      //var instance = new CompetitionLabsApplicationServices.StartEndDate();
       //expect(instance).to.be();
     });
 
     it('should have the property end (base name: "end")', function() {
       // uncomment below and update the code to test the property end
-      //var instane = new @CompetitionlabsJavascriptSdk.StartEndDate();
+      //var instance = new CompetitionLabsApplicationServices.StartEndDate();
       //expect(instance).to.be();
     });
 

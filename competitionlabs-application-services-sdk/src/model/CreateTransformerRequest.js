@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -17,7 +17,7 @@ import SourceLanguage from './SourceLanguage';
 /**
  * The CreateTransformerRequest model module.
  * @module model/CreateTransformerRequest
- * @version 1.0.5
+ * @version 1.0.0
  */
 class CreateTransformerRequest {
     /**
@@ -41,40 +41,6 @@ class CreateTransformerRequest {
         obj['name'] = name;
         obj['source'] = source;
         obj['sourceLanguage'] = sourceLanguage;
-    }
-
-    /**
-    * Constructs a full object with all available fields.
-    */
-    model(){
-        var obj = {};
-
-        obj['name'] = null;
-        obj['source'] = null;
-        obj['sourceLanguage'] = new SourceLanguage().model();
-
-        return obj;
-    }
-
-    /**
-    * Constructs a full object Map for all available fields.
-    */
-    modelMap(){
-        var obj = {
-            "fields": {},
-            "requiredFields": {}
-        };
-
-        obj["fields"]['name'] = { "type": 'String', "system": false };
-        obj["fields"]['source'] = { "type": 'String', "system": false };
-        obj["fields"]['sourceLanguage'] = new SourceLanguage().modelMap();
-
-        
-        obj["requiredFields"]['name'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['source'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['sourceLanguage'] = new SourceLanguage().modelMap();
-
-        return obj;
     }
 
     /**

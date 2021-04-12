@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -12,23 +12,27 @@
  */
 
 import ApiClient from '../ApiClient';
+import CreateOptParamModels from './CreateOptParamModels';
+import CreateWebhookRequestAllOf from './CreateWebhookRequestAllOf';
 import Metadata from './Metadata';
 
 /**
  * The CreateWebhookRequest model module.
  * @module model/CreateWebhookRequest
- * @version 1.0.5
+ * @version 1.0.0
  */
 class CreateWebhookRequest {
     /**
      * Constructs a new <code>CreateWebhookRequest</code>.
      * @alias module:model/CreateWebhookRequest
+     * @implements module:model/CreateOptParamModels
+     * @implements module:model/CreateWebhookRequestAllOf
      * @param postToUrl {String} A URL to post the webhook to
      * @param triggers {Array.<String>} A list of event triggers
      * @param transformerId {String} The identifier of the transformer
      */
     constructor(postToUrl, triggers, transformerId) { 
-        
+        CreateOptParamModels.initialize(this);CreateWebhookRequestAllOf.initialize(this, postToUrl, triggers, transformerId);
         CreateWebhookRequest.initialize(this, postToUrl, triggers, transformerId);
     }
 
@@ -44,46 +48,6 @@ class CreateWebhookRequest {
     }
 
     /**
-    * Constructs a full object with all available fields.
-    */
-    model(){
-        var obj = {};
-
-        obj['postToUrl'] = null;
-        obj['triggers'] = [null];
-        obj['description'] = null;
-        obj['headers'] = [new Metadata().model()];
-        obj['transformerId'] = null;
-        obj['metadata'] = [new Metadata().model()];
-
-        return obj;
-    }
-
-    /**
-    * Constructs a full object Map for all available fields.
-    */
-    modelMap(){
-        var obj = {
-            "fields": {},
-            "requiredFields": {}
-        };
-
-        obj["fields"]['postToUrl'] = { "type": 'String', "system": false };
-        obj["fields"]['triggers'] = [{ "type": 'String', "system": false }];
-        obj["fields"]['description'] = { "type": 'String', "system": false };
-        obj["fields"]['headers'] = [new Metadata().modelMap()];
-        obj["fields"]['transformerId'] = { "type": 'String', "system": false };
-        obj["fields"]['metadata'] = [new Metadata().modelMap()];
-
-        
-        obj["requiredFields"]['postToUrl'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['triggers'] = [{ "type": 'String', "system": false }];
-        obj["requiredFields"]['transformerId'] = { "type": 'String', "system": false };
-
-        return obj;
-    }
-
-    /**
      * Constructs a <code>CreateWebhookRequest</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
@@ -93,7 +57,18 @@ class CreateWebhookRequest {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new CreateWebhookRequest();
+            CreateOptParamModels.constructFromObject(data, obj);
+            CreateWebhookRequestAllOf.constructFromObject(data, obj);
 
+            if (data.hasOwnProperty('customFields')) {
+                obj['customFields'] = ApiClient.convertToType(data['customFields'], ['String']);
+            }
+            if (data.hasOwnProperty('tags')) {
+                obj['tags'] = ApiClient.convertToType(data['tags'], ['String']);
+            }
+            if (data.hasOwnProperty('metadata')) {
+                obj['metadata'] = ApiClient.convertToType(data['metadata'], [Metadata]);
+            }
             if (data.hasOwnProperty('postToUrl')) {
                 obj['postToUrl'] = ApiClient.convertToType(data['postToUrl'], 'String');
             }
@@ -109,15 +84,29 @@ class CreateWebhookRequest {
             if (data.hasOwnProperty('transformerId')) {
                 obj['transformerId'] = ApiClient.convertToType(data['transformerId'], 'String');
             }
-            if (data.hasOwnProperty('metadata')) {
-                obj['metadata'] = ApiClient.convertToType(data['metadata'], [Metadata]);
-            }
         }
         return obj;
     }
 
 
 }
+
+/**
+ * A list of id's used to add cutom fields
+ * @member {Array.<String>} customFields
+ */
+CreateWebhookRequest.prototype['customFields'] = undefined;
+
+/**
+ * A list of id's used to tag models
+ * @member {Array.<String>} tags
+ */
+CreateWebhookRequest.prototype['tags'] = undefined;
+
+/**
+ * @member {Array.<module:model/Metadata>} metadata
+ */
+CreateWebhookRequest.prototype['metadata'] = undefined;
 
 /**
  * A URL to post the webhook to
@@ -148,12 +137,47 @@ CreateWebhookRequest.prototype['headers'] = undefined;
  */
 CreateWebhookRequest.prototype['transformerId'] = undefined;
 
+
+// Implement CreateOptParamModels interface:
+/**
+ * A list of id's used to add cutom fields
+ * @member {Array.<String>} customFields
+ */
+CreateOptParamModels.prototype['customFields'] = undefined;
+/**
+ * A list of id's used to tag models
+ * @member {Array.<String>} tags
+ */
+CreateOptParamModels.prototype['tags'] = undefined;
 /**
  * @member {Array.<module:model/Metadata>} metadata
  */
-CreateWebhookRequest.prototype['metadata'] = undefined;
-
-
+CreateOptParamModels.prototype['metadata'] = undefined;
+// Implement CreateWebhookRequestAllOf interface:
+/**
+ * A URL to post the webhook to
+ * @member {String} postToUrl
+ */
+CreateWebhookRequestAllOf.prototype['postToUrl'] = undefined;
+/**
+ * A list of event triggers
+ * @member {Array.<String>} triggers
+ */
+CreateWebhookRequestAllOf.prototype['triggers'] = undefined;
+/**
+ * The description of a Webhook
+ * @member {String} description
+ */
+CreateWebhookRequestAllOf.prototype['description'] = undefined;
+/**
+ * @member {Array.<module:model/Metadata>} headers
+ */
+CreateWebhookRequestAllOf.prototype['headers'] = undefined;
+/**
+ * The identifier of the transformer
+ * @member {String} transformerId
+ */
+CreateWebhookRequestAllOf.prototype['transformerId'] = undefined;
 
 
 

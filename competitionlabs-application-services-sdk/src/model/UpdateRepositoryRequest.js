@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -12,27 +12,32 @@
  */
 
 import ApiClient from '../ApiClient';
+import CreateRepositoryRequestAllOf from './CreateRepositoryRequestAllOf';
 import HostingOptions from './HostingOptions';
 import Metadata from './Metadata';
 import UpdateModelDefault from './UpdateModelDefault';
-import UpdateRepositoryRequestAllOf from './UpdateRepositoryRequestAllOf';
+import UpdateOptParamModels from './UpdateOptParamModels';
 
 /**
  * The UpdateRepositoryRequest model module.
  * @module model/UpdateRepositoryRequest
- * @version 1.0.5
+ * @version 1.0.0
  */
 class UpdateRepositoryRequest {
     /**
      * Constructs a new <code>UpdateRepositoryRequest</code>.
      * @alias module:model/UpdateRepositoryRequest
      * @implements module:model/UpdateModelDefault
-     * @implements module:model/UpdateRepositoryRequestAllOf
+     * @implements module:model/UpdateOptParamModels
+     * @implements module:model/CreateRepositoryRequestAllOf
      * @param id {String} A unique system generated identifier
+     * @param name {String} The name of the repository. No special charaters or spaces permitted
+     * @param constraints {Array.<String>} Additional constraints
+     * @param hostingOptions {module:model/HostingOptions} 
      */
-    constructor(id) { 
-        UpdateModelDefault.initialize(this, id);UpdateRepositoryRequestAllOf.initialize(this);
-        UpdateRepositoryRequest.initialize(this, id);
+    constructor(id, name, constraints, hostingOptions) { 
+        UpdateModelDefault.initialize(this, id);UpdateOptParamModels.initialize(this);CreateRepositoryRequestAllOf.initialize(this, name, constraints, hostingOptions);
+        UpdateRepositoryRequest.initialize(this, id, name, constraints, hostingOptions);
     }
 
     /**
@@ -40,48 +45,11 @@ class UpdateRepositoryRequest {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, id) { 
+    static initialize(obj, id, name, constraints, hostingOptions) { 
         obj['id'] = id;
-    }
-
-    /**
-    * Constructs a full object with all available fields.
-    */
-    model(){
-        var obj = {};
-
-        obj['id'] = null;
-        obj['name'] = null;
-        obj['description'] = null;
-        obj['tags'] = [null];
-        obj['constraints'] = [null];
-        obj['hostingOptions'] = new HostingOptions().model();
-        obj['metadata'] = [new Metadata().model()];
-
-        return obj;
-    }
-
-    /**
-    * Constructs a full object Map for all available fields.
-    */
-    modelMap(){
-        var obj = {
-            "fields": {},
-            "requiredFields": {}
-        };
-
-        obj["fields"]['id'] = { "type": 'String', "system": true };
-        obj["fields"]['name'] = { "type": 'String', "system": false };
-        obj["fields"]['description'] = { "type": 'String', "system": false };
-        obj["fields"]['tags'] = [{ "type": 'String', "system": false }];
-        obj["fields"]['constraints'] = [{ "type": 'String', "system": false }];
-        obj["fields"]['hostingOptions'] = new HostingOptions().modelMap();
-        obj["fields"]['metadata'] = [new Metadata().modelMap()];
-
-        
-        obj["requiredFields"]['id'] = { "type": 'String', "system": true };
-
-        return obj;
+        obj['name'] = name;
+        obj['constraints'] = constraints;
+        obj['hostingOptions'] = hostingOptions;
     }
 
     /**
@@ -95,10 +63,20 @@ class UpdateRepositoryRequest {
         if (data) {
             obj = obj || new UpdateRepositoryRequest();
             UpdateModelDefault.constructFromObject(data, obj);
-            UpdateRepositoryRequestAllOf.constructFromObject(data, obj);
+            UpdateOptParamModels.constructFromObject(data, obj);
+            CreateRepositoryRequestAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'String');
+            }
+            if (data.hasOwnProperty('customFields')) {
+                obj['customFields'] = ApiClient.convertToType(data['customFields'], ['String']);
+            }
+            if (data.hasOwnProperty('tags')) {
+                obj['tags'] = ApiClient.convertToType(data['tags'], ['String']);
+            }
+            if (data.hasOwnProperty('metadata')) {
+                obj['metadata'] = ApiClient.convertToType(data['metadata'], [Metadata]);
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
@@ -106,17 +84,11 @@ class UpdateRepositoryRequest {
             if (data.hasOwnProperty('description')) {
                 obj['description'] = ApiClient.convertToType(data['description'], 'String');
             }
-            if (data.hasOwnProperty('tags')) {
-                obj['tags'] = ApiClient.convertToType(data['tags'], ['String']);
-            }
             if (data.hasOwnProperty('constraints')) {
                 obj['constraints'] = ApiClient.convertToType(data['constraints'], ['String']);
             }
             if (data.hasOwnProperty('hostingOptions')) {
                 obj['hostingOptions'] = HostingOptions.constructFromObject(data['hostingOptions']);
-            }
-            if (data.hasOwnProperty('metadata')) {
-                obj['metadata'] = ApiClient.convertToType(data['metadata'], [Metadata]);
             }
         }
         return obj;
@@ -132,6 +104,23 @@ class UpdateRepositoryRequest {
 UpdateRepositoryRequest.prototype['id'] = undefined;
 
 /**
+ * A list of id's used to add cutom fields
+ * @member {Array.<String>} customFields
+ */
+UpdateRepositoryRequest.prototype['customFields'] = undefined;
+
+/**
+ * A list of id's used to tag models
+ * @member {Array.<String>} tags
+ */
+UpdateRepositoryRequest.prototype['tags'] = undefined;
+
+/**
+ * @member {Array.<module:model/Metadata>} metadata
+ */
+UpdateRepositoryRequest.prototype['metadata'] = undefined;
+
+/**
  * The name of the repository. No special charaters or spaces permitted
  * @member {String} name
  */
@@ -144,12 +133,6 @@ UpdateRepositoryRequest.prototype['name'] = undefined;
 UpdateRepositoryRequest.prototype['description'] = undefined;
 
 /**
- * The tags used to categorize the repository
- * @member {Array.<String>} tags
- */
-UpdateRepositoryRequest.prototype['tags'] = undefined;
-
-/**
  * Additional constraints
  * @member {Array.<String>} constraints
  */
@@ -160,12 +143,6 @@ UpdateRepositoryRequest.prototype['constraints'] = undefined;
  */
 UpdateRepositoryRequest.prototype['hostingOptions'] = undefined;
 
-/**
- * Metadata used to describe this file. Content type application/json
- * @member {Array.<module:model/Metadata>} metadata
- */
-UpdateRepositoryRequest.prototype['metadata'] = undefined;
-
 
 // Implement UpdateModelDefault interface:
 /**
@@ -173,36 +150,41 @@ UpdateRepositoryRequest.prototype['metadata'] = undefined;
  * @member {String} id
  */
 UpdateModelDefault.prototype['id'] = undefined;
-// Implement UpdateRepositoryRequestAllOf interface:
+// Implement UpdateOptParamModels interface:
+/**
+ * A list of id's used to add cutom fields
+ * @member {Array.<String>} customFields
+ */
+UpdateOptParamModels.prototype['customFields'] = undefined;
+/**
+ * A list of id's used to tag models
+ * @member {Array.<String>} tags
+ */
+UpdateOptParamModels.prototype['tags'] = undefined;
+/**
+ * @member {Array.<module:model/Metadata>} metadata
+ */
+UpdateOptParamModels.prototype['metadata'] = undefined;
+// Implement CreateRepositoryRequestAllOf interface:
 /**
  * The name of the repository. No special charaters or spaces permitted
  * @member {String} name
  */
-UpdateRepositoryRequestAllOf.prototype['name'] = undefined;
+CreateRepositoryRequestAllOf.prototype['name'] = undefined;
 /**
  * The description of the repository
  * @member {String} description
  */
-UpdateRepositoryRequestAllOf.prototype['description'] = undefined;
-/**
- * The tags used to categorize the repository
- * @member {Array.<String>} tags
- */
-UpdateRepositoryRequestAllOf.prototype['tags'] = undefined;
+CreateRepositoryRequestAllOf.prototype['description'] = undefined;
 /**
  * Additional constraints
  * @member {Array.<String>} constraints
  */
-UpdateRepositoryRequestAllOf.prototype['constraints'] = undefined;
+CreateRepositoryRequestAllOf.prototype['constraints'] = undefined;
 /**
  * @member {module:model/HostingOptions} hostingOptions
  */
-UpdateRepositoryRequestAllOf.prototype['hostingOptions'] = undefined;
-/**
- * Metadata used to describe this file. Content type application/json
- * @member {Array.<module:model/Metadata>} metadata
- */
-UpdateRepositoryRequestAllOf.prototype['metadata'] = undefined;
+CreateRepositoryRequestAllOf.prototype['hostingOptions'] = undefined;
 
 
 

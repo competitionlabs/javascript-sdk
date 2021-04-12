@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -12,25 +12,29 @@
  */
 
 import ApiClient from '../ApiClient';
+import CreateFileObjectRequestAllOf from './CreateFileObjectRequestAllOf';
+import CreateOptParamModels from './CreateOptParamModels';
 import Metadata from './Metadata';
 
 /**
  * The CreateFileObjectRequest model module.
  * @module model/CreateFileObjectRequest
- * @version 1.0.5
+ * @version 1.0.0
  */
 class CreateFileObjectRequest {
     /**
      * Constructs a new <code>CreateFileObjectRequest</code>.
      * @alias module:model/CreateFileObjectRequest
+     * @implements module:model/CreateOptParamModels
+     * @implements module:model/CreateFileObjectRequestAllOf
      * @param repositoryId {String} The repository identifier this file belongs too
-     * @param fileName {String} Name of the original file uploaded
+     * @param name {String} Name of the original file uploaded
      * @param mimeType {String} Mime type of the file. Valid mime types - text/csv or application/vmd.ms-excel or application/x-directory for directories
      * @param parentFolderPath {String} The folder containing the file within the repository
      */
-    constructor(repositoryId, fileName, mimeType, parentFolderPath) { 
-        
-        CreateFileObjectRequest.initialize(this, repositoryId, fileName, mimeType, parentFolderPath);
+    constructor(repositoryId, name, mimeType, parentFolderPath) { 
+        CreateOptParamModels.initialize(this);CreateFileObjectRequestAllOf.initialize(this, repositoryId, name, mimeType, parentFolderPath);
+        CreateFileObjectRequest.initialize(this, repositoryId, name, mimeType, parentFolderPath);
     }
 
     /**
@@ -38,52 +42,11 @@ class CreateFileObjectRequest {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, repositoryId, fileName, mimeType, parentFolderPath) { 
+    static initialize(obj, repositoryId, name, mimeType, parentFolderPath) { 
         obj['repositoryId'] = repositoryId;
-        obj['fileName'] = fileName;
+        obj['name'] = name;
         obj['mimeType'] = mimeType;
         obj['parentFolderPath'] = parentFolderPath;
-    }
-
-    /**
-    * Constructs a full object with all available fields.
-    */
-    model(){
-        var obj = {};
-
-        obj['tags'] = [null];
-        obj['repositoryId'] = null;
-        obj['fileName'] = null;
-        obj['mimeType'] = null;
-        obj['parentFolderPath'] = null;
-        obj['metadata'] = [new Metadata().model()];
-
-        return obj;
-    }
-
-    /**
-    * Constructs a full object Map for all available fields.
-    */
-    modelMap(){
-        var obj = {
-            "fields": {},
-            "requiredFields": {}
-        };
-
-        obj["fields"]['tags'] = [{ "type": 'String', "system": false }];
-        obj["fields"]['repositoryId'] = { "type": 'String', "system": false };
-        obj["fields"]['fileName'] = { "type": 'String', "system": false };
-        obj["fields"]['mimeType'] = { "type": 'String', "system": false };
-        obj["fields"]['parentFolderPath'] = { "type": 'String', "system": false };
-        obj["fields"]['metadata'] = [new Metadata().modelMap()];
-
-        
-        obj["requiredFields"]['repositoryId'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['fileName'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['mimeType'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['parentFolderPath'] = { "type": 'String', "system": false };
-
-        return obj;
     }
 
     /**
@@ -96,24 +59,29 @@ class CreateFileObjectRequest {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new CreateFileObjectRequest();
+            CreateOptParamModels.constructFromObject(data, obj);
+            CreateFileObjectRequestAllOf.constructFromObject(data, obj);
 
+            if (data.hasOwnProperty('customFields')) {
+                obj['customFields'] = ApiClient.convertToType(data['customFields'], ['String']);
+            }
             if (data.hasOwnProperty('tags')) {
                 obj['tags'] = ApiClient.convertToType(data['tags'], ['String']);
+            }
+            if (data.hasOwnProperty('metadata')) {
+                obj['metadata'] = ApiClient.convertToType(data['metadata'], [Metadata]);
             }
             if (data.hasOwnProperty('repositoryId')) {
                 obj['repositoryId'] = ApiClient.convertToType(data['repositoryId'], 'String');
             }
-            if (data.hasOwnProperty('fileName')) {
-                obj['fileName'] = ApiClient.convertToType(data['fileName'], 'String');
+            if (data.hasOwnProperty('name')) {
+                obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
             if (data.hasOwnProperty('mimeType')) {
                 obj['mimeType'] = ApiClient.convertToType(data['mimeType'], 'String');
             }
             if (data.hasOwnProperty('parentFolderPath')) {
                 obj['parentFolderPath'] = ApiClient.convertToType(data['parentFolderPath'], 'String');
-            }
-            if (data.hasOwnProperty('metadata')) {
-                obj['metadata'] = ApiClient.convertToType(data['metadata'], [Metadata]);
             }
         }
         return obj;
@@ -123,10 +91,21 @@ class CreateFileObjectRequest {
 }
 
 /**
- * The tags associated with this file object
+ * A list of id's used to add cutom fields
+ * @member {Array.<String>} customFields
+ */
+CreateFileObjectRequest.prototype['customFields'] = undefined;
+
+/**
+ * A list of id's used to tag models
  * @member {Array.<String>} tags
  */
 CreateFileObjectRequest.prototype['tags'] = undefined;
+
+/**
+ * @member {Array.<module:model/Metadata>} metadata
+ */
+CreateFileObjectRequest.prototype['metadata'] = undefined;
 
 /**
  * The repository identifier this file belongs too
@@ -136,9 +115,9 @@ CreateFileObjectRequest.prototype['repositoryId'] = undefined;
 
 /**
  * Name of the original file uploaded
- * @member {String} fileName
+ * @member {String} name
  */
-CreateFileObjectRequest.prototype['fileName'] = undefined;
+CreateFileObjectRequest.prototype['name'] = undefined;
 
 /**
  * Mime type of the file. Valid mime types - text/csv or application/vmd.ms-excel or application/x-directory for directories
@@ -152,12 +131,43 @@ CreateFileObjectRequest.prototype['mimeType'] = undefined;
  */
 CreateFileObjectRequest.prototype['parentFolderPath'] = undefined;
 
+
+// Implement CreateOptParamModels interface:
+/**
+ * A list of id's used to add cutom fields
+ * @member {Array.<String>} customFields
+ */
+CreateOptParamModels.prototype['customFields'] = undefined;
+/**
+ * A list of id's used to tag models
+ * @member {Array.<String>} tags
+ */
+CreateOptParamModels.prototype['tags'] = undefined;
 /**
  * @member {Array.<module:model/Metadata>} metadata
  */
-CreateFileObjectRequest.prototype['metadata'] = undefined;
-
-
+CreateOptParamModels.prototype['metadata'] = undefined;
+// Implement CreateFileObjectRequestAllOf interface:
+/**
+ * The repository identifier this file belongs too
+ * @member {String} repositoryId
+ */
+CreateFileObjectRequestAllOf.prototype['repositoryId'] = undefined;
+/**
+ * Name of the original file uploaded
+ * @member {String} name
+ */
+CreateFileObjectRequestAllOf.prototype['name'] = undefined;
+/**
+ * Mime type of the file. Valid mime types - text/csv or application/vmd.ms-excel or application/x-directory for directories
+ * @member {String} mimeType
+ */
+CreateFileObjectRequestAllOf.prototype['mimeType'] = undefined;
+/**
+ * The folder containing the file within the repository
+ * @member {String} parentFolderPath
+ */
+CreateFileObjectRequestAllOf.prototype['parentFolderPath'] = undefined;
 
 
 

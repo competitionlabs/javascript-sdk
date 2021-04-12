@@ -1,4 +1,4 @@
-# @CompetitionlabsApplicationServicesSdk.TranslatedField
+# CompetitionLabsApplicationServices.TranslatedField
 
 ## Properties
 

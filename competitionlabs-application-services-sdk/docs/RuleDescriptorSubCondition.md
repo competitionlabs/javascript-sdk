@@ -1,4 +1,4 @@
-# @CompetitionlabsApplicationServicesSdk.RuleDescriptorSubCondition
+# CompetitionLabsApplicationServices.RuleDescriptorSubCondition
 
 ## Properties
 

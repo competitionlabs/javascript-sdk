@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -22,7 +22,7 @@ import UpdateActionTypeRequest from '../model/UpdateActionTypeRequest';
 /**
 * ActionTypes service.
 * @module api/ActionTypesApi
-* @version 1.0.5
+* @version 1.0.0
 */
 export default class ActionTypesApi {
 
@@ -48,27 +48,21 @@ export default class ActionTypesApi {
 
     /**
      * Create new Action types in the CompetitionLabs database
-     * @param {String} spaceName This is the space name which is linked to the account
      * @param {Array.<module:model/CreateActionTypeRequest>} body Create Action Types in the CompetitionLabs database
      * @param {Object} opts Optional parameters
      * @param {String} opts.X_API_KEY The admin API Key generated from CompetitionLabs back office
      * @param {module:api/ActionTypesApi~createActionTypesCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ApiResponse}
      */
-    createActionTypes(spaceName, body, opts, callback) {
+    createActionTypes(body, opts, callback) {
       opts = opts || {};
       let postBody = body;
-      // verify the required parameter 'spaceName' is set
-      if (spaceName === undefined || spaceName === null) {
-        throw new Error("Missing the required parameter 'spaceName' when calling createActionTypes");
-      }
       // verify the required parameter 'body' is set
       if (body === undefined || body === null) {
         throw new Error("Missing the required parameter 'body' when calling createActionTypes");
       }
 
       let pathParams = {
-        'spaceName': spaceName
       };
       let queryParams = {
       };
@@ -78,12 +72,12 @@ export default class ActionTypesApi {
       let formParams = {
       };
 
-      let authNames = ['adminApiKey'];
+      let authNames = ['AdminApiKey', 'OAuth2'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = ApiResponse;
       return this.apiClient.callApi(
-        '/action-types/{spaceName}', 'POST',
+        '/action-types', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
@@ -99,23 +93,17 @@ export default class ActionTypesApi {
 
     /**
      * Delete Action types for a given identifier specified
-     * @param {String} spaceName This is the space name which is linked to the account
      * @param {Object} opts Optional parameters
      * @param {String} opts.X_API_KEY The admin API Key generated from CompetitionLabs back office
      * @param {Array.<String>} opts.id The unique identifiers of the resources
      * @param {module:api/ActionTypesApi~deleteActionTypesCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ApiResponse}
      */
-    deleteActionTypes(spaceName, opts, callback) {
+    deleteActionTypes(opts, callback) {
       opts = opts || {};
       let postBody = null;
-      // verify the required parameter 'spaceName' is set
-      if (spaceName === undefined || spaceName === null) {
-        throw new Error("Missing the required parameter 'spaceName' when calling deleteActionTypes");
-      }
 
       let pathParams = {
-        'spaceName': spaceName
       };
       let queryParams = {
         'id': this.apiClient.buildCollectionParam(opts['id'], 'multi')
@@ -126,12 +114,12 @@ export default class ActionTypesApi {
       let formParams = {
       };
 
-      let authNames = ['adminApiKey'];
+      let authNames = ['AdminApiKey', 'OAuth2'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = ApiResponse;
       return this.apiClient.callApi(
-        '/action-types/{spaceName}', 'DELETE',
+        '/action-types', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
@@ -147,23 +135,17 @@ export default class ActionTypesApi {
 
     /**
      * Delete Action types from CompetitionLabs database by unique Action types ID's or any other POST body parameters using the POST method
-     * @param {String} spaceName This is the space name which is linked to the account
      * @param {Object} opts Optional parameters
      * @param {String} opts.X_API_KEY The admin API Key generated from CompetitionLabs back office
      * @param {module:model/QueryRequest} opts.body Delete Action types from CompetitionLabs database by unique Action types ID's or any other POST body parameters using the POST method
      * @param {module:api/ActionTypesApi~deleteActionTypesByQueryCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ApiResponse}
      */
-    deleteActionTypesByQuery(spaceName, opts, callback) {
+    deleteActionTypesByQuery(opts, callback) {
       opts = opts || {};
       let postBody = opts['body'];
-      // verify the required parameter 'spaceName' is set
-      if (spaceName === undefined || spaceName === null) {
-        throw new Error("Missing the required parameter 'spaceName' when calling deleteActionTypesByQuery");
-      }
 
       let pathParams = {
-        'spaceName': spaceName
       };
       let queryParams = {
       };
@@ -173,12 +155,12 @@ export default class ActionTypesApi {
       let formParams = {
       };
 
-      let authNames = ['adminApiKey'];
+      let authNames = ['AdminApiKey', 'OAuth2'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = ApiResponse;
       return this.apiClient.callApi(
-        '/action-types/{spaceName}/delete', 'POST',
+        '/action-types/delete', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
@@ -194,7 +176,6 @@ export default class ActionTypesApi {
 
     /**
      * Returns a list of Action Types. This assumes that action types have first been uploaded via a POST request or web console
-     * @param {String} spaceName This is the space name which is linked to the account
      * @param {Object} opts Optional parameters
      * @param {String} opts.X_API_KEY The admin API Key generated from CompetitionLabs back office
      * @param {Array.<String>} opts.id The unique identifiers of the resources
@@ -203,16 +184,11 @@ export default class ActionTypesApi {
      * @param {module:api/ActionTypesApi~getActionTypesCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ActionTypeResponse}
      */
-    getActionTypes(spaceName, opts, callback) {
+    getActionTypes(opts, callback) {
       opts = opts || {};
       let postBody = null;
-      // verify the required parameter 'spaceName' is set
-      if (spaceName === undefined || spaceName === null) {
-        throw new Error("Missing the required parameter 'spaceName' when calling getActionTypes");
-      }
 
       let pathParams = {
-        'spaceName': spaceName
       };
       let queryParams = {
         'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),
@@ -225,12 +201,12 @@ export default class ActionTypesApi {
       let formParams = {
       };
 
-      let authNames = ['adminApiKey'];
+      let authNames = ['AdminApiKey', 'OAuth2'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = ActionTypeResponse;
       return this.apiClient.callApi(
-        '/action-types/{spaceName}', 'GET',
+        '/action-types', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
@@ -246,23 +222,17 @@ export default class ActionTypesApi {
 
     /**
      * Retrieve Action types from CompetitionLabs database by unique Action type ID's or any other POST body parameters using the POST method
-     * @param {String} spaceName This is the space name which is linked to the account
      * @param {Object} opts Optional parameters
      * @param {String} opts.X_API_KEY The admin API Key generated from CompetitionLabs back office
      * @param {module:model/QueryRequest} opts.body Retrieve Action types from CompetitionLabs database by unique Action type ID's or any other POST body parameters using the POST method
      * @param {module:api/ActionTypesApi~getActionTypesByQueryCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ActionTypeResponse}
      */
-    getActionTypesByQuery(spaceName, opts, callback) {
+    getActionTypesByQuery(opts, callback) {
       opts = opts || {};
       let postBody = opts['body'];
-      // verify the required parameter 'spaceName' is set
-      if (spaceName === undefined || spaceName === null) {
-        throw new Error("Missing the required parameter 'spaceName' when calling getActionTypesByQuery");
-      }
 
       let pathParams = {
-        'spaceName': spaceName
       };
       let queryParams = {
       };
@@ -272,12 +242,12 @@ export default class ActionTypesApi {
       let formParams = {
       };
 
-      let authNames = ['adminApiKey'];
+      let authNames = ['AdminApiKey', 'OAuth2'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = ActionTypeResponse;
       return this.apiClient.callApi(
-        '/action-types/{spaceName}/query', 'POST',
+        '/action-types/query', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
@@ -293,27 +263,21 @@ export default class ActionTypesApi {
 
     /**
      * Update existing Action types in the CompetitionLabs database
-     * @param {String} spaceName This is the space name which is linked to the account
      * @param {Array.<module:model/UpdateActionTypeRequest>} body Update Action types in the CompetitionLabs database.
      * @param {Object} opts Optional parameters
      * @param {String} opts.X_API_KEY The admin API Key generated from CompetitionLabs back office
      * @param {module:api/ActionTypesApi~updateActionTypesCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ApiResponse}
      */
-    updateActionTypes(spaceName, body, opts, callback) {
+    updateActionTypes(body, opts, callback) {
       opts = opts || {};
       let postBody = body;
-      // verify the required parameter 'spaceName' is set
-      if (spaceName === undefined || spaceName === null) {
-        throw new Error("Missing the required parameter 'spaceName' when calling updateActionTypes");
-      }
       // verify the required parameter 'body' is set
       if (body === undefined || body === null) {
         throw new Error("Missing the required parameter 'body' when calling updateActionTypes");
       }
 
       let pathParams = {
-        'spaceName': spaceName
       };
       let queryParams = {
       };
@@ -323,12 +287,12 @@ export default class ActionTypesApi {
       let formParams = {
       };
 
-      let authNames = ['adminApiKey'];
+      let authNames = ['AdminApiKey', 'OAuth2'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = ApiResponse;
       return this.apiClient.callApi(
-        '/action-types/{spaceName}', 'PUT',
+        '/action-types', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );

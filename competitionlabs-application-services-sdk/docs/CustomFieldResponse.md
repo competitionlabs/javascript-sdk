@@ -1,4 +1,4 @@
-# @CompetitionlabsApplicationServicesSdk.CustomFieldResponse
+# CompetitionLabsApplicationServices.CustomFieldResponse
 
 ## Properties
 

@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -20,7 +20,7 @@ import ModelDefault from './ModelDefault';
 /**
  * The CustomField model module.
  * @module model/CustomField
- * @version 1.0.5
+ * @version 1.0.0
  */
 class CustomField {
     /**
@@ -32,13 +32,13 @@ class CustomField {
      * @param spaceName {String} This is the space name which is linked to the account
      * @param created {Date} ISO8601 timestamp for when a Model was created. All records are stored in UTC time zone
      * @param name {String} The name of a Custom field
-     * @param term {String} The key of a Custom field
+     * @param key {String} The key of a Custom field
      * @param fieldType {module:model/FieldType} 
      * @param appliesTo {module:model/AppliesTo} 
      */
-    constructor(id, spaceName, created, name, term, fieldType, appliesTo) { 
-        ModelDefault.initialize(this, id, spaceName, created);CustomFieldAllOf.initialize(this, name, term, fieldType, appliesTo);
-        CustomField.initialize(this, id, spaceName, created, name, term, fieldType, appliesTo);
+    constructor(id, spaceName, created, name, key, fieldType, appliesTo) { 
+        ModelDefault.initialize(this, id, spaceName, created);CustomFieldAllOf.initialize(this, name, key, fieldType, appliesTo);
+        CustomField.initialize(this, id, spaceName, created, name, key, fieldType, appliesTo);
     }
 
     /**
@@ -46,62 +46,14 @@ class CustomField {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, id, spaceName, created, name, term, fieldType, appliesTo) { 
+    static initialize(obj, id, spaceName, created, name, key, fieldType, appliesTo) { 
         obj['id'] = id;
         obj['spaceName'] = spaceName;
         obj['created'] = created;
         obj['name'] = name;
-        obj['term'] = term;
+        obj['key'] = key;
         obj['fieldType'] = fieldType;
         obj['appliesTo'] = appliesTo;
-    }
-
-    /**
-    * Constructs a full object with all available fields.
-    */
-    model(){
-        var obj = {};
-
-        obj['id'] = null;
-        obj['spaceName'] = null;
-        obj['created'] = null;
-        obj['name'] = null;
-        obj['term'] = null;
-        obj['description'] = null;
-        obj['fieldType'] = new FieldType().model();
-        obj['appliesTo'] = new AppliesTo().model();
-
-        return obj;
-    }
-
-    /**
-    * Constructs a full object Map for all available fields.
-    */
-    modelMap(){
-        var obj = {
-            "fields": {},
-            "requiredFields": {}
-        };
-
-        obj["fields"]['id'] = { "type": 'String', "system": true };
-        obj["fields"]['spaceName'] = { "type": 'String', "system": true };
-        obj["fields"]['created'] = { "type": 'Date', "system": true };
-        obj["fields"]['name'] = { "type": 'String', "system": false };
-        obj["fields"]['term'] = { "type": 'String', "system": false };
-        obj["fields"]['description'] = { "type": 'String', "system": false };
-        obj["fields"]['fieldType'] = new FieldType().modelMap();
-        obj["fields"]['appliesTo'] = new AppliesTo().modelMap();
-
-        
-        obj["requiredFields"]['id'] = { "type": 'String', "system": true };
-        obj["requiredFields"]['spaceName'] = { "type": 'String', "system": true };
-        obj["requiredFields"]['created'] = { "type": 'Date', "system": true };
-        obj["requiredFields"]['name'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['term'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['fieldType'] = new FieldType().modelMap();
-        obj["requiredFields"]['appliesTo'] = new AppliesTo().modelMap();
-
-        return obj;
     }
 
     /**
@@ -129,8 +81,8 @@ class CustomField {
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
-            if (data.hasOwnProperty('term')) {
-                obj['term'] = ApiClient.convertToType(data['term'], 'String');
+            if (data.hasOwnProperty('key')) {
+                obj['key'] = ApiClient.convertToType(data['key'], 'String');
             }
             if (data.hasOwnProperty('description')) {
                 obj['description'] = ApiClient.convertToType(data['description'], 'String');
@@ -174,9 +126,9 @@ CustomField.prototype['name'] = undefined;
 
 /**
  * The key of a Custom field
- * @member {String} term
+ * @member {String} key
  */
-CustomField.prototype['term'] = undefined;
+CustomField.prototype['key'] = undefined;
 
 /**
  * The description of a Custom field
@@ -219,9 +171,9 @@ ModelDefault.prototype['created'] = undefined;
 CustomFieldAllOf.prototype['name'] = undefined;
 /**
  * The key of a Custom field
- * @member {String} term
+ * @member {String} key
  */
-CustomFieldAllOf.prototype['term'] = undefined;
+CustomFieldAllOf.prototype['key'] = undefined;
 /**
  * The description of a Custom field
  * @member {String} description

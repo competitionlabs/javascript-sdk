@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.@CompetitionlabsJavascriptSdk);
+    factory(root.expect, root.CompetitionLabsApplicationServices);
   }
-}(this, function(expect, @CompetitionlabsJavascriptSdk) {
+}(this, function(expect, CompetitionLabsApplicationServices) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new @CompetitionlabsJavascriptSdk.SpaceAllOf();
+    instance = new CompetitionLabsApplicationServices.SpaceAllOf();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,19 +50,19 @@
   describe('SpaceAllOf', function() {
     it('should create an instance of SpaceAllOf', function() {
       // uncomment below and update the code to test SpaceAllOf
-      //var instane = new @CompetitionlabsJavascriptSdk.SpaceAllOf();
-      //expect(instance).to.be.a(@CompetitionlabsJavascriptSdk.SpaceAllOf);
+      //var instane = new CompetitionLabsApplicationServices.SpaceAllOf();
+      //expect(instance).to.be.a(CompetitionLabsApplicationServices.SpaceAllOf);
     });
 
     it('should have the property accountType (base name: "accountType")', function() {
       // uncomment below and update the code to test the property accountType
-      //var instane = new @CompetitionlabsJavascriptSdk.SpaceAllOf();
+      //var instance = new CompetitionLabsApplicationServices.SpaceAllOf();
       //expect(instance).to.be();
     });
 
     it('should have the property masterSpace (base name: "masterSpace")', function() {
       // uncomment below and update the code to test the property masterSpace
-      //var instane = new @CompetitionlabsJavascriptSdk.SpaceAllOf();
+      //var instance = new CompetitionLabsApplicationServices.SpaceAllOf();
       //expect(instance).to.be();
     });
 

@@ -1,28 +1,25 @@
-# @CompetitionlabsApplicationServicesSdk.UpdateCompetitionRequestAllOf
+# CompetitionLabsApplicationServices.UpdateCompetitionRequestAllOf
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**competitionType** | [**CompetitionType**](CompetitionType.md) |  | [optional] 
-**numberOfRounds** | **Number** | Number of rounds to be played in a competition | [optional] 
+**competitionType** | [**CompetitionType**](CompetitionType.md) |  | 
+**numberOfRounds** | **Number** | Number of rounds to be played in a competition | 
 **numberOfGroupStages** | **Number** | Number of group stages | [optional] 
-**name** | **String** | A name or a name of a competition. Can be translated | [optional] 
+**name** | **String** | A name or a name of a competition. Can be translated | 
 **description** | **String** | Description of the competition. Can be translated | [optional] 
-**termsConditions** | **String** | Terms and conditions of a competition. Can be translated | [optional] 
+**termsAndConditions** | **String** | Terms and conditions of a competition. Can be translated | [optional] 
 **maxNumberOfEntrants** | **Number** | Maximum number of partiipants allowed in a competition | [optional] 
-**minNumberOfEntrants** | **Number** | Maximum number of partiipants allowed in a competition | [optional] 
-**productIds** | **[String]** | An array of pre created product identifiers | [optional] 
-**ruleSets** | [**[RuleSet]**](RuleSet.md) |  | [optional] 
-**isPublic** | **Boolean** | Is the event publicly exposed depending on the event model | [optional] 
-**autoStart** | **Boolean** | Is the event publicly exposed depending on the event model | [optional] 
-**scheduledStartDate** | **Date** | ISO8601 timestamp for when a Competition should start. All records are stored in UTC time zone | [optional] 
-**scheduledEndDate** | **Date** | ISO8601 timestamp for when a Competition should end. All records are stored in UTC time zone | [optional] 
+**minNumberOfEntrants** | **Number** | Maximum number of partiipants allowed in a competition | 
+**products** | [**[ProductReduced]**](ProductReduced.md) |  | [optional] 
+**ruleSets** | [**[RuleSet]**](RuleSet.md) |  | 
+**scheduledStartDate** | **Date** | ISO8601 timestamp for when a Competition should start. All records are stored in UTC time zone | 
+**scheduledEndDate** | **Date** | ISO8601 timestamp for when a Competition should end. All records are stored in UTC time zone | 
 **includeEntrantsWhere** | [**ComplexFilter**](ComplexFilter.md) |  | [optional] 
-**optinRequiredForEntrants** | **Boolean** | If True, members must Opt in before they can acquire points in the contest | [optional] 
-**metadata** | [**[Metadata]**](Metadata.md) |  | [optional] 
-**translations** | [**[Translation]**](Translation.md) |  | [optional] 
+**translations** | **[Object]** |  | [optional] 
 **contests** | [**[UpdateContestRequest]**](UpdateContestRequest.md) |  | [optional] 
 **rewards** | [**[UpdateRewardRequest]**](UpdateRewardRequest.md) |  | [optional] 
+**constraints** | **[String]** | Additional constraints | 
 
 

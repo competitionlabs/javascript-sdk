@@ -1,4 +1,4 @@
-# @CompetitionlabsApplicationServicesSdk.CompetitionResponse
+# CompetitionLabsApplicationServices.CompetitionResponse
 
 ## Properties
 

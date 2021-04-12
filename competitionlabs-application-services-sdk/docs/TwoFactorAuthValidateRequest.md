@@ -1,4 +1,4 @@
-# @CompetitionlabsApplicationServicesSdk.TwoFactorAuthValidateRequest
+# CompetitionLabsApplicationServices.TwoFactorAuthValidateRequest
 
 ## Properties
 

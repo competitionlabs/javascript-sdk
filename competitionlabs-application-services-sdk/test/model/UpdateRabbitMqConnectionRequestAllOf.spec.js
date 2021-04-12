@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.@CompetitionlabsJavascriptSdk);
+    factory(root.expect, root.CompetitionLabsApplicationServices);
   }
-}(this, function(expect, @CompetitionlabsJavascriptSdk) {
+}(this, function(expect, CompetitionLabsApplicationServices) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new @CompetitionlabsJavascriptSdk.UpdateRabbitMqConnectionRequestAllOf();
+    instance = new CompetitionLabsApplicationServices.UpdateRabbitMqConnectionRequestAllOf();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,73 +50,73 @@
   describe('UpdateRabbitMqConnectionRequestAllOf', function() {
     it('should create an instance of UpdateRabbitMqConnectionRequestAllOf', function() {
       // uncomment below and update the code to test UpdateRabbitMqConnectionRequestAllOf
-      //var instane = new @CompetitionlabsJavascriptSdk.UpdateRabbitMqConnectionRequestAllOf();
-      //expect(instance).to.be.a(@CompetitionlabsJavascriptSdk.UpdateRabbitMqConnectionRequestAllOf);
+      //var instane = new CompetitionLabsApplicationServices.UpdateRabbitMqConnectionRequestAllOf();
+      //expect(instance).to.be.a(CompetitionLabsApplicationServices.UpdateRabbitMqConnectionRequestAllOf);
     });
 
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
-      //var instane = new @CompetitionlabsJavascriptSdk.UpdateRabbitMqConnectionRequestAllOf();
+      //var instance = new CompetitionLabsApplicationServices.UpdateRabbitMqConnectionRequestAllOf();
       //expect(instance).to.be();
     });
 
     it('should have the property uri (base name: "uri")', function() {
       // uncomment below and update the code to test the property uri
-      //var instane = new @CompetitionlabsJavascriptSdk.UpdateRabbitMqConnectionRequestAllOf();
+      //var instance = new CompetitionLabsApplicationServices.UpdateRabbitMqConnectionRequestAllOf();
       //expect(instance).to.be();
     });
 
     it('should have the property virtualHost (base name: "virtualHost")', function() {
       // uncomment below and update the code to test the property virtualHost
-      //var instane = new @CompetitionlabsJavascriptSdk.UpdateRabbitMqConnectionRequestAllOf();
+      //var instance = new CompetitionLabsApplicationServices.UpdateRabbitMqConnectionRequestAllOf();
       //expect(instance).to.be();
     });
 
     it('should have the property port (base name: "port")', function() {
       // uncomment below and update the code to test the property port
-      //var instane = new @CompetitionlabsJavascriptSdk.UpdateRabbitMqConnectionRequestAllOf();
+      //var instance = new CompetitionLabsApplicationServices.UpdateRabbitMqConnectionRequestAllOf();
       //expect(instance).to.be();
     });
 
-    it('should have the property useSsl (base name: "useSsl")', function() {
-      // uncomment below and update the code to test the property useSsl
-      //var instane = new @CompetitionlabsJavascriptSdk.UpdateRabbitMqConnectionRequestAllOf();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property username (base name: "username")', function() {
-      // uncomment below and update the code to test the property username
-      //var instane = new @CompetitionlabsJavascriptSdk.UpdateRabbitMqConnectionRequestAllOf();
+    it('should have the property userName (base name: "userName")', function() {
+      // uncomment below and update the code to test the property userName
+      //var instance = new CompetitionLabsApplicationServices.UpdateRabbitMqConnectionRequestAllOf();
       //expect(instance).to.be();
     });
 
     it('should have the property password (base name: "password")', function() {
       // uncomment below and update the code to test the property password
-      //var instane = new @CompetitionlabsJavascriptSdk.UpdateRabbitMqConnectionRequestAllOf();
+      //var instance = new CompetitionLabsApplicationServices.UpdateRabbitMqConnectionRequestAllOf();
       //expect(instance).to.be();
     });
 
     it('should have the property queueName (base name: "queueName")', function() {
       // uncomment below and update the code to test the property queueName
-      //var instane = new @CompetitionlabsJavascriptSdk.UpdateRabbitMqConnectionRequestAllOf();
+      //var instance = new CompetitionLabsApplicationServices.UpdateRabbitMqConnectionRequestAllOf();
       //expect(instance).to.be();
     });
 
     it('should have the property exchange (base name: "exchange")', function() {
       // uncomment below and update the code to test the property exchange
-      //var instane = new @CompetitionlabsJavascriptSdk.UpdateRabbitMqConnectionRequestAllOf();
+      //var instance = new CompetitionLabsApplicationServices.UpdateRabbitMqConnectionRequestAllOf();
       //expect(instance).to.be();
     });
 
     it('should have the property routingKey (base name: "routingKey")', function() {
       // uncomment below and update the code to test the property routingKey
-      //var instane = new @CompetitionlabsJavascriptSdk.UpdateRabbitMqConnectionRequestAllOf();
+      //var instance = new CompetitionLabsApplicationServices.UpdateRabbitMqConnectionRequestAllOf();
       //expect(instance).to.be();
     });
 
     it('should have the property transformerId (base name: "transformerId")', function() {
       // uncomment below and update the code to test the property transformerId
-      //var instane = new @CompetitionlabsJavascriptSdk.UpdateRabbitMqConnectionRequestAllOf();
+      //var instance = new CompetitionLabsApplicationServices.UpdateRabbitMqConnectionRequestAllOf();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property constraints (base name: "constraints")', function() {
+      // uncomment below and update the code to test the property constraints
+      //var instance = new CompetitionLabsApplicationServices.UpdateRabbitMqConnectionRequestAllOf();
       //expect(instance).to.be();
     });
 

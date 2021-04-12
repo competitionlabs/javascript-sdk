@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -19,7 +19,7 @@ import UpdateTransformerRequestAllOf from './UpdateTransformerRequestAllOf';
 /**
  * The UpdateTransformerRequest model module.
  * @module model/UpdateTransformerRequest
- * @version 1.0.5
+ * @version 1.0.0
  */
 class UpdateTransformerRequest {
     /**
@@ -41,40 +41,6 @@ class UpdateTransformerRequest {
      */
     static initialize(obj, id) { 
         obj['id'] = id;
-    }
-
-    /**
-    * Constructs a full object with all available fields.
-    */
-    model(){
-        var obj = {};
-
-        obj['id'] = null;
-        obj['name'] = null;
-        obj['source'] = null;
-        obj['sourceLanguage'] = new SourceLanguage().model();
-
-        return obj;
-    }
-
-    /**
-    * Constructs a full object Map for all available fields.
-    */
-    modelMap(){
-        var obj = {
-            "fields": {},
-            "requiredFields": {}
-        };
-
-        obj["fields"]['id'] = { "type": 'String', "system": true };
-        obj["fields"]['name'] = { "type": 'String', "system": false };
-        obj["fields"]['source'] = { "type": 'String', "system": false };
-        obj["fields"]['sourceLanguage'] = new SourceLanguage().modelMap();
-
-        
-        obj["requiredFields"]['id'] = { "type": 'String', "system": true };
-
-        return obj;
     }
 
     /**

@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -13,13 +13,17 @@
 
 import ApiClient from '../ApiClient';
 import Connection from './Connection';
+import CustomFieldReduced from './CustomFieldReduced';
+import Metadata from './Metadata';
 import ModelDefault from './ModelDefault';
+import OptParamModels from './OptParamModels';
 import SqsConnectionAllOf from './SqsConnectionAllOf';
+import TagsReduced from './TagsReduced';
 
 /**
  * The SqsConnection model module.
  * @module model/SqsConnection
- * @version 1.0.5
+ * @version 1.0.0
  */
 class SqsConnection {
     /**
@@ -28,6 +32,7 @@ class SqsConnection {
      * @extends module:model/Connection
      * @implements module:model/Connection
      * @implements module:model/ModelDefault
+     * @implements module:model/OptParamModels
      * @implements module:model/SqsConnectionAllOf
      * @param id {String} A unique system generated identifier
      * @param spaceName {String} This is the space name which is linked to the account
@@ -38,10 +43,11 @@ class SqsConnection {
      * @param acessKey {String} The access key of the IAM user
      * @param lastKnownStatus {String} Last known status of the connection
      * @param lastKnownStatusCode {Number} Status code correspoding to the last known status
+     * @param transformerId {String} The identifier of the transformer
      */
-    constructor(id, spaceName, created, objectType, name, uri, acessKey, lastKnownStatus, lastKnownStatusCode) { 
-        Connection.initialize(this, id, spaceName, created, objectType);ModelDefault.initialize(this, id, spaceName, created);SqsConnectionAllOf.initialize(this, name, uri, acessKey, lastKnownStatus, lastKnownStatusCode);
-        SqsConnection.initialize(this, id, spaceName, created, objectType, name, uri, acessKey, lastKnownStatus, lastKnownStatusCode);
+    constructor(id, spaceName, created, objectType, name, uri, acessKey, lastKnownStatus, lastKnownStatusCode, transformerId) { 
+        Connection.initialize(this, id, spaceName, created, objectType);ModelDefault.initialize(this, id, spaceName, created);OptParamModels.initialize(this);SqsConnectionAllOf.initialize(this, name, uri, acessKey, lastKnownStatus, lastKnownStatusCode, transformerId);
+        SqsConnection.initialize(this, id, spaceName, created, objectType, name, uri, acessKey, lastKnownStatus, lastKnownStatusCode, transformerId);
     }
 
     /**
@@ -49,7 +55,7 @@ class SqsConnection {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, id, spaceName, created, objectType, name, uri, acessKey, lastKnownStatus, lastKnownStatusCode) { 
+    static initialize(obj, id, spaceName, created, objectType, name, uri, acessKey, lastKnownStatus, lastKnownStatusCode, transformerId) { 
         obj['id'] = id;
         obj['spaceName'] = spaceName;
         obj['created'] = created;
@@ -58,55 +64,7 @@ class SqsConnection {
         obj['acessKey'] = acessKey;
         obj['lastKnownStatus'] = lastKnownStatus;
         obj['lastKnownStatusCode'] = lastKnownStatusCode;
-    }
-
-    /**
-    * Constructs a full object with all available fields.
-    */
-    model(){
-        var obj = {};
-
-        obj['id'] = null;
-        obj['spaceName'] = null;
-        obj['created'] = null;
-        obj['name'] = null;
-        obj['uri'] = null;
-        obj['acessKey'] = null;
-        obj['lastKnownStatus'] = null;
-        obj['lastKnownStatusCode'] = null;
-
-        return obj;
-    }
-
-    /**
-    * Constructs a full object Map for all available fields.
-    */
-    modelMap(){
-        var obj = {
-            "fields": {},
-            "requiredFields": {}
-        };
-
-        obj["fields"]['id'] = { "type": 'String', "system": true };
-        obj["fields"]['spaceName'] = { "type": 'String', "system": true };
-        obj["fields"]['created'] = { "type": 'Date', "system": true };
-        obj["fields"]['name'] = { "type": 'String', "system": false };
-        obj["fields"]['uri'] = { "type": 'String', "system": false };
-        obj["fields"]['acessKey'] = { "type": 'String', "system": false };
-        obj["fields"]['lastKnownStatus'] = { "type": 'String', "system": false };
-        obj["fields"]['lastKnownStatusCode'] = { "type": 'Number', "system": false };
-
-        
-        obj["requiredFields"]['id'] = { "type": 'String', "system": true };
-        obj["requiredFields"]['spaceName'] = { "type": 'String', "system": true };
-        obj["requiredFields"]['created'] = { "type": 'Date', "system": true };
-        obj["requiredFields"]['name'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['uri'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['acessKey'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['lastKnownStatus'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['lastKnownStatusCode'] = { "type": 'Number', "system": false };
-
-        return obj;
+        obj['transformerId'] = transformerId;
     }
 
     /**
@@ -122,6 +80,7 @@ class SqsConnection {
             Connection.constructFromObject(data, obj);
             Connection.constructFromObject(data, obj);
             ModelDefault.constructFromObject(data, obj);
+            OptParamModels.constructFromObject(data, obj);
             SqsConnectionAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('id')) {
@@ -132,6 +91,15 @@ class SqsConnection {
             }
             if (data.hasOwnProperty('created')) {
                 obj['created'] = ApiClient.convertToType(data['created'], 'Date');
+            }
+            if (data.hasOwnProperty('customFields')) {
+                obj['customFields'] = ApiClient.convertToType(data['customFields'], [CustomFieldReduced]);
+            }
+            if (data.hasOwnProperty('tags')) {
+                obj['tags'] = ApiClient.convertToType(data['tags'], [TagsReduced]);
+            }
+            if (data.hasOwnProperty('metadata')) {
+                obj['metadata'] = ApiClient.convertToType(data['metadata'], [Metadata]);
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
@@ -147,6 +115,9 @@ class SqsConnection {
             }
             if (data.hasOwnProperty('lastKnownStatusCode')) {
                 obj['lastKnownStatusCode'] = ApiClient.convertToType(data['lastKnownStatusCode'], 'Number');
+            }
+            if (data.hasOwnProperty('transformerId')) {
+                obj['transformerId'] = ApiClient.convertToType(data['transformerId'], 'String');
             }
         }
         return obj;
@@ -172,6 +143,22 @@ SqsConnection.prototype['spaceName'] = undefined;
  * @member {Date} created
  */
 SqsConnection.prototype['created'] = undefined;
+
+/**
+ * @member {Array.<module:model/CustomFieldReduced>} customFields
+ */
+SqsConnection.prototype['customFields'] = undefined;
+
+/**
+ * A list of id's used to tag models
+ * @member {Array.<module:model/TagsReduced>} tags
+ */
+SqsConnection.prototype['tags'] = undefined;
+
+/**
+ * @member {Array.<module:model/Metadata>} metadata
+ */
+SqsConnection.prototype['metadata'] = undefined;
 
 /**
  * The type of the consumer
@@ -202,6 +189,12 @@ SqsConnection.prototype['lastKnownStatus'] = undefined;
  * @member {Number} lastKnownStatusCode
  */
 SqsConnection.prototype['lastKnownStatusCode'] = undefined;
+
+/**
+ * The identifier of the transformer
+ * @member {String} transformerId
+ */
+SqsConnection.prototype['transformerId'] = undefined;
 
 
 // Implement Connection interface:
@@ -241,6 +234,20 @@ ModelDefault.prototype['spaceName'] = undefined;
  * @member {Date} created
  */
 ModelDefault.prototype['created'] = undefined;
+// Implement OptParamModels interface:
+/**
+ * @member {Array.<module:model/CustomFieldReduced>} customFields
+ */
+OptParamModels.prototype['customFields'] = undefined;
+/**
+ * A list of id's used to tag models
+ * @member {Array.<module:model/TagsReduced>} tags
+ */
+OptParamModels.prototype['tags'] = undefined;
+/**
+ * @member {Array.<module:model/Metadata>} metadata
+ */
+OptParamModels.prototype['metadata'] = undefined;
 // Implement SqsConnectionAllOf interface:
 /**
  * The type of the consumer
@@ -267,6 +274,11 @@ SqsConnectionAllOf.prototype['lastKnownStatus'] = undefined;
  * @member {Number} lastKnownStatusCode
  */
 SqsConnectionAllOf.prototype['lastKnownStatusCode'] = undefined;
+/**
+ * The identifier of the transformer
+ * @member {String} transformerId
+ */
+SqsConnectionAllOf.prototype['transformerId'] = undefined;
 
 
 

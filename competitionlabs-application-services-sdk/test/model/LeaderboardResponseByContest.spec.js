@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.@CompetitionlabsJavascriptSdk);
+    factory(root.expect, root.CompetitionLabsApplicationServices);
   }
-}(this, function(expect, @CompetitionlabsJavascriptSdk) {
+}(this, function(expect, CompetitionLabsApplicationServices) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new @CompetitionlabsJavascriptSdk.LeaderboardResponseByContest();
+    instance = new CompetitionLabsApplicationServices.LeaderboardResponseByContest();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,31 +50,31 @@
   describe('LeaderboardResponseByContest', function() {
     it('should create an instance of LeaderboardResponseByContest', function() {
       // uncomment below and update the code to test LeaderboardResponseByContest
-      //var instane = new @CompetitionlabsJavascriptSdk.LeaderboardResponseByContest();
-      //expect(instance).to.be.a(@CompetitionlabsJavascriptSdk.LeaderboardResponseByContest);
+      //var instane = new CompetitionLabsApplicationServices.LeaderboardResponseByContest();
+      //expect(instance).to.be.a(CompetitionLabsApplicationServices.LeaderboardResponseByContest);
     });
 
     it('should have the property contestId (base name: "contestId")', function() {
       // uncomment below and update the code to test the property contestId
-      //var instane = new @CompetitionlabsJavascriptSdk.LeaderboardResponseByContest();
+      //var instance = new CompetitionLabsApplicationServices.LeaderboardResponseByContest();
       //expect(instance).to.be();
     });
 
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
-      //var instane = new @CompetitionlabsJavascriptSdk.LeaderboardResponseByContest();
+      //var instance = new CompetitionLabsApplicationServices.LeaderboardResponseByContest();
       //expect(instance).to.be();
     });
 
     it('should have the property round (base name: "round")', function() {
       // uncomment below and update the code to test the property round
-      //var instane = new @CompetitionlabsJavascriptSdk.LeaderboardResponseByContest();
+      //var instance = new CompetitionLabsApplicationServices.LeaderboardResponseByContest();
       //expect(instance).to.be();
     });
 
     it('should have the property leaderboard (base name: "leaderboard")', function() {
       // uncomment below and update the code to test the property leaderboard
-      //var instane = new @CompetitionlabsJavascriptSdk.LeaderboardResponseByContest();
+      //var instance = new CompetitionLabsApplicationServices.LeaderboardResponseByContest();
       //expect(instance).to.be();
     });
 

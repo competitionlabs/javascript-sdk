@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -19,7 +19,7 @@ import ModelDefault from './ModelDefault';
 /**
  * The Contact model module.
  * @module model/Contact
- * @version 1.0.5
+ * @version 1.0.0
  */
 class Contact {
     /**
@@ -51,61 +51,6 @@ class Contact {
         obj['addressLine1'] = addressLine1;
         obj['zipPostalCode'] = zipPostalCode;
         obj['country'] = country;
-    }
-
-    /**
-    * Constructs a full object with all available fields.
-    */
-    model(){
-        var obj = {};
-
-        obj['id'] = null;
-        obj['spaceName'] = null;
-        obj['created'] = null;
-        obj['addressLine1'] = null;
-        obj['addressLine2'] = null;
-        obj['city'] = null;
-        obj['state'] = null;
-        obj['zipPostalCode'] = null;
-        obj['country'] = null;
-        obj['mobileNumber'] = null;
-        obj['phoneNumber'] = null;
-        obj['geoLocation'] = new Location().model();
-
-        return obj;
-    }
-
-    /**
-    * Constructs a full object Map for all available fields.
-    */
-    modelMap(){
-        var obj = {
-            "fields": {},
-            "requiredFields": {}
-        };
-
-        obj["fields"]['id'] = { "type": 'String', "system": true };
-        obj["fields"]['spaceName'] = { "type": 'String', "system": true };
-        obj["fields"]['created'] = { "type": 'Date', "system": true };
-        obj["fields"]['addressLine1'] = { "type": 'String', "system": false };
-        obj["fields"]['addressLine2'] = { "type": 'String', "system": false };
-        obj["fields"]['city'] = { "type": 'String', "system": false };
-        obj["fields"]['state'] = { "type": 'String', "system": false };
-        obj["fields"]['zipPostalCode'] = { "type": 'String', "system": false };
-        obj["fields"]['country'] = { "type": 'String', "system": false };
-        obj["fields"]['mobileNumber'] = { "type": 'String', "system": false };
-        obj["fields"]['phoneNumber'] = { "type": 'String', "system": false };
-        obj["fields"]['geoLocation'] = new Location().modelMap();
-
-        
-        obj["requiredFields"]['id'] = { "type": 'String', "system": true };
-        obj["requiredFields"]['spaceName'] = { "type": 'String', "system": true };
-        obj["requiredFields"]['created'] = { "type": 'Date', "system": true };
-        obj["requiredFields"]['addressLine1'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['zipPostalCode'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['country'] = { "type": 'String', "system": false };
-
-        return obj;
     }
 
     /**

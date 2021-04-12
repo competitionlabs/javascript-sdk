@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.@CompetitionlabsJavascriptSdk);
+    factory(root.expect, root.CompetitionLabsApplicationServices);
   }
-}(this, function(expect, @CompetitionlabsJavascriptSdk) {
+}(this, function(expect, CompetitionLabsApplicationServices) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new @CompetitionlabsJavascriptSdk.RewardReducedAllOf();
+    instance = new CompetitionLabsApplicationServices.RewardReducedAllOf();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,37 +50,37 @@
   describe('RewardReducedAllOf', function() {
     it('should create an instance of RewardReducedAllOf', function() {
       // uncomment below and update the code to test RewardReducedAllOf
-      //var instane = new @CompetitionlabsJavascriptSdk.RewardReducedAllOf();
-      //expect(instance).to.be.a(@CompetitionlabsJavascriptSdk.RewardReducedAllOf);
+      //var instane = new CompetitionLabsApplicationServices.RewardReducedAllOf();
+      //expect(instance).to.be.a(CompetitionLabsApplicationServices.RewardReducedAllOf);
     });
 
     it('should have the property rewardRank (base name: "rewardRank")', function() {
       // uncomment below and update the code to test the property rewardRank
-      //var instane = new @CompetitionlabsJavascriptSdk.RewardReducedAllOf();
+      //var instance = new CompetitionLabsApplicationServices.RewardReducedAllOf();
       //expect(instance).to.be();
     });
 
-    it('should have the property rewardName (base name: "rewardName")', function() {
-      // uncomment below and update the code to test the property rewardName
-      //var instane = new @CompetitionlabsJavascriptSdk.RewardReducedAllOf();
+    it('should have the property name (base name: "name")', function() {
+      // uncomment below and update the code to test the property name
+      //var instance = new CompetitionLabsApplicationServices.RewardReducedAllOf();
       //expect(instance).to.be();
     });
 
-    it('should have the property value (base name: "value")', function() {
-      // uncomment below and update the code to test the property value
-      //var instane = new @CompetitionlabsJavascriptSdk.RewardReducedAllOf();
+    it('should have the property rewardValue (base name: "rewardValue")', function() {
+      // uncomment below and update the code to test the property rewardValue
+      //var instance = new CompetitionLabsApplicationServices.RewardReducedAllOf();
       //expect(instance).to.be();
     });
 
     it('should have the property rewardType (base name: "rewardType")', function() {
       // uncomment below and update the code to test the property rewardType
-      //var instane = new @CompetitionlabsJavascriptSdk.RewardReducedAllOf();
+      //var instance = new CompetitionLabsApplicationServices.RewardReducedAllOf();
       //expect(instance).to.be();
     });
 
     it('should have the property rewardTypeId (base name: "rewardTypeId")', function() {
       // uncomment below and update the code to test the property rewardTypeId
-      //var instane = new @CompetitionlabsJavascriptSdk.RewardReducedAllOf();
+      //var instance = new CompetitionLabsApplicationServices.RewardReducedAllOf();
       //expect(instance).to.be();
     });
 

@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -12,25 +12,29 @@
  */
 
 import ApiClient from '../ApiClient';
+import CreateOptParamModels from './CreateOptParamModels';
 import Metadata from './Metadata';
+import UnitOfMeasureAllOf from './UnitOfMeasureAllOf';
 import UnitOfMeasureType from './UnitOfMeasureType';
 
 /**
  * The CreateUnitOfMeasureRequest model module.
  * @module model/CreateUnitOfMeasureRequest
- * @version 1.0.5
+ * @version 1.0.0
  */
 class CreateUnitOfMeasureRequest {
     /**
      * Constructs a new <code>CreateUnitOfMeasureRequest</code>.
      * @alias module:model/CreateUnitOfMeasureRequest
+     * @implements module:model/CreateOptParamModels
+     * @implements module:model/UnitOfMeasureAllOf
      * @param name {String} The name of a unit of measure
      * @param key {String} The reference to the unit of measure in your system
      * @param multiplier {Number} Is used to multiply the value from the standardised one that is being used
      * @param unitOfMeasureType {module:model/UnitOfMeasureType} 
      */
     constructor(name, key, multiplier, unitOfMeasureType) { 
-        
+        CreateOptParamModels.initialize(this);UnitOfMeasureAllOf.initialize(this, name, key, multiplier, unitOfMeasureType);
         CreateUnitOfMeasureRequest.initialize(this, name, key, multiplier, unitOfMeasureType);
     }
 
@@ -47,51 +51,6 @@ class CreateUnitOfMeasureRequest {
     }
 
     /**
-    * Constructs a full object with all available fields.
-    */
-    model(){
-        var obj = {};
-
-        obj['name'] = null;
-        obj['key'] = null;
-        obj['description'] = null;
-        obj['isoCode'] = null;
-        obj['symbol'] = null;
-        obj['multiplier'] = null;
-        obj['unitOfMeasureType'] = new UnitOfMeasureType().model();
-        obj['metadata'] = [new Metadata().model()];
-
-        return obj;
-    }
-
-    /**
-    * Constructs a full object Map for all available fields.
-    */
-    modelMap(){
-        var obj = {
-            "fields": {},
-            "requiredFields": {}
-        };
-
-        obj["fields"]['name'] = { "type": 'String', "system": false };
-        obj["fields"]['key'] = { "type": 'String', "system": false };
-        obj["fields"]['description'] = { "type": 'String', "system": false };
-        obj["fields"]['isoCode'] = { "type": 'String', "system": false };
-        obj["fields"]['symbol'] = { "type": 'String', "system": false };
-        obj["fields"]['multiplier'] = { "type": 'Number', "system": false };
-        obj["fields"]['unitOfMeasureType'] = new UnitOfMeasureType().modelMap();
-        obj["fields"]['metadata'] = [new Metadata().modelMap()];
-
-        
-        obj["requiredFields"]['name'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['key'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['multiplier'] = { "type": 'Number', "system": false };
-        obj["requiredFields"]['unitOfMeasureType'] = new UnitOfMeasureType().modelMap();
-
-        return obj;
-    }
-
-    /**
      * Constructs a <code>CreateUnitOfMeasureRequest</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
@@ -101,7 +60,18 @@ class CreateUnitOfMeasureRequest {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new CreateUnitOfMeasureRequest();
+            CreateOptParamModels.constructFromObject(data, obj);
+            UnitOfMeasureAllOf.constructFromObject(data, obj);
 
+            if (data.hasOwnProperty('customFields')) {
+                obj['customFields'] = ApiClient.convertToType(data['customFields'], ['String']);
+            }
+            if (data.hasOwnProperty('tags')) {
+                obj['tags'] = ApiClient.convertToType(data['tags'], ['String']);
+            }
+            if (data.hasOwnProperty('metadata')) {
+                obj['metadata'] = ApiClient.convertToType(data['metadata'], [Metadata]);
+            }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
@@ -123,15 +93,29 @@ class CreateUnitOfMeasureRequest {
             if (data.hasOwnProperty('unitOfMeasureType')) {
                 obj['unitOfMeasureType'] = UnitOfMeasureType.constructFromObject(data['unitOfMeasureType']);
             }
-            if (data.hasOwnProperty('metadata')) {
-                obj['metadata'] = ApiClient.convertToType(data['metadata'], [Metadata]);
-            }
         }
         return obj;
     }
 
 
 }
+
+/**
+ * A list of id's used to add cutom fields
+ * @member {Array.<String>} customFields
+ */
+CreateUnitOfMeasureRequest.prototype['customFields'] = undefined;
+
+/**
+ * A list of id's used to tag models
+ * @member {Array.<String>} tags
+ */
+CreateUnitOfMeasureRequest.prototype['tags'] = undefined;
+
+/**
+ * @member {Array.<module:model/Metadata>} metadata
+ */
+CreateUnitOfMeasureRequest.prototype['metadata'] = undefined;
 
 /**
  * The name of a unit of measure
@@ -174,12 +158,57 @@ CreateUnitOfMeasureRequest.prototype['multiplier'] = undefined;
  */
 CreateUnitOfMeasureRequest.prototype['unitOfMeasureType'] = undefined;
 
+
+// Implement CreateOptParamModels interface:
+/**
+ * A list of id's used to add cutom fields
+ * @member {Array.<String>} customFields
+ */
+CreateOptParamModels.prototype['customFields'] = undefined;
+/**
+ * A list of id's used to tag models
+ * @member {Array.<String>} tags
+ */
+CreateOptParamModels.prototype['tags'] = undefined;
 /**
  * @member {Array.<module:model/Metadata>} metadata
  */
-CreateUnitOfMeasureRequest.prototype['metadata'] = undefined;
-
-
+CreateOptParamModels.prototype['metadata'] = undefined;
+// Implement UnitOfMeasureAllOf interface:
+/**
+ * The name of a unit of measure
+ * @member {String} name
+ */
+UnitOfMeasureAllOf.prototype['name'] = undefined;
+/**
+ * The reference to the unit of measure in your system
+ * @member {String} key
+ */
+UnitOfMeasureAllOf.prototype['key'] = undefined;
+/**
+ * The description of a unit of measure
+ * @member {String} description
+ */
+UnitOfMeasureAllOf.prototype['description'] = undefined;
+/**
+ * An alphabetical or numerical code to identify a unit of measure
+ * @member {String} isoCode
+ */
+UnitOfMeasureAllOf.prototype['isoCode'] = undefined;
+/**
+ * The symbol of a unit of measure
+ * @member {String} symbol
+ */
+UnitOfMeasureAllOf.prototype['symbol'] = undefined;
+/**
+ * Is used to multiply the value from the standardised one that is being used
+ * @member {Number} multiplier
+ */
+UnitOfMeasureAllOf.prototype['multiplier'] = undefined;
+/**
+ * @member {module:model/UnitOfMeasureType} unitOfMeasureType
+ */
+UnitOfMeasureAllOf.prototype['unitOfMeasureType'] = undefined;
 
 
 

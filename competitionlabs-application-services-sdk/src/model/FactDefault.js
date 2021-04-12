@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -17,7 +17,7 @@ import Macro from './Macro';
 /**
  * The FactDefault model module.
  * @module model/FactDefault
- * @version 1.0.5
+ * @version 1.0.0
  */
 class FactDefault {
     /**
@@ -41,44 +41,6 @@ class FactDefault {
         obj['operators'] = operators;
         obj['constantType'] = constantType;
         obj['constantExample'] = constantExample;
-    }
-
-    /**
-    * Constructs a full object with all available fields.
-    */
-    model(){
-        var obj = {};
-
-        obj['operators'] = [null];
-        obj['constantType'] = null;
-        obj['constantExample'] = null;
-        obj['defaultVale'] = null;
-        obj['macros'] = [new Macro().model()];
-
-        return obj;
-    }
-
-    /**
-    * Constructs a full object Map for all available fields.
-    */
-    modelMap(){
-        var obj = {
-            "fields": {},
-            "requiredFields": {}
-        };
-
-        obj["fields"]['operators'] = [{ "type": 'String', "system": false }];
-        obj["fields"]['constantType'] = { "type": 'String', "system": false };
-        obj["fields"]['constantExample'] = { "type": 'String', "system": false };
-        obj["fields"]['defaultVale'] = { "type": 'String', "system": false };
-        obj["fields"]['macros'] = [new Macro().modelMap()];
-
-        
-        obj["requiredFields"]['operators'] = [{ "type": 'String', "system": false }];
-        obj["requiredFields"]['constantType'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['constantExample'] = { "type": 'String', "system": false };
-
-        return obj;
     }
 
     /**

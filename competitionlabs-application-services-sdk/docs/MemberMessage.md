@@ -1,4 +1,4 @@
-# @CompetitionlabsApplicationServicesSdk.MemberMessage
+# CompetitionLabsApplicationServices.MemberMessage
 
 ## Properties
 
@@ -15,5 +15,7 @@ Name | Type | Description | Notes
 **prize** | **String** | Unique system identifier of an Award | [readonly] 
 **status** | [**MessageStatus**](MessageStatus.md) |  | 
 **expiry** | **Date** | The time that the message will disappear after. ISO8601 timestamp | 
+**metadata** | [**[Metadata]**](Metadata.md) |  | [optional] 
+**tags** | [**[TagsReduced]**](TagsReduced.md) | A list of Strings of groups that the message belongs to. | [optional] 
 
 

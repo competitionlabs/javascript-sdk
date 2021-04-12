@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -12,23 +12,23 @@
  */
 
 import ApiClient from '../ApiClient';
-import Metadata from './Metadata';
 import Role from './Role';
 
 /**
  * The ApiKeyAllOf model module.
  * @module model/ApiKeyAllOf
- * @version 1.0.5
+ * @version 1.0.0
  */
 class ApiKeyAllOf {
     /**
      * Constructs a new <code>ApiKeyAllOf</code>.
      * @alias module:model/ApiKeyAllOf
-     * @param active {Boolean} To enable or dissable an Api key
+     * @param role {module:model/Role} 
+     * @param constraints {Array.<String>} Additional constraints
      */
-    constructor(active) { 
+    constructor(role, constraints) { 
         
-        ApiKeyAllOf.initialize(this, active);
+        ApiKeyAllOf.initialize(this, role, constraints);
     }
 
     /**
@@ -36,48 +36,9 @@ class ApiKeyAllOf {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, active) { 
-        obj['active'] = active;
-    }
-
-    /**
-    * Constructs a full object with all available fields.
-    */
-    model(){
-        var obj = {};
-
-        obj['active'] = null;
-        obj['description'] = null;
-        obj['whiteListIPs'] = [null];
-        obj['key'] = null;
-        obj['role'] = new Role().model();
-        obj['default'] = null;
-        obj['metadata'] = [new Metadata().model()];
-
-        return obj;
-    }
-
-    /**
-    * Constructs a full object Map for all available fields.
-    */
-    modelMap(){
-        var obj = {
-            "fields": {},
-            "requiredFields": {}
-        };
-
-        obj["fields"]['active'] = { "type": 'Boolean', "system": false };
-        obj["fields"]['description'] = { "type": 'String', "system": false };
-        obj["fields"]['whiteListIPs'] = [{ "type": 'String', "system": false }];
-        obj["fields"]['key'] = { "type": 'String', "system": false };
-        obj["fields"]['role'] = new Role().modelMap();
-        obj["fields"]['default'] = { "type": 'Boolean', "system": false };
-        obj["fields"]['metadata'] = [new Metadata().modelMap()];
-
-        
-        obj["requiredFields"]['active'] = { "type": 'Boolean', "system": false };
-
-        return obj;
+    static initialize(obj, role, constraints) { 
+        obj['role'] = role;
+        obj['constraints'] = constraints;
     }
 
     /**
@@ -91,9 +52,6 @@ class ApiKeyAllOf {
         if (data) {
             obj = obj || new ApiKeyAllOf();
 
-            if (data.hasOwnProperty('active')) {
-                obj['active'] = ApiClient.convertToType(data['active'], 'Boolean');
-            }
             if (data.hasOwnProperty('description')) {
                 obj['description'] = ApiClient.convertToType(data['description'], 'String');
             }
@@ -106,11 +64,8 @@ class ApiKeyAllOf {
             if (data.hasOwnProperty('role')) {
                 obj['role'] = Role.constructFromObject(data['role']);
             }
-            if (data.hasOwnProperty('default')) {
-                obj['default'] = ApiClient.convertToType(data['default'], 'Boolean');
-            }
-            if (data.hasOwnProperty('metadata')) {
-                obj['metadata'] = ApiClient.convertToType(data['metadata'], [Metadata]);
+            if (data.hasOwnProperty('constraints')) {
+                obj['constraints'] = ApiClient.convertToType(data['constraints'], ['String']);
             }
         }
         return obj;
@@ -118,12 +73,6 @@ class ApiKeyAllOf {
 
 
 }
-
-/**
- * To enable or dissable an Api key
- * @member {Boolean} active
- */
-ApiKeyAllOf.prototype['active'] = undefined;
 
 /**
  * The description of an Api key
@@ -149,15 +98,10 @@ ApiKeyAllOf.prototype['key'] = undefined;
 ApiKeyAllOf.prototype['role'] = undefined;
 
 /**
- * To enable the Api key to be default
- * @member {Boolean} default
+ * Additional constraints
+ * @member {Array.<String>} constraints
  */
-ApiKeyAllOf.prototype['default'] = undefined;
-
-/**
- * @member {Array.<module:model/Metadata>} metadata
- */
-ApiKeyAllOf.prototype['metadata'] = undefined;
+ApiKeyAllOf.prototype['constraints'] = undefined;
 
 
 

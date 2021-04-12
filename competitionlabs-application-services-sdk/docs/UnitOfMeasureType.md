@@ -1,4 +1,4 @@
-# @CompetitionlabsApplicationServicesSdk.UnitOfMeasureType
+# CompetitionLabsApplicationServices.UnitOfMeasureType
 
 ## Enum
 

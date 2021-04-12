@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -17,13 +17,12 @@ import MetaInfo from './MetaInfo';
 /**
  * The MetaBasic model module.
  * @module model/MetaBasic
- * @version 1.0.5
+ * @version 1.0.0
  */
 class MetaBasic {
     /**
      * Constructs a new <code>MetaBasic</code>.
      * @alias module:model/MetaBasic
-     * @extends module:model/MetaInfo
      * @implements module:model/MetaInfo
      * @param objectType {String} 
      * @param resultCount {Number} The count of successful results
@@ -40,31 +39,9 @@ class MetaBasic {
      * Only for internal use.
      */
     static initialize(obj, objectType, resultCount, errorCount) { 
-    }
-
-    /**
-    * Constructs a full object with all available fields.
-    */
-    model(){
-        var obj = {};
-
-
-        return obj;
-    }
-
-    /**
-    * Constructs a full object Map for all available fields.
-    */
-    modelMap(){
-        var obj = {
-            "fields": {},
-            "requiredFields": {}
-        };
-
-
-        
-
-        return obj;
+        obj['objectType'] = objectType;
+        obj['resultCount'] = resultCount;
+        obj['errorCount'] = errorCount;
     }
 
     /**
@@ -78,14 +55,39 @@ class MetaBasic {
         if (data) {
             obj = obj || new MetaBasic();
             MetaInfo.constructFromObject(data, obj);
-            MetaInfo.constructFromObject(data, obj);
 
+            if (data.hasOwnProperty('objectType')) {
+                obj['objectType'] = ApiClient.convertToType(data['objectType'], 'String');
+            }
+            if (data.hasOwnProperty('resultCount')) {
+                obj['resultCount'] = ApiClient.convertToType(data['resultCount'], 'Number');
+            }
+            if (data.hasOwnProperty('errorCount')) {
+                obj['errorCount'] = ApiClient.convertToType(data['errorCount'], 'Number');
+            }
         }
         return obj;
     }
 
 
 }
+
+/**
+ * @member {String} objectType
+ */
+MetaBasic.prototype['objectType'] = undefined;
+
+/**
+ * The count of successful results
+ * @member {Number} resultCount
+ */
+MetaBasic.prototype['resultCount'] = undefined;
+
+/**
+ * The count of errors
+ * @member {Number} errorCount
+ */
+MetaBasic.prototype['errorCount'] = undefined;
 
 
 // Implement MetaInfo interface:

@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -12,12 +12,13 @@
  */
 
 import ApiClient from '../ApiClient';
-import EventMetadata from './EventMetadata';
+import CustomFieldReduced from './CustomFieldReduced';
+import TagsReduced from './TagsReduced';
 
 /**
  * The EventAllOf model module.
  * @module model/EventAllOf
- * @version 1.0.5
+ * @version 1.0.0
  */
 class EventAllOf {
     /**
@@ -51,59 +52,6 @@ class EventAllOf {
         obj['sourceValue'] = sourceValue;
         obj['points'] = points;
         obj['transactionTimestamp'] = transactionTimestamp;
-    }
-
-    /**
-    * Constructs a full object with all available fields.
-    */
-    model(){
-        var obj = {};
-
-        obj['memberId'] = null;
-        obj['memberRefId'] = null;
-        obj['action'] = null;
-        obj['batchId'] = null;
-        obj['entityId'] = null;
-        obj['entityRefId'] = null;
-        obj['sourceValue'] = null;
-        obj['points'] = null;
-        obj['transactionTimestamp'] = null;
-        obj['metadata'] = [new EventMetadata().model()];
-
-        return obj;
-    }
-
-    /**
-    * Constructs a full object Map for all available fields.
-    */
-    modelMap(){
-        var obj = {
-            "fields": {},
-            "requiredFields": {}
-        };
-
-        obj["fields"]['memberId'] = { "type": 'String', "system": false };
-        obj["fields"]['memberRefId'] = { "type": 'String', "system": false };
-        obj["fields"]['action'] = { "type": 'String', "system": false };
-        obj["fields"]['batchId'] = { "type": 'String', "system": false };
-        obj["fields"]['entityId'] = { "type": 'String', "system": false };
-        obj["fields"]['entityRefId'] = { "type": 'String', "system": false };
-        obj["fields"]['sourceValue'] = { "type": 'Number', "system": false };
-        obj["fields"]['points'] = { "type": 'Number', "system": false };
-        obj["fields"]['transactionTimestamp'] = { "type": 'Date', "system": false };
-        obj["fields"]['metadata'] = [new EventMetadata().modelMap()];
-
-        
-        obj["requiredFields"]['memberId'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['memberRefId'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['action'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['entityId'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['entityRefId'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['sourceValue'] = { "type": 'Number', "system": false };
-        obj["requiredFields"]['points'] = { "type": 'Number', "system": false };
-        obj["requiredFields"]['transactionTimestamp'] = { "type": 'Date', "system": false };
-
-        return obj;
     }
 
     /**
@@ -145,7 +93,13 @@ class EventAllOf {
                 obj['transactionTimestamp'] = ApiClient.convertToType(data['transactionTimestamp'], 'Date');
             }
             if (data.hasOwnProperty('metadata')) {
-                obj['metadata'] = ApiClient.convertToType(data['metadata'], [EventMetadata]);
+                obj['metadata'] = ApiClient.convertToType(data['metadata'], {'String': Object});
+            }
+            if (data.hasOwnProperty('customFields')) {
+                obj['customFields'] = ApiClient.convertToType(data['customFields'], [CustomFieldReduced]);
+            }
+            if (data.hasOwnProperty('tags')) {
+                obj['tags'] = ApiClient.convertToType(data['tags'], [TagsReduced]);
             }
         }
         return obj;
@@ -209,9 +163,20 @@ EventAllOf.prototype['points'] = undefined;
 EventAllOf.prototype['transactionTimestamp'] = undefined;
 
 /**
- * @member {Array.<module:model/EventMetadata>} metadata
+ * @member {Object.<String, Object.<String, Object>>} metadata
  */
 EventAllOf.prototype['metadata'] = undefined;
+
+/**
+ * @member {Array.<module:model/CustomFieldReduced>} customFields
+ */
+EventAllOf.prototype['customFields'] = undefined;
+
+/**
+ * A list of Strings of groups that the tag belongs to
+ * @member {Array.<module:model/TagsReduced>} tags
+ */
+EventAllOf.prototype['tags'] = undefined;
 
 
 

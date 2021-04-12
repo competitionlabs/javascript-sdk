@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.@CompetitionlabsJavascriptSdk);
+    factory(root.expect, root.CompetitionLabsApplicationServices);
   }
-}(this, function(expect, @CompetitionlabsJavascriptSdk) {
+}(this, function(expect, CompetitionLabsApplicationServices) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new @CompetitionlabsJavascriptSdk.Connection();
+    instance = new CompetitionLabsApplicationServices.Connection();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,31 +50,31 @@
   describe('Connection', function() {
     it('should create an instance of Connection', function() {
       // uncomment below and update the code to test Connection
-      //var instane = new @CompetitionlabsJavascriptSdk.Connection();
-      //expect(instance).to.be.a(@CompetitionlabsJavascriptSdk.Connection);
+      //var instane = new CompetitionLabsApplicationServices.Connection();
+      //expect(instance).to.be.a(CompetitionLabsApplicationServices.Connection);
     });
 
     it('should have the property id (base name: "id")', function() {
       // uncomment below and update the code to test the property id
-      //var instane = new @CompetitionlabsJavascriptSdk.Connection();
+      //var instance = new CompetitionLabsApplicationServices.Connection();
       //expect(instance).to.be();
     });
 
     it('should have the property spaceName (base name: "spaceName")', function() {
       // uncomment below and update the code to test the property spaceName
-      //var instane = new @CompetitionlabsJavascriptSdk.Connection();
+      //var instance = new CompetitionLabsApplicationServices.Connection();
       //expect(instance).to.be();
     });
 
     it('should have the property created (base name: "created")', function() {
       // uncomment below and update the code to test the property created
-      //var instane = new @CompetitionlabsJavascriptSdk.Connection();
+      //var instance = new CompetitionLabsApplicationServices.Connection();
       //expect(instance).to.be();
     });
 
     it('should have the property objectType (base name: "objectType")', function() {
       // uncomment below and update the code to test the property objectType
-      //var instane = new @CompetitionlabsJavascriptSdk.Connection();
+      //var instance = new CompetitionLabsApplicationServices.Connection();
       //expect(instance).to.be();
     });
 

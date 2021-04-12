@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -16,16 +16,21 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateKafkaConnectionRequestAllOf model module.
  * @module model/UpdateKafkaConnectionRequestAllOf
- * @version 1.0.5
+ * @version 1.0.0
  */
 class UpdateKafkaConnectionRequestAllOf {
     /**
      * Constructs a new <code>UpdateKafkaConnectionRequestAllOf</code>.
      * @alias module:model/UpdateKafkaConnectionRequestAllOf
+     * @param name {String} The name of the consumer
+     * @param brokers {String} Kafka broker endpoints.
+     * @param transformerId {String} The id of the transformer to handle incoming messages
+     * @param groupId {String} Group Id for connection
+     * @param topic {String} Topic name
      */
-    constructor() { 
+    constructor(name, brokers, transformerId, groupId, topic) { 
         
-        UpdateKafkaConnectionRequestAllOf.initialize(this);
+        UpdateKafkaConnectionRequestAllOf.initialize(this, name, brokers, transformerId, groupId, topic);
     }
 
     /**
@@ -33,42 +38,12 @@ class UpdateKafkaConnectionRequestAllOf {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj) { 
-    }
-
-    /**
-    * Constructs a full object with all available fields.
-    */
-    model(){
-        var obj = {};
-
-        obj['name'] = null;
-        obj['brokers'] = null;
-        obj['transformerId'] = null;
-        obj['groupId'] = null;
-        obj['topic'] = null;
-
-        return obj;
-    }
-
-    /**
-    * Constructs a full object Map for all available fields.
-    */
-    modelMap(){
-        var obj = {
-            "fields": {},
-            "requiredFields": {}
-        };
-
-        obj["fields"]['name'] = { "type": 'String', "system": false };
-        obj["fields"]['brokers'] = { "type": 'String', "system": false };
-        obj["fields"]['transformerId'] = { "type": 'String', "system": false };
-        obj["fields"]['groupId'] = { "type": 'String', "system": false };
-        obj["fields"]['topic'] = { "type": 'String', "system": false };
-
-        
-
-        return obj;
+    static initialize(obj, name, brokers, transformerId, groupId, topic) { 
+        obj['name'] = name;
+        obj['brokers'] = brokers;
+        obj['transformerId'] = transformerId;
+        obj['groupId'] = groupId;
+        obj['topic'] = topic;
     }
 
     /**

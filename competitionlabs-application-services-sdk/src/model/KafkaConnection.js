@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -13,13 +13,17 @@
 
 import ApiClient from '../ApiClient';
 import Connection from './Connection';
+import CustomFieldReduced from './CustomFieldReduced';
 import KafkaConnectionAllOf from './KafkaConnectionAllOf';
+import Metadata from './Metadata';
 import ModelDefault from './ModelDefault';
+import OptParamModels from './OptParamModels';
+import TagsReduced from './TagsReduced';
 
 /**
  * The KafkaConnection model module.
  * @module model/KafkaConnection
- * @version 1.0.5
+ * @version 1.0.0
  */
 class KafkaConnection {
     /**
@@ -28,6 +32,7 @@ class KafkaConnection {
      * @extends module:model/Connection
      * @implements module:model/Connection
      * @implements module:model/ModelDefault
+     * @implements module:model/OptParamModels
      * @implements module:model/KafkaConnectionAllOf
      * @param id {String} A unique system generated identifier
      * @param spaceName {String} This is the space name which is linked to the account
@@ -39,10 +44,11 @@ class KafkaConnection {
      * @param topic {String} Topic name
      * @param lastKnownStatus {String} Last known status of the connection
      * @param lastKnownStatusCode {Number} Status code correspoding to the last known status
+     * @param transformerId {String} The identifier of the transformer
      */
-    constructor(id, spaceName, created, objectType, name, brokers, groupId, topic, lastKnownStatus, lastKnownStatusCode) { 
-        Connection.initialize(this, id, spaceName, created, objectType);ModelDefault.initialize(this, id, spaceName, created);KafkaConnectionAllOf.initialize(this, name, brokers, groupId, topic, lastKnownStatus, lastKnownStatusCode);
-        KafkaConnection.initialize(this, id, spaceName, created, objectType, name, brokers, groupId, topic, lastKnownStatus, lastKnownStatusCode);
+    constructor(id, spaceName, created, objectType, name, brokers, groupId, topic, lastKnownStatus, lastKnownStatusCode, transformerId) { 
+        Connection.initialize(this, id, spaceName, created, objectType);ModelDefault.initialize(this, id, spaceName, created);OptParamModels.initialize(this);KafkaConnectionAllOf.initialize(this, name, brokers, groupId, topic, lastKnownStatus, lastKnownStatusCode, transformerId);
+        KafkaConnection.initialize(this, id, spaceName, created, objectType, name, brokers, groupId, topic, lastKnownStatus, lastKnownStatusCode, transformerId);
     }
 
     /**
@@ -50,7 +56,7 @@ class KafkaConnection {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, id, spaceName, created, objectType, name, brokers, groupId, topic, lastKnownStatus, lastKnownStatusCode) { 
+    static initialize(obj, id, spaceName, created, objectType, name, brokers, groupId, topic, lastKnownStatus, lastKnownStatusCode, transformerId) { 
         obj['id'] = id;
         obj['spaceName'] = spaceName;
         obj['created'] = created;
@@ -60,58 +66,7 @@ class KafkaConnection {
         obj['topic'] = topic;
         obj['lastKnownStatus'] = lastKnownStatus;
         obj['lastKnownStatusCode'] = lastKnownStatusCode;
-    }
-
-    /**
-    * Constructs a full object with all available fields.
-    */
-    model(){
-        var obj = {};
-
-        obj['id'] = null;
-        obj['spaceName'] = null;
-        obj['created'] = null;
-        obj['name'] = null;
-        obj['brokers'] = [null];
-        obj['groupId'] = null;
-        obj['topic'] = null;
-        obj['lastKnownStatus'] = null;
-        obj['lastKnownStatusCode'] = null;
-
-        return obj;
-    }
-
-    /**
-    * Constructs a full object Map for all available fields.
-    */
-    modelMap(){
-        var obj = {
-            "fields": {},
-            "requiredFields": {}
-        };
-
-        obj["fields"]['id'] = { "type": 'String', "system": true };
-        obj["fields"]['spaceName'] = { "type": 'String', "system": true };
-        obj["fields"]['created'] = { "type": 'Date', "system": true };
-        obj["fields"]['name'] = { "type": 'String', "system": false };
-        obj["fields"]['brokers'] = [{ "type": 'String', "system": false }];
-        obj["fields"]['groupId'] = { "type": 'String', "system": false };
-        obj["fields"]['topic'] = { "type": 'String', "system": false };
-        obj["fields"]['lastKnownStatus'] = { "type": 'String', "system": false };
-        obj["fields"]['lastKnownStatusCode'] = { "type": 'Number', "system": false };
-
-        
-        obj["requiredFields"]['id'] = { "type": 'String', "system": true };
-        obj["requiredFields"]['spaceName'] = { "type": 'String', "system": true };
-        obj["requiredFields"]['created'] = { "type": 'Date', "system": true };
-        obj["requiredFields"]['name'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['brokers'] = [{ "type": 'String', "system": false }];
-        obj["requiredFields"]['groupId'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['topic'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['lastKnownStatus'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['lastKnownStatusCode'] = { "type": 'Number', "system": false };
-
-        return obj;
+        obj['transformerId'] = transformerId;
     }
 
     /**
@@ -127,6 +82,7 @@ class KafkaConnection {
             Connection.constructFromObject(data, obj);
             Connection.constructFromObject(data, obj);
             ModelDefault.constructFromObject(data, obj);
+            OptParamModels.constructFromObject(data, obj);
             KafkaConnectionAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('id')) {
@@ -137,6 +93,15 @@ class KafkaConnection {
             }
             if (data.hasOwnProperty('created')) {
                 obj['created'] = ApiClient.convertToType(data['created'], 'Date');
+            }
+            if (data.hasOwnProperty('customFields')) {
+                obj['customFields'] = ApiClient.convertToType(data['customFields'], [CustomFieldReduced]);
+            }
+            if (data.hasOwnProperty('tags')) {
+                obj['tags'] = ApiClient.convertToType(data['tags'], [TagsReduced]);
+            }
+            if (data.hasOwnProperty('metadata')) {
+                obj['metadata'] = ApiClient.convertToType(data['metadata'], [Metadata]);
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
@@ -155,6 +120,9 @@ class KafkaConnection {
             }
             if (data.hasOwnProperty('lastKnownStatusCode')) {
                 obj['lastKnownStatusCode'] = ApiClient.convertToType(data['lastKnownStatusCode'], 'Number');
+            }
+            if (data.hasOwnProperty('transformerId')) {
+                obj['transformerId'] = ApiClient.convertToType(data['transformerId'], 'String');
             }
         }
         return obj;
@@ -180,6 +148,22 @@ KafkaConnection.prototype['spaceName'] = undefined;
  * @member {Date} created
  */
 KafkaConnection.prototype['created'] = undefined;
+
+/**
+ * @member {Array.<module:model/CustomFieldReduced>} customFields
+ */
+KafkaConnection.prototype['customFields'] = undefined;
+
+/**
+ * A list of id's used to tag models
+ * @member {Array.<module:model/TagsReduced>} tags
+ */
+KafkaConnection.prototype['tags'] = undefined;
+
+/**
+ * @member {Array.<module:model/Metadata>} metadata
+ */
+KafkaConnection.prototype['metadata'] = undefined;
 
 /**
  * The name of the consumer
@@ -216,6 +200,12 @@ KafkaConnection.prototype['lastKnownStatus'] = undefined;
  * @member {Number} lastKnownStatusCode
  */
 KafkaConnection.prototype['lastKnownStatusCode'] = undefined;
+
+/**
+ * The identifier of the transformer
+ * @member {String} transformerId
+ */
+KafkaConnection.prototype['transformerId'] = undefined;
 
 
 // Implement Connection interface:
@@ -255,6 +245,20 @@ ModelDefault.prototype['spaceName'] = undefined;
  * @member {Date} created
  */
 ModelDefault.prototype['created'] = undefined;
+// Implement OptParamModels interface:
+/**
+ * @member {Array.<module:model/CustomFieldReduced>} customFields
+ */
+OptParamModels.prototype['customFields'] = undefined;
+/**
+ * A list of id's used to tag models
+ * @member {Array.<module:model/TagsReduced>} tags
+ */
+OptParamModels.prototype['tags'] = undefined;
+/**
+ * @member {Array.<module:model/Metadata>} metadata
+ */
+OptParamModels.prototype['metadata'] = undefined;
 // Implement KafkaConnectionAllOf interface:
 /**
  * The name of the consumer
@@ -286,6 +290,11 @@ KafkaConnectionAllOf.prototype['lastKnownStatus'] = undefined;
  * @member {Number} lastKnownStatusCode
  */
 KafkaConnectionAllOf.prototype['lastKnownStatusCode'] = undefined;
+/**
+ * The identifier of the transformer
+ * @member {String} transformerId
+ */
+KafkaConnectionAllOf.prototype['transformerId'] = undefined;
 
 
 

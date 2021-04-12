@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -14,12 +14,14 @@
 import ApiClient from '../ApiClient';
 import EntityType from './EntityType';
 import MemberAwardAllOf from './MemberAwardAllOf';
+import Metadata from './Metadata';
 import ModelDefault from './ModelDefault';
+import TagsReduced from './TagsReduced';
 
 /**
  * The MemberAward model module.
  * @module model/MemberAward
- * @version 1.0.5
+ * @version 1.0.0
  */
 class MemberAward {
     /**
@@ -31,16 +33,16 @@ class MemberAward {
      * @param spaceName {String} This is the space name which is linked to the account
      * @param created {Date} ISO8601 timestamp for when a Model was created. All records are stored in UTC time zone
      * @param rewardId {String} A unique identifier of a Reward
-     * @param rewardTypeKey {String} The type of the Reward
+     * @param rewardType {String} The type of the Reward
      * @param rewardTypeId {String} A unique id of the Reward Type
      * @param rewardValue {Number} Numerical value of the reward that will be issued based on the reward type
-     * @param claimed {Boolean} has the award been claimed or not
      * @param entityType {module:model/EntityType} 
      * @param entityId {String} The Id of the contest or achievement related to this Award. Dependant on entityType
+     * @param constraints {Array.<String>} Additional constraints
      */
-    constructor(id, spaceName, created, rewardId, rewardTypeKey, rewardTypeId, rewardValue, claimed, entityType, entityId) { 
-        ModelDefault.initialize(this, id, spaceName, created);MemberAwardAllOf.initialize(this, rewardId, rewardTypeKey, rewardTypeId, rewardValue, claimed, entityType, entityId);
-        MemberAward.initialize(this, id, spaceName, created, rewardId, rewardTypeKey, rewardTypeId, rewardValue, claimed, entityType, entityId);
+    constructor(id, spaceName, created, rewardId, rewardType, rewardTypeId, rewardValue, entityType, entityId, constraints) { 
+        ModelDefault.initialize(this, id, spaceName, created);MemberAwardAllOf.initialize(this, rewardId, rewardType, rewardTypeId, rewardValue, entityType, entityId, constraints);
+        MemberAward.initialize(this, id, spaceName, created, rewardId, rewardType, rewardTypeId, rewardValue, entityType, entityId, constraints);
     }
 
     /**
@@ -48,80 +50,17 @@ class MemberAward {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, id, spaceName, created, rewardId, rewardTypeKey, rewardTypeId, rewardValue, claimed, entityType, entityId) { 
+    static initialize(obj, id, spaceName, created, rewardId, rewardType, rewardTypeId, rewardValue, entityType, entityId, constraints) { 
         obj['id'] = id;
         obj['spaceName'] = spaceName;
         obj['created'] = created;
         obj['rewardId'] = rewardId;
-        obj['rewardTypeKey'] = rewardTypeKey;
+        obj['rewardType'] = rewardType;
         obj['rewardTypeId'] = rewardTypeId;
         obj['rewardValue'] = rewardValue;
-        obj['claimed'] = claimed;
         obj['entityType'] = entityType;
         obj['entityId'] = entityId;
-    }
-
-    /**
-    * Constructs a full object with all available fields.
-    */
-    model(){
-        var obj = {};
-
-        obj['id'] = null;
-        obj['spaceName'] = null;
-        obj['created'] = null;
-        obj['rewardId'] = null;
-        obj['rewardTypeKey'] = null;
-        obj['rewardTypeId'] = null;
-        obj['rewardValue'] = null;
-        obj['memberAcknowledgmentRequired'] = null;
-        obj['claimed'] = null;
-        obj['delay'] = null;
-        obj['entityType'] = new EntityType().model();
-        obj['entityId'] = null;
-        obj['pointInTime'] = null;
-        obj['period'] = null;
-
-        return obj;
-    }
-
-    /**
-    * Constructs a full object Map for all available fields.
-    */
-    modelMap(){
-        var obj = {
-            "fields": {},
-            "requiredFields": {}
-        };
-
-        obj["fields"]['id'] = { "type": 'String', "system": true };
-        obj["fields"]['spaceName'] = { "type": 'String', "system": true };
-        obj["fields"]['created'] = { "type": 'Date', "system": true };
-        obj["fields"]['rewardId'] = { "type": 'String', "system": false };
-        obj["fields"]['rewardTypeKey'] = { "type": 'String', "system": false };
-        obj["fields"]['rewardTypeId'] = { "type": 'String', "system": false };
-        obj["fields"]['rewardValue'] = { "type": 'Number', "system": false };
-        obj["fields"]['memberAcknowledgmentRequired'] = { "type": 'Boolean', "system": false };
-        obj["fields"]['claimed'] = { "type": 'Boolean', "system": false };
-        obj["fields"]['delay'] = { "type": 'Number', "system": false };
-        obj["fields"]['entityType'] = new EntityType().modelMap();
-        obj["fields"]['entityId'] = { "type": 'String', "system": false };
-        obj["fields"]['pointInTime'] = { "type": 'Date', "system": false };
-        obj["fields"]['period'] = { "type": 'Number', "system": false };
-
-        
-        obj["requiredFields"]['id'] = { "type": 'String', "system": true };
-        obj["requiredFields"]['spaceName'] = { "type": 'String', "system": true };
-        obj["requiredFields"]['created'] = { "type": 'Date', "system": true };
-        obj["requiredFields"]['rewardId'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['rewardTypeKey'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['rewardTypeId'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['rewardValue'] = { "type": 'Number', "system": false };
-        obj["requiredFields"]['claimed'] = { "type": 'Boolean', "system": false };
-        obj["requiredFields"]['entityType'] = new EntityType().modelMap();
-        obj["requiredFields"]['entityId'] = { "type": 'String', "system": false };
-
-        return obj;
+        obj['constraints'] = constraints;
     }
 
     /**
@@ -149,20 +88,14 @@ class MemberAward {
             if (data.hasOwnProperty('rewardId')) {
                 obj['rewardId'] = ApiClient.convertToType(data['rewardId'], 'String');
             }
-            if (data.hasOwnProperty('rewardTypeKey')) {
-                obj['rewardTypeKey'] = ApiClient.convertToType(data['rewardTypeKey'], 'String');
+            if (data.hasOwnProperty('rewardType')) {
+                obj['rewardType'] = ApiClient.convertToType(data['rewardType'], 'String');
             }
             if (data.hasOwnProperty('rewardTypeId')) {
                 obj['rewardTypeId'] = ApiClient.convertToType(data['rewardTypeId'], 'String');
             }
             if (data.hasOwnProperty('rewardValue')) {
                 obj['rewardValue'] = ApiClient.convertToType(data['rewardValue'], 'Number');
-            }
-            if (data.hasOwnProperty('memberAcknowledgmentRequired')) {
-                obj['memberAcknowledgmentRequired'] = ApiClient.convertToType(data['memberAcknowledgmentRequired'], 'Boolean');
-            }
-            if (data.hasOwnProperty('claimed')) {
-                obj['claimed'] = ApiClient.convertToType(data['claimed'], 'Boolean');
             }
             if (data.hasOwnProperty('delay')) {
                 obj['delay'] = ApiClient.convertToType(data['delay'], 'Number');
@@ -178,6 +111,15 @@ class MemberAward {
             }
             if (data.hasOwnProperty('period')) {
                 obj['period'] = ApiClient.convertToType(data['period'], 'Number');
+            }
+            if (data.hasOwnProperty('tags')) {
+                obj['tags'] = ApiClient.convertToType(data['tags'], [TagsReduced]);
+            }
+            if (data.hasOwnProperty('metadata')) {
+                obj['metadata'] = ApiClient.convertToType(data['metadata'], [Metadata]);
+            }
+            if (data.hasOwnProperty('constraints')) {
+                obj['constraints'] = ApiClient.convertToType(data['constraints'], ['String']);
             }
         }
         return obj;
@@ -212,9 +154,9 @@ MemberAward.prototype['rewardId'] = undefined;
 
 /**
  * The type of the Reward
- * @member {String} rewardTypeKey
+ * @member {String} rewardType
  */
-MemberAward.prototype['rewardTypeKey'] = undefined;
+MemberAward.prototype['rewardType'] = undefined;
 
 /**
  * A unique id of the Reward Type
@@ -227,18 +169,6 @@ MemberAward.prototype['rewardTypeId'] = undefined;
  * @member {Number} rewardValue
  */
 MemberAward.prototype['rewardValue'] = undefined;
-
-/**
- * Requires member acknowledgment to claim a reward. If set to True reward will not be automatically issued
- * @member {Boolean} memberAcknowledgmentRequired
- */
-MemberAward.prototype['memberAcknowledgmentRequired'] = undefined;
-
-/**
- * has the award been claimed or not
- * @member {Boolean} claimed
- */
-MemberAward.prototype['claimed'] = undefined;
 
 /**
  * Delay of issuing a reward in minutes
@@ -269,6 +199,23 @@ MemberAward.prototype['pointInTime'] = undefined;
  */
 MemberAward.prototype['period'] = undefined;
 
+/**
+ * A list of Strings of groups that the reward belongs to.
+ * @member {Array.<module:model/TagsReduced>} tags
+ */
+MemberAward.prototype['tags'] = undefined;
+
+/**
+ * @member {Array.<module:model/Metadata>} metadata
+ */
+MemberAward.prototype['metadata'] = undefined;
+
+/**
+ * Additional constraints
+ * @member {Array.<String>} constraints
+ */
+MemberAward.prototype['constraints'] = undefined;
+
 
 // Implement ModelDefault interface:
 /**
@@ -294,9 +241,9 @@ ModelDefault.prototype['created'] = undefined;
 MemberAwardAllOf.prototype['rewardId'] = undefined;
 /**
  * The type of the Reward
- * @member {String} rewardTypeKey
+ * @member {String} rewardType
  */
-MemberAwardAllOf.prototype['rewardTypeKey'] = undefined;
+MemberAwardAllOf.prototype['rewardType'] = undefined;
 /**
  * A unique id of the Reward Type
  * @member {String} rewardTypeId
@@ -307,16 +254,6 @@ MemberAwardAllOf.prototype['rewardTypeId'] = undefined;
  * @member {Number} rewardValue
  */
 MemberAwardAllOf.prototype['rewardValue'] = undefined;
-/**
- * Requires member acknowledgment to claim a reward. If set to True reward will not be automatically issued
- * @member {Boolean} memberAcknowledgmentRequired
- */
-MemberAwardAllOf.prototype['memberAcknowledgmentRequired'] = undefined;
-/**
- * has the award been claimed or not
- * @member {Boolean} claimed
- */
-MemberAwardAllOf.prototype['claimed'] = undefined;
 /**
  * Delay of issuing a reward in minutes
  * @member {Number} delay
@@ -341,6 +278,20 @@ MemberAwardAllOf.prototype['pointInTime'] = undefined;
  * @member {Number} period
  */
 MemberAwardAllOf.prototype['period'] = undefined;
+/**
+ * A list of Strings of groups that the reward belongs to.
+ * @member {Array.<module:model/TagsReduced>} tags
+ */
+MemberAwardAllOf.prototype['tags'] = undefined;
+/**
+ * @member {Array.<module:model/Metadata>} metadata
+ */
+MemberAwardAllOf.prototype['metadata'] = undefined;
+/**
+ * Additional constraints
+ * @member {Array.<String>} constraints
+ */
+MemberAwardAllOf.prototype['constraints'] = undefined;
 
 
 

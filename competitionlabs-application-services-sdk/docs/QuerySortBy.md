@@ -1,4 +1,4 @@
-# @CompetitionlabsApplicationServicesSdk.QuerySortBy
+# CompetitionLabsApplicationServices.QuerySortBy
 
 ## Properties
 

@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.@CompetitionlabsJavascriptSdk);
+    factory(root.expect, root.CompetitionLabsApplicationServices);
   }
-}(this, function(expect, @CompetitionlabsJavascriptSdk) {
+}(this, function(expect, CompetitionLabsApplicationServices) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new @CompetitionlabsJavascriptSdk.MetaBasic();
+    instance = new CompetitionLabsApplicationServices.MetaBasic();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,8 +50,26 @@
   describe('MetaBasic', function() {
     it('should create an instance of MetaBasic', function() {
       // uncomment below and update the code to test MetaBasic
-      //var instane = new @CompetitionlabsJavascriptSdk.MetaBasic();
-      //expect(instance).to.be.a(@CompetitionlabsJavascriptSdk.MetaBasic);
+      //var instane = new CompetitionLabsApplicationServices.MetaBasic();
+      //expect(instance).to.be.a(CompetitionLabsApplicationServices.MetaBasic);
+    });
+
+    it('should have the property objectType (base name: "objectType")', function() {
+      // uncomment below and update the code to test the property objectType
+      //var instance = new CompetitionLabsApplicationServices.MetaBasic();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property resultCount (base name: "resultCount")', function() {
+      // uncomment below and update the code to test the property resultCount
+      //var instance = new CompetitionLabsApplicationServices.MetaBasic();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property errorCount (base name: "errorCount")', function() {
+      // uncomment below and update the code to test the property errorCount
+      //var instance = new CompetitionLabsApplicationServices.MetaBasic();
+      //expect(instance).to.be();
     });
 
   });

@@ -1,4 +1,4 @@
-# @CompetitionlabsApplicationServicesSdk.FactDefault
+# CompetitionLabsApplicationServices.FactDefault
 
 ## Properties
 

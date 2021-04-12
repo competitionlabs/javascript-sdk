@@ -1,4 +1,4 @@
-# @CompetitionlabsApplicationServicesSdk.TestMessageRequest
+# CompetitionLabsApplicationServices.TestMessageRequest
 
 ## Properties
 

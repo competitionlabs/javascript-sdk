@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -18,7 +18,7 @@ import RuleScope from './RuleScope';
 /**
  * The RuleDescriptor model module.
  * @module model/RuleDescriptor
- * @version 1.0.5
+ * @version 1.0.0
  */
 class RuleDescriptor {
     /**
@@ -40,37 +40,6 @@ class RuleDescriptor {
     static initialize(obj, ruleScope, actions) { 
         obj['ruleScope'] = ruleScope;
         obj['actions'] = actions;
-    }
-
-    /**
-    * Constructs a full object with all available fields.
-    */
-    model(){
-        var obj = {};
-
-        obj['ruleScope'] = new RuleScope().model();
-        obj['actions'] = [new RuleDescriptorAction().model()];
-
-        return obj;
-    }
-
-    /**
-    * Constructs a full object Map for all available fields.
-    */
-    modelMap(){
-        var obj = {
-            "fields": {},
-            "requiredFields": {}
-        };
-
-        obj["fields"]['ruleScope'] = new RuleScope().modelMap();
-        obj["fields"]['actions'] = [new RuleDescriptorAction().modelMap()];
-
-        
-        obj["requiredFields"]['ruleScope'] = new RuleScope().modelMap();
-        obj["requiredFields"]['actions'] = [new RuleDescriptorAction().modelMap()];
-
-        return obj;
     }
 
     /**

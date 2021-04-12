@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -17,18 +17,18 @@ import Contact from './Contact';
 /**
  * The UserAllOf model module.
  * @module model/UserAllOf
- * @version 1.0.5
+ * @version 1.0.0
  */
 class UserAllOf {
     /**
      * Constructs a new <code>UserAllOf</code>.
      * @alias module:model/UserAllOf
-     * @param tfaEnabled {Boolean} To enable two factor authentication
-     * @param emailVerified {Boolean} Is the email verified
+     * @param email {String} The email of the user to log in
+     * @param constraints {Array.<String>} Additional constraints
      */
-    constructor(tfaEnabled, emailVerified) { 
+    constructor(email, constraints) { 
         
-        UserAllOf.initialize(this, tfaEnabled, emailVerified);
+        UserAllOf.initialize(this, email, constraints);
     }
 
     /**
@@ -36,48 +36,9 @@ class UserAllOf {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, tfaEnabled, emailVerified) { 
-        obj['tfaEnabled'] = tfaEnabled;
-        obj['emailVerified'] = emailVerified;
-    }
-
-    /**
-    * Constructs a full object with all available fields.
-    */
-    model(){
-        var obj = {};
-
-        obj['firstName'] = null;
-        obj['lastName'] = null;
-        obj['tfaEnabled'] = null;
-        obj['email'] = null;
-        obj['contact'] = new Contact().model();
-        obj['emailVerified'] = null;
-
-        return obj;
-    }
-
-    /**
-    * Constructs a full object Map for all available fields.
-    */
-    modelMap(){
-        var obj = {
-            "fields": {},
-            "requiredFields": {}
-        };
-
-        obj["fields"]['firstName'] = { "type": 'String', "system": false };
-        obj["fields"]['lastName'] = { "type": 'String', "system": false };
-        obj["fields"]['tfaEnabled'] = { "type": 'Boolean', "system": false };
-        obj["fields"]['email'] = { "type": 'String', "system": false };
-        obj["fields"]['contact'] = new Contact().modelMap();
-        obj["fields"]['emailVerified'] = { "type": 'Boolean', "system": false };
-
-        
-        obj["requiredFields"]['tfaEnabled'] = { "type": 'Boolean', "system": false };
-        obj["requiredFields"]['emailVerified'] = { "type": 'Boolean', "system": false };
-
-        return obj;
+    static initialize(obj, email, constraints) { 
+        obj['email'] = email;
+        obj['constraints'] = constraints;
     }
 
     /**
@@ -97,17 +58,14 @@ class UserAllOf {
             if (data.hasOwnProperty('lastName')) {
                 obj['lastName'] = ApiClient.convertToType(data['lastName'], 'String');
             }
-            if (data.hasOwnProperty('tfaEnabled')) {
-                obj['tfaEnabled'] = ApiClient.convertToType(data['tfaEnabled'], 'Boolean');
-            }
             if (data.hasOwnProperty('email')) {
                 obj['email'] = ApiClient.convertToType(data['email'], 'String');
             }
             if (data.hasOwnProperty('contact')) {
                 obj['contact'] = Contact.constructFromObject(data['contact']);
             }
-            if (data.hasOwnProperty('emailVerified')) {
-                obj['emailVerified'] = ApiClient.convertToType(data['emailVerified'], 'Boolean');
+            if (data.hasOwnProperty('constraints')) {
+                obj['constraints'] = ApiClient.convertToType(data['constraints'], ['String']);
             }
         }
         return obj;
@@ -129,12 +87,6 @@ UserAllOf.prototype['firstName'] = undefined;
 UserAllOf.prototype['lastName'] = undefined;
 
 /**
- * To enable two factor authentication
- * @member {Boolean} tfaEnabled
- */
-UserAllOf.prototype['tfaEnabled'] = undefined;
-
-/**
  * The email of the user to log in
  * @member {String} email
  */
@@ -146,10 +98,10 @@ UserAllOf.prototype['email'] = undefined;
 UserAllOf.prototype['contact'] = undefined;
 
 /**
- * Is the email verified
- * @member {Boolean} emailVerified
+ * Additional constraints
+ * @member {Array.<String>} constraints
  */
-UserAllOf.prototype['emailVerified'] = undefined;
+UserAllOf.prototype['constraints'] = undefined;
 
 
 

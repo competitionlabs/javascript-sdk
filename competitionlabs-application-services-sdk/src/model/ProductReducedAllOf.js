@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -12,22 +12,22 @@
  */
 
 import ApiClient from '../ApiClient';
+import TagsReduced from './TagsReduced';
 
 /**
  * The ProductReducedAllOf model module.
  * @module model/ProductReducedAllOf
- * @version 1.0.5
+ * @version 1.0.0
  */
 class ProductReducedAllOf {
     /**
      * Constructs a new <code>ProductReducedAllOf</code>.
      * @alias module:model/ProductReducedAllOf
-     * @param name {String} The name of the product
      * @param productRefId {String} The reference to this product in your system. The reference identifier can not be changed after the product has been created
      */
-    constructor(name, productRefId) { 
+    constructor(productRefId) { 
         
-        ProductReducedAllOf.initialize(this, name, productRefId);
+        ProductReducedAllOf.initialize(this, productRefId);
     }
 
     /**
@@ -35,40 +35,8 @@ class ProductReducedAllOf {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, name, productRefId) { 
-        obj['name'] = name;
+    static initialize(obj, productRefId) { 
         obj['productRefId'] = productRefId;
-    }
-
-    /**
-    * Constructs a full object with all available fields.
-    */
-    model(){
-        var obj = {};
-
-        obj['name'] = null;
-        obj['productRefId'] = null;
-
-        return obj;
-    }
-
-    /**
-    * Constructs a full object Map for all available fields.
-    */
-    modelMap(){
-        var obj = {
-            "fields": {},
-            "requiredFields": {}
-        };
-
-        obj["fields"]['name'] = { "type": 'String', "system": false };
-        obj["fields"]['productRefId'] = { "type": 'String', "system": false };
-
-        
-        obj["requiredFields"]['name'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['productRefId'] = { "type": 'String', "system": false };
-
-        return obj;
     }
 
     /**
@@ -88,6 +56,9 @@ class ProductReducedAllOf {
             if (data.hasOwnProperty('productRefId')) {
                 obj['productRefId'] = ApiClient.convertToType(data['productRefId'], 'String');
             }
+            if (data.hasOwnProperty('tags')) {
+                obj['tags'] = ApiClient.convertToType(data['tags'], [TagsReduced]);
+            }
         }
         return obj;
     }
@@ -106,6 +77,12 @@ ProductReducedAllOf.prototype['name'] = undefined;
  * @member {String} productRefId
  */
 ProductReducedAllOf.prototype['productRefId'] = undefined;
+
+/**
+ * A list of Strings used to tag products with taxonomy terms
+ * @member {Array.<module:model/TagsReduced>} tags
+ */
+ProductReducedAllOf.prototype['tags'] = undefined;
 
 
 

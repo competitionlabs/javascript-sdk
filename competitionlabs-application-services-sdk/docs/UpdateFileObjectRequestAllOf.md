@@ -1,14 +1,12 @@
-# @CompetitionlabsApplicationServicesSdk.UpdateFileObjectRequestAllOf
+# CompetitionLabsApplicationServices.UpdateFileObjectRequestAllOf
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**tags** | **[String]** | The tags associated with this file object | [optional] 
 **repositoryId** | **String** | The repository identifier this file belongs too | 
-**fileName** | **String** | Name of the original file uploaded | [optional] 
-**mimeType** | **String** | Mime type of the file. Valid mime types - text/csv or application/vmd.ms-excel | [optional] 
-**parentFolderPath** | **String** | The folder containing the attachment within the repository | [optional] 
-**metadata** | [**[Metadata]**](Metadata.md) |  | [optional] 
+**name** | **String** | Name of the original file uploaded | 
+**mimeType** | **String** | Mime type of the file. Valid mime types - text/csv or application/vmd.ms-excel | 
+**parentFolderPath** | **String** | The folder containing the attachment within the repository | 
 
 

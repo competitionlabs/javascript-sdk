@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -12,25 +12,28 @@
  */
 
 import ApiClient from '../ApiClient';
+import CreateApiKeyRequestAllOf from './CreateApiKeyRequestAllOf';
+import CreateOptParamModels from './CreateOptParamModels';
 import Metadata from './Metadata';
 import Role from './Role';
 
 /**
  * The CreateApiKeyRequest model module.
  * @module model/CreateApiKeyRequest
- * @version 1.0.5
+ * @version 1.0.0
  */
 class CreateApiKeyRequest {
     /**
      * Constructs a new <code>CreateApiKeyRequest</code>.
      * @alias module:model/CreateApiKeyRequest
-     * @param active {Boolean} To enable or dissable an Api key
+     * @implements module:model/CreateOptParamModels
+     * @implements module:model/CreateApiKeyRequestAllOf
      * @param role {module:model/Role} 
-     * @param _default {Boolean} To enable the Api key to be default
+     * @param constraints {Array.<String>} Additional constraints
      */
-    constructor(active, role, _default) { 
-        
-        CreateApiKeyRequest.initialize(this, active, role, _default);
+    constructor(role, constraints) { 
+        CreateOptParamModels.initialize(this);CreateApiKeyRequestAllOf.initialize(this, role, constraints);
+        CreateApiKeyRequest.initialize(this, role, constraints);
     }
 
     /**
@@ -38,52 +41,9 @@ class CreateApiKeyRequest {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, active, role, _default) { 
-        obj['active'] = active;
+    static initialize(obj, role, constraints) { 
         obj['role'] = role;
-        obj['default'] = _default;
-    }
-
-    /**
-    * Constructs a full object with all available fields.
-    */
-    model(){
-        var obj = {};
-
-        obj['active'] = null;
-        obj['description'] = null;
-        obj['whiteListIPs'] = [null];
-        obj['key'] = null;
-        obj['role'] = new Role().model();
-        obj['default'] = null;
-        obj['metadata'] = [new Metadata().model()];
-
-        return obj;
-    }
-
-    /**
-    * Constructs a full object Map for all available fields.
-    */
-    modelMap(){
-        var obj = {
-            "fields": {},
-            "requiredFields": {}
-        };
-
-        obj["fields"]['active'] = { "type": 'Boolean', "system": false };
-        obj["fields"]['description'] = { "type": 'String', "system": false };
-        obj["fields"]['whiteListIPs'] = [{ "type": 'String', "system": false }];
-        obj["fields"]['key'] = { "type": 'String', "system": false };
-        obj["fields"]['role'] = new Role().modelMap();
-        obj["fields"]['default'] = { "type": 'Boolean', "system": false };
-        obj["fields"]['metadata'] = [new Metadata().modelMap()];
-
-        
-        obj["requiredFields"]['active'] = { "type": 'Boolean', "system": false };
-        obj["requiredFields"]['role'] = new Role().modelMap();
-        obj["requiredFields"]['default'] = { "type": 'Boolean', "system": false };
-
-        return obj;
+        obj['constraints'] = constraints;
     }
 
     /**
@@ -96,9 +56,17 @@ class CreateApiKeyRequest {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new CreateApiKeyRequest();
+            CreateOptParamModels.constructFromObject(data, obj);
+            CreateApiKeyRequestAllOf.constructFromObject(data, obj);
 
-            if (data.hasOwnProperty('active')) {
-                obj['active'] = ApiClient.convertToType(data['active'], 'Boolean');
+            if (data.hasOwnProperty('customFields')) {
+                obj['customFields'] = ApiClient.convertToType(data['customFields'], ['String']);
+            }
+            if (data.hasOwnProperty('tags')) {
+                obj['tags'] = ApiClient.convertToType(data['tags'], ['String']);
+            }
+            if (data.hasOwnProperty('metadata')) {
+                obj['metadata'] = ApiClient.convertToType(data['metadata'], [Metadata]);
             }
             if (data.hasOwnProperty('description')) {
                 obj['description'] = ApiClient.convertToType(data['description'], 'String');
@@ -112,11 +80,8 @@ class CreateApiKeyRequest {
             if (data.hasOwnProperty('role')) {
                 obj['role'] = Role.constructFromObject(data['role']);
             }
-            if (data.hasOwnProperty('default')) {
-                obj['default'] = ApiClient.convertToType(data['default'], 'Boolean');
-            }
-            if (data.hasOwnProperty('metadata')) {
-                obj['metadata'] = ApiClient.convertToType(data['metadata'], [Metadata]);
+            if (data.hasOwnProperty('constraints')) {
+                obj['constraints'] = ApiClient.convertToType(data['constraints'], ['String']);
             }
         }
         return obj;
@@ -126,10 +91,21 @@ class CreateApiKeyRequest {
 }
 
 /**
- * To enable or dissable an Api key
- * @member {Boolean} active
+ * A list of id's used to add cutom fields
+ * @member {Array.<String>} customFields
  */
-CreateApiKeyRequest.prototype['active'] = undefined;
+CreateApiKeyRequest.prototype['customFields'] = undefined;
+
+/**
+ * A list of id's used to tag models
+ * @member {Array.<String>} tags
+ */
+CreateApiKeyRequest.prototype['tags'] = undefined;
+
+/**
+ * @member {Array.<module:model/Metadata>} metadata
+ */
+CreateApiKeyRequest.prototype['metadata'] = undefined;
 
 /**
  * The description of an Api key
@@ -155,17 +131,52 @@ CreateApiKeyRequest.prototype['key'] = undefined;
 CreateApiKeyRequest.prototype['role'] = undefined;
 
 /**
- * To enable the Api key to be default
- * @member {Boolean} default
+ * Additional constraints
+ * @member {Array.<String>} constraints
  */
-CreateApiKeyRequest.prototype['default'] = undefined;
+CreateApiKeyRequest.prototype['constraints'] = undefined;
 
+
+// Implement CreateOptParamModels interface:
+/**
+ * A list of id's used to add cutom fields
+ * @member {Array.<String>} customFields
+ */
+CreateOptParamModels.prototype['customFields'] = undefined;
+/**
+ * A list of id's used to tag models
+ * @member {Array.<String>} tags
+ */
+CreateOptParamModels.prototype['tags'] = undefined;
 /**
  * @member {Array.<module:model/Metadata>} metadata
  */
-CreateApiKeyRequest.prototype['metadata'] = undefined;
-
-
+CreateOptParamModels.prototype['metadata'] = undefined;
+// Implement CreateApiKeyRequestAllOf interface:
+/**
+ * The description of an Api key
+ * @member {String} description
+ */
+CreateApiKeyRequestAllOf.prototype['description'] = undefined;
+/**
+ * the IP's that need to be whitelisted with the Api key
+ * @member {Array.<String>} whiteListIPs
+ */
+CreateApiKeyRequestAllOf.prototype['whiteListIPs'] = undefined;
+/**
+ * An Api key hash
+ * @member {String} key
+ */
+CreateApiKeyRequestAllOf.prototype['key'] = undefined;
+/**
+ * @member {module:model/Role} role
+ */
+CreateApiKeyRequestAllOf.prototype['role'] = undefined;
+/**
+ * Additional constraints
+ * @member {Array.<String>} constraints
+ */
+CreateApiKeyRequestAllOf.prototype['constraints'] = undefined;
 
 
 

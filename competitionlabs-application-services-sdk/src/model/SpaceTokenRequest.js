@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SpaceTokenRequest model module.
  * @module model/SpaceTokenRequest
- * @version 1.0.5
+ * @version 1.0.0
  */
 class SpaceTokenRequest {
     /**
@@ -36,36 +36,6 @@ class SpaceTokenRequest {
      */
     static initialize(obj, spaceName) { 
         obj['spaceName'] = spaceName;
-    }
-
-    /**
-    * Constructs a full object with all available fields.
-    */
-    model(){
-        var obj = {};
-
-        obj['userToken'] = null;
-        obj['spaceName'] = null;
-
-        return obj;
-    }
-
-    /**
-    * Constructs a full object Map for all available fields.
-    */
-    modelMap(){
-        var obj = {
-            "fields": {},
-            "requiredFields": {}
-        };
-
-        obj["fields"]['userToken'] = { "type": 'String', "system": false };
-        obj["fields"]['spaceName'] = { "type": 'String', "system": true };
-
-        
-        obj["requiredFields"]['spaceName'] = { "type": 'String', "system": true };
-
-        return obj;
     }
 
     /**

@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -43,6 +43,7 @@ import Bracket from './model/Bracket';
 import BracketResponse from './model/BracketResponse';
 import ChangePasswordRequest from './model/ChangePasswordRequest';
 import ClaimAwardRequest from './model/ClaimAwardRequest';
+import CloneAchievementResponse from './model/CloneAchievementResponse';
 import CloneContestResponse from './model/CloneContestResponse';
 import Collaborator from './model/Collaborator';
 import CollaboratorAllOf from './model/CollaboratorAllOf';
@@ -76,40 +77,60 @@ import ContestStateOperations from './model/ContestStateOperations';
 import ContestStatus from './model/ContestStatus';
 import CountResponse from './model/CountResponse';
 import CreateAchievementRequest from './model/CreateAchievementRequest';
+import CreateAchievementRequestAllOf from './model/CreateAchievementRequestAllOf';
 import CreateActionTypeRequest from './model/CreateActionTypeRequest';
 import CreateApiKeyRequest from './model/CreateApiKeyRequest';
+import CreateApiKeyRequestAllOf from './model/CreateApiKeyRequestAllOf';
 import CreateAttachmentRequest from './model/CreateAttachmentRequest';
+import CreateAttachmentRequestAllOf from './model/CreateAttachmentRequestAllOf';
 import CreateCollaboratorRequest from './model/CreateCollaboratorRequest';
 import CreateCompetitionRequest from './model/CreateCompetitionRequest';
+import CreateCompetitionRequestAllOf from './model/CreateCompetitionRequestAllOf';
 import CreateConnectionRequest from './model/CreateConnectionRequest';
 import CreateContestForCompetitionRequest from './model/CreateContestForCompetitionRequest';
+import CreateContestForCompetitionRequestAllOf from './model/CreateContestForCompetitionRequestAllOf';
 import CreateContestRequest from './model/CreateContestRequest';
+import CreateContestRequestAllOf from './model/CreateContestRequestAllOf';
 import CreateCustomFieldRequest from './model/CreateCustomFieldRequest';
 import CreateEntityRewardRequest from './model/CreateEntityRewardRequest';
+import CreateEntityRewardRequestAllOf from './model/CreateEntityRewardRequestAllOf';
 import CreateEventRequest from './model/CreateEventRequest';
 import CreateFileObjectRequest from './model/CreateFileObjectRequest';
+import CreateFileObjectRequestAllOf from './model/CreateFileObjectRequestAllOf';
 import CreateKafkaConnectionRequest from './model/CreateKafkaConnectionRequest';
 import CreateKafkaConnectionRequestAllOf from './model/CreateKafkaConnectionRequestAllOf';
 import CreateLanguageRequest from './model/CreateLanguageRequest';
+import CreateLanguageRequestAllOf from './model/CreateLanguageRequestAllOf';
 import CreateMemberRequest from './model/CreateMemberRequest';
 import CreateMessageRequest from './model/CreateMessageRequest';
+import CreateMessageRequestAllOf from './model/CreateMessageRequestAllOf';
+import CreateOptParamModels from './model/CreateOptParamModels';
 import CreateProductRequest from './model/CreateProductRequest';
+import CreateProductRequestAllOf from './model/CreateProductRequestAllOf';
 import CreateRabbitMqConnectionRequest from './model/CreateRabbitMqConnectionRequest';
 import CreateRabbitMqConnectionRequestAllOf from './model/CreateRabbitMqConnectionRequestAllOf';
 import CreateRepositoryRequest from './model/CreateRepositoryRequest';
+import CreateRepositoryRequestAllOf from './model/CreateRepositoryRequestAllOf';
 import CreateRewardRequest from './model/CreateRewardRequest';
+import CreateRewardRequestAllOf from './model/CreateRewardRequestAllOf';
 import CreateRewardTypeRequest from './model/CreateRewardTypeRequest';
 import CreateSpaceRequest from './model/CreateSpaceRequest';
 import CreateSqsConnectionRequest from './model/CreateSqsConnectionRequest';
 import CreateSqsConnectionRequestAllOf from './model/CreateSqsConnectionRequestAllOf';
+import CreateTagsRequest from './model/CreateTagsRequest';
 import CreateTransformerRequest from './model/CreateTransformerRequest';
 import CreateUnitOfMeasureRequest from './model/CreateUnitOfMeasureRequest';
 import CreateUserRequest from './model/CreateUserRequest';
+import CreateUserRequestAllOf from './model/CreateUserRequestAllOf';
 import CreateWebhookRequest from './model/CreateWebhookRequest';
+import CreateWebhookRequestAllOf from './model/CreateWebhookRequestAllOf';
 import CustomField from './model/CustomField';
 import CustomFieldAllOf from './model/CustomFieldAllOf';
+import CustomFieldReduced from './model/CustomFieldReduced';
+import CustomFieldReducedAllOf from './model/CustomFieldReducedAllOf';
 import CustomFieldResponse from './model/CustomFieldResponse';
 import DependantOn from './model/DependantOn';
+import EntityTags from './model/EntityTags';
 import EntityType from './model/EntityType';
 import Entrant from './model/Entrant';
 import EntrantAction from './model/EntrantAction';
@@ -120,8 +141,6 @@ import Error from './model/Error';
 import ErrorDetail from './model/ErrorDetail';
 import Event from './model/Event';
 import EventAllOf from './model/EventAllOf';
-import EventMetadata from './model/EventMetadata';
-import EventMetadataRequest from './model/EventMetadataRequest';
 import EventRefType from './model/EventRefType';
 import EventResponse from './model/EventResponse';
 import FactDefault from './model/FactDefault';
@@ -133,7 +152,6 @@ import HostingOptions from './model/HostingOptions';
 import KafkaConnection from './model/KafkaConnection';
 import KafkaConnectionAllOf from './model/KafkaConnectionAllOf';
 import Language from './model/Language';
-import LanguageAllOf from './model/LanguageAllOf';
 import LanguageResponse from './model/LanguageResponse';
 import Languages from './model/Languages';
 import Leaderboard from './model/Leaderboard';
@@ -169,6 +187,7 @@ import MetaInfo from './model/MetaInfo';
 import Metadata from './model/Metadata';
 import ModelDefault from './model/ModelDefault';
 import OnRuleSetMatchTrigger from './model/OnRuleSetMatchTrigger';
+import OptParamModels from './model/OptParamModels';
 import Product from './model/Product';
 import ProductAllOf from './model/ProductAllOf';
 import ProductReduced from './model/ProductReduced';
@@ -197,6 +216,8 @@ import RewardReducedAllOf from './model/RewardReducedAllOf';
 import RewardResponse from './model/RewardResponse';
 import RewardType from './model/RewardType';
 import RewardTypeAllOf from './model/RewardTypeAllOf';
+import RewardTypeReduced from './model/RewardTypeReduced';
+import RewardTypeReducedAllOf from './model/RewardTypeReducedAllOf';
 import RewardTypeResponse from './model/RewardTypeResponse';
 import Role from './model/Role';
 import RoundType from './model/RoundType';
@@ -210,6 +231,7 @@ import RuleDescriptorSubFact from './model/RuleDescriptorSubFact';
 import RuleDescriptorSubFactAllOf from './model/RuleDescriptorSubFactAllOf';
 import RuleScope from './model/RuleScope';
 import RuleSet from './model/RuleSet';
+import RuleSetAllOf from './model/RuleSetAllOf';
 import RuleSubCondition from './model/RuleSubCondition';
 import ScheduleType from './model/ScheduleType';
 import Scheduling from './model/Scheduling';
@@ -226,12 +248,17 @@ import StartEndDate from './model/StartEndDate';
 import Strategy from './model/Strategy';
 import StrategyType from './model/StrategyType';
 import SubRule from './model/SubRule';
+import Tags from './model/Tags';
+import TagsAllOf from './model/TagsAllOf';
+import TagsReduced from './model/TagsReduced';
+import TagsReducedAllOf from './model/TagsReducedAllOf';
+import TagsResponse from './model/TagsResponse';
 import TestMessageRequest from './model/TestMessageRequest';
 import Transformer from './model/Transformer';
 import TransformerAllOf from './model/TransformerAllOf';
 import TransformerResponse from './model/TransformerResponse';
 import TranslatedField from './model/TranslatedField';
-import Translation from './model/Translation';
+import TranslationValue from './model/TranslationValue';
 import TwoFactorAuthQrCode from './model/TwoFactorAuthQrCode';
 import TwoFactorAuthValidateRequest from './model/TwoFactorAuthValidateRequest';
 import UnitOfMeasure from './model/UnitOfMeasure';
@@ -243,7 +270,6 @@ import UpdateAchievementRequestAllOf from './model/UpdateAchievementRequestAllOf
 import UpdateActionTypeRequest from './model/UpdateActionTypeRequest';
 import UpdateActionTypeRequestAllOf from './model/UpdateActionTypeRequestAllOf';
 import UpdateApiKeyRequest from './model/UpdateApiKeyRequest';
-import UpdateApiKeyRequestAllOf from './model/UpdateApiKeyRequestAllOf';
 import UpdateCollaboratorRequest from './model/UpdateCollaboratorRequest';
 import UpdateCollaboratorRequestAllOf from './model/UpdateCollaboratorRequestAllOf';
 import UpdateCompetitionRequest from './model/UpdateCompetitionRequest';
@@ -258,14 +284,11 @@ import UpdateContestRequestAllOf from './model/UpdateContestRequestAllOf';
 import UpdateContestStateRequest from './model/UpdateContestStateRequest';
 import UpdateCustomFieldRequest from './model/UpdateCustomFieldRequest';
 import UpdateCustomFieldRequestAllOf from './model/UpdateCustomFieldRequestAllOf';
-import UpdateFileObjectFormRequest from './model/UpdateFileObjectFormRequest';
-import UpdateFileObjectFormRequestAllOf from './model/UpdateFileObjectFormRequestAllOf';
 import UpdateFileObjectRequest from './model/UpdateFileObjectRequest';
 import UpdateFileObjectRequestAllOf from './model/UpdateFileObjectRequestAllOf';
 import UpdateKafkaConnectionRequest from './model/UpdateKafkaConnectionRequest';
 import UpdateKafkaConnectionRequestAllOf from './model/UpdateKafkaConnectionRequestAllOf';
 import UpdateLanguageRequest from './model/UpdateLanguageRequest';
-import UpdateLanguageRequestAllOf from './model/UpdateLanguageRequestAllOf';
 import UpdateMemberRequest from './model/UpdateMemberRequest';
 import UpdateMemberRequestAllOf from './model/UpdateMemberRequestAllOf';
 import UpdateMessageRequest from './model/UpdateMessageRequest';
@@ -273,18 +296,19 @@ import UpdateMessageRequestAllOf from './model/UpdateMessageRequestAllOf';
 import UpdateMessageStatusRequest from './model/UpdateMessageStatusRequest';
 import UpdateMessageStatusRequestAllOf from './model/UpdateMessageStatusRequestAllOf';
 import UpdateModelDefault from './model/UpdateModelDefault';
+import UpdateOptParamModels from './model/UpdateOptParamModels';
 import UpdateProductRequest from './model/UpdateProductRequest';
 import UpdateProductRequestAllOf from './model/UpdateProductRequestAllOf';
 import UpdateRabbitMqConnectionRequest from './model/UpdateRabbitMqConnectionRequest';
 import UpdateRabbitMqConnectionRequestAllOf from './model/UpdateRabbitMqConnectionRequestAllOf';
 import UpdateRepositoryRequest from './model/UpdateRepositoryRequest';
-import UpdateRepositoryRequestAllOf from './model/UpdateRepositoryRequestAllOf';
 import UpdateRewardRequest from './model/UpdateRewardRequest';
-import UpdateRewardRequestAllOf from './model/UpdateRewardRequestAllOf';
 import UpdateRewardTypeRequest from './model/UpdateRewardTypeRequest';
 import UpdateRewardTypeRequestAllOf from './model/UpdateRewardTypeRequestAllOf';
 import UpdateSqsConnectionRequest from './model/UpdateSqsConnectionRequest';
-import UpdateSqsConnectionRequestAllOf from './model/UpdateSqsConnectionRequestAllOf';
+import UpdateStateRequest from './model/UpdateStateRequest';
+import UpdateTagsRequest from './model/UpdateTagsRequest';
+import UpdateTagsRequestAllOf from './model/UpdateTagsRequestAllOf';
 import UpdateTransformerRequest from './model/UpdateTransformerRequest';
 import UpdateTransformerRequestAllOf from './model/UpdateTransformerRequestAllOf';
 import UpdateUnitOfMeasureRequest from './model/UpdateUnitOfMeasureRequest';
@@ -292,7 +316,6 @@ import UpdateUnitOfMeasureRequestAllOf from './model/UpdateUnitOfMeasureRequestA
 import UpdateUserRequest from './model/UpdateUserRequest';
 import UpdateUserRequestAllOf from './model/UpdateUserRequestAllOf';
 import UpdateWebhookRequest from './model/UpdateWebhookRequest';
-import UpdateWebhookRequestAllOf from './model/UpdateWebhookRequestAllOf';
 import User from './model/User';
 import UserAllOf from './model/UserAllOf';
 import UserModelDefault from './model/UserModelDefault';
@@ -321,6 +344,7 @@ import RewardTypesApi from './api/RewardTypesApi';
 import RewardsApi from './api/RewardsApi';
 import RulesApi from './api/RulesApi';
 import SpacesApi from './api/SpacesApi';
+import TagsApi from './api/TagsApi';
 import TransformersApi from './api/TransformersApi';
 import TwoFactorAuthApi from './api/TwoFactorAuthApi';
 import UnitsOfMeasureApi from './api/UnitsOfMeasureApi';
@@ -330,14 +354,14 @@ import WebhooksApi from './api/WebhooksApi';
 
 
 /**
-* CompetitionLabs API Application services JavaScript SDK.<br>
+* CompetitionLabs_Application_Services_are_used_to_manage_and_configure_spaces_.<br>
 * The <code>index</code> module provides access to constructors for all the classes which comprise the public API.
 * <p>
 * An AMD (recommended!) or CommonJS application will generally do something equivalent to the following:
 * <pre>
-* var @CompetitionlabsApplicationServicesSdk = require('index'); // See note below*.
-* var xxxSvc = new @CompetitionlabsApplicationServicesSdk.XxxApi(); // Allocate the API class we're going to use.
-* var yyyModel = new @CompetitionlabsApplicationServicesSdk.Yyy(); // Construct a model instance.
+* var CompetitionLabsApplicationServices = require('index'); // See note below*.
+* var xxxSvc = new CompetitionLabsApplicationServices.XxxApi(); // Allocate the API class we're going to use.
+* var yyyModel = new CompetitionLabsApplicationServices.Yyy(); // Construct a model instance.
 * yyyModel.someProperty = 'someValue';
 * ...
 * var zzz = xxxSvc.doSomething(yyyModel); // Invoke the service.
@@ -349,8 +373,8 @@ import WebhooksApi from './api/WebhooksApi';
 * <p>
 * A non-AMD browser application (discouraged) might do something like this:
 * <pre>
-* var xxxSvc = new @CompetitionlabsApplicationServicesSdk.XxxApi(); // Allocate the API class we're going to use.
-* var yyy = new @CompetitionlabsApplicationServicesSdk.Yyy(); // Construct a model instance.
+* var xxxSvc = new CompetitionLabsApplicationServices.XxxApi(); // Allocate the API class we're going to use.
+* var yyy = new CompetitionLabsApplicationServices.Yyy(); // Construct a model instance.
 * yyyModel.someProperty = 'someValue';
 * ...
 * var zzz = xxxSvc.doSomething(yyyModel); // Invoke the service.
@@ -358,7 +382,7 @@ import WebhooksApi from './api/WebhooksApi';
 * </pre>
 * </p>
 * @module index
-* @version 1.0.5
+* @version 1.0.0
 */
 export {
     /**
@@ -546,6 +570,12 @@ export {
      * @property {module:model/ClaimAwardRequest}
      */
     ClaimAwardRequest,
+
+    /**
+     * The CloneAchievementResponse model constructor.
+     * @property {module:model/CloneAchievementResponse}
+     */
+    CloneAchievementResponse,
 
     /**
      * The CloneContestResponse model constructor.
@@ -746,6 +776,12 @@ export {
     CreateAchievementRequest,
 
     /**
+     * The CreateAchievementRequestAllOf model constructor.
+     * @property {module:model/CreateAchievementRequestAllOf}
+     */
+    CreateAchievementRequestAllOf,
+
+    /**
      * The CreateActionTypeRequest model constructor.
      * @property {module:model/CreateActionTypeRequest}
      */
@@ -758,10 +794,22 @@ export {
     CreateApiKeyRequest,
 
     /**
+     * The CreateApiKeyRequestAllOf model constructor.
+     * @property {module:model/CreateApiKeyRequestAllOf}
+     */
+    CreateApiKeyRequestAllOf,
+
+    /**
      * The CreateAttachmentRequest model constructor.
      * @property {module:model/CreateAttachmentRequest}
      */
     CreateAttachmentRequest,
+
+    /**
+     * The CreateAttachmentRequestAllOf model constructor.
+     * @property {module:model/CreateAttachmentRequestAllOf}
+     */
+    CreateAttachmentRequestAllOf,
 
     /**
      * The CreateCollaboratorRequest model constructor.
@@ -776,6 +824,12 @@ export {
     CreateCompetitionRequest,
 
     /**
+     * The CreateCompetitionRequestAllOf model constructor.
+     * @property {module:model/CreateCompetitionRequestAllOf}
+     */
+    CreateCompetitionRequestAllOf,
+
+    /**
      * The CreateConnectionRequest model constructor.
      * @property {module:model/CreateConnectionRequest}
      */
@@ -788,10 +842,22 @@ export {
     CreateContestForCompetitionRequest,
 
     /**
+     * The CreateContestForCompetitionRequestAllOf model constructor.
+     * @property {module:model/CreateContestForCompetitionRequestAllOf}
+     */
+    CreateContestForCompetitionRequestAllOf,
+
+    /**
      * The CreateContestRequest model constructor.
      * @property {module:model/CreateContestRequest}
      */
     CreateContestRequest,
+
+    /**
+     * The CreateContestRequestAllOf model constructor.
+     * @property {module:model/CreateContestRequestAllOf}
+     */
+    CreateContestRequestAllOf,
 
     /**
      * The CreateCustomFieldRequest model constructor.
@@ -806,6 +872,12 @@ export {
     CreateEntityRewardRequest,
 
     /**
+     * The CreateEntityRewardRequestAllOf model constructor.
+     * @property {module:model/CreateEntityRewardRequestAllOf}
+     */
+    CreateEntityRewardRequestAllOf,
+
+    /**
      * The CreateEventRequest model constructor.
      * @property {module:model/CreateEventRequest}
      */
@@ -816,6 +888,12 @@ export {
      * @property {module:model/CreateFileObjectRequest}
      */
     CreateFileObjectRequest,
+
+    /**
+     * The CreateFileObjectRequestAllOf model constructor.
+     * @property {module:model/CreateFileObjectRequestAllOf}
+     */
+    CreateFileObjectRequestAllOf,
 
     /**
      * The CreateKafkaConnectionRequest model constructor.
@@ -836,6 +914,12 @@ export {
     CreateLanguageRequest,
 
     /**
+     * The CreateLanguageRequestAllOf model constructor.
+     * @property {module:model/CreateLanguageRequestAllOf}
+     */
+    CreateLanguageRequestAllOf,
+
+    /**
      * The CreateMemberRequest model constructor.
      * @property {module:model/CreateMemberRequest}
      */
@@ -848,10 +932,28 @@ export {
     CreateMessageRequest,
 
     /**
+     * The CreateMessageRequestAllOf model constructor.
+     * @property {module:model/CreateMessageRequestAllOf}
+     */
+    CreateMessageRequestAllOf,
+
+    /**
+     * The CreateOptParamModels model constructor.
+     * @property {module:model/CreateOptParamModels}
+     */
+    CreateOptParamModels,
+
+    /**
      * The CreateProductRequest model constructor.
      * @property {module:model/CreateProductRequest}
      */
     CreateProductRequest,
+
+    /**
+     * The CreateProductRequestAllOf model constructor.
+     * @property {module:model/CreateProductRequestAllOf}
+     */
+    CreateProductRequestAllOf,
 
     /**
      * The CreateRabbitMqConnectionRequest model constructor.
@@ -872,10 +974,22 @@ export {
     CreateRepositoryRequest,
 
     /**
+     * The CreateRepositoryRequestAllOf model constructor.
+     * @property {module:model/CreateRepositoryRequestAllOf}
+     */
+    CreateRepositoryRequestAllOf,
+
+    /**
      * The CreateRewardRequest model constructor.
      * @property {module:model/CreateRewardRequest}
      */
     CreateRewardRequest,
+
+    /**
+     * The CreateRewardRequestAllOf model constructor.
+     * @property {module:model/CreateRewardRequestAllOf}
+     */
+    CreateRewardRequestAllOf,
 
     /**
      * The CreateRewardTypeRequest model constructor.
@@ -902,6 +1016,12 @@ export {
     CreateSqsConnectionRequestAllOf,
 
     /**
+     * The CreateTagsRequest model constructor.
+     * @property {module:model/CreateTagsRequest}
+     */
+    CreateTagsRequest,
+
+    /**
      * The CreateTransformerRequest model constructor.
      * @property {module:model/CreateTransformerRequest}
      */
@@ -920,10 +1040,22 @@ export {
     CreateUserRequest,
 
     /**
+     * The CreateUserRequestAllOf model constructor.
+     * @property {module:model/CreateUserRequestAllOf}
+     */
+    CreateUserRequestAllOf,
+
+    /**
      * The CreateWebhookRequest model constructor.
      * @property {module:model/CreateWebhookRequest}
      */
     CreateWebhookRequest,
+
+    /**
+     * The CreateWebhookRequestAllOf model constructor.
+     * @property {module:model/CreateWebhookRequestAllOf}
+     */
+    CreateWebhookRequestAllOf,
 
     /**
      * The CustomField model constructor.
@@ -938,6 +1070,18 @@ export {
     CustomFieldAllOf,
 
     /**
+     * The CustomFieldReduced model constructor.
+     * @property {module:model/CustomFieldReduced}
+     */
+    CustomFieldReduced,
+
+    /**
+     * The CustomFieldReducedAllOf model constructor.
+     * @property {module:model/CustomFieldReducedAllOf}
+     */
+    CustomFieldReducedAllOf,
+
+    /**
      * The CustomFieldResponse model constructor.
      * @property {module:model/CustomFieldResponse}
      */
@@ -948,6 +1092,12 @@ export {
      * @property {module:model/DependantOn}
      */
     DependantOn,
+
+    /**
+     * The EntityTags model constructor.
+     * @property {module:model/EntityTags}
+     */
+    EntityTags,
 
     /**
      * The EntityType model constructor.
@@ -1008,18 +1158,6 @@ export {
      * @property {module:model/EventAllOf}
      */
     EventAllOf,
-
-    /**
-     * The EventMetadata model constructor.
-     * @property {module:model/EventMetadata}
-     */
-    EventMetadata,
-
-    /**
-     * The EventMetadataRequest model constructor.
-     * @property {module:model/EventMetadataRequest}
-     */
-    EventMetadataRequest,
 
     /**
      * The EventRefType model constructor.
@@ -1086,12 +1224,6 @@ export {
      * @property {module:model/Language}
      */
     Language,
-
-    /**
-     * The LanguageAllOf model constructor.
-     * @property {module:model/LanguageAllOf}
-     */
-    LanguageAllOf,
 
     /**
      * The LanguageResponse model constructor.
@@ -1304,6 +1436,12 @@ export {
     OnRuleSetMatchTrigger,
 
     /**
+     * The OptParamModels model constructor.
+     * @property {module:model/OptParamModels}
+     */
+    OptParamModels,
+
+    /**
      * The Product model constructor.
      * @property {module:model/Product}
      */
@@ -1472,6 +1610,18 @@ export {
     RewardTypeAllOf,
 
     /**
+     * The RewardTypeReduced model constructor.
+     * @property {module:model/RewardTypeReduced}
+     */
+    RewardTypeReduced,
+
+    /**
+     * The RewardTypeReducedAllOf model constructor.
+     * @property {module:model/RewardTypeReducedAllOf}
+     */
+    RewardTypeReducedAllOf,
+
+    /**
      * The RewardTypeResponse model constructor.
      * @property {module:model/RewardTypeResponse}
      */
@@ -1548,6 +1698,12 @@ export {
      * @property {module:model/RuleSet}
      */
     RuleSet,
+
+    /**
+     * The RuleSetAllOf model constructor.
+     * @property {module:model/RuleSetAllOf}
+     */
+    RuleSetAllOf,
 
     /**
      * The RuleSubCondition model constructor.
@@ -1646,6 +1802,36 @@ export {
     SubRule,
 
     /**
+     * The Tags model constructor.
+     * @property {module:model/Tags}
+     */
+    Tags,
+
+    /**
+     * The TagsAllOf model constructor.
+     * @property {module:model/TagsAllOf}
+     */
+    TagsAllOf,
+
+    /**
+     * The TagsReduced model constructor.
+     * @property {module:model/TagsReduced}
+     */
+    TagsReduced,
+
+    /**
+     * The TagsReducedAllOf model constructor.
+     * @property {module:model/TagsReducedAllOf}
+     */
+    TagsReducedAllOf,
+
+    /**
+     * The TagsResponse model constructor.
+     * @property {module:model/TagsResponse}
+     */
+    TagsResponse,
+
+    /**
      * The TestMessageRequest model constructor.
      * @property {module:model/TestMessageRequest}
      */
@@ -1676,10 +1862,10 @@ export {
     TranslatedField,
 
     /**
-     * The Translation model constructor.
-     * @property {module:model/Translation}
+     * The TranslationValue model constructor.
+     * @property {module:model/TranslationValue}
      */
-    Translation,
+    TranslationValue,
 
     /**
      * The TwoFactorAuthQrCode model constructor.
@@ -1746,12 +1932,6 @@ export {
      * @property {module:model/UpdateApiKeyRequest}
      */
     UpdateApiKeyRequest,
-
-    /**
-     * The UpdateApiKeyRequestAllOf model constructor.
-     * @property {module:model/UpdateApiKeyRequestAllOf}
-     */
-    UpdateApiKeyRequestAllOf,
 
     /**
      * The UpdateCollaboratorRequest model constructor.
@@ -1838,18 +2018,6 @@ export {
     UpdateCustomFieldRequestAllOf,
 
     /**
-     * The UpdateFileObjectFormRequest model constructor.
-     * @property {module:model/UpdateFileObjectFormRequest}
-     */
-    UpdateFileObjectFormRequest,
-
-    /**
-     * The UpdateFileObjectFormRequestAllOf model constructor.
-     * @property {module:model/UpdateFileObjectFormRequestAllOf}
-     */
-    UpdateFileObjectFormRequestAllOf,
-
-    /**
      * The UpdateFileObjectRequest model constructor.
      * @property {module:model/UpdateFileObjectRequest}
      */
@@ -1878,12 +2046,6 @@ export {
      * @property {module:model/UpdateLanguageRequest}
      */
     UpdateLanguageRequest,
-
-    /**
-     * The UpdateLanguageRequestAllOf model constructor.
-     * @property {module:model/UpdateLanguageRequestAllOf}
-     */
-    UpdateLanguageRequestAllOf,
 
     /**
      * The UpdateMemberRequest model constructor.
@@ -1928,6 +2090,12 @@ export {
     UpdateModelDefault,
 
     /**
+     * The UpdateOptParamModels model constructor.
+     * @property {module:model/UpdateOptParamModels}
+     */
+    UpdateOptParamModels,
+
+    /**
      * The UpdateProductRequest model constructor.
      * @property {module:model/UpdateProductRequest}
      */
@@ -1958,22 +2126,10 @@ export {
     UpdateRepositoryRequest,
 
     /**
-     * The UpdateRepositoryRequestAllOf model constructor.
-     * @property {module:model/UpdateRepositoryRequestAllOf}
-     */
-    UpdateRepositoryRequestAllOf,
-
-    /**
      * The UpdateRewardRequest model constructor.
      * @property {module:model/UpdateRewardRequest}
      */
     UpdateRewardRequest,
-
-    /**
-     * The UpdateRewardRequestAllOf model constructor.
-     * @property {module:model/UpdateRewardRequestAllOf}
-     */
-    UpdateRewardRequestAllOf,
 
     /**
      * The UpdateRewardTypeRequest model constructor.
@@ -1994,10 +2150,22 @@ export {
     UpdateSqsConnectionRequest,
 
     /**
-     * The UpdateSqsConnectionRequestAllOf model constructor.
-     * @property {module:model/UpdateSqsConnectionRequestAllOf}
+     * The UpdateStateRequest model constructor.
+     * @property {module:model/UpdateStateRequest}
      */
-    UpdateSqsConnectionRequestAllOf,
+    UpdateStateRequest,
+
+    /**
+     * The UpdateTagsRequest model constructor.
+     * @property {module:model/UpdateTagsRequest}
+     */
+    UpdateTagsRequest,
+
+    /**
+     * The UpdateTagsRequestAllOf model constructor.
+     * @property {module:model/UpdateTagsRequestAllOf}
+     */
+    UpdateTagsRequestAllOf,
 
     /**
      * The UpdateTransformerRequest model constructor.
@@ -2040,12 +2208,6 @@ export {
      * @property {module:model/UpdateWebhookRequest}
      */
     UpdateWebhookRequest,
-
-    /**
-     * The UpdateWebhookRequestAllOf model constructor.
-     * @property {module:model/UpdateWebhookRequestAllOf}
-     */
-    UpdateWebhookRequestAllOf,
 
     /**
      * The User model constructor.
@@ -2214,6 +2376,12 @@ export {
     * @property {module:api/SpacesApi}
     */
     SpacesApi,
+
+    /**
+    * The TagsApi service constructor.
+    * @property {module:api/TagsApi}
+    */
+    TagsApi,
 
     /**
     * The TransformersApi service constructor.

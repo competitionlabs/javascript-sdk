@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -20,7 +20,7 @@ import TwoFactorAuthValidateRequest from '../model/TwoFactorAuthValidateRequest'
 /**
 * TwoFactorAuth service.
 * @module api/TwoFactorAuthApi
-* @version 1.0.5
+* @version 1.0.0
 */
 export default class TwoFactorAuthApi {
 
@@ -66,7 +66,7 @@ export default class TwoFactorAuthApi {
       let formParams = {
       };
 
-      let authNames = ['adminApiKey'];
+      let authNames = ['AdminApiKey', 'OAuth2'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = ApiResponse;
@@ -116,7 +116,7 @@ export default class TwoFactorAuthApi {
       let formParams = {
       };
 
-      let authNames = ['adminApiKey'];
+      let authNames = ['AdminApiKey', 'OAuth2'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = QrCodeResponse;
@@ -166,7 +166,7 @@ export default class TwoFactorAuthApi {
       let formParams = {
       };
 
-      let authNames = ['adminApiKey'];
+      let authNames = ['AdminApiKey', 'OAuth2'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = ApiResponse;
@@ -221,7 +221,7 @@ export default class TwoFactorAuthApi {
       let formParams = {
       };
 
-      let authNames = ['adminApiKey'];
+      let authNames = ['AdminApiKey', 'OAuth2'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = ApiResponse;

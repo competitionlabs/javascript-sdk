@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -12,27 +12,31 @@
  */
 
 import ApiClient from '../ApiClient';
+import CreateApiKeyRequestAllOf from './CreateApiKeyRequestAllOf';
 import Metadata from './Metadata';
 import Role from './Role';
-import UpdateApiKeyRequestAllOf from './UpdateApiKeyRequestAllOf';
 import UpdateModelDefault from './UpdateModelDefault';
+import UpdateOptParamModels from './UpdateOptParamModels';
 
 /**
  * The UpdateApiKeyRequest model module.
  * @module model/UpdateApiKeyRequest
- * @version 1.0.5
+ * @version 1.0.0
  */
 class UpdateApiKeyRequest {
     /**
      * Constructs a new <code>UpdateApiKeyRequest</code>.
      * @alias module:model/UpdateApiKeyRequest
      * @implements module:model/UpdateModelDefault
-     * @implements module:model/UpdateApiKeyRequestAllOf
+     * @implements module:model/UpdateOptParamModels
+     * @implements module:model/CreateApiKeyRequestAllOf
      * @param id {String} A unique system generated identifier
+     * @param role {module:model/Role} 
+     * @param constraints {Array.<String>} Additional constraints
      */
-    constructor(id) { 
-        UpdateModelDefault.initialize(this, id);UpdateApiKeyRequestAllOf.initialize(this);
-        UpdateApiKeyRequest.initialize(this, id);
+    constructor(id, role, constraints) { 
+        UpdateModelDefault.initialize(this, id);UpdateOptParamModels.initialize(this);CreateApiKeyRequestAllOf.initialize(this, role, constraints);
+        UpdateApiKeyRequest.initialize(this, id, role, constraints);
     }
 
     /**
@@ -40,50 +44,10 @@ class UpdateApiKeyRequest {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, id) { 
+    static initialize(obj, id, role, constraints) { 
         obj['id'] = id;
-    }
-
-    /**
-    * Constructs a full object with all available fields.
-    */
-    model(){
-        var obj = {};
-
-        obj['id'] = null;
-        obj['active'] = null;
-        obj['description'] = null;
-        obj['whiteListIPs'] = [null];
-        obj['key'] = null;
-        obj['role'] = new Role().model();
-        obj['default'] = null;
-        obj['metadata'] = [new Metadata().model()];
-
-        return obj;
-    }
-
-    /**
-    * Constructs a full object Map for all available fields.
-    */
-    modelMap(){
-        var obj = {
-            "fields": {},
-            "requiredFields": {}
-        };
-
-        obj["fields"]['id'] = { "type": 'String', "system": true };
-        obj["fields"]['active'] = { "type": 'Boolean', "system": false };
-        obj["fields"]['description'] = { "type": 'String', "system": false };
-        obj["fields"]['whiteListIPs'] = [{ "type": 'String', "system": false }];
-        obj["fields"]['key'] = { "type": 'String', "system": false };
-        obj["fields"]['role'] = new Role().modelMap();
-        obj["fields"]['default'] = { "type": 'Boolean', "system": false };
-        obj["fields"]['metadata'] = [new Metadata().modelMap()];
-
-        
-        obj["requiredFields"]['id'] = { "type": 'String', "system": true };
-
-        return obj;
+        obj['role'] = role;
+        obj['constraints'] = constraints;
     }
 
     /**
@@ -97,13 +61,20 @@ class UpdateApiKeyRequest {
         if (data) {
             obj = obj || new UpdateApiKeyRequest();
             UpdateModelDefault.constructFromObject(data, obj);
-            UpdateApiKeyRequestAllOf.constructFromObject(data, obj);
+            UpdateOptParamModels.constructFromObject(data, obj);
+            CreateApiKeyRequestAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'String');
             }
-            if (data.hasOwnProperty('active')) {
-                obj['active'] = ApiClient.convertToType(data['active'], 'Boolean');
+            if (data.hasOwnProperty('customFields')) {
+                obj['customFields'] = ApiClient.convertToType(data['customFields'], ['String']);
+            }
+            if (data.hasOwnProperty('tags')) {
+                obj['tags'] = ApiClient.convertToType(data['tags'], ['String']);
+            }
+            if (data.hasOwnProperty('metadata')) {
+                obj['metadata'] = ApiClient.convertToType(data['metadata'], [Metadata]);
             }
             if (data.hasOwnProperty('description')) {
                 obj['description'] = ApiClient.convertToType(data['description'], 'String');
@@ -117,11 +88,8 @@ class UpdateApiKeyRequest {
             if (data.hasOwnProperty('role')) {
                 obj['role'] = Role.constructFromObject(data['role']);
             }
-            if (data.hasOwnProperty('default')) {
-                obj['default'] = ApiClient.convertToType(data['default'], 'Boolean');
-            }
-            if (data.hasOwnProperty('metadata')) {
-                obj['metadata'] = ApiClient.convertToType(data['metadata'], [Metadata]);
+            if (data.hasOwnProperty('constraints')) {
+                obj['constraints'] = ApiClient.convertToType(data['constraints'], ['String']);
             }
         }
         return obj;
@@ -137,10 +105,21 @@ class UpdateApiKeyRequest {
 UpdateApiKeyRequest.prototype['id'] = undefined;
 
 /**
- * To enable or dissable an Api key
- * @member {Boolean} active
+ * A list of id's used to add cutom fields
+ * @member {Array.<String>} customFields
  */
-UpdateApiKeyRequest.prototype['active'] = undefined;
+UpdateApiKeyRequest.prototype['customFields'] = undefined;
+
+/**
+ * A list of id's used to tag models
+ * @member {Array.<String>} tags
+ */
+UpdateApiKeyRequest.prototype['tags'] = undefined;
+
+/**
+ * @member {Array.<module:model/Metadata>} metadata
+ */
+UpdateApiKeyRequest.prototype['metadata'] = undefined;
 
 /**
  * The description of an Api key
@@ -166,15 +145,10 @@ UpdateApiKeyRequest.prototype['key'] = undefined;
 UpdateApiKeyRequest.prototype['role'] = undefined;
 
 /**
- * To enable the Api key to be default
- * @member {Boolean} default
+ * Additional constraints
+ * @member {Array.<String>} constraints
  */
-UpdateApiKeyRequest.prototype['default'] = undefined;
-
-/**
- * @member {Array.<module:model/Metadata>} metadata
- */
-UpdateApiKeyRequest.prototype['metadata'] = undefined;
+UpdateApiKeyRequest.prototype['constraints'] = undefined;
 
 
 // Implement UpdateModelDefault interface:
@@ -183,40 +157,46 @@ UpdateApiKeyRequest.prototype['metadata'] = undefined;
  * @member {String} id
  */
 UpdateModelDefault.prototype['id'] = undefined;
-// Implement UpdateApiKeyRequestAllOf interface:
+// Implement UpdateOptParamModels interface:
 /**
- * To enable or dissable an Api key
- * @member {Boolean} active
+ * A list of id's used to add cutom fields
+ * @member {Array.<String>} customFields
  */
-UpdateApiKeyRequestAllOf.prototype['active'] = undefined;
+UpdateOptParamModels.prototype['customFields'] = undefined;
+/**
+ * A list of id's used to tag models
+ * @member {Array.<String>} tags
+ */
+UpdateOptParamModels.prototype['tags'] = undefined;
+/**
+ * @member {Array.<module:model/Metadata>} metadata
+ */
+UpdateOptParamModels.prototype['metadata'] = undefined;
+// Implement CreateApiKeyRequestAllOf interface:
 /**
  * The description of an Api key
  * @member {String} description
  */
-UpdateApiKeyRequestAllOf.prototype['description'] = undefined;
+CreateApiKeyRequestAllOf.prototype['description'] = undefined;
 /**
  * the IP's that need to be whitelisted with the Api key
  * @member {Array.<String>} whiteListIPs
  */
-UpdateApiKeyRequestAllOf.prototype['whiteListIPs'] = undefined;
+CreateApiKeyRequestAllOf.prototype['whiteListIPs'] = undefined;
 /**
  * An Api key hash
  * @member {String} key
  */
-UpdateApiKeyRequestAllOf.prototype['key'] = undefined;
+CreateApiKeyRequestAllOf.prototype['key'] = undefined;
 /**
  * @member {module:model/Role} role
  */
-UpdateApiKeyRequestAllOf.prototype['role'] = undefined;
+CreateApiKeyRequestAllOf.prototype['role'] = undefined;
 /**
- * To enable the Api key to be default
- * @member {Boolean} default
+ * Additional constraints
+ * @member {Array.<String>} constraints
  */
-UpdateApiKeyRequestAllOf.prototype['default'] = undefined;
-/**
- * @member {Array.<module:model/Metadata>} metadata
- */
-UpdateApiKeyRequestAllOf.prototype['metadata'] = undefined;
+CreateApiKeyRequestAllOf.prototype['constraints'] = undefined;
 
 
 

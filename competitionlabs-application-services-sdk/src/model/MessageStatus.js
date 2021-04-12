@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -75,67 +75,6 @@ export default class MessageStatus {
         "Deprecated" = "Deprecated";
 
     
-
-    /**
-    * Constructs a full object with all available fields.
-    */
-    list(){
-        var obj = {};
-
-        
-        obj['New'] = "New";
-        
-        obj['Read'] = "Read";
-        
-        obj['CollaborationRequest'] = "CollaborationRequest";
-        
-        obj['Actioned'] = "Actioned";
-        
-        obj['Claimed'] = "Claimed";
-        
-        obj['Expired'] = "Expired";
-        
-        obj['Canceled'] = "Canceled";
-        
-        obj['Deprecated'] = "Deprecated";
-        
-
-        return obj;
-    }
-
-    /**
-    * Constructs a full object with all available fields.
-    */
-    model(){
-        var obj = {};
-
-        
-        obj['New'] = null;
-        
-        obj['Read'] = null;
-        
-        obj['CollaborationRequest'] = null;
-        
-        obj['Actioned'] = null;
-        
-        obj['Claimed'] = null;
-        
-        obj['Expired'] = null;
-        
-        obj['Canceled'] = null;
-        
-        obj['Deprecated'] = null;
-        
-
-        return obj;
-    }
-
-    /**
-    * Constructs a full object Map for all available fields.
-    */
-    modelMap(){
-        return {"type": 'String'};
-    }
 
     /**
     * Returns a <code>MessageStatus</code> enum value from a Javascript object name.

@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -19,7 +19,7 @@ import Transformer from './Transformer';
 /**
  * The TransformerResponse model module.
  * @module model/TransformerResponse
- * @version 1.0.5
+ * @version 1.0.0
  */
 class TransformerResponse {
     /**
@@ -39,38 +39,6 @@ class TransformerResponse {
      */
     static initialize(obj, meta) { 
         obj['meta'] = meta;
-    }
-
-    /**
-    * Constructs a full object with all available fields.
-    */
-    model(){
-        var obj = {};
-
-        obj['meta'] = new MetaExtended().model();
-        obj['results'] = [new Transformer().model()];
-        obj['errors'] = [new Error().model()];
-
-        return obj;
-    }
-
-    /**
-    * Constructs a full object Map for all available fields.
-    */
-    modelMap(){
-        var obj = {
-            "fields": {},
-            "requiredFields": {}
-        };
-
-        obj["fields"]['meta'] = new MetaExtended().modelMap();
-        obj["fields"]['results'] = [new Transformer().modelMap()];
-        obj["fields"]['errors'] = [new Error().modelMap()];
-
-        
-        obj["requiredFields"]['meta'] = new MetaExtended().modelMap();
-
-        return obj;
     }
 
     /**

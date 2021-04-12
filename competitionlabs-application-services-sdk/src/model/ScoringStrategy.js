@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ScoringStrategy model module.
  * @module model/ScoringStrategy
- * @version 1.0.5
+ * @version 1.0.0
  */
 class ScoringStrategy {
     /**
@@ -42,43 +42,6 @@ class ScoringStrategy {
         obj['sumBestXOf'] = sumBestXOf;
         obj['lastUpdateTimeStamp'] = lastUpdateTimeStamp;
         obj['recordTimeWhenSumReaches'] = recordTimeWhenSumReaches;
-    }
-
-    /**
-    * Constructs a full object with all available fields.
-    */
-    model(){
-        var obj = {};
-
-        obj['limitUpdatesTo'] = null;
-        obj['sumBestXOf'] = null;
-        obj['lastUpdateTimeStamp'] = null;
-        obj['recordTimeWhenSumReaches'] = null;
-
-        return obj;
-    }
-
-    /**
-    * Constructs a full object Map for all available fields.
-    */
-    modelMap(){
-        var obj = {
-            "fields": {},
-            "requiredFields": {}
-        };
-
-        obj["fields"]['limitUpdatesTo'] = { "type": 'Number', "system": false };
-        obj["fields"]['sumBestXOf'] = { "type": 'Number', "system": false };
-        obj["fields"]['lastUpdateTimeStamp'] = { "type": 'Number', "system": false };
-        obj["fields"]['recordTimeWhenSumReaches'] = { "type": 'Number', "system": false };
-
-        
-        obj["requiredFields"]['limitUpdatesTo'] = { "type": 'Number', "system": false };
-        obj["requiredFields"]['sumBestXOf'] = { "type": 'Number', "system": false };
-        obj["requiredFields"]['lastUpdateTimeStamp'] = { "type": 'Number', "system": false };
-        obj["requiredFields"]['recordTimeWhenSumReaches'] = { "type": 'Number', "system": false };
-
-        return obj;
     }
 
     /**

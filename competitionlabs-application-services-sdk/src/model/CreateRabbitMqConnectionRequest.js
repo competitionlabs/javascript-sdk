@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -13,18 +13,21 @@
 
 import ApiClient from '../ApiClient';
 import CreateConnectionRequest from './CreateConnectionRequest';
+import CreateOptParamModels from './CreateOptParamModels';
 import CreateRabbitMqConnectionRequestAllOf from './CreateRabbitMqConnectionRequestAllOf';
+import Metadata from './Metadata';
 
 /**
  * The CreateRabbitMqConnectionRequest model module.
  * @module model/CreateRabbitMqConnectionRequest
- * @version 1.0.5
+ * @version 1.0.0
  */
 class CreateRabbitMqConnectionRequest {
     /**
      * Constructs a new <code>CreateRabbitMqConnectionRequest</code>.
      * @alias module:model/CreateRabbitMqConnectionRequest
      * @implements module:model/CreateConnectionRequest
+     * @implements module:model/CreateOptParamModels
      * @implements module:model/CreateRabbitMqConnectionRequestAllOf
      * @param objectType {String} The type of consumer to create like Kafka, RabbitMQ or SQS
      * @param name {String} The name of the consumer
@@ -32,14 +35,14 @@ class CreateRabbitMqConnectionRequest {
      * @param transformerId {String} The id of the transformer to handle incoming messages
      * @param virtualHost {String} The virtual host of the rabbitmq broker
      * @param port {Number} The port number on which consumer will connect on rabbitmq broker
-     * @param useSsl {Boolean} Whether the connection is SSL enabled or not
-     * @param username {String} Consumer username for authentication
+     * @param userName {String} Consumer username for authentication
      * @param password {String} Consumer password for authentication
      * @param queueName {String} Name of the queue
+     * @param constraints {Array.<String>} Additional constraints
      */
-    constructor(objectType, name, uri, transformerId, virtualHost, port, useSsl, username, password, queueName) { 
-        CreateConnectionRequest.initialize(this, objectType);CreateRabbitMqConnectionRequestAllOf.initialize(this, name, uri, transformerId, virtualHost, port, useSsl, username, password, queueName);
-        CreateRabbitMqConnectionRequest.initialize(this, objectType, name, uri, transformerId, virtualHost, port, useSsl, username, password, queueName);
+    constructor(objectType, name, uri, transformerId, virtualHost, port, userName, password, queueName, constraints) { 
+        CreateConnectionRequest.initialize(this, objectType);CreateOptParamModels.initialize(this);CreateRabbitMqConnectionRequestAllOf.initialize(this, name, uri, transformerId, virtualHost, port, userName, password, queueName, constraints);
+        CreateRabbitMqConnectionRequest.initialize(this, objectType, name, uri, transformerId, virtualHost, port, userName, password, queueName, constraints);
     }
 
     /**
@@ -47,76 +50,17 @@ class CreateRabbitMqConnectionRequest {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, objectType, name, uri, transformerId, virtualHost, port, useSsl, username, password, queueName) { 
+    static initialize(obj, objectType, name, uri, transformerId, virtualHost, port, userName, password, queueName, constraints) { 
         obj['objectType'] = objectType;
         obj['name'] = name;
         obj['uri'] = uri;
         obj['transformerId'] = transformerId;
         obj['virtualHost'] = virtualHost;
         obj['port'] = port;
-        obj['useSsl'] = useSsl;
-        obj['username'] = username;
+        obj['userName'] = userName;
         obj['password'] = password;
         obj['queueName'] = queueName;
-    }
-
-    /**
-    * Constructs a full object with all available fields.
-    */
-    model(){
-        var obj = {};
-
-        obj['objectType'] = null;
-        obj['name'] = null;
-        obj['uri'] = null;
-        obj['transformerId'] = null;
-        obj['virtualHost'] = null;
-        obj['port'] = null;
-        obj['useSsl'] = null;
-        obj['username'] = null;
-        obj['password'] = null;
-        obj['queueName'] = null;
-        obj['exchange'] = null;
-        obj['routingKey'] = null;
-
-        return obj;
-    }
-
-    /**
-    * Constructs a full object Map for all available fields.
-    */
-    modelMap(){
-        var obj = {
-            "fields": {},
-            "requiredFields": {}
-        };
-
-        obj["fields"]['objectType'] = { "type": 'String', "system": false };
-        obj["fields"]['name'] = { "type": 'String', "system": false };
-        obj["fields"]['uri'] = { "type": 'String', "system": false };
-        obj["fields"]['transformerId'] = { "type": 'String', "system": false };
-        obj["fields"]['virtualHost'] = { "type": 'String', "system": false };
-        obj["fields"]['port'] = { "type": 'Number', "system": false };
-        obj["fields"]['useSsl'] = { "type": 'Boolean', "system": false };
-        obj["fields"]['username'] = { "type": 'String', "system": false };
-        obj["fields"]['password'] = { "type": 'String', "system": false };
-        obj["fields"]['queueName'] = { "type": 'String', "system": false };
-        obj["fields"]['exchange'] = { "type": 'String', "system": false };
-        obj["fields"]['routingKey'] = { "type": 'String', "system": false };
-
-        
-        obj["requiredFields"]['objectType'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['name'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['uri'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['transformerId'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['virtualHost'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['port'] = { "type": 'Number', "system": false };
-        obj["requiredFields"]['useSsl'] = { "type": 'Boolean', "system": false };
-        obj["requiredFields"]['username'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['password'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['queueName'] = { "type": 'String', "system": false };
-
-        return obj;
+        obj['constraints'] = constraints;
     }
 
     /**
@@ -130,10 +74,20 @@ class CreateRabbitMqConnectionRequest {
         if (data) {
             obj = obj || new CreateRabbitMqConnectionRequest();
             CreateConnectionRequest.constructFromObject(data, obj);
+            CreateOptParamModels.constructFromObject(data, obj);
             CreateRabbitMqConnectionRequestAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('objectType')) {
                 obj['objectType'] = ApiClient.convertToType(data['objectType'], 'String');
+            }
+            if (data.hasOwnProperty('customFields')) {
+                obj['customFields'] = ApiClient.convertToType(data['customFields'], ['String']);
+            }
+            if (data.hasOwnProperty('tags')) {
+                obj['tags'] = ApiClient.convertToType(data['tags'], ['String']);
+            }
+            if (data.hasOwnProperty('metadata')) {
+                obj['metadata'] = ApiClient.convertToType(data['metadata'], [Metadata]);
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
@@ -150,11 +104,8 @@ class CreateRabbitMqConnectionRequest {
             if (data.hasOwnProperty('port')) {
                 obj['port'] = ApiClient.convertToType(data['port'], 'Number');
             }
-            if (data.hasOwnProperty('useSsl')) {
-                obj['useSsl'] = ApiClient.convertToType(data['useSsl'], 'Boolean');
-            }
-            if (data.hasOwnProperty('username')) {
-                obj['username'] = ApiClient.convertToType(data['username'], 'String');
+            if (data.hasOwnProperty('userName')) {
+                obj['userName'] = ApiClient.convertToType(data['userName'], 'String');
             }
             if (data.hasOwnProperty('password')) {
                 obj['password'] = ApiClient.convertToType(data['password'], 'String');
@@ -168,6 +119,9 @@ class CreateRabbitMqConnectionRequest {
             if (data.hasOwnProperty('routingKey')) {
                 obj['routingKey'] = ApiClient.convertToType(data['routingKey'], 'String');
             }
+            if (data.hasOwnProperty('constraints')) {
+                obj['constraints'] = ApiClient.convertToType(data['constraints'], ['String']);
+            }
         }
         return obj;
     }
@@ -180,6 +134,23 @@ class CreateRabbitMqConnectionRequest {
  * @member {String} objectType
  */
 CreateRabbitMqConnectionRequest.prototype['objectType'] = undefined;
+
+/**
+ * A list of id's used to add cutom fields
+ * @member {Array.<String>} customFields
+ */
+CreateRabbitMqConnectionRequest.prototype['customFields'] = undefined;
+
+/**
+ * A list of id's used to tag models
+ * @member {Array.<String>} tags
+ */
+CreateRabbitMqConnectionRequest.prototype['tags'] = undefined;
+
+/**
+ * @member {Array.<module:model/Metadata>} metadata
+ */
+CreateRabbitMqConnectionRequest.prototype['metadata'] = undefined;
 
 /**
  * The name of the consumer
@@ -212,16 +183,10 @@ CreateRabbitMqConnectionRequest.prototype['virtualHost'] = undefined;
 CreateRabbitMqConnectionRequest.prototype['port'] = undefined;
 
 /**
- * Whether the connection is SSL enabled or not
- * @member {Boolean} useSsl
- */
-CreateRabbitMqConnectionRequest.prototype['useSsl'] = undefined;
-
-/**
  * Consumer username for authentication
- * @member {String} username
+ * @member {String} userName
  */
-CreateRabbitMqConnectionRequest.prototype['username'] = undefined;
+CreateRabbitMqConnectionRequest.prototype['userName'] = undefined;
 
 /**
  * Consumer password for authentication
@@ -247,6 +212,12 @@ CreateRabbitMqConnectionRequest.prototype['exchange'] = undefined;
  */
 CreateRabbitMqConnectionRequest.prototype['routingKey'] = undefined;
 
+/**
+ * Additional constraints
+ * @member {Array.<String>} constraints
+ */
+CreateRabbitMqConnectionRequest.prototype['constraints'] = undefined;
+
 
 // Implement CreateConnectionRequest interface:
 /**
@@ -254,6 +225,21 @@ CreateRabbitMqConnectionRequest.prototype['routingKey'] = undefined;
  * @member {String} objectType
  */
 CreateConnectionRequest.prototype['objectType'] = undefined;
+// Implement CreateOptParamModels interface:
+/**
+ * A list of id's used to add cutom fields
+ * @member {Array.<String>} customFields
+ */
+CreateOptParamModels.prototype['customFields'] = undefined;
+/**
+ * A list of id's used to tag models
+ * @member {Array.<String>} tags
+ */
+CreateOptParamModels.prototype['tags'] = undefined;
+/**
+ * @member {Array.<module:model/Metadata>} metadata
+ */
+CreateOptParamModels.prototype['metadata'] = undefined;
 // Implement CreateRabbitMqConnectionRequestAllOf interface:
 /**
  * The name of the consumer
@@ -281,15 +267,10 @@ CreateRabbitMqConnectionRequestAllOf.prototype['virtualHost'] = undefined;
  */
 CreateRabbitMqConnectionRequestAllOf.prototype['port'] = undefined;
 /**
- * Whether the connection is SSL enabled or not
- * @member {Boolean} useSsl
- */
-CreateRabbitMqConnectionRequestAllOf.prototype['useSsl'] = undefined;
-/**
  * Consumer username for authentication
- * @member {String} username
+ * @member {String} userName
  */
-CreateRabbitMqConnectionRequestAllOf.prototype['username'] = undefined;
+CreateRabbitMqConnectionRequestAllOf.prototype['userName'] = undefined;
 /**
  * Consumer password for authentication
  * @member {String} password
@@ -310,6 +291,11 @@ CreateRabbitMqConnectionRequestAllOf.prototype['exchange'] = undefined;
  * @member {String} routingKey
  */
 CreateRabbitMqConnectionRequestAllOf.prototype['routingKey'] = undefined;
+/**
+ * Additional constraints
+ * @member {Array.<String>} constraints
+ */
+CreateRabbitMqConnectionRequestAllOf.prototype['constraints'] = undefined;
 
 
 

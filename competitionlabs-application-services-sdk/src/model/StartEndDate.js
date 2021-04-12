@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The StartEndDate model module.
  * @module model/StartEndDate
- * @version 1.0.5
+ * @version 1.0.0
  */
 class StartEndDate {
     /**
@@ -36,36 +36,6 @@ class StartEndDate {
      */
     static initialize(obj, start) { 
         obj['start'] = start;
-    }
-
-    /**
-    * Constructs a full object with all available fields.
-    */
-    model(){
-        var obj = {};
-
-        obj['start'] = null;
-        obj['end'] = null;
-
-        return obj;
-    }
-
-    /**
-    * Constructs a full object Map for all available fields.
-    */
-    modelMap(){
-        var obj = {
-            "fields": {},
-            "requiredFields": {}
-        };
-
-        obj["fields"]['start'] = { "type": 'Date', "system": false };
-        obj["fields"]['end'] = { "type": 'Date', "system": false };
-
-        
-        obj["requiredFields"]['start'] = { "type": 'Date', "system": false };
-
-        return obj;
     }
 
     /**

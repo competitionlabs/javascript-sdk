@@ -1,4 +1,4 @@
-# @CompetitionlabsApplicationServicesSdk.RuleDescriptorFact
+# CompetitionLabsApplicationServices.RuleDescriptorFact
 
 ## Properties
 
@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **constantExample** | **String** | Example of the constant | 
 **defaultVale** | **String** | The default value of the constant for the fact | [optional] 
 **macros** | [**[Macro]**](Macro.md) |  | [optional] 
-**constraints** | **[String]** | The fields constraint | [optional] 
+**constraints** | **[String]** | The fields constraint | 
 **fact** | **String** | The name of the fact | 
 **subConditions** | [**[RuleDescriptorSubCondition]**](RuleDescriptorSubCondition.md) |  | [optional] 
 

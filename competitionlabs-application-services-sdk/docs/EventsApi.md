@@ -1,18 +1,18 @@
-# @CompetitionlabsApplicationServicesSdk.EventsApi
+# CompetitionLabsApplicationServices.EventsApi
 
 All URIs are relative to *https://api.competitionlabs.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createEvents**](EventsApi.md#createEvents) | **POST** /events/{spaceName} | NOT AVAILABLE IN CURRENT RELEASE
-[**getEvents**](EventsApi.md#getEvents) | **GET** /events/{spaceName} | NOT AVAILABLE IN CURRENT RELEASE
-[**getEventsByQuery**](EventsApi.md#getEventsByQuery) | **POST** /events/{spaceName}/query | NOT AVAILABLE IN CURRENT RELEASE
+[**createEvents**](EventsApi.md#createEvents) | **POST** /events | NOT AVAILABLE IN CURRENT RELEASE
+[**getEvents**](EventsApi.md#getEvents) | **GET** /events | NOT AVAILABLE IN CURRENT RELEASE
+[**getEventsByQuery**](EventsApi.md#getEventsByQuery) | **POST** /events/query | NOT AVAILABLE IN CURRENT RELEASE
 
 
 
 ## createEvents
 
-> ApiResponse createEvents(spaceName, opts)
+> ApiResponse createEvents(opts)
 
 NOT AVAILABLE IN CURRENT RELEASE
 
@@ -21,21 +21,23 @@ Create an Event
 ### Example
 
 ```javascript
-import @CompetitionlabsApplicationServicesSdk from '@competitionlabs/application-services-sdk';
-let defaultClient = @CompetitionlabsApplicationServicesSdk.ApiClient.instance;
-// Configure API key authorization: adminApiKey
-let adminApiKey = defaultClient.authentications['adminApiKey'];
-adminApiKey.apiKey = 'YOUR API KEY';
+import CompetitionLabsApplicationServices from 'competition_labs_application_services';
+let defaultClient = CompetitionLabsApplicationServices.ApiClient.instance;
+// Configure API key authorization: AdminApiKey
+let AdminApiKey = defaultClient.authentications['AdminApiKey'];
+AdminApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//adminApiKey.apiKeyPrefix = 'Token';
+//AdminApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: OAuth2
+let OAuth2 = defaultClient.authentications['OAuth2'];
+OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new @CompetitionlabsApplicationServicesSdk.EventsApi();
-let spaceName = "spaceName_example"; // String | This is the space name which is linked to the account
+let apiInstance = new CompetitionLabsApplicationServices.EventsApi();
 let opts = {
   'X_API_KEY': "X_API_KEY_example", // String | The admin API Key generated from CompetitionLabs back office
-  'body': [new @CompetitionlabsApplicationServicesSdk.CreateEventRequest()] // [CreateEventRequest] | Create an Event
+  'body': [new CompetitionLabsApplicationServices.CreateEventRequest()] // [CreateEventRequest] | Create an Event
 };
-apiInstance.createEvents(spaceName, opts, (error, data, response) => {
+apiInstance.createEvents(opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -49,7 +51,6 @@ apiInstance.createEvents(spaceName, opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **spaceName** | **String**| This is the space name which is linked to the account | 
  **X_API_KEY** | **String**| The admin API Key generated from CompetitionLabs back office | [optional] 
  **body** | [**[CreateEventRequest]**](CreateEventRequest.md)| Create an Event | [optional] 
 
@@ -59,7 +60,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[adminApiKey](../README.md#adminApiKey)
+[AdminApiKey](../README.md#AdminApiKey), [OAuth2](../README.md#OAuth2)
 
 ### HTTP request headers
 
@@ -69,7 +70,7 @@ Name | Type | Description  | Notes
 
 ## getEvents
 
-> EventResponse getEvents(spaceName, opts)
+> EventResponse getEvents(opts)
 
 NOT AVAILABLE IN CURRENT RELEASE
 
@@ -78,23 +79,25 @@ Retrieve an Event or a list of Events from CompetitionLabs by unique Event ID&#3
 ### Example
 
 ```javascript
-import @CompetitionlabsApplicationServicesSdk from '@competitionlabs/application-services-sdk';
-let defaultClient = @CompetitionlabsApplicationServicesSdk.ApiClient.instance;
-// Configure API key authorization: adminApiKey
-let adminApiKey = defaultClient.authentications['adminApiKey'];
-adminApiKey.apiKey = 'YOUR API KEY';
+import CompetitionLabsApplicationServices from 'competition_labs_application_services';
+let defaultClient = CompetitionLabsApplicationServices.ApiClient.instance;
+// Configure API key authorization: AdminApiKey
+let AdminApiKey = defaultClient.authentications['AdminApiKey'];
+AdminApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//adminApiKey.apiKeyPrefix = 'Token';
+//AdminApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: OAuth2
+let OAuth2 = defaultClient.authentications['OAuth2'];
+OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new @CompetitionlabsApplicationServicesSdk.EventsApi();
-let spaceName = "spaceName_example"; // String | This is the space name which is linked to the account
+let apiInstance = new CompetitionLabsApplicationServices.EventsApi();
 let opts = {
   'X_API_KEY': "X_API_KEY_example", // String | The admin API Key generated from CompetitionLabs back office
   'id': ["null"], // [String] | The unique identifiers of the resources
   'limit': 56, // Number | Limit the returned total records found
   'skip': 56 // Number | Skip the returned records found and return the next batch of records
 };
-apiInstance.getEvents(spaceName, opts, (error, data, response) => {
+apiInstance.getEvents(opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -108,7 +111,6 @@ apiInstance.getEvents(spaceName, opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **spaceName** | **String**| This is the space name which is linked to the account | 
  **X_API_KEY** | **String**| The admin API Key generated from CompetitionLabs back office | [optional] 
  **id** | [**[String]**](String.md)| The unique identifiers of the resources | [optional] 
  **limit** | **Number**| Limit the returned total records found | [optional] 
@@ -120,7 +122,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[adminApiKey](../README.md#adminApiKey)
+[AdminApiKey](../README.md#AdminApiKey), [OAuth2](../README.md#OAuth2)
 
 ### HTTP request headers
 
@@ -130,7 +132,7 @@ Name | Type | Description  | Notes
 
 ## getEventsByQuery
 
-> EventResponse getEventsByQuery(spaceName, opts)
+> EventResponse getEventsByQuery(opts)
 
 NOT AVAILABLE IN CURRENT RELEASE
 
@@ -139,21 +141,23 @@ Retrieve an Event or a list of Events from CompetitionLabs by unique Event ID&#3
 ### Example
 
 ```javascript
-import @CompetitionlabsApplicationServicesSdk from '@competitionlabs/application-services-sdk';
-let defaultClient = @CompetitionlabsApplicationServicesSdk.ApiClient.instance;
-// Configure API key authorization: adminApiKey
-let adminApiKey = defaultClient.authentications['adminApiKey'];
-adminApiKey.apiKey = 'YOUR API KEY';
+import CompetitionLabsApplicationServices from 'competition_labs_application_services';
+let defaultClient = CompetitionLabsApplicationServices.ApiClient.instance;
+// Configure API key authorization: AdminApiKey
+let AdminApiKey = defaultClient.authentications['AdminApiKey'];
+AdminApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//adminApiKey.apiKeyPrefix = 'Token';
+//AdminApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: OAuth2
+let OAuth2 = defaultClient.authentications['OAuth2'];
+OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new @CompetitionlabsApplicationServicesSdk.EventsApi();
-let spaceName = "spaceName_example"; // String | This is the space name which is linked to the account
+let apiInstance = new CompetitionLabsApplicationServices.EventsApi();
 let opts = {
   'X_API_KEY': "X_API_KEY_example", // String | The admin API Key generated from CompetitionLabs back office
-  'body': new @CompetitionlabsApplicationServicesSdk.QueryRequest() // QueryRequest | Retrieve an Event or a list of Events from CompetitionLabs by unique Event ID's or any other POST body parameters using the POST method
+  'body': new CompetitionLabsApplicationServices.QueryRequest() // QueryRequest | Retrieve an Event or a list of Events from CompetitionLabs by unique Event ID's or any other POST body parameters using the POST method
 };
-apiInstance.getEventsByQuery(spaceName, opts, (error, data, response) => {
+apiInstance.getEventsByQuery(opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -167,7 +171,6 @@ apiInstance.getEventsByQuery(spaceName, opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **spaceName** | **String**| This is the space name which is linked to the account | 
  **X_API_KEY** | **String**| The admin API Key generated from CompetitionLabs back office | [optional] 
  **body** | [**QueryRequest**](QueryRequest.md)| Retrieve an Event or a list of Events from CompetitionLabs by unique Event ID&#39;s or any other POST body parameters using the POST method | [optional] 
 
@@ -177,7 +180,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[adminApiKey](../README.md#adminApiKey)
+[AdminApiKey](../README.md#AdminApiKey), [OAuth2](../README.md#OAuth2)
 
 ### HTTP request headers
 

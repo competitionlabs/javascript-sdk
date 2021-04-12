@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -17,7 +17,7 @@ import ContestReduced from './ContestReduced';
 /**
  * The Bracket model module.
  * @module model/Bracket
- * @version 1.0.5
+ * @version 1.0.0
  */
 class Bracket {
     /**
@@ -39,37 +39,6 @@ class Bracket {
     static initialize(obj, rounds, contests) { 
         obj['rounds'] = rounds;
         obj['contests'] = contests;
-    }
-
-    /**
-    * Constructs a full object with all available fields.
-    */
-    model(){
-        var obj = {};
-
-        obj['rounds'] = null;
-        obj['contests'] = [new ContestReduced().model()];
-
-        return obj;
-    }
-
-    /**
-    * Constructs a full object Map for all available fields.
-    */
-    modelMap(){
-        var obj = {
-            "fields": {},
-            "requiredFields": {}
-        };
-
-        obj["fields"]['rounds'] = { "type": 'Number', "system": false };
-        obj["fields"]['contests'] = [new ContestReduced().modelMap()];
-
-        
-        obj["requiredFields"]['rounds'] = { "type": 'Number', "system": false };
-        obj["requiredFields"]['contests'] = [new ContestReduced().modelMap()];
-
-        return obj;
     }
 
     /**
