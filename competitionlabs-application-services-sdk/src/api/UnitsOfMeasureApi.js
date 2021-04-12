@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -22,7 +22,7 @@ import UpdateUnitOfMeasureRequest from '../model/UpdateUnitOfMeasureRequest';
 /**
 * UnitsOfMeasure service.
 * @module api/UnitsOfMeasureApi
-* @version 1.0.5
+* @version 1.0.0
 */
 export default class UnitsOfMeasureApi {
 
@@ -48,27 +48,21 @@ export default class UnitsOfMeasureApi {
 
     /**
      * Create a new Unit of measure in the CompetitionLabs database
-     * @param {String} spaceName This is the space name which is linked to the account
      * @param {Array.<module:model/CreateUnitOfMeasureRequest>} body Create a Unit of measure in the CompetitionLabs database
      * @param {Object} opts Optional parameters
      * @param {String} opts.X_API_KEY The admin API Key generated from CompetitionLabs back office
      * @param {module:api/UnitsOfMeasureApi~createUnitsOfMeasureCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ApiResponse}
      */
-    createUnitsOfMeasure(spaceName, body, opts, callback) {
+    createUnitsOfMeasure(body, opts, callback) {
       opts = opts || {};
       let postBody = body;
-      // verify the required parameter 'spaceName' is set
-      if (spaceName === undefined || spaceName === null) {
-        throw new Error("Missing the required parameter 'spaceName' when calling createUnitsOfMeasure");
-      }
       // verify the required parameter 'body' is set
       if (body === undefined || body === null) {
         throw new Error("Missing the required parameter 'body' when calling createUnitsOfMeasure");
       }
 
       let pathParams = {
-        'spaceName': spaceName
       };
       let queryParams = {
       };
@@ -78,12 +72,12 @@ export default class UnitsOfMeasureApi {
       let formParams = {
       };
 
-      let authNames = ['adminApiKey'];
+      let authNames = ['AdminApiKey', 'OAuth2'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = ApiResponse;
       return this.apiClient.callApi(
-        '/units-of-measure/{spaceName}', 'POST',
+        '/units-of-measure', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
@@ -99,23 +93,17 @@ export default class UnitsOfMeasureApi {
 
     /**
      * Delete the Unit of measured for a given identifier specified
-     * @param {String} spaceName This is the space name which is linked to the account
      * @param {Object} opts Optional parameters
      * @param {String} opts.X_API_KEY The admin API Key generated from CompetitionLabs back office
      * @param {Array.<String>} opts.id The unique identifiers of the resources
      * @param {module:api/UnitsOfMeasureApi~deleteUnitsOfMeasureCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ApiResponse}
      */
-    deleteUnitsOfMeasure(spaceName, opts, callback) {
+    deleteUnitsOfMeasure(opts, callback) {
       opts = opts || {};
       let postBody = null;
-      // verify the required parameter 'spaceName' is set
-      if (spaceName === undefined || spaceName === null) {
-        throw new Error("Missing the required parameter 'spaceName' when calling deleteUnitsOfMeasure");
-      }
 
       let pathParams = {
-        'spaceName': spaceName
       };
       let queryParams = {
         'id': this.apiClient.buildCollectionParam(opts['id'], 'multi')
@@ -126,12 +114,12 @@ export default class UnitsOfMeasureApi {
       let formParams = {
       };
 
-      let authNames = ['adminApiKey'];
+      let authNames = ['AdminApiKey', 'OAuth2'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = ApiResponse;
       return this.apiClient.callApi(
-        '/units-of-measure/{spaceName}', 'DELETE',
+        '/units-of-measure', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
@@ -147,23 +135,17 @@ export default class UnitsOfMeasureApi {
 
     /**
      * Delete Units of measure from CompetitionLabs database by unique Unit of measure ID's or any other POST body parameters using the POST method
-     * @param {String} spaceName This is the space name which is linked to the account
      * @param {Object} opts Optional parameters
      * @param {String} opts.X_API_KEY The admin API Key generated from CompetitionLabs back office
      * @param {module:model/QueryRequest} opts.body Delete Units of measure from CompetitionLabs database by unique Unit of measure ID's or any other POST body parameters using the POST method
      * @param {module:api/UnitsOfMeasureApi~deleteUnitsOfMeasureByQueryCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ApiResponse}
      */
-    deleteUnitsOfMeasureByQuery(spaceName, opts, callback) {
+    deleteUnitsOfMeasureByQuery(opts, callback) {
       opts = opts || {};
       let postBody = opts['body'];
-      // verify the required parameter 'spaceName' is set
-      if (spaceName === undefined || spaceName === null) {
-        throw new Error("Missing the required parameter 'spaceName' when calling deleteUnitsOfMeasureByQuery");
-      }
 
       let pathParams = {
-        'spaceName': spaceName
       };
       let queryParams = {
       };
@@ -173,12 +155,12 @@ export default class UnitsOfMeasureApi {
       let formParams = {
       };
 
-      let authNames = ['adminApiKey'];
+      let authNames = ['AdminApiKey', 'OAuth2'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = ApiResponse;
       return this.apiClient.callApi(
-        '/units-of-measure/{spaceName}/delete', 'POST',
+        '/units-of-measure/delete', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
@@ -194,7 +176,6 @@ export default class UnitsOfMeasureApi {
 
     /**
      * Returns a list of Units of measure. This assumes that units of measure have first been uploaded via a POST request or web console
-     * @param {String} spaceName This is the space name which is linked to the account
      * @param {Object} opts Optional parameters
      * @param {String} opts.X_API_KEY The admin API Key generated from CompetitionLabs back office
      * @param {Array.<String>} opts.id The unique identifiers of the resources
@@ -203,16 +184,11 @@ export default class UnitsOfMeasureApi {
      * @param {module:api/UnitsOfMeasureApi~getUnitsOfMeasureCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/UnitOfMeasureResponse}
      */
-    getUnitsOfMeasure(spaceName, opts, callback) {
+    getUnitsOfMeasure(opts, callback) {
       opts = opts || {};
       let postBody = null;
-      // verify the required parameter 'spaceName' is set
-      if (spaceName === undefined || spaceName === null) {
-        throw new Error("Missing the required parameter 'spaceName' when calling getUnitsOfMeasure");
-      }
 
       let pathParams = {
-        'spaceName': spaceName
       };
       let queryParams = {
         'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),
@@ -225,12 +201,12 @@ export default class UnitsOfMeasureApi {
       let formParams = {
       };
 
-      let authNames = ['adminApiKey'];
+      let authNames = ['AdminApiKey', 'OAuth2'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = UnitOfMeasureResponse;
       return this.apiClient.callApi(
-        '/units-of-measure/{spaceName}', 'GET',
+        '/units-of-measure', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
@@ -246,23 +222,17 @@ export default class UnitsOfMeasureApi {
 
     /**
      * Retrieve Units of measure from CompetitionLabs database by unique Unit of measure ID's or any other POST body parameters using the POST method
-     * @param {String} spaceName This is the space name which is linked to the account
      * @param {Object} opts Optional parameters
      * @param {String} opts.X_API_KEY The admin API Key generated from CompetitionLabs back office
      * @param {module:model/QueryRequest} opts.body Retrieve Units of measure from CompetitionLabs database by unique Unit of measure ID's or any other POST body parameters using the POST method
      * @param {module:api/UnitsOfMeasureApi~getUnitsOfMeasureByQueryCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/UnitOfMeasureResponse}
      */
-    getUnitsOfMeasureByQuery(spaceName, opts, callback) {
+    getUnitsOfMeasureByQuery(opts, callback) {
       opts = opts || {};
       let postBody = opts['body'];
-      // verify the required parameter 'spaceName' is set
-      if (spaceName === undefined || spaceName === null) {
-        throw new Error("Missing the required parameter 'spaceName' when calling getUnitsOfMeasureByQuery");
-      }
 
       let pathParams = {
-        'spaceName': spaceName
       };
       let queryParams = {
       };
@@ -272,12 +242,12 @@ export default class UnitsOfMeasureApi {
       let formParams = {
       };
 
-      let authNames = ['adminApiKey'];
+      let authNames = ['AdminApiKey', 'OAuth2'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = UnitOfMeasureResponse;
       return this.apiClient.callApi(
-        '/units-of-measure/{spaceName}/query', 'POST',
+        '/units-of-measure/query', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
@@ -293,27 +263,21 @@ export default class UnitsOfMeasureApi {
 
     /**
      * Update an existing Unit of measure in the CompetitionLabs database
-     * @param {String} spaceName This is the space name which is linked to the account
      * @param {Array.<module:model/UpdateUnitOfMeasureRequest>} body Update a Unit of measure in the CompetitionLabs database.
      * @param {Object} opts Optional parameters
      * @param {String} opts.X_API_KEY The admin API Key generated from CompetitionLabs back office
      * @param {module:api/UnitsOfMeasureApi~updateUnitsOfMeasureCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ApiResponse}
      */
-    updateUnitsOfMeasure(spaceName, body, opts, callback) {
+    updateUnitsOfMeasure(body, opts, callback) {
       opts = opts || {};
       let postBody = body;
-      // verify the required parameter 'spaceName' is set
-      if (spaceName === undefined || spaceName === null) {
-        throw new Error("Missing the required parameter 'spaceName' when calling updateUnitsOfMeasure");
-      }
       // verify the required parameter 'body' is set
       if (body === undefined || body === null) {
         throw new Error("Missing the required parameter 'body' when calling updateUnitsOfMeasure");
       }
 
       let pathParams = {
-        'spaceName': spaceName
       };
       let queryParams = {
       };
@@ -323,12 +287,12 @@ export default class UnitsOfMeasureApi {
       let formParams = {
       };
 
-      let authNames = ['adminApiKey'];
+      let authNames = ['AdminApiKey', 'OAuth2'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = ApiResponse;
       return this.apiClient.callApi(
-        '/units-of-measure/{spaceName}', 'PUT',
+        '/units-of-measure', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );

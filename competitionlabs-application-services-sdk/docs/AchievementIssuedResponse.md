@@ -1,4 +1,4 @@
-# @CompetitionlabsApplicationServicesSdk.AchievementIssuedResponse
+# CompetitionLabsApplicationServices.AchievementIssuedResponse
 
 ## Properties
 

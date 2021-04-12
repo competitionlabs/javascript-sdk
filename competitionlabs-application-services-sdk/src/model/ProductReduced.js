@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -14,11 +14,12 @@
 import ApiClient from '../ApiClient';
 import ModelDefault from './ModelDefault';
 import ProductReducedAllOf from './ProductReducedAllOf';
+import TagsReduced from './TagsReduced';
 
 /**
  * The ProductReduced model module.
  * @module model/ProductReduced
- * @version 1.0.5
+ * @version 1.0.0
  */
 class ProductReduced {
     /**
@@ -29,12 +30,11 @@ class ProductReduced {
      * @param id {String} A unique system generated identifier
      * @param spaceName {String} This is the space name which is linked to the account
      * @param created {Date} ISO8601 timestamp for when a Model was created. All records are stored in UTC time zone
-     * @param name {String} The name of the product
      * @param productRefId {String} The reference to this product in your system. The reference identifier can not be changed after the product has been created
      */
-    constructor(id, spaceName, created, name, productRefId) { 
-        ModelDefault.initialize(this, id, spaceName, created);ProductReducedAllOf.initialize(this, name, productRefId);
-        ProductReduced.initialize(this, id, spaceName, created, name, productRefId);
+    constructor(id, spaceName, created, productRefId) { 
+        ModelDefault.initialize(this, id, spaceName, created);ProductReducedAllOf.initialize(this, productRefId);
+        ProductReduced.initialize(this, id, spaceName, created, productRefId);
     }
 
     /**
@@ -42,52 +42,11 @@ class ProductReduced {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, id, spaceName, created, name, productRefId) { 
+    static initialize(obj, id, spaceName, created, productRefId) { 
         obj['id'] = id;
         obj['spaceName'] = spaceName;
         obj['created'] = created;
-        obj['name'] = name;
         obj['productRefId'] = productRefId;
-    }
-
-    /**
-    * Constructs a full object with all available fields.
-    */
-    model(){
-        var obj = {};
-
-        obj['id'] = null;
-        obj['spaceName'] = null;
-        obj['created'] = null;
-        obj['name'] = null;
-        obj['productRefId'] = null;
-
-        return obj;
-    }
-
-    /**
-    * Constructs a full object Map for all available fields.
-    */
-    modelMap(){
-        var obj = {
-            "fields": {},
-            "requiredFields": {}
-        };
-
-        obj["fields"]['id'] = { "type": 'String', "system": true };
-        obj["fields"]['spaceName'] = { "type": 'String', "system": true };
-        obj["fields"]['created'] = { "type": 'Date', "system": true };
-        obj["fields"]['name'] = { "type": 'String', "system": false };
-        obj["fields"]['productRefId'] = { "type": 'String', "system": false };
-
-        
-        obj["requiredFields"]['id'] = { "type": 'String', "system": true };
-        obj["requiredFields"]['spaceName'] = { "type": 'String', "system": true };
-        obj["requiredFields"]['created'] = { "type": 'Date', "system": true };
-        obj["requiredFields"]['name'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['productRefId'] = { "type": 'String', "system": false };
-
-        return obj;
     }
 
     /**
@@ -117,6 +76,9 @@ class ProductReduced {
             }
             if (data.hasOwnProperty('productRefId')) {
                 obj['productRefId'] = ApiClient.convertToType(data['productRefId'], 'String');
+            }
+            if (data.hasOwnProperty('tags')) {
+                obj['tags'] = ApiClient.convertToType(data['tags'], [TagsReduced]);
             }
         }
         return obj;
@@ -155,6 +117,12 @@ ProductReduced.prototype['name'] = undefined;
  */
 ProductReduced.prototype['productRefId'] = undefined;
 
+/**
+ * A list of Strings used to tag products with taxonomy terms
+ * @member {Array.<module:model/TagsReduced>} tags
+ */
+ProductReduced.prototype['tags'] = undefined;
+
 
 // Implement ModelDefault interface:
 /**
@@ -183,6 +151,11 @@ ProductReducedAllOf.prototype['name'] = undefined;
  * @member {String} productRefId
  */
 ProductReducedAllOf.prototype['productRefId'] = undefined;
+/**
+ * A list of Strings used to tag products with taxonomy terms
+ * @member {Array.<module:model/TagsReduced>} tags
+ */
+ProductReducedAllOf.prototype['tags'] = undefined;
 
 
 

@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -12,33 +12,37 @@
  */
 
 import ApiClient from '../ApiClient';
+import CustomFieldReduced from './CustomFieldReduced';
 import FileObjectAllOf from './FileObjectAllOf';
 import Metadata from './Metadata';
 import ModelDefault from './ModelDefault';
+import OptParamModels from './OptParamModels';
+import TagsReduced from './TagsReduced';
 
 /**
  * The FileObject model module.
  * @module model/FileObject
- * @version 1.0.5
+ * @version 1.0.0
  */
 class FileObject {
     /**
      * Constructs a new <code>FileObject</code>.
      * @alias module:model/FileObject
      * @implements module:model/ModelDefault
+     * @implements module:model/OptParamModels
      * @implements module:model/FileObjectAllOf
      * @param id {String} A unique system generated identifier
      * @param spaceName {String} This is the space name which is linked to the account
      * @param created {Date} ISO8601 timestamp for when a Model was created. All records are stored in UTC time zone
      * @param repositoryId {String} The repository identifier this file belongs too
-     * @param fileName {String} Name of the original file uploaded
+     * @param name {String} Name of the original file uploaded
      * @param mimeType {String} Mime type of the file. Valid mime types - text/csv or application/vmd.ms-excelor or application/x-directory for directories
      * @param path {String} The name of the attachment within the bucket
      * @param parentFolderPath {String} The folder name containing the attachment within the bucket
      */
-    constructor(id, spaceName, created, repositoryId, fileName, mimeType, path, parentFolderPath) { 
-        ModelDefault.initialize(this, id, spaceName, created);FileObjectAllOf.initialize(this, repositoryId, fileName, mimeType, path, parentFolderPath);
-        FileObject.initialize(this, id, spaceName, created, repositoryId, fileName, mimeType, path, parentFolderPath);
+    constructor(id, spaceName, created, repositoryId, name, mimeType, path, parentFolderPath) { 
+        ModelDefault.initialize(this, id, spaceName, created);OptParamModels.initialize(this);FileObjectAllOf.initialize(this, repositoryId, name, mimeType, path, parentFolderPath);
+        FileObject.initialize(this, id, spaceName, created, repositoryId, name, mimeType, path, parentFolderPath);
     }
 
     /**
@@ -46,74 +50,15 @@ class FileObject {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, id, spaceName, created, repositoryId, fileName, mimeType, path, parentFolderPath) { 
+    static initialize(obj, id, spaceName, created, repositoryId, name, mimeType, path, parentFolderPath) { 
         obj['id'] = id;
         obj['spaceName'] = spaceName;
         obj['created'] = created;
         obj['repositoryId'] = repositoryId;
-        obj['fileName'] = fileName;
+        obj['name'] = name;
         obj['mimeType'] = mimeType;
         obj['path'] = path;
         obj['parentFolderPath'] = parentFolderPath;
-    }
-
-    /**
-    * Constructs a full object with all available fields.
-    */
-    model(){
-        var obj = {};
-
-        obj['id'] = null;
-        obj['spaceName'] = null;
-        obj['created'] = null;
-        obj['tags'] = [null];
-        obj['repositoryId'] = null;
-        obj['fileName'] = null;
-        obj['mimeType'] = null;
-        obj['extension'] = null;
-        obj['path'] = null;
-        obj['parentFolderPath'] = null;
-        obj['uri'] = null;
-        obj['size'] = null;
-        obj['metadata'] = [new Metadata().model()];
-
-        return obj;
-    }
-
-    /**
-    * Constructs a full object Map for all available fields.
-    */
-    modelMap(){
-        var obj = {
-            "fields": {},
-            "requiredFields": {}
-        };
-
-        obj["fields"]['id'] = { "type": 'String', "system": true };
-        obj["fields"]['spaceName'] = { "type": 'String', "system": true };
-        obj["fields"]['created'] = { "type": 'Date', "system": true };
-        obj["fields"]['tags'] = [{ "type": 'String', "system": false }];
-        obj["fields"]['repositoryId'] = { "type": 'String', "system": false };
-        obj["fields"]['fileName'] = { "type": 'String', "system": false };
-        obj["fields"]['mimeType'] = { "type": 'String', "system": false };
-        obj["fields"]['extension'] = { "type": 'String', "system": false };
-        obj["fields"]['path'] = { "type": 'String', "system": false };
-        obj["fields"]['parentFolderPath'] = { "type": 'String', "system": false };
-        obj["fields"]['uri'] = { "type": 'String', "system": false };
-        obj["fields"]['size'] = { "type": 'Number', "system": false };
-        obj["fields"]['metadata'] = [new Metadata().modelMap()];
-
-        
-        obj["requiredFields"]['id'] = { "type": 'String', "system": true };
-        obj["requiredFields"]['spaceName'] = { "type": 'String', "system": true };
-        obj["requiredFields"]['created'] = { "type": 'Date', "system": true };
-        obj["requiredFields"]['repositoryId'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['fileName'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['mimeType'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['path'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['parentFolderPath'] = { "type": 'String', "system": false };
-
-        return obj;
     }
 
     /**
@@ -127,6 +72,7 @@ class FileObject {
         if (data) {
             obj = obj || new FileObject();
             ModelDefault.constructFromObject(data, obj);
+            OptParamModels.constructFromObject(data, obj);
             FileObjectAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('id')) {
@@ -138,14 +84,20 @@ class FileObject {
             if (data.hasOwnProperty('created')) {
                 obj['created'] = ApiClient.convertToType(data['created'], 'Date');
             }
+            if (data.hasOwnProperty('customFields')) {
+                obj['customFields'] = ApiClient.convertToType(data['customFields'], [CustomFieldReduced]);
+            }
             if (data.hasOwnProperty('tags')) {
-                obj['tags'] = ApiClient.convertToType(data['tags'], ['String']);
+                obj['tags'] = ApiClient.convertToType(data['tags'], [TagsReduced]);
+            }
+            if (data.hasOwnProperty('metadata')) {
+                obj['metadata'] = ApiClient.convertToType(data['metadata'], [Metadata]);
             }
             if (data.hasOwnProperty('repositoryId')) {
                 obj['repositoryId'] = ApiClient.convertToType(data['repositoryId'], 'String');
             }
-            if (data.hasOwnProperty('fileName')) {
-                obj['fileName'] = ApiClient.convertToType(data['fileName'], 'String');
+            if (data.hasOwnProperty('name')) {
+                obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
             if (data.hasOwnProperty('mimeType')) {
                 obj['mimeType'] = ApiClient.convertToType(data['mimeType'], 'String');
@@ -164,9 +116,6 @@ class FileObject {
             }
             if (data.hasOwnProperty('size')) {
                 obj['size'] = ApiClient.convertToType(data['size'], 'Number');
-            }
-            if (data.hasOwnProperty('metadata')) {
-                obj['metadata'] = ApiClient.convertToType(data['metadata'], [Metadata]);
             }
         }
         return obj;
@@ -194,10 +143,20 @@ FileObject.prototype['spaceName'] = undefined;
 FileObject.prototype['created'] = undefined;
 
 /**
- * The tags associated with this file object
- * @member {Array.<String>} tags
+ * @member {Array.<module:model/CustomFieldReduced>} customFields
+ */
+FileObject.prototype['customFields'] = undefined;
+
+/**
+ * A list of id's used to tag models
+ * @member {Array.<module:model/TagsReduced>} tags
  */
 FileObject.prototype['tags'] = undefined;
+
+/**
+ * @member {Array.<module:model/Metadata>} metadata
+ */
+FileObject.prototype['metadata'] = undefined;
 
 /**
  * The repository identifier this file belongs too
@@ -207,9 +166,9 @@ FileObject.prototype['repositoryId'] = undefined;
 
 /**
  * Name of the original file uploaded
- * @member {String} fileName
+ * @member {String} name
  */
-FileObject.prototype['fileName'] = undefined;
+FileObject.prototype['name'] = undefined;
 
 /**
  * Mime type of the file. Valid mime types - text/csv or application/vmd.ms-excelor or application/x-directory for directories
@@ -247,11 +206,6 @@ FileObject.prototype['uri'] = undefined;
  */
 FileObject.prototype['size'] = undefined;
 
-/**
- * @member {Array.<module:model/Metadata>} metadata
- */
-FileObject.prototype['metadata'] = undefined;
-
 
 // Implement ModelDefault interface:
 /**
@@ -269,12 +223,21 @@ ModelDefault.prototype['spaceName'] = undefined;
  * @member {Date} created
  */
 ModelDefault.prototype['created'] = undefined;
-// Implement FileObjectAllOf interface:
+// Implement OptParamModels interface:
 /**
- * The tags associated with this file object
- * @member {Array.<String>} tags
+ * @member {Array.<module:model/CustomFieldReduced>} customFields
  */
-FileObjectAllOf.prototype['tags'] = undefined;
+OptParamModels.prototype['customFields'] = undefined;
+/**
+ * A list of id's used to tag models
+ * @member {Array.<module:model/TagsReduced>} tags
+ */
+OptParamModels.prototype['tags'] = undefined;
+/**
+ * @member {Array.<module:model/Metadata>} metadata
+ */
+OptParamModels.prototype['metadata'] = undefined;
+// Implement FileObjectAllOf interface:
 /**
  * The repository identifier this file belongs too
  * @member {String} repositoryId
@@ -282,9 +245,9 @@ FileObjectAllOf.prototype['tags'] = undefined;
 FileObjectAllOf.prototype['repositoryId'] = undefined;
 /**
  * Name of the original file uploaded
- * @member {String} fileName
+ * @member {String} name
  */
-FileObjectAllOf.prototype['fileName'] = undefined;
+FileObjectAllOf.prototype['name'] = undefined;
 /**
  * Mime type of the file. Valid mime types - text/csv or application/vmd.ms-excelor or application/x-directory for directories
  * @member {String} mimeType
@@ -315,10 +278,6 @@ FileObjectAllOf.prototype['uri'] = undefined;
  * @member {Number} size
  */
 FileObjectAllOf.prototype['size'] = undefined;
-/**
- * @member {Array.<module:model/Metadata>} metadata
- */
-FileObjectAllOf.prototype['metadata'] = undefined;
 
 
 

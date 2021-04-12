@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.@CompetitionlabsJavascriptSdk);
+    factory(root.expect, root.CompetitionLabsApplicationServices);
   }
-}(this, function(expect, @CompetitionlabsJavascriptSdk) {
+}(this, function(expect, CompetitionLabsApplicationServices) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new @CompetitionlabsJavascriptSdk.Rule();
+    instance = new CompetitionLabsApplicationServices.Rule();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,37 +50,37 @@
   describe('Rule', function() {
     it('should create an instance of Rule', function() {
       // uncomment below and update the code to test Rule
-      //var instane = new @CompetitionlabsJavascriptSdk.Rule();
-      //expect(instance).to.be.a(@CompetitionlabsJavascriptSdk.Rule);
+      //var instane = new CompetitionLabsApplicationServices.Rule();
+      //expect(instance).to.be.a(CompetitionLabsApplicationServices.Rule);
     });
 
     it('should have the property fact (base name: "fact")', function() {
       // uncomment below and update the code to test the property fact
-      //var instane = new @CompetitionlabsJavascriptSdk.Rule();
+      //var instance = new CompetitionLabsApplicationServices.Rule();
       //expect(instance).to.be();
     });
 
     it('should have the property operator (base name: "operator")', function() {
       // uncomment below and update the code to test the property operator
-      //var instane = new @CompetitionlabsJavascriptSdk.Rule();
+      //var instance = new CompetitionLabsApplicationServices.Rule();
       //expect(instance).to.be();
     });
 
     it('should have the property constant (base name: "constant")', function() {
       // uncomment below and update the code to test the property constant
-      //var instane = new @CompetitionlabsJavascriptSdk.Rule();
+      //var instance = new CompetitionLabsApplicationServices.Rule();
       //expect(instance).to.be();
     });
 
     it('should have the property id (base name: "id")', function() {
       // uncomment below and update the code to test the property id
-      //var instane = new @CompetitionlabsJavascriptSdk.Rule();
+      //var instance = new CompetitionLabsApplicationServices.Rule();
       //expect(instance).to.be();
     });
 
     it('should have the property subConditions (base name: "subConditions")', function() {
       // uncomment below and update the code to test the property subConditions
-      //var instane = new @CompetitionlabsJavascriptSdk.Rule();
+      //var instance = new CompetitionLabsApplicationServices.Rule();
       //expect(instance).to.be();
     });
 

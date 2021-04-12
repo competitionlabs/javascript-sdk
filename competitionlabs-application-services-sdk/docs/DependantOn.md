@@ -1,4 +1,4 @@
-# @CompetitionlabsApplicationServicesSdk.DependantOn
+# CompetitionLabsApplicationServices.DependantOn
 
 ## Properties
 

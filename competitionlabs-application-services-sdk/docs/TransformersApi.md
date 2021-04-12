@@ -1,21 +1,21 @@
-# @CompetitionlabsApplicationServicesSdk.TransformersApi
+# CompetitionLabsApplicationServices.TransformersApi
 
 All URIs are relative to *https://api.competitionlabs.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createTransformers**](TransformersApi.md#createTransformers) | **POST** /transformers/{spaceName} | 
-[**deleteTransformers**](TransformersApi.md#deleteTransformers) | **DELETE** /transformers/{spaceName} | 
-[**deleteTransformersByQuery**](TransformersApi.md#deleteTransformersByQuery) | **POST** /transformers/{spaceName}/delete | 
-[**getTransformers**](TransformersApi.md#getTransformers) | **GET** /transformers/{spaceName} | 
-[**getTransformersByQuery**](TransformersApi.md#getTransformersByQuery) | **POST** /transformers/{spaceName}/query | 
-[**updateTransformers**](TransformersApi.md#updateTransformers) | **PUT** /transformers/{spaceName} | 
+[**createTransformers**](TransformersApi.md#createTransformers) | **POST** /transformers | 
+[**deleteTransformers**](TransformersApi.md#deleteTransformers) | **DELETE** /transformers | 
+[**deleteTransformersByQuery**](TransformersApi.md#deleteTransformersByQuery) | **POST** /transformers/delete | 
+[**getTransformers**](TransformersApi.md#getTransformers) | **GET** /transformers | 
+[**getTransformersByQuery**](TransformersApi.md#getTransformersByQuery) | **POST** /transformers/query | 
+[**updateTransformers**](TransformersApi.md#updateTransformers) | **PUT** /transformers | 
 
 
 
 ## createTransformers
 
-> ApiResponse createTransformers(spaceName, body, opts)
+> ApiResponse createTransformers(body, opts)
 
 
 
@@ -24,21 +24,23 @@ Create a new Transformer in the CompetitionLabs system
 ### Example
 
 ```javascript
-import @CompetitionlabsApplicationServicesSdk from '@competitionlabs/application-services-sdk';
-let defaultClient = @CompetitionlabsApplicationServicesSdk.ApiClient.instance;
-// Configure API key authorization: adminApiKey
-let adminApiKey = defaultClient.authentications['adminApiKey'];
-adminApiKey.apiKey = 'YOUR API KEY';
+import CompetitionLabsApplicationServices from 'competition_labs_application_services';
+let defaultClient = CompetitionLabsApplicationServices.ApiClient.instance;
+// Configure API key authorization: AdminApiKey
+let AdminApiKey = defaultClient.authentications['AdminApiKey'];
+AdminApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//adminApiKey.apiKeyPrefix = 'Token';
+//AdminApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: OAuth2
+let OAuth2 = defaultClient.authentications['OAuth2'];
+OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new @CompetitionlabsApplicationServicesSdk.TransformersApi();
-let spaceName = "spaceName_example"; // String | This is the space name which is linked to the account
-let body = new @CompetitionlabsApplicationServicesSdk.CreateTransformerRequest(); // CreateTransformerRequest | Create a Transformer in the CompetitionLabs system
+let apiInstance = new CompetitionLabsApplicationServices.TransformersApi();
+let body = new CompetitionLabsApplicationServices.CreateTransformerRequest(); // CreateTransformerRequest | Create a Transformer in the CompetitionLabs system
 let opts = {
   'X_API_KEY': "X_API_KEY_example" // String | The admin API Key generated from CompetitionLabs back office
 };
-apiInstance.createTransformers(spaceName, body, opts, (error, data, response) => {
+apiInstance.createTransformers(body, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -52,7 +54,6 @@ apiInstance.createTransformers(spaceName, body, opts, (error, data, response) =>
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **spaceName** | **String**| This is the space name which is linked to the account | 
  **body** | [**CreateTransformerRequest**](CreateTransformerRequest.md)| Create a Transformer in the CompetitionLabs system | 
  **X_API_KEY** | **String**| The admin API Key generated from CompetitionLabs back office | [optional] 
 
@@ -62,7 +63,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[adminApiKey](../README.md#adminApiKey)
+[AdminApiKey](../README.md#AdminApiKey), [OAuth2](../README.md#OAuth2)
 
 ### HTTP request headers
 
@@ -72,7 +73,7 @@ Name | Type | Description  | Notes
 
 ## deleteTransformers
 
-> ApiResponse deleteTransformers(spaceName, opts)
+> ApiResponse deleteTransformers(opts)
 
 
 
@@ -81,21 +82,23 @@ Delete the Transformers for a given identifier specified
 ### Example
 
 ```javascript
-import @CompetitionlabsApplicationServicesSdk from '@competitionlabs/application-services-sdk';
-let defaultClient = @CompetitionlabsApplicationServicesSdk.ApiClient.instance;
-// Configure API key authorization: adminApiKey
-let adminApiKey = defaultClient.authentications['adminApiKey'];
-adminApiKey.apiKey = 'YOUR API KEY';
+import CompetitionLabsApplicationServices from 'competition_labs_application_services';
+let defaultClient = CompetitionLabsApplicationServices.ApiClient.instance;
+// Configure API key authorization: AdminApiKey
+let AdminApiKey = defaultClient.authentications['AdminApiKey'];
+AdminApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//adminApiKey.apiKeyPrefix = 'Token';
+//AdminApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: OAuth2
+let OAuth2 = defaultClient.authentications['OAuth2'];
+OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new @CompetitionlabsApplicationServicesSdk.TransformersApi();
-let spaceName = "spaceName_example"; // String | This is the space name which is linked to the account
+let apiInstance = new CompetitionLabsApplicationServices.TransformersApi();
 let opts = {
   'X_API_KEY': "X_API_KEY_example", // String | The admin API Key generated from CompetitionLabs back office
   'id': ["null"] // [String] | The unique identifiers of the resources
 };
-apiInstance.deleteTransformers(spaceName, opts, (error, data, response) => {
+apiInstance.deleteTransformers(opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -109,7 +112,6 @@ apiInstance.deleteTransformers(spaceName, opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **spaceName** | **String**| This is the space name which is linked to the account | 
  **X_API_KEY** | **String**| The admin API Key generated from CompetitionLabs back office | [optional] 
  **id** | [**[String]**](String.md)| The unique identifiers of the resources | [optional] 
 
@@ -119,7 +121,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[adminApiKey](../README.md#adminApiKey)
+[AdminApiKey](../README.md#AdminApiKey), [OAuth2](../README.md#OAuth2)
 
 ### HTTP request headers
 
@@ -129,7 +131,7 @@ Name | Type | Description  | Notes
 
 ## deleteTransformersByQuery
 
-> ApiResponse deleteTransformersByQuery(spaceName, opts)
+> ApiResponse deleteTransformersByQuery(opts)
 
 
 
@@ -138,21 +140,23 @@ Delete a Transformer or a list of Transformers from CompetitionLabs by unique Tr
 ### Example
 
 ```javascript
-import @CompetitionlabsApplicationServicesSdk from '@competitionlabs/application-services-sdk';
-let defaultClient = @CompetitionlabsApplicationServicesSdk.ApiClient.instance;
-// Configure API key authorization: adminApiKey
-let adminApiKey = defaultClient.authentications['adminApiKey'];
-adminApiKey.apiKey = 'YOUR API KEY';
+import CompetitionLabsApplicationServices from 'competition_labs_application_services';
+let defaultClient = CompetitionLabsApplicationServices.ApiClient.instance;
+// Configure API key authorization: AdminApiKey
+let AdminApiKey = defaultClient.authentications['AdminApiKey'];
+AdminApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//adminApiKey.apiKeyPrefix = 'Token';
+//AdminApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: OAuth2
+let OAuth2 = defaultClient.authentications['OAuth2'];
+OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new @CompetitionlabsApplicationServicesSdk.TransformersApi();
-let spaceName = "spaceName_example"; // String | This is the space name which is linked to the account
+let apiInstance = new CompetitionLabsApplicationServices.TransformersApi();
 let opts = {
   'X_API_KEY': "X_API_KEY_example", // String | The admin API Key generated from CompetitionLabs back office
-  'body': new @CompetitionlabsApplicationServicesSdk.QueryRequest() // QueryRequest | Delete a Transformer or a list of Transformers from CompetitionLabs by unique Transformer ID's or any other POST body parameters using the POST method
+  'body': new CompetitionLabsApplicationServices.QueryRequest() // QueryRequest | Delete a Transformer or a list of Transformers from CompetitionLabs by unique Transformer ID's or any other POST body parameters using the POST method
 };
-apiInstance.deleteTransformersByQuery(spaceName, opts, (error, data, response) => {
+apiInstance.deleteTransformersByQuery(opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -166,7 +170,6 @@ apiInstance.deleteTransformersByQuery(spaceName, opts, (error, data, response) =
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **spaceName** | **String**| This is the space name which is linked to the account | 
  **X_API_KEY** | **String**| The admin API Key generated from CompetitionLabs back office | [optional] 
  **body** | [**QueryRequest**](QueryRequest.md)| Delete a Transformer or a list of Transformers from CompetitionLabs by unique Transformer ID&#39;s or any other POST body parameters using the POST method | [optional] 
 
@@ -176,7 +179,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[adminApiKey](../README.md#adminApiKey)
+[AdminApiKey](../README.md#AdminApiKey), [OAuth2](../README.md#OAuth2)
 
 ### HTTP request headers
 
@@ -186,7 +189,7 @@ Name | Type | Description  | Notes
 
 ## getTransformers
 
-> TransformerResponse getTransformers(spaceName, opts)
+> TransformerResponse getTransformers(opts)
 
 
 
@@ -195,23 +198,25 @@ Returns a list of Transformers. This assumes that transformers have first been u
 ### Example
 
 ```javascript
-import @CompetitionlabsApplicationServicesSdk from '@competitionlabs/application-services-sdk';
-let defaultClient = @CompetitionlabsApplicationServicesSdk.ApiClient.instance;
-// Configure API key authorization: adminApiKey
-let adminApiKey = defaultClient.authentications['adminApiKey'];
-adminApiKey.apiKey = 'YOUR API KEY';
+import CompetitionLabsApplicationServices from 'competition_labs_application_services';
+let defaultClient = CompetitionLabsApplicationServices.ApiClient.instance;
+// Configure API key authorization: AdminApiKey
+let AdminApiKey = defaultClient.authentications['AdminApiKey'];
+AdminApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//adminApiKey.apiKeyPrefix = 'Token';
+//AdminApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: OAuth2
+let OAuth2 = defaultClient.authentications['OAuth2'];
+OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new @CompetitionlabsApplicationServicesSdk.TransformersApi();
-let spaceName = "spaceName_example"; // String | This is the space name which is linked to the account
+let apiInstance = new CompetitionLabsApplicationServices.TransformersApi();
 let opts = {
   'X_API_KEY': "X_API_KEY_example", // String | The admin API Key generated from CompetitionLabs back office
   'id': ["null"], // [String] | The unique identifiers of the resources
   'limit': 56, // Number | Limit the returned total records found
   'skip': 56 // Number | Skip the returned records found and return the next batch of records
 };
-apiInstance.getTransformers(spaceName, opts, (error, data, response) => {
+apiInstance.getTransformers(opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -225,7 +230,6 @@ apiInstance.getTransformers(spaceName, opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **spaceName** | **String**| This is the space name which is linked to the account | 
  **X_API_KEY** | **String**| The admin API Key generated from CompetitionLabs back office | [optional] 
  **id** | [**[String]**](String.md)| The unique identifiers of the resources | [optional] 
  **limit** | **Number**| Limit the returned total records found | [optional] 
@@ -237,7 +241,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[adminApiKey](../README.md#adminApiKey)
+[AdminApiKey](../README.md#AdminApiKey), [OAuth2](../README.md#OAuth2)
 
 ### HTTP request headers
 
@@ -247,7 +251,7 @@ Name | Type | Description  | Notes
 
 ## getTransformersByQuery
 
-> TransformerResponse getTransformersByQuery(spaceName, opts)
+> TransformerResponse getTransformersByQuery(opts)
 
 
 
@@ -256,21 +260,23 @@ Retrieve a Transformer or a list of Transformers from CompetitionLabs by unique 
 ### Example
 
 ```javascript
-import @CompetitionlabsApplicationServicesSdk from '@competitionlabs/application-services-sdk';
-let defaultClient = @CompetitionlabsApplicationServicesSdk.ApiClient.instance;
-// Configure API key authorization: adminApiKey
-let adminApiKey = defaultClient.authentications['adminApiKey'];
-adminApiKey.apiKey = 'YOUR API KEY';
+import CompetitionLabsApplicationServices from 'competition_labs_application_services';
+let defaultClient = CompetitionLabsApplicationServices.ApiClient.instance;
+// Configure API key authorization: AdminApiKey
+let AdminApiKey = defaultClient.authentications['AdminApiKey'];
+AdminApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//adminApiKey.apiKeyPrefix = 'Token';
+//AdminApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: OAuth2
+let OAuth2 = defaultClient.authentications['OAuth2'];
+OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new @CompetitionlabsApplicationServicesSdk.TransformersApi();
-let spaceName = "spaceName_example"; // String | This is the space name which is linked to the account
+let apiInstance = new CompetitionLabsApplicationServices.TransformersApi();
 let opts = {
   'X_API_KEY': "X_API_KEY_example", // String | The admin API Key generated from CompetitionLabs back office
-  'body': new @CompetitionlabsApplicationServicesSdk.QueryRequest() // QueryRequest | Retrieve a Transformer or a list of Transformers from CompetitionLabs by unique Transformer ID's or any other Post body parameters using the POST method
+  'body': new CompetitionLabsApplicationServices.QueryRequest() // QueryRequest | Retrieve a Transformer or a list of Transformers from CompetitionLabs by unique Transformer ID's or any other Post body parameters using the POST method
 };
-apiInstance.getTransformersByQuery(spaceName, opts, (error, data, response) => {
+apiInstance.getTransformersByQuery(opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -284,7 +290,6 @@ apiInstance.getTransformersByQuery(spaceName, opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **spaceName** | **String**| This is the space name which is linked to the account | 
  **X_API_KEY** | **String**| The admin API Key generated from CompetitionLabs back office | [optional] 
  **body** | [**QueryRequest**](QueryRequest.md)| Retrieve a Transformer or a list of Transformers from CompetitionLabs by unique Transformer ID&#39;s or any other Post body parameters using the POST method | [optional] 
 
@@ -294,7 +299,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[adminApiKey](../README.md#adminApiKey)
+[AdminApiKey](../README.md#AdminApiKey), [OAuth2](../README.md#OAuth2)
 
 ### HTTP request headers
 
@@ -304,7 +309,7 @@ Name | Type | Description  | Notes
 
 ## updateTransformers
 
-> ApiResponse updateTransformers(spaceName, body, opts)
+> ApiResponse updateTransformers(body, opts)
 
 
 
@@ -313,21 +318,23 @@ Update an existing Transformer in the CompetitionLabs system
 ### Example
 
 ```javascript
-import @CompetitionlabsApplicationServicesSdk from '@competitionlabs/application-services-sdk';
-let defaultClient = @CompetitionlabsApplicationServicesSdk.ApiClient.instance;
-// Configure API key authorization: adminApiKey
-let adminApiKey = defaultClient.authentications['adminApiKey'];
-adminApiKey.apiKey = 'YOUR API KEY';
+import CompetitionLabsApplicationServices from 'competition_labs_application_services';
+let defaultClient = CompetitionLabsApplicationServices.ApiClient.instance;
+// Configure API key authorization: AdminApiKey
+let AdminApiKey = defaultClient.authentications['AdminApiKey'];
+AdminApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//adminApiKey.apiKeyPrefix = 'Token';
+//AdminApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: OAuth2
+let OAuth2 = defaultClient.authentications['OAuth2'];
+OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new @CompetitionlabsApplicationServicesSdk.TransformersApi();
-let spaceName = "spaceName_example"; // String | This is the space name which is linked to the account
-let body = new @CompetitionlabsApplicationServicesSdk.UpdateTransformerRequest(); // UpdateTransformerRequest | Update Transformer details in the CompetitionLabs system
+let apiInstance = new CompetitionLabsApplicationServices.TransformersApi();
+let body = new CompetitionLabsApplicationServices.UpdateTransformerRequest(); // UpdateTransformerRequest | Update Transformer details in the CompetitionLabs system
 let opts = {
   'X_API_KEY': "X_API_KEY_example" // String | The admin API Key generated from CompetitionLabs back office
 };
-apiInstance.updateTransformers(spaceName, body, opts, (error, data, response) => {
+apiInstance.updateTransformers(body, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -341,7 +348,6 @@ apiInstance.updateTransformers(spaceName, body, opts, (error, data, response) =>
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **spaceName** | **String**| This is the space name which is linked to the account | 
  **body** | [**UpdateTransformerRequest**](UpdateTransformerRequest.md)| Update Transformer details in the CompetitionLabs system | 
  **X_API_KEY** | **String**| The admin API Key generated from CompetitionLabs back office | [optional] 
 
@@ -351,7 +357,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[adminApiKey](../README.md#adminApiKey)
+[AdminApiKey](../README.md#AdminApiKey), [OAuth2](../README.md#OAuth2)
 
 ### HTTP request headers
 

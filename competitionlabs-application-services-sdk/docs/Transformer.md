@@ -1,4 +1,4 @@
-# @CompetitionlabsApplicationServicesSdk.Transformer
+# CompetitionLabsApplicationServices.Transformer
 
 ## Properties
 

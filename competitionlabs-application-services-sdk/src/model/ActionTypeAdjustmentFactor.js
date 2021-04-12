@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ActionTypeAdjustmentFactor model module.
  * @module model/ActionTypeAdjustmentFactor
- * @version 1.0.5
+ * @version 1.0.0
  */
 class ActionTypeAdjustmentFactor {
     /**
@@ -38,37 +38,6 @@ class ActionTypeAdjustmentFactor {
     static initialize(obj, adjustmentFactor, actionTypeId) { 
         obj['adjustmentFactor'] = adjustmentFactor;
         obj['actionTypeId'] = actionTypeId;
-    }
-
-    /**
-    * Constructs a full object with all available fields.
-    */
-    model(){
-        var obj = {};
-
-        obj['adjustmentFactor'] = null;
-        obj['actionTypeId'] = null;
-
-        return obj;
-    }
-
-    /**
-    * Constructs a full object Map for all available fields.
-    */
-    modelMap(){
-        var obj = {
-            "fields": {},
-            "requiredFields": {}
-        };
-
-        obj["fields"]['adjustmentFactor'] = { "type": 'Number', "system": false };
-        obj["fields"]['actionTypeId'] = { "type": 'String', "system": false };
-
-        
-        obj["requiredFields"]['adjustmentFactor'] = { "type": 'Number', "system": false };
-        obj["requiredFields"]['actionTypeId'] = { "type": 'String', "system": false };
-
-        return obj;
     }
 
     /**

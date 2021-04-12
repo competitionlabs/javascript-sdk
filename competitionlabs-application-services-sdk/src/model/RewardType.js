@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -12,21 +12,26 @@
  */
 
 import ApiClient from '../ApiClient';
+import CustomFieldReduced from './CustomFieldReduced';
 import Metadata from './Metadata';
 import ModelDefault from './ModelDefault';
+import OptParamModels from './OptParamModels';
 import RewardTypeAllOf from './RewardTypeAllOf';
+import TagsReduced from './TagsReduced';
+import TranslationValue from './TranslationValue';
 import UnitOfMeasureType from './UnitOfMeasureType';
 
 /**
  * The RewardType model module.
  * @module model/RewardType
- * @version 1.0.5
+ * @version 1.0.0
  */
 class RewardType {
     /**
      * Constructs a new <code>RewardType</code>.
      * @alias module:model/RewardType
      * @implements module:model/ModelDefault
+     * @implements module:model/OptParamModels
      * @implements module:model/RewardTypeAllOf
      * @param id {String} A unique system generated identifier
      * @param spaceName {String} This is the space name which is linked to the account
@@ -34,11 +39,11 @@ class RewardType {
      * @param name {String} The name of the Reward type
      * @param key {String} A unique key that represents the reward type
      * @param unitOfMeasureType {module:model/UnitOfMeasureType} 
-     * @param system {Boolean} A boolean value (true/false) that represents the Reward type state. A system reserved entry (set to true) cannot be deleted.
+     * @param constraints {Array.<String>} Additional constraints, if the value is present it means the
      */
-    constructor(id, spaceName, created, name, key, unitOfMeasureType, system) { 
-        ModelDefault.initialize(this, id, spaceName, created);RewardTypeAllOf.initialize(this, name, key, unitOfMeasureType, system);
-        RewardType.initialize(this, id, spaceName, created, name, key, unitOfMeasureType, system);
+    constructor(id, spaceName, created, name, key, unitOfMeasureType, constraints) { 
+        ModelDefault.initialize(this, id, spaceName, created);OptParamModels.initialize(this);RewardTypeAllOf.initialize(this, name, key, unitOfMeasureType, constraints);
+        RewardType.initialize(this, id, spaceName, created, name, key, unitOfMeasureType, constraints);
     }
 
     /**
@@ -46,66 +51,14 @@ class RewardType {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, id, spaceName, created, name, key, unitOfMeasureType, system) { 
+    static initialize(obj, id, spaceName, created, name, key, unitOfMeasureType, constraints) { 
         obj['id'] = id;
         obj['spaceName'] = spaceName;
         obj['created'] = created;
         obj['name'] = name;
         obj['key'] = key;
         obj['unitOfMeasureType'] = unitOfMeasureType;
-        obj['system'] = system;
-    }
-
-    /**
-    * Constructs a full object with all available fields.
-    */
-    model(){
-        var obj = {};
-
-        obj['id'] = null;
-        obj['spaceName'] = null;
-        obj['created'] = null;
-        obj['name'] = null;
-        obj['description'] = null;
-        obj['key'] = null;
-        obj['unitOfMeasureType'] = new UnitOfMeasureType().model();
-        obj['system'] = null;
-        obj['metadata'] = [new Metadata().model()];
-        obj['providers'] = null;
-
-        return obj;
-    }
-
-    /**
-    * Constructs a full object Map for all available fields.
-    */
-    modelMap(){
-        var obj = {
-            "fields": {},
-            "requiredFields": {}
-        };
-
-        obj["fields"]['id'] = { "type": 'String', "system": true };
-        obj["fields"]['spaceName'] = { "type": 'String', "system": true };
-        obj["fields"]['created'] = { "type": 'Date', "system": true };
-        obj["fields"]['name'] = { "type": 'String', "system": false };
-        obj["fields"]['description'] = { "type": 'String', "system": false };
-        obj["fields"]['key'] = { "type": 'String', "system": false };
-        obj["fields"]['unitOfMeasureType'] = new UnitOfMeasureType().modelMap();
-        obj["fields"]['system'] = { "type": 'Boolean', "system": false };
-        obj["fields"]['metadata'] = [new Metadata().modelMap()];
-        obj["fields"]['providers'] = { "type": 'String', "system": false };
-
-        
-        obj["requiredFields"]['id'] = { "type": 'String', "system": true };
-        obj["requiredFields"]['spaceName'] = { "type": 'String', "system": true };
-        obj["requiredFields"]['created'] = { "type": 'Date', "system": true };
-        obj["requiredFields"]['name'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['key'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['unitOfMeasureType'] = new UnitOfMeasureType().modelMap();
-        obj["requiredFields"]['system'] = { "type": 'Boolean', "system": false };
-
-        return obj;
+        obj['constraints'] = constraints;
     }
 
     /**
@@ -119,6 +72,7 @@ class RewardType {
         if (data) {
             obj = obj || new RewardType();
             ModelDefault.constructFromObject(data, obj);
+            OptParamModels.constructFromObject(data, obj);
             RewardTypeAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('id')) {
@@ -129,6 +83,15 @@ class RewardType {
             }
             if (data.hasOwnProperty('created')) {
                 obj['created'] = ApiClient.convertToType(data['created'], 'Date');
+            }
+            if (data.hasOwnProperty('customFields')) {
+                obj['customFields'] = ApiClient.convertToType(data['customFields'], [CustomFieldReduced]);
+            }
+            if (data.hasOwnProperty('tags')) {
+                obj['tags'] = ApiClient.convertToType(data['tags'], [TagsReduced]);
+            }
+            if (data.hasOwnProperty('metadata')) {
+                obj['metadata'] = ApiClient.convertToType(data['metadata'], [Metadata]);
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
@@ -142,14 +105,11 @@ class RewardType {
             if (data.hasOwnProperty('unitOfMeasureType')) {
                 obj['unitOfMeasureType'] = UnitOfMeasureType.constructFromObject(data['unitOfMeasureType']);
             }
-            if (data.hasOwnProperty('system')) {
-                obj['system'] = ApiClient.convertToType(data['system'], 'Boolean');
+            if (data.hasOwnProperty('translations')) {
+                obj['translations'] = ApiClient.convertToType(data['translations'], [Object]);
             }
-            if (data.hasOwnProperty('metadata')) {
-                obj['metadata'] = ApiClient.convertToType(data['metadata'], [Metadata]);
-            }
-            if (data.hasOwnProperty('providers')) {
-                obj['providers'] = ApiClient.convertToType(data['providers'], 'String');
+            if (data.hasOwnProperty('constraints')) {
+                obj['constraints'] = ApiClient.convertToType(data['constraints'], ['String']);
             }
         }
         return obj;
@@ -177,6 +137,22 @@ RewardType.prototype['spaceName'] = undefined;
 RewardType.prototype['created'] = undefined;
 
 /**
+ * @member {Array.<module:model/CustomFieldReduced>} customFields
+ */
+RewardType.prototype['customFields'] = undefined;
+
+/**
+ * A list of id's used to tag models
+ * @member {Array.<module:model/TagsReduced>} tags
+ */
+RewardType.prototype['tags'] = undefined;
+
+/**
+ * @member {Array.<module:model/Metadata>} metadata
+ */
+RewardType.prototype['metadata'] = undefined;
+
+/**
  * The name of the Reward type
  * @member {String} name
  */
@@ -200,21 +176,15 @@ RewardType.prototype['key'] = undefined;
 RewardType.prototype['unitOfMeasureType'] = undefined;
 
 /**
- * A boolean value (true/false) that represents the Reward type state. A system reserved entry (set to true) cannot be deleted.
- * @member {Boolean} system
+ * @member {Array.<Object.<String, module:model/TranslationValue>>} translations
  */
-RewardType.prototype['system'] = undefined;
+RewardType.prototype['translations'] = undefined;
 
 /**
- * @member {Array.<module:model/Metadata>} metadata
+ * Additional constraints, if the value is present it means the
+ * @member {Array.<String>} constraints
  */
-RewardType.prototype['metadata'] = undefined;
-
-/**
- * The providers of the reward type
- * @member {String} providers
- */
-RewardType.prototype['providers'] = undefined;
+RewardType.prototype['constraints'] = undefined;
 
 
 // Implement ModelDefault interface:
@@ -233,6 +203,20 @@ ModelDefault.prototype['spaceName'] = undefined;
  * @member {Date} created
  */
 ModelDefault.prototype['created'] = undefined;
+// Implement OptParamModels interface:
+/**
+ * @member {Array.<module:model/CustomFieldReduced>} customFields
+ */
+OptParamModels.prototype['customFields'] = undefined;
+/**
+ * A list of id's used to tag models
+ * @member {Array.<module:model/TagsReduced>} tags
+ */
+OptParamModels.prototype['tags'] = undefined;
+/**
+ * @member {Array.<module:model/Metadata>} metadata
+ */
+OptParamModels.prototype['metadata'] = undefined;
 // Implement RewardTypeAllOf interface:
 /**
  * The name of the Reward type
@@ -254,19 +238,14 @@ RewardTypeAllOf.prototype['key'] = undefined;
  */
 RewardTypeAllOf.prototype['unitOfMeasureType'] = undefined;
 /**
- * A boolean value (true/false) that represents the Reward type state. A system reserved entry (set to true) cannot be deleted.
- * @member {Boolean} system
+ * @member {Array.<Object.<String, module:model/TranslationValue>>} translations
  */
-RewardTypeAllOf.prototype['system'] = undefined;
+RewardTypeAllOf.prototype['translations'] = undefined;
 /**
- * @member {Array.<module:model/Metadata>} metadata
+ * Additional constraints, if the value is present it means the
+ * @member {Array.<String>} constraints
  */
-RewardTypeAllOf.prototype['metadata'] = undefined;
-/**
- * The providers of the reward type
- * @member {String} providers
- */
-RewardTypeAllOf.prototype['providers'] = undefined;
+RewardTypeAllOf.prototype['constraints'] = undefined;
 
 
 

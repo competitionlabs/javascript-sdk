@@ -1,4 +1,4 @@
-# @CompetitionlabsApplicationServicesSdk.FileObjectsResponse
+# CompetitionLabsApplicationServices.FileObjectsResponse
 
 ## Properties
 

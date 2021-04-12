@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -14,26 +14,30 @@
 import ApiClient from '../ApiClient';
 import ActionTypeAdjustmentFactor from './ActionTypeAdjustmentFactor';
 import Metadata from './Metadata';
-import Translation from './Translation';
+import TranslationValue from './TranslationValue';
 import UpdateModelDefault from './UpdateModelDefault';
+import UpdateOptParamModels from './UpdateOptParamModels';
 import UpdateProductRequestAllOf from './UpdateProductRequestAllOf';
 
 /**
  * The UpdateProductRequest model module.
  * @module model/UpdateProductRequest
- * @version 1.0.5
+ * @version 1.0.0
  */
 class UpdateProductRequest {
     /**
      * Constructs a new <code>UpdateProductRequest</code>.
      * @alias module:model/UpdateProductRequest
      * @implements module:model/UpdateModelDefault
+     * @implements module:model/UpdateOptParamModels
      * @implements module:model/UpdateProductRequestAllOf
      * @param id {String} A unique system generated identifier
+     * @param name {String} The name of the product
+     * @param adjustmentFactor {Number} The multiplier to apply to source values received for this product events
      */
-    constructor(id) { 
-        UpdateModelDefault.initialize(this, id);UpdateProductRequestAllOf.initialize(this);
-        UpdateProductRequest.initialize(this, id);
+    constructor(id, name, adjustmentFactor) { 
+        UpdateModelDefault.initialize(this, id);UpdateOptParamModels.initialize(this);UpdateProductRequestAllOf.initialize(this, name, adjustmentFactor);
+        UpdateProductRequest.initialize(this, id, name, adjustmentFactor);
     }
 
     /**
@@ -41,56 +45,10 @@ class UpdateProductRequest {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, id) { 
+    static initialize(obj, id, name, adjustmentFactor) { 
         obj['id'] = id;
-    }
-
-    /**
-    * Constructs a full object with all available fields.
-    */
-    model(){
-        var obj = {};
-
-        obj['id'] = null;
-        obj['name'] = null;
-        obj['productType'] = null;
-        obj['productTypeName'] = null;
-        obj['description'] = null;
-        obj['adjustmentFactor'] = null;
-        obj['productRefId'] = null;
-        obj['actionTypeAdjustmentFactors'] = [new ActionTypeAdjustmentFactor().model()];
-        obj['productGroups'] = [null];
-        obj['metadata'] = [new Metadata().model()];
-        obj['translations'] = [new Translation().model()];
-
-        return obj;
-    }
-
-    /**
-    * Constructs a full object Map for all available fields.
-    */
-    modelMap(){
-        var obj = {
-            "fields": {},
-            "requiredFields": {}
-        };
-
-        obj["fields"]['id'] = { "type": 'String', "system": true };
-        obj["fields"]['name'] = { "type": 'String', "system": false };
-        obj["fields"]['productType'] = { "type": 'String', "system": false };
-        obj["fields"]['productTypeName'] = { "type": 'String', "system": false };
-        obj["fields"]['description'] = { "type": 'String', "system": false };
-        obj["fields"]['adjustmentFactor'] = { "type": 'Number', "system": false };
-        obj["fields"]['productRefId'] = { "type": 'String', "system": false };
-        obj["fields"]['actionTypeAdjustmentFactors'] = [new ActionTypeAdjustmentFactor().modelMap()];
-        obj["fields"]['productGroups'] = [{ "type": 'String', "system": false }];
-        obj["fields"]['metadata'] = [new Metadata().modelMap()];
-        obj["fields"]['translations'] = [new Translation().modelMap()];
-
-        
-        obj["requiredFields"]['id'] = { "type": 'String', "system": true };
-
-        return obj;
+        obj['name'] = name;
+        obj['adjustmentFactor'] = adjustmentFactor;
     }
 
     /**
@@ -104,19 +62,23 @@ class UpdateProductRequest {
         if (data) {
             obj = obj || new UpdateProductRequest();
             UpdateModelDefault.constructFromObject(data, obj);
+            UpdateOptParamModels.constructFromObject(data, obj);
             UpdateProductRequestAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'String');
             }
+            if (data.hasOwnProperty('customFields')) {
+                obj['customFields'] = ApiClient.convertToType(data['customFields'], ['String']);
+            }
+            if (data.hasOwnProperty('tags')) {
+                obj['tags'] = ApiClient.convertToType(data['tags'], ['String']);
+            }
+            if (data.hasOwnProperty('metadata')) {
+                obj['metadata'] = ApiClient.convertToType(data['metadata'], [Metadata]);
+            }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
-            }
-            if (data.hasOwnProperty('productType')) {
-                obj['productType'] = ApiClient.convertToType(data['productType'], 'String');
-            }
-            if (data.hasOwnProperty('productTypeName')) {
-                obj['productTypeName'] = ApiClient.convertToType(data['productTypeName'], 'String');
             }
             if (data.hasOwnProperty('description')) {
                 obj['description'] = ApiClient.convertToType(data['description'], 'String');
@@ -124,20 +86,11 @@ class UpdateProductRequest {
             if (data.hasOwnProperty('adjustmentFactor')) {
                 obj['adjustmentFactor'] = ApiClient.convertToType(data['adjustmentFactor'], 'Number');
             }
-            if (data.hasOwnProperty('productRefId')) {
-                obj['productRefId'] = ApiClient.convertToType(data['productRefId'], 'String');
-            }
             if (data.hasOwnProperty('actionTypeAdjustmentFactors')) {
                 obj['actionTypeAdjustmentFactors'] = ApiClient.convertToType(data['actionTypeAdjustmentFactors'], [ActionTypeAdjustmentFactor]);
             }
-            if (data.hasOwnProperty('productGroups')) {
-                obj['productGroups'] = ApiClient.convertToType(data['productGroups'], ['String']);
-            }
-            if (data.hasOwnProperty('metadata')) {
-                obj['metadata'] = ApiClient.convertToType(data['metadata'], [Metadata]);
-            }
             if (data.hasOwnProperty('translations')) {
-                obj['translations'] = ApiClient.convertToType(data['translations'], [Translation]);
+                obj['translations'] = ApiClient.convertToType(data['translations'], [Object]);
             }
         }
         return obj;
@@ -153,22 +106,27 @@ class UpdateProductRequest {
 UpdateProductRequest.prototype['id'] = undefined;
 
 /**
+ * A list of id's used to add cutom fields
+ * @member {Array.<String>} customFields
+ */
+UpdateProductRequest.prototype['customFields'] = undefined;
+
+/**
+ * A list of id's used to tag models
+ * @member {Array.<String>} tags
+ */
+UpdateProductRequest.prototype['tags'] = undefined;
+
+/**
+ * @member {Array.<module:model/Metadata>} metadata
+ */
+UpdateProductRequest.prototype['metadata'] = undefined;
+
+/**
  * The name of the product
  * @member {String} name
  */
 UpdateProductRequest.prototype['name'] = undefined;
-
-/**
- * The categorisation of this product by its type
- * @member {String} productType
- */
-UpdateProductRequest.prototype['productType'] = undefined;
-
-/**
- * The name of this product by its type
- * @member {String} productTypeName
- */
-UpdateProductRequest.prototype['productTypeName'] = undefined;
 
 /**
  * The description of the product for your reference
@@ -183,29 +141,12 @@ UpdateProductRequest.prototype['description'] = undefined;
 UpdateProductRequest.prototype['adjustmentFactor'] = undefined;
 
 /**
- * The reference to this product in your system. The reference identifier can not be changed after the product has been created
- * @member {String} productRefId
- */
-UpdateProductRequest.prototype['productRefId'] = undefined;
-
-/**
  * @member {Array.<module:model/ActionTypeAdjustmentFactor>} actionTypeAdjustmentFactors
  */
 UpdateProductRequest.prototype['actionTypeAdjustmentFactors'] = undefined;
 
 /**
- * A list of Strings used to tag products with taxonomy terms
- * @member {Array.<String>} productGroups
- */
-UpdateProductRequest.prototype['productGroups'] = undefined;
-
-/**
- * @member {Array.<module:model/Metadata>} metadata
- */
-UpdateProductRequest.prototype['metadata'] = undefined;
-
-/**
- * @member {Array.<module:model/Translation>} translations
+ * @member {Array.<Object.<String, module:model/TranslationValue>>} translations
  */
 UpdateProductRequest.prototype['translations'] = undefined;
 
@@ -216,22 +157,27 @@ UpdateProductRequest.prototype['translations'] = undefined;
  * @member {String} id
  */
 UpdateModelDefault.prototype['id'] = undefined;
+// Implement UpdateOptParamModels interface:
+/**
+ * A list of id's used to add cutom fields
+ * @member {Array.<String>} customFields
+ */
+UpdateOptParamModels.prototype['customFields'] = undefined;
+/**
+ * A list of id's used to tag models
+ * @member {Array.<String>} tags
+ */
+UpdateOptParamModels.prototype['tags'] = undefined;
+/**
+ * @member {Array.<module:model/Metadata>} metadata
+ */
+UpdateOptParamModels.prototype['metadata'] = undefined;
 // Implement UpdateProductRequestAllOf interface:
 /**
  * The name of the product
  * @member {String} name
  */
 UpdateProductRequestAllOf.prototype['name'] = undefined;
-/**
- * The categorisation of this product by its type
- * @member {String} productType
- */
-UpdateProductRequestAllOf.prototype['productType'] = undefined;
-/**
- * The name of this product by its type
- * @member {String} productTypeName
- */
-UpdateProductRequestAllOf.prototype['productTypeName'] = undefined;
 /**
  * The description of the product for your reference
  * @member {String} description
@@ -243,25 +189,11 @@ UpdateProductRequestAllOf.prototype['description'] = undefined;
  */
 UpdateProductRequestAllOf.prototype['adjustmentFactor'] = undefined;
 /**
- * The reference to this product in your system. The reference identifier can not be changed after the product has been created
- * @member {String} productRefId
- */
-UpdateProductRequestAllOf.prototype['productRefId'] = undefined;
-/**
  * @member {Array.<module:model/ActionTypeAdjustmentFactor>} actionTypeAdjustmentFactors
  */
 UpdateProductRequestAllOf.prototype['actionTypeAdjustmentFactors'] = undefined;
 /**
- * A list of Strings used to tag products with taxonomy terms
- * @member {Array.<String>} productGroups
- */
-UpdateProductRequestAllOf.prototype['productGroups'] = undefined;
-/**
- * @member {Array.<module:model/Metadata>} metadata
- */
-UpdateProductRequestAllOf.prototype['metadata'] = undefined;
-/**
- * @member {Array.<module:model/Translation>} translations
+ * @member {Array.<Object.<String, module:model/TranslationValue>>} translations
  */
 UpdateProductRequestAllOf.prototype['translations'] = undefined;
 

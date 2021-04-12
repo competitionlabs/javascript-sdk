@@ -1,4 +1,4 @@
-# @CompetitionlabsApplicationServicesSdk.CompetitionReducedAllOf
+# CompetitionLabsApplicationServices.CompetitionReducedAllOf
 
 ## Properties
 
@@ -8,7 +8,6 @@ Name | Type | Description | Notes
 **numberOfRounds** | **Number** | Number of rounds to be played in a competition | 
 **name** | **String** | A name or a name of a competition. Can be translated | 
 **includeEntrantsWhere** | [**ComplexFilter**](ComplexFilter.md) |  | [optional] 
-**optinRequiredForEntrants** | **Boolean** | If True, members must Opt in before they can acquire points in the contest | 
 **status** | [**CompetitionStatus**](CompetitionStatus.md) |  | 
 **statusCode** | **Number** | The code of the competition | [readonly] 
 **products** | [**[ProductReduced]**](ProductReduced.md) |  | 
@@ -16,5 +15,7 @@ Name | Type | Description | Notes
 **scheduledEndDate** | **Date** | ISO8601 timestamp for when a Competition should end. All records are stored in UTC time zone | 
 **actualStartDate** | **Date** | ISO8601 timestamp for when a Competition started. All records are stored in UTC time zone | [optional] [readonly] 
 **actualEndDate** | **Date** | ISO8601 timestamp for when a Competition ended. All records are stored in UTC time zone | [optional] [readonly] 
+**tags** | **[String]** | A list of id&#39;s used to tag | [optional] 
+**constraints** | **[String]** | Additional constraints | 
 
 

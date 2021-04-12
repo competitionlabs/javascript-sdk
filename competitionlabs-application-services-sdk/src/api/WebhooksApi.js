@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -16,13 +16,14 @@ import ApiClient from "../ApiClient";
 import ApiResponse from '../model/ApiResponse';
 import CreateWebhookRequest from '../model/CreateWebhookRequest';
 import QueryRequest from '../model/QueryRequest';
+import UpdateStateRequest from '../model/UpdateStateRequest';
 import UpdateWebhookRequest from '../model/UpdateWebhookRequest';
 import WebhookResponse from '../model/WebhookResponse';
 
 /**
 * Webhooks service.
 * @module api/WebhooksApi
-* @version 1.0.5
+* @version 1.0.0
 */
 export default class WebhooksApi {
 
@@ -48,27 +49,21 @@ export default class WebhooksApi {
 
     /**
      * Create a new Webhook in the CompetitionLabs system
-     * @param {String} spaceName This is the space name which is linked to the account
      * @param {module:model/CreateWebhookRequest} body Create a Webhook in the CompetitionLabs system
      * @param {Object} opts Optional parameters
      * @param {String} opts.X_API_KEY The admin API Key generated from CompetitionLabs back office
      * @param {module:api/WebhooksApi~createWebhooksCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ApiResponse}
      */
-    createWebhooks(spaceName, body, opts, callback) {
+    createWebhooks(body, opts, callback) {
       opts = opts || {};
       let postBody = body;
-      // verify the required parameter 'spaceName' is set
-      if (spaceName === undefined || spaceName === null) {
-        throw new Error("Missing the required parameter 'spaceName' when calling createWebhooks");
-      }
       // verify the required parameter 'body' is set
       if (body === undefined || body === null) {
         throw new Error("Missing the required parameter 'body' when calling createWebhooks");
       }
 
       let pathParams = {
-        'spaceName': spaceName
       };
       let queryParams = {
       };
@@ -78,12 +73,12 @@ export default class WebhooksApi {
       let formParams = {
       };
 
-      let authNames = ['adminApiKey'];
+      let authNames = ['AdminApiKey', 'OAuth2'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = ApiResponse;
       return this.apiClient.callApi(
-        '/webhooks/{spaceName}', 'POST',
+        '/webhooks', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
@@ -99,23 +94,17 @@ export default class WebhooksApi {
 
     /**
      * Delete the Webhooks for a given identifier specified
-     * @param {String} spaceName This is the space name which is linked to the account
      * @param {Object} opts Optional parameters
      * @param {String} opts.X_API_KEY The admin API Key generated from CompetitionLabs back office
      * @param {Array.<String>} opts.id The unique identifiers of the resources
      * @param {module:api/WebhooksApi~deleteWebhooksCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ApiResponse}
      */
-    deleteWebhooks(spaceName, opts, callback) {
+    deleteWebhooks(opts, callback) {
       opts = opts || {};
       let postBody = null;
-      // verify the required parameter 'spaceName' is set
-      if (spaceName === undefined || spaceName === null) {
-        throw new Error("Missing the required parameter 'spaceName' when calling deleteWebhooks");
-      }
 
       let pathParams = {
-        'spaceName': spaceName
       };
       let queryParams = {
         'id': this.apiClient.buildCollectionParam(opts['id'], 'multi')
@@ -126,12 +115,12 @@ export default class WebhooksApi {
       let formParams = {
       };
 
-      let authNames = ['adminApiKey'];
+      let authNames = ['AdminApiKey', 'OAuth2'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = ApiResponse;
       return this.apiClient.callApi(
-        '/webhooks/{spaceName}', 'DELETE',
+        '/webhooks', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
@@ -147,23 +136,17 @@ export default class WebhooksApi {
 
     /**
      * Delete a Webhook or a list of Webhooks from CompetitionLabs by unique Webhook ID's or any other POST body parameters using the POST method
-     * @param {String} spaceName This is the space name which is linked to the account
      * @param {Object} opts Optional parameters
      * @param {String} opts.X_API_KEY The admin API Key generated from CompetitionLabs back office
      * @param {module:model/QueryRequest} opts.body Delete a Webhook or a list of Webhooks from CompetitionLabs by unique Webhook ID's or any other POST body parameters using the POST method
      * @param {module:api/WebhooksApi~deleteWebhooksByQueryCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ApiResponse}
      */
-    deleteWebhooksByQuery(spaceName, opts, callback) {
+    deleteWebhooksByQuery(opts, callback) {
       opts = opts || {};
       let postBody = opts['body'];
-      // verify the required parameter 'spaceName' is set
-      if (spaceName === undefined || spaceName === null) {
-        throw new Error("Missing the required parameter 'spaceName' when calling deleteWebhooksByQuery");
-      }
 
       let pathParams = {
-        'spaceName': spaceName
       };
       let queryParams = {
       };
@@ -173,12 +156,12 @@ export default class WebhooksApi {
       let formParams = {
       };
 
-      let authNames = ['adminApiKey'];
+      let authNames = ['AdminApiKey', 'OAuth2'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = ApiResponse;
       return this.apiClient.callApi(
-        '/webhooks/{spaceName}/delete', 'POST',
+        '/webhooks/delete', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
@@ -193,8 +176,7 @@ export default class WebhooksApi {
      */
 
     /**
-     * Returns a list of Webhooks. This assumes that webhooks have first been uploaded via a POST request or web console
-     * @param {String} spaceName This is the space name which is linked to the account
+     * Returns a list of Webhooks.
      * @param {Object} opts Optional parameters
      * @param {String} opts.X_API_KEY The admin API Key generated from CompetitionLabs back office
      * @param {Array.<String>} opts.id The unique identifiers of the resources
@@ -203,16 +185,11 @@ export default class WebhooksApi {
      * @param {module:api/WebhooksApi~getWebhooksCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/WebhookResponse}
      */
-    getWebhooks(spaceName, opts, callback) {
+    getWebhooks(opts, callback) {
       opts = opts || {};
       let postBody = null;
-      // verify the required parameter 'spaceName' is set
-      if (spaceName === undefined || spaceName === null) {
-        throw new Error("Missing the required parameter 'spaceName' when calling getWebhooks");
-      }
 
       let pathParams = {
-        'spaceName': spaceName
       };
       let queryParams = {
         'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),
@@ -225,12 +202,12 @@ export default class WebhooksApi {
       let formParams = {
       };
 
-      let authNames = ['adminApiKey'];
+      let authNames = ['AdminApiKey', 'OAuth2'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = WebhookResponse;
       return this.apiClient.callApi(
-        '/webhooks/{spaceName}', 'GET',
+        '/webhooks', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
@@ -246,23 +223,17 @@ export default class WebhooksApi {
 
     /**
      * Retrieve a Webhook or a list of Webhooks from CompetitionLabs by unique Webhook ID's or any other POST body parameters using the POST method
-     * @param {String} spaceName This is the space name which is linked to the account
      * @param {Object} opts Optional parameters
      * @param {String} opts.X_API_KEY The admin API Key generated from CompetitionLabs back office
      * @param {module:model/QueryRequest} opts.body Retrieve a Webhook or a list of Webhooks from CompetitionLabs by unique Webhook ID's or any other Post body parameters using the POST method
      * @param {module:api/WebhooksApi~getWebhooksByQueryCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/WebhookResponse}
      */
-    getWebhooksByQuery(spaceName, opts, callback) {
+    getWebhooksByQuery(opts, callback) {
       opts = opts || {};
       let postBody = opts['body'];
-      // verify the required parameter 'spaceName' is set
-      if (spaceName === undefined || spaceName === null) {
-        throw new Error("Missing the required parameter 'spaceName' when calling getWebhooksByQuery");
-      }
 
       let pathParams = {
-        'spaceName': spaceName
       };
       let queryParams = {
       };
@@ -272,12 +243,12 @@ export default class WebhooksApi {
       let formParams = {
       };
 
-      let authNames = ['adminApiKey'];
+      let authNames = ['AdminApiKey', 'OAuth2'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = WebhookResponse;
       return this.apiClient.callApi(
-        '/webhooks/{spaceName}/query', 'POST',
+        '/webhooks/query', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
@@ -293,27 +264,21 @@ export default class WebhooksApi {
 
     /**
      * Update an existing Webhook in the CompetitionLabs system
-     * @param {String} spaceName This is the space name which is linked to the account
      * @param {module:model/UpdateWebhookRequest} body Update Webhook details in the CompetitionLabs system
      * @param {Object} opts Optional parameters
      * @param {String} opts.X_API_KEY The admin API Key generated from CompetitionLabs back office
      * @param {module:api/WebhooksApi~updateWebhooksCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ApiResponse}
      */
-    updateWebhooks(spaceName, body, opts, callback) {
+    updateWebhooks(body, opts, callback) {
       opts = opts || {};
       let postBody = body;
-      // verify the required parameter 'spaceName' is set
-      if (spaceName === undefined || spaceName === null) {
-        throw new Error("Missing the required parameter 'spaceName' when calling updateWebhooks");
-      }
       // verify the required parameter 'body' is set
       if (body === undefined || body === null) {
         throw new Error("Missing the required parameter 'body' when calling updateWebhooks");
       }
 
       let pathParams = {
-        'spaceName': spaceName
       };
       let queryParams = {
       };
@@ -323,12 +288,12 @@ export default class WebhooksApi {
       let formParams = {
       };
 
-      let authNames = ['adminApiKey'];
+      let authNames = ['AdminApiKey', 'OAuth2'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = ApiResponse;
       return this.apiClient.callApi(
-        '/webhooks/{spaceName}', 'PUT',
+        '/webhooks', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
@@ -345,23 +310,17 @@ export default class WebhooksApi {
     /**
      * NOT AVAILABLE IN CURRENT RELEASE
      * Update the state of a Wbhook using the POST method
-     * @param {String} spaceName This is the space name which is linked to the account
      * @param {Object} opts Optional parameters
      * @param {String} opts.X_API_KEY The admin API Key generated from CompetitionLabs back office
-     * @param {module:model/CreateWebhookRequest} opts.body Update the state of a Webhook using the POST method
+     * @param {module:model/UpdateStateRequest} opts.body Update the state of a Webhook using the POST method
      * @param {module:api/WebhooksApi~updateWebhooksStateCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ApiResponse}
      */
-    updateWebhooksState(spaceName, opts, callback) {
+    updateWebhooksState(opts, callback) {
       opts = opts || {};
       let postBody = opts['body'];
-      // verify the required parameter 'spaceName' is set
-      if (spaceName === undefined || spaceName === null) {
-        throw new Error("Missing the required parameter 'spaceName' when calling updateWebhooksState");
-      }
 
       let pathParams = {
-        'spaceName': spaceName
       };
       let queryParams = {
       };
@@ -371,12 +330,12 @@ export default class WebhooksApi {
       let formParams = {
       };
 
-      let authNames = ['adminApiKey'];
+      let authNames = ['AdminApiKey', 'OAuth2'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = ApiResponse;
       return this.apiClient.callApi(
-        '/webhooks/{spaceName}/state', 'POST',
+        '/webhooks/state', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );

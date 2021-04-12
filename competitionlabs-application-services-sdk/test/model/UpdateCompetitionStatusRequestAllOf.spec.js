@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.@CompetitionlabsApplicationServicesSdk);
+    factory(root.expect, root.CompetitionLabsApplicationServices);
   }
-}(this, function(expect, @CompetitionlabsApplicationServicesSdk) {
+}(this, function(expect, CompetitionLabsApplicationServices) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new @CompetitionlabsApplicationServicesSdk.UpdateCompetitionStatusRequestAllOf();
+    instance = new CompetitionLabsApplicationServices.UpdateCompetitionStatusRequestAllOf();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,13 +50,13 @@
   describe('UpdateCompetitionStatusRequestAllOf', function() {
     it('should create an instance of UpdateCompetitionStatusRequestAllOf', function() {
       // uncomment below and update the code to test UpdateCompetitionStatusRequestAllOf
-      //var instane = new @CompetitionlabsApplicationServicesSdk.UpdateCompetitionStatusRequestAllOf();
-      //expect(instance).to.be.a(@CompetitionlabsApplicationServicesSdk.UpdateCompetitionStatusRequestAllOf);
+      //var instane = new CompetitionLabsApplicationServices.UpdateCompetitionStatusRequestAllOf();
+      //expect(instance).to.be.a(CompetitionLabsApplicationServices.UpdateCompetitionStatusRequestAllOf);
     });
 
     it('should have the property status (base name: "status")', function() {
       // uncomment below and update the code to test the property status
-      //var instane = new @CompetitionlabsApplicationServicesSdk.UpdateCompetitionStatusRequestAllOf();
+      //var instance = new CompetitionLabsApplicationServices.UpdateCompetitionStatusRequestAllOf();
       //expect(instance).to.be();
     });
 

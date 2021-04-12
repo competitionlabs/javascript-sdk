@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SqsConnectionAllOf model module.
  * @module model/SqsConnectionAllOf
- * @version 1.0.5
+ * @version 1.0.0
  */
 class SqsConnectionAllOf {
     /**
@@ -27,10 +27,11 @@ class SqsConnectionAllOf {
      * @param acessKey {String} The access key of the IAM user
      * @param lastKnownStatus {String} Last known status of the connection
      * @param lastKnownStatusCode {Number} Status code correspoding to the last known status
+     * @param transformerId {String} The identifier of the transformer
      */
-    constructor(name, uri, acessKey, lastKnownStatus, lastKnownStatusCode) { 
+    constructor(name, uri, acessKey, lastKnownStatus, lastKnownStatusCode, transformerId) { 
         
-        SqsConnectionAllOf.initialize(this, name, uri, acessKey, lastKnownStatus, lastKnownStatusCode);
+        SqsConnectionAllOf.initialize(this, name, uri, acessKey, lastKnownStatus, lastKnownStatusCode, transformerId);
     }
 
     /**
@@ -38,52 +39,13 @@ class SqsConnectionAllOf {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, name, uri, acessKey, lastKnownStatus, lastKnownStatusCode) { 
+    static initialize(obj, name, uri, acessKey, lastKnownStatus, lastKnownStatusCode, transformerId) { 
         obj['name'] = name;
         obj['uri'] = uri;
         obj['acessKey'] = acessKey;
         obj['lastKnownStatus'] = lastKnownStatus;
         obj['lastKnownStatusCode'] = lastKnownStatusCode;
-    }
-
-    /**
-    * Constructs a full object with all available fields.
-    */
-    model(){
-        var obj = {};
-
-        obj['name'] = null;
-        obj['uri'] = null;
-        obj['acessKey'] = null;
-        obj['lastKnownStatus'] = null;
-        obj['lastKnownStatusCode'] = null;
-
-        return obj;
-    }
-
-    /**
-    * Constructs a full object Map for all available fields.
-    */
-    modelMap(){
-        var obj = {
-            "fields": {},
-            "requiredFields": {}
-        };
-
-        obj["fields"]['name'] = { "type": 'String', "system": false };
-        obj["fields"]['uri'] = { "type": 'String', "system": false };
-        obj["fields"]['acessKey'] = { "type": 'String', "system": false };
-        obj["fields"]['lastKnownStatus'] = { "type": 'String', "system": false };
-        obj["fields"]['lastKnownStatusCode'] = { "type": 'Number', "system": false };
-
-        
-        obj["requiredFields"]['name'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['uri'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['acessKey'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['lastKnownStatus'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['lastKnownStatusCode'] = { "type": 'Number', "system": false };
-
-        return obj;
+        obj['transformerId'] = transformerId;
     }
 
     /**
@@ -111,6 +73,9 @@ class SqsConnectionAllOf {
             }
             if (data.hasOwnProperty('lastKnownStatusCode')) {
                 obj['lastKnownStatusCode'] = ApiClient.convertToType(data['lastKnownStatusCode'], 'Number');
+            }
+            if (data.hasOwnProperty('transformerId')) {
+                obj['transformerId'] = ApiClient.convertToType(data['transformerId'], 'String');
             }
         }
         return obj;
@@ -148,6 +113,12 @@ SqsConnectionAllOf.prototype['lastKnownStatus'] = undefined;
  * @member {Number} lastKnownStatusCode
  */
 SqsConnectionAllOf.prototype['lastKnownStatusCode'] = undefined;
+
+/**
+ * The identifier of the transformer
+ * @member {String} transformerId
+ */
+SqsConnectionAllOf.prototype['transformerId'] = undefined;
 
 
 

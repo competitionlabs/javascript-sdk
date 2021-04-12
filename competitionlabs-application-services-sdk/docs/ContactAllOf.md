@@ -1,4 +1,4 @@
-# @CompetitionlabsApplicationServicesSdk.ContactAllOf
+# CompetitionLabsApplicationServices.ContactAllOf
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# @CompetitionlabsApplicationServicesSdk.StartEndDate
+# CompetitionLabsApplicationServices.StartEndDate
 
 ## Properties
 

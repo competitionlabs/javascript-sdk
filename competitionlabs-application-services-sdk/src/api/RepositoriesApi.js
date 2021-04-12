@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -22,7 +22,7 @@ import UpdateRepositoryRequest from '../model/UpdateRepositoryRequest';
 /**
 * Repositories service.
 * @module api/RepositoriesApi
-* @version 1.0.5
+* @version 1.0.0
 */
 export default class RepositoriesApi {
 
@@ -49,27 +49,21 @@ export default class RepositoriesApi {
     /**
      * NOT AVAILABLE IN CURRENT RELEASE
      * Create a new file object repository in your CompetitionLabs space
-     * @param {String} spaceName This is the space name which is linked to the account
      * @param {Array.<module:model/CreateRepositoryRequest>} body Create a new file object repository in your CompetitionLabs space
      * @param {Object} opts Optional parameters
      * @param {String} opts.X_API_KEY The admin API Key generated from CompetitionLabs back office
      * @param {module:api/RepositoriesApi~createFileObjectRepositoryCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ApiResponse}
      */
-    createFileObjectRepository(spaceName, body, opts, callback) {
+    createFileObjectRepository(body, opts, callback) {
       opts = opts || {};
       let postBody = body;
-      // verify the required parameter 'spaceName' is set
-      if (spaceName === undefined || spaceName === null) {
-        throw new Error("Missing the required parameter 'spaceName' when calling createFileObjectRepository");
-      }
       // verify the required parameter 'body' is set
       if (body === undefined || body === null) {
         throw new Error("Missing the required parameter 'body' when calling createFileObjectRepository");
       }
 
       let pathParams = {
-        'spaceName': spaceName
       };
       let queryParams = {
       };
@@ -79,7 +73,7 @@ export default class RepositoriesApi {
       let formParams = {
       };
 
-      let authNames = ['adminApiKey'];
+      let authNames = ['AdminApiKey', 'OAuth2'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = ApiResponse;
@@ -93,7 +87,7 @@ export default class RepositoriesApi {
       }
 
       return this.apiClient.callApi(
-        '/repositories/{spaceName}', 'POST',
+        '/repositories', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, basePath, callback
       );
@@ -110,23 +104,17 @@ export default class RepositoriesApi {
     /**
      * NOT AVAILABLE IN CURRENT RELEASE
      * Delete repositories nby query. Delete repositories by query and/or unique repository ID's or any other body parameters
-     * @param {String} spaceName This is the space name which is linked to the account
      * @param {Object} opts Optional parameters
      * @param {String} opts.X_API_KEY The admin API Key generated from CompetitionLabs back office
      * @param {module:model/QueryRequest} opts.body Delete repositories from a CompetitionLabs space by unique repository ID's or any other POST body parameters using the POST method
      * @param {module:api/RepositoriesApi~deleteFileObjectRepositoriesByQueryCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ApiResponse}
      */
-    deleteFileObjectRepositoriesByQuery(spaceName, opts, callback) {
+    deleteFileObjectRepositoriesByQuery(opts, callback) {
       opts = opts || {};
       let postBody = opts['body'];
-      // verify the required parameter 'spaceName' is set
-      if (spaceName === undefined || spaceName === null) {
-        throw new Error("Missing the required parameter 'spaceName' when calling deleteFileObjectRepositoriesByQuery");
-      }
 
       let pathParams = {
-        'spaceName': spaceName
       };
       let queryParams = {
       };
@@ -136,7 +124,7 @@ export default class RepositoriesApi {
       let formParams = {
       };
 
-      let authNames = ['adminApiKey'];
+      let authNames = ['AdminApiKey', 'OAuth2'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = ApiResponse;
@@ -150,7 +138,7 @@ export default class RepositoriesApi {
       }
 
       return this.apiClient.callApi(
-        '/repositories/{spaceName}/delete', 'POST',
+        '/repositories/delete', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, basePath, callback
       );
@@ -167,7 +155,6 @@ export default class RepositoriesApi {
     /**
      * NOT AVAILABLE IN CURRENT RELEASE
      * Delete the file repository for a given identifier specified
-     * @param {String} spaceName This is the space name which is linked to the account
      * @param {Object} opts Optional parameters
      * @param {String} opts.X_API_KEY The admin API Key generated from CompetitionLabs back office
      * @param {Array.<String>} opts.id The unique identifiers of the resources
@@ -175,16 +162,11 @@ export default class RepositoriesApi {
      * @param {module:api/RepositoriesApi~deleteFileObjectRepositoryByIdCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ApiResponse}
      */
-    deleteFileObjectRepositoryById(spaceName, opts, callback) {
+    deleteFileObjectRepositoryById(opts, callback) {
       opts = opts || {};
       let postBody = null;
-      // verify the required parameter 'spaceName' is set
-      if (spaceName === undefined || spaceName === null) {
-        throw new Error("Missing the required parameter 'spaceName' when calling deleteFileObjectRepositoryById");
-      }
 
       let pathParams = {
-        'spaceName': spaceName
       };
       let queryParams = {
         'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),
@@ -196,7 +178,7 @@ export default class RepositoriesApi {
       let formParams = {
       };
 
-      let authNames = ['adminApiKey'];
+      let authNames = ['AdminApiKey', 'OAuth2'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = ApiResponse;
@@ -210,7 +192,7 @@ export default class RepositoriesApi {
       }
 
       return this.apiClient.callApi(
-        '/repositories/{spaceName}', 'DELETE',
+        '/repositories', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, basePath, callback
       );
@@ -227,23 +209,17 @@ export default class RepositoriesApi {
     /**
      * NOT AVAILABLE IN CURRENT RELEASE
      * Find file object repositories by query
-     * @param {String} spaceName This is the space name which is linked to the account
      * @param {Object} opts Optional parameters
      * @param {String} opts.X_API_KEY The admin API Key generated from CompetitionLabs back office
      * @param {module:model/QueryRequest} opts.body Retrieve file object repositories from CompetitionLabs by unique repository ID's or any other POST body parameters using the POST method
      * @param {module:api/RepositoriesApi~getFileObjectRepositoriesByQueryCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/RepositoryResponse}
      */
-    getFileObjectRepositoriesByQuery(spaceName, opts, callback) {
+    getFileObjectRepositoriesByQuery(opts, callback) {
       opts = opts || {};
       let postBody = opts['body'];
-      // verify the required parameter 'spaceName' is set
-      if (spaceName === undefined || spaceName === null) {
-        throw new Error("Missing the required parameter 'spaceName' when calling getFileObjectRepositoriesByQuery");
-      }
 
       let pathParams = {
-        'spaceName': spaceName
       };
       let queryParams = {
       };
@@ -253,7 +229,7 @@ export default class RepositoriesApi {
       let formParams = {
       };
 
-      let authNames = ['adminApiKey'];
+      let authNames = ['AdminApiKey', 'OAuth2'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = RepositoryResponse;
@@ -267,7 +243,7 @@ export default class RepositoriesApi {
       }
 
       return this.apiClient.callApi(
-        '/repositories/{spaceName}/query', 'POST',
+        '/repositories/query', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, basePath, callback
       );
@@ -284,7 +260,6 @@ export default class RepositoriesApi {
     /**
      * NOT AVAILABLE IN CURRENT RELEASE
      * Returns a list of file object repositories. This assumes that repositories have first been uploaded via a POST request or web console
-     * @param {String} spaceName This is the space name which is linked to the account
      * @param {Object} opts Optional parameters
      * @param {String} opts.X_API_KEY The admin API Key generated from CompetitionLabs back office
      * @param {Number} opts.limit Limit the returned total records found
@@ -293,16 +268,11 @@ export default class RepositoriesApi {
      * @param {module:api/RepositoriesApi~getListOfFileObjectRepositoriesCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/RepositoryResponse}
      */
-    getListOfFileObjectRepositories(spaceName, opts, callback) {
+    getListOfFileObjectRepositories(opts, callback) {
       opts = opts || {};
       let postBody = null;
-      // verify the required parameter 'spaceName' is set
-      if (spaceName === undefined || spaceName === null) {
-        throw new Error("Missing the required parameter 'spaceName' when calling getListOfFileObjectRepositories");
-      }
 
       let pathParams = {
-        'spaceName': spaceName
       };
       let queryParams = {
         '_limit': opts['limit'],
@@ -315,7 +285,7 @@ export default class RepositoriesApi {
       let formParams = {
       };
 
-      let authNames = ['adminApiKey'];
+      let authNames = ['AdminApiKey', 'OAuth2'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = RepositoryResponse;
@@ -329,7 +299,7 @@ export default class RepositoriesApi {
       }
 
       return this.apiClient.callApi(
-        '/repositories/{spaceName}', 'GET',
+        '/repositories', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, basePath, callback
       );
@@ -346,27 +316,21 @@ export default class RepositoriesApi {
     /**
      * NOT AVAILABLE IN CURRENT RELEASE
      * Update a file object repository in your CompetitionLabs space.
-     * @param {String} spaceName This is the space name which is linked to the account
      * @param {Array.<module:model/UpdateRepositoryRequest>} body Update a file object repository in your CompetitionLabs space.
      * @param {Object} opts Optional parameters
      * @param {String} opts.X_API_KEY The admin API Key generated from CompetitionLabs back office
      * @param {module:api/RepositoriesApi~updateFileObjectRepositoryCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ApiResponse}
      */
-    updateFileObjectRepository(spaceName, body, opts, callback) {
+    updateFileObjectRepository(body, opts, callback) {
       opts = opts || {};
       let postBody = body;
-      // verify the required parameter 'spaceName' is set
-      if (spaceName === undefined || spaceName === null) {
-        throw new Error("Missing the required parameter 'spaceName' when calling updateFileObjectRepository");
-      }
       // verify the required parameter 'body' is set
       if (body === undefined || body === null) {
         throw new Error("Missing the required parameter 'body' when calling updateFileObjectRepository");
       }
 
       let pathParams = {
-        'spaceName': spaceName
       };
       let queryParams = {
       };
@@ -376,7 +340,7 @@ export default class RepositoriesApi {
       let formParams = {
       };
 
-      let authNames = ['adminApiKey'];
+      let authNames = ['AdminApiKey', 'OAuth2'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = ApiResponse;
@@ -390,7 +354,7 @@ export default class RepositoriesApi {
       }
 
       return this.apiClient.callApi(
-        '/repositories/{spaceName}', 'PUT',
+        '/repositories', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, basePath, callback
       );

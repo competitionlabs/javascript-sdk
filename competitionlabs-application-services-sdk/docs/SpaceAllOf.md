@@ -1,4 +1,4 @@
-# @CompetitionlabsApplicationServicesSdk.SpaceAllOf
+# CompetitionLabsApplicationServices.SpaceAllOf
 
 ## Properties
 

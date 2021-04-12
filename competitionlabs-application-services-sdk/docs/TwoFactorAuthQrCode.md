@@ -1,4 +1,4 @@
-# @CompetitionlabsApplicationServicesSdk.TwoFactorAuthQrCode
+# CompetitionLabsApplicationServices.TwoFactorAuthQrCode
 
 ## Properties
 

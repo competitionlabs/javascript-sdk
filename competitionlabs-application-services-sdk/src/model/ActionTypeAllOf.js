@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -12,13 +12,12 @@
  */
 
 import ApiClient from '../ApiClient';
-import Metadata from './Metadata';
 import UnitOfMeasureType from './UnitOfMeasureType';
 
 /**
  * The ActionTypeAllOf model module.
  * @module model/ActionTypeAllOf
- * @version 1.0.5
+ * @version 1.0.0
  */
 class ActionTypeAllOf {
     /**
@@ -27,10 +26,11 @@ class ActionTypeAllOf {
      * @param name {String} The name of the Action Helper
      * @param key {String} A unique key that represents an action helper
      * @param unitOfMeasureType {module:model/UnitOfMeasureType} 
+     * @param constraints {Array.<String>} Additional constraints, if the value is present it means the
      */
-    constructor(name, key, unitOfMeasureType) { 
+    constructor(name, key, unitOfMeasureType, constraints) { 
         
-        ActionTypeAllOf.initialize(this, name, key, unitOfMeasureType);
+        ActionTypeAllOf.initialize(this, name, key, unitOfMeasureType, constraints);
     }
 
     /**
@@ -38,50 +38,11 @@ class ActionTypeAllOf {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, name, key, unitOfMeasureType) { 
+    static initialize(obj, name, key, unitOfMeasureType, constraints) { 
         obj['name'] = name;
         obj['key'] = key;
         obj['unitOfMeasureType'] = unitOfMeasureType;
-    }
-
-    /**
-    * Constructs a full object with all available fields.
-    */
-    model(){
-        var obj = {};
-
-        obj['name'] = null;
-        obj['key'] = null;
-        obj['description'] = null;
-        obj['system'] = null;
-        obj['unitOfMeasureType'] = new UnitOfMeasureType().model();
-        obj['metadata'] = [new Metadata().model()];
-
-        return obj;
-    }
-
-    /**
-    * Constructs a full object Map for all available fields.
-    */
-    modelMap(){
-        var obj = {
-            "fields": {},
-            "requiredFields": {}
-        };
-
-        obj["fields"]['name'] = { "type": 'String', "system": false };
-        obj["fields"]['key'] = { "type": 'String', "system": false };
-        obj["fields"]['description'] = { "type": 'String', "system": false };
-        obj["fields"]['system'] = { "type": 'Boolean', "system": false };
-        obj["fields"]['unitOfMeasureType'] = new UnitOfMeasureType().modelMap();
-        obj["fields"]['metadata'] = [new Metadata().modelMap()];
-
-        
-        obj["requiredFields"]['name'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['key'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['unitOfMeasureType'] = new UnitOfMeasureType().modelMap();
-
-        return obj;
+        obj['constraints'] = constraints;
     }
 
     /**
@@ -104,14 +65,11 @@ class ActionTypeAllOf {
             if (data.hasOwnProperty('description')) {
                 obj['description'] = ApiClient.convertToType(data['description'], 'String');
             }
-            if (data.hasOwnProperty('system')) {
-                obj['system'] = ApiClient.convertToType(data['system'], 'Boolean');
-            }
             if (data.hasOwnProperty('unitOfMeasureType')) {
                 obj['unitOfMeasureType'] = UnitOfMeasureType.constructFromObject(data['unitOfMeasureType']);
             }
-            if (data.hasOwnProperty('metadata')) {
-                obj['metadata'] = ApiClient.convertToType(data['metadata'], [Metadata]);
+            if (data.hasOwnProperty('constraints')) {
+                obj['constraints'] = ApiClient.convertToType(data['constraints'], ['String']);
             }
         }
         return obj;
@@ -139,20 +97,15 @@ ActionTypeAllOf.prototype['key'] = undefined;
 ActionTypeAllOf.prototype['description'] = undefined;
 
 /**
- * A boolean value (true/false) that represents the Action Helpers state. A system reserved entry (set to true) cannot be deleted.
- * @member {Boolean} system
- */
-ActionTypeAllOf.prototype['system'] = undefined;
-
-/**
  * @member {module:model/UnitOfMeasureType} unitOfMeasureType
  */
 ActionTypeAllOf.prototype['unitOfMeasureType'] = undefined;
 
 /**
- * @member {Array.<module:model/Metadata>} metadata
+ * Additional constraints, if the value is present it means the
+ * @member {Array.<String>} constraints
  */
-ActionTypeAllOf.prototype['metadata'] = undefined;
+ActionTypeAllOf.prototype['constraints'] = undefined;
 
 
 

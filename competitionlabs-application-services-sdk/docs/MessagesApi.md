@@ -1,23 +1,23 @@
-# @CompetitionlabsApplicationServicesSdk.MessagesApi
+# CompetitionLabsApplicationServices.MessagesApi
 
 All URIs are relative to *https://api.competitionlabs.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createMessages**](MessagesApi.md#createMessages) | **POST** /messages/{spaceName} | NOT AVAILABLE IN CURRENT RELEASE
-[**deleteMessages**](MessagesApi.md#deleteMessages) | **DELETE** /messages/{spaceName} | NOT AVAILABLE IN CURRENT RELEASE
-[**deleteMessagesByQuery**](MessagesApi.md#deleteMessagesByQuery) | **POST** /messages/{spaceName}/delete | NOT AVAILABLE IN CURRENT RELEASE
-[**getMessages**](MessagesApi.md#getMessages) | **GET** /messages/{spaceName} | NOT AVAILABLE IN CURRENT RELEASE
-[**getMessagesByQuery**](MessagesApi.md#getMessagesByQuery) | **POST** /messages/{spaceName}/query | NOT AVAILABLE IN CURRENT RELEASE
-[**testMessagesById**](MessagesApi.md#testMessagesById) | **POST** /messages/{spaceName}/{id}/test | NOT AVAILABLE IN CURRENT RELEASE
-[**updateMessages**](MessagesApi.md#updateMessages) | **PUT** /messages/{spaceName} | NOT AVAILABLE IN CURRENT RELEASE
-[**updateMessagesStatus**](MessagesApi.md#updateMessagesStatus) | **PUT** /messages/{spaceName}/state | NOT AVAILABLE IN CURRENT RELEASE
+[**createMessages**](MessagesApi.md#createMessages) | **POST** /messages | NOT AVAILABLE IN CURRENT RELEASE
+[**deleteMessages**](MessagesApi.md#deleteMessages) | **DELETE** /messages | NOT AVAILABLE IN CURRENT RELEASE
+[**deleteMessagesByQuery**](MessagesApi.md#deleteMessagesByQuery) | **POST** /messages/delete | NOT AVAILABLE IN CURRENT RELEASE
+[**getMessages**](MessagesApi.md#getMessages) | **GET** /messages | NOT AVAILABLE IN CURRENT RELEASE
+[**getMessagesByQuery**](MessagesApi.md#getMessagesByQuery) | **POST** /messages/query | NOT AVAILABLE IN CURRENT RELEASE
+[**testMessagesById**](MessagesApi.md#testMessagesById) | **POST** /messages/{id}/test | NOT AVAILABLE IN CURRENT RELEASE
+[**updateMessages**](MessagesApi.md#updateMessages) | **PUT** /messages | NOT AVAILABLE IN CURRENT RELEASE
+[**updateMessagesStatus**](MessagesApi.md#updateMessagesStatus) | **PUT** /messages/state | NOT AVAILABLE IN CURRENT RELEASE
 
 
 
 ## createMessages
 
-> ApiResponse createMessages(spaceName, body, opts)
+> ApiResponse createMessages(body, opts)
 
 NOT AVAILABLE IN CURRENT RELEASE
 
@@ -26,21 +26,23 @@ Create Messages in the CompetitionLabs database
 ### Example
 
 ```javascript
-import @CompetitionlabsApplicationServicesSdk from '@competitionlabs/application-services-sdk';
-let defaultClient = @CompetitionlabsApplicationServicesSdk.ApiClient.instance;
-// Configure API key authorization: adminApiKey
-let adminApiKey = defaultClient.authentications['adminApiKey'];
-adminApiKey.apiKey = 'YOUR API KEY';
+import CompetitionLabsApplicationServices from 'competition_labs_application_services';
+let defaultClient = CompetitionLabsApplicationServices.ApiClient.instance;
+// Configure API key authorization: AdminApiKey
+let AdminApiKey = defaultClient.authentications['AdminApiKey'];
+AdminApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//adminApiKey.apiKeyPrefix = 'Token';
+//AdminApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: OAuth2
+let OAuth2 = defaultClient.authentications['OAuth2'];
+OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new @CompetitionlabsApplicationServicesSdk.MessagesApi();
-let spaceName = "spaceName_example"; // String | This is the space name which is linked to the account
-let body = [new @CompetitionlabsApplicationServicesSdk.CreateMessageRequest()]; // [CreateMessageRequest] | Create Messages in the CompetitionLabs database
+let apiInstance = new CompetitionLabsApplicationServices.MessagesApi();
+let body = [new CompetitionLabsApplicationServices.CreateMessageRequest()]; // [CreateMessageRequest] | Create Messages in the CompetitionLabs database
 let opts = {
   'X_API_KEY': "X_API_KEY_example" // String | The admin API Key generated from CompetitionLabs back office
 };
-apiInstance.createMessages(spaceName, body, opts, (error, data, response) => {
+apiInstance.createMessages(body, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -54,7 +56,6 @@ apiInstance.createMessages(spaceName, body, opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **spaceName** | **String**| This is the space name which is linked to the account | 
  **body** | [**[CreateMessageRequest]**](CreateMessageRequest.md)| Create Messages in the CompetitionLabs database | 
  **X_API_KEY** | **String**| The admin API Key generated from CompetitionLabs back office | [optional] 
 
@@ -64,7 +65,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[adminApiKey](../README.md#adminApiKey)
+[AdminApiKey](../README.md#AdminApiKey), [OAuth2](../README.md#OAuth2)
 
 ### HTTP request headers
 
@@ -74,7 +75,7 @@ Name | Type | Description  | Notes
 
 ## deleteMessages
 
-> ApiResponse deleteMessages(spaceName, opts)
+> ApiResponse deleteMessages(opts)
 
 NOT AVAILABLE IN CURRENT RELEASE
 
@@ -83,21 +84,23 @@ Delete Messages for a given identifier specified
 ### Example
 
 ```javascript
-import @CompetitionlabsApplicationServicesSdk from '@competitionlabs/application-services-sdk';
-let defaultClient = @CompetitionlabsApplicationServicesSdk.ApiClient.instance;
-// Configure API key authorization: adminApiKey
-let adminApiKey = defaultClient.authentications['adminApiKey'];
-adminApiKey.apiKey = 'YOUR API KEY';
+import CompetitionLabsApplicationServices from 'competition_labs_application_services';
+let defaultClient = CompetitionLabsApplicationServices.ApiClient.instance;
+// Configure API key authorization: AdminApiKey
+let AdminApiKey = defaultClient.authentications['AdminApiKey'];
+AdminApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//adminApiKey.apiKeyPrefix = 'Token';
+//AdminApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: OAuth2
+let OAuth2 = defaultClient.authentications['OAuth2'];
+OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new @CompetitionlabsApplicationServicesSdk.MessagesApi();
-let spaceName = "spaceName_example"; // String | This is the space name which is linked to the account
+let apiInstance = new CompetitionLabsApplicationServices.MessagesApi();
 let opts = {
   'X_API_KEY': "X_API_KEY_example", // String | The admin API Key generated from CompetitionLabs back office
   'id': ["null"] // [String] | The unique identifiers of the resources
 };
-apiInstance.deleteMessages(spaceName, opts, (error, data, response) => {
+apiInstance.deleteMessages(opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -111,7 +114,6 @@ apiInstance.deleteMessages(spaceName, opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **spaceName** | **String**| This is the space name which is linked to the account | 
  **X_API_KEY** | **String**| The admin API Key generated from CompetitionLabs back office | [optional] 
  **id** | [**[String]**](String.md)| The unique identifiers of the resources | [optional] 
 
@@ -121,7 +123,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[adminApiKey](../README.md#adminApiKey)
+[AdminApiKey](../README.md#AdminApiKey), [OAuth2](../README.md#OAuth2)
 
 ### HTTP request headers
 
@@ -131,7 +133,7 @@ Name | Type | Description  | Notes
 
 ## deleteMessagesByQuery
 
-> ApiResponse deleteMessagesByQuery(spaceName, opts)
+> ApiResponse deleteMessagesByQuery(opts)
 
 NOT AVAILABLE IN CURRENT RELEASE
 
@@ -140,21 +142,23 @@ Delete Messages from CompetitionLabs database by unique message ID&#39;s or any 
 ### Example
 
 ```javascript
-import @CompetitionlabsApplicationServicesSdk from '@competitionlabs/application-services-sdk';
-let defaultClient = @CompetitionlabsApplicationServicesSdk.ApiClient.instance;
-// Configure API key authorization: adminApiKey
-let adminApiKey = defaultClient.authentications['adminApiKey'];
-adminApiKey.apiKey = 'YOUR API KEY';
+import CompetitionLabsApplicationServices from 'competition_labs_application_services';
+let defaultClient = CompetitionLabsApplicationServices.ApiClient.instance;
+// Configure API key authorization: AdminApiKey
+let AdminApiKey = defaultClient.authentications['AdminApiKey'];
+AdminApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//adminApiKey.apiKeyPrefix = 'Token';
+//AdminApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: OAuth2
+let OAuth2 = defaultClient.authentications['OAuth2'];
+OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new @CompetitionlabsApplicationServicesSdk.MessagesApi();
-let spaceName = "spaceName_example"; // String | This is the space name which is linked to the account
+let apiInstance = new CompetitionLabsApplicationServices.MessagesApi();
 let opts = {
   'X_API_KEY': "X_API_KEY_example", // String | The admin API Key generated from CompetitionLabs back office
-  'body': new @CompetitionlabsApplicationServicesSdk.QueryRequest() // QueryRequest | Delete Messages from CompetitionLabs database by unique message ID's or any other POST body parameters using the POST method
+  'body': new CompetitionLabsApplicationServices.QueryRequest() // QueryRequest | Delete Messages from CompetitionLabs database by unique message ID's or any other POST body parameters using the POST method
 };
-apiInstance.deleteMessagesByQuery(spaceName, opts, (error, data, response) => {
+apiInstance.deleteMessagesByQuery(opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -168,7 +172,6 @@ apiInstance.deleteMessagesByQuery(spaceName, opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **spaceName** | **String**| This is the space name which is linked to the account | 
  **X_API_KEY** | **String**| The admin API Key generated from CompetitionLabs back office | [optional] 
  **body** | [**QueryRequest**](QueryRequest.md)| Delete Messages from CompetitionLabs database by unique message ID&#39;s or any other POST body parameters using the POST method | [optional] 
 
@@ -178,7 +181,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[adminApiKey](../README.md#adminApiKey)
+[AdminApiKey](../README.md#AdminApiKey), [OAuth2](../README.md#OAuth2)
 
 ### HTTP request headers
 
@@ -188,7 +191,7 @@ Name | Type | Description  | Notes
 
 ## getMessages
 
-> MessageResponse getMessages(spaceName, opts)
+> MessageResponse getMessages(opts)
 
 NOT AVAILABLE IN CURRENT RELEASE
 
@@ -197,23 +200,25 @@ Returns a list of Messages. This assumes that Messages have first been uploaded 
 ### Example
 
 ```javascript
-import @CompetitionlabsApplicationServicesSdk from '@competitionlabs/application-services-sdk';
-let defaultClient = @CompetitionlabsApplicationServicesSdk.ApiClient.instance;
-// Configure API key authorization: adminApiKey
-let adminApiKey = defaultClient.authentications['adminApiKey'];
-adminApiKey.apiKey = 'YOUR API KEY';
+import CompetitionLabsApplicationServices from 'competition_labs_application_services';
+let defaultClient = CompetitionLabsApplicationServices.ApiClient.instance;
+// Configure API key authorization: AdminApiKey
+let AdminApiKey = defaultClient.authentications['AdminApiKey'];
+AdminApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//adminApiKey.apiKeyPrefix = 'Token';
+//AdminApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: OAuth2
+let OAuth2 = defaultClient.authentications['OAuth2'];
+OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new @CompetitionlabsApplicationServicesSdk.MessagesApi();
-let spaceName = "spaceName_example"; // String | This is the space name which is linked to the account
+let apiInstance = new CompetitionLabsApplicationServices.MessagesApi();
 let opts = {
   'X_API_KEY': "X_API_KEY_example", // String | The admin API Key generated from CompetitionLabs back office
   'id': ["null"], // [String] | The unique identifiers of the resources
   'limit': 56, // Number | Limit the returned total records found
   'skip': 56 // Number | Skip the returned records found and return the next batch of records
 };
-apiInstance.getMessages(spaceName, opts, (error, data, response) => {
+apiInstance.getMessages(opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -227,7 +232,6 @@ apiInstance.getMessages(spaceName, opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **spaceName** | **String**| This is the space name which is linked to the account | 
  **X_API_KEY** | **String**| The admin API Key generated from CompetitionLabs back office | [optional] 
  **id** | [**[String]**](String.md)| The unique identifiers of the resources | [optional] 
  **limit** | **Number**| Limit the returned total records found | [optional] 
@@ -239,7 +243,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[adminApiKey](../README.md#adminApiKey)
+[AdminApiKey](../README.md#AdminApiKey), [OAuth2](../README.md#OAuth2)
 
 ### HTTP request headers
 
@@ -249,7 +253,7 @@ Name | Type | Description  | Notes
 
 ## getMessagesByQuery
 
-> MessageResponse getMessagesByQuery(spaceName, opts)
+> MessageResponse getMessagesByQuery(opts)
 
 NOT AVAILABLE IN CURRENT RELEASE
 
@@ -258,21 +262,23 @@ Retrieve Messages from CompetitionLabs database by unique message ID&#39;s or an
 ### Example
 
 ```javascript
-import @CompetitionlabsApplicationServicesSdk from '@competitionlabs/application-services-sdk';
-let defaultClient = @CompetitionlabsApplicationServicesSdk.ApiClient.instance;
-// Configure API key authorization: adminApiKey
-let adminApiKey = defaultClient.authentications['adminApiKey'];
-adminApiKey.apiKey = 'YOUR API KEY';
+import CompetitionLabsApplicationServices from 'competition_labs_application_services';
+let defaultClient = CompetitionLabsApplicationServices.ApiClient.instance;
+// Configure API key authorization: AdminApiKey
+let AdminApiKey = defaultClient.authentications['AdminApiKey'];
+AdminApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//adminApiKey.apiKeyPrefix = 'Token';
+//AdminApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: OAuth2
+let OAuth2 = defaultClient.authentications['OAuth2'];
+OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new @CompetitionlabsApplicationServicesSdk.MessagesApi();
-let spaceName = "spaceName_example"; // String | This is the space name which is linked to the account
+let apiInstance = new CompetitionLabsApplicationServices.MessagesApi();
 let opts = {
   'X_API_KEY': "X_API_KEY_example", // String | The admin API Key generated from CompetitionLabs back office
-  'body': new @CompetitionlabsApplicationServicesSdk.QueryRequest() // QueryRequest | Retrieve Messages from CompetitionLabs database by unique message ID's or any other POST body parameters using the POST method
+  'body': new CompetitionLabsApplicationServices.QueryRequest() // QueryRequest | Retrieve Messages from CompetitionLabs database by unique message ID's or any other POST body parameters using the POST method
 };
-apiInstance.getMessagesByQuery(spaceName, opts, (error, data, response) => {
+apiInstance.getMessagesByQuery(opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -286,7 +292,6 @@ apiInstance.getMessagesByQuery(spaceName, opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **spaceName** | **String**| This is the space name which is linked to the account | 
  **X_API_KEY** | **String**| The admin API Key generated from CompetitionLabs back office | [optional] 
  **body** | [**QueryRequest**](QueryRequest.md)| Retrieve Messages from CompetitionLabs database by unique message ID&#39;s or any other POST body parameters using the POST method | [optional] 
 
@@ -296,7 +301,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[adminApiKey](../README.md#adminApiKey)
+[AdminApiKey](../README.md#AdminApiKey), [OAuth2](../README.md#OAuth2)
 
 ### HTTP request headers
 
@@ -306,7 +311,7 @@ Name | Type | Description  | Notes
 
 ## testMessagesById
 
-> ApiResponse testMessagesById(spaceName, id, body, opts)
+> ApiResponse testMessagesById(id, body, opts)
 
 NOT AVAILABLE IN CURRENT RELEASE
 
@@ -315,22 +320,24 @@ Test Messages for a given Message identifier specified
 ### Example
 
 ```javascript
-import @CompetitionlabsApplicationServicesSdk from '@competitionlabs/application-services-sdk';
-let defaultClient = @CompetitionlabsApplicationServicesSdk.ApiClient.instance;
-// Configure API key authorization: adminApiKey
-let adminApiKey = defaultClient.authentications['adminApiKey'];
-adminApiKey.apiKey = 'YOUR API KEY';
+import CompetitionLabsApplicationServices from 'competition_labs_application_services';
+let defaultClient = CompetitionLabsApplicationServices.ApiClient.instance;
+// Configure API key authorization: AdminApiKey
+let AdminApiKey = defaultClient.authentications['AdminApiKey'];
+AdminApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//adminApiKey.apiKeyPrefix = 'Token';
+//AdminApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: OAuth2
+let OAuth2 = defaultClient.authentications['OAuth2'];
+OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new @CompetitionlabsApplicationServicesSdk.MessagesApi();
-let spaceName = "spaceName_example"; // String | This is the space name which is linked to the account
+let apiInstance = new CompetitionLabsApplicationServices.MessagesApi();
 let id = "id_example"; // String | Unique identifier of the resource
-let body = new @CompetitionlabsApplicationServicesSdk.TestMessageRequest(); // TestMessageRequest | Send test Messages to Members by a Message identifier provided
+let body = new CompetitionLabsApplicationServices.TestMessageRequest(); // TestMessageRequest | Send test Messages to Members by a Message identifier provided
 let opts = {
   'X_API_KEY': "X_API_KEY_example" // String | The admin API Key generated from CompetitionLabs back office
 };
-apiInstance.testMessagesById(spaceName, id, body, opts, (error, data, response) => {
+apiInstance.testMessagesById(id, body, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -344,7 +351,6 @@ apiInstance.testMessagesById(spaceName, id, body, opts, (error, data, response) 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **spaceName** | **String**| This is the space name which is linked to the account | 
  **id** | **String**| Unique identifier of the resource | 
  **body** | [**TestMessageRequest**](TestMessageRequest.md)| Send test Messages to Members by a Message identifier provided | 
  **X_API_KEY** | **String**| The admin API Key generated from CompetitionLabs back office | [optional] 
@@ -355,7 +361,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[adminApiKey](../README.md#adminApiKey)
+[AdminApiKey](../README.md#AdminApiKey), [OAuth2](../README.md#OAuth2)
 
 ### HTTP request headers
 
@@ -365,7 +371,7 @@ Name | Type | Description  | Notes
 
 ## updateMessages
 
-> ApiResponse updateMessages(spaceName, body, opts)
+> ApiResponse updateMessages(body, opts)
 
 NOT AVAILABLE IN CURRENT RELEASE
 
@@ -374,21 +380,23 @@ Updates a Message by identifier provided. This assumes that Messages have first 
 ### Example
 
 ```javascript
-import @CompetitionlabsApplicationServicesSdk from '@competitionlabs/application-services-sdk';
-let defaultClient = @CompetitionlabsApplicationServicesSdk.ApiClient.instance;
-// Configure API key authorization: adminApiKey
-let adminApiKey = defaultClient.authentications['adminApiKey'];
-adminApiKey.apiKey = 'YOUR API KEY';
+import CompetitionLabsApplicationServices from 'competition_labs_application_services';
+let defaultClient = CompetitionLabsApplicationServices.ApiClient.instance;
+// Configure API key authorization: AdminApiKey
+let AdminApiKey = defaultClient.authentications['AdminApiKey'];
+AdminApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//adminApiKey.apiKeyPrefix = 'Token';
+//AdminApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: OAuth2
+let OAuth2 = defaultClient.authentications['OAuth2'];
+OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new @CompetitionlabsApplicationServicesSdk.MessagesApi();
-let spaceName = "spaceName_example"; // String | This is the space name which is linked to the account
-let body = new @CompetitionlabsApplicationServicesSdk.UpdateMessageRequest(); // UpdateMessageRequest | Update a Message by a Message identifier provided
+let apiInstance = new CompetitionLabsApplicationServices.MessagesApi();
+let body = new CompetitionLabsApplicationServices.UpdateMessageRequest(); // UpdateMessageRequest | Update a Message by a Message identifier provided
 let opts = {
   'X_API_KEY': "X_API_KEY_example" // String | The admin API Key generated from CompetitionLabs back office
 };
-apiInstance.updateMessages(spaceName, body, opts, (error, data, response) => {
+apiInstance.updateMessages(body, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -402,7 +410,6 @@ apiInstance.updateMessages(spaceName, body, opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **spaceName** | **String**| This is the space name which is linked to the account | 
  **body** | [**UpdateMessageRequest**](UpdateMessageRequest.md)| Update a Message by a Message identifier provided | 
  **X_API_KEY** | **String**| The admin API Key generated from CompetitionLabs back office | [optional] 
 
@@ -412,7 +419,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[adminApiKey](../README.md#adminApiKey)
+[AdminApiKey](../README.md#AdminApiKey), [OAuth2](../README.md#OAuth2)
 
 ### HTTP request headers
 
@@ -422,7 +429,7 @@ Name | Type | Description  | Notes
 
 ## updateMessagesStatus
 
-> ApiResponse updateMessagesStatus(spaceName, body, opts)
+> ApiResponse updateMessagesStatus(body, opts)
 
 NOT AVAILABLE IN CURRENT RELEASE
 
@@ -431,21 +438,23 @@ Update the Message status
 ### Example
 
 ```javascript
-import @CompetitionlabsApplicationServicesSdk from '@competitionlabs/application-services-sdk';
-let defaultClient = @CompetitionlabsApplicationServicesSdk.ApiClient.instance;
-// Configure API key authorization: adminApiKey
-let adminApiKey = defaultClient.authentications['adminApiKey'];
-adminApiKey.apiKey = 'YOUR API KEY';
+import CompetitionLabsApplicationServices from 'competition_labs_application_services';
+let defaultClient = CompetitionLabsApplicationServices.ApiClient.instance;
+// Configure API key authorization: AdminApiKey
+let AdminApiKey = defaultClient.authentications['AdminApiKey'];
+AdminApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//adminApiKey.apiKeyPrefix = 'Token';
+//AdminApiKey.apiKeyPrefix = 'Token';
+// Configure OAuth2 access token for authorization: OAuth2
+let OAuth2 = defaultClient.authentications['OAuth2'];
+OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new @CompetitionlabsApplicationServicesSdk.MessagesApi();
-let spaceName = "spaceName_example"; // String | This is the space name which is linked to the account
-let body = [new @CompetitionlabsApplicationServicesSdk.UpdateMessageStatusRequest()]; // [UpdateMessageStatusRequest] | Update the Message status in the Competitionlabs database
+let apiInstance = new CompetitionLabsApplicationServices.MessagesApi();
+let body = [new CompetitionLabsApplicationServices.UpdateMessageStatusRequest()]; // [UpdateMessageStatusRequest] | Update the Message status in the Competitionlabs database
 let opts = {
   'X_API_KEY': "X_API_KEY_example" // String | The admin API Key generated from CompetitionLabs back office
 };
-apiInstance.updateMessagesStatus(spaceName, body, opts, (error, data, response) => {
+apiInstance.updateMessagesStatus(body, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -459,7 +468,6 @@ apiInstance.updateMessagesStatus(spaceName, body, opts, (error, data, response) 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **spaceName** | **String**| This is the space name which is linked to the account | 
  **body** | [**[UpdateMessageStatusRequest]**](UpdateMessageStatusRequest.md)| Update the Message status in the Competitionlabs database | 
  **X_API_KEY** | **String**| The admin API Key generated from CompetitionLabs back office | [optional] 
 
@@ -469,7 +477,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[adminApiKey](../README.md#adminApiKey)
+[AdminApiKey](../README.md#AdminApiKey), [OAuth2](../README.md#OAuth2)
 
 ### HTTP request headers
 

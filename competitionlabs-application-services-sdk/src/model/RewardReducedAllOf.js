@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -16,21 +16,21 @@ import ApiClient from '../ApiClient';
 /**
  * The RewardReducedAllOf model module.
  * @module model/RewardReducedAllOf
- * @version 1.0.5
+ * @version 1.0.0
  */
 class RewardReducedAllOf {
     /**
      * Constructs a new <code>RewardReducedAllOf</code>.
      * @alias module:model/RewardReducedAllOf
      * @param rewardRank {String} If used in the context of contest this will associate with the rank of the leaderboard
-     * @param rewardName {String} The name of a reward
-     * @param value {Number} Numerical value of the reward that will be issued based on the reward type
+     * @param name {String} The name of a reward
+     * @param rewardValue {Number} Numerical value of the reward that will be issued based on the reward type
      * @param rewardType {String} Reward Type key
      * @param rewardTypeId {String} A unique id of the Reward Type
      */
-    constructor(rewardRank, rewardName, value, rewardType, rewardTypeId) { 
+    constructor(rewardRank, name, rewardValue, rewardType, rewardTypeId) { 
         
-        RewardReducedAllOf.initialize(this, rewardRank, rewardName, value, rewardType, rewardTypeId);
+        RewardReducedAllOf.initialize(this, rewardRank, name, rewardValue, rewardType, rewardTypeId);
     }
 
     /**
@@ -38,52 +38,12 @@ class RewardReducedAllOf {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, rewardRank, rewardName, value, rewardType, rewardTypeId) { 
+    static initialize(obj, rewardRank, name, rewardValue, rewardType, rewardTypeId) { 
         obj['rewardRank'] = rewardRank;
-        obj['rewardName'] = rewardName;
-        obj['value'] = value;
+        obj['name'] = name;
+        obj['rewardValue'] = rewardValue;
         obj['rewardType'] = rewardType;
         obj['rewardTypeId'] = rewardTypeId;
-    }
-
-    /**
-    * Constructs a full object with all available fields.
-    */
-    model(){
-        var obj = {};
-
-        obj['rewardRank'] = null;
-        obj['rewardName'] = null;
-        obj['value'] = null;
-        obj['rewardType'] = null;
-        obj['rewardTypeId'] = null;
-
-        return obj;
-    }
-
-    /**
-    * Constructs a full object Map for all available fields.
-    */
-    modelMap(){
-        var obj = {
-            "fields": {},
-            "requiredFields": {}
-        };
-
-        obj["fields"]['rewardRank'] = { "type": 'String', "system": false };
-        obj["fields"]['rewardName'] = { "type": 'String', "system": false };
-        obj["fields"]['value'] = { "type": 'Number', "system": false };
-        obj["fields"]['rewardType'] = { "type": 'String', "system": false };
-        obj["fields"]['rewardTypeId'] = { "type": 'String', "system": false };
-
-        
-        obj["requiredFields"]['rewardRank'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['rewardName'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['value'] = { "type": 'Number', "system": false };
-        obj["requiredFields"]['rewardType'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['rewardTypeId'] = { "type": 'String', "system": false };
-
-        return obj;
     }
 
     /**
@@ -100,11 +60,11 @@ class RewardReducedAllOf {
             if (data.hasOwnProperty('rewardRank')) {
                 obj['rewardRank'] = ApiClient.convertToType(data['rewardRank'], 'String');
             }
-            if (data.hasOwnProperty('rewardName')) {
-                obj['rewardName'] = ApiClient.convertToType(data['rewardName'], 'String');
+            if (data.hasOwnProperty('name')) {
+                obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
-            if (data.hasOwnProperty('value')) {
-                obj['value'] = ApiClient.convertToType(data['value'], 'Number');
+            if (data.hasOwnProperty('rewardValue')) {
+                obj['rewardValue'] = ApiClient.convertToType(data['rewardValue'], 'Number');
             }
             if (data.hasOwnProperty('rewardType')) {
                 obj['rewardType'] = ApiClient.convertToType(data['rewardType'], 'String');
@@ -127,15 +87,15 @@ RewardReducedAllOf.prototype['rewardRank'] = undefined;
 
 /**
  * The name of a reward
- * @member {String} rewardName
+ * @member {String} name
  */
-RewardReducedAllOf.prototype['rewardName'] = undefined;
+RewardReducedAllOf.prototype['name'] = undefined;
 
 /**
  * Numerical value of the reward that will be issued based on the reward type
- * @member {Number} value
+ * @member {Number} rewardValue
  */
-RewardReducedAllOf.prototype['value'] = undefined;
+RewardReducedAllOf.prototype['rewardValue'] = undefined;
 
 /**
  * Reward Type key

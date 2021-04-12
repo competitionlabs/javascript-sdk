@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -12,12 +12,12 @@
  */
 
 import ApiClient from '../ApiClient';
-import EventMetadataRequest from './EventMetadataRequest';
+import CustomFieldReduced from './CustomFieldReduced';
 
 /**
  * The CreateEventRequest model module.
  * @module model/CreateEventRequest
- * @version 1.0.5
+ * @version 1.0.0
  */
 class CreateEventRequest {
     /**
@@ -45,50 +45,6 @@ class CreateEventRequest {
         obj['entityRefId'] = entityRefId;
         obj['sourceValue'] = sourceValue;
         obj['transactionTimestamp'] = transactionTimestamp;
-    }
-
-    /**
-    * Constructs a full object with all available fields.
-    */
-    model(){
-        var obj = {};
-
-        obj['memberRefId'] = null;
-        obj['action'] = null;
-        obj['batchId'] = null;
-        obj['entityRefId'] = null;
-        obj['sourceValue'] = null;
-        obj['transactionTimestamp'] = null;
-        obj['metadata'] = [new EventMetadataRequest().model()];
-
-        return obj;
-    }
-
-    /**
-    * Constructs a full object Map for all available fields.
-    */
-    modelMap(){
-        var obj = {
-            "fields": {},
-            "requiredFields": {}
-        };
-
-        obj["fields"]['memberRefId'] = { "type": 'String', "system": false };
-        obj["fields"]['action'] = { "type": 'String', "system": false };
-        obj["fields"]['batchId'] = { "type": 'String', "system": false };
-        obj["fields"]['entityRefId'] = { "type": 'String', "system": false };
-        obj["fields"]['sourceValue'] = { "type": 'Number', "system": false };
-        obj["fields"]['transactionTimestamp'] = { "type": 'Date', "system": false };
-        obj["fields"]['metadata'] = [new EventMetadataRequest().modelMap()];
-
-        
-        obj["requiredFields"]['memberRefId'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['action'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['entityRefId'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['sourceValue'] = { "type": 'Number', "system": false };
-        obj["requiredFields"]['transactionTimestamp'] = { "type": 'Date', "system": false };
-
-        return obj;
     }
 
     /**
@@ -121,7 +77,13 @@ class CreateEventRequest {
                 obj['transactionTimestamp'] = ApiClient.convertToType(data['transactionTimestamp'], 'Date');
             }
             if (data.hasOwnProperty('metadata')) {
-                obj['metadata'] = ApiClient.convertToType(data['metadata'], [EventMetadataRequest]);
+                obj['metadata'] = ApiClient.convertToType(data['metadata'], {'String': Object});
+            }
+            if (data.hasOwnProperty('customFields')) {
+                obj['customFields'] = ApiClient.convertToType(data['customFields'], [CustomFieldReduced]);
+            }
+            if (data.hasOwnProperty('tags')) {
+                obj['tags'] = ApiClient.convertToType(data['tags'], ['String']);
             }
         }
         return obj;
@@ -167,9 +129,21 @@ CreateEventRequest.prototype['sourceValue'] = undefined;
 CreateEventRequest.prototype['transactionTimestamp'] = undefined;
 
 /**
- * @member {Array.<module:model/EventMetadataRequest>} metadata
+ * Event metadata map.
+ * @member {Object.<String, Object>} metadata
  */
 CreateEventRequest.prototype['metadata'] = undefined;
+
+/**
+ * @member {Array.<module:model/CustomFieldReduced>} customFields
+ */
+CreateEventRequest.prototype['customFields'] = undefined;
+
+/**
+ * A list of Strings of groups that the tag belongs to
+ * @member {Array.<String>} tags
+ */
+CreateEventRequest.prototype['tags'] = undefined;
 
 
 

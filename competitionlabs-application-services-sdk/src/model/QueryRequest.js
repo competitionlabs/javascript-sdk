@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -21,7 +21,7 @@ import RangeQuery from './RangeQuery';
 /**
  * The QueryRequest model module.
  * @module model/QueryRequest
- * @version 1.0.5
+ * @version 1.0.0
  */
 class QueryRequest {
     /**
@@ -39,65 +39,6 @@ class QueryRequest {
      * Only for internal use.
      */
     static initialize(obj) { 
-    }
-
-    /**
-    * Constructs a full object with all available fields.
-    */
-    model(){
-        var obj = {};
-
-        obj['must'] = [new QueryMultiple().model()];
-        obj['mustNot'] = [new QueryMultiple().model()];
-        obj['should'] = [new QueryMultiple().model()];
-        obj['gte'] = [new QuerySingle().model()];
-        obj['lte'] = [new QuerySingle().model()];
-        obj['gt'] = [new QuerySingle().model()];
-        obj['lt'] = [new QuerySingle().model()];
-        obj['range'] = [new RangeQuery().model()];
-        obj['sortBy'] = [new QuerySortBy().model()];
-        obj['multiFields'] = [new QueryMultipleFields().model()];
-        obj['includeFields'] = [null];
-        obj['hasValue'] = [null];
-        obj['hasNoValue'] = [null];
-        obj['shouldMatch'] = null;
-        obj['skip'] = null;
-        obj['limit'] = null;
-        obj['isCountQuery'] = null;
-
-        return obj;
-    }
-
-    /**
-    * Constructs a full object Map for all available fields.
-    */
-    modelMap(){
-        var obj = {
-            "fields": {},
-            "requiredFields": {}
-        };
-
-        obj["fields"]['must'] = [new QueryMultiple().modelMap()];
-        obj["fields"]['mustNot'] = [new QueryMultiple().modelMap()];
-        obj["fields"]['should'] = [new QueryMultiple().modelMap()];
-        obj["fields"]['gte'] = [new QuerySingle().modelMap()];
-        obj["fields"]['lte'] = [new QuerySingle().modelMap()];
-        obj["fields"]['gt'] = [new QuerySingle().modelMap()];
-        obj["fields"]['lt'] = [new QuerySingle().modelMap()];
-        obj["fields"]['range'] = [new RangeQuery().modelMap()];
-        obj["fields"]['sortBy'] = [new QuerySortBy().modelMap()];
-        obj["fields"]['multiFields'] = [new QueryMultipleFields().modelMap()];
-        obj["fields"]['includeFields'] = [{ "type": 'String', "system": false }];
-        obj["fields"]['hasValue'] = [{ "type": 'String', "system": false }];
-        obj["fields"]['hasNoValue'] = [{ "type": 'String', "system": false }];
-        obj["fields"]['shouldMatch'] = { "type": 'Number', "system": false };
-        obj["fields"]['skip'] = { "type": 'Number', "system": false };
-        obj["fields"]['limit'] = { "type": 'Number', "system": false };
-        obj["fields"]['isCountQuery'] = { "type": 'Boolean', "system": false };
-
-        
-
-        return obj;
     }
 
     /**
@@ -159,8 +100,8 @@ class QueryRequest {
             if (data.hasOwnProperty('limit')) {
                 obj['limit'] = ApiClient.convertToType(data['limit'], 'Number');
             }
-            if (data.hasOwnProperty('isCountQuery')) {
-                obj['isCountQuery'] = ApiClient.convertToType(data['isCountQuery'], 'Boolean');
+            if (data.hasOwnProperty('constraints')) {
+                obj['constraints'] = ApiClient.convertToType(data['constraints'], ['String']);
             }
         }
         return obj;
@@ -256,10 +197,10 @@ QueryRequest.prototype['skip'] = undefined;
 QueryRequest.prototype['limit'] = undefined;
 
 /**
- * Whether this query requires a count of records found only
- * @member {Boolean} isCountQuery
+ * Additional constraints
+ * @member {Array.<String>} constraints
  */
-QueryRequest.prototype['isCountQuery'] = undefined;
+QueryRequest.prototype['constraints'] = undefined;
 
 
 

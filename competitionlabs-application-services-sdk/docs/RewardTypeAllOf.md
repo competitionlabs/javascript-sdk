@@ -1,4 +1,4 @@
-# @CompetitionlabsApplicationServicesSdk.RewardTypeAllOf
+# CompetitionLabsApplicationServices.RewardTypeAllOf
 
 ## Properties
 
@@ -8,8 +8,7 @@ Name | Type | Description | Notes
 **description** | **String** | The description of a reward type | [optional] 
 **key** | **String** | A unique key that represents the reward type | 
 **unitOfMeasureType** | [**UnitOfMeasureType**](UnitOfMeasureType.md) |  | 
-**system** | **Boolean** | A boolean value (true/false) that represents the Reward type state. A system reserved entry (set to true) cannot be deleted. | 
-**metadata** | [**[Metadata]**](Metadata.md) |  | [optional] 
-**providers** | **String** | The providers of the reward type | [optional] 
+**translations** | **[Object]** |  | [optional] 
+**constraints** | **[String]** | Additional constraints, if the value is present it means the | 
 
 

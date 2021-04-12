@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -14,17 +14,20 @@
 import ApiClient from '../ApiClient';
 import CreateConnectionRequest from './CreateConnectionRequest';
 import CreateKafkaConnectionRequestAllOf from './CreateKafkaConnectionRequestAllOf';
+import CreateOptParamModels from './CreateOptParamModels';
+import Metadata from './Metadata';
 
 /**
  * The CreateKafkaConnectionRequest model module.
  * @module model/CreateKafkaConnectionRequest
- * @version 1.0.5
+ * @version 1.0.0
  */
 class CreateKafkaConnectionRequest {
     /**
      * Constructs a new <code>CreateKafkaConnectionRequest</code>.
      * @alias module:model/CreateKafkaConnectionRequest
      * @implements module:model/CreateConnectionRequest
+     * @implements module:model/CreateOptParamModels
      * @implements module:model/CreateKafkaConnectionRequestAllOf
      * @param objectType {String} The type of consumer to create like Kafka, RabbitMQ or SQS
      * @param name {String} The name of the consumer
@@ -34,7 +37,7 @@ class CreateKafkaConnectionRequest {
      * @param topic {String} Topic name
      */
     constructor(objectType, name, brokers, transformerId, groupId, topic) { 
-        CreateConnectionRequest.initialize(this, objectType);CreateKafkaConnectionRequestAllOf.initialize(this, name, brokers, transformerId, groupId, topic);
+        CreateConnectionRequest.initialize(this, objectType);CreateOptParamModels.initialize(this);CreateKafkaConnectionRequestAllOf.initialize(this, name, brokers, transformerId, groupId, topic);
         CreateKafkaConnectionRequest.initialize(this, objectType, name, brokers, transformerId, groupId, topic);
     }
 
@@ -53,49 +56,6 @@ class CreateKafkaConnectionRequest {
     }
 
     /**
-    * Constructs a full object with all available fields.
-    */
-    model(){
-        var obj = {};
-
-        obj['objectType'] = null;
-        obj['name'] = null;
-        obj['brokers'] = null;
-        obj['transformerId'] = null;
-        obj['groupId'] = null;
-        obj['topic'] = null;
-
-        return obj;
-    }
-
-    /**
-    * Constructs a full object Map for all available fields.
-    */
-    modelMap(){
-        var obj = {
-            "fields": {},
-            "requiredFields": {}
-        };
-
-        obj["fields"]['objectType'] = { "type": 'String', "system": false };
-        obj["fields"]['name'] = { "type": 'String', "system": false };
-        obj["fields"]['brokers'] = { "type": 'String', "system": false };
-        obj["fields"]['transformerId'] = { "type": 'String', "system": false };
-        obj["fields"]['groupId'] = { "type": 'String', "system": false };
-        obj["fields"]['topic'] = { "type": 'String', "system": false };
-
-        
-        obj["requiredFields"]['objectType'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['name'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['brokers'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['transformerId'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['groupId'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['topic'] = { "type": 'String', "system": false };
-
-        return obj;
-    }
-
-    /**
      * Constructs a <code>CreateKafkaConnectionRequest</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
@@ -106,10 +66,20 @@ class CreateKafkaConnectionRequest {
         if (data) {
             obj = obj || new CreateKafkaConnectionRequest();
             CreateConnectionRequest.constructFromObject(data, obj);
+            CreateOptParamModels.constructFromObject(data, obj);
             CreateKafkaConnectionRequestAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('objectType')) {
                 obj['objectType'] = ApiClient.convertToType(data['objectType'], 'String');
+            }
+            if (data.hasOwnProperty('customFields')) {
+                obj['customFields'] = ApiClient.convertToType(data['customFields'], ['String']);
+            }
+            if (data.hasOwnProperty('tags')) {
+                obj['tags'] = ApiClient.convertToType(data['tags'], ['String']);
+            }
+            if (data.hasOwnProperty('metadata')) {
+                obj['metadata'] = ApiClient.convertToType(data['metadata'], [Metadata]);
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
@@ -138,6 +108,23 @@ class CreateKafkaConnectionRequest {
  * @member {String} objectType
  */
 CreateKafkaConnectionRequest.prototype['objectType'] = undefined;
+
+/**
+ * A list of id's used to add cutom fields
+ * @member {Array.<String>} customFields
+ */
+CreateKafkaConnectionRequest.prototype['customFields'] = undefined;
+
+/**
+ * A list of id's used to tag models
+ * @member {Array.<String>} tags
+ */
+CreateKafkaConnectionRequest.prototype['tags'] = undefined;
+
+/**
+ * @member {Array.<module:model/Metadata>} metadata
+ */
+CreateKafkaConnectionRequest.prototype['metadata'] = undefined;
 
 /**
  * The name of the consumer
@@ -176,6 +163,21 @@ CreateKafkaConnectionRequest.prototype['topic'] = undefined;
  * @member {String} objectType
  */
 CreateConnectionRequest.prototype['objectType'] = undefined;
+// Implement CreateOptParamModels interface:
+/**
+ * A list of id's used to add cutom fields
+ * @member {Array.<String>} customFields
+ */
+CreateOptParamModels.prototype['customFields'] = undefined;
+/**
+ * A list of id's used to tag models
+ * @member {Array.<String>} tags
+ */
+CreateOptParamModels.prototype['tags'] = undefined;
+/**
+ * @member {Array.<module:model/Metadata>} metadata
+ */
+CreateOptParamModels.prototype['metadata'] = undefined;
 // Implement CreateKafkaConnectionRequestAllOf interface:
 /**
  * The name of the consumer

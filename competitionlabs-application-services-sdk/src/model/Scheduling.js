@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -17,7 +17,7 @@ import ScheduleType from './ScheduleType';
 /**
  * The Scheduling model module.
  * @module model/Scheduling
- * @version 1.0.5
+ * @version 1.0.0
  */
 class Scheduling {
     /**
@@ -27,10 +27,11 @@ class Scheduling {
      * @param scheduleOccurrencesLimit {Number} A value indicating how many times it will be issued
      * @param every {Array.<Number>} 
      * @param startDate {Date} The start date and time of a schedule. ISO8601 timestamp
+     * @param constraints {Array.<String>} Additional constraints
      */
-    constructor(scheduleType, scheduleOccurrencesLimit, every, startDate) { 
+    constructor(scheduleType, scheduleOccurrencesLimit, every, startDate, constraints) { 
         
-        Scheduling.initialize(this, scheduleType, scheduleOccurrencesLimit, every, startDate);
+        Scheduling.initialize(this, scheduleType, scheduleOccurrencesLimit, every, startDate, constraints);
     }
 
     /**
@@ -38,52 +39,12 @@ class Scheduling {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, scheduleType, scheduleOccurrencesLimit, every, startDate) { 
+    static initialize(obj, scheduleType, scheduleOccurrencesLimit, every, startDate, constraints) { 
         obj['scheduleType'] = scheduleType;
         obj['scheduleOccurrencesLimit'] = scheduleOccurrencesLimit;
         obj['every'] = every;
         obj['startDate'] = startDate;
-    }
-
-    /**
-    * Constructs a full object with all available fields.
-    */
-    model(){
-        var obj = {};
-
-        obj['scheduleType'] = new ScheduleType().model();
-        obj['scheduleOccurrencesLimit'] = null;
-        obj['every'] = [null];
-        obj['startDate'] = null;
-        obj['endDate'] = null;
-        obj['onlyAggregateOnActiveDays'] = null;
-
-        return obj;
-    }
-
-    /**
-    * Constructs a full object Map for all available fields.
-    */
-    modelMap(){
-        var obj = {
-            "fields": {},
-            "requiredFields": {}
-        };
-
-        obj["fields"]['scheduleType'] = new ScheduleType().modelMap();
-        obj["fields"]['scheduleOccurrencesLimit'] = { "type": 'Number', "system": false };
-        obj["fields"]['every'] = [{ "type": 'Number', "system": false }];
-        obj["fields"]['startDate'] = { "type": 'Date', "system": false };
-        obj["fields"]['endDate'] = { "type": 'Date', "system": false };
-        obj["fields"]['onlyAggregateOnActiveDays'] = { "type": 'Boolean', "system": false };
-
-        
-        obj["requiredFields"]['scheduleType'] = new ScheduleType().modelMap();
-        obj["requiredFields"]['scheduleOccurrencesLimit'] = { "type": 'Number', "system": false };
-        obj["requiredFields"]['every'] = [{ "type": 'Number', "system": false }];
-        obj["requiredFields"]['startDate'] = { "type": 'Date', "system": false };
-
-        return obj;
+        obj['constraints'] = constraints;
     }
 
     /**
@@ -112,8 +73,8 @@ class Scheduling {
             if (data.hasOwnProperty('endDate')) {
                 obj['endDate'] = ApiClient.convertToType(data['endDate'], 'Date');
             }
-            if (data.hasOwnProperty('onlyAggregateOnActiveDays')) {
-                obj['onlyAggregateOnActiveDays'] = ApiClient.convertToType(data['onlyAggregateOnActiveDays'], 'Boolean');
+            if (data.hasOwnProperty('constraints')) {
+                obj['constraints'] = ApiClient.convertToType(data['constraints'], ['String']);
             }
         }
         return obj;
@@ -151,9 +112,10 @@ Scheduling.prototype['startDate'] = undefined;
 Scheduling.prototype['endDate'] = undefined;
 
 /**
- * @member {Boolean} onlyAggregateOnActiveDays
+ * Additional constraints
+ * @member {Array.<String>} constraints
  */
-Scheduling.prototype['onlyAggregateOnActiveDays'] = undefined;
+Scheduling.prototype['constraints'] = undefined;
 
 
 

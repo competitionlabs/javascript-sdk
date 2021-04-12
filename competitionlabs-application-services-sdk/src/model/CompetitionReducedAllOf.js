@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -20,7 +20,7 @@ import ProductReduced from './ProductReduced';
 /**
  * The CompetitionReducedAllOf model module.
  * @module model/CompetitionReducedAllOf
- * @version 1.0.5
+ * @version 1.0.0
  */
 class CompetitionReducedAllOf {
     /**
@@ -29,16 +29,16 @@ class CompetitionReducedAllOf {
      * @param competitionType {module:model/CompetitionType} 
      * @param numberOfRounds {Number} Number of rounds to be played in a competition
      * @param name {String} A name or a name of a competition. Can be translated
-     * @param optinRequiredForEntrants {Boolean} If True, members must Opt in before they can acquire points in the contest
      * @param status {module:model/CompetitionStatus} 
      * @param statusCode {Number} The code of the competition
      * @param products {Array.<module:model/ProductReduced>} 
      * @param scheduledStartDate {Date} ISO8601 timestamp for when a Competition should start. All records are stored in UTC time zone
      * @param scheduledEndDate {Date} ISO8601 timestamp for when a Competition should end. All records are stored in UTC time zone
+     * @param constraints {Array.<String>} Additional constraints
      */
-    constructor(competitionType, numberOfRounds, name, optinRequiredForEntrants, status, statusCode, products, scheduledStartDate, scheduledEndDate) { 
+    constructor(competitionType, numberOfRounds, name, status, statusCode, products, scheduledStartDate, scheduledEndDate, constraints) { 
         
-        CompetitionReducedAllOf.initialize(this, competitionType, numberOfRounds, name, optinRequiredForEntrants, status, statusCode, products, scheduledStartDate, scheduledEndDate);
+        CompetitionReducedAllOf.initialize(this, competitionType, numberOfRounds, name, status, statusCode, products, scheduledStartDate, scheduledEndDate, constraints);
     }
 
     /**
@@ -46,74 +46,16 @@ class CompetitionReducedAllOf {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, competitionType, numberOfRounds, name, optinRequiredForEntrants, status, statusCode, products, scheduledStartDate, scheduledEndDate) { 
+    static initialize(obj, competitionType, numberOfRounds, name, status, statusCode, products, scheduledStartDate, scheduledEndDate, constraints) { 
         obj['competitionType'] = competitionType;
         obj['numberOfRounds'] = numberOfRounds;
         obj['name'] = name;
-        obj['optinRequiredForEntrants'] = optinRequiredForEntrants;
         obj['status'] = status;
         obj['statusCode'] = statusCode;
         obj['products'] = products;
         obj['scheduledStartDate'] = scheduledStartDate;
         obj['scheduledEndDate'] = scheduledEndDate;
-    }
-
-    /**
-    * Constructs a full object with all available fields.
-    */
-    model(){
-        var obj = {};
-
-        obj['competitionType'] = new CompetitionType().model();
-        obj['numberOfRounds'] = null;
-        obj['name'] = null;
-        obj['includeEntrantsWhere'] = new ComplexFilter().model();
-        obj['optinRequiredForEntrants'] = null;
-        obj['status'] = new CompetitionStatus().model();
-        obj['statusCode'] = null;
-        obj['products'] = [new ProductReduced().model()];
-        obj['scheduledStartDate'] = null;
-        obj['scheduledEndDate'] = null;
-        obj['actualStartDate'] = null;
-        obj['actualEndDate'] = null;
-
-        return obj;
-    }
-
-    /**
-    * Constructs a full object Map for all available fields.
-    */
-    modelMap(){
-        var obj = {
-            "fields": {},
-            "requiredFields": {}
-        };
-
-        obj["fields"]['competitionType'] = new CompetitionType().modelMap();
-        obj["fields"]['numberOfRounds'] = { "type": 'Number', "system": false };
-        obj["fields"]['name'] = { "type": 'String', "system": false };
-        obj["fields"]['includeEntrantsWhere'] = new ComplexFilter().modelMap();
-        obj["fields"]['optinRequiredForEntrants'] = { "type": 'Boolean', "system": false };
-        obj["fields"]['status'] = new CompetitionStatus().modelMap();
-        obj["fields"]['statusCode'] = { "type": 'Number', "system": false };
-        obj["fields"]['products'] = [new ProductReduced().modelMap()];
-        obj["fields"]['scheduledStartDate'] = { "type": 'Date', "system": false };
-        obj["fields"]['scheduledEndDate'] = { "type": 'Date', "system": false };
-        obj["fields"]['actualStartDate'] = { "type": 'Date', "system": false };
-        obj["fields"]['actualEndDate'] = { "type": 'Date', "system": false };
-
-        
-        obj["requiredFields"]['competitionType'] = new CompetitionType().modelMap();
-        obj["requiredFields"]['numberOfRounds'] = { "type": 'Number', "system": false };
-        obj["requiredFields"]['name'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['optinRequiredForEntrants'] = { "type": 'Boolean', "system": false };
-        obj["requiredFields"]['status'] = new CompetitionStatus().modelMap();
-        obj["requiredFields"]['statusCode'] = { "type": 'Number', "system": false };
-        obj["requiredFields"]['products'] = [new ProductReduced().modelMap()];
-        obj["requiredFields"]['scheduledStartDate'] = { "type": 'Date', "system": false };
-        obj["requiredFields"]['scheduledEndDate'] = { "type": 'Date', "system": false };
-
-        return obj;
+        obj['constraints'] = constraints;
     }
 
     /**
@@ -139,9 +81,6 @@ class CompetitionReducedAllOf {
             if (data.hasOwnProperty('includeEntrantsWhere')) {
                 obj['includeEntrantsWhere'] = ComplexFilter.constructFromObject(data['includeEntrantsWhere']);
             }
-            if (data.hasOwnProperty('optinRequiredForEntrants')) {
-                obj['optinRequiredForEntrants'] = ApiClient.convertToType(data['optinRequiredForEntrants'], 'Boolean');
-            }
             if (data.hasOwnProperty('status')) {
                 obj['status'] = CompetitionStatus.constructFromObject(data['status']);
             }
@@ -162,6 +101,12 @@ class CompetitionReducedAllOf {
             }
             if (data.hasOwnProperty('actualEndDate')) {
                 obj['actualEndDate'] = ApiClient.convertToType(data['actualEndDate'], 'Date');
+            }
+            if (data.hasOwnProperty('tags')) {
+                obj['tags'] = ApiClient.convertToType(data['tags'], ['String']);
+            }
+            if (data.hasOwnProperty('constraints')) {
+                obj['constraints'] = ApiClient.convertToType(data['constraints'], ['String']);
             }
         }
         return obj;
@@ -191,12 +136,6 @@ CompetitionReducedAllOf.prototype['name'] = undefined;
  * @member {module:model/ComplexFilter} includeEntrantsWhere
  */
 CompetitionReducedAllOf.prototype['includeEntrantsWhere'] = undefined;
-
-/**
- * If True, members must Opt in before they can acquire points in the contest
- * @member {Boolean} optinRequiredForEntrants
- */
-CompetitionReducedAllOf.prototype['optinRequiredForEntrants'] = undefined;
 
 /**
  * @member {module:model/CompetitionStatus} status
@@ -237,6 +176,18 @@ CompetitionReducedAllOf.prototype['actualStartDate'] = undefined;
  * @member {Date} actualEndDate
  */
 CompetitionReducedAllOf.prototype['actualEndDate'] = undefined;
+
+/**
+ * A list of id's used to tag
+ * @member {Array.<String>} tags
+ */
+CompetitionReducedAllOf.prototype['tags'] = undefined;
+
+/**
+ * Additional constraints
+ * @member {Array.<String>} constraints
+ */
+CompetitionReducedAllOf.prototype['constraints'] = undefined;
 
 
 

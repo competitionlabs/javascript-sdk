@@ -1,4 +1,4 @@
-# @CompetitionlabsApplicationServicesSdk.EntrantAction
+# CompetitionLabsApplicationServices.EntrantAction
 
 ## Enum
 

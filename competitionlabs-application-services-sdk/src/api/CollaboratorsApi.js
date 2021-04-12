@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -21,7 +21,7 @@ import UpdateCollaboratorRequest from '../model/UpdateCollaboratorRequest';
 /**
 * Collaborators service.
 * @module api/CollaboratorsApi
-* @version 1.0.5
+* @version 1.0.0
 */
 export default class CollaboratorsApi {
 
@@ -47,27 +47,21 @@ export default class CollaboratorsApi {
 
     /**
      * Create a new Collaborator in the CompetitionLabs
-     * @param {String} spaceName This is the space name which is linked to the account
      * @param {module:model/CreateCollaboratorRequest} body Create a Collaborator in the CompetitionLabs system
      * @param {Object} opts Optional parameters
      * @param {String} opts.X_API_KEY The admin API Key generated from CompetitionLabs back office
      * @param {module:api/CollaboratorsApi~createCollaboratorsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ApiResponse}
      */
-    createCollaborators(spaceName, body, opts, callback) {
+    createCollaborators(body, opts, callback) {
       opts = opts || {};
       let postBody = body;
-      // verify the required parameter 'spaceName' is set
-      if (spaceName === undefined || spaceName === null) {
-        throw new Error("Missing the required parameter 'spaceName' when calling createCollaborators");
-      }
       // verify the required parameter 'body' is set
       if (body === undefined || body === null) {
         throw new Error("Missing the required parameter 'body' when calling createCollaborators");
       }
 
       let pathParams = {
-        'spaceName': spaceName
       };
       let queryParams = {
       };
@@ -77,7 +71,7 @@ export default class CollaboratorsApi {
       let formParams = {
       };
 
-      let authNames = ['adminApiKey'];
+      let authNames = ['AdminApiKey', 'OAuth2'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = ApiResponse;
@@ -91,7 +85,7 @@ export default class CollaboratorsApi {
       }
 
       return this.apiClient.callApi(
-        '/collaborators/{spaceName}', 'POST',
+        '/collaborators', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, basePath, callback
       );
@@ -107,27 +101,21 @@ export default class CollaboratorsApi {
 
     /**
      * Delete the Collaborator for a given identifier specified
-     * @param {String} spaceName This is the space name which is linked to the account
      * @param {String} id Unique identifier of the resource
      * @param {Object} opts Optional parameters
      * @param {String} opts.X_API_KEY The admin API Key generated from CompetitionLabs back office
      * @param {module:api/CollaboratorsApi~deleteCollaboratorsByIdCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ApiResponse}
      */
-    deleteCollaboratorsById(spaceName, id, opts, callback) {
+    deleteCollaboratorsById(id, opts, callback) {
       opts = opts || {};
       let postBody = null;
-      // verify the required parameter 'spaceName' is set
-      if (spaceName === undefined || spaceName === null) {
-        throw new Error("Missing the required parameter 'spaceName' when calling deleteCollaboratorsById");
-      }
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
         throw new Error("Missing the required parameter 'id' when calling deleteCollaboratorsById");
       }
 
       let pathParams = {
-        'spaceName': spaceName,
         'id': id
       };
       let queryParams = {
@@ -138,7 +126,7 @@ export default class CollaboratorsApi {
       let formParams = {
       };
 
-      let authNames = ['adminApiKey'];
+      let authNames = ['AdminApiKey', 'OAuth2'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = ApiResponse;
@@ -152,7 +140,7 @@ export default class CollaboratorsApi {
       }
 
       return this.apiClient.callApi(
-        '/collaborators/{spaceName}/{id}', 'DELETE',
+        '/collaborators/{id}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, basePath, callback
       );
@@ -168,7 +156,6 @@ export default class CollaboratorsApi {
 
     /**
      * Returns a list of Collaborators. This assumes that Users have first been uploaded via a POST request or web console
-     * @param {String} spaceName This is the space name which is linked to the account
      * @param {Object} opts Optional parameters
      * @param {String} opts.X_API_KEY The admin API Key generated from CompetitionLabs back office
      * @param {Number} opts.limit Limit the returned total records found
@@ -176,16 +163,11 @@ export default class CollaboratorsApi {
      * @param {module:api/CollaboratorsApi~getCollaboratorsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/CollaboratorResponse}
      */
-    getCollaborators(spaceName, opts, callback) {
+    getCollaborators(opts, callback) {
       opts = opts || {};
       let postBody = null;
-      // verify the required parameter 'spaceName' is set
-      if (spaceName === undefined || spaceName === null) {
-        throw new Error("Missing the required parameter 'spaceName' when calling getCollaborators");
-      }
 
       let pathParams = {
-        'spaceName': spaceName
       };
       let queryParams = {
         '_limit': opts['limit'],
@@ -197,7 +179,7 @@ export default class CollaboratorsApi {
       let formParams = {
       };
 
-      let authNames = ['adminApiKey'];
+      let authNames = ['AdminApiKey', 'OAuth2'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = CollaboratorResponse;
@@ -211,7 +193,7 @@ export default class CollaboratorsApi {
       }
 
       return this.apiClient.callApi(
-        '/collaborators/{spaceName}', 'GET',
+        '/collaborators', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, basePath, callback
       );
@@ -227,27 +209,21 @@ export default class CollaboratorsApi {
 
     /**
      * Returns a Collaborator by identifier requested. This assumes that Users have first been uploaded via a POST request or web console
-     * @param {String} spaceName This is the space name which is linked to the account
      * @param {String} id Unique identifier of the resource
      * @param {Object} opts Optional parameters
      * @param {String} opts.X_API_KEY The admin API Key generated from CompetitionLabs back office
      * @param {module:api/CollaboratorsApi~getCollaboratorsByIdCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/CollaboratorResponse}
      */
-    getCollaboratorsById(spaceName, id, opts, callback) {
+    getCollaboratorsById(id, opts, callback) {
       opts = opts || {};
       let postBody = null;
-      // verify the required parameter 'spaceName' is set
-      if (spaceName === undefined || spaceName === null) {
-        throw new Error("Missing the required parameter 'spaceName' when calling getCollaboratorsById");
-      }
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
         throw new Error("Missing the required parameter 'id' when calling getCollaboratorsById");
       }
 
       let pathParams = {
-        'spaceName': spaceName,
         'id': id
       };
       let queryParams = {
@@ -258,7 +234,7 @@ export default class CollaboratorsApi {
       let formParams = {
       };
 
-      let authNames = ['adminApiKey'];
+      let authNames = ['AdminApiKey', 'OAuth2'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = CollaboratorResponse;
@@ -272,7 +248,7 @@ export default class CollaboratorsApi {
       }
 
       return this.apiClient.callApi(
-        '/collaborators/{spaceName}/{id}', 'GET',
+        '/collaborators/{id}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, basePath, callback
       );
@@ -289,27 +265,21 @@ export default class CollaboratorsApi {
     /**
      * NOT AVAILABLE IN CURRENT RELEASE
      * Update an existing Collaborator in the CompetitionLabs system
-     * @param {String} spaceName This is the space name which is linked to the account
      * @param {module:model/UpdateCollaboratorRequest} body Update a Collaborator in the CompetitionLabs system. * Any Put body Parameters that are excluded in the Request body field will be considered as empty and updated with an empty field
      * @param {Object} opts Optional parameters
      * @param {String} opts.X_API_KEY The admin API Key generated from CompetitionLabs back office
      * @param {module:api/CollaboratorsApi~updateCollaboratorsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ApiResponse}
      */
-    updateCollaborators(spaceName, body, opts, callback) {
+    updateCollaborators(body, opts, callback) {
       opts = opts || {};
       let postBody = body;
-      // verify the required parameter 'spaceName' is set
-      if (spaceName === undefined || spaceName === null) {
-        throw new Error("Missing the required parameter 'spaceName' when calling updateCollaborators");
-      }
       // verify the required parameter 'body' is set
       if (body === undefined || body === null) {
         throw new Error("Missing the required parameter 'body' when calling updateCollaborators");
       }
 
       let pathParams = {
-        'spaceName': spaceName
       };
       let queryParams = {
       };
@@ -319,7 +289,7 @@ export default class CollaboratorsApi {
       let formParams = {
       };
 
-      let authNames = ['adminApiKey'];
+      let authNames = ['AdminApiKey', 'OAuth2'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = ApiResponse;
@@ -333,7 +303,7 @@ export default class CollaboratorsApi {
       }
 
       return this.apiClient.callApi(
-        '/collaborators/{spaceName}', 'PUT',
+        '/collaborators', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, basePath, callback
       );

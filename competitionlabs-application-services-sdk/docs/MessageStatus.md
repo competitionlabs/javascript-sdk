@@ -1,4 +1,4 @@
-# @CompetitionlabsApplicationServicesSdk.MessageStatus
+# CompetitionLabsApplicationServices.MessageStatus
 
 ## Enum
 

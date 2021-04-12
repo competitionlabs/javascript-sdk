@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -20,7 +20,7 @@ import UpdateModelDefault from './UpdateModelDefault';
 /**
  * The UpdateCustomFieldRequest model module.
  * @module model/UpdateCustomFieldRequest
- * @version 1.0.5
+ * @version 1.0.0
  */
 class UpdateCustomFieldRequest {
     /**
@@ -29,10 +29,13 @@ class UpdateCustomFieldRequest {
      * @implements module:model/UpdateModelDefault
      * @implements module:model/UpdateCustomFieldRequestAllOf
      * @param id {String} A unique system generated identifier
+     * @param name {String} The name of a Custom field
+     * @param fieldType {module:model/FieldType} 
+     * @param appliesTo {module:model/AppliesTo} 
      */
-    constructor(id) { 
-        UpdateModelDefault.initialize(this, id);UpdateCustomFieldRequestAllOf.initialize(this);
-        UpdateCustomFieldRequest.initialize(this, id);
+    constructor(id, name, fieldType, appliesTo) { 
+        UpdateModelDefault.initialize(this, id);UpdateCustomFieldRequestAllOf.initialize(this, name, fieldType, appliesTo);
+        UpdateCustomFieldRequest.initialize(this, id, name, fieldType, appliesTo);
     }
 
     /**
@@ -40,44 +43,11 @@ class UpdateCustomFieldRequest {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, id) { 
+    static initialize(obj, id, name, fieldType, appliesTo) { 
         obj['id'] = id;
-    }
-
-    /**
-    * Constructs a full object with all available fields.
-    */
-    model(){
-        var obj = {};
-
-        obj['id'] = null;
-        obj['name'] = null;
-        obj['description'] = null;
-        obj['fieldType'] = new FieldType().model();
-        obj['appliesTo'] = new AppliesTo().model();
-
-        return obj;
-    }
-
-    /**
-    * Constructs a full object Map for all available fields.
-    */
-    modelMap(){
-        var obj = {
-            "fields": {},
-            "requiredFields": {}
-        };
-
-        obj["fields"]['id'] = { "type": 'String', "system": true };
-        obj["fields"]['name'] = { "type": 'String', "system": false };
-        obj["fields"]['description'] = { "type": 'String', "system": false };
-        obj["fields"]['fieldType'] = new FieldType().modelMap();
-        obj["fields"]['appliesTo'] = new AppliesTo().modelMap();
-
-        
-        obj["requiredFields"]['id'] = { "type": 'String', "system": true };
-
-        return obj;
+        obj['name'] = name;
+        obj['fieldType'] = fieldType;
+        obj['appliesTo'] = appliesTo;
     }
 
     /**

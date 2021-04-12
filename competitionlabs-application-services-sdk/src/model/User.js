@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -13,29 +13,34 @@
 
 import ApiClient from '../ApiClient';
 import Contact from './Contact';
+import CustomFieldReduced from './CustomFieldReduced';
+import Metadata from './Metadata';
+import OptParamModels from './OptParamModels';
+import TagsReduced from './TagsReduced';
 import UserAllOf from './UserAllOf';
 import UserModelDefault from './UserModelDefault';
 
 /**
  * The User model module.
  * @module model/User
- * @version 1.0.5
+ * @version 1.0.0
  */
 class User {
     /**
      * Constructs a new <code>User</code>.
      * @alias module:model/User
      * @implements module:model/UserModelDefault
+     * @implements module:model/OptParamModels
      * @implements module:model/UserAllOf
      * @param objectType {String} 
      * @param id {String} A unique system generated identifier
      * @param created {Date} ISO8601 timestamp for when a Model was created. All records are stored in UTC time zone
-     * @param tfaEnabled {Boolean} To enable two factor authentication
-     * @param emailVerified {Boolean} Is the email verified
+     * @param email {String} The email of the user to log in
+     * @param constraints {Array.<String>} Additional constraints
      */
-    constructor(objectType, id, created, tfaEnabled, emailVerified) { 
-        UserModelDefault.initialize(this, objectType, id, created);UserAllOf.initialize(this, tfaEnabled, emailVerified);
-        User.initialize(this, objectType, id, created, tfaEnabled, emailVerified);
+    constructor(objectType, id, created, email, constraints) { 
+        UserModelDefault.initialize(this, objectType, id, created);OptParamModels.initialize(this);UserAllOf.initialize(this, email, constraints);
+        User.initialize(this, objectType, id, created, email, constraints);
     }
 
     /**
@@ -43,60 +48,12 @@ class User {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, objectType, id, created, tfaEnabled, emailVerified) { 
+    static initialize(obj, objectType, id, created, email, constraints) { 
         obj['objectType'] = objectType;
         obj['id'] = id;
         obj['created'] = created;
-        obj['tfaEnabled'] = tfaEnabled;
-        obj['emailVerified'] = emailVerified;
-    }
-
-    /**
-    * Constructs a full object with all available fields.
-    */
-    model(){
-        var obj = {};
-
-        obj['objectType'] = null;
-        obj['id'] = null;
-        obj['created'] = null;
-        obj['firstName'] = null;
-        obj['lastName'] = null;
-        obj['tfaEnabled'] = null;
-        obj['email'] = null;
-        obj['contact'] = new Contact().model();
-        obj['emailVerified'] = null;
-
-        return obj;
-    }
-
-    /**
-    * Constructs a full object Map for all available fields.
-    */
-    modelMap(){
-        var obj = {
-            "fields": {},
-            "requiredFields": {}
-        };
-
-        obj["fields"]['objectType'] = { "type": 'String', "system": false };
-        obj["fields"]['id'] = { "type": 'String', "system": true };
-        obj["fields"]['created'] = { "type": 'Date', "system": true };
-        obj["fields"]['firstName'] = { "type": 'String', "system": false };
-        obj["fields"]['lastName'] = { "type": 'String', "system": false };
-        obj["fields"]['tfaEnabled'] = { "type": 'Boolean', "system": false };
-        obj["fields"]['email'] = { "type": 'String', "system": false };
-        obj["fields"]['contact'] = new Contact().modelMap();
-        obj["fields"]['emailVerified'] = { "type": 'Boolean', "system": false };
-
-        
-        obj["requiredFields"]['objectType'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['id'] = { "type": 'String', "system": true };
-        obj["requiredFields"]['created'] = { "type": 'Date', "system": true };
-        obj["requiredFields"]['tfaEnabled'] = { "type": 'Boolean', "system": false };
-        obj["requiredFields"]['emailVerified'] = { "type": 'Boolean', "system": false };
-
-        return obj;
+        obj['email'] = email;
+        obj['constraints'] = constraints;
     }
 
     /**
@@ -110,6 +67,7 @@ class User {
         if (data) {
             obj = obj || new User();
             UserModelDefault.constructFromObject(data, obj);
+            OptParamModels.constructFromObject(data, obj);
             UserAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('objectType')) {
@@ -121,14 +79,20 @@ class User {
             if (data.hasOwnProperty('created')) {
                 obj['created'] = ApiClient.convertToType(data['created'], 'Date');
             }
+            if (data.hasOwnProperty('customFields')) {
+                obj['customFields'] = ApiClient.convertToType(data['customFields'], [CustomFieldReduced]);
+            }
+            if (data.hasOwnProperty('tags')) {
+                obj['tags'] = ApiClient.convertToType(data['tags'], [TagsReduced]);
+            }
+            if (data.hasOwnProperty('metadata')) {
+                obj['metadata'] = ApiClient.convertToType(data['metadata'], [Metadata]);
+            }
             if (data.hasOwnProperty('firstName')) {
                 obj['firstName'] = ApiClient.convertToType(data['firstName'], 'String');
             }
             if (data.hasOwnProperty('lastName')) {
                 obj['lastName'] = ApiClient.convertToType(data['lastName'], 'String');
-            }
-            if (data.hasOwnProperty('tfaEnabled')) {
-                obj['tfaEnabled'] = ApiClient.convertToType(data['tfaEnabled'], 'Boolean');
             }
             if (data.hasOwnProperty('email')) {
                 obj['email'] = ApiClient.convertToType(data['email'], 'String');
@@ -136,8 +100,8 @@ class User {
             if (data.hasOwnProperty('contact')) {
                 obj['contact'] = Contact.constructFromObject(data['contact']);
             }
-            if (data.hasOwnProperty('emailVerified')) {
-                obj['emailVerified'] = ApiClient.convertToType(data['emailVerified'], 'Boolean');
+            if (data.hasOwnProperty('constraints')) {
+                obj['constraints'] = ApiClient.convertToType(data['constraints'], ['String']);
             }
         }
         return obj;
@@ -164,6 +128,22 @@ User.prototype['id'] = undefined;
 User.prototype['created'] = undefined;
 
 /**
+ * @member {Array.<module:model/CustomFieldReduced>} customFields
+ */
+User.prototype['customFields'] = undefined;
+
+/**
+ * A list of id's used to tag models
+ * @member {Array.<module:model/TagsReduced>} tags
+ */
+User.prototype['tags'] = undefined;
+
+/**
+ * @member {Array.<module:model/Metadata>} metadata
+ */
+User.prototype['metadata'] = undefined;
+
+/**
  * The Name of an individual
  * @member {String} firstName
  */
@@ -174,12 +154,6 @@ User.prototype['firstName'] = undefined;
  * @member {String} lastName
  */
 User.prototype['lastName'] = undefined;
-
-/**
- * To enable two factor authentication
- * @member {Boolean} tfaEnabled
- */
-User.prototype['tfaEnabled'] = undefined;
 
 /**
  * The email of the user to log in
@@ -193,10 +167,10 @@ User.prototype['email'] = undefined;
 User.prototype['contact'] = undefined;
 
 /**
- * Is the email verified
- * @member {Boolean} emailVerified
+ * Additional constraints
+ * @member {Array.<String>} constraints
  */
-User.prototype['emailVerified'] = undefined;
+User.prototype['constraints'] = undefined;
 
 
 // Implement UserModelDefault interface:
@@ -214,6 +188,20 @@ UserModelDefault.prototype['id'] = undefined;
  * @member {Date} created
  */
 UserModelDefault.prototype['created'] = undefined;
+// Implement OptParamModels interface:
+/**
+ * @member {Array.<module:model/CustomFieldReduced>} customFields
+ */
+OptParamModels.prototype['customFields'] = undefined;
+/**
+ * A list of id's used to tag models
+ * @member {Array.<module:model/TagsReduced>} tags
+ */
+OptParamModels.prototype['tags'] = undefined;
+/**
+ * @member {Array.<module:model/Metadata>} metadata
+ */
+OptParamModels.prototype['metadata'] = undefined;
 // Implement UserAllOf interface:
 /**
  * The Name of an individual
@@ -226,11 +214,6 @@ UserAllOf.prototype['firstName'] = undefined;
  */
 UserAllOf.prototype['lastName'] = undefined;
 /**
- * To enable two factor authentication
- * @member {Boolean} tfaEnabled
- */
-UserAllOf.prototype['tfaEnabled'] = undefined;
-/**
  * The email of the user to log in
  * @member {String} email
  */
@@ -240,10 +223,10 @@ UserAllOf.prototype['email'] = undefined;
  */
 UserAllOf.prototype['contact'] = undefined;
 /**
- * Is the email verified
- * @member {Boolean} emailVerified
+ * Additional constraints
+ * @member {Array.<String>} constraints
  */
-UserAllOf.prototype['emailVerified'] = undefined;
+UserAllOf.prototype['constraints'] = undefined;
 
 
 

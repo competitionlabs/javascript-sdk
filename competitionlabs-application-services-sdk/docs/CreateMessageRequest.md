@@ -1,15 +1,19 @@
-# @CompetitionlabsApplicationServicesSdk.CreateMessageRequest
+# CompetitionLabsApplicationServices.CreateMessageRequest
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**customFields** | **[String]** | A list of id&#39;s used to add cutom fields | [optional] 
+**tags** | **[String]** | A list of id&#39;s used to tag models | [optional] 
+**metadata** | [**[Metadata]**](Metadata.md) |  | [optional] 
 **memberGroup** | **[String]** | To which member groups the message will be sent | [optional] 
 **members** | **[String]** | A list of specified members to which the message will be sent | 
 **messageType** | [**MessageType**](MessageType.md) |  | 
 **subject** | **String** | The title of the message | 
 **body** | **String** | The context of the message | 
 **scheduling** | [**Scheduling**](Scheduling.md) |  | 
-**metadata** | [**[Metadata]**](Metadata.md) |  | [optional] 
+**translations** | **[Object]** |  | [optional] 
+**constraints** | **[String]** | Additional constraints, if the value is present it means the | 
 
 

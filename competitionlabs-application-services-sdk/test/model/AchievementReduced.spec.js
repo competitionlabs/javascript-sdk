@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.@CompetitionlabsJavascriptSdk);
+    factory(root.expect, root.CompetitionLabsApplicationServices);
   }
-}(this, function(expect, @CompetitionlabsJavascriptSdk) {
+}(this, function(expect, CompetitionLabsApplicationServices) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new @CompetitionlabsJavascriptSdk.AchievementReduced();
+    instance = new CompetitionLabsApplicationServices.AchievementReduced();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,49 +50,49 @@
   describe('AchievementReduced', function() {
     it('should create an instance of AchievementReduced', function() {
       // uncomment below and update the code to test AchievementReduced
-      //var instane = new @CompetitionlabsJavascriptSdk.AchievementReduced();
-      //expect(instance).to.be.a(@CompetitionlabsJavascriptSdk.AchievementReduced);
+      //var instane = new CompetitionLabsApplicationServices.AchievementReduced();
+      //expect(instance).to.be.a(CompetitionLabsApplicationServices.AchievementReduced);
     });
 
     it('should have the property id (base name: "id")', function() {
       // uncomment below and update the code to test the property id
-      //var instane = new @CompetitionlabsJavascriptSdk.AchievementReduced();
+      //var instance = new CompetitionLabsApplicationServices.AchievementReduced();
       //expect(instance).to.be();
     });
 
     it('should have the property spaceName (base name: "spaceName")', function() {
       // uncomment below and update the code to test the property spaceName
-      //var instane = new @CompetitionlabsJavascriptSdk.AchievementReduced();
+      //var instance = new CompetitionLabsApplicationServices.AchievementReduced();
       //expect(instance).to.be();
     });
 
     it('should have the property created (base name: "created")', function() {
       // uncomment below and update the code to test the property created
-      //var instane = new @CompetitionlabsJavascriptSdk.AchievementReduced();
+      //var instance = new CompetitionLabsApplicationServices.AchievementReduced();
       //expect(instance).to.be();
     });
 
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
-      //var instane = new @CompetitionlabsJavascriptSdk.AchievementReduced();
+      //var instance = new CompetitionLabsApplicationServices.AchievementReduced();
       //expect(instance).to.be();
     });
 
     it('should have the property achievementLiveStatus (base name: "achievementLiveStatus")', function() {
       // uncomment below and update the code to test the property achievementLiveStatus
-      //var instane = new @CompetitionlabsJavascriptSdk.AchievementReduced();
+      //var instance = new CompetitionLabsApplicationServices.AchievementReduced();
       //expect(instance).to.be();
     });
 
-    it('should have the property category (base name: "category")', function() {
-      // uncomment below and update the code to test the property category
-      //var instane = new @CompetitionlabsJavascriptSdk.AchievementReduced();
+    it('should have the property tagsId (base name: "tagsId")', function() {
+      // uncomment below and update the code to test the property tagsId
+      //var instance = new CompetitionLabsApplicationServices.AchievementReduced();
       //expect(instance).to.be();
     });
 
-    it('should have the property memberGroups (base name: "memberGroups")', function() {
-      // uncomment below and update the code to test the property memberGroups
-      //var instane = new @CompetitionlabsJavascriptSdk.AchievementReduced();
+    it('should have the property memberGroupsId (base name: "memberGroupsId")', function() {
+      // uncomment below and update the code to test the property memberGroupsId
+      //var instance = new CompetitionLabsApplicationServices.AchievementReduced();
       //expect(instance).to.be();
     });
 

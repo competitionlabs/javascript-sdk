@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.@CompetitionlabsJavascriptSdk);
+    factory(root.expect, root.CompetitionLabsApplicationServices);
   }
-}(this, function(expect, @CompetitionlabsJavascriptSdk) {
+}(this, function(expect, CompetitionLabsApplicationServices) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new @CompetitionlabsJavascriptSdk.QueryMultipleFields();
+    instance = new CompetitionLabsApplicationServices.QueryMultipleFields();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,19 +50,19 @@
   describe('QueryMultipleFields', function() {
     it('should create an instance of QueryMultipleFields', function() {
       // uncomment below and update the code to test QueryMultipleFields
-      //var instane = new @CompetitionlabsJavascriptSdk.QueryMultipleFields();
-      //expect(instance).to.be.a(@CompetitionlabsJavascriptSdk.QueryMultipleFields);
+      //var instane = new CompetitionLabsApplicationServices.QueryMultipleFields();
+      //expect(instance).to.be.a(CompetitionLabsApplicationServices.QueryMultipleFields);
     });
 
     it('should have the property queryFields (base name: "queryFields")', function() {
       // uncomment below and update the code to test the property queryFields
-      //var instane = new @CompetitionlabsJavascriptSdk.QueryMultipleFields();
+      //var instance = new CompetitionLabsApplicationServices.QueryMultipleFields();
       //expect(instance).to.be();
     });
 
     it('should have the property queryValue (base name: "queryValue")', function() {
       // uncomment below and update the code to test the property queryValue
-      //var instane = new @CompetitionlabsJavascriptSdk.QueryMultipleFields();
+      //var instance = new CompetitionLabsApplicationServices.QueryMultipleFields();
       //expect(instance).to.be();
     });
 

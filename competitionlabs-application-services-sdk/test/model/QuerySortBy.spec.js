@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.@CompetitionlabsJavascriptSdk);
+    factory(root.expect, root.CompetitionLabsApplicationServices);
   }
-}(this, function(expect, @CompetitionlabsJavascriptSdk) {
+}(this, function(expect, CompetitionLabsApplicationServices) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new @CompetitionlabsJavascriptSdk.QuerySortBy();
+    instance = new CompetitionLabsApplicationServices.QuerySortBy();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,19 +50,19 @@
   describe('QuerySortBy', function() {
     it('should create an instance of QuerySortBy', function() {
       // uncomment below and update the code to test QuerySortBy
-      //var instane = new @CompetitionlabsJavascriptSdk.QuerySortBy();
-      //expect(instance).to.be.a(@CompetitionlabsJavascriptSdk.QuerySortBy);
+      //var instane = new CompetitionLabsApplicationServices.QuerySortBy();
+      //expect(instance).to.be.a(CompetitionLabsApplicationServices.QuerySortBy);
     });
 
     it('should have the property queryField (base name: "queryField")', function() {
       // uncomment below and update the code to test the property queryField
-      //var instane = new @CompetitionlabsJavascriptSdk.QuerySortBy();
+      //var instance = new CompetitionLabsApplicationServices.QuerySortBy();
       //expect(instance).to.be();
     });
 
     it('should have the property order (base name: "order")', function() {
       // uncomment below and update the code to test the property order
-      //var instane = new @CompetitionlabsJavascriptSdk.QuerySortBy();
+      //var instance = new CompetitionLabsApplicationServices.QuerySortBy();
       //expect(instance).to.be();
     });
 

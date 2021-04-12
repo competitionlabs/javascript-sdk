@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -17,13 +17,12 @@ import CountResponse from './CountResponse';
 /**
  * The AchievementIssuedCount model module.
  * @module model/AchievementIssuedCount
- * @version 1.0.5
+ * @version 1.0.0
  */
 class AchievementIssuedCount {
     /**
      * Constructs a new <code>AchievementIssuedCount</code>.
      * @alias module:model/AchievementIssuedCount
-     * @extends module:model/CountResponse
      * @implements module:model/CountResponse
      * @param entityId {String} A unique identifier of a Entity
      * @param countValue {Number} The value in how many times the achievemnt was issued
@@ -39,31 +38,8 @@ class AchievementIssuedCount {
      * Only for internal use.
      */
     static initialize(obj, entityId, countValue) { 
-    }
-
-    /**
-    * Constructs a full object with all available fields.
-    */
-    model(){
-        var obj = {};
-
-
-        return obj;
-    }
-
-    /**
-    * Constructs a full object Map for all available fields.
-    */
-    modelMap(){
-        var obj = {
-            "fields": {},
-            "requiredFields": {}
-        };
-
-
-        
-
-        return obj;
+        obj['entityId'] = entityId;
+        obj['countValue'] = countValue;
     }
 
     /**
@@ -77,14 +53,31 @@ class AchievementIssuedCount {
         if (data) {
             obj = obj || new AchievementIssuedCount();
             CountResponse.constructFromObject(data, obj);
-            CountResponse.constructFromObject(data, obj);
 
+            if (data.hasOwnProperty('entityId')) {
+                obj['entityId'] = ApiClient.convertToType(data['entityId'], 'String');
+            }
+            if (data.hasOwnProperty('countValue')) {
+                obj['countValue'] = ApiClient.convertToType(data['countValue'], 'Number');
+            }
         }
         return obj;
     }
 
 
 }
+
+/**
+ * A unique identifier of a Entity
+ * @member {String} entityId
+ */
+AchievementIssuedCount.prototype['entityId'] = undefined;
+
+/**
+ * The value in how many times the achievemnt was issued
+ * @member {Number} countValue
+ */
+AchievementIssuedCount.prototype['countValue'] = undefined;
 
 
 // Implement CountResponse interface:

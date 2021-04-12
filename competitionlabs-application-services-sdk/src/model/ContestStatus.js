@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -61,59 +61,6 @@ export default class ContestStatus {
         "Cancelled" = "Cancelled";
 
     
-
-    /**
-    * Constructs a full object with all available fields.
-    */
-    list(){
-        var obj = {};
-
-        
-        obj['Deleted'] = "Deleted";
-        
-        obj['NotStarted'] = "NotStarted";
-        
-        obj['Active'] = "Active";
-        
-        obj['Finished'] = "Finished";
-        
-        obj['Finalised'] = "Finalised";
-        
-        obj['Cancelled'] = "Cancelled";
-        
-
-        return obj;
-    }
-
-    /**
-    * Constructs a full object with all available fields.
-    */
-    model(){
-        var obj = {};
-
-        
-        obj['Deleted'] = null;
-        
-        obj['NotStarted'] = null;
-        
-        obj['Active'] = null;
-        
-        obj['Finished'] = null;
-        
-        obj['Finalised'] = null;
-        
-        obj['Cancelled'] = null;
-        
-
-        return obj;
-    }
-
-    /**
-    * Constructs a full object Map for all available fields.
-    */
-    modelMap(){
-        return {"type": 'String'};
-    }
 
     /**
     * Returns a <code>ContestStatus</code> enum value from a Javascript object name.

@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The HostingOptions model module.
  * @module model/HostingOptions
- * @version 1.0.5
+ * @version 1.0.0
  */
 class HostingOptions {
     /**
@@ -35,35 +35,6 @@ class HostingOptions {
      * Only for internal use.
      */
     static initialize(obj) { 
-    }
-
-    /**
-    * Constructs a full object with all available fields.
-    */
-    model(){
-        var obj = {};
-
-        obj['indexFileName'] = null;
-        obj['errorFileName'] = null;
-
-        return obj;
-    }
-
-    /**
-    * Constructs a full object Map for all available fields.
-    */
-    modelMap(){
-        var obj = {
-            "fields": {},
-            "requiredFields": {}
-        };
-
-        obj["fields"]['indexFileName'] = { "type": 'String', "system": false };
-        obj["fields"]['errorFileName'] = { "type": 'String', "system": false };
-
-        
-
-        return obj;
     }
 
     /**

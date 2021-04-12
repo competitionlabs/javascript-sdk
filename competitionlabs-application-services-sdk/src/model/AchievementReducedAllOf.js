@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -17,7 +17,7 @@ import AchievementLiveStatus from './AchievementLiveStatus';
 /**
  * The AchievementReducedAllOf model module.
  * @module model/AchievementReducedAllOf
- * @version 1.0.5
+ * @version 1.0.0
  */
 class AchievementReducedAllOf {
     /**
@@ -42,41 +42,6 @@ class AchievementReducedAllOf {
     }
 
     /**
-    * Constructs a full object with all available fields.
-    */
-    model(){
-        var obj = {};
-
-        obj['name'] = null;
-        obj['achievementLiveStatus'] = new AchievementLiveStatus().model();
-        obj['category'] = [null];
-        obj['memberGroups'] = [null];
-
-        return obj;
-    }
-
-    /**
-    * Constructs a full object Map for all available fields.
-    */
-    modelMap(){
-        var obj = {
-            "fields": {},
-            "requiredFields": {}
-        };
-
-        obj["fields"]['name'] = { "type": 'String', "system": false };
-        obj["fields"]['achievementLiveStatus'] = new AchievementLiveStatus().modelMap();
-        obj["fields"]['category'] = [{ "type": 'String', "system": false }];
-        obj["fields"]['memberGroups'] = [{ "type": 'String', "system": false }];
-
-        
-        obj["requiredFields"]['name'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['achievementLiveStatus'] = new AchievementLiveStatus().modelMap();
-
-        return obj;
-    }
-
-    /**
      * Constructs a <code>AchievementReducedAllOf</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
@@ -93,11 +58,11 @@ class AchievementReducedAllOf {
             if (data.hasOwnProperty('achievementLiveStatus')) {
                 obj['achievementLiveStatus'] = AchievementLiveStatus.constructFromObject(data['achievementLiveStatus']);
             }
-            if (data.hasOwnProperty('category')) {
-                obj['category'] = ApiClient.convertToType(data['category'], ['String']);
+            if (data.hasOwnProperty('tagsId')) {
+                obj['tagsId'] = ApiClient.convertToType(data['tagsId'], ['String']);
             }
-            if (data.hasOwnProperty('memberGroups')) {
-                obj['memberGroups'] = ApiClient.convertToType(data['memberGroups'], ['String']);
+            if (data.hasOwnProperty('memberGroupsId')) {
+                obj['memberGroupsId'] = ApiClient.convertToType(data['memberGroupsId'], ['String']);
             }
         }
         return obj;
@@ -119,15 +84,15 @@ AchievementReducedAllOf.prototype['achievementLiveStatus'] = undefined;
 
 /**
  * Categorisation of the achievements
- * @member {Array.<String>} category
+ * @member {Array.<String>} tagsId
  */
-AchievementReducedAllOf.prototype['category'] = undefined;
+AchievementReducedAllOf.prototype['tagsId'] = undefined;
 
 /**
  * A group of members that can receive the achievement
- * @member {Array.<String>} memberGroups
+ * @member {Array.<String>} memberGroupsId
  */
-AchievementReducedAllOf.prototype['memberGroups'] = undefined;
+AchievementReducedAllOf.prototype['memberGroupsId'] = undefined;
 
 
 

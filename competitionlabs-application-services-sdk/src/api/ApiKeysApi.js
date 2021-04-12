@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -22,7 +22,7 @@ import UpdateApiKeyRequest from '../model/UpdateApiKeyRequest';
 /**
 * ApiKeys service.
 * @module api/ApiKeysApi
-* @version 1.0.5
+* @version 1.0.0
 */
 export default class ApiKeysApi {
 
@@ -48,27 +48,21 @@ export default class ApiKeysApi {
 
     /**
      * Create a new Api key in the CompetitionLabs system
-     * @param {String} spaceName This is the space name which is linked to the account
      * @param {module:model/CreateApiKeyRequest} body Create an Api key in the CompetitionLabs system
      * @param {Object} opts Optional parameters
      * @param {String} opts.X_API_KEY The admin API Key generated from CompetitionLabs back office
      * @param {module:api/ApiKeysApi~createApiKeysCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ApiResponse}
      */
-    createApiKeys(spaceName, body, opts, callback) {
+    createApiKeys(body, opts, callback) {
       opts = opts || {};
       let postBody = body;
-      // verify the required parameter 'spaceName' is set
-      if (spaceName === undefined || spaceName === null) {
-        throw new Error("Missing the required parameter 'spaceName' when calling createApiKeys");
-      }
       // verify the required parameter 'body' is set
       if (body === undefined || body === null) {
         throw new Error("Missing the required parameter 'body' when calling createApiKeys");
       }
 
       let pathParams = {
-        'spaceName': spaceName
       };
       let queryParams = {
       };
@@ -78,7 +72,7 @@ export default class ApiKeysApi {
       let formParams = {
       };
 
-      let authNames = ['adminApiKey'];
+      let authNames = ['AdminApiKey', 'OAuth2'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = ApiResponse;
@@ -92,7 +86,7 @@ export default class ApiKeysApi {
       }
 
       return this.apiClient.callApi(
-        '/api-keys/{spaceName}', 'POST',
+        '/api-keys', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, basePath, callback
       );
@@ -108,27 +102,21 @@ export default class ApiKeysApi {
 
     /**
      * Delete the Api key for a given identifier specified
-     * @param {String} spaceName This is the space name which is linked to the account
      * @param {String} id Unique identifier of the resource
      * @param {Object} opts Optional parameters
      * @param {String} opts.X_API_KEY The admin API Key generated from CompetitionLabs back office
      * @param {module:api/ApiKeysApi~deleteApiKeysByIdCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ApiResponse}
      */
-    deleteApiKeysById(spaceName, id, opts, callback) {
+    deleteApiKeysById(id, opts, callback) {
       opts = opts || {};
       let postBody = null;
-      // verify the required parameter 'spaceName' is set
-      if (spaceName === undefined || spaceName === null) {
-        throw new Error("Missing the required parameter 'spaceName' when calling deleteApiKeysById");
-      }
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
         throw new Error("Missing the required parameter 'id' when calling deleteApiKeysById");
       }
 
       let pathParams = {
-        'spaceName': spaceName,
         'id': id
       };
       let queryParams = {
@@ -139,7 +127,7 @@ export default class ApiKeysApi {
       let formParams = {
       };
 
-      let authNames = ['adminApiKey'];
+      let authNames = ['AdminApiKey', 'OAuth2'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = ApiResponse;
@@ -153,7 +141,7 @@ export default class ApiKeysApi {
       }
 
       return this.apiClient.callApi(
-        '/api-keys/{spaceName}/{id}', 'DELETE',
+        '/api-keys/{id}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, basePath, callback
       );
@@ -169,23 +157,17 @@ export default class ApiKeysApi {
 
     /**
      * Delete an Api key or a list of Api keys from CompetitionLabs by query
-     * @param {String} spaceName This is the space name which is linked to the account
      * @param {Object} opts Optional parameters
      * @param {String} opts.X_API_KEY The admin API Key generated from CompetitionLabs back office
      * @param {module:model/QueryRequest} opts.body Delete an Api key or a list of Api keys from CompetitionLabs by unique Api key ID's or any other POST body parameters using the POST method
      * @param {module:api/ApiKeysApi~deleteApiKeysByQueryCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ApiResponse}
      */
-    deleteApiKeysByQuery(spaceName, opts, callback) {
+    deleteApiKeysByQuery(opts, callback) {
       opts = opts || {};
       let postBody = opts['body'];
-      // verify the required parameter 'spaceName' is set
-      if (spaceName === undefined || spaceName === null) {
-        throw new Error("Missing the required parameter 'spaceName' when calling deleteApiKeysByQuery");
-      }
 
       let pathParams = {
-        'spaceName': spaceName
       };
       let queryParams = {
       };
@@ -195,7 +177,7 @@ export default class ApiKeysApi {
       let formParams = {
       };
 
-      let authNames = ['adminApiKey'];
+      let authNames = ['AdminApiKey', 'OAuth2'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = ApiResponse;
@@ -209,7 +191,7 @@ export default class ApiKeysApi {
       }
 
       return this.apiClient.callApi(
-        '/api-keys/{spaceName}/delete', 'POST',
+        '/api-keys/delete', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, basePath, callback
       );
@@ -225,27 +207,21 @@ export default class ApiKeysApi {
 
     /**
      * Returns an Api key by identifier provided. This assumes that api keys have first been created via a POST request or web console
-     * @param {String} spaceName This is the space name which is linked to the account
      * @param {String} id Unique identifier of the resource
      * @param {Object} opts Optional parameters
      * @param {String} opts.X_API_KEY The admin API Key generated from CompetitionLabs back office
      * @param {module:api/ApiKeysApi~getApiKeysByIdCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ApiKeyResponse}
      */
-    getApiKeysById(spaceName, id, opts, callback) {
+    getApiKeysById(id, opts, callback) {
       opts = opts || {};
       let postBody = null;
-      // verify the required parameter 'spaceName' is set
-      if (spaceName === undefined || spaceName === null) {
-        throw new Error("Missing the required parameter 'spaceName' when calling getApiKeysById");
-      }
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
         throw new Error("Missing the required parameter 'id' when calling getApiKeysById");
       }
 
       let pathParams = {
-        'spaceName': spaceName,
         'id': id
       };
       let queryParams = {
@@ -256,7 +232,7 @@ export default class ApiKeysApi {
       let formParams = {
       };
 
-      let authNames = ['adminApiKey'];
+      let authNames = ['AdminApiKey', 'OAuth2'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = ApiKeyResponse;
@@ -270,7 +246,7 @@ export default class ApiKeysApi {
       }
 
       return this.apiClient.callApi(
-        '/api-keys/{spaceName}/{id}', 'GET',
+        '/api-keys/{id}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, basePath, callback
       );
@@ -286,23 +262,17 @@ export default class ApiKeysApi {
 
     /**
      * Retrieve an Api key or a list of Api keys by query
-     * @param {String} spaceName This is the space name which is linked to the account
      * @param {Object} opts Optional parameters
      * @param {String} opts.X_API_KEY The admin API Key generated from CompetitionLabs back office
      * @param {module:model/QueryRequest} opts.body Retrieve an Api key or a list of Api keys from CompetitionLabs by unique Api key ID's or any other POST body parameters using the POST method
      * @param {module:api/ApiKeysApi~getApiKeysByQueryCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ApiKeyResponse}
      */
-    getApiKeysByQuery(spaceName, opts, callback) {
+    getApiKeysByQuery(opts, callback) {
       opts = opts || {};
       let postBody = opts['body'];
-      // verify the required parameter 'spaceName' is set
-      if (spaceName === undefined || spaceName === null) {
-        throw new Error("Missing the required parameter 'spaceName' when calling getApiKeysByQuery");
-      }
 
       let pathParams = {
-        'spaceName': spaceName
       };
       let queryParams = {
       };
@@ -312,7 +282,7 @@ export default class ApiKeysApi {
       let formParams = {
       };
 
-      let authNames = ['adminApiKey'];
+      let authNames = ['AdminApiKey', 'OAuth2'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = ApiKeyResponse;
@@ -326,7 +296,7 @@ export default class ApiKeysApi {
       }
 
       return this.apiClient.callApi(
-        '/api-keys/{spaceName}/query', 'POST',
+        '/api-keys/query', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, basePath, callback
       );
@@ -342,7 +312,6 @@ export default class ApiKeysApi {
 
     /**
      * Returns a list of Api keys. This assumes that api keys have first been created via a POST request or web console
-     * @param {String} spaceName This is the space name which is linked to the account
      * @param {Object} opts Optional parameters
      * @param {String} opts.X_API_KEY The admin API Key generated from CompetitionLabs back office
      * @param {Number} opts.limit Limit the returned total records found
@@ -350,16 +319,11 @@ export default class ApiKeysApi {
      * @param {module:api/ApiKeysApi~getListOfApiKeysCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ApiKeyResponse}
      */
-    getListOfApiKeys(spaceName, opts, callback) {
+    getListOfApiKeys(opts, callback) {
       opts = opts || {};
       let postBody = null;
-      // verify the required parameter 'spaceName' is set
-      if (spaceName === undefined || spaceName === null) {
-        throw new Error("Missing the required parameter 'spaceName' when calling getListOfApiKeys");
-      }
 
       let pathParams = {
-        'spaceName': spaceName
       };
       let queryParams = {
         '_limit': opts['limit'],
@@ -371,7 +335,7 @@ export default class ApiKeysApi {
       let formParams = {
       };
 
-      let authNames = ['adminApiKey'];
+      let authNames = ['AdminApiKey', 'OAuth2'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = ApiKeyResponse;
@@ -385,7 +349,7 @@ export default class ApiKeysApi {
       }
 
       return this.apiClient.callApi(
-        '/api-keys/{spaceName}', 'GET',
+        '/api-keys', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, basePath, callback
       );
@@ -401,27 +365,21 @@ export default class ApiKeysApi {
 
     /**
      * Update an existing Api key in the CompetitionLabs system
-     * @param {String} spaceName This is the space name which is linked to the account
      * @param {module:model/UpdateApiKeyRequest} body Update an Api key in the CompetitionLabs system. * Any Put body Parameters that are excluded in the Request body field will be considered as empty and updated with an empty field
      * @param {Object} opts Optional parameters
      * @param {String} opts.X_API_KEY The admin API Key generated from CompetitionLabs back office
      * @param {module:api/ApiKeysApi~updateApiKeysCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ApiResponse}
      */
-    updateApiKeys(spaceName, body, opts, callback) {
+    updateApiKeys(body, opts, callback) {
       opts = opts || {};
       let postBody = body;
-      // verify the required parameter 'spaceName' is set
-      if (spaceName === undefined || spaceName === null) {
-        throw new Error("Missing the required parameter 'spaceName' when calling updateApiKeys");
-      }
       // verify the required parameter 'body' is set
       if (body === undefined || body === null) {
         throw new Error("Missing the required parameter 'body' when calling updateApiKeys");
       }
 
       let pathParams = {
-        'spaceName': spaceName
       };
       let queryParams = {
       };
@@ -431,7 +389,7 @@ export default class ApiKeysApi {
       let formParams = {
       };
 
-      let authNames = ['adminApiKey'];
+      let authNames = ['AdminApiKey', 'OAuth2'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = ApiResponse;
@@ -445,7 +403,7 @@ export default class ApiKeysApi {
       }
 
       return this.apiClient.callApi(
-        '/api-keys/{spaceName}', 'PUT',
+        '/api-keys', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, basePath, callback
       );

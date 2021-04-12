@@ -1,9 +1,12 @@
-# @CompetitionlabsApplicationServicesSdk.RuleSet
+# CompetitionLabsApplicationServices.RuleSet
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**customFields** | [**[CustomFieldReduced]**](CustomFieldReduced.md) |  | [optional] 
+**tags** | [**[TagsReduced]**](TagsReduced.md) | A list of id&#39;s used to tag models | [optional] 
+**metadata** | [**[Metadata]**](Metadata.md) |  | [optional] 
 **priority** | **Number** | Indicates which rule is prioritised first so that the rules work in a sequence | 
 **scope** | [**RuleScope**](RuleScope.md) |  | 
 **action** | **String** | Action of this ruleset. Reference of Action schemma | 

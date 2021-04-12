@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -25,7 +25,7 @@ import UpdateProductRequest from '../model/UpdateProductRequest';
 /**
 * Products service.
 * @module api/ProductsApi
-* @version 1.0.5
+* @version 1.0.0
 */
 export default class ProductsApi {
 
@@ -51,27 +51,21 @@ export default class ProductsApi {
 
     /**
      * Create new Products in the CompetitionLabs database
-     * @param {String} spaceName This is the space name which is linked to the account
      * @param {Array.<module:model/CreateProductRequest>} body Create Products in the CompetitionLabs database. An array can contain a maximum of 10,000 products in one request
      * @param {Object} opts Optional parameters
      * @param {String} opts.X_API_KEY The admin API Key generated from CompetitionLabs back office
      * @param {module:api/ProductsApi~createProductsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ApiResponse}
      */
-    createProducts(spaceName, body, opts, callback) {
+    createProducts(body, opts, callback) {
       opts = opts || {};
       let postBody = body;
-      // verify the required parameter 'spaceName' is set
-      if (spaceName === undefined || spaceName === null) {
-        throw new Error("Missing the required parameter 'spaceName' when calling createProducts");
-      }
       // verify the required parameter 'body' is set
       if (body === undefined || body === null) {
         throw new Error("Missing the required parameter 'body' when calling createProducts");
       }
 
       let pathParams = {
-        'spaceName': spaceName
       };
       let queryParams = {
       };
@@ -81,12 +75,12 @@ export default class ProductsApi {
       let formParams = {
       };
 
-      let authNames = ['adminApiKey'];
+      let authNames = ['AdminApiKey', 'OAuth2'];
       let contentTypes = ['application/json', 'file/csv'];
       let accepts = ['application/json'];
       let returnType = ApiResponse;
       return this.apiClient.callApi(
-        '/products/{spaceName}', 'POST',
+        '/products', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
@@ -102,7 +96,6 @@ export default class ProductsApi {
 
     /**
      * Delete Products for a given identifier specified
-     * @param {String} spaceName This is the space name which is linked to the account
      * @param {Object} opts Optional parameters
      * @param {String} opts.X_API_KEY The admin API Key generated from CompetitionLabs back office
      * @param {Array.<String>} opts.id The unique identifiers of the resources
@@ -110,16 +103,11 @@ export default class ProductsApi {
      * @param {module:api/ProductsApi~deleteProductsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ApiResponse}
      */
-    deleteProducts(spaceName, opts, callback) {
+    deleteProducts(opts, callback) {
       opts = opts || {};
       let postBody = null;
-      // verify the required parameter 'spaceName' is set
-      if (spaceName === undefined || spaceName === null) {
-        throw new Error("Missing the required parameter 'spaceName' when calling deleteProducts");
-      }
 
       let pathParams = {
-        'spaceName': spaceName
       };
       let queryParams = {
         'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),
@@ -131,12 +119,12 @@ export default class ProductsApi {
       let formParams = {
       };
 
-      let authNames = ['adminApiKey'];
+      let authNames = ['AdminApiKey', 'OAuth2'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = ApiResponse;
       return this.apiClient.callApi(
-        '/products/{spaceName}', 'DELETE',
+        '/products', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
@@ -152,23 +140,17 @@ export default class ProductsApi {
 
     /**
      * Delete Products from CompetitionLabs database by unique Product ID's or any other POST body parameters using the POST method
-     * @param {String} spaceName This is the space name which is linked to the account
      * @param {Object} opts Optional parameters
      * @param {String} opts.X_API_KEY The admin API Key generated from CompetitionLabs back office
      * @param {module:model/QueryRequest} opts.body Delete Products from CompetitionLabs database by unique Product ID's or any other POST body parameters using the POST method
      * @param {module:api/ProductsApi~deleteProductsByQueryCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ApiResponse}
      */
-    deleteProductsByQuery(spaceName, opts, callback) {
+    deleteProductsByQuery(opts, callback) {
       opts = opts || {};
       let postBody = opts['body'];
-      // verify the required parameter 'spaceName' is set
-      if (spaceName === undefined || spaceName === null) {
-        throw new Error("Missing the required parameter 'spaceName' when calling deleteProductsByQuery");
-      }
 
       let pathParams = {
-        'spaceName': spaceName
       };
       let queryParams = {
       };
@@ -178,12 +160,12 @@ export default class ProductsApi {
       let formParams = {
       };
 
-      let authNames = ['adminApiKey'];
+      let authNames = ['AdminApiKey', 'OAuth2'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = ApiResponse;
       return this.apiClient.callApi(
-        '/products/{spaceName}/delete', 'POST',
+        '/products/delete', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
@@ -199,7 +181,6 @@ export default class ProductsApi {
 
     /**
      * Returns a list of Achievements for the Product id provided
-     * @param {String} spaceName This is the space name which is linked to the account
      * @param {String} id Unique identifier of the resource
      * @param {Object} opts Optional parameters
      * @param {String} opts.X_API_KEY The admin API Key generated from CompetitionLabs back office
@@ -209,20 +190,15 @@ export default class ProductsApi {
      * @param {module:api/ProductsApi~getAchievementsForProductsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/AchievementReducedResponse}
      */
-    getAchievementsForProducts(spaceName, id, opts, callback) {
+    getAchievementsForProducts(id, opts, callback) {
       opts = opts || {};
       let postBody = null;
-      // verify the required parameter 'spaceName' is set
-      if (spaceName === undefined || spaceName === null) {
-        throw new Error("Missing the required parameter 'spaceName' when calling getAchievementsForProducts");
-      }
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
         throw new Error("Missing the required parameter 'id' when calling getAchievementsForProducts");
       }
 
       let pathParams = {
-        'spaceName': spaceName,
         'id': id
       };
       let queryParams = {
@@ -236,12 +212,12 @@ export default class ProductsApi {
       let formParams = {
       };
 
-      let authNames = ['adminApiKey'];
+      let authNames = ['AdminApiKey', 'OAuth2'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = AchievementReducedResponse;
       return this.apiClient.callApi(
-        '/products/{spaceName}/{id}/achievements', 'GET',
+        '/products/{id}/achievements', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
@@ -257,7 +233,6 @@ export default class ProductsApi {
 
     /**
      * Returns a list of Competitions for the Product id provided
-     * @param {String} spaceName This is the space name which is linked to the account
      * @param {String} id Unique identifier of the resource
      * @param {Object} opts Optional parameters
      * @param {String} opts.X_API_KEY The admin API Key generated from CompetitionLabs back office
@@ -267,20 +242,15 @@ export default class ProductsApi {
      * @param {module:api/ProductsApi~getCompetitionsForProductsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/CompetitionReducedResponse}
      */
-    getCompetitionsForProducts(spaceName, id, opts, callback) {
+    getCompetitionsForProducts(id, opts, callback) {
       opts = opts || {};
       let postBody = null;
-      // verify the required parameter 'spaceName' is set
-      if (spaceName === undefined || spaceName === null) {
-        throw new Error("Missing the required parameter 'spaceName' when calling getCompetitionsForProducts");
-      }
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
         throw new Error("Missing the required parameter 'id' when calling getCompetitionsForProducts");
       }
 
       let pathParams = {
-        'spaceName': spaceName,
         'id': id
       };
       let queryParams = {
@@ -294,12 +264,12 @@ export default class ProductsApi {
       let formParams = {
       };
 
-      let authNames = ['adminApiKey'];
+      let authNames = ['AdminApiKey', 'OAuth2'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = CompetitionReducedResponse;
       return this.apiClient.callApi(
-        '/products/{spaceName}/{id}/competitions', 'GET',
+        '/products/{id}/competitions', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
@@ -315,7 +285,6 @@ export default class ProductsApi {
 
     /**
      * Returns a list of Contests for the Product id provided
-     * @param {String} spaceName This is the space name which is linked to the account
      * @param {String} id Unique identifier of the resource
      * @param {Object} opts Optional parameters
      * @param {String} opts.X_API_KEY The admin API Key generated from CompetitionLabs back office
@@ -325,20 +294,15 @@ export default class ProductsApi {
      * @param {module:api/ProductsApi~getContestsForProductsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ContestReducedResponse}
      */
-    getContestsForProducts(spaceName, id, opts, callback) {
+    getContestsForProducts(id, opts, callback) {
       opts = opts || {};
       let postBody = null;
-      // verify the required parameter 'spaceName' is set
-      if (spaceName === undefined || spaceName === null) {
-        throw new Error("Missing the required parameter 'spaceName' when calling getContestsForProducts");
-      }
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
         throw new Error("Missing the required parameter 'id' when calling getContestsForProducts");
       }
 
       let pathParams = {
-        'spaceName': spaceName,
         'id': id
       };
       let queryParams = {
@@ -352,12 +316,12 @@ export default class ProductsApi {
       let formParams = {
       };
 
-      let authNames = ['adminApiKey'];
+      let authNames = ['AdminApiKey', 'OAuth2'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = ContestReducedResponse;
       return this.apiClient.callApi(
-        '/products/{spaceName}/{id}/contests', 'GET',
+        '/products/{id}/contests', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
@@ -373,7 +337,6 @@ export default class ProductsApi {
 
     /**
      * Returns a list of Products. This assumes that products have first been uploaded via a POST request or web console
-     * @param {String} spaceName This is the space name which is linked to the account
      * @param {Object} opts Optional parameters
      * @param {String} opts.X_API_KEY The admin API Key generated from CompetitionLabs back office
      * @param {Array.<String>} opts.id The unique identifiers of the resources
@@ -382,16 +345,11 @@ export default class ProductsApi {
      * @param {module:api/ProductsApi~getProductsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ProductResponse}
      */
-    getProducts(spaceName, opts, callback) {
+    getProducts(opts, callback) {
       opts = opts || {};
       let postBody = null;
-      // verify the required parameter 'spaceName' is set
-      if (spaceName === undefined || spaceName === null) {
-        throw new Error("Missing the required parameter 'spaceName' when calling getProducts");
-      }
 
       let pathParams = {
-        'spaceName': spaceName
       };
       let queryParams = {
         'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),
@@ -404,12 +362,12 @@ export default class ProductsApi {
       let formParams = {
       };
 
-      let authNames = ['adminApiKey'];
+      let authNames = ['AdminApiKey', 'OAuth2'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = ProductResponse;
       return this.apiClient.callApi(
-        '/products/{spaceName}', 'GET',
+        '/products', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
@@ -425,23 +383,17 @@ export default class ProductsApi {
 
     /**
      * Retrieve Products from CompetitionLabs database by unique Product ID's or any other POST body parameters using the POST method
-     * @param {String} spaceName This is the space name which is linked to the account
      * @param {Object} opts Optional parameters
      * @param {String} opts.X_API_KEY The admin API Key generated from CompetitionLabs back office
      * @param {module:model/QueryRequest} opts.body Retrieve Products from CompetitionLabs database by unique Product ID's or any other POST body parameters using the POST method
      * @param {module:api/ProductsApi~getProductsByQueryCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ProductResponse}
      */
-    getProductsByQuery(spaceName, opts, callback) {
+    getProductsByQuery(opts, callback) {
       opts = opts || {};
       let postBody = opts['body'];
-      // verify the required parameter 'spaceName' is set
-      if (spaceName === undefined || spaceName === null) {
-        throw new Error("Missing the required parameter 'spaceName' when calling getProductsByQuery");
-      }
 
       let pathParams = {
-        'spaceName': spaceName
       };
       let queryParams = {
       };
@@ -451,12 +403,12 @@ export default class ProductsApi {
       let formParams = {
       };
 
-      let authNames = ['adminApiKey'];
+      let authNames = ['AdminApiKey', 'OAuth2'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = ProductResponse;
       return this.apiClient.callApi(
-        '/products/{spaceName}/query', 'POST',
+        '/products/query', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
@@ -472,27 +424,21 @@ export default class ProductsApi {
 
     /**
      * Update existing Products in the CompetitionLabs database
-     * @param {String} spaceName This is the space name which is linked to the account
-     * @param {Array.<module:model/UpdateProductRequest>} body Update a Product or multiple Products in the CompetitionLabs database. * Product Ref Id can not be changed after creation * A products Id and vesion must exist in the CompetitionLabs database to update the product
+     * @param {Array.<module:model/UpdateProductRequest>} body Update a Product or multiple Products in the CompetitionLabs database. * Product Ref Id can not be changed after creation * A products Id must exist in the CompetitionLabs database to update the product
      * @param {Object} opts Optional parameters
      * @param {String} opts.X_API_KEY The admin API Key generated from CompetitionLabs back office
      * @param {module:api/ProductsApi~updateProductsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ApiResponse}
      */
-    updateProducts(spaceName, body, opts, callback) {
+    updateProducts(body, opts, callback) {
       opts = opts || {};
       let postBody = body;
-      // verify the required parameter 'spaceName' is set
-      if (spaceName === undefined || spaceName === null) {
-        throw new Error("Missing the required parameter 'spaceName' when calling updateProducts");
-      }
       // verify the required parameter 'body' is set
       if (body === undefined || body === null) {
         throw new Error("Missing the required parameter 'body' when calling updateProducts");
       }
 
       let pathParams = {
-        'spaceName': spaceName
       };
       let queryParams = {
       };
@@ -502,12 +448,12 @@ export default class ProductsApi {
       let formParams = {
       };
 
-      let authNames = ['adminApiKey'];
+      let authNames = ['AdminApiKey', 'OAuth2'];
       let contentTypes = ['application/json', 'file/csv'];
       let accepts = ['application/json'];
       let returnType = ApiResponse;
       return this.apiClient.callApi(
-        '/products/{spaceName}', 'PUT',
+        '/products', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );

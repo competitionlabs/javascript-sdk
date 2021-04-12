@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -13,26 +13,24 @@
 
 import ApiClient from '../ApiClient';
 import ActionTypeAdjustmentFactor from './ActionTypeAdjustmentFactor';
-import Metadata from './Metadata';
-import Translation from './Translation';
+import TranslationValue from './TranslationValue';
 
 /**
  * The ProductAllOf model module.
  * @module model/ProductAllOf
- * @version 1.0.5
+ * @version 1.0.0
  */
 class ProductAllOf {
     /**
      * Constructs a new <code>ProductAllOf</code>.
      * @alias module:model/ProductAllOf
      * @param name {String} The name of the product
-     * @param productType {String} The categorisation of this product by its type
      * @param adjustmentFactor {Number} The multiplier to apply to source values received for this product events
      * @param productRefId {String} The reference to this product in your system. The reference identifier can not be changed after the product has been created
      */
-    constructor(name, productType, adjustmentFactor, productRefId) { 
+    constructor(name, adjustmentFactor, productRefId) { 
         
-        ProductAllOf.initialize(this, name, productType, adjustmentFactor, productRefId);
+        ProductAllOf.initialize(this, name, adjustmentFactor, productRefId);
     }
 
     /**
@@ -40,62 +38,10 @@ class ProductAllOf {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, name, productType, adjustmentFactor, productRefId) { 
+    static initialize(obj, name, adjustmentFactor, productRefId) { 
         obj['name'] = name;
-        obj['productType'] = productType;
         obj['adjustmentFactor'] = adjustmentFactor;
         obj['productRefId'] = productRefId;
-    }
-
-    /**
-    * Constructs a full object with all available fields.
-    */
-    model(){
-        var obj = {};
-
-        obj['name'] = null;
-        obj['productType'] = null;
-        obj['productTypeName'] = null;
-        obj['description'] = null;
-        obj['adjustmentFactor'] = null;
-        obj['productRefId'] = null;
-        obj['actionTypeAdjustmentFactors'] = [new ActionTypeAdjustmentFactor().model()];
-        obj['productGroups'] = [null];
-        obj['metadata'] = [new Metadata().model()];
-        obj['translations'] = [new Translation().model()];
-        obj['translatableFields'] = [null];
-
-        return obj;
-    }
-
-    /**
-    * Constructs a full object Map for all available fields.
-    */
-    modelMap(){
-        var obj = {
-            "fields": {},
-            "requiredFields": {}
-        };
-
-        obj["fields"]['name'] = { "type": 'String', "system": false };
-        obj["fields"]['productType'] = { "type": 'String', "system": false };
-        obj["fields"]['productTypeName'] = { "type": 'String', "system": false };
-        obj["fields"]['description'] = { "type": 'String', "system": false };
-        obj["fields"]['adjustmentFactor'] = { "type": 'Number', "system": false };
-        obj["fields"]['productRefId'] = { "type": 'String', "system": false };
-        obj["fields"]['actionTypeAdjustmentFactors'] = [new ActionTypeAdjustmentFactor().modelMap()];
-        obj["fields"]['productGroups'] = [{ "type": 'String', "system": false }];
-        obj["fields"]['metadata'] = [new Metadata().modelMap()];
-        obj["fields"]['translations'] = [new Translation().modelMap()];
-        obj["fields"]['translatableFields'] = [{ "type": 'String', "system": false }];
-
-        
-        obj["requiredFields"]['name'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['productType'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['adjustmentFactor'] = { "type": 'Number', "system": false };
-        obj["requiredFields"]['productRefId'] = { "type": 'String', "system": false };
-
-        return obj;
     }
 
     /**
@@ -112,12 +58,6 @@ class ProductAllOf {
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
-            if (data.hasOwnProperty('productType')) {
-                obj['productType'] = ApiClient.convertToType(data['productType'], 'String');
-            }
-            if (data.hasOwnProperty('productTypeName')) {
-                obj['productTypeName'] = ApiClient.convertToType(data['productTypeName'], 'String');
-            }
             if (data.hasOwnProperty('description')) {
                 obj['description'] = ApiClient.convertToType(data['description'], 'String');
             }
@@ -130,14 +70,8 @@ class ProductAllOf {
             if (data.hasOwnProperty('actionTypeAdjustmentFactors')) {
                 obj['actionTypeAdjustmentFactors'] = ApiClient.convertToType(data['actionTypeAdjustmentFactors'], [ActionTypeAdjustmentFactor]);
             }
-            if (data.hasOwnProperty('productGroups')) {
-                obj['productGroups'] = ApiClient.convertToType(data['productGroups'], ['String']);
-            }
-            if (data.hasOwnProperty('metadata')) {
-                obj['metadata'] = ApiClient.convertToType(data['metadata'], [Metadata]);
-            }
             if (data.hasOwnProperty('translations')) {
-                obj['translations'] = ApiClient.convertToType(data['translations'], [Translation]);
+                obj['translations'] = ApiClient.convertToType(data['translations'], {'String': TranslationValue});
             }
             if (data.hasOwnProperty('translatableFields')) {
                 obj['translatableFields'] = ApiClient.convertToType(data['translatableFields'], ['String']);
@@ -154,18 +88,6 @@ class ProductAllOf {
  * @member {String} name
  */
 ProductAllOf.prototype['name'] = undefined;
-
-/**
- * The categorisation of this product by its type
- * @member {String} productType
- */
-ProductAllOf.prototype['productType'] = undefined;
-
-/**
- * The name of this product by its type
- * @member {String} productTypeName
- */
-ProductAllOf.prototype['productTypeName'] = undefined;
 
 /**
  * The description of the product for your reference
@@ -191,18 +113,7 @@ ProductAllOf.prototype['productRefId'] = undefined;
 ProductAllOf.prototype['actionTypeAdjustmentFactors'] = undefined;
 
 /**
- * A list of Strings used to tag products with taxonomy terms
- * @member {Array.<String>} productGroups
- */
-ProductAllOf.prototype['productGroups'] = undefined;
-
-/**
- * @member {Array.<module:model/Metadata>} metadata
- */
-ProductAllOf.prototype['metadata'] = undefined;
-
-/**
- * @member {Array.<module:model/Translation>} translations
+ * @member {Object.<String, module:model/TranslationValue>} translations
  */
 ProductAllOf.prototype['translations'] = undefined;
 

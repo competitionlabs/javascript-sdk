@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.@CompetitionlabsJavascriptSdk);
+    factory(root.expect, root.CompetitionLabsApplicationServices);
   }
-}(this, function(expect, @CompetitionlabsJavascriptSdk) {
+}(this, function(expect, CompetitionLabsApplicationServices) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new @CompetitionlabsJavascriptSdk.UpdateCollaboratorRequestAllOf();
+    instance = new CompetitionLabsApplicationServices.UpdateCollaboratorRequestAllOf();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,13 +50,13 @@
   describe('UpdateCollaboratorRequestAllOf', function() {
     it('should create an instance of UpdateCollaboratorRequestAllOf', function() {
       // uncomment below and update the code to test UpdateCollaboratorRequestAllOf
-      //var instane = new @CompetitionlabsJavascriptSdk.UpdateCollaboratorRequestAllOf();
-      //expect(instance).to.be.a(@CompetitionlabsJavascriptSdk.UpdateCollaboratorRequestAllOf);
+      //var instane = new CompetitionLabsApplicationServices.UpdateCollaboratorRequestAllOf();
+      //expect(instance).to.be.a(CompetitionLabsApplicationServices.UpdateCollaboratorRequestAllOf);
     });
 
     it('should have the property role (base name: "role")', function() {
       // uncomment below and update the code to test the property role
-      //var instane = new @CompetitionlabsJavascriptSdk.UpdateCollaboratorRequestAllOf();
+      //var instance = new CompetitionLabsApplicationServices.UpdateCollaboratorRequestAllOf();
       //expect(instance).to.be();
     });
 

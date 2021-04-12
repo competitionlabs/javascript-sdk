@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.@CompetitionlabsJavascriptSdk);
+    factory(root.expect, root.CompetitionLabsApplicationServices);
   }
-}(this, function(expect, @CompetitionlabsJavascriptSdk) {
+}(this, function(expect, CompetitionLabsApplicationServices) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new @CompetitionlabsJavascriptSdk.Metadata();
+    instance = new CompetitionLabsApplicationServices.Metadata();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,19 +50,19 @@
   describe('Metadata', function() {
     it('should create an instance of Metadata', function() {
       // uncomment below and update the code to test Metadata
-      //var instane = new @CompetitionlabsJavascriptSdk.Metadata();
-      //expect(instance).to.be.a(@CompetitionlabsJavascriptSdk.Metadata);
+      //var instane = new CompetitionLabsApplicationServices.Metadata();
+      //expect(instance).to.be.a(CompetitionLabsApplicationServices.Metadata);
     });
 
     it('should have the property key (base name: "key")', function() {
       // uncomment below and update the code to test the property key
-      //var instane = new @CompetitionlabsJavascriptSdk.Metadata();
+      //var instance = new CompetitionLabsApplicationServices.Metadata();
       //expect(instance).to.be();
     });
 
     it('should have the property value (base name: "value")', function() {
       // uncomment below and update the code to test the property value
-      //var instane = new @CompetitionlabsJavascriptSdk.Metadata();
+      //var instance = new CompetitionLabsApplicationServices.Metadata();
       //expect(instance).to.be();
     });
 

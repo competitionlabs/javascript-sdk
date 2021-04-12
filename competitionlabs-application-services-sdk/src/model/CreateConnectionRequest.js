@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateConnectionRequest model module.
  * @module model/CreateConnectionRequest
- * @version 1.0.5
+ * @version 1.0.0
  */
 class CreateConnectionRequest {
     /**
@@ -36,34 +36,6 @@ class CreateConnectionRequest {
      */
     static initialize(obj, objectType) { 
         obj['objectType'] = objectType;
-    }
-
-    /**
-    * Constructs a full object with all available fields.
-    */
-    model(){
-        var obj = {};
-
-        obj['objectType'] = null;
-
-        return obj;
-    }
-
-    /**
-    * Constructs a full object Map for all available fields.
-    */
-    modelMap(){
-        var obj = {
-            "fields": {},
-            "requiredFields": {}
-        };
-
-        obj["fields"]['objectType'] = { "type": 'String', "system": false };
-
-        
-        obj["requiredFields"]['objectType'] = { "type": 'String', "system": false };
-
-        return obj;
     }
 
     /**

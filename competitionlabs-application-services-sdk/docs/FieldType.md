@@ -1,4 +1,4 @@
-# @CompetitionlabsApplicationServicesSdk.FieldType
+# CompetitionLabsApplicationServices.FieldType
 
 ## Enum
 

@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -17,7 +17,7 @@ import Contact from './Contact';
 /**
  * The UpdateUserRequestAllOf model module.
  * @module model/UpdateUserRequestAllOf
- * @version 1.0.5
+ * @version 1.0.0
  */
 class UpdateUserRequestAllOf {
     /**
@@ -35,39 +35,6 @@ class UpdateUserRequestAllOf {
      * Only for internal use.
      */
     static initialize(obj) { 
-    }
-
-    /**
-    * Constructs a full object with all available fields.
-    */
-    model(){
-        var obj = {};
-
-        obj['firstName'] = null;
-        obj['lastName'] = null;
-        obj['email'] = null;
-        obj['contact'] = new Contact().model();
-
-        return obj;
-    }
-
-    /**
-    * Constructs a full object Map for all available fields.
-    */
-    modelMap(){
-        var obj = {
-            "fields": {},
-            "requiredFields": {}
-        };
-
-        obj["fields"]['firstName'] = { "type": 'String', "system": false };
-        obj["fields"]['lastName'] = { "type": 'String', "system": false };
-        obj["fields"]['email'] = { "type": 'String', "system": false };
-        obj["fields"]['contact'] = new Contact().modelMap();
-
-        
-
-        return obj;
     }
 
     /**

@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.@CompetitionlabsJavascriptSdk);
+    factory(root.expect, root.CompetitionLabsApplicationServices);
   }
-}(this, function(expect, @CompetitionlabsJavascriptSdk) {
+}(this, function(expect, CompetitionLabsApplicationServices) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new @CompetitionlabsJavascriptSdk.TestMessageRequest();
+    instance = new CompetitionLabsApplicationServices.TestMessageRequest();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,13 +50,13 @@
   describe('TestMessageRequest', function() {
     it('should create an instance of TestMessageRequest', function() {
       // uncomment below and update the code to test TestMessageRequest
-      //var instane = new @CompetitionlabsJavascriptSdk.TestMessageRequest();
-      //expect(instance).to.be.a(@CompetitionlabsJavascriptSdk.TestMessageRequest);
+      //var instane = new CompetitionLabsApplicationServices.TestMessageRequest();
+      //expect(instance).to.be.a(CompetitionLabsApplicationServices.TestMessageRequest);
     });
 
     it('should have the property members (base name: "members")', function() {
       // uncomment below and update the code to test the property members
-      //var instane = new @CompetitionlabsJavascriptSdk.TestMessageRequest();
+      //var instance = new CompetitionLabsApplicationServices.TestMessageRequest();
       //expect(instance).to.be();
     });
 

@@ -1,4 +1,4 @@
-# @CompetitionlabsApplicationServicesSdk.AchievementLiveStatusRequest
+# CompetitionLabsApplicationServices.AchievementLiveStatusRequest
 
 ## Properties
 

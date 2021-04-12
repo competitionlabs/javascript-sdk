@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ComplexFilter model module.
  * @module model/ComplexFilter
- * @version 1.0.5
+ * @version 1.0.0
  */
 class ComplexFilter {
     /**
@@ -34,39 +34,6 @@ class ComplexFilter {
      * Only for internal use.
      */
     static initialize(obj) { 
-    }
-
-    /**
-    * Constructs a full object with all available fields.
-    */
-    model(){
-        var obj = {};
-
-        obj['must'] = [null];
-        obj['mustNot'] = [null];
-        obj['should'] = [null];
-        obj['shouldMatchAtLeast'] = null;
-
-        return obj;
-    }
-
-    /**
-    * Constructs a full object Map for all available fields.
-    */
-    modelMap(){
-        var obj = {
-            "fields": {},
-            "requiredFields": {}
-        };
-
-        obj["fields"]['must'] = [{ "type": 'String', "system": false }];
-        obj["fields"]['mustNot'] = [{ "type": 'String', "system": false }];
-        obj["fields"]['should'] = [{ "type": 'String', "system": false }];
-        obj["fields"]['shouldMatchAtLeast'] = { "type": 'Number', "system": false };
-
-        
-
-        return obj;
     }
 
     /**

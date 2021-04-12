@@ -1,18 +1,13 @@
-# @CompetitionlabsApplicationServicesSdk.UpdateProductRequestAllOf
+# CompetitionLabsApplicationServices.UpdateProductRequestAllOf
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**name** | **String** | The name of the product | [optional] 
-**productType** | **String** | The categorisation of this product by its type | [optional] 
-**productTypeName** | **String** | The name of this product by its type | [optional] 
+**name** | **String** | The name of the product | 
 **description** | **String** | The description of the product for your reference | [optional] 
-**adjustmentFactor** | **Number** | The multiplier to apply to source values received for this product events | [optional] 
-**productRefId** | **String** | The reference to this product in your system. The reference identifier can not be changed after the product has been created | [optional] [readonly] 
+**adjustmentFactor** | **Number** | The multiplier to apply to source values received for this product events | 
 **actionTypeAdjustmentFactors** | [**[ActionTypeAdjustmentFactor]**](ActionTypeAdjustmentFactor.md) |  | [optional] 
-**productGroups** | **[String]** | A list of Strings used to tag products with taxonomy terms | [optional] 
-**metadata** | [**[Metadata]**](Metadata.md) |  | [optional] 
-**translations** | [**[Translation]**](Translation.md) |  | [optional] 
+**translations** | **[Object]** |  | [optional] 
 
 

@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SubRule model module.
  * @module model/SubRule
- * @version 1.0.5
+ * @version 1.0.0
  */
 class SubRule {
     /**
@@ -40,40 +40,6 @@ class SubRule {
         obj['fact'] = fact;
         obj['operator'] = operator;
         obj['constant'] = constant;
-    }
-
-    /**
-    * Constructs a full object with all available fields.
-    */
-    model(){
-        var obj = {};
-
-        obj['fact'] = null;
-        obj['operator'] = null;
-        obj['constant'] = null;
-
-        return obj;
-    }
-
-    /**
-    * Constructs a full object Map for all available fields.
-    */
-    modelMap(){
-        var obj = {
-            "fields": {},
-            "requiredFields": {}
-        };
-
-        obj["fields"]['fact'] = { "type": 'String', "system": false };
-        obj["fields"]['operator'] = { "type": 'String', "system": false };
-        obj["fields"]['constant'] = { "type": 'String', "system": false };
-
-        
-        obj["requiredFields"]['fact'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['operator'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['constant'] = { "type": 'String', "system": false };
-
-        return obj;
     }
 
     /**

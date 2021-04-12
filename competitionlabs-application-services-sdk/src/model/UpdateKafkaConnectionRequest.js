@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -12,26 +12,34 @@
  */
 
 import ApiClient from '../ApiClient';
+import Metadata from './Metadata';
 import UpdateConnectionRequest from './UpdateConnectionRequest';
 import UpdateKafkaConnectionRequestAllOf from './UpdateKafkaConnectionRequestAllOf';
+import UpdateOptParamModels from './UpdateOptParamModels';
 
 /**
  * The UpdateKafkaConnectionRequest model module.
  * @module model/UpdateKafkaConnectionRequest
- * @version 1.0.5
+ * @version 1.0.0
  */
 class UpdateKafkaConnectionRequest {
     /**
      * Constructs a new <code>UpdateKafkaConnectionRequest</code>.
      * @alias module:model/UpdateKafkaConnectionRequest
      * @implements module:model/UpdateConnectionRequest
+     * @implements module:model/UpdateOptParamModels
      * @implements module:model/UpdateKafkaConnectionRequestAllOf
      * @param id {String} A unique system generated identifier
      * @param objectType {String} The type of consumer to create
+     * @param name {String} The name of the consumer
+     * @param brokers {String} Kafka broker endpoints.
+     * @param transformerId {String} The id of the transformer to handle incoming messages
+     * @param groupId {String} Group Id for connection
+     * @param topic {String} Topic name
      */
-    constructor(id, objectType) { 
-        UpdateConnectionRequest.initialize(this, id, objectType);UpdateKafkaConnectionRequestAllOf.initialize(this);
-        UpdateKafkaConnectionRequest.initialize(this, id, objectType);
+    constructor(id, objectType, name, brokers, transformerId, groupId, topic) { 
+        UpdateConnectionRequest.initialize(this, id, objectType);UpdateOptParamModels.initialize(this);UpdateKafkaConnectionRequestAllOf.initialize(this, name, brokers, transformerId, groupId, topic);
+        UpdateKafkaConnectionRequest.initialize(this, id, objectType, name, brokers, transformerId, groupId, topic);
     }
 
     /**
@@ -39,50 +47,14 @@ class UpdateKafkaConnectionRequest {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, id, objectType) { 
+    static initialize(obj, id, objectType, name, brokers, transformerId, groupId, topic) { 
         obj['id'] = id;
         obj['objectType'] = objectType;
-    }
-
-    /**
-    * Constructs a full object with all available fields.
-    */
-    model(){
-        var obj = {};
-
-        obj['id'] = null;
-        obj['objectType'] = null;
-        obj['name'] = null;
-        obj['brokers'] = null;
-        obj['transformerId'] = null;
-        obj['groupId'] = null;
-        obj['topic'] = null;
-
-        return obj;
-    }
-
-    /**
-    * Constructs a full object Map for all available fields.
-    */
-    modelMap(){
-        var obj = {
-            "fields": {},
-            "requiredFields": {}
-        };
-
-        obj["fields"]['id'] = { "type": 'String', "system": true };
-        obj["fields"]['objectType'] = { "type": 'String', "system": false };
-        obj["fields"]['name'] = { "type": 'String', "system": false };
-        obj["fields"]['brokers'] = { "type": 'String', "system": false };
-        obj["fields"]['transformerId'] = { "type": 'String', "system": false };
-        obj["fields"]['groupId'] = { "type": 'String', "system": false };
-        obj["fields"]['topic'] = { "type": 'String', "system": false };
-
-        
-        obj["requiredFields"]['id'] = { "type": 'String', "system": true };
-        obj["requiredFields"]['objectType'] = { "type": 'String', "system": false };
-
-        return obj;
+        obj['name'] = name;
+        obj['brokers'] = brokers;
+        obj['transformerId'] = transformerId;
+        obj['groupId'] = groupId;
+        obj['topic'] = topic;
     }
 
     /**
@@ -96,6 +68,7 @@ class UpdateKafkaConnectionRequest {
         if (data) {
             obj = obj || new UpdateKafkaConnectionRequest();
             UpdateConnectionRequest.constructFromObject(data, obj);
+            UpdateOptParamModels.constructFromObject(data, obj);
             UpdateKafkaConnectionRequestAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('id')) {
@@ -103,6 +76,15 @@ class UpdateKafkaConnectionRequest {
             }
             if (data.hasOwnProperty('objectType')) {
                 obj['objectType'] = ApiClient.convertToType(data['objectType'], 'String');
+            }
+            if (data.hasOwnProperty('customFields')) {
+                obj['customFields'] = ApiClient.convertToType(data['customFields'], ['String']);
+            }
+            if (data.hasOwnProperty('tags')) {
+                obj['tags'] = ApiClient.convertToType(data['tags'], ['String']);
+            }
+            if (data.hasOwnProperty('metadata')) {
+                obj['metadata'] = ApiClient.convertToType(data['metadata'], [Metadata]);
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
@@ -137,6 +119,23 @@ UpdateKafkaConnectionRequest.prototype['id'] = undefined;
  * @member {String} objectType
  */
 UpdateKafkaConnectionRequest.prototype['objectType'] = undefined;
+
+/**
+ * A list of id's used to add cutom fields
+ * @member {Array.<String>} customFields
+ */
+UpdateKafkaConnectionRequest.prototype['customFields'] = undefined;
+
+/**
+ * A list of id's used to tag models
+ * @member {Array.<String>} tags
+ */
+UpdateKafkaConnectionRequest.prototype['tags'] = undefined;
+
+/**
+ * @member {Array.<module:model/Metadata>} metadata
+ */
+UpdateKafkaConnectionRequest.prototype['metadata'] = undefined;
 
 /**
  * The name of the consumer
@@ -180,6 +179,21 @@ UpdateConnectionRequest.prototype['id'] = undefined;
  * @member {String} objectType
  */
 UpdateConnectionRequest.prototype['objectType'] = undefined;
+// Implement UpdateOptParamModels interface:
+/**
+ * A list of id's used to add cutom fields
+ * @member {Array.<String>} customFields
+ */
+UpdateOptParamModels.prototype['customFields'] = undefined;
+/**
+ * A list of id's used to tag models
+ * @member {Array.<String>} tags
+ */
+UpdateOptParamModels.prototype['tags'] = undefined;
+/**
+ * @member {Array.<module:model/Metadata>} metadata
+ */
+UpdateOptParamModels.prototype['metadata'] = undefined;
 // Implement UpdateKafkaConnectionRequestAllOf interface:
 /**
  * The name of the consumer

@@ -1,4 +1,4 @@
-# @CompetitionlabsApplicationServicesSdk.ComplexFilter
+# CompetitionLabsApplicationServices.ComplexFilter
 
 ## Properties
 

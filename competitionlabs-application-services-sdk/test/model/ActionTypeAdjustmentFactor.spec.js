@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.@CompetitionlabsJavascriptSdk);
+    factory(root.expect, root.CompetitionLabsApplicationServices);
   }
-}(this, function(expect, @CompetitionlabsJavascriptSdk) {
+}(this, function(expect, CompetitionLabsApplicationServices) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new @CompetitionlabsJavascriptSdk.ActionTypeAdjustmentFactor();
+    instance = new CompetitionLabsApplicationServices.ActionTypeAdjustmentFactor();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,19 +50,19 @@
   describe('ActionTypeAdjustmentFactor', function() {
     it('should create an instance of ActionTypeAdjustmentFactor', function() {
       // uncomment below and update the code to test ActionTypeAdjustmentFactor
-      //var instane = new @CompetitionlabsJavascriptSdk.ActionTypeAdjustmentFactor();
-      //expect(instance).to.be.a(@CompetitionlabsJavascriptSdk.ActionTypeAdjustmentFactor);
+      //var instane = new CompetitionLabsApplicationServices.ActionTypeAdjustmentFactor();
+      //expect(instance).to.be.a(CompetitionLabsApplicationServices.ActionTypeAdjustmentFactor);
     });
 
     it('should have the property adjustmentFactor (base name: "adjustmentFactor")', function() {
       // uncomment below and update the code to test the property adjustmentFactor
-      //var instane = new @CompetitionlabsJavascriptSdk.ActionTypeAdjustmentFactor();
+      //var instance = new CompetitionLabsApplicationServices.ActionTypeAdjustmentFactor();
       //expect(instance).to.be();
     });
 
     it('should have the property actionTypeId (base name: "actionTypeId")', function() {
       // uncomment below and update the code to test the property actionTypeId
-      //var instane = new @CompetitionlabsJavascriptSdk.ActionTypeAdjustmentFactor();
+      //var instance = new CompetitionLabsApplicationServices.ActionTypeAdjustmentFactor();
       //expect(instance).to.be();
     });
 

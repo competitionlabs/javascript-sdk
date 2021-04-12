@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.@CompetitionlabsJavascriptSdk);
+    factory(root.expect, root.CompetitionLabsApplicationServices);
   }
-}(this, function(expect, @CompetitionlabsJavascriptSdk) {
+}(this, function(expect, CompetitionLabsApplicationServices) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new @CompetitionlabsJavascriptSdk.MetaExtended();
+    instance = new CompetitionLabsApplicationServices.MetaExtended();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,37 +50,37 @@
   describe('MetaExtended', function() {
     it('should create an instance of MetaExtended', function() {
       // uncomment below and update the code to test MetaExtended
-      //var instane = new @CompetitionlabsJavascriptSdk.MetaExtended();
-      //expect(instance).to.be.a(@CompetitionlabsJavascriptSdk.MetaExtended);
+      //var instane = new CompetitionLabsApplicationServices.MetaExtended();
+      //expect(instance).to.be.a(CompetitionLabsApplicationServices.MetaExtended);
     });
 
     it('should have the property objectType (base name: "objectType")', function() {
       // uncomment below and update the code to test the property objectType
-      //var instane = new @CompetitionlabsJavascriptSdk.MetaExtended();
+      //var instance = new CompetitionLabsApplicationServices.MetaExtended();
       //expect(instance).to.be();
     });
 
     it('should have the property resultCount (base name: "resultCount")', function() {
       // uncomment below and update the code to test the property resultCount
-      //var instane = new @CompetitionlabsJavascriptSdk.MetaExtended();
+      //var instance = new CompetitionLabsApplicationServices.MetaExtended();
       //expect(instance).to.be();
     });
 
     it('should have the property errorCount (base name: "errorCount")', function() {
       // uncomment below and update the code to test the property errorCount
-      //var instane = new @CompetitionlabsJavascriptSdk.MetaExtended();
+      //var instance = new CompetitionLabsApplicationServices.MetaExtended();
       //expect(instance).to.be();
     });
 
     it('should have the property skip (base name: "skip")', function() {
       // uncomment below and update the code to test the property skip
-      //var instane = new @CompetitionlabsJavascriptSdk.MetaExtended();
+      //var instance = new CompetitionLabsApplicationServices.MetaExtended();
       //expect(instance).to.be();
     });
 
     it('should have the property limit (base name: "limit")', function() {
       // uncomment below and update the code to test the property limit
-      //var instane = new @CompetitionlabsJavascriptSdk.MetaExtended();
+      //var instance = new CompetitionLabsApplicationServices.MetaExtended();
       //expect(instance).to.be();
     });
 

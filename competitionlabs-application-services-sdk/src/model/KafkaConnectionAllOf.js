@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The KafkaConnectionAllOf model module.
  * @module model/KafkaConnectionAllOf
- * @version 1.0.5
+ * @version 1.0.0
  */
 class KafkaConnectionAllOf {
     /**
@@ -28,10 +28,11 @@ class KafkaConnectionAllOf {
      * @param topic {String} Topic name
      * @param lastKnownStatus {String} Last known status of the connection
      * @param lastKnownStatusCode {Number} Status code correspoding to the last known status
+     * @param transformerId {String} The identifier of the transformer
      */
-    constructor(name, brokers, groupId, topic, lastKnownStatus, lastKnownStatusCode) { 
+    constructor(name, brokers, groupId, topic, lastKnownStatus, lastKnownStatusCode, transformerId) { 
         
-        KafkaConnectionAllOf.initialize(this, name, brokers, groupId, topic, lastKnownStatus, lastKnownStatusCode);
+        KafkaConnectionAllOf.initialize(this, name, brokers, groupId, topic, lastKnownStatus, lastKnownStatusCode, transformerId);
     }
 
     /**
@@ -39,56 +40,14 @@ class KafkaConnectionAllOf {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, name, brokers, groupId, topic, lastKnownStatus, lastKnownStatusCode) { 
+    static initialize(obj, name, brokers, groupId, topic, lastKnownStatus, lastKnownStatusCode, transformerId) { 
         obj['name'] = name;
         obj['brokers'] = brokers;
         obj['groupId'] = groupId;
         obj['topic'] = topic;
         obj['lastKnownStatus'] = lastKnownStatus;
         obj['lastKnownStatusCode'] = lastKnownStatusCode;
-    }
-
-    /**
-    * Constructs a full object with all available fields.
-    */
-    model(){
-        var obj = {};
-
-        obj['name'] = null;
-        obj['brokers'] = [null];
-        obj['groupId'] = null;
-        obj['topic'] = null;
-        obj['lastKnownStatus'] = null;
-        obj['lastKnownStatusCode'] = null;
-
-        return obj;
-    }
-
-    /**
-    * Constructs a full object Map for all available fields.
-    */
-    modelMap(){
-        var obj = {
-            "fields": {},
-            "requiredFields": {}
-        };
-
-        obj["fields"]['name'] = { "type": 'String', "system": false };
-        obj["fields"]['brokers'] = [{ "type": 'String', "system": false }];
-        obj["fields"]['groupId'] = { "type": 'String', "system": false };
-        obj["fields"]['topic'] = { "type": 'String', "system": false };
-        obj["fields"]['lastKnownStatus'] = { "type": 'String', "system": false };
-        obj["fields"]['lastKnownStatusCode'] = { "type": 'Number', "system": false };
-
-        
-        obj["requiredFields"]['name'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['brokers'] = [{ "type": 'String', "system": false }];
-        obj["requiredFields"]['groupId'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['topic'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['lastKnownStatus'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['lastKnownStatusCode'] = { "type": 'Number', "system": false };
-
-        return obj;
+        obj['transformerId'] = transformerId;
     }
 
     /**
@@ -119,6 +78,9 @@ class KafkaConnectionAllOf {
             }
             if (data.hasOwnProperty('lastKnownStatusCode')) {
                 obj['lastKnownStatusCode'] = ApiClient.convertToType(data['lastKnownStatusCode'], 'Number');
+            }
+            if (data.hasOwnProperty('transformerId')) {
+                obj['transformerId'] = ApiClient.convertToType(data['transformerId'], 'String');
             }
         }
         return obj;
@@ -162,6 +124,12 @@ KafkaConnectionAllOf.prototype['lastKnownStatus'] = undefined;
  * @member {Number} lastKnownStatusCode
  */
 KafkaConnectionAllOf.prototype['lastKnownStatusCode'] = undefined;
+
+/**
+ * The identifier of the transformer
+ * @member {String} transformerId
+ */
+KafkaConnectionAllOf.prototype['transformerId'] = undefined;
 
 
 

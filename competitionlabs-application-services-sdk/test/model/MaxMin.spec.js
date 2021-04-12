@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.@CompetitionlabsJavascriptSdk);
+    factory(root.expect, root.CompetitionLabsApplicationServices);
   }
-}(this, function(expect, @CompetitionlabsJavascriptSdk) {
+}(this, function(expect, CompetitionLabsApplicationServices) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new @CompetitionlabsJavascriptSdk.MaxMin();
+    instance = new CompetitionLabsApplicationServices.MaxMin();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,19 +50,19 @@
   describe('MaxMin', function() {
     it('should create an instance of MaxMin', function() {
       // uncomment below and update the code to test MaxMin
-      //var instane = new @CompetitionlabsJavascriptSdk.MaxMin();
-      //expect(instance).to.be.a(@CompetitionlabsJavascriptSdk.MaxMin);
+      //var instane = new CompetitionLabsApplicationServices.MaxMin();
+      //expect(instance).to.be.a(CompetitionLabsApplicationServices.MaxMin);
     });
 
     it('should have the property maximum (base name: "maximum")', function() {
       // uncomment below and update the code to test the property maximum
-      //var instane = new @CompetitionlabsJavascriptSdk.MaxMin();
+      //var instance = new CompetitionLabsApplicationServices.MaxMin();
       //expect(instance).to.be();
     });
 
     it('should have the property minimum (base name: "minimum")', function() {
       // uncomment below and update the code to test the property minimum
-      //var instane = new @CompetitionlabsJavascriptSdk.MaxMin();
+      //var instance = new CompetitionLabsApplicationServices.MaxMin();
       //expect(instance).to.be();
     });
 

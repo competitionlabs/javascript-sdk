@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -12,26 +12,34 @@
  */
 
 import ApiClient from '../ApiClient';
+import CreateSqsConnectionRequestAllOf from './CreateSqsConnectionRequestAllOf';
+import Metadata from './Metadata';
 import UpdateConnectionRequest from './UpdateConnectionRequest';
-import UpdateSqsConnectionRequestAllOf from './UpdateSqsConnectionRequestAllOf';
+import UpdateOptParamModels from './UpdateOptParamModels';
 
 /**
  * The UpdateSqsConnectionRequest model module.
  * @module model/UpdateSqsConnectionRequest
- * @version 1.0.5
+ * @version 1.0.0
  */
 class UpdateSqsConnectionRequest {
     /**
      * Constructs a new <code>UpdateSqsConnectionRequest</code>.
      * @alias module:model/UpdateSqsConnectionRequest
      * @implements module:model/UpdateConnectionRequest
-     * @implements module:model/UpdateSqsConnectionRequestAllOf
+     * @implements module:model/UpdateOptParamModels
+     * @implements module:model/CreateSqsConnectionRequestAllOf
      * @param id {String} A unique system generated identifier
      * @param objectType {String} The type of consumer to create
+     * @param name {String} The name of the consumer
+     * @param uri {String} The SQS endpoint.
+     * @param acessKey {String} The access key of the IAM user
+     * @param secretKey {String} The secret key of IAM user
+     * @param transformerId {String} The id of the transformer to handle incoming messages
      */
-    constructor(id, objectType) { 
-        UpdateConnectionRequest.initialize(this, id, objectType);UpdateSqsConnectionRequestAllOf.initialize(this);
-        UpdateSqsConnectionRequest.initialize(this, id, objectType);
+    constructor(id, objectType, name, uri, acessKey, secretKey, transformerId) { 
+        UpdateConnectionRequest.initialize(this, id, objectType);UpdateOptParamModels.initialize(this);CreateSqsConnectionRequestAllOf.initialize(this, name, uri, acessKey, secretKey, transformerId);
+        UpdateSqsConnectionRequest.initialize(this, id, objectType, name, uri, acessKey, secretKey, transformerId);
     }
 
     /**
@@ -39,50 +47,14 @@ class UpdateSqsConnectionRequest {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, id, objectType) { 
+    static initialize(obj, id, objectType, name, uri, acessKey, secretKey, transformerId) { 
         obj['id'] = id;
         obj['objectType'] = objectType;
-    }
-
-    /**
-    * Constructs a full object with all available fields.
-    */
-    model(){
-        var obj = {};
-
-        obj['id'] = null;
-        obj['objectType'] = null;
-        obj['name'] = null;
-        obj['uri'] = null;
-        obj['acessKey'] = null;
-        obj['secretKey'] = null;
-        obj['transformerId'] = null;
-
-        return obj;
-    }
-
-    /**
-    * Constructs a full object Map for all available fields.
-    */
-    modelMap(){
-        var obj = {
-            "fields": {},
-            "requiredFields": {}
-        };
-
-        obj["fields"]['id'] = { "type": 'String', "system": true };
-        obj["fields"]['objectType'] = { "type": 'String', "system": false };
-        obj["fields"]['name'] = { "type": 'String', "system": false };
-        obj["fields"]['uri'] = { "type": 'String', "system": false };
-        obj["fields"]['acessKey'] = { "type": 'String', "system": false };
-        obj["fields"]['secretKey'] = { "type": 'String', "system": false };
-        obj["fields"]['transformerId'] = { "type": 'String', "system": false };
-
-        
-        obj["requiredFields"]['id'] = { "type": 'String', "system": true };
-        obj["requiredFields"]['objectType'] = { "type": 'String', "system": false };
-
-        return obj;
+        obj['name'] = name;
+        obj['uri'] = uri;
+        obj['acessKey'] = acessKey;
+        obj['secretKey'] = secretKey;
+        obj['transformerId'] = transformerId;
     }
 
     /**
@@ -96,13 +68,23 @@ class UpdateSqsConnectionRequest {
         if (data) {
             obj = obj || new UpdateSqsConnectionRequest();
             UpdateConnectionRequest.constructFromObject(data, obj);
-            UpdateSqsConnectionRequestAllOf.constructFromObject(data, obj);
+            UpdateOptParamModels.constructFromObject(data, obj);
+            CreateSqsConnectionRequestAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'String');
             }
             if (data.hasOwnProperty('objectType')) {
                 obj['objectType'] = ApiClient.convertToType(data['objectType'], 'String');
+            }
+            if (data.hasOwnProperty('customFields')) {
+                obj['customFields'] = ApiClient.convertToType(data['customFields'], ['String']);
+            }
+            if (data.hasOwnProperty('tags')) {
+                obj['tags'] = ApiClient.convertToType(data['tags'], ['String']);
+            }
+            if (data.hasOwnProperty('metadata')) {
+                obj['metadata'] = ApiClient.convertToType(data['metadata'], [Metadata]);
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
@@ -137,6 +119,23 @@ UpdateSqsConnectionRequest.prototype['id'] = undefined;
  * @member {String} objectType
  */
 UpdateSqsConnectionRequest.prototype['objectType'] = undefined;
+
+/**
+ * A list of id's used to add cutom fields
+ * @member {Array.<String>} customFields
+ */
+UpdateSqsConnectionRequest.prototype['customFields'] = undefined;
+
+/**
+ * A list of id's used to tag models
+ * @member {Array.<String>} tags
+ */
+UpdateSqsConnectionRequest.prototype['tags'] = undefined;
+
+/**
+ * @member {Array.<module:model/Metadata>} metadata
+ */
+UpdateSqsConnectionRequest.prototype['metadata'] = undefined;
 
 /**
  * The name of the consumer
@@ -180,32 +179,47 @@ UpdateConnectionRequest.prototype['id'] = undefined;
  * @member {String} objectType
  */
 UpdateConnectionRequest.prototype['objectType'] = undefined;
-// Implement UpdateSqsConnectionRequestAllOf interface:
+// Implement UpdateOptParamModels interface:
+/**
+ * A list of id's used to add cutom fields
+ * @member {Array.<String>} customFields
+ */
+UpdateOptParamModels.prototype['customFields'] = undefined;
+/**
+ * A list of id's used to tag models
+ * @member {Array.<String>} tags
+ */
+UpdateOptParamModels.prototype['tags'] = undefined;
+/**
+ * @member {Array.<module:model/Metadata>} metadata
+ */
+UpdateOptParamModels.prototype['metadata'] = undefined;
+// Implement CreateSqsConnectionRequestAllOf interface:
 /**
  * The name of the consumer
  * @member {String} name
  */
-UpdateSqsConnectionRequestAllOf.prototype['name'] = undefined;
+CreateSqsConnectionRequestAllOf.prototype['name'] = undefined;
 /**
  * The SQS endpoint.
  * @member {String} uri
  */
-UpdateSqsConnectionRequestAllOf.prototype['uri'] = undefined;
+CreateSqsConnectionRequestAllOf.prototype['uri'] = undefined;
 /**
  * The access key of the IAM user
  * @member {String} acessKey
  */
-UpdateSqsConnectionRequestAllOf.prototype['acessKey'] = undefined;
+CreateSqsConnectionRequestAllOf.prototype['acessKey'] = undefined;
 /**
  * The secret key of IAM user
  * @member {String} secretKey
  */
-UpdateSqsConnectionRequestAllOf.prototype['secretKey'] = undefined;
+CreateSqsConnectionRequestAllOf.prototype['secretKey'] = undefined;
 /**
  * The id of the transformer to handle incoming messages
  * @member {String} transformerId
  */
-UpdateSqsConnectionRequestAllOf.prototype['transformerId'] = undefined;
+CreateSqsConnectionRequestAllOf.prototype['transformerId'] = undefined;
 
 
 

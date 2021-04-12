@@ -1,9 +1,8 @@
 {
   "name": "@competitionlabs/application-services-sdk",
-  "version": "1.0.5",
-  "description": "CompetitionLabs API Application services JavaScript SDK",
-  "license": "ISC",
-  "author": "COMPETITION LABS LTD",
+  "version": "1.0.0",
+  "description": "CompetitionLabs_Application_Services_are_used_to_manage_and_configure_spaces_",
+  "license": "CompetitionLabs General Licence",
   "main": "dist/index.js",
   "scripts": {
     "build": "babel src -d dist",
@@ -12,10 +11,6 @@
   },
   "browser": {
     "fs": false
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/competitionlabs/javascript-sdk/tree/master/competitionlabs-application-services-sdk"
   },
   "dependencies": {
     "@babel/cli": "^7.0.0",

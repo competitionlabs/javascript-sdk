@@ -1,4 +1,4 @@
-# @CompetitionlabsApplicationServicesSdk.UpdateCompetitionStatusRequestAllOf
+# CompetitionLabsApplicationServices.UpdateCompetitionStatusRequestAllOf
 
 ## Properties
 

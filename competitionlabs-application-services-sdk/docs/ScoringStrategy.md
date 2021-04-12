@@ -1,4 +1,4 @@
-# @CompetitionlabsApplicationServicesSdk.ScoringStrategy
+# CompetitionLabsApplicationServices.ScoringStrategy
 
 ## Properties
 

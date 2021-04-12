@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -17,7 +17,7 @@ import ConnectionState from './ConnectionState';
 /**
  * The UpdateConsumerStateRequestAllOf model module.
  * @module model/UpdateConsumerStateRequestAllOf
- * @version 1.0.5
+ * @version 1.0.0
  */
 class UpdateConsumerStateRequestAllOf {
     /**
@@ -37,34 +37,6 @@ class UpdateConsumerStateRequestAllOf {
      */
     static initialize(obj, status) { 
         obj['status'] = status;
-    }
-
-    /**
-    * Constructs a full object with all available fields.
-    */
-    model(){
-        var obj = {};
-
-        obj['status'] = new ConnectionState().model();
-
-        return obj;
-    }
-
-    /**
-    * Constructs a full object Map for all available fields.
-    */
-    modelMap(){
-        var obj = {
-            "fields": {},
-            "requiredFields": {}
-        };
-
-        obj["fields"]['status'] = new ConnectionState().modelMap();
-
-        
-        obj["requiredFields"]['status'] = new ConnectionState().modelMap();
-
-        return obj;
     }
 
     /**

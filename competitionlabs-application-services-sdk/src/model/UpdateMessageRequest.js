@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -15,25 +15,35 @@ import ApiClient from '../ApiClient';
 import MessageType from './MessageType';
 import Metadata from './Metadata';
 import Scheduling from './Scheduling';
+import TagsReduced from './TagsReduced';
+import TranslationValue from './TranslationValue';
 import UpdateMessageRequestAllOf from './UpdateMessageRequestAllOf';
 import UpdateModelDefault from './UpdateModelDefault';
+import UpdateOptParamModels from './UpdateOptParamModels';
 
 /**
  * The UpdateMessageRequest model module.
  * @module model/UpdateMessageRequest
- * @version 1.0.5
+ * @version 1.0.0
  */
 class UpdateMessageRequest {
     /**
      * Constructs a new <code>UpdateMessageRequest</code>.
      * @alias module:model/UpdateMessageRequest
      * @implements module:model/UpdateModelDefault
+     * @implements module:model/UpdateOptParamModels
      * @implements module:model/UpdateMessageRequestAllOf
      * @param id {String} A unique system generated identifier
+     * @param members {Array.<String>} A list of specified members to which the message will be sent
+     * @param messageType {module:model/MessageType} 
+     * @param subject {String} The title of the message
+     * @param body {String} The context of the message
+     * @param scheduling {module:model/Scheduling} 
+     * @param constraints {Array.<String>} Additional constraints, if the value is present it means the
      */
-    constructor(id) { 
-        UpdateModelDefault.initialize(this, id);UpdateMessageRequestAllOf.initialize(this);
-        UpdateMessageRequest.initialize(this, id);
+    constructor(id, members, messageType, subject, body, scheduling, constraints) { 
+        UpdateModelDefault.initialize(this, id);UpdateOptParamModels.initialize(this);UpdateMessageRequestAllOf.initialize(this, members, messageType, subject, body, scheduling, constraints);
+        UpdateMessageRequest.initialize(this, id, members, messageType, subject, body, scheduling, constraints);
     }
 
     /**
@@ -41,50 +51,14 @@ class UpdateMessageRequest {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, id) { 
+    static initialize(obj, id, members, messageType, subject, body, scheduling, constraints) { 
         obj['id'] = id;
-    }
-
-    /**
-    * Constructs a full object with all available fields.
-    */
-    model(){
-        var obj = {};
-
-        obj['id'] = null;
-        obj['memberGroup'] = [null];
-        obj['members'] = [null];
-        obj['messageType'] = new MessageType().model();
-        obj['subject'] = null;
-        obj['body'] = null;
-        obj['scheduling'] = new Scheduling().model();
-        obj['metadata'] = [new Metadata().model()];
-
-        return obj;
-    }
-
-    /**
-    * Constructs a full object Map for all available fields.
-    */
-    modelMap(){
-        var obj = {
-            "fields": {},
-            "requiredFields": {}
-        };
-
-        obj["fields"]['id'] = { "type": 'String', "system": true };
-        obj["fields"]['memberGroup'] = [{ "type": 'String', "system": false }];
-        obj["fields"]['members'] = [{ "type": 'String', "system": false }];
-        obj["fields"]['messageType'] = new MessageType().modelMap();
-        obj["fields"]['subject'] = { "type": 'String', "system": false };
-        obj["fields"]['body'] = { "type": 'String', "system": false };
-        obj["fields"]['scheduling'] = new Scheduling().modelMap();
-        obj["fields"]['metadata'] = [new Metadata().modelMap()];
-
-        
-        obj["requiredFields"]['id'] = { "type": 'String', "system": true };
-
-        return obj;
+        obj['members'] = members;
+        obj['messageType'] = messageType;
+        obj['subject'] = subject;
+        obj['body'] = body;
+        obj['scheduling'] = scheduling;
+        obj['constraints'] = constraints;
     }
 
     /**
@@ -98,13 +72,23 @@ class UpdateMessageRequest {
         if (data) {
             obj = obj || new UpdateMessageRequest();
             UpdateModelDefault.constructFromObject(data, obj);
+            UpdateOptParamModels.constructFromObject(data, obj);
             UpdateMessageRequestAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'String');
             }
+            if (data.hasOwnProperty('customFields')) {
+                obj['customFields'] = ApiClient.convertToType(data['customFields'], ['String']);
+            }
+            if (data.hasOwnProperty('tags')) {
+                obj['tags'] = ApiClient.convertToType(data['tags'], ['String']);
+            }
+            if (data.hasOwnProperty('metadata')) {
+                obj['metadata'] = ApiClient.convertToType(data['metadata'], [Metadata]);
+            }
             if (data.hasOwnProperty('memberGroup')) {
-                obj['memberGroup'] = ApiClient.convertToType(data['memberGroup'], ['String']);
+                obj['memberGroup'] = ApiClient.convertToType(data['memberGroup'], [TagsReduced]);
             }
             if (data.hasOwnProperty('members')) {
                 obj['members'] = ApiClient.convertToType(data['members'], ['String']);
@@ -121,8 +105,11 @@ class UpdateMessageRequest {
             if (data.hasOwnProperty('scheduling')) {
                 obj['scheduling'] = Scheduling.constructFromObject(data['scheduling']);
             }
-            if (data.hasOwnProperty('metadata')) {
-                obj['metadata'] = ApiClient.convertToType(data['metadata'], [Metadata]);
+            if (data.hasOwnProperty('translations')) {
+                obj['translations'] = ApiClient.convertToType(data['translations'], [Object]);
+            }
+            if (data.hasOwnProperty('constraints')) {
+                obj['constraints'] = ApiClient.convertToType(data['constraints'], ['String']);
             }
         }
         return obj;
@@ -138,8 +125,25 @@ class UpdateMessageRequest {
 UpdateMessageRequest.prototype['id'] = undefined;
 
 /**
+ * A list of id's used to add cutom fields
+ * @member {Array.<String>} customFields
+ */
+UpdateMessageRequest.prototype['customFields'] = undefined;
+
+/**
+ * A list of id's used to tag models
+ * @member {Array.<String>} tags
+ */
+UpdateMessageRequest.prototype['tags'] = undefined;
+
+/**
+ * @member {Array.<module:model/Metadata>} metadata
+ */
+UpdateMessageRequest.prototype['metadata'] = undefined;
+
+/**
  * To which member groups the message will be sent
- * @member {Array.<String>} memberGroup
+ * @member {Array.<module:model/TagsReduced>} memberGroup
  */
 UpdateMessageRequest.prototype['memberGroup'] = undefined;
 
@@ -172,9 +176,15 @@ UpdateMessageRequest.prototype['body'] = undefined;
 UpdateMessageRequest.prototype['scheduling'] = undefined;
 
 /**
- * @member {Array.<module:model/Metadata>} metadata
+ * @member {Array.<Object.<String, module:model/TranslationValue>>} translations
  */
-UpdateMessageRequest.prototype['metadata'] = undefined;
+UpdateMessageRequest.prototype['translations'] = undefined;
+
+/**
+ * Additional constraints, if the value is present it means the
+ * @member {Array.<String>} constraints
+ */
+UpdateMessageRequest.prototype['constraints'] = undefined;
 
 
 // Implement UpdateModelDefault interface:
@@ -183,10 +193,25 @@ UpdateMessageRequest.prototype['metadata'] = undefined;
  * @member {String} id
  */
 UpdateModelDefault.prototype['id'] = undefined;
+// Implement UpdateOptParamModels interface:
+/**
+ * A list of id's used to add cutom fields
+ * @member {Array.<String>} customFields
+ */
+UpdateOptParamModels.prototype['customFields'] = undefined;
+/**
+ * A list of id's used to tag models
+ * @member {Array.<String>} tags
+ */
+UpdateOptParamModels.prototype['tags'] = undefined;
+/**
+ * @member {Array.<module:model/Metadata>} metadata
+ */
+UpdateOptParamModels.prototype['metadata'] = undefined;
 // Implement UpdateMessageRequestAllOf interface:
 /**
  * To which member groups the message will be sent
- * @member {Array.<String>} memberGroup
+ * @member {Array.<module:model/TagsReduced>} memberGroup
  */
 UpdateMessageRequestAllOf.prototype['memberGroup'] = undefined;
 /**
@@ -213,9 +238,14 @@ UpdateMessageRequestAllOf.prototype['body'] = undefined;
  */
 UpdateMessageRequestAllOf.prototype['scheduling'] = undefined;
 /**
- * @member {Array.<module:model/Metadata>} metadata
+ * @member {Array.<Object.<String, module:model/TranslationValue>>} translations
  */
-UpdateMessageRequestAllOf.prototype['metadata'] = undefined;
+UpdateMessageRequestAllOf.prototype['translations'] = undefined;
+/**
+ * Additional constraints, if the value is present it means the
+ * @member {Array.<String>} constraints
+ */
+UpdateMessageRequestAllOf.prototype['constraints'] = undefined;
 
 
 

@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -20,9 +20,9 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.@CompetitionlabsJavascriptSdk);
+    factory(root.expect, root.CompetitionLabsApplicationServices);
   }
-}(this, function(expect, @CompetitionlabsJavascriptSdk) {
+}(this, function(expect, CompetitionLabsApplicationServices) {
   'use strict';
 
   var instance;
@@ -49,8 +49,8 @@
   describe('ContestStatus', function() {
     it('should create an instance of ContestStatus', function() {
       // uncomment below and update the code to test ContestStatus
-      //var instane = new @CompetitionlabsJavascriptSdk.ContestStatus();
-      //expect(instance).to.be.a(@CompetitionlabsJavascriptSdk.ContestStatus);
+      //var instane = new CompetitionLabsApplicationServices.ContestStatus();
+      //expect(instance).to.be.a(CompetitionLabsApplicationServices.ContestStatus);
     });
 
   });

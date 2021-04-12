@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -12,30 +12,37 @@
  */
 
 import ApiClient from '../ApiClient';
+import ConnectionState from './ConnectionState';
+import CustomFieldReduced from './CustomFieldReduced';
 import Metadata from './Metadata';
 import ModelDefault from './ModelDefault';
+import OptParamModels from './OptParamModels';
+import TagsReduced from './TagsReduced';
 import WebhookAllOf from './WebhookAllOf';
 
 /**
  * The Webhook model module.
  * @module model/Webhook
- * @version 1.0.5
+ * @version 1.0.0
  */
 class Webhook {
     /**
      * Constructs a new <code>Webhook</code>.
      * @alias module:model/Webhook
      * @implements module:model/ModelDefault
+     * @implements module:model/OptParamModels
      * @implements module:model/WebhookAllOf
      * @param id {String} A unique system generated identifier
      * @param spaceName {String} This is the space name which is linked to the account
      * @param created {Date} ISO8601 timestamp for when a Model was created. All records are stored in UTC time zone
      * @param postToUrl {String} A URL to post the webhook to
      * @param triggers {Array.<String>} A list of event triggers
+     * @param transformerId {String} The identifier of the transformer
+     * @param status {module:model/ConnectionState} 
      */
-    constructor(id, spaceName, created, postToUrl, triggers) { 
-        ModelDefault.initialize(this, id, spaceName, created);WebhookAllOf.initialize(this, postToUrl, triggers);
-        Webhook.initialize(this, id, spaceName, created, postToUrl, triggers);
+    constructor(id, spaceName, created, postToUrl, triggers, transformerId, status) { 
+        ModelDefault.initialize(this, id, spaceName, created);OptParamModels.initialize(this);WebhookAllOf.initialize(this, postToUrl, triggers, transformerId, status);
+        Webhook.initialize(this, id, spaceName, created, postToUrl, triggers, transformerId, status);
     }
 
     /**
@@ -43,60 +50,14 @@ class Webhook {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, id, spaceName, created, postToUrl, triggers) { 
+    static initialize(obj, id, spaceName, created, postToUrl, triggers, transformerId, status) { 
         obj['id'] = id;
         obj['spaceName'] = spaceName;
         obj['created'] = created;
         obj['postToUrl'] = postToUrl;
         obj['triggers'] = triggers;
-    }
-
-    /**
-    * Constructs a full object with all available fields.
-    */
-    model(){
-        var obj = {};
-
-        obj['id'] = null;
-        obj['spaceName'] = null;
-        obj['created'] = null;
-        obj['postToUrl'] = null;
-        obj['triggers'] = [null];
-        obj['description'] = null;
-        obj['headers'] = [new Metadata().model()];
-        obj['transformerId'] = null;
-        obj['metadata'] = [new Metadata().model()];
-
-        return obj;
-    }
-
-    /**
-    * Constructs a full object Map for all available fields.
-    */
-    modelMap(){
-        var obj = {
-            "fields": {},
-            "requiredFields": {}
-        };
-
-        obj["fields"]['id'] = { "type": 'String', "system": true };
-        obj["fields"]['spaceName'] = { "type": 'String', "system": true };
-        obj["fields"]['created'] = { "type": 'Date', "system": true };
-        obj["fields"]['postToUrl'] = { "type": 'String', "system": false };
-        obj["fields"]['triggers'] = [{ "type": 'String', "system": false }];
-        obj["fields"]['description'] = { "type": 'String', "system": false };
-        obj["fields"]['headers'] = [new Metadata().modelMap()];
-        obj["fields"]['transformerId'] = { "type": 'String', "system": false };
-        obj["fields"]['metadata'] = [new Metadata().modelMap()];
-
-        
-        obj["requiredFields"]['id'] = { "type": 'String', "system": true };
-        obj["requiredFields"]['spaceName'] = { "type": 'String', "system": true };
-        obj["requiredFields"]['created'] = { "type": 'Date', "system": true };
-        obj["requiredFields"]['postToUrl'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['triggers'] = [{ "type": 'String', "system": false }];
-
-        return obj;
+        obj['transformerId'] = transformerId;
+        obj['status'] = status;
     }
 
     /**
@@ -110,6 +71,7 @@ class Webhook {
         if (data) {
             obj = obj || new Webhook();
             ModelDefault.constructFromObject(data, obj);
+            OptParamModels.constructFromObject(data, obj);
             WebhookAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('id')) {
@@ -120,6 +82,15 @@ class Webhook {
             }
             if (data.hasOwnProperty('created')) {
                 obj['created'] = ApiClient.convertToType(data['created'], 'Date');
+            }
+            if (data.hasOwnProperty('customFields')) {
+                obj['customFields'] = ApiClient.convertToType(data['customFields'], [CustomFieldReduced]);
+            }
+            if (data.hasOwnProperty('tags')) {
+                obj['tags'] = ApiClient.convertToType(data['tags'], [TagsReduced]);
+            }
+            if (data.hasOwnProperty('metadata')) {
+                obj['metadata'] = ApiClient.convertToType(data['metadata'], [Metadata]);
             }
             if (data.hasOwnProperty('postToUrl')) {
                 obj['postToUrl'] = ApiClient.convertToType(data['postToUrl'], 'String');
@@ -136,8 +107,8 @@ class Webhook {
             if (data.hasOwnProperty('transformerId')) {
                 obj['transformerId'] = ApiClient.convertToType(data['transformerId'], 'String');
             }
-            if (data.hasOwnProperty('metadata')) {
-                obj['metadata'] = ApiClient.convertToType(data['metadata'], [Metadata]);
+            if (data.hasOwnProperty('status')) {
+                obj['status'] = ConnectionState.constructFromObject(data['status']);
             }
         }
         return obj;
@@ -163,6 +134,22 @@ Webhook.prototype['spaceName'] = undefined;
  * @member {Date} created
  */
 Webhook.prototype['created'] = undefined;
+
+/**
+ * @member {Array.<module:model/CustomFieldReduced>} customFields
+ */
+Webhook.prototype['customFields'] = undefined;
+
+/**
+ * A list of id's used to tag models
+ * @member {Array.<module:model/TagsReduced>} tags
+ */
+Webhook.prototype['tags'] = undefined;
+
+/**
+ * @member {Array.<module:model/Metadata>} metadata
+ */
+Webhook.prototype['metadata'] = undefined;
 
 /**
  * A URL to post the webhook to
@@ -194,9 +181,9 @@ Webhook.prototype['headers'] = undefined;
 Webhook.prototype['transformerId'] = undefined;
 
 /**
- * @member {Array.<module:model/Metadata>} metadata
+ * @member {module:model/ConnectionState} status
  */
-Webhook.prototype['metadata'] = undefined;
+Webhook.prototype['status'] = undefined;
 
 
 // Implement ModelDefault interface:
@@ -215,6 +202,20 @@ ModelDefault.prototype['spaceName'] = undefined;
  * @member {Date} created
  */
 ModelDefault.prototype['created'] = undefined;
+// Implement OptParamModels interface:
+/**
+ * @member {Array.<module:model/CustomFieldReduced>} customFields
+ */
+OptParamModels.prototype['customFields'] = undefined;
+/**
+ * A list of id's used to tag models
+ * @member {Array.<module:model/TagsReduced>} tags
+ */
+OptParamModels.prototype['tags'] = undefined;
+/**
+ * @member {Array.<module:model/Metadata>} metadata
+ */
+OptParamModels.prototype['metadata'] = undefined;
 // Implement WebhookAllOf interface:
 /**
  * A URL to post the webhook to
@@ -241,9 +242,9 @@ WebhookAllOf.prototype['headers'] = undefined;
  */
 WebhookAllOf.prototype['transformerId'] = undefined;
 /**
- * @member {Array.<module:model/Metadata>} metadata
+ * @member {module:model/ConnectionState} status
  */
-WebhookAllOf.prototype['metadata'] = undefined;
+WebhookAllOf.prototype['status'] = undefined;
 
 
 

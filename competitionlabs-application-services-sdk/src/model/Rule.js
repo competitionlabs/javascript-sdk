@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -17,7 +17,7 @@ import RuleSubCondition from './RuleSubCondition';
 /**
  * The Rule model module.
  * @module model/Rule
- * @version 1.0.5
+ * @version 1.0.0
  */
 class Rule {
     /**
@@ -45,46 +45,6 @@ class Rule {
         obj['constant'] = constant;
         obj['id'] = id;
         obj['subConditions'] = subConditions;
-    }
-
-    /**
-    * Constructs a full object with all available fields.
-    */
-    model(){
-        var obj = {};
-
-        obj['fact'] = null;
-        obj['operator'] = null;
-        obj['constant'] = null;
-        obj['id'] = null;
-        obj['subConditions'] = [new RuleSubCondition().model()];
-
-        return obj;
-    }
-
-    /**
-    * Constructs a full object Map for all available fields.
-    */
-    modelMap(){
-        var obj = {
-            "fields": {},
-            "requiredFields": {}
-        };
-
-        obj["fields"]['fact'] = { "type": 'String', "system": false };
-        obj["fields"]['operator'] = { "type": 'String', "system": false };
-        obj["fields"]['constant'] = { "type": 'String', "system": false };
-        obj["fields"]['id'] = { "type": 'String', "system": true };
-        obj["fields"]['subConditions'] = [new RuleSubCondition().modelMap()];
-
-        
-        obj["requiredFields"]['fact'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['operator'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['constant'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['id'] = { "type": 'String', "system": true };
-        obj["requiredFields"]['subConditions'] = [new RuleSubCondition().modelMap()];
-
-        return obj;
     }
 
     /**

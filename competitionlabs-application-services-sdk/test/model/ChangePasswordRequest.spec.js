@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.@CompetitionlabsJavascriptSdk);
+    factory(root.expect, root.CompetitionLabsApplicationServices);
   }
-}(this, function(expect, @CompetitionlabsJavascriptSdk) {
+}(this, function(expect, CompetitionLabsApplicationServices) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new @CompetitionlabsJavascriptSdk.ChangePasswordRequest();
+    instance = new CompetitionLabsApplicationServices.ChangePasswordRequest();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,37 +50,37 @@
   describe('ChangePasswordRequest', function() {
     it('should create an instance of ChangePasswordRequest', function() {
       // uncomment below and update the code to test ChangePasswordRequest
-      //var instane = new @CompetitionlabsJavascriptSdk.ChangePasswordRequest();
-      //expect(instance).to.be.a(@CompetitionlabsJavascriptSdk.ChangePasswordRequest);
+      //var instane = new CompetitionLabsApplicationServices.ChangePasswordRequest();
+      //expect(instance).to.be.a(CompetitionLabsApplicationServices.ChangePasswordRequest);
     });
 
     it('should have the property email (base name: "email")', function() {
       // uncomment below and update the code to test the property email
-      //var instane = new @CompetitionlabsJavascriptSdk.ChangePasswordRequest();
+      //var instance = new CompetitionLabsApplicationServices.ChangePasswordRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property password (base name: "password")', function() {
       // uncomment below and update the code to test the property password
-      //var instane = new @CompetitionlabsJavascriptSdk.ChangePasswordRequest();
+      //var instance = new CompetitionLabsApplicationServices.ChangePasswordRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property newPassword (base name: "newPassword")', function() {
       // uncomment below and update the code to test the property newPassword
-      //var instane = new @CompetitionlabsJavascriptSdk.ChangePasswordRequest();
+      //var instance = new CompetitionLabsApplicationServices.ChangePasswordRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property confirmPassword (base name: "confirmPassword")', function() {
       // uncomment below and update the code to test the property confirmPassword
-      //var instane = new @CompetitionlabsJavascriptSdk.ChangePasswordRequest();
+      //var instance = new CompetitionLabsApplicationServices.ChangePasswordRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property twoFactorAccessCode (base name: "twoFactorAccessCode")', function() {
       // uncomment below and update the code to test the property twoFactorAccessCode
-      //var instane = new @CompetitionlabsJavascriptSdk.ChangePasswordRequest();
+      //var instance = new CompetitionLabsApplicationServices.ChangePasswordRequest();
       //expect(instance).to.be();
     });
 

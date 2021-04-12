@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.@CompetitionlabsJavascriptSdk);
+    factory(root.expect, root.CompetitionLabsApplicationServices);
   }
-}(this, function(expect, @CompetitionlabsJavascriptSdk) {
+}(this, function(expect, CompetitionLabsApplicationServices) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new @CompetitionlabsJavascriptSdk.FilesApi();
+    instance = new CompetitionLabsApplicationServices.FilesApi();
   });
 
   var getProperty = function(object, getter, property) {
@@ -48,10 +48,10 @@
   }
 
   describe('FilesApi', function() {
-    describe('copyResourceObjects', function() {
-      it('should call copyResourceObjects successfully', function(done) {
-        //uncomment below and update the code to test copyResourceObjects
-        //instance.copyResourceObjects(function(error) {
+    describe('copyFileObjects', function() {
+      it('should call copyFileObjects successfully', function(done) {
+        //uncomment below and update the code to test copyFileObjects
+        //instance.copyFileObjects(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -78,10 +78,30 @@
         done();
       });
     });
-    describe('deleteResourceObjectsByQuery', function() {
-      it('should call deleteResourceObjectsByQuery successfully', function(done) {
-        //uncomment below and update the code to test deleteResourceObjectsByQuery
-        //instance.deleteResourceObjectsByQuery(function(error) {
+    describe('deleteFileObjectsByQuery', function() {
+      it('should call deleteFileObjectsByQuery successfully', function(done) {
+        //uncomment below and update the code to test deleteFileObjectsByQuery
+        //instance.deleteFileObjectsByQuery(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('downloadFileObject', function() {
+      it('should call downloadFileObject successfully', function(done) {
+        //uncomment below and update the code to test downloadFileObject
+        //instance.downloadFileObject(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getFileObjectsByQuery', function() {
+      it('should call getFileObjectsByQuery successfully', function(done) {
+        //uncomment below and update the code to test getFileObjectsByQuery
+        //instance.getFileObjectsByQuery(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -92,16 +112,6 @@
       it('should call getListOfFileObjects successfully', function(done) {
         //uncomment below and update the code to test getListOfFileObjects
         //instance.getListOfFileObjects(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('getResourceObjectsByQuery', function() {
-      it('should call getResourceObjectsByQuery successfully', function(done) {
-        //uncomment below and update the code to test getResourceObjectsByQuery
-        //instance.getResourceObjectsByQuery(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

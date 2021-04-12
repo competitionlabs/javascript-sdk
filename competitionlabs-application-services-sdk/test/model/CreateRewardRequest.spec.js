@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.@CompetitionlabsJavascriptSdk);
+    factory(root.expect, root.CompetitionLabsApplicationServices);
   }
-}(this, function(expect, @CompetitionlabsJavascriptSdk) {
+}(this, function(expect, CompetitionLabsApplicationServices) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new @CompetitionlabsJavascriptSdk.CreateRewardRequest();
+    instance = new CompetitionLabsApplicationServices.CreateRewardRequest();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,85 +50,97 @@
   describe('CreateRewardRequest', function() {
     it('should create an instance of CreateRewardRequest', function() {
       // uncomment below and update the code to test CreateRewardRequest
-      //var instane = new @CompetitionlabsJavascriptSdk.CreateRewardRequest();
-      //expect(instance).to.be.a(@CompetitionlabsJavascriptSdk.CreateRewardRequest);
+      //var instane = new CompetitionLabsApplicationServices.CreateRewardRequest();
+      //expect(instance).to.be.a(CompetitionLabsApplicationServices.CreateRewardRequest);
     });
 
-    it('should have the property rewardRank (base name: "rewardRank")', function() {
-      // uncomment below and update the code to test the property rewardRank
-      //var instane = new @CompetitionlabsJavascriptSdk.CreateRewardRequest();
+    it('should have the property customFields (base name: "customFields")', function() {
+      // uncomment below and update the code to test the property customFields
+      //var instance = new CompetitionLabsApplicationServices.CreateRewardRequest();
       //expect(instance).to.be();
     });
 
-    it('should have the property rewardName (base name: "rewardName")', function() {
-      // uncomment below and update the code to test the property rewardName
-      //var instane = new @CompetitionlabsJavascriptSdk.CreateRewardRequest();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property value (base name: "value")', function() {
-      // uncomment below and update the code to test the property value
-      //var instane = new @CompetitionlabsJavascriptSdk.CreateRewardRequest();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property rewardTypeId (base name: "rewardTypeId")', function() {
-      // uncomment below and update the code to test the property rewardTypeId
-      //var instane = new @CompetitionlabsJavascriptSdk.CreateRewardRequest();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property description (base name: "description")', function() {
-      // uncomment below and update the code to test the property description
-      //var instane = new @CompetitionlabsJavascriptSdk.CreateRewardRequest();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property delay (base name: "delay")', function() {
-      // uncomment below and update the code to test the property delay
-      //var instane = new @CompetitionlabsJavascriptSdk.CreateRewardRequest();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property icon (base name: "icon")', function() {
-      // uncomment below and update the code to test the property icon
-      //var instane = new @CompetitionlabsJavascriptSdk.CreateRewardRequest();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property isMemberAcknowledgmentRequired (base name: "isMemberAcknowledgmentRequired")', function() {
-      // uncomment below and update the code to test the property isMemberAcknowledgmentRequired
-      //var instane = new @CompetitionlabsJavascriptSdk.CreateRewardRequest();
+    it('should have the property tags (base name: "tags")', function() {
+      // uncomment below and update the code to test the property tags
+      //var instance = new CompetitionLabsApplicationServices.CreateRewardRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property metadata (base name: "metadata")', function() {
       // uncomment below and update the code to test the property metadata
-      //var instane = new @CompetitionlabsJavascriptSdk.CreateRewardRequest();
+      //var instance = new CompetitionLabsApplicationServices.CreateRewardRequest();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property name (base name: "name")', function() {
+      // uncomment below and update the code to test the property name
+      //var instance = new CompetitionLabsApplicationServices.CreateRewardRequest();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property description (base name: "description")', function() {
+      // uncomment below and update the code to test the property description
+      //var instance = new CompetitionLabsApplicationServices.CreateRewardRequest();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property rewardRank (base name: "rewardRank")', function() {
+      // uncomment below and update the code to test the property rewardRank
+      //var instance = new CompetitionLabsApplicationServices.CreateRewardRequest();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property rewardValue (base name: "rewardValue")', function() {
+      // uncomment below and update the code to test the property rewardValue
+      //var instance = new CompetitionLabsApplicationServices.CreateRewardRequest();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property rewardType (base name: "rewardType")', function() {
+      // uncomment below and update the code to test the property rewardType
+      //var instance = new CompetitionLabsApplicationServices.CreateRewardRequest();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property icon (base name: "icon")', function() {
+      // uncomment below and update the code to test the property icon
+      //var instance = new CompetitionLabsApplicationServices.CreateRewardRequest();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property issueLimit (base name: "issueLimit")', function() {
+      // uncomment below and update the code to test the property issueLimit
+      //var instance = new CompetitionLabsApplicationServices.CreateRewardRequest();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property delay (base name: "delay")', function() {
+      // uncomment below and update the code to test the property delay
+      //var instance = new CompetitionLabsApplicationServices.CreateRewardRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property pointInTime (base name: "pointInTime")', function() {
       // uncomment below and update the code to test the property pointInTime
-      //var instane = new @CompetitionlabsJavascriptSdk.CreateRewardRequest();
+      //var instance = new CompetitionLabsApplicationServices.CreateRewardRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property period (base name: "period")', function() {
       // uncomment below and update the code to test the property period
-      //var instane = new @CompetitionlabsJavascriptSdk.CreateRewardRequest();
+      //var instance = new CompetitionLabsApplicationServices.CreateRewardRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property translations (base name: "translations")', function() {
       // uncomment below and update the code to test the property translations
-      //var instane = new @CompetitionlabsJavascriptSdk.CreateRewardRequest();
+      //var instance = new CompetitionLabsApplicationServices.CreateRewardRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property constraints (base name: "constraints")', function() {
       // uncomment below and update the code to test the property constraints
-      //var instane = new @CompetitionlabsJavascriptSdk.CreateRewardRequest();
+      //var instance = new CompetitionLabsApplicationServices.CreateRewardRequest();
       //expect(instance).to.be();
     });
 

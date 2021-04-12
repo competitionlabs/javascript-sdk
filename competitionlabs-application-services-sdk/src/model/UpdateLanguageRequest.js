@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -12,24 +12,25 @@
  */
 
 import ApiClient from '../ApiClient';
-import UpdateLanguageRequestAllOf from './UpdateLanguageRequestAllOf';
+import Metadata from './Metadata';
 import UpdateModelDefault from './UpdateModelDefault';
+import UpdateOptParamModels from './UpdateOptParamModels';
 
 /**
  * The UpdateLanguageRequest model module.
  * @module model/UpdateLanguageRequest
- * @version 1.0.5
+ * @version 1.0.0
  */
 class UpdateLanguageRequest {
     /**
      * Constructs a new <code>UpdateLanguageRequest</code>.
      * @alias module:model/UpdateLanguageRequest
      * @implements module:model/UpdateModelDefault
-     * @implements module:model/UpdateLanguageRequestAllOf
+     * @implements module:model/UpdateOptParamModels
      * @param id {String} A unique system generated identifier
      */
     constructor(id) { 
-        UpdateModelDefault.initialize(this, id);UpdateLanguageRequestAllOf.initialize(this);
+        UpdateModelDefault.initialize(this, id);UpdateOptParamModels.initialize(this);
         UpdateLanguageRequest.initialize(this, id);
     }
 
@@ -43,38 +44,6 @@ class UpdateLanguageRequest {
     }
 
     /**
-    * Constructs a full object with all available fields.
-    */
-    model(){
-        var obj = {};
-
-        obj['id'] = null;
-        obj['languageKey'] = null;
-        obj['references'] = [null];
-
-        return obj;
-    }
-
-    /**
-    * Constructs a full object Map for all available fields.
-    */
-    modelMap(){
-        var obj = {
-            "fields": {},
-            "requiredFields": {}
-        };
-
-        obj["fields"]['id'] = { "type": 'String', "system": true };
-        obj["fields"]['languageKey'] = { "type": 'String', "system": false };
-        obj["fields"]['references'] = [{ "type": 'String', "system": false }];
-
-        
-        obj["requiredFields"]['id'] = { "type": 'String', "system": true };
-
-        return obj;
-    }
-
-    /**
      * Constructs a <code>UpdateLanguageRequest</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
@@ -85,16 +54,19 @@ class UpdateLanguageRequest {
         if (data) {
             obj = obj || new UpdateLanguageRequest();
             UpdateModelDefault.constructFromObject(data, obj);
-            UpdateLanguageRequestAllOf.constructFromObject(data, obj);
+            UpdateOptParamModels.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'String');
             }
-            if (data.hasOwnProperty('languageKey')) {
-                obj['languageKey'] = ApiClient.convertToType(data['languageKey'], 'String');
+            if (data.hasOwnProperty('customFields')) {
+                obj['customFields'] = ApiClient.convertToType(data['customFields'], ['String']);
             }
-            if (data.hasOwnProperty('references')) {
-                obj['references'] = ApiClient.convertToType(data['references'], ['String']);
+            if (data.hasOwnProperty('tags')) {
+                obj['tags'] = ApiClient.convertToType(data['tags'], ['String']);
+            }
+            if (data.hasOwnProperty('metadata')) {
+                obj['metadata'] = ApiClient.convertToType(data['metadata'], [Metadata]);
             }
         }
         return obj;
@@ -110,16 +82,21 @@ class UpdateLanguageRequest {
 UpdateLanguageRequest.prototype['id'] = undefined;
 
 /**
- * A reference to the pre created language keys
- * @member {String} languageKey
+ * A list of id's used to add cutom fields
+ * @member {Array.<String>} customFields
  */
-UpdateLanguageRequest.prototype['languageKey'] = undefined;
+UpdateLanguageRequest.prototype['customFields'] = undefined;
 
 /**
- * A reference to the pre created language keys
- * @member {Array.<String>} references
+ * A list of id's used to tag models
+ * @member {Array.<String>} tags
  */
-UpdateLanguageRequest.prototype['references'] = undefined;
+UpdateLanguageRequest.prototype['tags'] = undefined;
+
+/**
+ * @member {Array.<module:model/Metadata>} metadata
+ */
+UpdateLanguageRequest.prototype['metadata'] = undefined;
 
 
 // Implement UpdateModelDefault interface:
@@ -128,17 +105,21 @@ UpdateLanguageRequest.prototype['references'] = undefined;
  * @member {String} id
  */
 UpdateModelDefault.prototype['id'] = undefined;
-// Implement UpdateLanguageRequestAllOf interface:
+// Implement UpdateOptParamModels interface:
 /**
- * A reference to the pre created language keys
- * @member {String} languageKey
+ * A list of id's used to add cutom fields
+ * @member {Array.<String>} customFields
  */
-UpdateLanguageRequestAllOf.prototype['languageKey'] = undefined;
+UpdateOptParamModels.prototype['customFields'] = undefined;
 /**
- * A reference to the pre created language keys
- * @member {Array.<String>} references
+ * A list of id's used to tag models
+ * @member {Array.<String>} tags
  */
-UpdateLanguageRequestAllOf.prototype['references'] = undefined;
+UpdateOptParamModels.prototype['tags'] = undefined;
+/**
+ * @member {Array.<module:model/Metadata>} metadata
+ */
+UpdateOptParamModels.prototype['metadata'] = undefined;
 
 
 

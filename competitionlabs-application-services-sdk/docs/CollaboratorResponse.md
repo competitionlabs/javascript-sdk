@@ -1,4 +1,4 @@
-# @CompetitionlabsApplicationServicesSdk.CollaboratorResponse
+# CompetitionLabsApplicationServices.CollaboratorResponse
 
 ## Properties
 

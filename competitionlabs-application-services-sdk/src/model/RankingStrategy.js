@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -16,21 +16,17 @@ import ApiClient from '../ApiClient';
 /**
  * The RankingStrategy model module.
  * @module model/RankingStrategy
- * @version 1.0.5
+ * @version 1.0.0
  */
 class RankingStrategy {
     /**
      * Constructs a new <code>RankingStrategy</code>.
      * @alias module:model/RankingStrategy
-     * @param scoreDesc {Boolean} The Ranking that can be Ascending or Descending based on timeDesc.
-     * @param timeDesc {Boolean} The Ranking that can be Ascending or Descending based on scoreDesc.
-     * @param scoreFirst {Boolean} The Ranking that can be score first or time first
-     * @param ignoreTime {Boolean} The Ranking when time is ignored
-     * @param ignoreScore {Boolean} The Ranking when score is ignored
+     * @param constraints {Array.<String>} scoreDesc - The Ranking that can be Ascending or Descending based on timeDesc. timeDesc - The Ranking that can be Ascending or Descending based on scoreDesc. scoreFirst - The Ranking that can be score first or time first ignoreTime - The Ranking when time is ignored ignoreScore - The Ranking when score is ignored
      */
-    constructor(scoreDesc, timeDesc, scoreFirst, ignoreTime, ignoreScore) { 
+    constructor(constraints) { 
         
-        RankingStrategy.initialize(this, scoreDesc, timeDesc, scoreFirst, ignoreTime, ignoreScore);
+        RankingStrategy.initialize(this, constraints);
     }
 
     /**
@@ -38,52 +34,8 @@ class RankingStrategy {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, scoreDesc, timeDesc, scoreFirst, ignoreTime, ignoreScore) { 
-        obj['scoreDesc'] = scoreDesc;
-        obj['timeDesc'] = timeDesc;
-        obj['scoreFirst'] = scoreFirst;
-        obj['ignoreTime'] = ignoreTime;
-        obj['ignoreScore'] = ignoreScore;
-    }
-
-    /**
-    * Constructs a full object with all available fields.
-    */
-    model(){
-        var obj = {};
-
-        obj['scoreDesc'] = null;
-        obj['timeDesc'] = null;
-        obj['scoreFirst'] = null;
-        obj['ignoreTime'] = null;
-        obj['ignoreScore'] = null;
-
-        return obj;
-    }
-
-    /**
-    * Constructs a full object Map for all available fields.
-    */
-    modelMap(){
-        var obj = {
-            "fields": {},
-            "requiredFields": {}
-        };
-
-        obj["fields"]['scoreDesc'] = { "type": 'Boolean', "system": false };
-        obj["fields"]['timeDesc'] = { "type": 'Boolean', "system": false };
-        obj["fields"]['scoreFirst'] = { "type": 'Boolean', "system": false };
-        obj["fields"]['ignoreTime'] = { "type": 'Boolean', "system": false };
-        obj["fields"]['ignoreScore'] = { "type": 'Boolean', "system": false };
-
-        
-        obj["requiredFields"]['scoreDesc'] = { "type": 'Boolean', "system": false };
-        obj["requiredFields"]['timeDesc'] = { "type": 'Boolean', "system": false };
-        obj["requiredFields"]['scoreFirst'] = { "type": 'Boolean', "system": false };
-        obj["requiredFields"]['ignoreTime'] = { "type": 'Boolean', "system": false };
-        obj["requiredFields"]['ignoreScore'] = { "type": 'Boolean', "system": false };
-
-        return obj;
+    static initialize(obj, constraints) { 
+        obj['constraints'] = constraints;
     }
 
     /**
@@ -97,20 +49,8 @@ class RankingStrategy {
         if (data) {
             obj = obj || new RankingStrategy();
 
-            if (data.hasOwnProperty('scoreDesc')) {
-                obj['scoreDesc'] = ApiClient.convertToType(data['scoreDesc'], 'Boolean');
-            }
-            if (data.hasOwnProperty('timeDesc')) {
-                obj['timeDesc'] = ApiClient.convertToType(data['timeDesc'], 'Boolean');
-            }
-            if (data.hasOwnProperty('scoreFirst')) {
-                obj['scoreFirst'] = ApiClient.convertToType(data['scoreFirst'], 'Boolean');
-            }
-            if (data.hasOwnProperty('ignoreTime')) {
-                obj['ignoreTime'] = ApiClient.convertToType(data['ignoreTime'], 'Boolean');
-            }
-            if (data.hasOwnProperty('ignoreScore')) {
-                obj['ignoreScore'] = ApiClient.convertToType(data['ignoreScore'], 'Boolean');
+            if (data.hasOwnProperty('constraints')) {
+                obj['constraints'] = ApiClient.convertToType(data['constraints'], ['String']);
             }
         }
         return obj;
@@ -120,34 +60,10 @@ class RankingStrategy {
 }
 
 /**
- * The Ranking that can be Ascending or Descending based on timeDesc.
- * @member {Boolean} scoreDesc
+ * scoreDesc - The Ranking that can be Ascending or Descending based on timeDesc. timeDesc - The Ranking that can be Ascending or Descending based on scoreDesc. scoreFirst - The Ranking that can be score first or time first ignoreTime - The Ranking when time is ignored ignoreScore - The Ranking when score is ignored
+ * @member {Array.<String>} constraints
  */
-RankingStrategy.prototype['scoreDesc'] = undefined;
-
-/**
- * The Ranking that can be Ascending or Descending based on scoreDesc.
- * @member {Boolean} timeDesc
- */
-RankingStrategy.prototype['timeDesc'] = undefined;
-
-/**
- * The Ranking that can be score first or time first
- * @member {Boolean} scoreFirst
- */
-RankingStrategy.prototype['scoreFirst'] = undefined;
-
-/**
- * The Ranking when time is ignored
- * @member {Boolean} ignoreTime
- */
-RankingStrategy.prototype['ignoreTime'] = undefined;
-
-/**
- * The Ranking when score is ignored
- * @member {Boolean} ignoreScore
- */
-RankingStrategy.prototype['ignoreScore'] = undefined;
+RankingStrategy.prototype['constraints'] = undefined;
 
 
 

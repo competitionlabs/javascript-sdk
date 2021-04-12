@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.@CompetitionlabsJavascriptSdk);
+    factory(root.expect, root.CompetitionLabsApplicationServices);
   }
-}(this, function(expect, @CompetitionlabsJavascriptSdk) {
+}(this, function(expect, CompetitionLabsApplicationServices) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new @CompetitionlabsJavascriptSdk.ErrorDetail();
+    instance = new CompetitionLabsApplicationServices.ErrorDetail();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,25 +50,25 @@
   describe('ErrorDetail', function() {
     it('should create an instance of ErrorDetail', function() {
       // uncomment below and update the code to test ErrorDetail
-      //var instane = new @CompetitionlabsJavascriptSdk.ErrorDetail();
-      //expect(instance).to.be.a(@CompetitionlabsJavascriptSdk.ErrorDetail);
+      //var instane = new CompetitionLabsApplicationServices.ErrorDetail();
+      //expect(instance).to.be.a(CompetitionLabsApplicationServices.ErrorDetail);
     });
 
     it('should have the property modelId (base name: "modelId")', function() {
       // uncomment below and update the code to test the property modelId
-      //var instane = new @CompetitionlabsJavascriptSdk.ErrorDetail();
+      //var instance = new CompetitionLabsApplicationServices.ErrorDetail();
       //expect(instance).to.be();
     });
 
     it('should have the property errorCode (base name: "errorCode")', function() {
       // uncomment below and update the code to test the property errorCode
-      //var instane = new @CompetitionlabsJavascriptSdk.ErrorDetail();
+      //var instance = new CompetitionLabsApplicationServices.ErrorDetail();
       //expect(instance).to.be();
     });
 
     it('should have the property message (base name: "message")', function() {
       // uncomment below and update the code to test the property message
-      //var instane = new @CompetitionlabsJavascriptSdk.ErrorDetail();
+      //var instance = new CompetitionLabsApplicationServices.ErrorDetail();
       //expect(instance).to.be();
     });
 

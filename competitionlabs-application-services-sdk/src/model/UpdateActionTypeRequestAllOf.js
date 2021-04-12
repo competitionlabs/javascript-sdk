@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -12,22 +12,24 @@
  */
 
 import ApiClient from '../ApiClient';
-import Metadata from './Metadata';
 import UnitOfMeasureType from './UnitOfMeasureType';
 
 /**
  * The UpdateActionTypeRequestAllOf model module.
  * @module model/UpdateActionTypeRequestAllOf
- * @version 1.0.5
+ * @version 1.0.0
  */
 class UpdateActionTypeRequestAllOf {
     /**
      * Constructs a new <code>UpdateActionTypeRequestAllOf</code>.
      * @alias module:model/UpdateActionTypeRequestAllOf
+     * @param name {String} The name of the Action Helper
+     * @param unitOfMeasureType {module:model/UnitOfMeasureType} 
+     * @param constraints {Array.<String>} Additional constraints, if the value is present it means the
      */
-    constructor() { 
+    constructor(name, unitOfMeasureType, constraints) { 
         
-        UpdateActionTypeRequestAllOf.initialize(this);
+        UpdateActionTypeRequestAllOf.initialize(this, name, unitOfMeasureType, constraints);
     }
 
     /**
@@ -35,42 +37,10 @@ class UpdateActionTypeRequestAllOf {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj) { 
-    }
-
-    /**
-    * Constructs a full object with all available fields.
-    */
-    model(){
-        var obj = {};
-
-        obj['name'] = null;
-        obj['description'] = null;
-        obj['key'] = null;
-        obj['unitOfMeasureType'] = new UnitOfMeasureType().model();
-        obj['metadata'] = [new Metadata().model()];
-
-        return obj;
-    }
-
-    /**
-    * Constructs a full object Map for all available fields.
-    */
-    modelMap(){
-        var obj = {
-            "fields": {},
-            "requiredFields": {}
-        };
-
-        obj["fields"]['name'] = { "type": 'String', "system": false };
-        obj["fields"]['description'] = { "type": 'String', "system": false };
-        obj["fields"]['key'] = { "type": 'String', "system": false };
-        obj["fields"]['unitOfMeasureType'] = new UnitOfMeasureType().modelMap();
-        obj["fields"]['metadata'] = [new Metadata().modelMap()];
-
-        
-
-        return obj;
+    static initialize(obj, name, unitOfMeasureType, constraints) { 
+        obj['name'] = name;
+        obj['unitOfMeasureType'] = unitOfMeasureType;
+        obj['constraints'] = constraints;
     }
 
     /**
@@ -90,14 +60,11 @@ class UpdateActionTypeRequestAllOf {
             if (data.hasOwnProperty('description')) {
                 obj['description'] = ApiClient.convertToType(data['description'], 'String');
             }
-            if (data.hasOwnProperty('key')) {
-                obj['key'] = ApiClient.convertToType(data['key'], 'String');
-            }
             if (data.hasOwnProperty('unitOfMeasureType')) {
                 obj['unitOfMeasureType'] = UnitOfMeasureType.constructFromObject(data['unitOfMeasureType']);
             }
-            if (data.hasOwnProperty('metadata')) {
-                obj['metadata'] = ApiClient.convertToType(data['metadata'], [Metadata]);
+            if (data.hasOwnProperty('constraints')) {
+                obj['constraints'] = ApiClient.convertToType(data['constraints'], ['String']);
             }
         }
         return obj;
@@ -119,20 +86,15 @@ UpdateActionTypeRequestAllOf.prototype['name'] = undefined;
 UpdateActionTypeRequestAllOf.prototype['description'] = undefined;
 
 /**
- * A unique key that represents an action helper
- * @member {String} key
- */
-UpdateActionTypeRequestAllOf.prototype['key'] = undefined;
-
-/**
  * @member {module:model/UnitOfMeasureType} unitOfMeasureType
  */
 UpdateActionTypeRequestAllOf.prototype['unitOfMeasureType'] = undefined;
 
 /**
- * @member {Array.<module:model/Metadata>} metadata
+ * Additional constraints, if the value is present it means the
+ * @member {Array.<String>} constraints
  */
-UpdateActionTypeRequestAllOf.prototype['metadata'] = undefined;
+UpdateActionTypeRequestAllOf.prototype['constraints'] = undefined;
 
 
 

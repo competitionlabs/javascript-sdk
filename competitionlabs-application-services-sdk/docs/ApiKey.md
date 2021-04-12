@@ -1,4 +1,4 @@
-# @CompetitionlabsApplicationServicesSdk.ApiKey
+# CompetitionLabsApplicationServices.ApiKey
 
 ## Properties
 
@@ -7,12 +7,13 @@ Name | Type | Description | Notes
 **id** | **String** | A unique system generated identifier | [readonly] 
 **spaceName** | **String** | This is the space name which is linked to the account | [readonly] 
 **created** | **Date** | ISO8601 timestamp for when a Model was created. All records are stored in UTC time zone | [readonly] 
-**active** | **Boolean** | To enable or dissable an Api key | 
+**customFields** | [**[CustomFieldReduced]**](CustomFieldReduced.md) |  | [optional] 
+**tags** | [**[TagsReduced]**](TagsReduced.md) | A list of id&#39;s used to tag models | [optional] 
+**metadata** | [**[Metadata]**](Metadata.md) |  | [optional] 
 **description** | **String** | The description of an Api key | [optional] 
 **whiteListIPs** | **[String]** | the IP&#39;s that need to be whitelisted with the Api key | [optional] 
 **key** | **String** | An Api key hash | [optional] 
-**role** | [**Role**](Role.md) |  | [optional] 
-**_default** | **Boolean** | To enable the Api key to be default | [optional] 
-**metadata** | [**[Metadata]**](Metadata.md) |  | [optional] 
+**role** | [**Role**](Role.md) |  | 
+**constraints** | **[String]** | Additional constraints | 
 
 

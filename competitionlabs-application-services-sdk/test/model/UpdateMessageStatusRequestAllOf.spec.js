@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.@CompetitionlabsApplicationServicesSdk);
+    factory(root.expect, root.CompetitionLabsApplicationServices);
   }
-}(this, function(expect, @CompetitionlabsApplicationServicesSdk) {
+}(this, function(expect, CompetitionLabsApplicationServices) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new @CompetitionlabsApplicationServicesSdk.UpdateMessageStatusRequestAllOf();
+    instance = new CompetitionLabsApplicationServices.UpdateMessageStatusRequestAllOf();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,13 +50,13 @@
   describe('UpdateMessageStatusRequestAllOf', function() {
     it('should create an instance of UpdateMessageStatusRequestAllOf', function() {
       // uncomment below and update the code to test UpdateMessageStatusRequestAllOf
-      //var instane = new @CompetitionlabsApplicationServicesSdk.UpdateMessageStatusRequestAllOf();
-      //expect(instance).to.be.a(@CompetitionlabsApplicationServicesSdk.UpdateMessageStatusRequestAllOf);
+      //var instane = new CompetitionLabsApplicationServices.UpdateMessageStatusRequestAllOf();
+      //expect(instance).to.be.a(CompetitionLabsApplicationServices.UpdateMessageStatusRequestAllOf);
     });
 
     it('should have the property status (base name: "status")', function() {
       // uncomment below and update the code to test the property status
-      //var instane = new @CompetitionlabsApplicationServicesSdk.UpdateMessageStatusRequestAllOf();
+      //var instance = new CompetitionLabsApplicationServices.UpdateMessageStatusRequestAllOf();
       //expect(instance).to.be();
     });
 

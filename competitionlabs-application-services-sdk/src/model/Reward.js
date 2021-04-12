@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -12,39 +12,42 @@
  */
 
 import ApiClient from '../ApiClient';
+import CustomFieldReduced from './CustomFieldReduced';
 import EntityType from './EntityType';
 import Metadata from './Metadata';
 import ModelDefault from './ModelDefault';
+import OptParamModels from './OptParamModels';
 import RewardAllOf from './RewardAllOf';
-import Translation from './Translation';
+import RewardTypeReduced from './RewardTypeReduced';
+import TagsReduced from './TagsReduced';
+import TranslationValue from './TranslationValue';
 
 /**
  * The Reward model module.
  * @module model/Reward
- * @version 1.0.5
+ * @version 1.0.0
  */
 class Reward {
     /**
      * Constructs a new <code>Reward</code>.
      * @alias module:model/Reward
      * @implements module:model/ModelDefault
+     * @implements module:model/OptParamModels
      * @implements module:model/RewardAllOf
      * @param id {String} A unique system generated identifier
      * @param spaceName {String} This is the space name which is linked to the account
      * @param created {Date} ISO8601 timestamp for when a Model was created. All records are stored in UTC time zone
      * @param entityType {module:model/EntityType} 
      * @param entityId {String} A unique identifier of an achievement or contest. Dependant on entityType
+     * @param name {String} The name of a reward
      * @param rewardRank {String} If used in the context of contest this will associate with the rank of the leaderboard
-     * @param rewardName {String} The name of a reward
-     * @param value {Number} Numerical value of the reward that will be issued based on the reward type
-     * @param rewardType {String} Reward Type key
-     * @param rewardTypeId {String} A unique id of the Reward Type
-     * @param description {String} The description of a Reward
-     * @param delay {Number} Delay of issuing a reward in minutes
+     * @param rewardValue {Number} Numerical value of the reward that will be issued based on the reward type
+     * @param rewardType {module:model/RewardTypeReduced} 
+     * @param constraints {Array.<String>} Additional constraints
      */
-    constructor(id, spaceName, created, entityType, entityId, rewardRank, rewardName, value, rewardType, rewardTypeId, description, delay) { 
-        ModelDefault.initialize(this, id, spaceName, created);RewardAllOf.initialize(this, entityType, entityId, rewardRank, rewardName, value, rewardType, rewardTypeId, description, delay);
-        Reward.initialize(this, id, spaceName, created, entityType, entityId, rewardRank, rewardName, value, rewardType, rewardTypeId, description, delay);
+    constructor(id, spaceName, created, entityType, entityId, name, rewardRank, rewardValue, rewardType, constraints) { 
+        ModelDefault.initialize(this, id, spaceName, created);OptParamModels.initialize(this);RewardAllOf.initialize(this, entityType, entityId, name, rewardRank, rewardValue, rewardType, constraints);
+        Reward.initialize(this, id, spaceName, created, entityType, entityId, name, rewardRank, rewardValue, rewardType, constraints);
     }
 
     /**
@@ -52,94 +55,17 @@ class Reward {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, id, spaceName, created, entityType, entityId, rewardRank, rewardName, value, rewardType, rewardTypeId, description, delay) { 
+    static initialize(obj, id, spaceName, created, entityType, entityId, name, rewardRank, rewardValue, rewardType, constraints) { 
         obj['id'] = id;
         obj['spaceName'] = spaceName;
         obj['created'] = created;
         obj['entityType'] = entityType;
         obj['entityId'] = entityId;
+        obj['name'] = name;
         obj['rewardRank'] = rewardRank;
-        obj['rewardName'] = rewardName;
-        obj['value'] = value;
+        obj['rewardValue'] = rewardValue;
         obj['rewardType'] = rewardType;
-        obj['rewardTypeId'] = rewardTypeId;
-        obj['description'] = description;
-        obj['delay'] = delay;
-    }
-
-    /**
-    * Constructs a full object with all available fields.
-    */
-    model(){
-        var obj = {};
-
-        obj['id'] = null;
-        obj['spaceName'] = null;
-        obj['created'] = null;
-        obj['entityType'] = new EntityType().model();
-        obj['entityId'] = null;
-        obj['rewardRank'] = null;
-        obj['rewardName'] = null;
-        obj['value'] = null;
-        obj['rewardType'] = null;
-        obj['rewardTypeId'] = null;
-        obj['description'] = null;
-        obj['delay'] = null;
-        obj['icon'] = null;
-        obj['metadata'] = [new Metadata().model()];
-        obj['pointInTime'] = null;
-        obj['period'] = null;
-        obj['translations'] = [new Translation().model()];
-        obj['translatableFields'] = [null];
-        obj['constraints'] = [null];
-
-        return obj;
-    }
-
-    /**
-    * Constructs a full object Map for all available fields.
-    */
-    modelMap(){
-        var obj = {
-            "fields": {},
-            "requiredFields": {}
-        };
-
-        obj["fields"]['id'] = { "type": 'String', "system": true };
-        obj["fields"]['spaceName'] = { "type": 'String', "system": true };
-        obj["fields"]['created'] = { "type": 'Date', "system": true };
-        obj["fields"]['entityType'] = new EntityType().modelMap();
-        obj["fields"]['entityId'] = { "type": 'String', "system": false };
-        obj["fields"]['rewardRank'] = { "type": 'String', "system": false };
-        obj["fields"]['rewardName'] = { "type": 'String', "system": false };
-        obj["fields"]['value'] = { "type": 'Number', "system": false };
-        obj["fields"]['rewardType'] = { "type": 'String', "system": false };
-        obj["fields"]['rewardTypeId'] = { "type": 'String', "system": false };
-        obj["fields"]['description'] = { "type": 'String', "system": false };
-        obj["fields"]['delay'] = { "type": 'Number', "system": false };
-        obj["fields"]['icon'] = { "type": 'String', "system": false };
-        obj["fields"]['metadata'] = [new Metadata().modelMap()];
-        obj["fields"]['pointInTime'] = { "type": 'Date', "system": false };
-        obj["fields"]['period'] = { "type": 'Number', "system": false };
-        obj["fields"]['translations'] = [new Translation().modelMap()];
-        obj["fields"]['translatableFields'] = [{ "type": 'String', "system": false }];
-        obj["fields"]['constraints'] = [{ "type": 'String', "system": false }];
-
-        
-        obj["requiredFields"]['id'] = { "type": 'String', "system": true };
-        obj["requiredFields"]['spaceName'] = { "type": 'String', "system": true };
-        obj["requiredFields"]['created'] = { "type": 'Date', "system": true };
-        obj["requiredFields"]['entityType'] = new EntityType().modelMap();
-        obj["requiredFields"]['entityId'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['rewardRank'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['rewardName'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['value'] = { "type": 'Number', "system": false };
-        obj["requiredFields"]['rewardType'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['rewardTypeId'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['description'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['delay'] = { "type": 'Number', "system": false };
-
-        return obj;
+        obj['constraints'] = constraints;
     }
 
     /**
@@ -153,6 +79,7 @@ class Reward {
         if (data) {
             obj = obj || new Reward();
             ModelDefault.constructFromObject(data, obj);
+            OptParamModels.constructFromObject(data, obj);
             RewardAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('id')) {
@@ -164,38 +91,44 @@ class Reward {
             if (data.hasOwnProperty('created')) {
                 obj['created'] = ApiClient.convertToType(data['created'], 'Date');
             }
+            if (data.hasOwnProperty('customFields')) {
+                obj['customFields'] = ApiClient.convertToType(data['customFields'], [CustomFieldReduced]);
+            }
+            if (data.hasOwnProperty('tags')) {
+                obj['tags'] = ApiClient.convertToType(data['tags'], [TagsReduced]);
+            }
+            if (data.hasOwnProperty('metadata')) {
+                obj['metadata'] = ApiClient.convertToType(data['metadata'], [Metadata]);
+            }
             if (data.hasOwnProperty('entityType')) {
                 obj['entityType'] = EntityType.constructFromObject(data['entityType']);
             }
             if (data.hasOwnProperty('entityId')) {
                 obj['entityId'] = ApiClient.convertToType(data['entityId'], 'String');
             }
-            if (data.hasOwnProperty('rewardRank')) {
-                obj['rewardRank'] = ApiClient.convertToType(data['rewardRank'], 'String');
-            }
-            if (data.hasOwnProperty('rewardName')) {
-                obj['rewardName'] = ApiClient.convertToType(data['rewardName'], 'String');
-            }
-            if (data.hasOwnProperty('value')) {
-                obj['value'] = ApiClient.convertToType(data['value'], 'Number');
-            }
-            if (data.hasOwnProperty('rewardType')) {
-                obj['rewardType'] = ApiClient.convertToType(data['rewardType'], 'String');
-            }
-            if (data.hasOwnProperty('rewardTypeId')) {
-                obj['rewardTypeId'] = ApiClient.convertToType(data['rewardTypeId'], 'String');
+            if (data.hasOwnProperty('name')) {
+                obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
             if (data.hasOwnProperty('description')) {
                 obj['description'] = ApiClient.convertToType(data['description'], 'String');
             }
-            if (data.hasOwnProperty('delay')) {
-                obj['delay'] = ApiClient.convertToType(data['delay'], 'Number');
+            if (data.hasOwnProperty('rewardRank')) {
+                obj['rewardRank'] = ApiClient.convertToType(data['rewardRank'], 'String');
+            }
+            if (data.hasOwnProperty('rewardValue')) {
+                obj['rewardValue'] = ApiClient.convertToType(data['rewardValue'], 'Number');
+            }
+            if (data.hasOwnProperty('rewardType')) {
+                obj['rewardType'] = RewardTypeReduced.constructFromObject(data['rewardType']);
             }
             if (data.hasOwnProperty('icon')) {
                 obj['icon'] = ApiClient.convertToType(data['icon'], 'String');
             }
-            if (data.hasOwnProperty('metadata')) {
-                obj['metadata'] = ApiClient.convertToType(data['metadata'], [Metadata]);
+            if (data.hasOwnProperty('issueLimit')) {
+                obj['issueLimit'] = ApiClient.convertToType(data['issueLimit'], 'Number');
+            }
+            if (data.hasOwnProperty('delay')) {
+                obj['delay'] = ApiClient.convertToType(data['delay'], 'Number');
             }
             if (data.hasOwnProperty('pointInTime')) {
                 obj['pointInTime'] = ApiClient.convertToType(data['pointInTime'], 'Date');
@@ -204,7 +137,7 @@ class Reward {
                 obj['period'] = ApiClient.convertToType(data['period'], 'Number');
             }
             if (data.hasOwnProperty('translations')) {
-                obj['translations'] = ApiClient.convertToType(data['translations'], [Translation]);
+                obj['translations'] = ApiClient.convertToType(data['translations'], [Object]);
             }
             if (data.hasOwnProperty('translatableFields')) {
                 obj['translatableFields'] = ApiClient.convertToType(data['translatableFields'], ['String']);
@@ -238,6 +171,22 @@ Reward.prototype['spaceName'] = undefined;
 Reward.prototype['created'] = undefined;
 
 /**
+ * @member {Array.<module:model/CustomFieldReduced>} customFields
+ */
+Reward.prototype['customFields'] = undefined;
+
+/**
+ * A list of id's used to tag models
+ * @member {Array.<module:model/TagsReduced>} tags
+ */
+Reward.prototype['tags'] = undefined;
+
+/**
+ * @member {Array.<module:model/Metadata>} metadata
+ */
+Reward.prototype['metadata'] = undefined;
+
+/**
  * @member {module:model/EntityType} entityType
  */
 Reward.prototype['entityType'] = undefined;
@@ -249,34 +198,10 @@ Reward.prototype['entityType'] = undefined;
 Reward.prototype['entityId'] = undefined;
 
 /**
- * If used in the context of contest this will associate with the rank of the leaderboard
- * @member {String} rewardRank
- */
-Reward.prototype['rewardRank'] = undefined;
-
-/**
  * The name of a reward
- * @member {String} rewardName
+ * @member {String} name
  */
-Reward.prototype['rewardName'] = undefined;
-
-/**
- * Numerical value of the reward that will be issued based on the reward type
- * @member {Number} value
- */
-Reward.prototype['value'] = undefined;
-
-/**
- * Reward Type key
- * @member {String} rewardType
- */
-Reward.prototype['rewardType'] = undefined;
-
-/**
- * A unique id of the Reward Type
- * @member {String} rewardTypeId
- */
-Reward.prototype['rewardTypeId'] = undefined;
+Reward.prototype['name'] = undefined;
 
 /**
  * The description of a Reward
@@ -285,21 +210,39 @@ Reward.prototype['rewardTypeId'] = undefined;
 Reward.prototype['description'] = undefined;
 
 /**
- * Delay of issuing a reward in minutes
- * @member {Number} delay
+ * If used in the context of contest this will associate with the rank of the leaderboard
+ * @member {String} rewardRank
  */
-Reward.prototype['delay'] = undefined;
+Reward.prototype['rewardRank'] = undefined;
 
 /**
- * An Icon id that has been pre uploaded to the system to display for Achievement
+ * Numerical value of the reward that will be issued based on the reward type
+ * @member {Number} rewardValue
+ */
+Reward.prototype['rewardValue'] = undefined;
+
+/**
+ * @member {module:model/RewardTypeReduced} rewardType
+ */
+Reward.prototype['rewardType'] = undefined;
+
+/**
+ * An Icon id that has been pre uploaded to the system to display for reward
  * @member {String} icon
  */
 Reward.prototype['icon'] = undefined;
 
 /**
- * @member {Array.<module:model/Metadata>} metadata
+ * how many of thsese rewards are
+ * @member {Number} issueLimit
  */
-Reward.prototype['metadata'] = undefined;
+Reward.prototype['issueLimit'] = undefined;
+
+/**
+ * Delay of issuing a reward in minutes
+ * @member {Number} delay
+ */
+Reward.prototype['delay'] = undefined;
 
 /**
  * ISO8601 timestamp for when a Reward is available until a specific point in time. All records are stored in UTC time zone
@@ -314,7 +257,7 @@ Reward.prototype['pointInTime'] = undefined;
 Reward.prototype['period'] = undefined;
 
 /**
- * @member {Array.<module:model/Translation>} translations
+ * @member {Array.<Object.<String, module:model/TranslationValue>>} translations
  */
 Reward.prototype['translations'] = undefined;
 
@@ -347,6 +290,20 @@ ModelDefault.prototype['spaceName'] = undefined;
  * @member {Date} created
  */
 ModelDefault.prototype['created'] = undefined;
+// Implement OptParamModels interface:
+/**
+ * @member {Array.<module:model/CustomFieldReduced>} customFields
+ */
+OptParamModels.prototype['customFields'] = undefined;
+/**
+ * A list of id's used to tag models
+ * @member {Array.<module:model/TagsReduced>} tags
+ */
+OptParamModels.prototype['tags'] = undefined;
+/**
+ * @member {Array.<module:model/Metadata>} metadata
+ */
+OptParamModels.prototype['metadata'] = undefined;
 // Implement RewardAllOf interface:
 /**
  * @member {module:model/EntityType} entityType
@@ -358,49 +315,44 @@ RewardAllOf.prototype['entityType'] = undefined;
  */
 RewardAllOf.prototype['entityId'] = undefined;
 /**
- * If used in the context of contest this will associate with the rank of the leaderboard
- * @member {String} rewardRank
- */
-RewardAllOf.prototype['rewardRank'] = undefined;
-/**
  * The name of a reward
- * @member {String} rewardName
+ * @member {String} name
  */
-RewardAllOf.prototype['rewardName'] = undefined;
-/**
- * Numerical value of the reward that will be issued based on the reward type
- * @member {Number} value
- */
-RewardAllOf.prototype['value'] = undefined;
-/**
- * Reward Type key
- * @member {String} rewardType
- */
-RewardAllOf.prototype['rewardType'] = undefined;
-/**
- * A unique id of the Reward Type
- * @member {String} rewardTypeId
- */
-RewardAllOf.prototype['rewardTypeId'] = undefined;
+RewardAllOf.prototype['name'] = undefined;
 /**
  * The description of a Reward
  * @member {String} description
  */
 RewardAllOf.prototype['description'] = undefined;
 /**
- * Delay of issuing a reward in minutes
- * @member {Number} delay
+ * If used in the context of contest this will associate with the rank of the leaderboard
+ * @member {String} rewardRank
  */
-RewardAllOf.prototype['delay'] = undefined;
+RewardAllOf.prototype['rewardRank'] = undefined;
 /**
- * An Icon id that has been pre uploaded to the system to display for Achievement
+ * Numerical value of the reward that will be issued based on the reward type
+ * @member {Number} rewardValue
+ */
+RewardAllOf.prototype['rewardValue'] = undefined;
+/**
+ * @member {module:model/RewardTypeReduced} rewardType
+ */
+RewardAllOf.prototype['rewardType'] = undefined;
+/**
+ * An Icon id that has been pre uploaded to the system to display for reward
  * @member {String} icon
  */
 RewardAllOf.prototype['icon'] = undefined;
 /**
- * @member {Array.<module:model/Metadata>} metadata
+ * how many of thsese rewards are
+ * @member {Number} issueLimit
  */
-RewardAllOf.prototype['metadata'] = undefined;
+RewardAllOf.prototype['issueLimit'] = undefined;
+/**
+ * Delay of issuing a reward in minutes
+ * @member {Number} delay
+ */
+RewardAllOf.prototype['delay'] = undefined;
 /**
  * ISO8601 timestamp for when a Reward is available until a specific point in time. All records are stored in UTC time zone
  * @member {Date} pointInTime
@@ -412,7 +364,7 @@ RewardAllOf.prototype['pointInTime'] = undefined;
  */
 RewardAllOf.prototype['period'] = undefined;
 /**
- * @member {Array.<module:model/Translation>} translations
+ * @member {Array.<Object.<String, module:model/TranslationValue>>} translations
  */
 RewardAllOf.prototype['translations'] = undefined;
 /**

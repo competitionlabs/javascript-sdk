@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -16,12 +16,14 @@ import EventRefType from './EventRefType';
 import MemberMessageAllOf from './MemberMessageAllOf';
 import MessageStatus from './MessageStatus';
 import MessageType from './MessageType';
+import Metadata from './Metadata';
 import ModelDefault from './ModelDefault';
+import TagsReduced from './TagsReduced';
 
 /**
  * The MemberMessage model module.
  * @module model/MemberMessage
- * @version 1.0.5
+ * @version 1.0.0
  */
 class MemberMessage {
     /**
@@ -63,64 +65,6 @@ class MemberMessage {
         obj['prize'] = prize;
         obj['status'] = status;
         obj['expiry'] = expiry;
-    }
-
-    /**
-    * Constructs a full object with all available fields.
-    */
-    model(){
-        var obj = {};
-
-        obj['id'] = null;
-        obj['spaceName'] = null;
-        obj['created'] = null;
-        obj['eventRefType'] = new EventRefType().model();
-        obj['eventReferenceId'] = null;
-        obj['messageType'] = new MessageType().model();
-        obj['subject'] = null;
-        obj['body'] = null;
-        obj['prize'] = null;
-        obj['status'] = new MessageStatus().model();
-        obj['expiry'] = null;
-
-        return obj;
-    }
-
-    /**
-    * Constructs a full object Map for all available fields.
-    */
-    modelMap(){
-        var obj = {
-            "fields": {},
-            "requiredFields": {}
-        };
-
-        obj["fields"]['id'] = { "type": 'String', "system": true };
-        obj["fields"]['spaceName'] = { "type": 'String', "system": true };
-        obj["fields"]['created'] = { "type": 'Date', "system": true };
-        obj["fields"]['eventRefType'] = new EventRefType().modelMap();
-        obj["fields"]['eventReferenceId'] = { "type": 'String', "system": false };
-        obj["fields"]['messageType'] = new MessageType().modelMap();
-        obj["fields"]['subject'] = { "type": 'String', "system": false };
-        obj["fields"]['body'] = { "type": 'String', "system": false };
-        obj["fields"]['prize'] = { "type": 'String', "system": false };
-        obj["fields"]['status'] = new MessageStatus().modelMap();
-        obj["fields"]['expiry'] = { "type": 'Date', "system": false };
-
-        
-        obj["requiredFields"]['id'] = { "type": 'String', "system": true };
-        obj["requiredFields"]['spaceName'] = { "type": 'String', "system": true };
-        obj["requiredFields"]['created'] = { "type": 'Date', "system": true };
-        obj["requiredFields"]['eventRefType'] = new EventRefType().modelMap();
-        obj["requiredFields"]['eventReferenceId'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['messageType'] = new MessageType().modelMap();
-        obj["requiredFields"]['subject'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['body'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['prize'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['status'] = new MessageStatus().modelMap();
-        obj["requiredFields"]['expiry'] = { "type": 'Date', "system": false };
-
-        return obj;
     }
 
     /**
@@ -168,6 +112,12 @@ class MemberMessage {
             }
             if (data.hasOwnProperty('expiry')) {
                 obj['expiry'] = ApiClient.convertToType(data['expiry'], 'Date');
+            }
+            if (data.hasOwnProperty('metadata')) {
+                obj['metadata'] = ApiClient.convertToType(data['metadata'], [Metadata]);
+            }
+            if (data.hasOwnProperty('tags')) {
+                obj['tags'] = ApiClient.convertToType(data['tags'], [TagsReduced]);
             }
         }
         return obj;
@@ -239,6 +189,17 @@ MemberMessage.prototype['status'] = undefined;
  */
 MemberMessage.prototype['expiry'] = undefined;
 
+/**
+ * @member {Array.<module:model/Metadata>} metadata
+ */
+MemberMessage.prototype['metadata'] = undefined;
+
+/**
+ * A list of Strings of groups that the message belongs to.
+ * @member {Array.<module:model/TagsReduced>} tags
+ */
+MemberMessage.prototype['tags'] = undefined;
+
 
 // Implement ModelDefault interface:
 /**
@@ -294,6 +255,15 @@ MemberMessageAllOf.prototype['status'] = undefined;
  * @member {Date} expiry
  */
 MemberMessageAllOf.prototype['expiry'] = undefined;
+/**
+ * @member {Array.<module:model/Metadata>} metadata
+ */
+MemberMessageAllOf.prototype['metadata'] = undefined;
+/**
+ * A list of Strings of groups that the message belongs to.
+ * @member {Array.<module:model/TagsReduced>} tags
+ */
+MemberMessageAllOf.prototype['tags'] = undefined;
 
 
 

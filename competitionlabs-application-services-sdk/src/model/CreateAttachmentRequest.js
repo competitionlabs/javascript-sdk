@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -12,24 +12,28 @@
  */
 
 import ApiClient from '../ApiClient';
+import CreateAttachmentRequestAllOf from './CreateAttachmentRequestAllOf';
+import CreateOptParamModels from './CreateOptParamModels';
 import Metadata from './Metadata';
 
 /**
  * The CreateAttachmentRequest model module.
  * @module model/CreateAttachmentRequest
- * @version 1.0.5
+ * @version 1.0.0
  */
 class CreateAttachmentRequest {
     /**
      * Constructs a new <code>CreateAttachmentRequest</code>.
      * @alias module:model/CreateAttachmentRequest
-     * @param fileName {String} Name of the original file uploaded
+     * @implements module:model/CreateOptParamModels
+     * @implements module:model/CreateAttachmentRequestAllOf
+     * @param name {String} Name of the original file uploaded
      * @param mimeType {String} Mime type of the file. Valid mime types - text/csv or application/vmd.ms-excel
      * @param extension {String} Extension of the file uploaded. Valid extensions supported - csv, xlsx, xls
      */
-    constructor(fileName, mimeType, extension) { 
-        
-        CreateAttachmentRequest.initialize(this, fileName, mimeType, extension);
+    constructor(name, mimeType, extension) { 
+        CreateOptParamModels.initialize(this);CreateAttachmentRequestAllOf.initialize(this, name, mimeType, extension);
+        CreateAttachmentRequest.initialize(this, name, mimeType, extension);
     }
 
     /**
@@ -37,48 +41,10 @@ class CreateAttachmentRequest {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, fileName, mimeType, extension) { 
-        obj['fileName'] = fileName;
+    static initialize(obj, name, mimeType, extension) { 
+        obj['name'] = name;
         obj['mimeType'] = mimeType;
         obj['extension'] = extension;
-    }
-
-    /**
-    * Constructs a full object with all available fields.
-    */
-    model(){
-        var obj = {};
-
-        obj['fileName'] = null;
-        obj['mimeType'] = null;
-        obj['extension'] = null;
-        obj['permission'] = null;
-        obj['metadata'] = [new Metadata().model()];
-
-        return obj;
-    }
-
-    /**
-    * Constructs a full object Map for all available fields.
-    */
-    modelMap(){
-        var obj = {
-            "fields": {},
-            "requiredFields": {}
-        };
-
-        obj["fields"]['fileName'] = { "type": 'String', "system": false };
-        obj["fields"]['mimeType'] = { "type": 'String', "system": false };
-        obj["fields"]['extension'] = { "type": 'String', "system": false };
-        obj["fields"]['permission'] = { "type": 'Number', "system": false };
-        obj["fields"]['metadata'] = [new Metadata().modelMap()];
-
-        
-        obj["requiredFields"]['fileName'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['mimeType'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['extension'] = { "type": 'String', "system": false };
-
-        return obj;
     }
 
     /**
@@ -91,9 +57,20 @@ class CreateAttachmentRequest {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new CreateAttachmentRequest();
+            CreateOptParamModels.constructFromObject(data, obj);
+            CreateAttachmentRequestAllOf.constructFromObject(data, obj);
 
-            if (data.hasOwnProperty('fileName')) {
-                obj['fileName'] = ApiClient.convertToType(data['fileName'], 'String');
+            if (data.hasOwnProperty('customFields')) {
+                obj['customFields'] = ApiClient.convertToType(data['customFields'], ['String']);
+            }
+            if (data.hasOwnProperty('tags')) {
+                obj['tags'] = ApiClient.convertToType(data['tags'], ['String']);
+            }
+            if (data.hasOwnProperty('metadata')) {
+                obj['metadata'] = ApiClient.convertToType(data['metadata'], [Metadata]);
+            }
+            if (data.hasOwnProperty('name')) {
+                obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
             if (data.hasOwnProperty('mimeType')) {
                 obj['mimeType'] = ApiClient.convertToType(data['mimeType'], 'String');
@@ -104,9 +81,6 @@ class CreateAttachmentRequest {
             if (data.hasOwnProperty('permission')) {
                 obj['permission'] = ApiClient.convertToType(data['permission'], 'Number');
             }
-            if (data.hasOwnProperty('metadata')) {
-                obj['metadata'] = ApiClient.convertToType(data['metadata'], [Metadata]);
-            }
         }
         return obj;
     }
@@ -115,10 +89,27 @@ class CreateAttachmentRequest {
 }
 
 /**
- * Name of the original file uploaded
- * @member {String} fileName
+ * A list of id's used to add cutom fields
+ * @member {Array.<String>} customFields
  */
-CreateAttachmentRequest.prototype['fileName'] = undefined;
+CreateAttachmentRequest.prototype['customFields'] = undefined;
+
+/**
+ * A list of id's used to tag models
+ * @member {Array.<String>} tags
+ */
+CreateAttachmentRequest.prototype['tags'] = undefined;
+
+/**
+ * @member {Array.<module:model/Metadata>} metadata
+ */
+CreateAttachmentRequest.prototype['metadata'] = undefined;
+
+/**
+ * Name of the original file uploaded
+ * @member {String} name
+ */
+CreateAttachmentRequest.prototype['name'] = undefined;
 
 /**
  * Mime type of the file. Valid mime types - text/csv or application/vmd.ms-excel
@@ -137,12 +128,42 @@ CreateAttachmentRequest.prototype['extension'] = undefined;
  */
 CreateAttachmentRequest.prototype['permission'] = undefined;
 
+
+// Implement CreateOptParamModels interface:
+/**
+ * A list of id's used to add cutom fields
+ * @member {Array.<String>} customFields
+ */
+CreateOptParamModels.prototype['customFields'] = undefined;
+/**
+ * A list of id's used to tag models
+ * @member {Array.<String>} tags
+ */
+CreateOptParamModels.prototype['tags'] = undefined;
 /**
  * @member {Array.<module:model/Metadata>} metadata
  */
-CreateAttachmentRequest.prototype['metadata'] = undefined;
-
-
+CreateOptParamModels.prototype['metadata'] = undefined;
+// Implement CreateAttachmentRequestAllOf interface:
+/**
+ * Name of the original file uploaded
+ * @member {String} name
+ */
+CreateAttachmentRequestAllOf.prototype['name'] = undefined;
+/**
+ * Mime type of the file. Valid mime types - text/csv or application/vmd.ms-excel
+ * @member {String} mimeType
+ */
+CreateAttachmentRequestAllOf.prototype['mimeType'] = undefined;
+/**
+ * Extension of the file uploaded. Valid extensions supported - csv, xlsx, xls
+ * @member {String} extension
+ */
+CreateAttachmentRequestAllOf.prototype['extension'] = undefined;
+/**
+ * @member {Number} permission
+ */
+CreateAttachmentRequestAllOf.prototype['permission'] = undefined;
 
 
 

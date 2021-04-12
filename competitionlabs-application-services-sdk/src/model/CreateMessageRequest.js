@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -12,28 +12,34 @@
  */
 
 import ApiClient from '../ApiClient';
+import CreateMessageRequestAllOf from './CreateMessageRequestAllOf';
+import CreateOptParamModels from './CreateOptParamModels';
 import MessageType from './MessageType';
 import Metadata from './Metadata';
 import Scheduling from './Scheduling';
+import TranslationValue from './TranslationValue';
 
 /**
  * The CreateMessageRequest model module.
  * @module model/CreateMessageRequest
- * @version 1.0.5
+ * @version 1.0.0
  */
 class CreateMessageRequest {
     /**
      * Constructs a new <code>CreateMessageRequest</code>.
      * @alias module:model/CreateMessageRequest
+     * @implements module:model/CreateOptParamModels
+     * @implements module:model/CreateMessageRequestAllOf
      * @param members {Array.<String>} A list of specified members to which the message will be sent
      * @param messageType {module:model/MessageType} 
      * @param subject {String} The title of the message
      * @param body {String} The context of the message
      * @param scheduling {module:model/Scheduling} 
+     * @param constraints {Array.<String>} Additional constraints, if the value is present it means the
      */
-    constructor(members, messageType, subject, body, scheduling) { 
-        
-        CreateMessageRequest.initialize(this, members, messageType, subject, body, scheduling);
+    constructor(members, messageType, subject, body, scheduling, constraints) { 
+        CreateOptParamModels.initialize(this);CreateMessageRequestAllOf.initialize(this, members, messageType, subject, body, scheduling, constraints);
+        CreateMessageRequest.initialize(this, members, messageType, subject, body, scheduling, constraints);
     }
 
     /**
@@ -41,56 +47,13 @@ class CreateMessageRequest {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, members, messageType, subject, body, scheduling) { 
+    static initialize(obj, members, messageType, subject, body, scheduling, constraints) { 
         obj['members'] = members;
         obj['messageType'] = messageType;
         obj['subject'] = subject;
         obj['body'] = body;
         obj['scheduling'] = scheduling;
-    }
-
-    /**
-    * Constructs a full object with all available fields.
-    */
-    model(){
-        var obj = {};
-
-        obj['memberGroup'] = [null];
-        obj['members'] = [null];
-        obj['messageType'] = new MessageType().model();
-        obj['subject'] = null;
-        obj['body'] = null;
-        obj['scheduling'] = new Scheduling().model();
-        obj['metadata'] = [new Metadata().model()];
-
-        return obj;
-    }
-
-    /**
-    * Constructs a full object Map for all available fields.
-    */
-    modelMap(){
-        var obj = {
-            "fields": {},
-            "requiredFields": {}
-        };
-
-        obj["fields"]['memberGroup'] = [{ "type": 'String', "system": false }];
-        obj["fields"]['members'] = [{ "type": 'String', "system": false }];
-        obj["fields"]['messageType'] = new MessageType().modelMap();
-        obj["fields"]['subject'] = { "type": 'String', "system": false };
-        obj["fields"]['body'] = { "type": 'String', "system": false };
-        obj["fields"]['scheduling'] = new Scheduling().modelMap();
-        obj["fields"]['metadata'] = [new Metadata().modelMap()];
-
-        
-        obj["requiredFields"]['members'] = [{ "type": 'String', "system": false }];
-        obj["requiredFields"]['messageType'] = new MessageType().modelMap();
-        obj["requiredFields"]['subject'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['body'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['scheduling'] = new Scheduling().modelMap();
-
-        return obj;
+        obj['constraints'] = constraints;
     }
 
     /**
@@ -103,7 +66,18 @@ class CreateMessageRequest {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new CreateMessageRequest();
+            CreateOptParamModels.constructFromObject(data, obj);
+            CreateMessageRequestAllOf.constructFromObject(data, obj);
 
+            if (data.hasOwnProperty('customFields')) {
+                obj['customFields'] = ApiClient.convertToType(data['customFields'], ['String']);
+            }
+            if (data.hasOwnProperty('tags')) {
+                obj['tags'] = ApiClient.convertToType(data['tags'], ['String']);
+            }
+            if (data.hasOwnProperty('metadata')) {
+                obj['metadata'] = ApiClient.convertToType(data['metadata'], [Metadata]);
+            }
             if (data.hasOwnProperty('memberGroup')) {
                 obj['memberGroup'] = ApiClient.convertToType(data['memberGroup'], ['String']);
             }
@@ -122,8 +96,11 @@ class CreateMessageRequest {
             if (data.hasOwnProperty('scheduling')) {
                 obj['scheduling'] = Scheduling.constructFromObject(data['scheduling']);
             }
-            if (data.hasOwnProperty('metadata')) {
-                obj['metadata'] = ApiClient.convertToType(data['metadata'], [Metadata]);
+            if (data.hasOwnProperty('translations')) {
+                obj['translations'] = ApiClient.convertToType(data['translations'], [Object]);
+            }
+            if (data.hasOwnProperty('constraints')) {
+                obj['constraints'] = ApiClient.convertToType(data['constraints'], ['String']);
             }
         }
         return obj;
@@ -131,6 +108,23 @@ class CreateMessageRequest {
 
 
 }
+
+/**
+ * A list of id's used to add cutom fields
+ * @member {Array.<String>} customFields
+ */
+CreateMessageRequest.prototype['customFields'] = undefined;
+
+/**
+ * A list of id's used to tag models
+ * @member {Array.<String>} tags
+ */
+CreateMessageRequest.prototype['tags'] = undefined;
+
+/**
+ * @member {Array.<module:model/Metadata>} metadata
+ */
+CreateMessageRequest.prototype['metadata'] = undefined;
 
 /**
  * To which member groups the message will be sent
@@ -167,11 +161,70 @@ CreateMessageRequest.prototype['body'] = undefined;
 CreateMessageRequest.prototype['scheduling'] = undefined;
 
 /**
+ * @member {Array.<Object.<String, module:model/TranslationValue>>} translations
+ */
+CreateMessageRequest.prototype['translations'] = undefined;
+
+/**
+ * Additional constraints, if the value is present it means the
+ * @member {Array.<String>} constraints
+ */
+CreateMessageRequest.prototype['constraints'] = undefined;
+
+
+// Implement CreateOptParamModels interface:
+/**
+ * A list of id's used to add cutom fields
+ * @member {Array.<String>} customFields
+ */
+CreateOptParamModels.prototype['customFields'] = undefined;
+/**
+ * A list of id's used to tag models
+ * @member {Array.<String>} tags
+ */
+CreateOptParamModels.prototype['tags'] = undefined;
+/**
  * @member {Array.<module:model/Metadata>} metadata
  */
-CreateMessageRequest.prototype['metadata'] = undefined;
-
-
+CreateOptParamModels.prototype['metadata'] = undefined;
+// Implement CreateMessageRequestAllOf interface:
+/**
+ * To which member groups the message will be sent
+ * @member {Array.<String>} memberGroup
+ */
+CreateMessageRequestAllOf.prototype['memberGroup'] = undefined;
+/**
+ * A list of specified members to which the message will be sent
+ * @member {Array.<String>} members
+ */
+CreateMessageRequestAllOf.prototype['members'] = undefined;
+/**
+ * @member {module:model/MessageType} messageType
+ */
+CreateMessageRequestAllOf.prototype['messageType'] = undefined;
+/**
+ * The title of the message
+ * @member {String} subject
+ */
+CreateMessageRequestAllOf.prototype['subject'] = undefined;
+/**
+ * The context of the message
+ * @member {String} body
+ */
+CreateMessageRequestAllOf.prototype['body'] = undefined;
+/**
+ * @member {module:model/Scheduling} scheduling
+ */
+CreateMessageRequestAllOf.prototype['scheduling'] = undefined;
+/**
+ * @member {Array.<Object.<String, module:model/TranslationValue>>} translations
+ */
+CreateMessageRequestAllOf.prototype['translations'] = undefined;
+/**
+ * Additional constraints, if the value is present it means the
+ * @member {Array.<String>} constraints
+ */
+CreateMessageRequestAllOf.prototype['constraints'] = undefined;
 
 
 

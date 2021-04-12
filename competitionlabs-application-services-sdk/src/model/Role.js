@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -47,51 +47,6 @@ export default class Role {
         "user" = "user";
 
     
-
-    /**
-    * Constructs a full object with all available fields.
-    */
-    list(){
-        var obj = {};
-
-        
-        obj['Owner'] = "Owner";
-        
-        obj['Administrator'] = "Administrator";
-        
-        obj['Web'] = "Web";
-        
-        obj['user'] = "user";
-        
-
-        return obj;
-    }
-
-    /**
-    * Constructs a full object with all available fields.
-    */
-    model(){
-        var obj = {};
-
-        
-        obj['Owner'] = null;
-        
-        obj['Administrator'] = null;
-        
-        obj['Web'] = null;
-        
-        obj['user'] = null;
-        
-
-        return obj;
-    }
-
-    /**
-    * Constructs a full object Map for all available fields.
-    */
-    modelMap(){
-        return {"type": 'String'};
-    }
 
     /**
     * Returns a <code>Role</code> enum value from a Javascript object name.

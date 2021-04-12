@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The MetaExtendedAllOf model module.
  * @module model/MetaExtendedAllOf
- * @version 1.0.5
+ * @version 1.0.0
  */
 class MetaExtendedAllOf {
     /**
@@ -38,37 +38,6 @@ class MetaExtendedAllOf {
     static initialize(obj, skip, limit) { 
         obj['skip'] = skip;
         obj['limit'] = limit;
-    }
-
-    /**
-    * Constructs a full object with all available fields.
-    */
-    model(){
-        var obj = {};
-
-        obj['skip'] = null;
-        obj['limit'] = null;
-
-        return obj;
-    }
-
-    /**
-    * Constructs a full object Map for all available fields.
-    */
-    modelMap(){
-        var obj = {
-            "fields": {},
-            "requiredFields": {}
-        };
-
-        obj["fields"]['skip'] = { "type": 'Number', "system": false };
-        obj["fields"]['limit'] = { "type": 'Number', "system": false };
-
-        
-        obj["requiredFields"]['skip'] = { "type": 'Number', "system": false };
-        obj["requiredFields"]['limit'] = { "type": 'Number', "system": false };
-
-        return obj;
     }
 
     /**

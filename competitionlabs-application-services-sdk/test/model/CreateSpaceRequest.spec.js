@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.@CompetitionlabsJavascriptSdk);
+    factory(root.expect, root.CompetitionLabsApplicationServices);
   }
-}(this, function(expect, @CompetitionlabsJavascriptSdk) {
+}(this, function(expect, CompetitionLabsApplicationServices) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new @CompetitionlabsJavascriptSdk.CreateSpaceRequest();
+    instance = new CompetitionLabsApplicationServices.CreateSpaceRequest();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,25 +50,25 @@
   describe('CreateSpaceRequest', function() {
     it('should create an instance of CreateSpaceRequest', function() {
       // uncomment below and update the code to test CreateSpaceRequest
-      //var instane = new @CompetitionlabsJavascriptSdk.CreateSpaceRequest();
-      //expect(instance).to.be.a(@CompetitionlabsJavascriptSdk.CreateSpaceRequest);
+      //var instane = new CompetitionLabsApplicationServices.CreateSpaceRequest();
+      //expect(instance).to.be.a(CompetitionLabsApplicationServices.CreateSpaceRequest);
     });
 
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
-      //var instane = new @CompetitionlabsJavascriptSdk.CreateSpaceRequest();
+      //var instance = new CompetitionLabsApplicationServices.CreateSpaceRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property accountType (base name: "accountType")', function() {
       // uncomment below and update the code to test the property accountType
-      //var instane = new @CompetitionlabsJavascriptSdk.CreateSpaceRequest();
+      //var instance = new CompetitionLabsApplicationServices.CreateSpaceRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property masterSpace (base name: "masterSpace")', function() {
       // uncomment below and update the code to test the property masterSpace
-      //var instane = new @CompetitionlabsJavascriptSdk.CreateSpaceRequest();
+      //var instance = new CompetitionLabsApplicationServices.CreateSpaceRequest();
       //expect(instance).to.be();
     });
 

@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -20,7 +20,7 @@ import RuleSet from '../model/RuleSet';
 /**
 * Rules service.
 * @module api/RulesApi
-* @version 1.0.5
+* @version 1.0.0
 */
 export default class RulesApi {
 
@@ -47,27 +47,21 @@ export default class RulesApi {
     /**
      * NOT AVAILABLE IN CURRENT RELEASE
      * Returns a list of either Achievement, Competition or Contest rules.
-     * @param {String} spaceName This is the space name which is linked to the account
      * @param {String} ruleScope The rule scope to assess the ruleset against
      * @param {Object} opts Optional parameters
      * @param {String} opts.X_API_KEY The admin API Key generated from CompetitionLabs back office
      * @param {module:api/RulesApi~getRulesByRuleScopeCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/RuleDescriptor}
      */
-    getRulesByRuleScope(spaceName, ruleScope, opts, callback) {
+    getRulesByRuleScope(ruleScope, opts, callback) {
       opts = opts || {};
       let postBody = null;
-      // verify the required parameter 'spaceName' is set
-      if (spaceName === undefined || spaceName === null) {
-        throw new Error("Missing the required parameter 'spaceName' when calling getRulesByRuleScope");
-      }
       // verify the required parameter 'ruleScope' is set
       if (ruleScope === undefined || ruleScope === null) {
         throw new Error("Missing the required parameter 'ruleScope' when calling getRulesByRuleScope");
       }
 
       let pathParams = {
-        'spaceName': spaceName,
         'ruleScope': ruleScope
       };
       let queryParams = {
@@ -78,12 +72,12 @@ export default class RulesApi {
       let formParams = {
       };
 
-      let authNames = ['adminApiKey'];
+      let authNames = ['AdminApiKey', 'OAuth2'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = RuleDescriptor;
       return this.apiClient.callApi(
-        '/rules/{spaceName}/{ruleScope}', 'GET',
+        '/rules/{ruleScope}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
@@ -100,7 +94,6 @@ export default class RulesApi {
     /**
      * NOT AVAILABLE IN CURRENT RELEASE
      * Validates either Achievement, Competition or Contest Rules.
-     * @param {String} spaceName This is the space name which is linked to the account
      * @param {String} ruleScope The rule scope to assess the ruleset against
      * @param {Object} opts Optional parameters
      * @param {String} opts.X_API_KEY The admin API Key generated from CompetitionLabs back office
@@ -108,20 +101,15 @@ export default class RulesApi {
      * @param {module:api/RulesApi~validateRulesByRuleScopeCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ApiResponse}
      */
-    validateRulesByRuleScope(spaceName, ruleScope, opts, callback) {
+    validateRulesByRuleScope(ruleScope, opts, callback) {
       opts = opts || {};
       let postBody = opts['body'];
-      // verify the required parameter 'spaceName' is set
-      if (spaceName === undefined || spaceName === null) {
-        throw new Error("Missing the required parameter 'spaceName' when calling validateRulesByRuleScope");
-      }
       // verify the required parameter 'ruleScope' is set
       if (ruleScope === undefined || ruleScope === null) {
         throw new Error("Missing the required parameter 'ruleScope' when calling validateRulesByRuleScope");
       }
 
       let pathParams = {
-        'spaceName': spaceName,
         'ruleScope': ruleScope
       };
       let queryParams = {
@@ -132,12 +120,12 @@ export default class RulesApi {
       let formParams = {
       };
 
-      let authNames = ['adminApiKey'];
+      let authNames = ['AdminApiKey', 'OAuth2'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = ApiResponse;
       return this.apiClient.callApi(
-        '/rules/{spaceName}/{ruleScope}', 'POST',
+        '/rules/{ruleScope}', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );

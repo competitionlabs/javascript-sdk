@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.@CompetitionlabsJavascriptSdk);
+    factory(root.expect, root.CompetitionLabsApplicationServices);
   }
-}(this, function(expect, @CompetitionlabsJavascriptSdk) {
+}(this, function(expect, CompetitionLabsApplicationServices) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new @CompetitionlabsJavascriptSdk.AchievementReducedAllOf();
+    instance = new CompetitionLabsApplicationServices.AchievementReducedAllOf();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,31 +50,31 @@
   describe('AchievementReducedAllOf', function() {
     it('should create an instance of AchievementReducedAllOf', function() {
       // uncomment below and update the code to test AchievementReducedAllOf
-      //var instane = new @CompetitionlabsJavascriptSdk.AchievementReducedAllOf();
-      //expect(instance).to.be.a(@CompetitionlabsJavascriptSdk.AchievementReducedAllOf);
+      //var instane = new CompetitionLabsApplicationServices.AchievementReducedAllOf();
+      //expect(instance).to.be.a(CompetitionLabsApplicationServices.AchievementReducedAllOf);
     });
 
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
-      //var instane = new @CompetitionlabsJavascriptSdk.AchievementReducedAllOf();
+      //var instance = new CompetitionLabsApplicationServices.AchievementReducedAllOf();
       //expect(instance).to.be();
     });
 
     it('should have the property achievementLiveStatus (base name: "achievementLiveStatus")', function() {
       // uncomment below and update the code to test the property achievementLiveStatus
-      //var instane = new @CompetitionlabsJavascriptSdk.AchievementReducedAllOf();
+      //var instance = new CompetitionLabsApplicationServices.AchievementReducedAllOf();
       //expect(instance).to.be();
     });
 
-    it('should have the property category (base name: "category")', function() {
-      // uncomment below and update the code to test the property category
-      //var instane = new @CompetitionlabsJavascriptSdk.AchievementReducedAllOf();
+    it('should have the property tagsId (base name: "tagsId")', function() {
+      // uncomment below and update the code to test the property tagsId
+      //var instance = new CompetitionLabsApplicationServices.AchievementReducedAllOf();
       //expect(instance).to.be();
     });
 
-    it('should have the property memberGroups (base name: "memberGroups")', function() {
-      // uncomment below and update the code to test the property memberGroups
-      //var instane = new @CompetitionlabsJavascriptSdk.AchievementReducedAllOf();
+    it('should have the property memberGroupsId (base name: "memberGroupsId")', function() {
+      // uncomment below and update the code to test the property memberGroupsId
+      //var instance = new CompetitionLabsApplicationServices.AchievementReducedAllOf();
       //expect(instance).to.be();
     });
 

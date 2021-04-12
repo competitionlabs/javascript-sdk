@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -17,7 +17,7 @@ import Leaderboard from './Leaderboard';
 /**
  * The LeaderboardResponseByContest model module.
  * @module model/LeaderboardResponseByContest
- * @version 1.0.5
+ * @version 1.0.0
  */
 class LeaderboardResponseByContest {
     /**
@@ -41,42 +41,6 @@ class LeaderboardResponseByContest {
         obj['contestId'] = contestId;
         obj['name'] = name;
         obj['round'] = round;
-    }
-
-    /**
-    * Constructs a full object with all available fields.
-    */
-    model(){
-        var obj = {};
-
-        obj['contestId'] = null;
-        obj['name'] = null;
-        obj['round'] = null;
-        obj['leaderboard'] = [new Leaderboard().model()];
-
-        return obj;
-    }
-
-    /**
-    * Constructs a full object Map for all available fields.
-    */
-    modelMap(){
-        var obj = {
-            "fields": {},
-            "requiredFields": {}
-        };
-
-        obj["fields"]['contestId'] = { "type": 'String', "system": false };
-        obj["fields"]['name'] = { "type": 'String', "system": false };
-        obj["fields"]['round'] = { "type": 'Number', "system": false };
-        obj["fields"]['leaderboard'] = [new Leaderboard().modelMap()];
-
-        
-        obj["requiredFields"]['contestId'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['name'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['round'] = { "type": 'Number', "system": false };
-
-        return obj;
     }
 
     /**

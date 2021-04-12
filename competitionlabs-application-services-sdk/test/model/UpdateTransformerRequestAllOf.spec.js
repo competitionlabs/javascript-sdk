@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.@CompetitionlabsJavascriptSdk);
+    factory(root.expect, root.CompetitionLabsApplicationServices);
   }
-}(this, function(expect, @CompetitionlabsJavascriptSdk) {
+}(this, function(expect, CompetitionLabsApplicationServices) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new @CompetitionlabsJavascriptSdk.UpdateTransformerRequestAllOf();
+    instance = new CompetitionLabsApplicationServices.UpdateTransformerRequestAllOf();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,25 +50,25 @@
   describe('UpdateTransformerRequestAllOf', function() {
     it('should create an instance of UpdateTransformerRequestAllOf', function() {
       // uncomment below and update the code to test UpdateTransformerRequestAllOf
-      //var instane = new @CompetitionlabsJavascriptSdk.UpdateTransformerRequestAllOf();
-      //expect(instance).to.be.a(@CompetitionlabsJavascriptSdk.UpdateTransformerRequestAllOf);
+      //var instane = new CompetitionLabsApplicationServices.UpdateTransformerRequestAllOf();
+      //expect(instance).to.be.a(CompetitionLabsApplicationServices.UpdateTransformerRequestAllOf);
     });
 
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
-      //var instane = new @CompetitionlabsJavascriptSdk.UpdateTransformerRequestAllOf();
+      //var instance = new CompetitionLabsApplicationServices.UpdateTransformerRequestAllOf();
       //expect(instance).to.be();
     });
 
     it('should have the property source (base name: "source")', function() {
       // uncomment below and update the code to test the property source
-      //var instane = new @CompetitionlabsJavascriptSdk.UpdateTransformerRequestAllOf();
+      //var instance = new CompetitionLabsApplicationServices.UpdateTransformerRequestAllOf();
       //expect(instance).to.be();
     });
 
     it('should have the property sourceLanguage (base name: "sourceLanguage")', function() {
       // uncomment below and update the code to test the property sourceLanguage
-      //var instane = new @CompetitionlabsJavascriptSdk.UpdateTransformerRequestAllOf();
+      //var instance = new CompetitionLabsApplicationServices.UpdateTransformerRequestAllOf();
       //expect(instance).to.be();
     });
 

@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -19,7 +19,7 @@ import StrategyType from './StrategyType';
 /**
  * The Strategy model module.
  * @module model/Strategy
- * @version 1.0.5
+ * @version 1.0.0
  */
 class Strategy {
     /**
@@ -43,40 +43,6 @@ class Strategy {
         obj['strategyType'] = strategyType;
         obj['rankingStrategy'] = rankingStrategy;
         obj['scoringStrategy'] = scoringStrategy;
-    }
-
-    /**
-    * Constructs a full object with all available fields.
-    */
-    model(){
-        var obj = {};
-
-        obj['strategyType'] = new StrategyType().model();
-        obj['rankingStrategy'] = new RankingStrategy().model();
-        obj['scoringStrategy'] = new ScoringStrategy().model();
-
-        return obj;
-    }
-
-    /**
-    * Constructs a full object Map for all available fields.
-    */
-    modelMap(){
-        var obj = {
-            "fields": {},
-            "requiredFields": {}
-        };
-
-        obj["fields"]['strategyType'] = new StrategyType().modelMap();
-        obj["fields"]['rankingStrategy'] = new RankingStrategy().modelMap();
-        obj["fields"]['scoringStrategy'] = new ScoringStrategy().modelMap();
-
-        
-        obj["requiredFields"]['strategyType'] = new StrategyType().modelMap();
-        obj["requiredFields"]['rankingStrategy'] = new RankingStrategy().modelMap();
-        obj["requiredFields"]['scoringStrategy'] = new ScoringStrategy().modelMap();
-
-        return obj;
     }
 
     /**

@@ -1,4 +1,4 @@
-# @CompetitionlabsApplicationServicesSdk.WebhookAllOf
+# CompetitionLabsApplicationServices.WebhookAllOf
 
 ## Properties
 
@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **triggers** | **[String]** | A list of event triggers | 
 **description** | **String** | The description of a Webhook | [optional] 
 **headers** | [**[Metadata]**](Metadata.md) |  | [optional] 
-**transformerId** | **String** | The identifier of the transformer | [optional] 
-**metadata** | [**[Metadata]**](Metadata.md) |  | [optional] 
+**transformerId** | **String** | The identifier of the transformer | 
+**status** | [**ConnectionState**](ConnectionState.md) |  | 
 
 

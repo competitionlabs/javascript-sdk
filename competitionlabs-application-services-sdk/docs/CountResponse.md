@@ -1,4 +1,4 @@
-# @CompetitionlabsApplicationServicesSdk.CountResponse
+# CompetitionLabsApplicationServices.CountResponse
 
 ## Properties
 

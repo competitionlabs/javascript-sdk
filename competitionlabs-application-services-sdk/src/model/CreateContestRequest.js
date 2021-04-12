@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -12,29 +12,38 @@
  */
 
 import ApiClient from '../ApiClient';
+import CreateContestRequestAllOf from './CreateContestRequestAllOf';
+import CreateOptParamModels from './CreateOptParamModels';
 import CreateRewardRequest from './CreateRewardRequest';
 import Metadata from './Metadata';
 import RoundType from './RoundType';
 import RuleSet from './RuleSet';
 import Strategy from './Strategy';
-import Translation from './Translation';
+import TranslationValue from './TranslationValue';
 
 /**
  * The CreateContestRequest model module.
  * @module model/CreateContestRequest
- * @version 1.0.5
+ * @version 1.0.0
  */
 class CreateContestRequest {
     /**
      * Constructs a new <code>CreateContestRequest</code>.
      * @alias module:model/CreateContestRequest
+     * @implements module:model/CreateOptParamModels
+     * @implements module:model/CreateContestRequestAllOf
      * @param name {String} A name for the Contest. Can be translated
      * @param roundType {module:model/RoundType} 
+     * @param minNumberOfEntrants {Number} Minimum number of entrants for the contest
      * @param ruleSets {Array.<module:model/RuleSet>} 
+     * @param scheduledStartDate {Date} ISO8601 timestamp for when a Contest should start. All records are stored in UTC time zone
+     * @param scheduledEndDate {Date} ISO8601 timestamp for when a Contest should end. All records are stored in UTC time zone
+     * @param strategies {module:model/Strategy} 
+     * @param constraints {Array.<String>} Additional constraints
      */
-    constructor(name, roundType, ruleSets) { 
-        
-        CreateContestRequest.initialize(this, name, roundType, ruleSets);
+    constructor(name, roundType, minNumberOfEntrants, ruleSets, scheduledStartDate, scheduledEndDate, strategies, constraints) { 
+        CreateOptParamModels.initialize(this);CreateContestRequestAllOf.initialize(this, name, roundType, minNumberOfEntrants, ruleSets, scheduledStartDate, scheduledEndDate, strategies, constraints);
+        CreateContestRequest.initialize(this, name, roundType, minNumberOfEntrants, ruleSets, scheduledStartDate, scheduledEndDate, strategies, constraints);
     }
 
     /**
@@ -42,66 +51,15 @@ class CreateContestRequest {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, name, roundType, ruleSets) { 
+    static initialize(obj, name, roundType, minNumberOfEntrants, ruleSets, scheduledStartDate, scheduledEndDate, strategies, constraints) { 
         obj['name'] = name;
         obj['roundType'] = roundType;
+        obj['minNumberOfEntrants'] = minNumberOfEntrants;
         obj['ruleSets'] = ruleSets;
-    }
-
-    /**
-    * Constructs a full object with all available fields.
-    */
-    model(){
-        var obj = {};
-
-        obj['name'] = null;
-        obj['description'] = null;
-        obj['termsConditions'] = null;
-        obj['roundType'] = new RoundType().model();
-        obj['maxNumberOfEntrants'] = null;
-        obj['minNumberOfEntrants'] = null;
-        obj['ruleSets'] = [new RuleSet().model()];
-        obj['scheduledStartDate'] = null;
-        obj['scheduledEndDate'] = null;
-        obj['strategies'] = new Strategy().model();
-        obj['constraints'] = [null];
-        obj['metadata'] = [new Metadata().model()];
-        obj['translations'] = [new Translation().model()];
-        obj['rewards'] = [new CreateRewardRequest().model()];
-
-        return obj;
-    }
-
-    /**
-    * Constructs a full object Map for all available fields.
-    */
-    modelMap(){
-        var obj = {
-            "fields": {},
-            "requiredFields": {}
-        };
-
-        obj["fields"]['name'] = { "type": 'String', "system": false };
-        obj["fields"]['description'] = { "type": 'String', "system": false };
-        obj["fields"]['termsConditions'] = { "type": 'String', "system": false };
-        obj["fields"]['roundType'] = new RoundType().modelMap();
-        obj["fields"]['maxNumberOfEntrants'] = { "type": 'Number', "system": false };
-        obj["fields"]['minNumberOfEntrants'] = { "type": 'Number', "system": false };
-        obj["fields"]['ruleSets'] = [new RuleSet().modelMap()];
-        obj["fields"]['scheduledStartDate'] = { "type": 'Date', "system": false };
-        obj["fields"]['scheduledEndDate'] = { "type": 'Date', "system": false };
-        obj["fields"]['strategies'] = new Strategy().modelMap();
-        obj["fields"]['constraints'] = [{ "type": 'String', "system": false }];
-        obj["fields"]['metadata'] = [new Metadata().modelMap()];
-        obj["fields"]['translations'] = [new Translation().modelMap()];
-        obj["fields"]['rewards'] = [new CreateRewardRequest().modelMap()];
-
-        
-        obj["requiredFields"]['name'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['roundType'] = new RoundType().modelMap();
-        obj["requiredFields"]['ruleSets'] = [new RuleSet().modelMap()];
-
-        return obj;
+        obj['scheduledStartDate'] = scheduledStartDate;
+        obj['scheduledEndDate'] = scheduledEndDate;
+        obj['strategies'] = strategies;
+        obj['constraints'] = constraints;
     }
 
     /**
@@ -114,15 +72,26 @@ class CreateContestRequest {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new CreateContestRequest();
+            CreateOptParamModels.constructFromObject(data, obj);
+            CreateContestRequestAllOf.constructFromObject(data, obj);
 
+            if (data.hasOwnProperty('customFields')) {
+                obj['customFields'] = ApiClient.convertToType(data['customFields'], ['String']);
+            }
+            if (data.hasOwnProperty('tags')) {
+                obj['tags'] = ApiClient.convertToType(data['tags'], ['String']);
+            }
+            if (data.hasOwnProperty('metadata')) {
+                obj['metadata'] = ApiClient.convertToType(data['metadata'], [Metadata]);
+            }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
             if (data.hasOwnProperty('description')) {
                 obj['description'] = ApiClient.convertToType(data['description'], 'String');
             }
-            if (data.hasOwnProperty('termsConditions')) {
-                obj['termsConditions'] = ApiClient.convertToType(data['termsConditions'], 'String');
+            if (data.hasOwnProperty('termsAndConditions')) {
+                obj['termsAndConditions'] = ApiClient.convertToType(data['termsAndConditions'], 'String');
             }
             if (data.hasOwnProperty('roundType')) {
                 obj['roundType'] = RoundType.constructFromObject(data['roundType']);
@@ -148,11 +117,8 @@ class CreateContestRequest {
             if (data.hasOwnProperty('constraints')) {
                 obj['constraints'] = ApiClient.convertToType(data['constraints'], ['String']);
             }
-            if (data.hasOwnProperty('metadata')) {
-                obj['metadata'] = ApiClient.convertToType(data['metadata'], [Metadata]);
-            }
             if (data.hasOwnProperty('translations')) {
-                obj['translations'] = ApiClient.convertToType(data['translations'], [Translation]);
+                obj['translations'] = ApiClient.convertToType(data['translations'], [Object]);
             }
             if (data.hasOwnProperty('rewards')) {
                 obj['rewards'] = ApiClient.convertToType(data['rewards'], [CreateRewardRequest]);
@@ -163,6 +129,23 @@ class CreateContestRequest {
 
 
 }
+
+/**
+ * A list of id's used to add cutom fields
+ * @member {Array.<String>} customFields
+ */
+CreateContestRequest.prototype['customFields'] = undefined;
+
+/**
+ * A list of id's used to tag models
+ * @member {Array.<String>} tags
+ */
+CreateContestRequest.prototype['tags'] = undefined;
+
+/**
+ * @member {Array.<module:model/Metadata>} metadata
+ */
+CreateContestRequest.prototype['metadata'] = undefined;
 
 /**
  * A name for the Contest. Can be translated
@@ -178,9 +161,9 @@ CreateContestRequest.prototype['description'] = undefined;
 
 /**
  * A name for the Contest. Can be translated
- * @member {String} termsConditions
+ * @member {String} termsAndConditions
  */
-CreateContestRequest.prototype['termsConditions'] = undefined;
+CreateContestRequest.prototype['termsAndConditions'] = undefined;
 
 /**
  * @member {module:model/RoundType} roundType
@@ -228,12 +211,7 @@ CreateContestRequest.prototype['strategies'] = undefined;
 CreateContestRequest.prototype['constraints'] = undefined;
 
 /**
- * @member {Array.<module:model/Metadata>} metadata
- */
-CreateContestRequest.prototype['metadata'] = undefined;
-
-/**
- * @member {Array.<module:model/Translation>} translations
+ * @member {Array.<Object.<String, module:model/TranslationValue>>} translations
  */
 CreateContestRequest.prototype['translations'] = undefined;
 
@@ -243,6 +221,82 @@ CreateContestRequest.prototype['translations'] = undefined;
 CreateContestRequest.prototype['rewards'] = undefined;
 
 
+// Implement CreateOptParamModels interface:
+/**
+ * A list of id's used to add cutom fields
+ * @member {Array.<String>} customFields
+ */
+CreateOptParamModels.prototype['customFields'] = undefined;
+/**
+ * A list of id's used to tag models
+ * @member {Array.<String>} tags
+ */
+CreateOptParamModels.prototype['tags'] = undefined;
+/**
+ * @member {Array.<module:model/Metadata>} metadata
+ */
+CreateOptParamModels.prototype['metadata'] = undefined;
+// Implement CreateContestRequestAllOf interface:
+/**
+ * A name for the Contest. Can be translated
+ * @member {String} name
+ */
+CreateContestRequestAllOf.prototype['name'] = undefined;
+/**
+ * A name for the Contest. Can be translated
+ * @member {String} description
+ */
+CreateContestRequestAllOf.prototype['description'] = undefined;
+/**
+ * A name for the Contest. Can be translated
+ * @member {String} termsAndConditions
+ */
+CreateContestRequestAllOf.prototype['termsAndConditions'] = undefined;
+/**
+ * @member {module:model/RoundType} roundType
+ */
+CreateContestRequestAllOf.prototype['roundType'] = undefined;
+/**
+ * Maximum number of entrants for the contest
+ * @member {Number} maxNumberOfEntrants
+ */
+CreateContestRequestAllOf.prototype['maxNumberOfEntrants'] = undefined;
+/**
+ * Minimum number of entrants for the contest
+ * @member {Number} minNumberOfEntrants
+ */
+CreateContestRequestAllOf.prototype['minNumberOfEntrants'] = undefined;
+/**
+ * @member {Array.<module:model/RuleSet>} ruleSets
+ */
+CreateContestRequestAllOf.prototype['ruleSets'] = undefined;
+/**
+ * ISO8601 timestamp for when a Contest should start. All records are stored in UTC time zone
+ * @member {Date} scheduledStartDate
+ */
+CreateContestRequestAllOf.prototype['scheduledStartDate'] = undefined;
+/**
+ * ISO8601 timestamp for when a Contest should end. All records are stored in UTC time zone
+ * @member {Date} scheduledEndDate
+ */
+CreateContestRequestAllOf.prototype['scheduledEndDate'] = undefined;
+/**
+ * @member {module:model/Strategy} strategies
+ */
+CreateContestRequestAllOf.prototype['strategies'] = undefined;
+/**
+ * Additional constraints
+ * @member {Array.<String>} constraints
+ */
+CreateContestRequestAllOf.prototype['constraints'] = undefined;
+/**
+ * @member {Array.<Object.<String, module:model/TranslationValue>>} translations
+ */
+CreateContestRequestAllOf.prototype['translations'] = undefined;
+/**
+ * @member {Array.<module:model/CreateRewardRequest>} rewards
+ */
+CreateContestRequestAllOf.prototype['rewards'] = undefined;
 
 
 

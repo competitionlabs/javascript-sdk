@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -16,23 +16,28 @@ import Metadata from './Metadata';
 import UnitOfMeasureType from './UnitOfMeasureType';
 import UpdateActionTypeRequestAllOf from './UpdateActionTypeRequestAllOf';
 import UpdateModelDefault from './UpdateModelDefault';
+import UpdateOptParamModels from './UpdateOptParamModels';
 
 /**
  * The UpdateActionTypeRequest model module.
  * @module model/UpdateActionTypeRequest
- * @version 1.0.5
+ * @version 1.0.0
  */
 class UpdateActionTypeRequest {
     /**
      * Constructs a new <code>UpdateActionTypeRequest</code>.
      * @alias module:model/UpdateActionTypeRequest
      * @implements module:model/UpdateModelDefault
+     * @implements module:model/UpdateOptParamModels
      * @implements module:model/UpdateActionTypeRequestAllOf
      * @param id {String} A unique system generated identifier
+     * @param name {String} The name of the Action Helper
+     * @param unitOfMeasureType {module:model/UnitOfMeasureType} 
+     * @param constraints {Array.<String>} Additional constraints, if the value is present it means the
      */
-    constructor(id) { 
-        UpdateModelDefault.initialize(this, id);UpdateActionTypeRequestAllOf.initialize(this);
-        UpdateActionTypeRequest.initialize(this, id);
+    constructor(id, name, unitOfMeasureType, constraints) { 
+        UpdateModelDefault.initialize(this, id);UpdateOptParamModels.initialize(this);UpdateActionTypeRequestAllOf.initialize(this, name, unitOfMeasureType, constraints);
+        UpdateActionTypeRequest.initialize(this, id, name, unitOfMeasureType, constraints);
     }
 
     /**
@@ -40,46 +45,11 @@ class UpdateActionTypeRequest {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, id) { 
+    static initialize(obj, id, name, unitOfMeasureType, constraints) { 
         obj['id'] = id;
-    }
-
-    /**
-    * Constructs a full object with all available fields.
-    */
-    model(){
-        var obj = {};
-
-        obj['id'] = null;
-        obj['name'] = null;
-        obj['description'] = null;
-        obj['key'] = null;
-        obj['unitOfMeasureType'] = new UnitOfMeasureType().model();
-        obj['metadata'] = [new Metadata().model()];
-
-        return obj;
-    }
-
-    /**
-    * Constructs a full object Map for all available fields.
-    */
-    modelMap(){
-        var obj = {
-            "fields": {},
-            "requiredFields": {}
-        };
-
-        obj["fields"]['id'] = { "type": 'String', "system": true };
-        obj["fields"]['name'] = { "type": 'String', "system": false };
-        obj["fields"]['description'] = { "type": 'String', "system": false };
-        obj["fields"]['key'] = { "type": 'String', "system": false };
-        obj["fields"]['unitOfMeasureType'] = new UnitOfMeasureType().modelMap();
-        obj["fields"]['metadata'] = [new Metadata().modelMap()];
-
-        
-        obj["requiredFields"]['id'] = { "type": 'String', "system": true };
-
-        return obj;
+        obj['name'] = name;
+        obj['unitOfMeasureType'] = unitOfMeasureType;
+        obj['constraints'] = constraints;
     }
 
     /**
@@ -93,10 +63,20 @@ class UpdateActionTypeRequest {
         if (data) {
             obj = obj || new UpdateActionTypeRequest();
             UpdateModelDefault.constructFromObject(data, obj);
+            UpdateOptParamModels.constructFromObject(data, obj);
             UpdateActionTypeRequestAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'String');
+            }
+            if (data.hasOwnProperty('customFields')) {
+                obj['customFields'] = ApiClient.convertToType(data['customFields'], ['String']);
+            }
+            if (data.hasOwnProperty('tags')) {
+                obj['tags'] = ApiClient.convertToType(data['tags'], ['String']);
+            }
+            if (data.hasOwnProperty('metadata')) {
+                obj['metadata'] = ApiClient.convertToType(data['metadata'], [Metadata]);
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
@@ -104,14 +84,11 @@ class UpdateActionTypeRequest {
             if (data.hasOwnProperty('description')) {
                 obj['description'] = ApiClient.convertToType(data['description'], 'String');
             }
-            if (data.hasOwnProperty('key')) {
-                obj['key'] = ApiClient.convertToType(data['key'], 'String');
-            }
             if (data.hasOwnProperty('unitOfMeasureType')) {
                 obj['unitOfMeasureType'] = UnitOfMeasureType.constructFromObject(data['unitOfMeasureType']);
             }
-            if (data.hasOwnProperty('metadata')) {
-                obj['metadata'] = ApiClient.convertToType(data['metadata'], [Metadata]);
+            if (data.hasOwnProperty('constraints')) {
+                obj['constraints'] = ApiClient.convertToType(data['constraints'], ['String']);
             }
         }
         return obj;
@@ -127,6 +104,23 @@ class UpdateActionTypeRequest {
 UpdateActionTypeRequest.prototype['id'] = undefined;
 
 /**
+ * A list of id's used to add cutom fields
+ * @member {Array.<String>} customFields
+ */
+UpdateActionTypeRequest.prototype['customFields'] = undefined;
+
+/**
+ * A list of id's used to tag models
+ * @member {Array.<String>} tags
+ */
+UpdateActionTypeRequest.prototype['tags'] = undefined;
+
+/**
+ * @member {Array.<module:model/Metadata>} metadata
+ */
+UpdateActionTypeRequest.prototype['metadata'] = undefined;
+
+/**
  * The name of the Action Helper
  * @member {String} name
  */
@@ -139,20 +133,15 @@ UpdateActionTypeRequest.prototype['name'] = undefined;
 UpdateActionTypeRequest.prototype['description'] = undefined;
 
 /**
- * A unique key that represents an action helper
- * @member {String} key
- */
-UpdateActionTypeRequest.prototype['key'] = undefined;
-
-/**
  * @member {module:model/UnitOfMeasureType} unitOfMeasureType
  */
 UpdateActionTypeRequest.prototype['unitOfMeasureType'] = undefined;
 
 /**
- * @member {Array.<module:model/Metadata>} metadata
+ * Additional constraints, if the value is present it means the
+ * @member {Array.<String>} constraints
  */
-UpdateActionTypeRequest.prototype['metadata'] = undefined;
+UpdateActionTypeRequest.prototype['constraints'] = undefined;
 
 
 // Implement UpdateModelDefault interface:
@@ -161,6 +150,21 @@ UpdateActionTypeRequest.prototype['metadata'] = undefined;
  * @member {String} id
  */
 UpdateModelDefault.prototype['id'] = undefined;
+// Implement UpdateOptParamModels interface:
+/**
+ * A list of id's used to add cutom fields
+ * @member {Array.<String>} customFields
+ */
+UpdateOptParamModels.prototype['customFields'] = undefined;
+/**
+ * A list of id's used to tag models
+ * @member {Array.<String>} tags
+ */
+UpdateOptParamModels.prototype['tags'] = undefined;
+/**
+ * @member {Array.<module:model/Metadata>} metadata
+ */
+UpdateOptParamModels.prototype['metadata'] = undefined;
 // Implement UpdateActionTypeRequestAllOf interface:
 /**
  * The name of the Action Helper
@@ -173,18 +177,14 @@ UpdateActionTypeRequestAllOf.prototype['name'] = undefined;
  */
 UpdateActionTypeRequestAllOf.prototype['description'] = undefined;
 /**
- * A unique key that represents an action helper
- * @member {String} key
- */
-UpdateActionTypeRequestAllOf.prototype['key'] = undefined;
-/**
  * @member {module:model/UnitOfMeasureType} unitOfMeasureType
  */
 UpdateActionTypeRequestAllOf.prototype['unitOfMeasureType'] = undefined;
 /**
- * @member {Array.<module:model/Metadata>} metadata
+ * Additional constraints, if the value is present it means the
+ * @member {Array.<String>} constraints
  */
-UpdateActionTypeRequestAllOf.prototype['metadata'] = undefined;
+UpdateActionTypeRequestAllOf.prototype['constraints'] = undefined;
 
 
 

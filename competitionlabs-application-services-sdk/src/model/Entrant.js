@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -19,7 +19,7 @@ import EntrantStatus from './EntrantStatus';
 /**
  * The Entrant model module.
  * @module model/Entrant
- * @version 1.0.5
+ * @version 1.0.0
  */
 class Entrant {
     /**
@@ -43,46 +43,6 @@ class Entrant {
         obj['memberId'] = memberId;
         obj['memberRefId'] = memberRefId;
         obj['entrantStatus'] = entrantStatus;
-    }
-
-    /**
-    * Constructs a full object with all available fields.
-    */
-    model(){
-        var obj = {};
-
-        obj['entrantAction'] = new EntrantAction().model();
-        obj['memberId'] = null;
-        obj['memberRefId'] = null;
-        obj['entrantStatus'] = new EntrantStatus().model();
-        obj['entityId'] = null;
-        obj['entityType'] = new EntityType().model();
-
-        return obj;
-    }
-
-    /**
-    * Constructs a full object Map for all available fields.
-    */
-    modelMap(){
-        var obj = {
-            "fields": {},
-            "requiredFields": {}
-        };
-
-        obj["fields"]['entrantAction'] = new EntrantAction().modelMap();
-        obj["fields"]['memberId'] = { "type": 'String', "system": false };
-        obj["fields"]['memberRefId'] = { "type": 'String', "system": false };
-        obj["fields"]['entrantStatus'] = new EntrantStatus().modelMap();
-        obj["fields"]['entityId'] = { "type": 'String', "system": false };
-        obj["fields"]['entityType'] = new EntityType().modelMap();
-
-        
-        obj["requiredFields"]['memberId'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['memberRefId'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['entrantStatus'] = new EntrantStatus().modelMap();
-
-        return obj;
     }
 
     /**

@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -19,7 +19,7 @@ import MetaExtended from './MetaExtended';
 /**
  * The EntrantResponse model module.
  * @module model/EntrantResponse
- * @version 1.0.5
+ * @version 1.0.0
  */
 class EntrantResponse {
     /**
@@ -39,38 +39,6 @@ class EntrantResponse {
      */
     static initialize(obj, meta) { 
         obj['meta'] = meta;
-    }
-
-    /**
-    * Constructs a full object with all available fields.
-    */
-    model(){
-        var obj = {};
-
-        obj['meta'] = new MetaExtended().model();
-        obj['results'] = [new Entrant().model()];
-        obj['errors'] = [new Error().model()];
-
-        return obj;
-    }
-
-    /**
-    * Constructs a full object Map for all available fields.
-    */
-    modelMap(){
-        var obj = {
-            "fields": {},
-            "requiredFields": {}
-        };
-
-        obj["fields"]['meta'] = new MetaExtended().modelMap();
-        obj["fields"]['results'] = [new Entrant().modelMap()];
-        obj["fields"]['errors'] = [new Error().modelMap()];
-
-        
-        obj["requiredFields"]['meta'] = new MetaExtended().modelMap();
-
-        return obj;
     }
 
     /**

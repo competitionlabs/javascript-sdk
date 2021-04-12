@@ -1,4 +1,4 @@
-# @CompetitionlabsApplicationServicesSdk.CreateEventRequest
+# CompetitionLabsApplicationServices.CreateEventRequest
 
 ## Properties
 
@@ -10,6 +10,8 @@ Name | Type | Description | Notes
 **entityRefId** | **String** | It is a reference to a game/product ID from external system | 
 **sourceValue** | **Number** | The actual numerical value related to the event | 
 **transactionTimestamp** | **Date** | ISO8601 timestamp for when this event happened. All records are stored in UTC time zone | 
-**metadata** | [**[EventMetadataRequest]**](EventMetadataRequest.md) |  | [optional] 
+**metadata** | **{String: Object}** | Event metadata map. | [optional] 
+**customFields** | [**[CustomFieldReduced]**](CustomFieldReduced.md) |  | [optional] 
+**tags** | **[String]** | A list of Strings of groups that the tag belongs to | [optional] 
 
 

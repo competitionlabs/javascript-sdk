@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -17,7 +17,7 @@ import Relation from './Relation';
 /**
  * The Result model module.
  * @module model/Result
- * @version 1.0.5
+ * @version 1.0.0
  */
 class Result {
     /**
@@ -39,41 +39,6 @@ class Result {
     static initialize(obj, id, result) { 
         obj['id'] = id;
         obj['result'] = result;
-    }
-
-    /**
-    * Constructs a full object with all available fields.
-    */
-    model(){
-        var obj = {};
-
-        obj['id'] = null;
-        obj['externalReference'] = null;
-        obj['result'] = null;
-        obj['relations'] = [new Relation().model()];
-
-        return obj;
-    }
-
-    /**
-    * Constructs a full object Map for all available fields.
-    */
-    modelMap(){
-        var obj = {
-            "fields": {},
-            "requiredFields": {}
-        };
-
-        obj["fields"]['id'] = { "type": 'String', "system": true };
-        obj["fields"]['externalReference'] = { "type": 'String', "system": false };
-        obj["fields"]['result'] = { "type": 'String', "system": false };
-        obj["fields"]['relations'] = [new Relation().modelMap()];
-
-        
-        obj["requiredFields"]['id'] = { "type": 'String', "system": true };
-        obj["requiredFields"]['result'] = { "type": 'String', "system": false };
-
-        return obj;
     }
 
     /**

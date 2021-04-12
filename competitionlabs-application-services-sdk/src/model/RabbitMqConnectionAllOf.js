@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RabbitMqConnectionAllOf model module.
  * @module model/RabbitMqConnectionAllOf
- * @version 1.0.5
+ * @version 1.0.0
  */
 class RabbitMqConnectionAllOf {
     /**
@@ -26,16 +26,17 @@ class RabbitMqConnectionAllOf {
      * @param uri {String} The SQS endpoint.
      * @param virtualHost {String} The virtual host of the rabbitmq broker
      * @param port {Number} The port number on which consumer will connect on rabbitmq broker
-     * @param useSsl {Boolean} Whether the connection is SSL enabled or not
-     * @param username {String} Consumer username for authentication
+     * @param userName {String} Consumer username for authentication
      * @param password {String} Consumer password for authentication
      * @param queueName {String} Name of the queue
      * @param lastKnownStatus {String} Last known status of the connection
      * @param lastKnownStatusCode {Number} Status code correspoding to the last known status
+     * @param transformerId {String} The identifier of the transformer
+     * @param constraints {Array.<String>} Additional constraints
      */
-    constructor(name, uri, virtualHost, port, useSsl, username, password, queueName, lastKnownStatus, lastKnownStatusCode) { 
+    constructor(name, uri, virtualHost, port, userName, password, queueName, lastKnownStatus, lastKnownStatusCode, transformerId, constraints) { 
         
-        RabbitMqConnectionAllOf.initialize(this, name, uri, virtualHost, port, useSsl, username, password, queueName, lastKnownStatus, lastKnownStatusCode);
+        RabbitMqConnectionAllOf.initialize(this, name, uri, virtualHost, port, userName, password, queueName, lastKnownStatus, lastKnownStatusCode, transformerId, constraints);
     }
 
     /**
@@ -43,76 +44,18 @@ class RabbitMqConnectionAllOf {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, name, uri, virtualHost, port, useSsl, username, password, queueName, lastKnownStatus, lastKnownStatusCode) { 
+    static initialize(obj, name, uri, virtualHost, port, userName, password, queueName, lastKnownStatus, lastKnownStatusCode, transformerId, constraints) { 
         obj['name'] = name;
         obj['uri'] = uri;
         obj['virtualHost'] = virtualHost;
         obj['port'] = port;
-        obj['useSsl'] = useSsl;
-        obj['username'] = username;
+        obj['userName'] = userName;
         obj['password'] = password;
         obj['queueName'] = queueName;
         obj['lastKnownStatus'] = lastKnownStatus;
         obj['lastKnownStatusCode'] = lastKnownStatusCode;
-    }
-
-    /**
-    * Constructs a full object with all available fields.
-    */
-    model(){
-        var obj = {};
-
-        obj['name'] = null;
-        obj['uri'] = null;
-        obj['virtualHost'] = null;
-        obj['port'] = null;
-        obj['useSsl'] = null;
-        obj['username'] = null;
-        obj['password'] = null;
-        obj['queueName'] = null;
-        obj['exchange'] = null;
-        obj['routingKey'] = null;
-        obj['lastKnownStatus'] = null;
-        obj['lastKnownStatusCode'] = null;
-
-        return obj;
-    }
-
-    /**
-    * Constructs a full object Map for all available fields.
-    */
-    modelMap(){
-        var obj = {
-            "fields": {},
-            "requiredFields": {}
-        };
-
-        obj["fields"]['name'] = { "type": 'String', "system": false };
-        obj["fields"]['uri'] = { "type": 'String', "system": false };
-        obj["fields"]['virtualHost'] = { "type": 'String', "system": false };
-        obj["fields"]['port'] = { "type": 'Number', "system": false };
-        obj["fields"]['useSsl'] = { "type": 'Boolean', "system": false };
-        obj["fields"]['username'] = { "type": 'String', "system": false };
-        obj["fields"]['password'] = { "type": 'String', "system": false };
-        obj["fields"]['queueName'] = { "type": 'String', "system": false };
-        obj["fields"]['exchange'] = { "type": 'String', "system": false };
-        obj["fields"]['routingKey'] = { "type": 'String', "system": false };
-        obj["fields"]['lastKnownStatus'] = { "type": 'String', "system": false };
-        obj["fields"]['lastKnownStatusCode'] = { "type": 'Number', "system": false };
-
-        
-        obj["requiredFields"]['name'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['uri'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['virtualHost'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['port'] = { "type": 'Number', "system": false };
-        obj["requiredFields"]['useSsl'] = { "type": 'Boolean', "system": false };
-        obj["requiredFields"]['username'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['password'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['queueName'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['lastKnownStatus'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['lastKnownStatusCode'] = { "type": 'Number', "system": false };
-
-        return obj;
+        obj['transformerId'] = transformerId;
+        obj['constraints'] = constraints;
     }
 
     /**
@@ -138,11 +81,8 @@ class RabbitMqConnectionAllOf {
             if (data.hasOwnProperty('port')) {
                 obj['port'] = ApiClient.convertToType(data['port'], 'Number');
             }
-            if (data.hasOwnProperty('useSsl')) {
-                obj['useSsl'] = ApiClient.convertToType(data['useSsl'], 'Boolean');
-            }
-            if (data.hasOwnProperty('username')) {
-                obj['username'] = ApiClient.convertToType(data['username'], 'String');
+            if (data.hasOwnProperty('userName')) {
+                obj['userName'] = ApiClient.convertToType(data['userName'], 'String');
             }
             if (data.hasOwnProperty('password')) {
                 obj['password'] = ApiClient.convertToType(data['password'], 'String');
@@ -161,6 +101,12 @@ class RabbitMqConnectionAllOf {
             }
             if (data.hasOwnProperty('lastKnownStatusCode')) {
                 obj['lastKnownStatusCode'] = ApiClient.convertToType(data['lastKnownStatusCode'], 'Number');
+            }
+            if (data.hasOwnProperty('transformerId')) {
+                obj['transformerId'] = ApiClient.convertToType(data['transformerId'], 'String');
+            }
+            if (data.hasOwnProperty('constraints')) {
+                obj['constraints'] = ApiClient.convertToType(data['constraints'], ['String']);
             }
         }
         return obj;
@@ -194,16 +140,10 @@ RabbitMqConnectionAllOf.prototype['virtualHost'] = undefined;
 RabbitMqConnectionAllOf.prototype['port'] = undefined;
 
 /**
- * Whether the connection is SSL enabled or not
- * @member {Boolean} useSsl
- */
-RabbitMqConnectionAllOf.prototype['useSsl'] = undefined;
-
-/**
  * Consumer username for authentication
- * @member {String} username
+ * @member {String} userName
  */
-RabbitMqConnectionAllOf.prototype['username'] = undefined;
+RabbitMqConnectionAllOf.prototype['userName'] = undefined;
 
 /**
  * Consumer password for authentication
@@ -240,6 +180,18 @@ RabbitMqConnectionAllOf.prototype['lastKnownStatus'] = undefined;
  * @member {Number} lastKnownStatusCode
  */
 RabbitMqConnectionAllOf.prototype['lastKnownStatusCode'] = undefined;
+
+/**
+ * The identifier of the transformer
+ * @member {String} transformerId
+ */
+RabbitMqConnectionAllOf.prototype['transformerId'] = undefined;
+
+/**
+ * Additional constraints
+ * @member {Array.<String>} constraints
+ */
+RabbitMqConnectionAllOf.prototype['constraints'] = undefined;
 
 
 

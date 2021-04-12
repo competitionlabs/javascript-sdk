@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -13,12 +13,13 @@
 
 import ApiClient from '../ApiClient';
 import LeaderboardAllOf from './LeaderboardAllOf';
+import LeaderboardEntry from './LeaderboardEntry';
 import ModelDefault from './ModelDefault';
 
 /**
  * The Leaderboard model module.
  * @module model/Leaderboard
- * @version 1.0.5
+ * @version 1.0.0
  */
 class Leaderboard {
     /**
@@ -30,16 +31,16 @@ class Leaderboard {
      * @param spaceName {String} This is the space name which is linked to the account
      * @param created {Date} ISO8601 timestamp for when a Model was created. All records are stored in UTC time zone
      * @param memberId {String} A unique system generated identifier
-     * @param points {Number} The value of the points a member has on the leaderboard
-     * @param rank {Number} The rank of the member on the leaderboard
      * @param memberRefId {String} The reference to this member in your system
      * @param name {String} The name of the member that is used on leader boards and public displays
-     * @param goalReached {Boolean} Is the goal reached depending on the scoring strategy
+     * @param points {Number} The value of the points a member has on the leaderboard
+     * @param rank {Number} The rank of the member on the leaderboard
      * @param timestamp {Date} ISO8601 timestamp for when a the member was last updated on the leaderboard. All records are stored in UTC time zone
+     * @param constraints {Array.<String>} Additional constraints
      */
-    constructor(id, spaceName, created, memberId, points, rank, memberRefId, name, goalReached, timestamp) { 
-        ModelDefault.initialize(this, id, spaceName, created);LeaderboardAllOf.initialize(this, memberId, points, rank, memberRefId, name, goalReached, timestamp);
-        Leaderboard.initialize(this, id, spaceName, created, memberId, points, rank, memberRefId, name, goalReached, timestamp);
+    constructor(id, spaceName, created, memberId, memberRefId, name, points, rank, timestamp, constraints) { 
+        ModelDefault.initialize(this, id, spaceName, created);LeaderboardAllOf.initialize(this, memberId, memberRefId, name, points, rank, timestamp, constraints);
+        Leaderboard.initialize(this, id, spaceName, created, memberId, memberRefId, name, points, rank, timestamp, constraints);
     }
 
     /**
@@ -47,74 +48,17 @@ class Leaderboard {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, id, spaceName, created, memberId, points, rank, memberRefId, name, goalReached, timestamp) { 
+    static initialize(obj, id, spaceName, created, memberId, memberRefId, name, points, rank, timestamp, constraints) { 
         obj['id'] = id;
         obj['spaceName'] = spaceName;
         obj['created'] = created;
         obj['memberId'] = memberId;
-        obj['points'] = points;
-        obj['rank'] = rank;
         obj['memberRefId'] = memberRefId;
         obj['name'] = name;
-        obj['goalReached'] = goalReached;
+        obj['points'] = points;
+        obj['rank'] = rank;
         obj['timestamp'] = timestamp;
-    }
-
-    /**
-    * Constructs a full object with all available fields.
-    */
-    model(){
-        var obj = {};
-
-        obj['id'] = null;
-        obj['spaceName'] = null;
-        obj['created'] = null;
-        obj['memberId'] = null;
-        obj['points'] = null;
-        obj['rank'] = null;
-        obj['memberRefId'] = null;
-        obj['name'] = null;
-        obj['change'] = [new Leaderboard().model()];
-        obj['goalReached'] = null;
-        obj['timestamp'] = null;
-
-        return obj;
-    }
-
-    /**
-    * Constructs a full object Map for all available fields.
-    */
-    modelMap(){
-        var obj = {
-            "fields": {},
-            "requiredFields": {}
-        };
-
-        obj["fields"]['id'] = { "type": 'String', "system": true };
-        obj["fields"]['spaceName'] = { "type": 'String', "system": true };
-        obj["fields"]['created'] = { "type": 'Date', "system": true };
-        obj["fields"]['memberId'] = { "type": 'String', "system": false };
-        obj["fields"]['points'] = { "type": 'Number', "system": false };
-        obj["fields"]['rank'] = { "type": 'Number', "system": false };
-        obj["fields"]['memberRefId'] = { "type": 'String', "system": false };
-        obj["fields"]['name'] = { "type": 'String', "system": false };
-        obj["fields"]['change'] = [new Leaderboard().modelMap()];
-        obj["fields"]['goalReached'] = { "type": 'Boolean', "system": false };
-        obj["fields"]['timestamp'] = { "type": 'Date', "system": false };
-
-        
-        obj["requiredFields"]['id'] = { "type": 'String', "system": true };
-        obj["requiredFields"]['spaceName'] = { "type": 'String', "system": true };
-        obj["requiredFields"]['created'] = { "type": 'Date', "system": true };
-        obj["requiredFields"]['memberId'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['points'] = { "type": 'Number', "system": false };
-        obj["requiredFields"]['rank'] = { "type": 'Number', "system": false };
-        obj["requiredFields"]['memberRefId'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['name'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['goalReached'] = { "type": 'Boolean', "system": false };
-        obj["requiredFields"]['timestamp'] = { "type": 'Date', "system": false };
-
-        return obj;
+        obj['constraints'] = constraints;
     }
 
     /**
@@ -139,14 +83,11 @@ class Leaderboard {
             if (data.hasOwnProperty('created')) {
                 obj['created'] = ApiClient.convertToType(data['created'], 'Date');
             }
+            if (data.hasOwnProperty('leaderboardEntries')) {
+                obj['leaderboardEntries'] = ApiClient.convertToType(data['leaderboardEntries'], [LeaderboardEntry]);
+            }
             if (data.hasOwnProperty('memberId')) {
                 obj['memberId'] = ApiClient.convertToType(data['memberId'], 'String');
-            }
-            if (data.hasOwnProperty('points')) {
-                obj['points'] = ApiClient.convertToType(data['points'], 'Number');
-            }
-            if (data.hasOwnProperty('rank')) {
-                obj['rank'] = ApiClient.convertToType(data['rank'], 'Number');
             }
             if (data.hasOwnProperty('memberRefId')) {
                 obj['memberRefId'] = ApiClient.convertToType(data['memberRefId'], 'String');
@@ -154,14 +95,20 @@ class Leaderboard {
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
+            if (data.hasOwnProperty('points')) {
+                obj['points'] = ApiClient.convertToType(data['points'], 'Number');
+            }
+            if (data.hasOwnProperty('rank')) {
+                obj['rank'] = ApiClient.convertToType(data['rank'], 'Number');
+            }
             if (data.hasOwnProperty('change')) {
                 obj['change'] = ApiClient.convertToType(data['change'], [Leaderboard]);
             }
-            if (data.hasOwnProperty('goalReached')) {
-                obj['goalReached'] = ApiClient.convertToType(data['goalReached'], 'Boolean');
-            }
             if (data.hasOwnProperty('timestamp')) {
                 obj['timestamp'] = ApiClient.convertToType(data['timestamp'], 'Date');
+            }
+            if (data.hasOwnProperty('constraints')) {
+                obj['constraints'] = ApiClient.convertToType(data['constraints'], ['String']);
             }
         }
         return obj;
@@ -189,22 +136,15 @@ Leaderboard.prototype['spaceName'] = undefined;
 Leaderboard.prototype['created'] = undefined;
 
 /**
+ * @member {Array.<module:model/LeaderboardEntry>} leaderboardEntries
+ */
+Leaderboard.prototype['leaderboardEntries'] = undefined;
+
+/**
  * A unique system generated identifier
  * @member {String} memberId
  */
 Leaderboard.prototype['memberId'] = undefined;
-
-/**
- * The value of the points a member has on the leaderboard
- * @member {Number} points
- */
-Leaderboard.prototype['points'] = undefined;
-
-/**
- * The rank of the member on the leaderboard
- * @member {Number} rank
- */
-Leaderboard.prototype['rank'] = undefined;
 
 /**
  * The reference to this member in your system
@@ -219,21 +159,33 @@ Leaderboard.prototype['memberRefId'] = undefined;
 Leaderboard.prototype['name'] = undefined;
 
 /**
+ * The value of the points a member has on the leaderboard
+ * @member {Number} points
+ */
+Leaderboard.prototype['points'] = undefined;
+
+/**
+ * The rank of the member on the leaderboard
+ * @member {Number} rank
+ */
+Leaderboard.prototype['rank'] = undefined;
+
+/**
  * @member {Array.<module:model/Leaderboard>} change
  */
 Leaderboard.prototype['change'] = undefined;
-
-/**
- * Is the goal reached depending on the scoring strategy
- * @member {Boolean} goalReached
- */
-Leaderboard.prototype['goalReached'] = undefined;
 
 /**
  * ISO8601 timestamp for when a the member was last updated on the leaderboard. All records are stored in UTC time zone
  * @member {Date} timestamp
  */
 Leaderboard.prototype['timestamp'] = undefined;
+
+/**
+ * Additional constraints
+ * @member {Array.<String>} constraints
+ */
+Leaderboard.prototype['constraints'] = undefined;
 
 
 // Implement ModelDefault interface:
@@ -254,20 +206,14 @@ ModelDefault.prototype['spaceName'] = undefined;
 ModelDefault.prototype['created'] = undefined;
 // Implement LeaderboardAllOf interface:
 /**
+ * @member {Array.<module:model/LeaderboardEntry>} leaderboardEntries
+ */
+LeaderboardAllOf.prototype['leaderboardEntries'] = undefined;
+/**
  * A unique system generated identifier
  * @member {String} memberId
  */
 LeaderboardAllOf.prototype['memberId'] = undefined;
-/**
- * The value of the points a member has on the leaderboard
- * @member {Number} points
- */
-LeaderboardAllOf.prototype['points'] = undefined;
-/**
- * The rank of the member on the leaderboard
- * @member {Number} rank
- */
-LeaderboardAllOf.prototype['rank'] = undefined;
 /**
  * The reference to this member in your system
  * @member {String} memberRefId
@@ -279,19 +225,29 @@ LeaderboardAllOf.prototype['memberRefId'] = undefined;
  */
 LeaderboardAllOf.prototype['name'] = undefined;
 /**
+ * The value of the points a member has on the leaderboard
+ * @member {Number} points
+ */
+LeaderboardAllOf.prototype['points'] = undefined;
+/**
+ * The rank of the member on the leaderboard
+ * @member {Number} rank
+ */
+LeaderboardAllOf.prototype['rank'] = undefined;
+/**
  * @member {Array.<module:model/Leaderboard>} change
  */
 LeaderboardAllOf.prototype['change'] = undefined;
-/**
- * Is the goal reached depending on the scoring strategy
- * @member {Boolean} goalReached
- */
-LeaderboardAllOf.prototype['goalReached'] = undefined;
 /**
  * ISO8601 timestamp for when a the member was last updated on the leaderboard. All records are stored in UTC time zone
  * @member {Date} timestamp
  */
 LeaderboardAllOf.prototype['timestamp'] = undefined;
+/**
+ * Additional constraints
+ * @member {Array.<String>} constraints
+ */
+LeaderboardAllOf.prototype['constraints'] = undefined;
 
 
 

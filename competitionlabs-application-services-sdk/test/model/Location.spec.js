@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.@CompetitionlabsJavascriptSdk);
+    factory(root.expect, root.CompetitionLabsApplicationServices);
   }
-}(this, function(expect, @CompetitionlabsJavascriptSdk) {
+}(this, function(expect, CompetitionLabsApplicationServices) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new @CompetitionlabsJavascriptSdk.Location();
+    instance = new CompetitionLabsApplicationServices.Location();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,19 +50,19 @@
   describe('Location', function() {
     it('should create an instance of Location', function() {
       // uncomment below and update the code to test Location
-      //var instane = new @CompetitionlabsJavascriptSdk.Location();
-      //expect(instance).to.be.a(@CompetitionlabsJavascriptSdk.Location);
+      //var instane = new CompetitionLabsApplicationServices.Location();
+      //expect(instance).to.be.a(CompetitionLabsApplicationServices.Location);
     });
 
     it('should have the property lat (base name: "lat")', function() {
       // uncomment below and update the code to test the property lat
-      //var instane = new @CompetitionlabsJavascriptSdk.Location();
+      //var instance = new CompetitionLabsApplicationServices.Location();
       //expect(instance).to.be();
     });
 
     it('should have the property lon (base name: "lon")', function() {
       // uncomment below and update the code to test the property lon
-      //var instane = new @CompetitionlabsJavascriptSdk.Location();
+      //var instance = new CompetitionLabsApplicationServices.Location();
       //expect(instance).to.be();
     });
 

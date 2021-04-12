@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -18,7 +18,7 @@ import EntrantStatus from './EntrantStatus';
 /**
  * The EntrantRequest model module.
  * @module model/EntrantRequest
- * @version 1.0.5
+ * @version 1.0.0
  */
 class EntrantRequest {
     /**
@@ -44,45 +44,6 @@ class EntrantRequest {
         obj['entityId'] = entityId;
         obj['entrantStatus'] = entrantStatus;
         obj['entrantAction'] = entrantAction;
-    }
-
-    /**
-    * Constructs a full object with all available fields.
-    */
-    model(){
-        var obj = {};
-
-        obj['memberId'] = null;
-        obj['memberRefId'] = null;
-        obj['entityId'] = null;
-        obj['entrantStatus'] = new EntrantStatus().model();
-        obj['entrantAction'] = new EntrantAction().model();
-
-        return obj;
-    }
-
-    /**
-    * Constructs a full object Map for all available fields.
-    */
-    modelMap(){
-        var obj = {
-            "fields": {},
-            "requiredFields": {}
-        };
-
-        obj["fields"]['memberId'] = { "type": 'String', "system": false };
-        obj["fields"]['memberRefId'] = { "type": 'String', "system": false };
-        obj["fields"]['entityId'] = { "type": 'String', "system": false };
-        obj["fields"]['entrantStatus'] = new EntrantStatus().modelMap();
-        obj["fields"]['entrantAction'] = new EntrantAction().modelMap();
-
-        
-        obj["requiredFields"]['memberRefId'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['entityId'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['entrantStatus'] = new EntrantStatus().modelMap();
-        obj["requiredFields"]['entrantAction'] = new EntrantAction().modelMap();
-
-        return obj;
     }
 
     /**

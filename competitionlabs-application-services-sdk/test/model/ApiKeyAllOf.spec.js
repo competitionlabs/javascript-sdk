@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.@CompetitionlabsJavascriptSdk);
+    factory(root.expect, root.CompetitionLabsApplicationServices);
   }
-}(this, function(expect, @CompetitionlabsJavascriptSdk) {
+}(this, function(expect, CompetitionLabsApplicationServices) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new @CompetitionlabsJavascriptSdk.ApiKeyAllOf();
+    instance = new CompetitionLabsApplicationServices.ApiKeyAllOf();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,43 +50,37 @@
   describe('ApiKeyAllOf', function() {
     it('should create an instance of ApiKeyAllOf', function() {
       // uncomment below and update the code to test ApiKeyAllOf
-      //var instane = new @CompetitionlabsJavascriptSdk.ApiKeyAllOf();
-      //expect(instance).to.be.a(@CompetitionlabsJavascriptSdk.ApiKeyAllOf);
-    });
-
-    it('should have the property active (base name: "active")', function() {
-      // uncomment below and update the code to test the property active
-      //var instane = new @CompetitionlabsJavascriptSdk.ApiKeyAllOf();
-      //expect(instance).to.be();
+      //var instane = new CompetitionLabsApplicationServices.ApiKeyAllOf();
+      //expect(instance).to.be.a(CompetitionLabsApplicationServices.ApiKeyAllOf);
     });
 
     it('should have the property description (base name: "description")', function() {
       // uncomment below and update the code to test the property description
-      //var instane = new @CompetitionlabsJavascriptSdk.ApiKeyAllOf();
+      //var instance = new CompetitionLabsApplicationServices.ApiKeyAllOf();
       //expect(instance).to.be();
     });
 
     it('should have the property whiteListIPs (base name: "whiteListIPs")', function() {
       // uncomment below and update the code to test the property whiteListIPs
-      //var instane = new @CompetitionlabsJavascriptSdk.ApiKeyAllOf();
+      //var instance = new CompetitionLabsApplicationServices.ApiKeyAllOf();
       //expect(instance).to.be();
     });
 
     it('should have the property key (base name: "key")', function() {
       // uncomment below and update the code to test the property key
-      //var instane = new @CompetitionlabsJavascriptSdk.ApiKeyAllOf();
+      //var instance = new CompetitionLabsApplicationServices.ApiKeyAllOf();
       //expect(instance).to.be();
     });
 
     it('should have the property role (base name: "role")', function() {
       // uncomment below and update the code to test the property role
-      //var instane = new @CompetitionlabsJavascriptSdk.ApiKeyAllOf();
+      //var instance = new CompetitionLabsApplicationServices.ApiKeyAllOf();
       //expect(instance).to.be();
     });
 
-    it('should have the property _default (base name: "default")', function() {
-      // uncomment below and update the code to test the property _default
-      //var instane = new @CompetitionlabsJavascriptSdk.ApiKeyAllOf();
+    it('should have the property constraints (base name: "constraints")', function() {
+      // uncomment below and update the code to test the property constraints
+      //var instance = new CompetitionLabsApplicationServices.ApiKeyAllOf();
       //expect(instance).to.be();
     });
 

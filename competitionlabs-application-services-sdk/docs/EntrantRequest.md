@@ -1,4 +1,4 @@
-# @CompetitionlabsApplicationServicesSdk.EntrantRequest
+# CompetitionLabsApplicationServices.EntrantRequest
 
 ## Properties
 

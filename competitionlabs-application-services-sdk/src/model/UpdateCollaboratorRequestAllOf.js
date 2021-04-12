@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -17,7 +17,7 @@ import Role from './Role';
 /**
  * The UpdateCollaboratorRequestAllOf model module.
  * @module model/UpdateCollaboratorRequestAllOf
- * @version 1.0.5
+ * @version 1.0.0
  */
 class UpdateCollaboratorRequestAllOf {
     /**
@@ -37,34 +37,6 @@ class UpdateCollaboratorRequestAllOf {
      */
     static initialize(obj, role) { 
         obj['role'] = role;
-    }
-
-    /**
-    * Constructs a full object with all available fields.
-    */
-    model(){
-        var obj = {};
-
-        obj['role'] = new Role().model();
-
-        return obj;
-    }
-
-    /**
-    * Constructs a full object Map for all available fields.
-    */
-    modelMap(){
-        var obj = {
-            "fields": {},
-            "requiredFields": {}
-        };
-
-        obj["fields"]['role'] = new Role().modelMap();
-
-        
-        obj["requiredFields"]['role'] = new Role().modelMap();
-
-        return obj;
     }
 
     /**

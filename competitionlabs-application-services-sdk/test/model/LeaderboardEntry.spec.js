@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.@CompetitionlabsApplicationServicesSdk);
+    factory(root.expect, root.CompetitionLabsApplicationServices);
   }
-}(this, function(expect, @CompetitionlabsApplicationServicesSdk) {
+}(this, function(expect, CompetitionLabsApplicationServices) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new @CompetitionlabsApplicationServicesSdk.LeaderboardEntry();
+    instance = new CompetitionLabsApplicationServices.LeaderboardEntry();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,37 +50,37 @@
   describe('LeaderboardEntry', function() {
     it('should create an instance of LeaderboardEntry', function() {
       // uncomment below and update the code to test LeaderboardEntry
-      //var instane = new @CompetitionlabsApplicationServicesSdk.LeaderboardEntry();
-      //expect(instance).to.be.a(@CompetitionlabsApplicationServicesSdk.LeaderboardEntry);
+      //var instane = new CompetitionLabsApplicationServices.LeaderboardEntry();
+      //expect(instance).to.be.a(CompetitionLabsApplicationServices.LeaderboardEntry);
     });
 
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
-      //var instane = new @CompetitionlabsApplicationServicesSdk.LeaderboardEntry();
+      //var instance = new CompetitionLabsApplicationServices.LeaderboardEntry();
       //expect(instance).to.be();
     });
 
     it('should have the property rank (base name: "rank")', function() {
       // uncomment below and update the code to test the property rank
-      //var instane = new @CompetitionlabsApplicationServicesSdk.LeaderboardEntry();
+      //var instance = new CompetitionLabsApplicationServices.LeaderboardEntry();
       //expect(instance).to.be();
     });
 
     it('should have the property points (base name: "points")', function() {
       // uncomment below and update the code to test the property points
-      //var instane = new @CompetitionlabsApplicationServicesSdk.LeaderboardEntry();
+      //var instance = new CompetitionLabsApplicationServices.LeaderboardEntry();
       //expect(instance).to.be();
     });
 
     it('should have the property memberId (base name: "memberId")', function() {
       // uncomment below and update the code to test the property memberId
-      //var instane = new @CompetitionlabsApplicationServicesSdk.LeaderboardEntry();
+      //var instance = new CompetitionLabsApplicationServices.LeaderboardEntry();
       //expect(instance).to.be();
     });
 
     it('should have the property memberRefId (base name: "memberRefId")', function() {
       // uncomment below and update the code to test the property memberRefId
-      //var instane = new @CompetitionlabsApplicationServicesSdk.LeaderboardEntry();
+      //var instance = new CompetitionLabsApplicationServices.LeaderboardEntry();
       //expect(instance).to.be();
     });
 

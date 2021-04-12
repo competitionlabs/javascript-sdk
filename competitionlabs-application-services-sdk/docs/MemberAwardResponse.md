@@ -1,4 +1,4 @@
-# @CompetitionlabsApplicationServicesSdk.MemberAwardResponse
+# CompetitionLabsApplicationServices.MemberAwardResponse
 
 ## Properties
 

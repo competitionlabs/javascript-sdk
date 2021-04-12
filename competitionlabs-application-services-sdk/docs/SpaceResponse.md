@@ -1,4 +1,4 @@
-# @CompetitionlabsApplicationServicesSdk.SpaceResponse
+# CompetitionLabsApplicationServices.SpaceResponse
 
 ## Properties
 

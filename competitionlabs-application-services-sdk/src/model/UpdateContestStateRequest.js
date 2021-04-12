@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -17,7 +17,7 @@ import ContestStateOperations from './ContestStateOperations';
 /**
  * The UpdateContestStateRequest model module.
  * @module model/UpdateContestStateRequest
- * @version 1.0.5
+ * @version 1.0.0
  */
 class UpdateContestStateRequest {
     /**
@@ -39,37 +39,6 @@ class UpdateContestStateRequest {
     static initialize(obj, contestId, status) { 
         obj['contestId'] = contestId;
         obj['status'] = status;
-    }
-
-    /**
-    * Constructs a full object with all available fields.
-    */
-    model(){
-        var obj = {};
-
-        obj['contestId'] = null;
-        obj['status'] = new ContestStateOperations().model();
-
-        return obj;
-    }
-
-    /**
-    * Constructs a full object Map for all available fields.
-    */
-    modelMap(){
-        var obj = {
-            "fields": {},
-            "requiredFields": {}
-        };
-
-        obj["fields"]['contestId'] = { "type": 'String', "system": false };
-        obj["fields"]['status'] = new ContestStateOperations().modelMap();
-
-        
-        obj["requiredFields"]['contestId'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['status'] = new ContestStateOperations().modelMap();
-
-        return obj;
     }
 
     /**

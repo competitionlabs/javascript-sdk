@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.@CompetitionlabsJavascriptSdk);
+    factory(root.expect, root.CompetitionLabsApplicationServices);
   }
-}(this, function(expect, @CompetitionlabsJavascriptSdk) {
+}(this, function(expect, CompetitionLabsApplicationServices) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new @CompetitionlabsJavascriptSdk.CreateRepositoryRequest();
+    instance = new CompetitionLabsApplicationServices.CreateRepositoryRequest();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,37 +50,49 @@
   describe('CreateRepositoryRequest', function() {
     it('should create an instance of CreateRepositoryRequest', function() {
       // uncomment below and update the code to test CreateRepositoryRequest
-      //var instane = new @CompetitionlabsJavascriptSdk.CreateRepositoryRequest();
-      //expect(instance).to.be.a(@CompetitionlabsJavascriptSdk.CreateRepositoryRequest);
+      //var instane = new CompetitionLabsApplicationServices.CreateRepositoryRequest();
+      //expect(instance).to.be.a(CompetitionLabsApplicationServices.CreateRepositoryRequest);
     });
 
-    it('should have the property name (base name: "name")', function() {
-      // uncomment below and update the code to test the property name
-      //var instane = new @CompetitionlabsJavascriptSdk.CreateRepositoryRequest();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property description (base name: "description")', function() {
-      // uncomment below and update the code to test the property description
-      //var instane = new @CompetitionlabsJavascriptSdk.CreateRepositoryRequest();
+    it('should have the property customFields (base name: "customFields")', function() {
+      // uncomment below and update the code to test the property customFields
+      //var instance = new CompetitionLabsApplicationServices.CreateRepositoryRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property tags (base name: "tags")', function() {
       // uncomment below and update the code to test the property tags
-      //var instane = new @CompetitionlabsJavascriptSdk.CreateRepositoryRequest();
+      //var instance = new CompetitionLabsApplicationServices.CreateRepositoryRequest();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property metadata (base name: "metadata")', function() {
+      // uncomment below and update the code to test the property metadata
+      //var instance = new CompetitionLabsApplicationServices.CreateRepositoryRequest();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property name (base name: "name")', function() {
+      // uncomment below and update the code to test the property name
+      //var instance = new CompetitionLabsApplicationServices.CreateRepositoryRequest();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property description (base name: "description")', function() {
+      // uncomment below and update the code to test the property description
+      //var instance = new CompetitionLabsApplicationServices.CreateRepositoryRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property constraints (base name: "constraints")', function() {
       // uncomment below and update the code to test the property constraints
-      //var instane = new @CompetitionlabsJavascriptSdk.CreateRepositoryRequest();
+      //var instance = new CompetitionLabsApplicationServices.CreateRepositoryRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property hostingOptions (base name: "hostingOptions")', function() {
       // uncomment below and update the code to test the property hostingOptions
-      //var instane = new @CompetitionlabsJavascriptSdk.CreateRepositoryRequest();
+      //var instance = new CompetitionLabsApplicationServices.CreateRepositoryRequest();
       //expect(instance).to.be();
     });
 

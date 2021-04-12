@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -24,7 +24,7 @@ import UpdateMessageStatusRequest from '../model/UpdateMessageStatusRequest';
 /**
 * Messages service.
 * @module api/MessagesApi
-* @version 1.0.5
+* @version 1.0.0
 */
 export default class MessagesApi {
 
@@ -51,27 +51,21 @@ export default class MessagesApi {
     /**
      * NOT AVAILABLE IN CURRENT RELEASE
      * Create Messages in the CompetitionLabs database
-     * @param {String} spaceName This is the space name which is linked to the account
      * @param {Array.<module:model/CreateMessageRequest>} body Create Messages in the CompetitionLabs database
      * @param {Object} opts Optional parameters
      * @param {String} opts.X_API_KEY The admin API Key generated from CompetitionLabs back office
      * @param {module:api/MessagesApi~createMessagesCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ApiResponse}
      */
-    createMessages(spaceName, body, opts, callback) {
+    createMessages(body, opts, callback) {
       opts = opts || {};
       let postBody = body;
-      // verify the required parameter 'spaceName' is set
-      if (spaceName === undefined || spaceName === null) {
-        throw new Error("Missing the required parameter 'spaceName' when calling createMessages");
-      }
       // verify the required parameter 'body' is set
       if (body === undefined || body === null) {
         throw new Error("Missing the required parameter 'body' when calling createMessages");
       }
 
       let pathParams = {
-        'spaceName': spaceName
       };
       let queryParams = {
       };
@@ -81,12 +75,12 @@ export default class MessagesApi {
       let formParams = {
       };
 
-      let authNames = ['adminApiKey'];
+      let authNames = ['AdminApiKey', 'OAuth2'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = ApiResponse;
       return this.apiClient.callApi(
-        '/messages/{spaceName}', 'POST',
+        '/messages', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
@@ -103,23 +97,17 @@ export default class MessagesApi {
     /**
      * NOT AVAILABLE IN CURRENT RELEASE
      * Delete Messages for a given identifier specified
-     * @param {String} spaceName This is the space name which is linked to the account
      * @param {Object} opts Optional parameters
      * @param {String} opts.X_API_KEY The admin API Key generated from CompetitionLabs back office
      * @param {Array.<String>} opts.id The unique identifiers of the resources
      * @param {module:api/MessagesApi~deleteMessagesCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ApiResponse}
      */
-    deleteMessages(spaceName, opts, callback) {
+    deleteMessages(opts, callback) {
       opts = opts || {};
       let postBody = null;
-      // verify the required parameter 'spaceName' is set
-      if (spaceName === undefined || spaceName === null) {
-        throw new Error("Missing the required parameter 'spaceName' when calling deleteMessages");
-      }
 
       let pathParams = {
-        'spaceName': spaceName
       };
       let queryParams = {
         'id': this.apiClient.buildCollectionParam(opts['id'], 'multi')
@@ -130,12 +118,12 @@ export default class MessagesApi {
       let formParams = {
       };
 
-      let authNames = ['adminApiKey'];
+      let authNames = ['AdminApiKey', 'OAuth2'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = ApiResponse;
       return this.apiClient.callApi(
-        '/messages/{spaceName}', 'DELETE',
+        '/messages', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
@@ -152,23 +140,17 @@ export default class MessagesApi {
     /**
      * NOT AVAILABLE IN CURRENT RELEASE
      * Delete Messages from CompetitionLabs database by unique message ID's or any other POST body parameters using the POST method
-     * @param {String} spaceName This is the space name which is linked to the account
      * @param {Object} opts Optional parameters
      * @param {String} opts.X_API_KEY The admin API Key generated from CompetitionLabs back office
      * @param {module:model/QueryRequest} opts.body Delete Messages from CompetitionLabs database by unique message ID's or any other POST body parameters using the POST method
      * @param {module:api/MessagesApi~deleteMessagesByQueryCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ApiResponse}
      */
-    deleteMessagesByQuery(spaceName, opts, callback) {
+    deleteMessagesByQuery(opts, callback) {
       opts = opts || {};
       let postBody = opts['body'];
-      // verify the required parameter 'spaceName' is set
-      if (spaceName === undefined || spaceName === null) {
-        throw new Error("Missing the required parameter 'spaceName' when calling deleteMessagesByQuery");
-      }
 
       let pathParams = {
-        'spaceName': spaceName
       };
       let queryParams = {
       };
@@ -178,12 +160,12 @@ export default class MessagesApi {
       let formParams = {
       };
 
-      let authNames = ['adminApiKey'];
+      let authNames = ['AdminApiKey', 'OAuth2'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = ApiResponse;
       return this.apiClient.callApi(
-        '/messages/{spaceName}/delete', 'POST',
+        '/messages/delete', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
@@ -200,7 +182,6 @@ export default class MessagesApi {
     /**
      * NOT AVAILABLE IN CURRENT RELEASE
      * Returns a list of Messages. This assumes that Messages have first been uploaded via a POST request or web console
-     * @param {String} spaceName This is the space name which is linked to the account
      * @param {Object} opts Optional parameters
      * @param {String} opts.X_API_KEY The admin API Key generated from CompetitionLabs back office
      * @param {Array.<String>} opts.id The unique identifiers of the resources
@@ -209,16 +190,11 @@ export default class MessagesApi {
      * @param {module:api/MessagesApi~getMessagesCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/MessageResponse}
      */
-    getMessages(spaceName, opts, callback) {
+    getMessages(opts, callback) {
       opts = opts || {};
       let postBody = null;
-      // verify the required parameter 'spaceName' is set
-      if (spaceName === undefined || spaceName === null) {
-        throw new Error("Missing the required parameter 'spaceName' when calling getMessages");
-      }
 
       let pathParams = {
-        'spaceName': spaceName
       };
       let queryParams = {
         'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),
@@ -231,12 +207,12 @@ export default class MessagesApi {
       let formParams = {
       };
 
-      let authNames = ['adminApiKey'];
+      let authNames = ['AdminApiKey', 'OAuth2'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = MessageResponse;
       return this.apiClient.callApi(
-        '/messages/{spaceName}', 'GET',
+        '/messages', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
@@ -253,23 +229,17 @@ export default class MessagesApi {
     /**
      * NOT AVAILABLE IN CURRENT RELEASE
      * Retrieve Messages from CompetitionLabs database by unique message ID's or any other POST body parameters using the POST method
-     * @param {String} spaceName This is the space name which is linked to the account
      * @param {Object} opts Optional parameters
      * @param {String} opts.X_API_KEY The admin API Key generated from CompetitionLabs back office
      * @param {module:model/QueryRequest} opts.body Retrieve Messages from CompetitionLabs database by unique message ID's or any other POST body parameters using the POST method
      * @param {module:api/MessagesApi~getMessagesByQueryCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/MessageResponse}
      */
-    getMessagesByQuery(spaceName, opts, callback) {
+    getMessagesByQuery(opts, callback) {
       opts = opts || {};
       let postBody = opts['body'];
-      // verify the required parameter 'spaceName' is set
-      if (spaceName === undefined || spaceName === null) {
-        throw new Error("Missing the required parameter 'spaceName' when calling getMessagesByQuery");
-      }
 
       let pathParams = {
-        'spaceName': spaceName
       };
       let queryParams = {
       };
@@ -279,12 +249,12 @@ export default class MessagesApi {
       let formParams = {
       };
 
-      let authNames = ['adminApiKey'];
+      let authNames = ['AdminApiKey', 'OAuth2'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = MessageResponse;
       return this.apiClient.callApi(
-        '/messages/{spaceName}/query', 'POST',
+        '/messages/query', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
@@ -301,7 +271,6 @@ export default class MessagesApi {
     /**
      * NOT AVAILABLE IN CURRENT RELEASE
      * Test Messages for a given Message identifier specified
-     * @param {String} spaceName This is the space name which is linked to the account
      * @param {String} id Unique identifier of the resource
      * @param {module:model/TestMessageRequest} body Send test Messages to Members by a Message identifier provided
      * @param {Object} opts Optional parameters
@@ -309,13 +278,9 @@ export default class MessagesApi {
      * @param {module:api/MessagesApi~testMessagesByIdCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ApiResponse}
      */
-    testMessagesById(spaceName, id, body, opts, callback) {
+    testMessagesById(id, body, opts, callback) {
       opts = opts || {};
       let postBody = body;
-      // verify the required parameter 'spaceName' is set
-      if (spaceName === undefined || spaceName === null) {
-        throw new Error("Missing the required parameter 'spaceName' when calling testMessagesById");
-      }
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
         throw new Error("Missing the required parameter 'id' when calling testMessagesById");
@@ -326,7 +291,6 @@ export default class MessagesApi {
       }
 
       let pathParams = {
-        'spaceName': spaceName,
         'id': id
       };
       let queryParams = {
@@ -337,12 +301,12 @@ export default class MessagesApi {
       let formParams = {
       };
 
-      let authNames = ['adminApiKey'];
+      let authNames = ['AdminApiKey', 'OAuth2'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = ApiResponse;
       return this.apiClient.callApi(
-        '/messages/{spaceName}/{id}/test', 'POST',
+        '/messages/{id}/test', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
@@ -359,27 +323,21 @@ export default class MessagesApi {
     /**
      * NOT AVAILABLE IN CURRENT RELEASE
      * Updates a Message by identifier provided. This assumes that Messages have first been uploaded via a POST request or web console
-     * @param {String} spaceName This is the space name which is linked to the account
      * @param {module:model/UpdateMessageRequest} body Update a Message by a Message identifier provided
      * @param {Object} opts Optional parameters
      * @param {String} opts.X_API_KEY The admin API Key generated from CompetitionLabs back office
      * @param {module:api/MessagesApi~updateMessagesCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ApiResponse}
      */
-    updateMessages(spaceName, body, opts, callback) {
+    updateMessages(body, opts, callback) {
       opts = opts || {};
       let postBody = body;
-      // verify the required parameter 'spaceName' is set
-      if (spaceName === undefined || spaceName === null) {
-        throw new Error("Missing the required parameter 'spaceName' when calling updateMessages");
-      }
       // verify the required parameter 'body' is set
       if (body === undefined || body === null) {
         throw new Error("Missing the required parameter 'body' when calling updateMessages");
       }
 
       let pathParams = {
-        'spaceName': spaceName
       };
       let queryParams = {
       };
@@ -389,12 +347,12 @@ export default class MessagesApi {
       let formParams = {
       };
 
-      let authNames = ['adminApiKey'];
+      let authNames = ['AdminApiKey', 'OAuth2'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = ApiResponse;
       return this.apiClient.callApi(
-        '/messages/{spaceName}', 'PUT',
+        '/messages', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
@@ -411,27 +369,21 @@ export default class MessagesApi {
     /**
      * NOT AVAILABLE IN CURRENT RELEASE
      * Update the Message status
-     * @param {String} spaceName This is the space name which is linked to the account
      * @param {Array.<module:model/UpdateMessageStatusRequest>} body Update the Message status in the Competitionlabs database
      * @param {Object} opts Optional parameters
      * @param {String} opts.X_API_KEY The admin API Key generated from CompetitionLabs back office
      * @param {module:api/MessagesApi~updateMessagesStatusCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ApiResponse}
      */
-    updateMessagesStatus(spaceName, body, opts, callback) {
+    updateMessagesStatus(body, opts, callback) {
       opts = opts || {};
       let postBody = body;
-      // verify the required parameter 'spaceName' is set
-      if (spaceName === undefined || spaceName === null) {
-        throw new Error("Missing the required parameter 'spaceName' when calling updateMessagesStatus");
-      }
       // verify the required parameter 'body' is set
       if (body === undefined || body === null) {
         throw new Error("Missing the required parameter 'body' when calling updateMessagesStatus");
       }
 
       let pathParams = {
-        'spaceName': spaceName
       };
       let queryParams = {
       };
@@ -441,12 +393,12 @@ export default class MessagesApi {
       let formParams = {
       };
 
-      let authNames = ['adminApiKey'];
+      let authNames = ['AdminApiKey', 'OAuth2'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = ApiResponse;
       return this.apiClient.callApi(
-        '/messages/{spaceName}/state', 'PUT',
+        '/messages/state', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );

@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.@CompetitionlabsJavascriptSdk);
+    factory(root.expect, root.CompetitionLabsApplicationServices);
   }
-}(this, function(expect, @CompetitionlabsJavascriptSdk) {
+}(this, function(expect, CompetitionLabsApplicationServices) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new @CompetitionlabsJavascriptSdk.ProductReducedAllOf();
+    instance = new CompetitionLabsApplicationServices.ProductReducedAllOf();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,19 +50,25 @@
   describe('ProductReducedAllOf', function() {
     it('should create an instance of ProductReducedAllOf', function() {
       // uncomment below and update the code to test ProductReducedAllOf
-      //var instane = new @CompetitionlabsJavascriptSdk.ProductReducedAllOf();
-      //expect(instance).to.be.a(@CompetitionlabsJavascriptSdk.ProductReducedAllOf);
+      //var instane = new CompetitionLabsApplicationServices.ProductReducedAllOf();
+      //expect(instance).to.be.a(CompetitionLabsApplicationServices.ProductReducedAllOf);
     });
 
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
-      //var instane = new @CompetitionlabsJavascriptSdk.ProductReducedAllOf();
+      //var instance = new CompetitionLabsApplicationServices.ProductReducedAllOf();
       //expect(instance).to.be();
     });
 
     it('should have the property productRefId (base name: "productRefId")', function() {
       // uncomment below and update the code to test the property productRefId
-      //var instane = new @CompetitionlabsJavascriptSdk.ProductReducedAllOf();
+      //var instance = new CompetitionLabsApplicationServices.ProductReducedAllOf();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property tags (base name: "tags")', function() {
+      // uncomment below and update the code to test the property tags
+      //var instance = new CompetitionLabsApplicationServices.ProductReducedAllOf();
       //expect(instance).to.be();
     });
 

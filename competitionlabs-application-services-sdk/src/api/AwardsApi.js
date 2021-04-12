@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -21,7 +21,7 @@ import QueryRequest from '../model/QueryRequest';
 /**
 * Awards service.
 * @module api/AwardsApi
-* @version 1.0.5
+* @version 1.0.0
 */
 export default class AwardsApi {
 
@@ -47,27 +47,21 @@ export default class AwardsApi {
 
     /**
      * Claim Awards that need to be actioned at
-     * @param {String} spaceName This is the space name which is linked to the account
      * @param {Array.<module:model/ClaimAwardRequest>} body Claim Awards that need to be actioned at in the Competitionlabs database
      * @param {Object} opts Optional parameters
      * @param {String} opts.X_API_KEY The admin API Key generated from CompetitionLabs back office
      * @param {module:api/AwardsApi~claimAwardsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ApiResponse}
      */
-    claimAwards(spaceName, body, opts, callback) {
+    claimAwards(body, opts, callback) {
       opts = opts || {};
       let postBody = body;
-      // verify the required parameter 'spaceName' is set
-      if (spaceName === undefined || spaceName === null) {
-        throw new Error("Missing the required parameter 'spaceName' when calling claimAwards");
-      }
       // verify the required parameter 'body' is set
       if (body === undefined || body === null) {
         throw new Error("Missing the required parameter 'body' when calling claimAwards");
       }
 
       let pathParams = {
-        'spaceName': spaceName
       };
       let queryParams = {
       };
@@ -77,12 +71,12 @@ export default class AwardsApi {
       let formParams = {
       };
 
-      let authNames = ['adminApiKey'];
+      let authNames = ['AdminApiKey', 'OAuth2'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = ApiResponse;
       return this.apiClient.callApi(
-        '/awards/{spaceName}/claim', 'PUT',
+        '/awards/claim', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
@@ -98,7 +92,6 @@ export default class AwardsApi {
 
     /**
      * Returns a list of Awards.
-     * @param {String} spaceName This is the space name which is linked to the account
      * @param {Object} opts Optional parameters
      * @param {String} opts.X_API_KEY The admin API Key generated from CompetitionLabs back office
      * @param {Array.<String>} opts.id The unique identifiers of the resources
@@ -107,16 +100,11 @@ export default class AwardsApi {
      * @param {module:api/AwardsApi~getAwardsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/AwardResponse}
      */
-    getAwards(spaceName, opts, callback) {
+    getAwards(opts, callback) {
       opts = opts || {};
       let postBody = null;
-      // verify the required parameter 'spaceName' is set
-      if (spaceName === undefined || spaceName === null) {
-        throw new Error("Missing the required parameter 'spaceName' when calling getAwards");
-      }
 
       let pathParams = {
-        'spaceName': spaceName
       };
       let queryParams = {
         'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),
@@ -129,12 +117,12 @@ export default class AwardsApi {
       let formParams = {
       };
 
-      let authNames = ['adminApiKey'];
+      let authNames = ['AdminApiKey', 'OAuth2'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = AwardResponse;
       return this.apiClient.callApi(
-        '/awards/{spaceName}', 'GET',
+        '/awards', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
@@ -150,23 +138,17 @@ export default class AwardsApi {
 
     /**
      * Retrieve Awards from CompetitionLabs database by unique Awards ID's or any other POST body parameters using the POST method
-     * @param {String} spaceName This is the space name which is linked to the account
      * @param {Object} opts Optional parameters
      * @param {String} opts.X_API_KEY The admin API Key generated from CompetitionLabs back office
      * @param {module:model/QueryRequest} opts.body Retrieve Awards from CompetitionLabs database by unique Awards ID's or any other POST body parameters using the POST method
      * @param {module:api/AwardsApi~getAwardsByQueryCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/AwardResponse}
      */
-    getAwardsByQuery(spaceName, opts, callback) {
+    getAwardsByQuery(opts, callback) {
       opts = opts || {};
       let postBody = opts['body'];
-      // verify the required parameter 'spaceName' is set
-      if (spaceName === undefined || spaceName === null) {
-        throw new Error("Missing the required parameter 'spaceName' when calling getAwardsByQuery");
-      }
 
       let pathParams = {
-        'spaceName': spaceName
       };
       let queryParams = {
       };
@@ -176,12 +158,12 @@ export default class AwardsApi {
       let formParams = {
       };
 
-      let authNames = ['adminApiKey'];
+      let authNames = ['AdminApiKey', 'OAuth2'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = AwardResponse;
       return this.apiClient.callApi(
-        '/awards/{spaceName}/query', 'POST',
+        '/awards/query', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );

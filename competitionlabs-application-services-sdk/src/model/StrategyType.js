@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -47,51 +47,6 @@ export default class StrategyType {
         "FirstTo" = "FirstTo";
 
     
-
-    /**
-    * Constructs a full object with all available fields.
-    */
-    list(){
-        var obj = {};
-
-        
-        obj['TotalCumulative'] = "TotalCumulative";
-        
-        obj['SumBest'] = "SumBest";
-        
-        obj['LimitedTo'] = "LimitedTo";
-        
-        obj['FirstTo'] = "FirstTo";
-        
-
-        return obj;
-    }
-
-    /**
-    * Constructs a full object with all available fields.
-    */
-    model(){
-        var obj = {};
-
-        
-        obj['TotalCumulative'] = null;
-        
-        obj['SumBest'] = null;
-        
-        obj['LimitedTo'] = null;
-        
-        obj['FirstTo'] = null;
-        
-
-        return obj;
-    }
-
-    /**
-    * Constructs a full object Map for all available fields.
-    */
-    modelMap(){
-        return {"type": 'String'};
-    }
 
     /**
     * Returns a <code>StrategyType</code> enum value from a Javascript object name.

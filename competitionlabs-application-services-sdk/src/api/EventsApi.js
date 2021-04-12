@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -21,7 +21,7 @@ import QueryRequest from '../model/QueryRequest';
 /**
 * Events service.
 * @module api/EventsApi
-* @version 1.0.5
+* @version 1.0.0
 */
 export default class EventsApi {
 
@@ -48,23 +48,17 @@ export default class EventsApi {
     /**
      * NOT AVAILABLE IN CURRENT RELEASE
      * Create an Event
-     * @param {String} spaceName This is the space name which is linked to the account
      * @param {Object} opts Optional parameters
      * @param {String} opts.X_API_KEY The admin API Key generated from CompetitionLabs back office
      * @param {Array.<module:model/CreateEventRequest>} opts.body Create an Event
      * @param {module:api/EventsApi~createEventsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ApiResponse}
      */
-    createEvents(spaceName, opts, callback) {
+    createEvents(opts, callback) {
       opts = opts || {};
       let postBody = opts['body'];
-      // verify the required parameter 'spaceName' is set
-      if (spaceName === undefined || spaceName === null) {
-        throw new Error("Missing the required parameter 'spaceName' when calling createEvents");
-      }
 
       let pathParams = {
-        'spaceName': spaceName
       };
       let queryParams = {
       };
@@ -74,12 +68,12 @@ export default class EventsApi {
       let formParams = {
       };
 
-      let authNames = ['adminApiKey'];
+      let authNames = ['AdminApiKey', 'OAuth2'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = ApiResponse;
       return this.apiClient.callApi(
-        '/events/{spaceName}', 'POST',
+        '/events', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
@@ -96,7 +90,6 @@ export default class EventsApi {
     /**
      * NOT AVAILABLE IN CURRENT RELEASE
      * Retrieve an Event or a list of Events from CompetitionLabs by unique Event ID's or any other POST body parameters using the POST method
-     * @param {String} spaceName This is the space name which is linked to the account
      * @param {Object} opts Optional parameters
      * @param {String} opts.X_API_KEY The admin API Key generated from CompetitionLabs back office
      * @param {Array.<String>} opts.id The unique identifiers of the resources
@@ -105,16 +98,11 @@ export default class EventsApi {
      * @param {module:api/EventsApi~getEventsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/EventResponse}
      */
-    getEvents(spaceName, opts, callback) {
+    getEvents(opts, callback) {
       opts = opts || {};
       let postBody = null;
-      // verify the required parameter 'spaceName' is set
-      if (spaceName === undefined || spaceName === null) {
-        throw new Error("Missing the required parameter 'spaceName' when calling getEvents");
-      }
 
       let pathParams = {
-        'spaceName': spaceName
       };
       let queryParams = {
         'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),
@@ -127,12 +115,12 @@ export default class EventsApi {
       let formParams = {
       };
 
-      let authNames = ['adminApiKey'];
+      let authNames = ['AdminApiKey', 'OAuth2'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = EventResponse;
       return this.apiClient.callApi(
-        '/events/{spaceName}', 'GET',
+        '/events', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
@@ -149,23 +137,17 @@ export default class EventsApi {
     /**
      * NOT AVAILABLE IN CURRENT RELEASE
      * Retrieve an Event or a list of Events from CompetitionLabs by unique Event ID's or any other POST body parameters using the POST method
-     * @param {String} spaceName This is the space name which is linked to the account
      * @param {Object} opts Optional parameters
      * @param {String} opts.X_API_KEY The admin API Key generated from CompetitionLabs back office
      * @param {module:model/QueryRequest} opts.body Retrieve an Event or a list of Events from CompetitionLabs by unique Event ID's or any other POST body parameters using the POST method
      * @param {module:api/EventsApi~getEventsByQueryCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/EventResponse}
      */
-    getEventsByQuery(spaceName, opts, callback) {
+    getEventsByQuery(opts, callback) {
       opts = opts || {};
       let postBody = opts['body'];
-      // verify the required parameter 'spaceName' is set
-      if (spaceName === undefined || spaceName === null) {
-        throw new Error("Missing the required parameter 'spaceName' when calling getEventsByQuery");
-      }
 
       let pathParams = {
-        'spaceName': spaceName
       };
       let queryParams = {
       };
@@ -175,12 +157,12 @@ export default class EventsApi {
       let formParams = {
       };
 
-      let authNames = ['adminApiKey'];
+      let authNames = ['AdminApiKey', 'OAuth2'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = EventResponse;
       return this.apiClient.callApi(
-        '/events/{spaceName}/query', 'POST',
+        '/events/query', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );

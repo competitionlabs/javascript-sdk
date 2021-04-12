@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SpaceAllOf model module.
  * @module model/SpaceAllOf
- * @version 1.0.5
+ * @version 1.0.0
  */
 class SpaceAllOf {
     /**
@@ -36,36 +36,6 @@ class SpaceAllOf {
      */
     static initialize(obj, accountType) { 
         obj['accountType'] = accountType;
-    }
-
-    /**
-    * Constructs a full object with all available fields.
-    */
-    model(){
-        var obj = {};
-
-        obj['accountType'] = null;
-        obj['masterSpace'] = null;
-
-        return obj;
-    }
-
-    /**
-    * Constructs a full object Map for all available fields.
-    */
-    modelMap(){
-        var obj = {
-            "fields": {},
-            "requiredFields": {}
-        };
-
-        obj["fields"]['accountType'] = { "type": 'String', "system": false };
-        obj["fields"]['masterSpace'] = { "type": 'String', "system": false };
-
-        
-        obj["requiredFields"]['accountType'] = { "type": 'String', "system": false };
-
-        return obj;
     }
 
     /**

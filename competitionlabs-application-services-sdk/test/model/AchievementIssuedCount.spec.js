@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.@CompetitionlabsJavascriptSdk);
+    factory(root.expect, root.CompetitionLabsApplicationServices);
   }
-}(this, function(expect, @CompetitionlabsJavascriptSdk) {
+}(this, function(expect, CompetitionLabsApplicationServices) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new @CompetitionlabsJavascriptSdk.AchievementIssuedCount();
+    instance = new CompetitionLabsApplicationServices.AchievementIssuedCount();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,8 +50,20 @@
   describe('AchievementIssuedCount', function() {
     it('should create an instance of AchievementIssuedCount', function() {
       // uncomment below and update the code to test AchievementIssuedCount
-      //var instane = new @CompetitionlabsJavascriptSdk.AchievementIssuedCount();
-      //expect(instance).to.be.a(@CompetitionlabsJavascriptSdk.AchievementIssuedCount);
+      //var instane = new CompetitionLabsApplicationServices.AchievementIssuedCount();
+      //expect(instance).to.be.a(CompetitionLabsApplicationServices.AchievementIssuedCount);
+    });
+
+    it('should have the property entityId (base name: "entityId")', function() {
+      // uncomment below and update the code to test the property entityId
+      //var instance = new CompetitionLabsApplicationServices.AchievementIssuedCount();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property countValue (base name: "countValue")', function() {
+      // uncomment below and update the code to test the property countValue
+      //var instance = new CompetitionLabsApplicationServices.AchievementIssuedCount();
+      //expect(instance).to.be();
     });
 
   });

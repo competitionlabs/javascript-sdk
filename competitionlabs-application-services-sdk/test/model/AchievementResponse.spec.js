@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.@CompetitionlabsJavascriptSdk);
+    factory(root.expect, root.CompetitionLabsApplicationServices);
   }
-}(this, function(expect, @CompetitionlabsJavascriptSdk) {
+}(this, function(expect, CompetitionLabsApplicationServices) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new @CompetitionlabsJavascriptSdk.AchievementResponse();
+    instance = new CompetitionLabsApplicationServices.AchievementResponse();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,25 +50,25 @@
   describe('AchievementResponse', function() {
     it('should create an instance of AchievementResponse', function() {
       // uncomment below and update the code to test AchievementResponse
-      //var instane = new @CompetitionlabsJavascriptSdk.AchievementResponse();
-      //expect(instance).to.be.a(@CompetitionlabsJavascriptSdk.AchievementResponse);
+      //var instane = new CompetitionLabsApplicationServices.AchievementResponse();
+      //expect(instance).to.be.a(CompetitionLabsApplicationServices.AchievementResponse);
     });
 
     it('should have the property meta (base name: "meta")', function() {
       // uncomment below and update the code to test the property meta
-      //var instane = new @CompetitionlabsJavascriptSdk.AchievementResponse();
+      //var instance = new CompetitionLabsApplicationServices.AchievementResponse();
       //expect(instance).to.be();
     });
 
     it('should have the property results (base name: "results")', function() {
       // uncomment below and update the code to test the property results
-      //var instane = new @CompetitionlabsJavascriptSdk.AchievementResponse();
+      //var instance = new CompetitionLabsApplicationServices.AchievementResponse();
       //expect(instance).to.be();
     });
 
     it('should have the property errors (base name: "errors")', function() {
       // uncomment below and update the code to test the property errors
-      //var instane = new @CompetitionlabsJavascriptSdk.AchievementResponse();
+      //var instance = new CompetitionLabsApplicationServices.AchievementResponse();
       //expect(instance).to.be();
     });
 

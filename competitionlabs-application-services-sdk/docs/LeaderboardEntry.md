@@ -1,4 +1,4 @@
-# @CompetitionlabsApplicationServicesSdk.LeaderboardEntry
+# CompetitionLabsApplicationServices.LeaderboardEntry
 
 ## Properties
 

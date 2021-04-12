@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -16,17 +16,18 @@ import ApiClient from '../ApiClient';
 /**
  * The ClaimAwardRequest model module.
  * @module model/ClaimAwardRequest
- * @version 1.0.5
+ * @version 1.0.0
  */
 class ClaimAwardRequest {
     /**
      * Constructs a new <code>ClaimAwardRequest</code>.
      * @alias module:model/ClaimAwardRequest
      * @param id {String} Unique system identifier of an Award
+     * @param constraints {Array.<String>} Additional constraints, if the value is present it means the
      */
-    constructor(id) { 
+    constructor(id, constraints) { 
         
-        ClaimAwardRequest.initialize(this, id);
+        ClaimAwardRequest.initialize(this, id, constraints);
     }
 
     /**
@@ -34,38 +35,9 @@ class ClaimAwardRequest {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, id) { 
+    static initialize(obj, id, constraints) { 
         obj['id'] = id;
-    }
-
-    /**
-    * Constructs a full object with all available fields.
-    */
-    model(){
-        var obj = {};
-
-        obj['id'] = null;
-        obj['constraints'] = [null];
-
-        return obj;
-    }
-
-    /**
-    * Constructs a full object Map for all available fields.
-    */
-    modelMap(){
-        var obj = {
-            "fields": {},
-            "requiredFields": {}
-        };
-
-        obj["fields"]['id'] = { "type": 'String', "system": true };
-        obj["fields"]['constraints'] = [{ "type": 'String', "system": false }];
-
-        
-        obj["requiredFields"]['id'] = { "type": 'String', "system": true };
-
-        return obj;
+        obj['constraints'] = constraints;
     }
 
     /**

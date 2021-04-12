@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -68,63 +68,6 @@ export default class MessageType {
         "NotificationInboxItem" = "NotificationInboxItem";
 
     
-
-    /**
-    * Constructs a full object with all available fields.
-    */
-    list(){
-        var obj = {};
-
-        
-        obj['Achievement'] = "Achievement";
-        
-        obj['Ticket'] = "Ticket";
-        
-        obj['Reward'] = "Reward";
-        
-        obj['Text'] = "Text";
-        
-        obj['Notification'] = "Notification";
-        
-        obj['InboxItem'] = "InboxItem";
-        
-        obj['NotificationInboxItem'] = "NotificationInboxItem";
-        
-
-        return obj;
-    }
-
-    /**
-    * Constructs a full object with all available fields.
-    */
-    model(){
-        var obj = {};
-
-        
-        obj['Achievement'] = null;
-        
-        obj['Ticket'] = null;
-        
-        obj['Reward'] = null;
-        
-        obj['Text'] = null;
-        
-        obj['Notification'] = null;
-        
-        obj['InboxItem'] = null;
-        
-        obj['NotificationInboxItem'] = null;
-        
-
-        return obj;
-    }
-
-    /**
-    * Constructs a full object Map for all available fields.
-    */
-    modelMap(){
-        return {"type": 'String'};
-    }
 
     /**
     * Returns a <code>MessageType</code> enum value from a Javascript object name.

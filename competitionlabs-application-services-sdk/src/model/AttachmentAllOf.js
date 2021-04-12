@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -12,12 +12,11 @@
  */
 
 import ApiClient from '../ApiClient';
-import Metadata from './Metadata';
 
 /**
  * The AttachmentAllOf model module.
  * @module model/AttachmentAllOf
- * @version 1.0.5
+ * @version 1.0.0
  */
 class AttachmentAllOf {
     /**
@@ -25,16 +24,16 @@ class AttachmentAllOf {
      * @alias module:model/AttachmentAllOf
      * @param attachmentType {String} A type of an attachement
      * @param md5Hash {String} Hash of the file contents to identify duplicates
-     * @param fileName {String} Name of the original file uploaded
+     * @param name {String} Name of the original file uploaded
      * @param mimeType {String} Mime type of the file. Valid mime types - text/csv or application/vmd.ms-excel
      * @param extension {String} Extension of the file uploaded. Valid extensions supported - csv, xlsx, xls
      * @param locationKey {String} The name of the attachment within the bucket
      * @param locationFolder {String} The folder name containing the attachment within the bucket
      * @param permission {Number} 
      */
-    constructor(attachmentType, md5Hash, fileName, mimeType, extension, locationKey, locationFolder, permission) { 
+    constructor(attachmentType, md5Hash, name, mimeType, extension, locationKey, locationFolder, permission) { 
         
-        AttachmentAllOf.initialize(this, attachmentType, md5Hash, fileName, mimeType, extension, locationKey, locationFolder, permission);
+        AttachmentAllOf.initialize(this, attachmentType, md5Hash, name, mimeType, extension, locationKey, locationFolder, permission);
     }
 
     /**
@@ -42,66 +41,15 @@ class AttachmentAllOf {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, attachmentType, md5Hash, fileName, mimeType, extension, locationKey, locationFolder, permission) { 
+    static initialize(obj, attachmentType, md5Hash, name, mimeType, extension, locationKey, locationFolder, permission) { 
         obj['attachmentType'] = attachmentType;
         obj['md5Hash'] = md5Hash;
-        obj['fileName'] = fileName;
+        obj['name'] = name;
         obj['mimeType'] = mimeType;
         obj['extension'] = extension;
         obj['locationKey'] = locationKey;
         obj['locationFolder'] = locationFolder;
         obj['permission'] = permission;
-    }
-
-    /**
-    * Constructs a full object with all available fields.
-    */
-    model(){
-        var obj = {};
-
-        obj['attachmentType'] = null;
-        obj['md5Hash'] = null;
-        obj['fileName'] = null;
-        obj['mimeType'] = null;
-        obj['extension'] = null;
-        obj['locationKey'] = null;
-        obj['locationFolder'] = null;
-        obj['permission'] = null;
-        obj['metadata'] = [new Metadata().model()];
-
-        return obj;
-    }
-
-    /**
-    * Constructs a full object Map for all available fields.
-    */
-    modelMap(){
-        var obj = {
-            "fields": {},
-            "requiredFields": {}
-        };
-
-        obj["fields"]['attachmentType'] = { "type": 'String', "system": false };
-        obj["fields"]['md5Hash'] = { "type": 'String', "system": false };
-        obj["fields"]['fileName'] = { "type": 'String', "system": false };
-        obj["fields"]['mimeType'] = { "type": 'String', "system": false };
-        obj["fields"]['extension'] = { "type": 'String', "system": false };
-        obj["fields"]['locationKey'] = { "type": 'String', "system": false };
-        obj["fields"]['locationFolder'] = { "type": 'String', "system": false };
-        obj["fields"]['permission'] = { "type": 'Number', "system": false };
-        obj["fields"]['metadata'] = [new Metadata().modelMap()];
-
-        
-        obj["requiredFields"]['attachmentType'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['md5Hash'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['fileName'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['mimeType'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['extension'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['locationKey'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['locationFolder'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['permission'] = { "type": 'Number', "system": false };
-
-        return obj;
     }
 
     /**
@@ -121,8 +69,8 @@ class AttachmentAllOf {
             if (data.hasOwnProperty('md5Hash')) {
                 obj['md5Hash'] = ApiClient.convertToType(data['md5Hash'], 'String');
             }
-            if (data.hasOwnProperty('fileName')) {
-                obj['fileName'] = ApiClient.convertToType(data['fileName'], 'String');
+            if (data.hasOwnProperty('name')) {
+                obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
             if (data.hasOwnProperty('mimeType')) {
                 obj['mimeType'] = ApiClient.convertToType(data['mimeType'], 'String');
@@ -138,9 +86,6 @@ class AttachmentAllOf {
             }
             if (data.hasOwnProperty('permission')) {
                 obj['permission'] = ApiClient.convertToType(data['permission'], 'Number');
-            }
-            if (data.hasOwnProperty('metadata')) {
-                obj['metadata'] = ApiClient.convertToType(data['metadata'], [Metadata]);
             }
         }
         return obj;
@@ -163,9 +108,9 @@ AttachmentAllOf.prototype['md5Hash'] = undefined;
 
 /**
  * Name of the original file uploaded
- * @member {String} fileName
+ * @member {String} name
  */
-AttachmentAllOf.prototype['fileName'] = undefined;
+AttachmentAllOf.prototype['name'] = undefined;
 
 /**
  * Mime type of the file. Valid mime types - text/csv or application/vmd.ms-excel
@@ -195,11 +140,6 @@ AttachmentAllOf.prototype['locationFolder'] = undefined;
  * @member {Number} permission
  */
 AttachmentAllOf.prototype['permission'] = undefined;
-
-/**
- * @member {Array.<module:model/Metadata>} metadata
- */
-AttachmentAllOf.prototype['metadata'] = undefined;
 
 
 

@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -12,13 +12,12 @@
  */
 
 import ApiClient from '../ApiClient';
-import Metadata from './Metadata';
 import UnitOfMeasureType from './UnitOfMeasureType';
 
 /**
  * The UnitOfMeasureAllOf model module.
  * @module model/UnitOfMeasureAllOf
- * @version 1.0.5
+ * @version 1.0.0
  */
 class UnitOfMeasureAllOf {
     /**
@@ -44,51 +43,6 @@ class UnitOfMeasureAllOf {
         obj['key'] = key;
         obj['multiplier'] = multiplier;
         obj['unitOfMeasureType'] = unitOfMeasureType;
-    }
-
-    /**
-    * Constructs a full object with all available fields.
-    */
-    model(){
-        var obj = {};
-
-        obj['name'] = null;
-        obj['key'] = null;
-        obj['description'] = null;
-        obj['isoCode'] = null;
-        obj['symbol'] = null;
-        obj['multiplier'] = null;
-        obj['unitOfMeasureType'] = new UnitOfMeasureType().model();
-        obj['metadata'] = [new Metadata().model()];
-
-        return obj;
-    }
-
-    /**
-    * Constructs a full object Map for all available fields.
-    */
-    modelMap(){
-        var obj = {
-            "fields": {},
-            "requiredFields": {}
-        };
-
-        obj["fields"]['name'] = { "type": 'String', "system": false };
-        obj["fields"]['key'] = { "type": 'String', "system": false };
-        obj["fields"]['description'] = { "type": 'String', "system": false };
-        obj["fields"]['isoCode'] = { "type": 'String', "system": false };
-        obj["fields"]['symbol'] = { "type": 'String', "system": false };
-        obj["fields"]['multiplier'] = { "type": 'Number', "system": false };
-        obj["fields"]['unitOfMeasureType'] = new UnitOfMeasureType().modelMap();
-        obj["fields"]['metadata'] = [new Metadata().modelMap()];
-
-        
-        obj["requiredFields"]['name'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['key'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['multiplier'] = { "type": 'Number', "system": false };
-        obj["requiredFields"]['unitOfMeasureType'] = new UnitOfMeasureType().modelMap();
-
-        return obj;
     }
 
     /**
@@ -122,9 +76,6 @@ class UnitOfMeasureAllOf {
             }
             if (data.hasOwnProperty('unitOfMeasureType')) {
                 obj['unitOfMeasureType'] = UnitOfMeasureType.constructFromObject(data['unitOfMeasureType']);
-            }
-            if (data.hasOwnProperty('metadata')) {
-                obj['metadata'] = ApiClient.convertToType(data['metadata'], [Metadata]);
             }
         }
         return obj;
@@ -173,11 +124,6 @@ UnitOfMeasureAllOf.prototype['multiplier'] = undefined;
  * @member {module:model/UnitOfMeasureType} unitOfMeasureType
  */
 UnitOfMeasureAllOf.prototype['unitOfMeasureType'] = undefined;
-
-/**
- * @member {Array.<module:model/Metadata>} metadata
- */
-UnitOfMeasureAllOf.prototype['metadata'] = undefined;
 
 
 

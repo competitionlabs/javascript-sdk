@@ -1,4 +1,4 @@
-# @CompetitionlabsApplicationServicesSdk.AttachmentResponse
+# CompetitionLabsApplicationServices.AttachmentResponse
 
 ## Properties
 

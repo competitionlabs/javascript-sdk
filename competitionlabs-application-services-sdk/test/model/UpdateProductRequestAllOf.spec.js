@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.@CompetitionlabsJavascriptSdk);
+    factory(root.expect, root.CompetitionLabsApplicationServices);
   }
-}(this, function(expect, @CompetitionlabsJavascriptSdk) {
+}(this, function(expect, CompetitionLabsApplicationServices) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new @CompetitionlabsJavascriptSdk.UpdateProductRequestAllOf();
+    instance = new CompetitionLabsApplicationServices.UpdateProductRequestAllOf();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,61 +50,37 @@
   describe('UpdateProductRequestAllOf', function() {
     it('should create an instance of UpdateProductRequestAllOf', function() {
       // uncomment below and update the code to test UpdateProductRequestAllOf
-      //var instane = new @CompetitionlabsJavascriptSdk.UpdateProductRequestAllOf();
-      //expect(instance).to.be.a(@CompetitionlabsJavascriptSdk.UpdateProductRequestAllOf);
+      //var instane = new CompetitionLabsApplicationServices.UpdateProductRequestAllOf();
+      //expect(instance).to.be.a(CompetitionLabsApplicationServices.UpdateProductRequestAllOf);
     });
 
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
-      //var instane = new @CompetitionlabsJavascriptSdk.UpdateProductRequestAllOf();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property productType (base name: "productType")', function() {
-      // uncomment below and update the code to test the property productType
-      //var instane = new @CompetitionlabsJavascriptSdk.UpdateProductRequestAllOf();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property productTypeName (base name: "productTypeName")', function() {
-      // uncomment below and update the code to test the property productTypeName
-      //var instane = new @CompetitionlabsJavascriptSdk.UpdateProductRequestAllOf();
+      //var instance = new CompetitionLabsApplicationServices.UpdateProductRequestAllOf();
       //expect(instance).to.be();
     });
 
     it('should have the property description (base name: "description")', function() {
       // uncomment below and update the code to test the property description
-      //var instane = new @CompetitionlabsJavascriptSdk.UpdateProductRequestAllOf();
+      //var instance = new CompetitionLabsApplicationServices.UpdateProductRequestAllOf();
       //expect(instance).to.be();
     });
 
     it('should have the property adjustmentFactor (base name: "adjustmentFactor")', function() {
       // uncomment below and update the code to test the property adjustmentFactor
-      //var instane = new @CompetitionlabsJavascriptSdk.UpdateProductRequestAllOf();
+      //var instance = new CompetitionLabsApplicationServices.UpdateProductRequestAllOf();
       //expect(instance).to.be();
     });
 
     it('should have the property actionTypeAdjustmentFactors (base name: "actionTypeAdjustmentFactors")', function() {
       // uncomment below and update the code to test the property actionTypeAdjustmentFactors
-      //var instane = new @CompetitionlabsJavascriptSdk.UpdateProductRequestAllOf();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property productGroups (base name: "productGroups")', function() {
-      // uncomment below and update the code to test the property productGroups
-      //var instane = new @CompetitionlabsJavascriptSdk.UpdateProductRequestAllOf();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property metadata (base name: "metadata")', function() {
-      // uncomment below and update the code to test the property metadata
-      //var instane = new @CompetitionlabsJavascriptSdk.UpdateProductRequestAllOf();
+      //var instance = new CompetitionLabsApplicationServices.UpdateProductRequestAllOf();
       //expect(instance).to.be();
     });
 
     it('should have the property translations (base name: "translations")', function() {
       // uncomment below and update the code to test the property translations
-      //var instane = new @CompetitionlabsJavascriptSdk.UpdateProductRequestAllOf();
+      //var instance = new CompetitionLabsApplicationServices.UpdateProductRequestAllOf();
       //expect(instance).to.be();
     });
 

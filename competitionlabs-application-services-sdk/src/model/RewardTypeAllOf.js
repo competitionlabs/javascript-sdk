@@ -1,6 +1,6 @@
 /**
  * CompetitionLabs Application Services
- * The services listed below are referred as CompetitionLabs Application Services.
+ * CompetitionLabs Application Services are used to manage and configure spaces.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@competitionlabs.com
@@ -12,13 +12,13 @@
  */
 
 import ApiClient from '../ApiClient';
-import Metadata from './Metadata';
+import TranslationValue from './TranslationValue';
 import UnitOfMeasureType from './UnitOfMeasureType';
 
 /**
  * The RewardTypeAllOf model module.
  * @module model/RewardTypeAllOf
- * @version 1.0.5
+ * @version 1.0.0
  */
 class RewardTypeAllOf {
     /**
@@ -27,11 +27,11 @@ class RewardTypeAllOf {
      * @param name {String} The name of the Reward type
      * @param key {String} A unique key that represents the reward type
      * @param unitOfMeasureType {module:model/UnitOfMeasureType} 
-     * @param system {Boolean} A boolean value (true/false) that represents the Reward type state. A system reserved entry (set to true) cannot be deleted.
+     * @param constraints {Array.<String>} Additional constraints, if the value is present it means the
      */
-    constructor(name, key, unitOfMeasureType, system) { 
+    constructor(name, key, unitOfMeasureType, constraints) { 
         
-        RewardTypeAllOf.initialize(this, name, key, unitOfMeasureType, system);
+        RewardTypeAllOf.initialize(this, name, key, unitOfMeasureType, constraints);
     }
 
     /**
@@ -39,54 +39,11 @@ class RewardTypeAllOf {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, name, key, unitOfMeasureType, system) { 
+    static initialize(obj, name, key, unitOfMeasureType, constraints) { 
         obj['name'] = name;
         obj['key'] = key;
         obj['unitOfMeasureType'] = unitOfMeasureType;
-        obj['system'] = system;
-    }
-
-    /**
-    * Constructs a full object with all available fields.
-    */
-    model(){
-        var obj = {};
-
-        obj['name'] = null;
-        obj['description'] = null;
-        obj['key'] = null;
-        obj['unitOfMeasureType'] = new UnitOfMeasureType().model();
-        obj['system'] = null;
-        obj['metadata'] = [new Metadata().model()];
-        obj['providers'] = null;
-
-        return obj;
-    }
-
-    /**
-    * Constructs a full object Map for all available fields.
-    */
-    modelMap(){
-        var obj = {
-            "fields": {},
-            "requiredFields": {}
-        };
-
-        obj["fields"]['name'] = { "type": 'String', "system": false };
-        obj["fields"]['description'] = { "type": 'String', "system": false };
-        obj["fields"]['key'] = { "type": 'String', "system": false };
-        obj["fields"]['unitOfMeasureType'] = new UnitOfMeasureType().modelMap();
-        obj["fields"]['system'] = { "type": 'Boolean', "system": false };
-        obj["fields"]['metadata'] = [new Metadata().modelMap()];
-        obj["fields"]['providers'] = { "type": 'String', "system": false };
-
-        
-        obj["requiredFields"]['name'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['key'] = { "type": 'String', "system": false };
-        obj["requiredFields"]['unitOfMeasureType'] = new UnitOfMeasureType().modelMap();
-        obj["requiredFields"]['system'] = { "type": 'Boolean', "system": false };
-
-        return obj;
+        obj['constraints'] = constraints;
     }
 
     /**
@@ -112,14 +69,11 @@ class RewardTypeAllOf {
             if (data.hasOwnProperty('unitOfMeasureType')) {
                 obj['unitOfMeasureType'] = UnitOfMeasureType.constructFromObject(data['unitOfMeasureType']);
             }
-            if (data.hasOwnProperty('system')) {
-                obj['system'] = ApiClient.convertToType(data['system'], 'Boolean');
+            if (data.hasOwnProperty('translations')) {
+                obj['translations'] = ApiClient.convertToType(data['translations'], [Object]);
             }
-            if (data.hasOwnProperty('metadata')) {
-                obj['metadata'] = ApiClient.convertToType(data['metadata'], [Metadata]);
-            }
-            if (data.hasOwnProperty('providers')) {
-                obj['providers'] = ApiClient.convertToType(data['providers'], 'String');
+            if (data.hasOwnProperty('constraints')) {
+                obj['constraints'] = ApiClient.convertToType(data['constraints'], ['String']);
             }
         }
         return obj;
@@ -152,21 +106,15 @@ RewardTypeAllOf.prototype['key'] = undefined;
 RewardTypeAllOf.prototype['unitOfMeasureType'] = undefined;
 
 /**
- * A boolean value (true/false) that represents the Reward type state. A system reserved entry (set to true) cannot be deleted.
- * @member {Boolean} system
+ * @member {Array.<Object.<String, module:model/TranslationValue>>} translations
  */
-RewardTypeAllOf.prototype['system'] = undefined;
+RewardTypeAllOf.prototype['translations'] = undefined;
 
 /**
- * @member {Array.<module:model/Metadata>} metadata
+ * Additional constraints, if the value is present it means the
+ * @member {Array.<String>} constraints
  */
-RewardTypeAllOf.prototype['metadata'] = undefined;
-
-/**
- * The providers of the reward type
- * @member {String} providers
- */
-RewardTypeAllOf.prototype['providers'] = undefined;
+RewardTypeAllOf.prototype['constraints'] = undefined;
 
 
 

@@ -1,4 +1,4 @@
-# @CompetitionlabsApplicationServicesSdk.QueryRequest
+# CompetitionLabsApplicationServices.QueryRequest
 
 ## Properties
 
@@ -20,6 +20,6 @@ Name | Type | Description | Notes
 **shouldMatch** | **Number** | How many should properties need to be displayed | [optional] 
 **skip** | **Number** | How many response objects will be skipped for preview | [optional] 
 **limit** | **Number** | How many response objects will be displayed | [optional] 
-**isCountQuery** | **Boolean** | Whether this query requires a count of records found only | [optional] 
+**constraints** | **[String]** | Additional constraints | [optional] 
 
 

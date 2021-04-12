@@ -1,11 +1,11 @@
-# @CompetitionlabsApplicationServicesSdk.ContestReducedAllOf
+# CompetitionLabsApplicationServices.ContestReducedAllOf
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **competitionId** | **String** | A unique identifier of a Competition | 
-**_number** | **Number** | The row number for displaying the Contest in a table | 
+**row** | **Number** | The row number for displaying the Contest in a table | 
 **name** | **String** | A name for the Contest. Can be translated | 
 **round** | **Number** | To what round does the contest belong | 
 **groupStage** | **Number** | Is used for more complex Competitions e.g. multi round competitions where round 1 group stage matched round 2 | 
@@ -16,5 +16,6 @@ Name | Type | Description | Notes
 **scheduledEndDate** | **Date** | ISO8601 timestamp for when a Contest should end. All records are stored in UTC time zone | 
 **actualStartDate** | **Date** | ISO8601 timestamp for when a Contest started. All records are stored in UTC time zone | [optional] [readonly] 
 **actualEndDate** | **Date** | ISO8601 timestamp for when a Contest ended. All records are stored in UTC time zone | [optional] [readonly] 
+**tags** | **[String]** | A list of id&#39;s used to tag | [optional] 
 
 
