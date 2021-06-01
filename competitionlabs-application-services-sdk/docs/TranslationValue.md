@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.TranslationValue
+# CompetitionLabsAdminServices.TranslationValue
 
 ## Properties
 

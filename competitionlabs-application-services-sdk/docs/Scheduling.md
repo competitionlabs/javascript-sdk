@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.Scheduling
+# CompetitionLabsAdminServices.Scheduling
 
 ## Properties
 

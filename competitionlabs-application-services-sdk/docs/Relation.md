@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.Relation
+# CompetitionLabsAdminServices.Relation
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.CustomFieldResponse
+# CompetitionLabsAdminServices.CustomFieldResponse
 
 ## Properties
 

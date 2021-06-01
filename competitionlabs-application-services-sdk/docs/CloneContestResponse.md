@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.CloneContestResponse
+# CompetitionLabsAdminServices.CloneContestResponse
 
 ## Properties
 

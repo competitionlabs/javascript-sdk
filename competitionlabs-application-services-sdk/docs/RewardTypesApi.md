@@ -1,6 +1,6 @@
-# CompetitionLabsApplicationServices.RewardTypesApi
+# CompetitionLabsAdminServices.RewardTypesApi
 
-All URIs are relative to *https://api.competitionlabs.com*
+All URIs are relative to *https://api.competitionlabs.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 ## createRewardTypes
 
-> ApiResponse createRewardTypes(body, opts)
+> ApiResponse createRewardTypes(body)
 
 
 
@@ -24,23 +24,15 @@ Create new Reward types in the CompetitionLabs database
 ### Example
 
 ```javascript
-import CompetitionLabsApplicationServices from 'competition_labs_application_services';
-let defaultClient = CompetitionLabsApplicationServices.ApiClient.instance;
-// Configure API key authorization: AdminApiKey
-let AdminApiKey = defaultClient.authentications['AdminApiKey'];
-AdminApiKey.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//AdminApiKey.apiKeyPrefix = 'Token';
+import CompetitionLabsAdminServices from 'competition_labs_admin_services';
+let defaultClient = CompetitionLabsAdminServices.ApiClient.instance;
 // Configure OAuth2 access token for authorization: OAuth2
 let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new CompetitionLabsApplicationServices.RewardTypesApi();
-let body = [new CompetitionLabsApplicationServices.CreateRewardTypeRequest()]; // [CreateRewardTypeRequest] | Create Reward Types in the CompetitionLabs database
-let opts = {
-  'X_API_KEY': "X_API_KEY_example" // String | The admin API Key generated from CompetitionLabs back office
-};
-apiInstance.createRewardTypes(body, opts, (error, data, response) => {
+let apiInstance = new CompetitionLabsAdminServices.RewardTypesApi();
+let body = [new CompetitionLabsAdminServices.CreateRewardTypeRequest()]; // [CreateRewardTypeRequest] | Create Reward Types in the CompetitionLabs database
+apiInstance.createRewardTypes(body, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -55,7 +47,6 @@ apiInstance.createRewardTypes(body, opts, (error, data, response) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **body** | [**[CreateRewardTypeRequest]**](CreateRewardTypeRequest.md)| Create Reward Types in the CompetitionLabs database | 
- **X_API_KEY** | **String**| The admin API Key generated from CompetitionLabs back office | [optional] 
 
 ### Return type
 
@@ -63,7 +54,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AdminApiKey](../README.md#AdminApiKey), [OAuth2](../README.md#OAuth2)
+[OAuth2](../README.md#OAuth2)
 
 ### HTTP request headers
 
@@ -82,20 +73,14 @@ Delete Reward types for a given identifier specified
 ### Example
 
 ```javascript
-import CompetitionLabsApplicationServices from 'competition_labs_application_services';
-let defaultClient = CompetitionLabsApplicationServices.ApiClient.instance;
-// Configure API key authorization: AdminApiKey
-let AdminApiKey = defaultClient.authentications['AdminApiKey'];
-AdminApiKey.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//AdminApiKey.apiKeyPrefix = 'Token';
+import CompetitionLabsAdminServices from 'competition_labs_admin_services';
+let defaultClient = CompetitionLabsAdminServices.ApiClient.instance;
 // Configure OAuth2 access token for authorization: OAuth2
 let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new CompetitionLabsApplicationServices.RewardTypesApi();
+let apiInstance = new CompetitionLabsAdminServices.RewardTypesApi();
 let opts = {
-  'X_API_KEY': "X_API_KEY_example", // String | The admin API Key generated from CompetitionLabs back office
   'id': ["null"] // [String] | The unique identifiers of the resources
 };
 apiInstance.deleteRewardTypes(opts, (error, data, response) => {
@@ -112,7 +97,6 @@ apiInstance.deleteRewardTypes(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **X_API_KEY** | **String**| The admin API Key generated from CompetitionLabs back office | [optional] 
  **id** | [**[String]**](String.md)| The unique identifiers of the resources | [optional] 
 
 ### Return type
@@ -121,7 +105,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AdminApiKey](../README.md#AdminApiKey), [OAuth2](../README.md#OAuth2)
+[OAuth2](../README.md#OAuth2)
 
 ### HTTP request headers
 
@@ -140,21 +124,15 @@ Delete Reward types from CompetitionLabs database by unique Reward types ID&#39;
 ### Example
 
 ```javascript
-import CompetitionLabsApplicationServices from 'competition_labs_application_services';
-let defaultClient = CompetitionLabsApplicationServices.ApiClient.instance;
-// Configure API key authorization: AdminApiKey
-let AdminApiKey = defaultClient.authentications['AdminApiKey'];
-AdminApiKey.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//AdminApiKey.apiKeyPrefix = 'Token';
+import CompetitionLabsAdminServices from 'competition_labs_admin_services';
+let defaultClient = CompetitionLabsAdminServices.ApiClient.instance;
 // Configure OAuth2 access token for authorization: OAuth2
 let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new CompetitionLabsApplicationServices.RewardTypesApi();
+let apiInstance = new CompetitionLabsAdminServices.RewardTypesApi();
 let opts = {
-  'X_API_KEY': "X_API_KEY_example", // String | The admin API Key generated from CompetitionLabs back office
-  'body': new CompetitionLabsApplicationServices.QueryRequest() // QueryRequest | Delete Reward types from CompetitionLabs database by unique Reward types ID's or any other POST body parameters using the POST method
+  'body': new CompetitionLabsAdminServices.QueryRequest() // QueryRequest | Delete Reward types from CompetitionLabs database by unique Reward types ID's or any other POST body parameters using the POST method
 };
 apiInstance.deleteRewardTypesByQuery(opts, (error, data, response) => {
   if (error) {
@@ -170,7 +148,6 @@ apiInstance.deleteRewardTypesByQuery(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **X_API_KEY** | **String**| The admin API Key generated from CompetitionLabs back office | [optional] 
  **body** | [**QueryRequest**](QueryRequest.md)| Delete Reward types from CompetitionLabs database by unique Reward types ID&#39;s or any other POST body parameters using the POST method | [optional] 
 
 ### Return type
@@ -179,7 +156,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AdminApiKey](../README.md#AdminApiKey), [OAuth2](../README.md#OAuth2)
+[OAuth2](../README.md#OAuth2)
 
 ### HTTP request headers
 
@@ -198,20 +175,14 @@ Returns a list of Reward Types. This assumes that reward types have first been u
 ### Example
 
 ```javascript
-import CompetitionLabsApplicationServices from 'competition_labs_application_services';
-let defaultClient = CompetitionLabsApplicationServices.ApiClient.instance;
-// Configure API key authorization: AdminApiKey
-let AdminApiKey = defaultClient.authentications['AdminApiKey'];
-AdminApiKey.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//AdminApiKey.apiKeyPrefix = 'Token';
+import CompetitionLabsAdminServices from 'competition_labs_admin_services';
+let defaultClient = CompetitionLabsAdminServices.ApiClient.instance;
 // Configure OAuth2 access token for authorization: OAuth2
 let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new CompetitionLabsApplicationServices.RewardTypesApi();
+let apiInstance = new CompetitionLabsAdminServices.RewardTypesApi();
 let opts = {
-  'X_API_KEY': "X_API_KEY_example", // String | The admin API Key generated from CompetitionLabs back office
   'id': ["null"], // [String] | The unique identifiers of the resources
   'limit': 56, // Number | Limit the returned total records found
   'skip': 56 // Number | Skip the returned records found and return the next batch of records
@@ -230,7 +201,6 @@ apiInstance.getRewardTypes(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **X_API_KEY** | **String**| The admin API Key generated from CompetitionLabs back office | [optional] 
  **id** | [**[String]**](String.md)| The unique identifiers of the resources | [optional] 
  **limit** | **Number**| Limit the returned total records found | [optional] 
  **skip** | **Number**| Skip the returned records found and return the next batch of records | [optional] 
@@ -241,7 +211,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AdminApiKey](../README.md#AdminApiKey), [OAuth2](../README.md#OAuth2)
+[OAuth2](../README.md#OAuth2)
 
 ### HTTP request headers
 
@@ -260,21 +230,15 @@ Retrieve Reward types from CompetitionLabs database by unique Reward type ID&#39
 ### Example
 
 ```javascript
-import CompetitionLabsApplicationServices from 'competition_labs_application_services';
-let defaultClient = CompetitionLabsApplicationServices.ApiClient.instance;
-// Configure API key authorization: AdminApiKey
-let AdminApiKey = defaultClient.authentications['AdminApiKey'];
-AdminApiKey.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//AdminApiKey.apiKeyPrefix = 'Token';
+import CompetitionLabsAdminServices from 'competition_labs_admin_services';
+let defaultClient = CompetitionLabsAdminServices.ApiClient.instance;
 // Configure OAuth2 access token for authorization: OAuth2
 let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new CompetitionLabsApplicationServices.RewardTypesApi();
+let apiInstance = new CompetitionLabsAdminServices.RewardTypesApi();
 let opts = {
-  'X_API_KEY': "X_API_KEY_example", // String | The admin API Key generated from CompetitionLabs back office
-  'body': new CompetitionLabsApplicationServices.QueryRequest() // QueryRequest | Retrieve Reward types from CompetitionLabs database by unique Reward type ID's or any other POST body parameters using the POST method
+  'body': new CompetitionLabsAdminServices.QueryRequest() // QueryRequest | Retrieve Reward types from CompetitionLabs database by unique Reward type ID's or any other POST body parameters using the POST method
 };
 apiInstance.getRewardTypesByQuery(opts, (error, data, response) => {
   if (error) {
@@ -290,7 +254,6 @@ apiInstance.getRewardTypesByQuery(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **X_API_KEY** | **String**| The admin API Key generated from CompetitionLabs back office | [optional] 
  **body** | [**QueryRequest**](QueryRequest.md)| Retrieve Reward types from CompetitionLabs database by unique Reward type ID&#39;s or any other POST body parameters using the POST method | [optional] 
 
 ### Return type
@@ -299,7 +262,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AdminApiKey](../README.md#AdminApiKey), [OAuth2](../README.md#OAuth2)
+[OAuth2](../README.md#OAuth2)
 
 ### HTTP request headers
 
@@ -309,7 +272,7 @@ Name | Type | Description  | Notes
 
 ## updateRewardTypes
 
-> ApiResponse updateRewardTypes(body, opts)
+> ApiResponse updateRewardTypes(body)
 
 
 
@@ -318,23 +281,15 @@ Update existing Reward types in the CompetitionLabs database
 ### Example
 
 ```javascript
-import CompetitionLabsApplicationServices from 'competition_labs_application_services';
-let defaultClient = CompetitionLabsApplicationServices.ApiClient.instance;
-// Configure API key authorization: AdminApiKey
-let AdminApiKey = defaultClient.authentications['AdminApiKey'];
-AdminApiKey.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//AdminApiKey.apiKeyPrefix = 'Token';
+import CompetitionLabsAdminServices from 'competition_labs_admin_services';
+let defaultClient = CompetitionLabsAdminServices.ApiClient.instance;
 // Configure OAuth2 access token for authorization: OAuth2
 let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new CompetitionLabsApplicationServices.RewardTypesApi();
-let body = [new CompetitionLabsApplicationServices.UpdateRewardTypeRequest()]; // [UpdateRewardTypeRequest] | Update Reward types in the CompetitionLabs database.
-let opts = {
-  'X_API_KEY': "X_API_KEY_example" // String | The admin API Key generated from CompetitionLabs back office
-};
-apiInstance.updateRewardTypes(body, opts, (error, data, response) => {
+let apiInstance = new CompetitionLabsAdminServices.RewardTypesApi();
+let body = [new CompetitionLabsAdminServices.UpdateRewardTypeRequest()]; // [UpdateRewardTypeRequest] | Update Reward types in the CompetitionLabs database.
+apiInstance.updateRewardTypes(body, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -349,7 +304,6 @@ apiInstance.updateRewardTypes(body, opts, (error, data, response) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **body** | [**[UpdateRewardTypeRequest]**](UpdateRewardTypeRequest.md)| Update Reward types in the CompetitionLabs database. | 
- **X_API_KEY** | **String**| The admin API Key generated from CompetitionLabs back office | [optional] 
 
 ### Return type
 
@@ -357,7 +311,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AdminApiKey](../README.md#AdminApiKey), [OAuth2](../README.md#OAuth2)
+[OAuth2](../README.md#OAuth2)
 
 ### HTTP request headers
 

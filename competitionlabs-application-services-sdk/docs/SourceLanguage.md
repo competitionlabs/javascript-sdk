@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.SourceLanguage
+# CompetitionLabsAdminServices.SourceLanguage
 
 ## Enum
 

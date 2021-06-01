@@ -1,6 +1,6 @@
-# CompetitionLabsApplicationServices.TransformersApi
+# CompetitionLabsAdminServices.TransformersApi
 
-All URIs are relative to *https://api.competitionlabs.com*
+All URIs are relative to *https://api.competitionlabs.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 ## createTransformers
 
-> ApiResponse createTransformers(body, opts)
+> ApiResponse createTransformers(body)
 
 
 
@@ -24,23 +24,15 @@ Create a new Transformer in the CompetitionLabs system
 ### Example
 
 ```javascript
-import CompetitionLabsApplicationServices from 'competition_labs_application_services';
-let defaultClient = CompetitionLabsApplicationServices.ApiClient.instance;
-// Configure API key authorization: AdminApiKey
-let AdminApiKey = defaultClient.authentications['AdminApiKey'];
-AdminApiKey.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//AdminApiKey.apiKeyPrefix = 'Token';
+import CompetitionLabsAdminServices from 'competition_labs_admin_services';
+let defaultClient = CompetitionLabsAdminServices.ApiClient.instance;
 // Configure OAuth2 access token for authorization: OAuth2
 let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new CompetitionLabsApplicationServices.TransformersApi();
-let body = new CompetitionLabsApplicationServices.CreateTransformerRequest(); // CreateTransformerRequest | Create a Transformer in the CompetitionLabs system
-let opts = {
-  'X_API_KEY': "X_API_KEY_example" // String | The admin API Key generated from CompetitionLabs back office
-};
-apiInstance.createTransformers(body, opts, (error, data, response) => {
+let apiInstance = new CompetitionLabsAdminServices.TransformersApi();
+let body = [new CompetitionLabsAdminServices.CreateTransformerRequest()]; // [CreateTransformerRequest] | Create a Transformer in the CompetitionLabs system
+apiInstance.createTransformers(body, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -54,8 +46,7 @@ apiInstance.createTransformers(body, opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CreateTransformerRequest**](CreateTransformerRequest.md)| Create a Transformer in the CompetitionLabs system | 
- **X_API_KEY** | **String**| The admin API Key generated from CompetitionLabs back office | [optional] 
+ **body** | [**[CreateTransformerRequest]**](CreateTransformerRequest.md)| Create a Transformer in the CompetitionLabs system | 
 
 ### Return type
 
@@ -63,7 +54,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AdminApiKey](../README.md#AdminApiKey), [OAuth2](../README.md#OAuth2)
+[OAuth2](../README.md#OAuth2)
 
 ### HTTP request headers
 
@@ -82,20 +73,14 @@ Delete the Transformers for a given identifier specified
 ### Example
 
 ```javascript
-import CompetitionLabsApplicationServices from 'competition_labs_application_services';
-let defaultClient = CompetitionLabsApplicationServices.ApiClient.instance;
-// Configure API key authorization: AdminApiKey
-let AdminApiKey = defaultClient.authentications['AdminApiKey'];
-AdminApiKey.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//AdminApiKey.apiKeyPrefix = 'Token';
+import CompetitionLabsAdminServices from 'competition_labs_admin_services';
+let defaultClient = CompetitionLabsAdminServices.ApiClient.instance;
 // Configure OAuth2 access token for authorization: OAuth2
 let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new CompetitionLabsApplicationServices.TransformersApi();
+let apiInstance = new CompetitionLabsAdminServices.TransformersApi();
 let opts = {
-  'X_API_KEY': "X_API_KEY_example", // String | The admin API Key generated from CompetitionLabs back office
   'id': ["null"] // [String] | The unique identifiers of the resources
 };
 apiInstance.deleteTransformers(opts, (error, data, response) => {
@@ -112,7 +97,6 @@ apiInstance.deleteTransformers(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **X_API_KEY** | **String**| The admin API Key generated from CompetitionLabs back office | [optional] 
  **id** | [**[String]**](String.md)| The unique identifiers of the resources | [optional] 
 
 ### Return type
@@ -121,7 +105,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AdminApiKey](../README.md#AdminApiKey), [OAuth2](../README.md#OAuth2)
+[OAuth2](../README.md#OAuth2)
 
 ### HTTP request headers
 
@@ -140,21 +124,15 @@ Delete a Transformer or a list of Transformers from CompetitionLabs by unique Tr
 ### Example
 
 ```javascript
-import CompetitionLabsApplicationServices from 'competition_labs_application_services';
-let defaultClient = CompetitionLabsApplicationServices.ApiClient.instance;
-// Configure API key authorization: AdminApiKey
-let AdminApiKey = defaultClient.authentications['AdminApiKey'];
-AdminApiKey.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//AdminApiKey.apiKeyPrefix = 'Token';
+import CompetitionLabsAdminServices from 'competition_labs_admin_services';
+let defaultClient = CompetitionLabsAdminServices.ApiClient.instance;
 // Configure OAuth2 access token for authorization: OAuth2
 let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new CompetitionLabsApplicationServices.TransformersApi();
+let apiInstance = new CompetitionLabsAdminServices.TransformersApi();
 let opts = {
-  'X_API_KEY': "X_API_KEY_example", // String | The admin API Key generated from CompetitionLabs back office
-  'body': new CompetitionLabsApplicationServices.QueryRequest() // QueryRequest | Delete a Transformer or a list of Transformers from CompetitionLabs by unique Transformer ID's or any other POST body parameters using the POST method
+  'body': new CompetitionLabsAdminServices.QueryRequest() // QueryRequest | Delete a Transformer or a list of Transformers from CompetitionLabs by unique Transformer ID's or any other POST body parameters using the POST method
 };
 apiInstance.deleteTransformersByQuery(opts, (error, data, response) => {
   if (error) {
@@ -170,7 +148,6 @@ apiInstance.deleteTransformersByQuery(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **X_API_KEY** | **String**| The admin API Key generated from CompetitionLabs back office | [optional] 
  **body** | [**QueryRequest**](QueryRequest.md)| Delete a Transformer or a list of Transformers from CompetitionLabs by unique Transformer ID&#39;s or any other POST body parameters using the POST method | [optional] 
 
 ### Return type
@@ -179,7 +156,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AdminApiKey](../README.md#AdminApiKey), [OAuth2](../README.md#OAuth2)
+[OAuth2](../README.md#OAuth2)
 
 ### HTTP request headers
 
@@ -198,20 +175,14 @@ Returns a list of Transformers. This assumes that transformers have first been u
 ### Example
 
 ```javascript
-import CompetitionLabsApplicationServices from 'competition_labs_application_services';
-let defaultClient = CompetitionLabsApplicationServices.ApiClient.instance;
-// Configure API key authorization: AdminApiKey
-let AdminApiKey = defaultClient.authentications['AdminApiKey'];
-AdminApiKey.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//AdminApiKey.apiKeyPrefix = 'Token';
+import CompetitionLabsAdminServices from 'competition_labs_admin_services';
+let defaultClient = CompetitionLabsAdminServices.ApiClient.instance;
 // Configure OAuth2 access token for authorization: OAuth2
 let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new CompetitionLabsApplicationServices.TransformersApi();
+let apiInstance = new CompetitionLabsAdminServices.TransformersApi();
 let opts = {
-  'X_API_KEY': "X_API_KEY_example", // String | The admin API Key generated from CompetitionLabs back office
   'id': ["null"], // [String] | The unique identifiers of the resources
   'limit': 56, // Number | Limit the returned total records found
   'skip': 56 // Number | Skip the returned records found and return the next batch of records
@@ -230,7 +201,6 @@ apiInstance.getTransformers(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **X_API_KEY** | **String**| The admin API Key generated from CompetitionLabs back office | [optional] 
  **id** | [**[String]**](String.md)| The unique identifiers of the resources | [optional] 
  **limit** | **Number**| Limit the returned total records found | [optional] 
  **skip** | **Number**| Skip the returned records found and return the next batch of records | [optional] 
@@ -241,7 +211,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AdminApiKey](../README.md#AdminApiKey), [OAuth2](../README.md#OAuth2)
+[OAuth2](../README.md#OAuth2)
 
 ### HTTP request headers
 
@@ -260,21 +230,15 @@ Retrieve a Transformer or a list of Transformers from CompetitionLabs by unique 
 ### Example
 
 ```javascript
-import CompetitionLabsApplicationServices from 'competition_labs_application_services';
-let defaultClient = CompetitionLabsApplicationServices.ApiClient.instance;
-// Configure API key authorization: AdminApiKey
-let AdminApiKey = defaultClient.authentications['AdminApiKey'];
-AdminApiKey.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//AdminApiKey.apiKeyPrefix = 'Token';
+import CompetitionLabsAdminServices from 'competition_labs_admin_services';
+let defaultClient = CompetitionLabsAdminServices.ApiClient.instance;
 // Configure OAuth2 access token for authorization: OAuth2
 let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new CompetitionLabsApplicationServices.TransformersApi();
+let apiInstance = new CompetitionLabsAdminServices.TransformersApi();
 let opts = {
-  'X_API_KEY': "X_API_KEY_example", // String | The admin API Key generated from CompetitionLabs back office
-  'body': new CompetitionLabsApplicationServices.QueryRequest() // QueryRequest | Retrieve a Transformer or a list of Transformers from CompetitionLabs by unique Transformer ID's or any other Post body parameters using the POST method
+  'body': new CompetitionLabsAdminServices.QueryRequest() // QueryRequest | Retrieve a Transformer or a list of Transformers from CompetitionLabs by unique Transformer ID's or any other Post body parameters using the POST method
 };
 apiInstance.getTransformersByQuery(opts, (error, data, response) => {
   if (error) {
@@ -290,7 +254,6 @@ apiInstance.getTransformersByQuery(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **X_API_KEY** | **String**| The admin API Key generated from CompetitionLabs back office | [optional] 
  **body** | [**QueryRequest**](QueryRequest.md)| Retrieve a Transformer or a list of Transformers from CompetitionLabs by unique Transformer ID&#39;s or any other Post body parameters using the POST method | [optional] 
 
 ### Return type
@@ -299,7 +262,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AdminApiKey](../README.md#AdminApiKey), [OAuth2](../README.md#OAuth2)
+[OAuth2](../README.md#OAuth2)
 
 ### HTTP request headers
 
@@ -309,7 +272,7 @@ Name | Type | Description  | Notes
 
 ## updateTransformers
 
-> ApiResponse updateTransformers(body, opts)
+> ApiResponse updateTransformers(body)
 
 
 
@@ -318,23 +281,15 @@ Update an existing Transformer in the CompetitionLabs system
 ### Example
 
 ```javascript
-import CompetitionLabsApplicationServices from 'competition_labs_application_services';
-let defaultClient = CompetitionLabsApplicationServices.ApiClient.instance;
-// Configure API key authorization: AdminApiKey
-let AdminApiKey = defaultClient.authentications['AdminApiKey'];
-AdminApiKey.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//AdminApiKey.apiKeyPrefix = 'Token';
+import CompetitionLabsAdminServices from 'competition_labs_admin_services';
+let defaultClient = CompetitionLabsAdminServices.ApiClient.instance;
 // Configure OAuth2 access token for authorization: OAuth2
 let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new CompetitionLabsApplicationServices.TransformersApi();
-let body = new CompetitionLabsApplicationServices.UpdateTransformerRequest(); // UpdateTransformerRequest | Update Transformer details in the CompetitionLabs system
-let opts = {
-  'X_API_KEY': "X_API_KEY_example" // String | The admin API Key generated from CompetitionLabs back office
-};
-apiInstance.updateTransformers(body, opts, (error, data, response) => {
+let apiInstance = new CompetitionLabsAdminServices.TransformersApi();
+let body = [new CompetitionLabsAdminServices.UpdateTransformerRequest()]; // [UpdateTransformerRequest] | Update Transformer details in the CompetitionLabs system
+apiInstance.updateTransformers(body, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -348,8 +303,7 @@ apiInstance.updateTransformers(body, opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**UpdateTransformerRequest**](UpdateTransformerRequest.md)| Update Transformer details in the CompetitionLabs system | 
- **X_API_KEY** | **String**| The admin API Key generated from CompetitionLabs back office | [optional] 
+ **body** | [**[UpdateTransformerRequest]**](UpdateTransformerRequest.md)| Update Transformer details in the CompetitionLabs system | 
 
 ### Return type
 
@@ -357,7 +311,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AdminApiKey](../README.md#AdminApiKey), [OAuth2](../README.md#OAuth2)
+[OAuth2](../README.md#OAuth2)
 
 ### HTTP request headers
 

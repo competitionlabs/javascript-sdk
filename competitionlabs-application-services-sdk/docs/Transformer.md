@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.Transformer
+# CompetitionLabsAdminServices.Transformer
 
 ## Properties
 

@@ -29,6 +29,7 @@ docs/AppliesTo.md
 docs/Attachment.md
 docs/AttachmentAllOf.md
 docs/AttachmentResponse.md
+docs/AvailableLanguageResponse.md
 docs/Award.md
 docs/AwardAllOf.md
 docs/AwardResponse.md
@@ -54,7 +55,6 @@ docs/CompetitionStatus.md
 docs/CompetitionStatusActions.md
 docs/CompetitionType.md
 docs/CompetitionsApi.md
-docs/ComplexFilter.md
 docs/Condition.md
 docs/Connection.md
 docs/ConnectionAllOf.md
@@ -85,6 +85,7 @@ docs/CreateCollaboratorRequest.md
 docs/CreateCompetitionRequest.md
 docs/CreateCompetitionRequestAllOf.md
 docs/CreateConnectionRequest.md
+docs/CreateConnectionRequestBase.md
 docs/CreateContestForCompetitionRequest.md
 docs/CreateContestForCompetitionRequestAllOf.md
 docs/CreateContestRequest.md
@@ -101,7 +102,6 @@ docs/CreateLanguageRequest.md
 docs/CreateLanguageRequestAllOf.md
 docs/CreateMemberRequest.md
 docs/CreateMessageRequest.md
-docs/CreateMessageRequestAllOf.md
 docs/CreateOptParamModels.md
 docs/CreateProductRequest.md
 docs/CreateProductRequestAllOf.md
@@ -128,8 +128,8 @@ docs/CustomFieldReduced.md
 docs/CustomFieldReducedAllOf.md
 docs/CustomFieldResponse.md
 docs/CustomFieldsApi.md
+docs/Dependancy.md
 docs/DependantOn.md
-docs/EntityTags.md
 docs/EntityType.md
 docs/Entrant.md
 docs/EntrantAction.md
@@ -161,7 +161,6 @@ docs/LeaderboardAllOf.md
 docs/LeaderboardEntry.md
 docs/LeaderboardResponseByContest.md
 docs/Location.md
-docs/LogoutApi.md
 docs/Macro.md
 docs/MatchCondition.md
 docs/MaxMin.md
@@ -272,7 +271,6 @@ docs/TransformerResponse.md
 docs/TransformersApi.md
 docs/TranslatedField.md
 docs/TranslationValue.md
-docs/TwoFactorAuthApi.md
 docs/TwoFactorAuthQrCode.md
 docs/TwoFactorAuthValidateRequest.md
 docs/UnitOfMeasure.md
@@ -285,6 +283,7 @@ docs/UpdateAchievementRequestAllOf.md
 docs/UpdateActionTypeRequest.md
 docs/UpdateActionTypeRequestAllOf.md
 docs/UpdateApiKeyRequest.md
+docs/UpdateApiKeyRequestAllOf.md
 docs/UpdateCollaboratorRequest.md
 docs/UpdateCollaboratorRequestAllOf.md
 docs/UpdateCompetitionRequest.md
@@ -292,8 +291,8 @@ docs/UpdateCompetitionRequestAllOf.md
 docs/UpdateCompetitionStatusRequest.md
 docs/UpdateCompetitionStatusRequestAllOf.md
 docs/UpdateConnectionRequest.md
-docs/UpdateConsumerStateRequest.md
-docs/UpdateConsumerStateRequestAllOf.md
+docs/UpdateConnectionRequestAllOf.md
+docs/UpdateConnectionStateRequest.md
 docs/UpdateContestRequest.md
 docs/UpdateContestRequestAllOf.md
 docs/UpdateContestStateRequest.md
@@ -321,7 +320,9 @@ docs/UpdateRewardRequest.md
 docs/UpdateRewardTypeRequest.md
 docs/UpdateRewardTypeRequestAllOf.md
 docs/UpdateSqsConnectionRequest.md
+docs/UpdateSqsConnectionRequestAllOf.md
 docs/UpdateStateRequest.md
+docs/UpdateStateRequestAllOf.md
 docs/UpdateTagsRequest.md
 docs/UpdateTagsRequestAllOf.md
 docs/UpdateTransformerRequest.md
@@ -357,7 +358,6 @@ src/api/CustomFieldsApi.js
 src/api/EventsApi.js
 src/api/FilesApi.js
 src/api/LanguagesApi.js
-src/api/LogoutApi.js
 src/api/MembersApi.js
 src/api/MessagesApi.js
 src/api/ProductsApi.js
@@ -368,7 +368,6 @@ src/api/RulesApi.js
 src/api/SpacesApi.js
 src/api/TagsApi.js
 src/api/TransformersApi.js
-src/api/TwoFactorAuthApi.js
 src/api/UnitsOfMeasureApi.js
 src/api/UserApi.js
 src/api/UsersApi.js
@@ -397,6 +396,7 @@ src/model/AppliesTo.js
 src/model/Attachment.js
 src/model/AttachmentAllOf.js
 src/model/AttachmentResponse.js
+src/model/AvailableLanguageResponse.js
 src/model/Award.js
 src/model/AwardAllOf.js
 src/model/AwardResponse.js
@@ -419,7 +419,6 @@ src/model/CompetitionResponse.js
 src/model/CompetitionStatus.js
 src/model/CompetitionStatusActions.js
 src/model/CompetitionType.js
-src/model/ComplexFilter.js
 src/model/Condition.js
 src/model/Connection.js
 src/model/ConnectionAllOf.js
@@ -448,6 +447,7 @@ src/model/CreateCollaboratorRequest.js
 src/model/CreateCompetitionRequest.js
 src/model/CreateCompetitionRequestAllOf.js
 src/model/CreateConnectionRequest.js
+src/model/CreateConnectionRequestBase.js
 src/model/CreateContestForCompetitionRequest.js
 src/model/CreateContestForCompetitionRequestAllOf.js
 src/model/CreateContestRequest.js
@@ -464,7 +464,6 @@ src/model/CreateLanguageRequest.js
 src/model/CreateLanguageRequestAllOf.js
 src/model/CreateMemberRequest.js
 src/model/CreateMessageRequest.js
-src/model/CreateMessageRequestAllOf.js
 src/model/CreateOptParamModels.js
 src/model/CreateProductRequest.js
 src/model/CreateProductRequestAllOf.js
@@ -490,8 +489,8 @@ src/model/CustomFieldAllOf.js
 src/model/CustomFieldReduced.js
 src/model/CustomFieldReducedAllOf.js
 src/model/CustomFieldResponse.js
+src/model/Dependancy.js
 src/model/DependantOn.js
-src/model/EntityTags.js
 src/model/EntityType.js
 src/model/Entrant.js
 src/model/EntrantAction.js
@@ -631,6 +630,7 @@ src/model/UpdateAchievementRequestAllOf.js
 src/model/UpdateActionTypeRequest.js
 src/model/UpdateActionTypeRequestAllOf.js
 src/model/UpdateApiKeyRequest.js
+src/model/UpdateApiKeyRequestAllOf.js
 src/model/UpdateCollaboratorRequest.js
 src/model/UpdateCollaboratorRequestAllOf.js
 src/model/UpdateCompetitionRequest.js
@@ -638,8 +638,8 @@ src/model/UpdateCompetitionRequestAllOf.js
 src/model/UpdateCompetitionStatusRequest.js
 src/model/UpdateCompetitionStatusRequestAllOf.js
 src/model/UpdateConnectionRequest.js
-src/model/UpdateConsumerStateRequest.js
-src/model/UpdateConsumerStateRequestAllOf.js
+src/model/UpdateConnectionRequestAllOf.js
+src/model/UpdateConnectionStateRequest.js
 src/model/UpdateContestRequest.js
 src/model/UpdateContestRequestAllOf.js
 src/model/UpdateContestStateRequest.js
@@ -667,7 +667,9 @@ src/model/UpdateRewardRequest.js
 src/model/UpdateRewardTypeRequest.js
 src/model/UpdateRewardTypeRequestAllOf.js
 src/model/UpdateSqsConnectionRequest.js
+src/model/UpdateSqsConnectionRequestAllOf.js
 src/model/UpdateStateRequest.js
+src/model/UpdateStateRequestAllOf.js
 src/model/UpdateTagsRequest.js
 src/model/UpdateTagsRequestAllOf.js
 src/model/UpdateTransformerRequest.js
@@ -696,7 +698,6 @@ test/api/CustomFieldsApi.spec.js
 test/api/EventsApi.spec.js
 test/api/FilesApi.spec.js
 test/api/LanguagesApi.spec.js
-test/api/LogoutApi.spec.js
 test/api/MembersApi.spec.js
 test/api/MessagesApi.spec.js
 test/api/ProductsApi.spec.js
@@ -707,7 +708,6 @@ test/api/RulesApi.spec.js
 test/api/SpacesApi.spec.js
 test/api/TagsApi.spec.js
 test/api/TransformersApi.spec.js
-test/api/TwoFactorAuthApi.spec.js
 test/api/UnitsOfMeasureApi.spec.js
 test/api/UserApi.spec.js
 test/api/UsersApi.spec.js
@@ -735,6 +735,7 @@ test/model/AppliesTo.spec.js
 test/model/Attachment.spec.js
 test/model/AttachmentAllOf.spec.js
 test/model/AttachmentResponse.spec.js
+test/model/AvailableLanguageResponse.spec.js
 test/model/Award.spec.js
 test/model/AwardAllOf.spec.js
 test/model/AwardResponse.spec.js
@@ -757,7 +758,6 @@ test/model/CompetitionResponse.spec.js
 test/model/CompetitionStatus.spec.js
 test/model/CompetitionStatusActions.spec.js
 test/model/CompetitionType.spec.js
-test/model/ComplexFilter.spec.js
 test/model/Condition.spec.js
 test/model/Connection.spec.js
 test/model/ConnectionAllOf.spec.js
@@ -786,6 +786,7 @@ test/model/CreateCollaboratorRequest.spec.js
 test/model/CreateCompetitionRequest.spec.js
 test/model/CreateCompetitionRequestAllOf.spec.js
 test/model/CreateConnectionRequest.spec.js
+test/model/CreateConnectionRequestBase.spec.js
 test/model/CreateContestForCompetitionRequest.spec.js
 test/model/CreateContestForCompetitionRequestAllOf.spec.js
 test/model/CreateContestRequest.spec.js
@@ -802,7 +803,6 @@ test/model/CreateLanguageRequest.spec.js
 test/model/CreateLanguageRequestAllOf.spec.js
 test/model/CreateMemberRequest.spec.js
 test/model/CreateMessageRequest.spec.js
-test/model/CreateMessageRequestAllOf.spec.js
 test/model/CreateOptParamModels.spec.js
 test/model/CreateProductRequest.spec.js
 test/model/CreateProductRequestAllOf.spec.js
@@ -828,8 +828,8 @@ test/model/CustomFieldAllOf.spec.js
 test/model/CustomFieldReduced.spec.js
 test/model/CustomFieldReducedAllOf.spec.js
 test/model/CustomFieldResponse.spec.js
+test/model/Dependancy.spec.js
 test/model/DependantOn.spec.js
-test/model/EntityTags.spec.js
 test/model/EntityType.spec.js
 test/model/Entrant.spec.js
 test/model/EntrantAction.spec.js
@@ -969,6 +969,7 @@ test/model/UpdateAchievementRequestAllOf.spec.js
 test/model/UpdateActionTypeRequest.spec.js
 test/model/UpdateActionTypeRequestAllOf.spec.js
 test/model/UpdateApiKeyRequest.spec.js
+test/model/UpdateApiKeyRequestAllOf.spec.js
 test/model/UpdateCollaboratorRequest.spec.js
 test/model/UpdateCollaboratorRequestAllOf.spec.js
 test/model/UpdateCompetitionRequest.spec.js
@@ -976,8 +977,8 @@ test/model/UpdateCompetitionRequestAllOf.spec.js
 test/model/UpdateCompetitionStatusRequest.spec.js
 test/model/UpdateCompetitionStatusRequestAllOf.spec.js
 test/model/UpdateConnectionRequest.spec.js
-test/model/UpdateConsumerStateRequest.spec.js
-test/model/UpdateConsumerStateRequestAllOf.spec.js
+test/model/UpdateConnectionRequestAllOf.spec.js
+test/model/UpdateConnectionStateRequest.spec.js
 test/model/UpdateContestRequest.spec.js
 test/model/UpdateContestRequestAllOf.spec.js
 test/model/UpdateContestStateRequest.spec.js
@@ -1005,7 +1006,9 @@ test/model/UpdateRewardRequest.spec.js
 test/model/UpdateRewardTypeRequest.spec.js
 test/model/UpdateRewardTypeRequestAllOf.spec.js
 test/model/UpdateSqsConnectionRequest.spec.js
+test/model/UpdateSqsConnectionRequestAllOf.spec.js
 test/model/UpdateStateRequest.spec.js
+test/model/UpdateStateRequestAllOf.spec.js
 test/model/UpdateTagsRequest.spec.js
 test/model/UpdateTagsRequestAllOf.spec.js
 test/model/UpdateTransformerRequest.spec.js

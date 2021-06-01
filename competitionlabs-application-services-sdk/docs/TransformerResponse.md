@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.TransformerResponse
+# CompetitionLabsAdminServices.TransformerResponse
 
 ## Properties
 

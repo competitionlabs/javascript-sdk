@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.TagsReduced
+# CompetitionLabsAdminServices.TagsReduced
 
 ## Properties
 

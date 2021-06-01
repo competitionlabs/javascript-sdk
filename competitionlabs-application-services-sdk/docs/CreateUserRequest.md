@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.CreateUserRequest
+# CompetitionLabsAdminServices.CreateUserRequest
 
 ## Properties
 

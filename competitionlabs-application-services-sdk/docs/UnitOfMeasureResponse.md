@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.UnitOfMeasureResponse
+# CompetitionLabsAdminServices.UnitOfMeasureResponse
 
 ## Properties
 

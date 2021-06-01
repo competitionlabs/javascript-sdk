@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.TwoFactorAuthQrCode
+# CompetitionLabsAdminServices.TwoFactorAuthQrCode
 
 ## Properties
 

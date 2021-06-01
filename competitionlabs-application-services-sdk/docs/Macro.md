@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.Macro
+# CompetitionLabsAdminServices.Macro
 
 ## Properties
 

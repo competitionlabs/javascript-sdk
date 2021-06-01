@@ -1,10 +1,9 @@
-# CompetitionLabsApplicationServices.UserApi
+# CompetitionLabsAdminServices.UserApi
 
-All URIs are relative to *https://api.competitionlabs.com*
+All URIs are relative to *https://api.competitionlabs.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**changePassword**](UserApi.md#changePassword) | **PUT** /user/change-password | NOT AVAILABLE IN CURRENT RELEASE
 [**deleteUser**](UserApi.md#deleteUser) | **DELETE** /user | NOT AVAILABLE IN CURRENT RELEASE
 [**getUser**](UserApi.md#getUser) | **GET** /user | 
 [**getUserMessages**](UserApi.md#getUserMessages) | **GET** /user/inbox | NOT AVAILABLE IN CURRENT RELEASE
@@ -14,63 +13,9 @@ Method | HTTP request | Description
 
 
 
-## changePassword
-
-> ApiResponse changePassword(body)
-
-NOT AVAILABLE IN CURRENT RELEASE
-
-Execute password change operation
-
-### Example
-
-```javascript
-import CompetitionLabsApplicationServices from 'competition_labs_application_services';
-let defaultClient = CompetitionLabsApplicationServices.ApiClient.instance;
-// Configure API key authorization: AdminApiKey
-let AdminApiKey = defaultClient.authentications['AdminApiKey'];
-AdminApiKey.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//AdminApiKey.apiKeyPrefix = 'Token';
-// Configure OAuth2 access token for authorization: OAuth2
-let OAuth2 = defaultClient.authentications['OAuth2'];
-OAuth2.accessToken = 'YOUR ACCESS TOKEN';
-
-let apiInstance = new CompetitionLabsApplicationServices.UserApi();
-let body = new CompetitionLabsApplicationServices.ChangePasswordRequest(); // ChangePasswordRequest | Change the users password
-apiInstance.changePassword(body, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-});
-```
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**ChangePasswordRequest**](ChangePasswordRequest.md)| Change the users password | 
-
-### Return type
-
-[**ApiResponse**](ApiResponse.md)
-
-### Authorization
-
-[AdminApiKey](../README.md#AdminApiKey), [OAuth2](../README.md#OAuth2)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-
 ## deleteUser
 
-> ApiResponse deleteUser(opts)
+> ApiResponse deleteUser()
 
 NOT AVAILABLE IN CURRENT RELEASE
 
@@ -79,22 +24,14 @@ Delete the current user from the CompetitionLabs
 ### Example
 
 ```javascript
-import CompetitionLabsApplicationServices from 'competition_labs_application_services';
-let defaultClient = CompetitionLabsApplicationServices.ApiClient.instance;
-// Configure API key authorization: AdminApiKey
-let AdminApiKey = defaultClient.authentications['AdminApiKey'];
-AdminApiKey.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//AdminApiKey.apiKeyPrefix = 'Token';
+import CompetitionLabsAdminServices from 'competition_labs_admin_services';
+let defaultClient = CompetitionLabsAdminServices.ApiClient.instance;
 // Configure OAuth2 access token for authorization: OAuth2
 let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new CompetitionLabsApplicationServices.UserApi();
-let opts = {
-  'X_API_KEY': "X_API_KEY_example" // String | The admin API Key generated from CompetitionLabs back office
-};
-apiInstance.deleteUser(opts, (error, data, response) => {
+let apiInstance = new CompetitionLabsAdminServices.UserApi();
+apiInstance.deleteUser((error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -105,10 +42,7 @@ apiInstance.deleteUser(opts, (error, data, response) => {
 
 ### Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **X_API_KEY** | **String**| The admin API Key generated from CompetitionLabs back office | [optional] 
+This endpoint does not need any parameter.
 
 ### Return type
 
@@ -116,7 +50,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AdminApiKey](../README.md#AdminApiKey), [OAuth2](../README.md#OAuth2)
+[OAuth2](../README.md#OAuth2)
 
 ### HTTP request headers
 
@@ -135,20 +69,14 @@ Returns the current users user. This assumes that a user has first been uploaded
 ### Example
 
 ```javascript
-import CompetitionLabsApplicationServices from 'competition_labs_application_services';
-let defaultClient = CompetitionLabsApplicationServices.ApiClient.instance;
-// Configure API key authorization: AdminApiKey
-let AdminApiKey = defaultClient.authentications['AdminApiKey'];
-AdminApiKey.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//AdminApiKey.apiKeyPrefix = 'Token';
+import CompetitionLabsAdminServices from 'competition_labs_admin_services';
+let defaultClient = CompetitionLabsAdminServices.ApiClient.instance;
 // Configure OAuth2 access token for authorization: OAuth2
 let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new CompetitionLabsApplicationServices.UserApi();
+let apiInstance = new CompetitionLabsAdminServices.UserApi();
 let opts = {
-  'X_API_KEY': "X_API_KEY_example", // String | The admin API Key generated from CompetitionLabs back office
   'includeSpaces': true // Boolean | Include Spaces
 };
 apiInstance.getUser(opts, (error, data, response) => {
@@ -165,7 +93,6 @@ apiInstance.getUser(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **X_API_KEY** | **String**| The admin API Key generated from CompetitionLabs back office | [optional] 
  **includeSpaces** | **Boolean**| Include Spaces | [optional] 
 
 ### Return type
@@ -174,7 +101,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AdminApiKey](../README.md#AdminApiKey), [OAuth2](../README.md#OAuth2)
+[OAuth2](../README.md#OAuth2)
 
 ### HTTP request headers
 
@@ -193,20 +120,14 @@ Returns a list of the Users messages
 ### Example
 
 ```javascript
-import CompetitionLabsApplicationServices from 'competition_labs_application_services';
-let defaultClient = CompetitionLabsApplicationServices.ApiClient.instance;
-// Configure API key authorization: AdminApiKey
-let AdminApiKey = defaultClient.authentications['AdminApiKey'];
-AdminApiKey.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//AdminApiKey.apiKeyPrefix = 'Token';
+import CompetitionLabsAdminServices from 'competition_labs_admin_services';
+let defaultClient = CompetitionLabsAdminServices.ApiClient.instance;
 // Configure OAuth2 access token for authorization: OAuth2
 let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new CompetitionLabsApplicationServices.UserApi();
+let apiInstance = new CompetitionLabsAdminServices.UserApi();
 let opts = {
-  'X_API_KEY': "X_API_KEY_example", // String | The admin API Key generated from CompetitionLabs back office
   'limit': 56, // Number | Limit the returned total records found
   'skip': 56 // Number | Skip the returned records found and return the next batch of records
 };
@@ -224,7 +145,6 @@ apiInstance.getUserMessages(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **X_API_KEY** | **String**| The admin API Key generated from CompetitionLabs back office | [optional] 
  **limit** | **Number**| Limit the returned total records found | [optional] 
  **skip** | **Number**| Skip the returned records found and return the next batch of records | [optional] 
 
@@ -234,7 +154,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AdminApiKey](../README.md#AdminApiKey), [OAuth2](../README.md#OAuth2)
+[OAuth2](../README.md#OAuth2)
 
 ### HTTP request headers
 
@@ -244,7 +164,7 @@ Name | Type | Description  | Notes
 
 ## getUserMessagesById
 
-> MessageResponse getUserMessagesById(id, opts)
+> MessageResponse getUserMessagesById(id)
 
 NOT AVAILABLE IN CURRENT RELEASE
 
@@ -253,23 +173,15 @@ Returns a Users message for the identifier provided
 ### Example
 
 ```javascript
-import CompetitionLabsApplicationServices from 'competition_labs_application_services';
-let defaultClient = CompetitionLabsApplicationServices.ApiClient.instance;
-// Configure API key authorization: AdminApiKey
-let AdminApiKey = defaultClient.authentications['AdminApiKey'];
-AdminApiKey.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//AdminApiKey.apiKeyPrefix = 'Token';
+import CompetitionLabsAdminServices from 'competition_labs_admin_services';
+let defaultClient = CompetitionLabsAdminServices.ApiClient.instance;
 // Configure OAuth2 access token for authorization: OAuth2
 let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new CompetitionLabsApplicationServices.UserApi();
+let apiInstance = new CompetitionLabsAdminServices.UserApi();
 let id = "id_example"; // String | Unique identifier of the resource
-let opts = {
-  'X_API_KEY': "X_API_KEY_example" // String | The admin API Key generated from CompetitionLabs back office
-};
-apiInstance.getUserMessagesById(id, opts, (error, data, response) => {
+apiInstance.getUserMessagesById(id, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -284,7 +196,6 @@ apiInstance.getUserMessagesById(id, opts, (error, data, response) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| Unique identifier of the resource | 
- **X_API_KEY** | **String**| The admin API Key generated from CompetitionLabs back office | [optional] 
 
 ### Return type
 
@@ -292,7 +203,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AdminApiKey](../README.md#AdminApiKey), [OAuth2](../README.md#OAuth2)
+[OAuth2](../README.md#OAuth2)
 
 ### HTTP request headers
 
@@ -302,7 +213,7 @@ Name | Type | Description  | Notes
 
 ## markAsRead
 
-> ApiResponse markAsRead(body, opts)
+> ApiResponse markAsRead(body)
 
 NOT AVAILABLE IN CURRENT RELEASE
 
@@ -311,23 +222,15 @@ Mark User messages as read
 ### Example
 
 ```javascript
-import CompetitionLabsApplicationServices from 'competition_labs_application_services';
-let defaultClient = CompetitionLabsApplicationServices.ApiClient.instance;
-// Configure API key authorization: AdminApiKey
-let AdminApiKey = defaultClient.authentications['AdminApiKey'];
-AdminApiKey.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//AdminApiKey.apiKeyPrefix = 'Token';
+import CompetitionLabsAdminServices from 'competition_labs_admin_services';
+let defaultClient = CompetitionLabsAdminServices.ApiClient.instance;
 // Configure OAuth2 access token for authorization: OAuth2
 let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new CompetitionLabsApplicationServices.UserApi();
-let body = new CompetitionLabsApplicationServices.CreateMessageRequest(); // CreateMessageRequest | Mark User messages as read
-let opts = {
-  'X_API_KEY': "X_API_KEY_example" // String | The admin API Key generated from CompetitionLabs back office
-};
-apiInstance.markAsRead(body, opts, (error, data, response) => {
+let apiInstance = new CompetitionLabsAdminServices.UserApi();
+let body = new CompetitionLabsAdminServices.CreateMessageRequest(); // CreateMessageRequest | Mark User messages as read
+apiInstance.markAsRead(body, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -342,7 +245,6 @@ apiInstance.markAsRead(body, opts, (error, data, response) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **body** | [**CreateMessageRequest**](CreateMessageRequest.md)| Mark User messages as read | 
- **X_API_KEY** | **String**| The admin API Key generated from CompetitionLabs back office | [optional] 
 
 ### Return type
 
@@ -350,7 +252,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AdminApiKey](../README.md#AdminApiKey), [OAuth2](../README.md#OAuth2)
+[OAuth2](../README.md#OAuth2)
 
 ### HTTP request headers
 
@@ -360,7 +262,7 @@ Name | Type | Description  | Notes
 
 ## updateUser
 
-> ApiResponse updateUser(body, opts)
+> ApiResponse updateUser(body)
 
 NOT AVAILABLE IN CURRENT RELEASE
 
@@ -369,23 +271,15 @@ Update the current user in the CompetitionLabs system
 ### Example
 
 ```javascript
-import CompetitionLabsApplicationServices from 'competition_labs_application_services';
-let defaultClient = CompetitionLabsApplicationServices.ApiClient.instance;
-// Configure API key authorization: AdminApiKey
-let AdminApiKey = defaultClient.authentications['AdminApiKey'];
-AdminApiKey.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//AdminApiKey.apiKeyPrefix = 'Token';
+import CompetitionLabsAdminServices from 'competition_labs_admin_services';
+let defaultClient = CompetitionLabsAdminServices.ApiClient.instance;
 // Configure OAuth2 access token for authorization: OAuth2
 let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new CompetitionLabsApplicationServices.UserApi();
-let body = new CompetitionLabsApplicationServices.UpdateUserRequest(); // UpdateUserRequest | Update a User in the CompetitionLabs system. * Any Put body Parameters that are excluded in the Request body field will be considered as empty and updated with an empty field
-let opts = {
-  'X_API_KEY': "X_API_KEY_example" // String | The admin API Key generated from CompetitionLabs back office
-};
-apiInstance.updateUser(body, opts, (error, data, response) => {
+let apiInstance = new CompetitionLabsAdminServices.UserApi();
+let body = new CompetitionLabsAdminServices.UpdateUserRequest(); // UpdateUserRequest | Update a User in the CompetitionLabs system. * Any Put body Parameters that are excluded in the Request body field will be considered as empty and updated with an empty field
+apiInstance.updateUser(body, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -400,7 +294,6 @@ apiInstance.updateUser(body, opts, (error, data, response) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **body** | [**UpdateUserRequest**](UpdateUserRequest.md)| Update a User in the CompetitionLabs system. * Any Put body Parameters that are excluded in the Request body field will be considered as empty and updated with an empty field | 
- **X_API_KEY** | **String**| The admin API Key generated from CompetitionLabs back office | [optional] 
 
 ### Return type
 
@@ -408,7 +301,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AdminApiKey](../README.md#AdminApiKey), [OAuth2](../README.md#OAuth2)
+[OAuth2](../README.md#OAuth2)
 
 ### HTTP request headers
 

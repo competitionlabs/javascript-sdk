@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.CreateSqsConnectionRequestAllOf
+# CompetitionLabsAdminServices.CreateSqsConnectionRequestAllOf
 
 ## Properties
 
@@ -9,5 +9,6 @@ Name | Type | Description | Notes
 **acessKey** | **String** | The access key of the IAM user | 
 **secretKey** | **String** | The secret key of IAM user | 
 **transformerId** | **String** | The id of the transformer to handle incoming messages | 
+**description** | **String** | The description of the consumer | [optional] 
 
 

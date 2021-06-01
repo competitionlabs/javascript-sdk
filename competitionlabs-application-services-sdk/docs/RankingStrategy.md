@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.RankingStrategy
+# CompetitionLabsAdminServices.RankingStrategy
 
 ## Properties
 

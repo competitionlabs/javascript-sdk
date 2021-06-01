@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.CreateEventRequest
+# CompetitionLabsAdminServices.CreateEventRequest
 
 ## Properties
 
@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **sourceValue** | **Number** | The actual numerical value related to the event | 
 **transactionTimestamp** | **Date** | ISO8601 timestamp for when this event happened. All records are stored in UTC time zone | 
 **metadata** | **{String: Object}** | Event metadata map. | [optional] 
-**customFields** | [**[CustomFieldReduced]**](CustomFieldReduced.md) |  | [optional] 
 **tags** | **[String]** | A list of Strings of groups that the tag belongs to | [optional] 
+**eventRefId** | **String** |  | 
 
 

@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.WebhookResponse
+# CompetitionLabsAdminServices.WebhookResponse
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.QuerySortBy
+# CompetitionLabsAdminServices.QuerySortBy
 
 ## Properties
 

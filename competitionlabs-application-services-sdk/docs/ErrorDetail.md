@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.ErrorDetail
+# CompetitionLabsAdminServices.ErrorDetail
 
 ## Properties
 

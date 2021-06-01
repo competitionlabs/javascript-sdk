@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.MemberAchievementIssuedResponse
+# CompetitionLabsAdminServices.MemberAchievementIssuedResponse
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.FieldType
+# CompetitionLabsAdminServices.FieldType
 
 ## Enum
 

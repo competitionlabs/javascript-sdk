@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.FileObjectsResponse
+# CompetitionLabsAdminServices.FileObjectsResponse
 
 ## Properties
 

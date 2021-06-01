@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.CustomField
+# CompetitionLabsAdminServices.CustomField
 
 ## Properties
 

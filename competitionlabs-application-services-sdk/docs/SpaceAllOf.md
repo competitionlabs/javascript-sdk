@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.SpaceAllOf
+# CompetitionLabsAdminServices.SpaceAllOf
 
 ## Properties
 

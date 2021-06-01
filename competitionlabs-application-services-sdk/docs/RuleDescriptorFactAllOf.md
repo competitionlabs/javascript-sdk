@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.RuleDescriptorFactAllOf
+# CompetitionLabsAdminServices.RuleDescriptorFactAllOf
 
 ## Properties
 

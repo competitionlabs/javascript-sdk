@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.ChangePasswordRequest
+# CompetitionLabsAdminServices.ChangePasswordRequest
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.UpdateLanguageRequest
+# CompetitionLabsAdminServices.UpdateLanguageRequest
 
 ## Properties
 

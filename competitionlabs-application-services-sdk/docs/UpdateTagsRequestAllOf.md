@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.UpdateTagsRequestAllOf
+# CompetitionLabsAdminServices.UpdateTagsRequestAllOf
 
 ## Properties
 
@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **String** | The name of the tag | 
 **description** | **String** | The description of the tag for your reference | [optional] 
-**entity** | **[String]** | The model name the tag refers to | 
+**entityTypes** | **[String]** | The model name the tag refers to | [optional] 
 **metadata** | [**[Metadata]**](Metadata.md) |  | [optional] 
 
 

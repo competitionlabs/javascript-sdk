@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.AchievementResponse
+# CompetitionLabsAdminServices.AchievementResponse
 
 ## Properties
 

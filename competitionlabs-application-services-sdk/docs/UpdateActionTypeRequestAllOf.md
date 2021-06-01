@@ -1,12 +1,12 @@
-# CompetitionLabsApplicationServices.UpdateActionTypeRequestAllOf
+# CompetitionLabsAdminServices.UpdateActionTypeRequestAllOf
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**name** | **String** | The name of the Action Helper | 
+**name** | **String** | The name of the Action Helper | [optional] 
 **description** | **String** | The description of the rule action helper for your reference | [optional] 
-**unitOfMeasureType** | [**UnitOfMeasureType**](UnitOfMeasureType.md) |  | 
-**constraints** | **[String]** | Additional constraints, if the value is present it means the | 
+**unitOfMeasureType** | [**UnitOfMeasureType**](UnitOfMeasureType.md) |  | [optional] 
+**constraints** | **[String]** | Additional constraints, if the value is present it means the | [optional] 
 
 

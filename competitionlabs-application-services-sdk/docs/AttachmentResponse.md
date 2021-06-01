@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.AttachmentResponse
+# CompetitionLabsAdminServices.AttachmentResponse
 
 ## Properties
 

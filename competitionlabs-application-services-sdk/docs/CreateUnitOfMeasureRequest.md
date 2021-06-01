@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.CreateUnitOfMeasureRequest
+# CompetitionLabsAdminServices.CreateUnitOfMeasureRequest
 
 ## Properties
 

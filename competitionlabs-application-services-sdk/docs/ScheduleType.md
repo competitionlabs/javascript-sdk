@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.ScheduleType
+# CompetitionLabsAdminServices.ScheduleType
 
 ## Enum
 

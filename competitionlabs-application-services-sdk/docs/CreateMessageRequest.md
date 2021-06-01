@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.CreateMessageRequest
+# CompetitionLabsAdminServices.CreateMessageRequest
 
 ## Properties
 
@@ -7,13 +7,17 @@ Name | Type | Description | Notes
 **customFields** | **[String]** | A list of id&#39;s used to add cutom fields | [optional] 
 **tags** | **[String]** | A list of id&#39;s used to tag models | [optional] 
 **metadata** | [**[Metadata]**](Metadata.md) |  | [optional] 
-**memberGroup** | **[String]** | To which member groups the message will be sent | [optional] 
-**members** | **[String]** | A list of specified members to which the message will be sent | 
+**dependantOn** | [**[Dependancy]**](Dependancy.md) |  | [optional] 
 **messageType** | [**MessageType**](MessageType.md) |  | 
 **subject** | **String** | The title of the message | 
 **body** | **String** | The context of the message | 
+**status** | [**MessageStatus**](MessageStatus.md) |  | [optional] 
 **scheduling** | [**Scheduling**](Scheduling.md) |  | 
 **translations** | **[Object]** |  | [optional] 
+**translatableFields** | **[String]** | Message translatable fields | [optional] [readonly] 
+**prize** | [**Reward**](Reward.md) |  | [optional] 
 **constraints** | **[String]** | Additional constraints, if the value is present it means the | 
+**eventReferenceId** | **String** |  | [optional] 
+**eventRefType** | **String** |  | [optional] 
 
 

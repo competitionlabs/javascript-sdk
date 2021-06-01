@@ -1,6 +1,6 @@
-# CompetitionLabsApplicationServices.TagsApi
+# CompetitionLabsAdminServices.TagsApi
 
-All URIs are relative to *https://api.competitionlabs.com*
+All URIs are relative to *https://api.competitionlabs.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 ## createTags
 
-> ApiResponse createTags(body, opts)
+> ApiResponse createTags(body)
 
 
 
@@ -24,23 +24,15 @@ Create new Tags in the CompetitionLabs database
 ### Example
 
 ```javascript
-import CompetitionLabsApplicationServices from 'competition_labs_application_services';
-let defaultClient = CompetitionLabsApplicationServices.ApiClient.instance;
-// Configure API key authorization: AdminApiKey
-let AdminApiKey = defaultClient.authentications['AdminApiKey'];
-AdminApiKey.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//AdminApiKey.apiKeyPrefix = 'Token';
+import CompetitionLabsAdminServices from 'competition_labs_admin_services';
+let defaultClient = CompetitionLabsAdminServices.ApiClient.instance;
 // Configure OAuth2 access token for authorization: OAuth2
 let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new CompetitionLabsApplicationServices.TagsApi();
-let body = [new CompetitionLabsApplicationServices.CreateTagsRequest()]; // [CreateTagsRequest] | Create Tags in the CompetitionLabs database
-let opts = {
-  'X_API_KEY': "X_API_KEY_example" // String | The admin API Key generated from CompetitionLabs back office
-};
-apiInstance.createTags(body, opts, (error, data, response) => {
+let apiInstance = new CompetitionLabsAdminServices.TagsApi();
+let body = [new CompetitionLabsAdminServices.CreateTagsRequest()]; // [CreateTagsRequest] | Create Tags in the CompetitionLabs database
+apiInstance.createTags(body, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -55,7 +47,6 @@ apiInstance.createTags(body, opts, (error, data, response) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **body** | [**[CreateTagsRequest]**](CreateTagsRequest.md)| Create Tags in the CompetitionLabs database | 
- **X_API_KEY** | **String**| The admin API Key generated from CompetitionLabs back office | [optional] 
 
 ### Return type
 
@@ -63,7 +54,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AdminApiKey](../README.md#AdminApiKey), [OAuth2](../README.md#OAuth2)
+[OAuth2](../README.md#OAuth2)
 
 ### HTTP request headers
 
@@ -82,20 +73,14 @@ Delete Tags for a given identifier specified
 ### Example
 
 ```javascript
-import CompetitionLabsApplicationServices from 'competition_labs_application_services';
-let defaultClient = CompetitionLabsApplicationServices.ApiClient.instance;
-// Configure API key authorization: AdminApiKey
-let AdminApiKey = defaultClient.authentications['AdminApiKey'];
-AdminApiKey.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//AdminApiKey.apiKeyPrefix = 'Token';
+import CompetitionLabsAdminServices from 'competition_labs_admin_services';
+let defaultClient = CompetitionLabsAdminServices.ApiClient.instance;
 // Configure OAuth2 access token for authorization: OAuth2
 let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new CompetitionLabsApplicationServices.TagsApi();
+let apiInstance = new CompetitionLabsAdminServices.TagsApi();
 let opts = {
-  'X_API_KEY': "X_API_KEY_example", // String | The admin API Key generated from CompetitionLabs back office
   'id': ["null"] // [String] | The unique identifiers of the resources
 };
 apiInstance.deleteTags(opts, (error, data, response) => {
@@ -112,7 +97,6 @@ apiInstance.deleteTags(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **X_API_KEY** | **String**| The admin API Key generated from CompetitionLabs back office | [optional] 
  **id** | [**[String]**](String.md)| The unique identifiers of the resources | [optional] 
 
 ### Return type
@@ -121,7 +105,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AdminApiKey](../README.md#AdminApiKey), [OAuth2](../README.md#OAuth2)
+[OAuth2](../README.md#OAuth2)
 
 ### HTTP request headers
 
@@ -140,21 +124,15 @@ Delete Tags from CompetitionLabs database by unique Tags ID&#39;s or any other P
 ### Example
 
 ```javascript
-import CompetitionLabsApplicationServices from 'competition_labs_application_services';
-let defaultClient = CompetitionLabsApplicationServices.ApiClient.instance;
-// Configure API key authorization: AdminApiKey
-let AdminApiKey = defaultClient.authentications['AdminApiKey'];
-AdminApiKey.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//AdminApiKey.apiKeyPrefix = 'Token';
+import CompetitionLabsAdminServices from 'competition_labs_admin_services';
+let defaultClient = CompetitionLabsAdminServices.ApiClient.instance;
 // Configure OAuth2 access token for authorization: OAuth2
 let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new CompetitionLabsApplicationServices.TagsApi();
+let apiInstance = new CompetitionLabsAdminServices.TagsApi();
 let opts = {
-  'X_API_KEY': "X_API_KEY_example", // String | The admin API Key generated from CompetitionLabs back office
-  'body': new CompetitionLabsApplicationServices.QueryRequest() // QueryRequest | Delete Tags from CompetitionLabs database by unique Tags ID's or any other POST body parameters using the POST method
+  'body': new CompetitionLabsAdminServices.QueryRequest() // QueryRequest | Delete Tags from CompetitionLabs database by unique Tags ID's or any other POST body parameters using the POST method
 };
 apiInstance.deleteTagsByQuery(opts, (error, data, response) => {
   if (error) {
@@ -170,7 +148,6 @@ apiInstance.deleteTagsByQuery(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **X_API_KEY** | **String**| The admin API Key generated from CompetitionLabs back office | [optional] 
  **body** | [**QueryRequest**](QueryRequest.md)| Delete Tags from CompetitionLabs database by unique Tags ID&#39;s or any other POST body parameters using the POST method | [optional] 
 
 ### Return type
@@ -179,7 +156,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AdminApiKey](../README.md#AdminApiKey), [OAuth2](../README.md#OAuth2)
+[OAuth2](../README.md#OAuth2)
 
 ### HTTP request headers
 
@@ -198,20 +175,14 @@ Returns a list of Tags. This assumes that tags have first been uploaded via a PO
 ### Example
 
 ```javascript
-import CompetitionLabsApplicationServices from 'competition_labs_application_services';
-let defaultClient = CompetitionLabsApplicationServices.ApiClient.instance;
-// Configure API key authorization: AdminApiKey
-let AdminApiKey = defaultClient.authentications['AdminApiKey'];
-AdminApiKey.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//AdminApiKey.apiKeyPrefix = 'Token';
+import CompetitionLabsAdminServices from 'competition_labs_admin_services';
+let defaultClient = CompetitionLabsAdminServices.ApiClient.instance;
 // Configure OAuth2 access token for authorization: OAuth2
 let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new CompetitionLabsApplicationServices.TagsApi();
+let apiInstance = new CompetitionLabsAdminServices.TagsApi();
 let opts = {
-  'X_API_KEY': "X_API_KEY_example", // String | The admin API Key generated from CompetitionLabs back office
   'id': ["null"], // [String] | The unique identifiers of the resources
   'limit': 56, // Number | Limit the returned total records found
   'skip': 56 // Number | Skip the returned records found and return the next batch of records
@@ -230,7 +201,6 @@ apiInstance.getTags(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **X_API_KEY** | **String**| The admin API Key generated from CompetitionLabs back office | [optional] 
  **id** | [**[String]**](String.md)| The unique identifiers of the resources | [optional] 
  **limit** | **Number**| Limit the returned total records found | [optional] 
  **skip** | **Number**| Skip the returned records found and return the next batch of records | [optional] 
@@ -241,7 +211,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AdminApiKey](../README.md#AdminApiKey), [OAuth2](../README.md#OAuth2)
+[OAuth2](../README.md#OAuth2)
 
 ### HTTP request headers
 
@@ -260,21 +230,15 @@ Retrieve Tags from CompetitionLabs database by unique Tags ID&#39;s or any other
 ### Example
 
 ```javascript
-import CompetitionLabsApplicationServices from 'competition_labs_application_services';
-let defaultClient = CompetitionLabsApplicationServices.ApiClient.instance;
-// Configure API key authorization: AdminApiKey
-let AdminApiKey = defaultClient.authentications['AdminApiKey'];
-AdminApiKey.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//AdminApiKey.apiKeyPrefix = 'Token';
+import CompetitionLabsAdminServices from 'competition_labs_admin_services';
+let defaultClient = CompetitionLabsAdminServices.ApiClient.instance;
 // Configure OAuth2 access token for authorization: OAuth2
 let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new CompetitionLabsApplicationServices.TagsApi();
+let apiInstance = new CompetitionLabsAdminServices.TagsApi();
 let opts = {
-  'X_API_KEY': "X_API_KEY_example", // String | The admin API Key generated from CompetitionLabs back office
-  'body': new CompetitionLabsApplicationServices.QueryRequest() // QueryRequest | Retrieve Tags from CompetitionLabs database by unique Tags ID's or any other POST body parameters using the POST method
+  'body': new CompetitionLabsAdminServices.QueryRequest() // QueryRequest | Retrieve Tags from CompetitionLabs database by unique Tags ID's or any other POST body parameters using the POST method
 };
 apiInstance.getTagsByQuery(opts, (error, data, response) => {
   if (error) {
@@ -290,7 +254,6 @@ apiInstance.getTagsByQuery(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **X_API_KEY** | **String**| The admin API Key generated from CompetitionLabs back office | [optional] 
  **body** | [**QueryRequest**](QueryRequest.md)| Retrieve Tags from CompetitionLabs database by unique Tags ID&#39;s or any other POST body parameters using the POST method | [optional] 
 
 ### Return type
@@ -299,7 +262,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AdminApiKey](../README.md#AdminApiKey), [OAuth2](../README.md#OAuth2)
+[OAuth2](../README.md#OAuth2)
 
 ### HTTP request headers
 
@@ -309,7 +272,7 @@ Name | Type | Description  | Notes
 
 ## updateTags
 
-> ApiResponse updateTags(body, opts)
+> ApiResponse updateTags(body)
 
 
 
@@ -318,23 +281,15 @@ Update existing Tags in the CompetitionLabs database
 ### Example
 
 ```javascript
-import CompetitionLabsApplicationServices from 'competition_labs_application_services';
-let defaultClient = CompetitionLabsApplicationServices.ApiClient.instance;
-// Configure API key authorization: AdminApiKey
-let AdminApiKey = defaultClient.authentications['AdminApiKey'];
-AdminApiKey.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//AdminApiKey.apiKeyPrefix = 'Token';
+import CompetitionLabsAdminServices from 'competition_labs_admin_services';
+let defaultClient = CompetitionLabsAdminServices.ApiClient.instance;
 // Configure OAuth2 access token for authorization: OAuth2
 let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new CompetitionLabsApplicationServices.TagsApi();
-let body = [new CompetitionLabsApplicationServices.UpdateTagsRequest()]; // [UpdateTagsRequest] | Update a Tag in the CompetitionLabs database.
-let opts = {
-  'X_API_KEY': "X_API_KEY_example" // String | The admin API Key generated from CompetitionLabs back office
-};
-apiInstance.updateTags(body, opts, (error, data, response) => {
+let apiInstance = new CompetitionLabsAdminServices.TagsApi();
+let body = [new CompetitionLabsAdminServices.UpdateTagsRequest()]; // [UpdateTagsRequest] | Update a Tag in the CompetitionLabs database.
+apiInstance.updateTags(body, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -349,7 +304,6 @@ apiInstance.updateTags(body, opts, (error, data, response) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **body** | [**[UpdateTagsRequest]**](UpdateTagsRequest.md)| Update a Tag in the CompetitionLabs database. | 
- **X_API_KEY** | **String**| The admin API Key generated from CompetitionLabs back office | [optional] 
 
 ### Return type
 
@@ -357,7 +311,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AdminApiKey](../README.md#AdminApiKey), [OAuth2](../README.md#OAuth2)
+[OAuth2](../README.md#OAuth2)
 
 ### HTTP request headers
 

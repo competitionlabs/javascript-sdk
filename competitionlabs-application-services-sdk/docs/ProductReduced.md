@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.ProductReduced
+# CompetitionLabsAdminServices.ProductReduced
 
 ## Properties
 

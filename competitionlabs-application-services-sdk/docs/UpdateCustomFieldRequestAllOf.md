@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.UpdateCustomFieldRequestAllOf
+# CompetitionLabsAdminServices.UpdateCustomFieldRequestAllOf
 
 ## Properties
 

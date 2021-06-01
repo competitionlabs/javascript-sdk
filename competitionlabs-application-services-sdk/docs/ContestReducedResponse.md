@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.ContestReducedResponse
+# CompetitionLabsAdminServices.ContestReducedResponse
 
 ## Properties
 

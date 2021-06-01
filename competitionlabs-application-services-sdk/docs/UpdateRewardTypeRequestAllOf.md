@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.UpdateRewardTypeRequestAllOf
+# CompetitionLabsAdminServices.UpdateRewardTypeRequestAllOf
 
 ## Properties
 

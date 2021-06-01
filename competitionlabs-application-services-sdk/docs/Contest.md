@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.Contest
+# CompetitionLabsAdminServices.Contest
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.UpdateConnectionRequest
+# CompetitionLabsAdminServices.UpdateConnectionRequest
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.StartEndDate
+# CompetitionLabsAdminServices.StartEndDate
 
 ## Properties
 

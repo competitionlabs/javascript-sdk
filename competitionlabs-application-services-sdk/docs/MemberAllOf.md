@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.MemberAllOf
+# CompetitionLabsAdminServices.MemberAllOf
 
 ## Properties
 
@@ -8,5 +8,7 @@ Name | Type | Description | Notes
 **memberRefId** | **String** | The reference to this member in your system | 
 **memberType** | [**MemberType**](MemberType.md) |  | 
 **teamMembers** | **[String]** | A social group like Guilds | [optional] 
+**constraints** | **[String]** | Additional constraints, if the value is present it means the | [optional] 
+**timeZoneOffset** | **Number** | To what time zone teh emmber belongs to | [optional] 
 
 

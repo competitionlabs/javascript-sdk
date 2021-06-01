@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.Award
+# CompetitionLabsAdminServices.Award
 
 ## Properties
 
@@ -20,5 +20,6 @@ Name | Type | Description | Notes
 **tags** | [**[TagsReduced]**](TagsReduced.md) | A list of Strings of groups that the reward belongs to. | [optional] 
 **metadata** | [**[Metadata]**](Metadata.md) |  | [optional] 
 **constraints** | **[String]** | Additional constraints, if the value is present it means the | 
+**claimedTimestamp** | **Date** | ISO8601 timestamp for when an Award is claimed. All records are stored in UTC time zone. * | [optional] 
 
 

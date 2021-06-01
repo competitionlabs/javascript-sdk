@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.CountResponse
+# CompetitionLabsAdminServices.CountResponse
 
 ## Properties
 

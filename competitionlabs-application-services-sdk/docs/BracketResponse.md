@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.BracketResponse
+# CompetitionLabsAdminServices.BracketResponse
 
 ## Properties
 

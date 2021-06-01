@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.UpdateUnitOfMeasureRequest
+# CompetitionLabsAdminServices.UpdateUnitOfMeasureRequest
 
 ## Properties
 

@@ -1,6 +1,6 @@
-# CompetitionLabsApplicationServices.FilesApi
+# CompetitionLabsAdminServices.FilesApi
 
-All URIs are relative to *https://api.competitionlabs.com*
+All URIs are relative to *https://api.competitionlabs.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -27,21 +27,15 @@ Copy an existing file object
 ### Example
 
 ```javascript
-import CompetitionLabsApplicationServices from 'competition_labs_application_services';
-let defaultClient = CompetitionLabsApplicationServices.ApiClient.instance;
-// Configure API key authorization: AdminApiKey
-let AdminApiKey = defaultClient.authentications['AdminApiKey'];
-AdminApiKey.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//AdminApiKey.apiKeyPrefix = 'Token';
+import CompetitionLabsAdminServices from 'competition_labs_admin_services';
+let defaultClient = CompetitionLabsAdminServices.ApiClient.instance;
 // Configure OAuth2 access token for authorization: OAuth2
 let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new CompetitionLabsApplicationServices.FilesApi();
-let body = new CompetitionLabsApplicationServices.UpdateFileObjectRequest(); // UpdateFileObjectRequest | Copy file objects inside a repository and dumplicate in another folder or repository.
+let apiInstance = new CompetitionLabsAdminServices.FilesApi();
+let body = new CompetitionLabsAdminServices.UpdateFileObjectRequest(); // UpdateFileObjectRequest | Copy file objects inside a repository and dumplicate in another folder or repository.
 let opts = {
-  'X_API_KEY': "X_API_KEY_example", // String | The admin API Key generated from CompetitionLabs back office
   'id': ["null"] // [String] | The unique identifiers of the resources
 };
 apiInstance.copyFileObjects(body, opts, (error, data, response) => {
@@ -59,7 +53,6 @@ apiInstance.copyFileObjects(body, opts, (error, data, response) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **body** | [**UpdateFileObjectRequest**](UpdateFileObjectRequest.md)| Copy file objects inside a repository and dumplicate in another folder or repository. | 
- **X_API_KEY** | **String**| The admin API Key generated from CompetitionLabs back office | [optional] 
  **id** | [**[String]**](String.md)| The unique identifiers of the resources | [optional] 
 
 ### Return type
@@ -68,7 +61,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AdminApiKey](../README.md#AdminApiKey), [OAuth2](../README.md#OAuth2)
+[OAuth2](../README.md#OAuth2)
 
 ### HTTP request headers
 
@@ -78,30 +71,22 @@ Name | Type | Description  | Notes
 
 ## createFileObject
 
-> ApiResponse createFileObject(body, opts)
+> ApiResponse createFileObject(body)
 
 NOT AVAILABLE IN CURRENT RELEASE
 
 ### Example
 
 ```javascript
-import CompetitionLabsApplicationServices from 'competition_labs_application_services';
-let defaultClient = CompetitionLabsApplicationServices.ApiClient.instance;
-// Configure API key authorization: AdminApiKey
-let AdminApiKey = defaultClient.authentications['AdminApiKey'];
-AdminApiKey.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//AdminApiKey.apiKeyPrefix = 'Token';
+import CompetitionLabsAdminServices from 'competition_labs_admin_services';
+let defaultClient = CompetitionLabsAdminServices.ApiClient.instance;
 // Configure OAuth2 access token for authorization: OAuth2
 let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new CompetitionLabsApplicationServices.FilesApi();
-let body = [new CompetitionLabsApplicationServices.CreateFileObjectRequest()]; // [CreateFileObjectRequest] | Create a new file object repository in your CompetitionLabs space
-let opts = {
-  'X_API_KEY': "X_API_KEY_example" // String | The admin API Key generated from CompetitionLabs back office
-};
-apiInstance.createFileObject(body, opts, (error, data, response) => {
+let apiInstance = new CompetitionLabsAdminServices.FilesApi();
+let body = [new CompetitionLabsAdminServices.CreateFileObjectRequest()]; // [CreateFileObjectRequest] | Create a new file object repository in your CompetitionLabs space
+apiInstance.createFileObject(body, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -116,7 +101,6 @@ apiInstance.createFileObject(body, opts, (error, data, response) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **body** | [**[CreateFileObjectRequest]**](CreateFileObjectRequest.md)| Create a new file object repository in your CompetitionLabs space | 
- **X_API_KEY** | **String**| The admin API Key generated from CompetitionLabs back office | [optional] 
 
 ### Return type
 
@@ -124,7 +108,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AdminApiKey](../README.md#AdminApiKey), [OAuth2](../README.md#OAuth2)
+[OAuth2](../README.md#OAuth2)
 
 ### HTTP request headers
 
@@ -141,20 +125,14 @@ NOT AVAILABLE IN CURRENT RELEASE
 ### Example
 
 ```javascript
-import CompetitionLabsApplicationServices from 'competition_labs_application_services';
-let defaultClient = CompetitionLabsApplicationServices.ApiClient.instance;
-// Configure API key authorization: AdminApiKey
-let AdminApiKey = defaultClient.authentications['AdminApiKey'];
-AdminApiKey.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//AdminApiKey.apiKeyPrefix = 'Token';
+import CompetitionLabsAdminServices from 'competition_labs_admin_services';
+let defaultClient = CompetitionLabsAdminServices.ApiClient.instance;
 // Configure OAuth2 access token for authorization: OAuth2
 let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new CompetitionLabsApplicationServices.FilesApi();
+let apiInstance = new CompetitionLabsAdminServices.FilesApi();
 let opts = {
-  'X_API_KEY': "X_API_KEY_example", // String | The admin API Key generated from CompetitionLabs back office
   'id': ["null"], // [String] | The unique identifiers of the resources
   'permanent': true // Boolean | Permanently delete the file object. Default is false
 };
@@ -172,7 +150,6 @@ apiInstance.deleteFileObjectById(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **X_API_KEY** | **String**| The admin API Key generated from CompetitionLabs back office | [optional] 
  **id** | [**[String]**](String.md)| The unique identifiers of the resources | [optional] 
  **permanent** | **Boolean**| Permanently delete the file object. Default is false | [optional] 
 
@@ -182,7 +159,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AdminApiKey](../README.md#AdminApiKey), [OAuth2](../README.md#OAuth2)
+[OAuth2](../README.md#OAuth2)
 
 ### HTTP request headers
 
@@ -201,22 +178,16 @@ Delete file objects by query
 ### Example
 
 ```javascript
-import CompetitionLabsApplicationServices from 'competition_labs_application_services';
-let defaultClient = CompetitionLabsApplicationServices.ApiClient.instance;
-// Configure API key authorization: AdminApiKey
-let AdminApiKey = defaultClient.authentications['AdminApiKey'];
-AdminApiKey.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//AdminApiKey.apiKeyPrefix = 'Token';
+import CompetitionLabsAdminServices from 'competition_labs_admin_services';
+let defaultClient = CompetitionLabsAdminServices.ApiClient.instance;
 // Configure OAuth2 access token for authorization: OAuth2
 let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new CompetitionLabsApplicationServices.FilesApi();
+let apiInstance = new CompetitionLabsAdminServices.FilesApi();
 let opts = {
-  'X_API_KEY': "X_API_KEY_example", // String | The admin API Key generated from CompetitionLabs back office
   'id': ["null"], // [String] | The unique identifiers of the resources
-  'body': new CompetitionLabsApplicationServices.QueryRequest() // QueryRequest | Delete file objects inside a repository from CompetitionLabs by unique file by unique object ID's or any other POST body parameters using the POST method
+  'body': new CompetitionLabsAdminServices.QueryRequest() // QueryRequest | Delete file objects inside a repository from CompetitionLabs by unique file by unique object ID's or any other POST body parameters using the POST method
 };
 apiInstance.deleteFileObjectsByQuery(opts, (error, data, response) => {
   if (error) {
@@ -232,7 +203,6 @@ apiInstance.deleteFileObjectsByQuery(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **X_API_KEY** | **String**| The admin API Key generated from CompetitionLabs back office | [optional] 
  **id** | [**[String]**](String.md)| The unique identifiers of the resources | [optional] 
  **body** | [**QueryRequest**](QueryRequest.md)| Delete file objects inside a repository from CompetitionLabs by unique file by unique object ID&#39;s or any other POST body parameters using the POST method | [optional] 
 
@@ -242,7 +212,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AdminApiKey](../README.md#AdminApiKey), [OAuth2](../README.md#OAuth2)
+[OAuth2](../README.md#OAuth2)
 
 ### HTTP request headers
 
@@ -261,20 +231,14 @@ Download file objects from your CompetitionLabs space
 ### Example
 
 ```javascript
-import CompetitionLabsApplicationServices from 'competition_labs_application_services';
-let defaultClient = CompetitionLabsApplicationServices.ApiClient.instance;
-// Configure API key authorization: AdminApiKey
-let AdminApiKey = defaultClient.authentications['AdminApiKey'];
-AdminApiKey.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//AdminApiKey.apiKeyPrefix = 'Token';
+import CompetitionLabsAdminServices from 'competition_labs_admin_services';
+let defaultClient = CompetitionLabsAdminServices.ApiClient.instance;
 // Configure OAuth2 access token for authorization: OAuth2
 let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new CompetitionLabsApplicationServices.FilesApi();
+let apiInstance = new CompetitionLabsAdminServices.FilesApi();
 let opts = {
-  'X_API_KEY': "X_API_KEY_example", // String | The admin API Key generated from CompetitionLabs back office
   'path': "path_example" // String | The canonical path of the file to download
 };
 apiInstance.downloadFileObject(opts, (error, data, response) => {
@@ -291,7 +255,6 @@ apiInstance.downloadFileObject(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **X_API_KEY** | **String**| The admin API Key generated from CompetitionLabs back office | [optional] 
  **path** | **String**| The canonical path of the file to download | [optional] 
 
 ### Return type
@@ -300,7 +263,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AdminApiKey](../README.md#AdminApiKey), [OAuth2](../README.md#OAuth2)
+[OAuth2](../README.md#OAuth2)
 
 ### HTTP request headers
 
@@ -319,22 +282,16 @@ Retrieve file objects by query
 ### Example
 
 ```javascript
-import CompetitionLabsApplicationServices from 'competition_labs_application_services';
-let defaultClient = CompetitionLabsApplicationServices.ApiClient.instance;
-// Configure API key authorization: AdminApiKey
-let AdminApiKey = defaultClient.authentications['AdminApiKey'];
-AdminApiKey.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//AdminApiKey.apiKeyPrefix = 'Token';
+import CompetitionLabsAdminServices from 'competition_labs_admin_services';
+let defaultClient = CompetitionLabsAdminServices.ApiClient.instance;
 // Configure OAuth2 access token for authorization: OAuth2
 let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new CompetitionLabsApplicationServices.FilesApi();
+let apiInstance = new CompetitionLabsAdminServices.FilesApi();
 let opts = {
-  'X_API_KEY': "X_API_KEY_example", // String | The admin API Key generated from CompetitionLabs back office
   'id': ["null"], // [String] | The unique identifiers of the resources
-  'body': new CompetitionLabsApplicationServices.QueryRequest() // QueryRequest | Retrieve file objects inside a repository from CompetitionLabs by unique file object ID's or any other POST body parameters using the POST method
+  'body': new CompetitionLabsAdminServices.QueryRequest() // QueryRequest | Retrieve file objects inside a repository from CompetitionLabs by unique file object ID's or any other POST body parameters using the POST method
 };
 apiInstance.getFileObjectsByQuery(opts, (error, data, response) => {
   if (error) {
@@ -350,7 +307,6 @@ apiInstance.getFileObjectsByQuery(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **X_API_KEY** | **String**| The admin API Key generated from CompetitionLabs back office | [optional] 
  **id** | [**[String]**](String.md)| The unique identifiers of the resources | [optional] 
  **body** | [**QueryRequest**](QueryRequest.md)| Retrieve file objects inside a repository from CompetitionLabs by unique file object ID&#39;s or any other POST body parameters using the POST method | [optional] 
 
@@ -360,7 +316,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AdminApiKey](../README.md#AdminApiKey), [OAuth2](../README.md#OAuth2)
+[OAuth2](../README.md#OAuth2)
 
 ### HTTP request headers
 
@@ -379,20 +335,14 @@ Returns a list of file objects
 ### Example
 
 ```javascript
-import CompetitionLabsApplicationServices from 'competition_labs_application_services';
-let defaultClient = CompetitionLabsApplicationServices.ApiClient.instance;
-// Configure API key authorization: AdminApiKey
-let AdminApiKey = defaultClient.authentications['AdminApiKey'];
-AdminApiKey.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//AdminApiKey.apiKeyPrefix = 'Token';
+import CompetitionLabsAdminServices from 'competition_labs_admin_services';
+let defaultClient = CompetitionLabsAdminServices.ApiClient.instance;
 // Configure OAuth2 access token for authorization: OAuth2
 let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new CompetitionLabsApplicationServices.FilesApi();
+let apiInstance = new CompetitionLabsAdminServices.FilesApi();
 let opts = {
-  'X_API_KEY': "X_API_KEY_example", // String | The admin API Key generated from CompetitionLabs back office
   'limit': 56, // Number | Limit the returned total records found
   'skip': 56, // Number | Skip the returned records found and return the next batch of records
   'id': ["null"], // [String] | The unique identifiers of the resources
@@ -412,7 +362,6 @@ apiInstance.getListOfFileObjects(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **X_API_KEY** | **String**| The admin API Key generated from CompetitionLabs back office | [optional] 
  **limit** | **Number**| Limit the returned total records found | [optional] 
  **skip** | **Number**| Skip the returned records found and return the next batch of records | [optional] 
  **id** | [**[String]**](String.md)| The unique identifiers of the resources | [optional] 
@@ -424,7 +373,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AdminApiKey](../README.md#AdminApiKey), [OAuth2](../README.md#OAuth2)
+[OAuth2](../README.md#OAuth2)
 
 ### HTTP request headers
 
@@ -434,30 +383,22 @@ Name | Type | Description  | Notes
 
 ## updateFileObject
 
-> ApiResponse updateFileObject(body, opts)
+> ApiResponse updateFileObject(body)
 
 NOT AVAILABLE IN CURRENT RELEASE
 
 ### Example
 
 ```javascript
-import CompetitionLabsApplicationServices from 'competition_labs_application_services';
-let defaultClient = CompetitionLabsApplicationServices.ApiClient.instance;
-// Configure API key authorization: AdminApiKey
-let AdminApiKey = defaultClient.authentications['AdminApiKey'];
-AdminApiKey.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//AdminApiKey.apiKeyPrefix = 'Token';
+import CompetitionLabsAdminServices from 'competition_labs_admin_services';
+let defaultClient = CompetitionLabsAdminServices.ApiClient.instance;
 // Configure OAuth2 access token for authorization: OAuth2
 let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new CompetitionLabsApplicationServices.FilesApi();
-let body = [new CompetitionLabsApplicationServices.UpdateFileObjectRequest()]; // [UpdateFileObjectRequest] | Update a file object in your CompetitionLabs space.
-let opts = {
-  'X_API_KEY': "X_API_KEY_example" // String | The admin API Key generated from CompetitionLabs back office
-};
-apiInstance.updateFileObject(body, opts, (error, data, response) => {
+let apiInstance = new CompetitionLabsAdminServices.FilesApi();
+let body = [new CompetitionLabsAdminServices.UpdateFileObjectRequest()]; // [UpdateFileObjectRequest] | Update a file object in your CompetitionLabs space.
+apiInstance.updateFileObject(body, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -472,7 +413,6 @@ apiInstance.updateFileObject(body, opts, (error, data, response) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **body** | [**[UpdateFileObjectRequest]**](UpdateFileObjectRequest.md)| Update a file object in your CompetitionLabs space. | 
- **X_API_KEY** | **String**| The admin API Key generated from CompetitionLabs back office | [optional] 
 
 ### Return type
 
@@ -480,7 +420,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AdminApiKey](../README.md#AdminApiKey), [OAuth2](../README.md#OAuth2)
+[OAuth2](../README.md#OAuth2)
 
 ### HTTP request headers
 
@@ -499,23 +439,17 @@ Create or update file objects and binaries in your CompetitionLabs space
 ### Example
 
 ```javascript
-import CompetitionLabsApplicationServices from 'competition_labs_application_services';
-let defaultClient = CompetitionLabsApplicationServices.ApiClient.instance;
-// Configure API key authorization: AdminApiKey
-let AdminApiKey = defaultClient.authentications['AdminApiKey'];
-AdminApiKey.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//AdminApiKey.apiKeyPrefix = 'Token';
+import CompetitionLabsAdminServices from 'competition_labs_admin_services';
+let defaultClient = CompetitionLabsAdminServices.ApiClient.instance;
 // Configure OAuth2 access token for authorization: OAuth2
 let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new CompetitionLabsApplicationServices.FilesApi();
+let apiInstance = new CompetitionLabsAdminServices.FilesApi();
 let opts = {
-  'X_API_KEY': "X_API_KEY_example", // String | The admin API Key generated from CompetitionLabs back office
   'customFields': "customFields_example", // [String] | A list of id's used to add cutom fields
   'tags': "tags_example", // [String] | A list of id's used to tag models
-  'metadata': new CompetitionLabsApplicationServices.Metadata(), // [Metadata] | 
+  'metadata': new CompetitionLabsAdminServices.Metadata(), // [Metadata] | 
   'parentFolderPath': "parentFolderPath_example", // String | The folder to save these file in.
   'files': "/path/to/file", // [File] | The files to upload
   'repositoryId': "repositoryId_example" // String | 
@@ -534,7 +468,6 @@ apiInstance.uploadFileObject(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **X_API_KEY** | **String**| The admin API Key generated from CompetitionLabs back office | [optional] 
  **customFields** | [**[String]**](String.md)| A list of id&#39;s used to add cutom fields | [optional] 
  **tags** | [**[String]**](String.md)| A list of id&#39;s used to tag models | [optional] 
  **metadata** | [**[Metadata]**](Metadata.md)|  | [optional] 
@@ -548,7 +481,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AdminApiKey](../README.md#AdminApiKey), [OAuth2](../README.md#OAuth2)
+[OAuth2](../README.md#OAuth2)
 
 ### HTTP request headers
 

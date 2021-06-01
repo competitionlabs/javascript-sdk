@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.CreateAttachmentRequest
+# CompetitionLabsAdminServices.CreateAttachmentRequest
 
 ## Properties
 

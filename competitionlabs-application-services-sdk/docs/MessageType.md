@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.MessageType
+# CompetitionLabsAdminServices.MessageType
 
 ## Enum
 

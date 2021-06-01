@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.FactDefault
+# CompetitionLabsAdminServices.FactDefault
 
 ## Properties
 

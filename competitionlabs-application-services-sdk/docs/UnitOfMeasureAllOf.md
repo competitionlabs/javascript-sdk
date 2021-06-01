@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.UnitOfMeasureAllOf
+# CompetitionLabsAdminServices.UnitOfMeasureAllOf
 
 ## Properties
 

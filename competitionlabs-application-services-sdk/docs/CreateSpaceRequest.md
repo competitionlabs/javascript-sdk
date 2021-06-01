@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.CreateSpaceRequest
+# CompetitionLabsAdminServices.CreateSpaceRequest
 
 ## Properties
 

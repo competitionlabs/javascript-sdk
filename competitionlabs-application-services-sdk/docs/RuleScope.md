@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.RuleScope
+# CompetitionLabsAdminServices.RuleScope
 
 ## Enum
 

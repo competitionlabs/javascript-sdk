@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.ConnectionResponse
+# CompetitionLabsAdminServices.ConnectionResponse
 
 ## Properties
 

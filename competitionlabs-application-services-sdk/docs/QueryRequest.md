@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.QueryRequest
+# CompetitionLabsAdminServices.QueryRequest
 
 ## Properties
 

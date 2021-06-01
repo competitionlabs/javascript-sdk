@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.Competition
+# CompetitionLabsAdminServices.Competition
 
 ## Properties
 
@@ -18,13 +18,13 @@ Name | Type | Description | Notes
 **termsAndConditions** | **String** | Terms and conditions of a competition. Can be translated | [optional] 
 **maxNumberOfEntrants** | **Number** | Maximum number of partiipants allowed in a competition | [optional] 
 **minNumberOfEntrants** | **Number** | Maximum number of partiipants allowed in a competition | 
-**products** | [**[ProductReduced]**](ProductReduced.md) |  | 
+**entrantMemberType** | **String** |  | [optional] 
+**dependantOn** | [**[Dependancy]**](Dependancy.md) |  | 
 **ruleSets** | [**[RuleSet]**](RuleSet.md) |  | 
 **scheduledStartDate** | **Date** | ISO8601 timestamp for when a Competition should start. All records are stored in UTC time zone | 
 **scheduledEndDate** | **Date** | ISO8601 timestamp for when a Competition should end. All records are stored in UTC time zone | 
 **actualStartDate** | **Date** | ISO8601 timestamp for when a Competition started. All records are stored in UTC time zone | [optional] [readonly] 
 **actualEndDate** | **Date** | ISO8601 timestamp for when a Competition ended. All records are stored in UTC time zone | [optional] [readonly] 
-**includeEntrantsWhere** | [**ComplexFilter**](ComplexFilter.md) |  | [optional] 
 **translations** | **[Object]** |  | [optional] 
 **translatableFields** | **[String]** | ActionType translatable fields | [optional] [readonly] 
 **status** | [**CompetitionStatus**](CompetitionStatus.md) |  | 

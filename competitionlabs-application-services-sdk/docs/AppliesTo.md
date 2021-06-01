@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.AppliesTo
+# CompetitionLabsAdminServices.AppliesTo
 
 ## Enum
 

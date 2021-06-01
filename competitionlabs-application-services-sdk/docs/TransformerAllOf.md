@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.TransformerAllOf
+# CompetitionLabsAdminServices.TransformerAllOf
 
 ## Properties
 

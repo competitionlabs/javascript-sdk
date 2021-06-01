@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.ContestReducedAllOf
+# CompetitionLabsAdminServices.ContestReducedAllOf
 
 ## Properties
 

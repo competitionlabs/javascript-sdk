@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.ContestStatus
+# CompetitionLabsAdminServices.ContestStatus
 
 ## Enum
 

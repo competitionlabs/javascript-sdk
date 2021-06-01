@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.CreateActionTypeRequest
+# CompetitionLabsAdminServices.CreateActionTypeRequest
 
 ## Properties
 

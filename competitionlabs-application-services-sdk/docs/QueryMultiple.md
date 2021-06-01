@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.QueryMultiple
+# CompetitionLabsAdminServices.QueryMultiple
 
 ## Properties
 

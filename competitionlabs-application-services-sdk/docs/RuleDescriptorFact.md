@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.RuleDescriptorFact
+# CompetitionLabsAdminServices.RuleDescriptorFact
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.ApiKeyResponse
+# CompetitionLabsAdminServices.ApiKeyResponse
 
 ## Properties
 

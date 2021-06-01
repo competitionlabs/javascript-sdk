@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.TagsResponse
+# CompetitionLabsAdminServices.TagsResponse
 
 ## Properties
 

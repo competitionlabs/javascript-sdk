@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.MemberResponse
+# CompetitionLabsAdminServices.MemberResponse
 
 ## Properties
 

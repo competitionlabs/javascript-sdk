@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.AchievementLiveStatusRequest
+# CompetitionLabsAdminServices.AchievementLiveStatusRequest
 
 ## Properties
 

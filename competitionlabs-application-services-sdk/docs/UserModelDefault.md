@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.UserModelDefault
+# CompetitionLabsAdminServices.UserModelDefault
 
 ## Properties
 

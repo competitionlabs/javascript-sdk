@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.CustomFieldReducedAllOf
+# CompetitionLabsAdminServices.CustomFieldReducedAllOf
 
 ## Properties
 

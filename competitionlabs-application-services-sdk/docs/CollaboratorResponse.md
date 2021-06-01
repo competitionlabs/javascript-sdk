@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.CollaboratorResponse
+# CompetitionLabsAdminServices.CollaboratorResponse
 
 ## Properties
 

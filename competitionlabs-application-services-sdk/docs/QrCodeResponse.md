@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.QrCodeResponse
+# CompetitionLabsAdminServices.QrCodeResponse
 
 ## Properties
 

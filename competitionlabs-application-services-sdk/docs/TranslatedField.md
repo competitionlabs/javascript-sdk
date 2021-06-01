@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.TranslatedField
+# CompetitionLabsAdminServices.TranslatedField
 
 ## Properties
 

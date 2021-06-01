@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.CollaboratorAllOf
+# CompetitionLabsAdminServices.CollaboratorAllOf
 
 ## Properties
 

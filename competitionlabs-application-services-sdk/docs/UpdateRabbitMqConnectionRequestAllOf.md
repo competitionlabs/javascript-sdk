@@ -1,10 +1,11 @@
-# CompetitionLabsApplicationServices.UpdateRabbitMqConnectionRequestAllOf
+# CompetitionLabsAdminServices.UpdateRabbitMqConnectionRequestAllOf
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **String** | The name of the consumer | 
+**description** | **String** | The description of the consumer | [optional] 
 **uri** | **String** | The SQS endpoint. | 
 **virtualHost** | **String** | The virtual host of the rabbitmq broker | 
 **port** | **Number** | The port number on which consumer will connect on rabbitmq broker | 

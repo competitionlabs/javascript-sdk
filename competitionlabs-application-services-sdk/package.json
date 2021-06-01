@@ -1,12 +1,12 @@
 {
   "name": "@competitionlabs/application-services-sdk",
-  "version": "1.0.0",
+  "version": "1.0.7",
   "description": "CompetitionLabs_Application_Services_are_used_to_manage_and_configure_spaces_",
   "license": "CompetitionLabs General Licence",
   "main": "dist/index.js",
   "scripts": {
     "build": "babel src -d dist",
-    "prepack": "npm run build",
+    "prepare": "npm run build",
     "test": "mocha --require @babel/register --recursive"
   },
   "browser": {

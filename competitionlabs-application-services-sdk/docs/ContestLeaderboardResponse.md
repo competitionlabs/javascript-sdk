@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.ContestLeaderboardResponse
+# CompetitionLabsAdminServices.ContestLeaderboardResponse
 
 ## Properties
 

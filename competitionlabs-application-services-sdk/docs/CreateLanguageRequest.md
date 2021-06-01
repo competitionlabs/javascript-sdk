@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.CreateLanguageRequest
+# CompetitionLabsAdminServices.CreateLanguageRequest
 
 ## Properties
 

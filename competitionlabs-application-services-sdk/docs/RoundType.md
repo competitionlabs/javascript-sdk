@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.RoundType
+# CompetitionLabsAdminServices.RoundType
 
 ## Enum
 

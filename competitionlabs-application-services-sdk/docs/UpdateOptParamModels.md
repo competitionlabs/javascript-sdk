@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.UpdateOptParamModels
+# CompetitionLabsAdminServices.UpdateOptParamModels
 
 ## Properties
 

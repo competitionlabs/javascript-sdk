@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.RewardAllOf
+# CompetitionLabsAdminServices.RewardAllOf
 
 ## Properties
 

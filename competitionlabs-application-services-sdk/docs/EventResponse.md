@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.EventResponse
+# CompetitionLabsAdminServices.EventResponse
 
 ## Properties
 

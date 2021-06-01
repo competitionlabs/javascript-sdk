@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.SortOrder
+# CompetitionLabsAdminServices.SortOrder
 
 ## Enum
 

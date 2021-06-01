@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.Languages
+# CompetitionLabsAdminServices.Languages
 
 ## Properties
 

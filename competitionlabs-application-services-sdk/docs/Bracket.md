@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.Bracket
+# CompetitionLabsAdminServices.Bracket
 
 ## Properties
 

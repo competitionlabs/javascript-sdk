@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.ScoringStrategy
+# CompetitionLabsAdminServices.ScoringStrategy
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.QueryMultipleFields
+# CompetitionLabsAdminServices.QueryMultipleFields
 
 ## Properties
 

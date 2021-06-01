@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.CreateEntityRewardRequest
+# CompetitionLabsAdminServices.CreateEntityRewardRequest
 
 ## Properties
 

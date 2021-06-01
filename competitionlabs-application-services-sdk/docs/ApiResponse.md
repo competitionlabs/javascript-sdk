@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.ApiResponse
+# CompetitionLabsAdminServices.ApiResponse
 
 ## Properties
 

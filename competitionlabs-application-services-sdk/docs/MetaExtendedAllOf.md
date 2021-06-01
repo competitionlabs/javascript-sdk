@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.MetaExtendedAllOf
+# CompetitionLabsAdminServices.MetaExtendedAllOf
 
 ## Properties
 

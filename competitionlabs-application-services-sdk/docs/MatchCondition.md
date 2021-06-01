@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.MatchCondition
+# CompetitionLabsAdminServices.MatchCondition
 
 ## Enum
 

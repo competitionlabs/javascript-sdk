@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.MemberType
+# CompetitionLabsAdminServices.MemberType
 
 ## Enum
 

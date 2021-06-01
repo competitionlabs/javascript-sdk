@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.ConnectionState
+# CompetitionLabsAdminServices.ConnectionState
 
 ## Enum
 

@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.UpdateModelDefault
+# CompetitionLabsAdminServices.UpdateModelDefault
 
 ## Properties
 

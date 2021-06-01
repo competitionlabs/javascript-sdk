@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.MemberAchievementCountAllOf
+# CompetitionLabsAdminServices.MemberAchievementCountAllOf
 
 ## Properties
 

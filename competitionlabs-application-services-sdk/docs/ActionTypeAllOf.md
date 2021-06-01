@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.ActionTypeAllOf
+# CompetitionLabsAdminServices.ActionTypeAllOf
 
 ## Properties
 

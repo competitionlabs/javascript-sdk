@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.OnRuleSetMatchTrigger
+# CompetitionLabsAdminServices.OnRuleSetMatchTrigger
 
 ## Properties
 

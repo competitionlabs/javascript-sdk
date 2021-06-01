@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.RuleSubCondition
+# CompetitionLabsAdminServices.RuleSubCondition
 
 ## Properties
 

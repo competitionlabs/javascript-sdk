@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.ProductResponse
+# CompetitionLabsAdminServices.ProductResponse
 
 ## Properties
 

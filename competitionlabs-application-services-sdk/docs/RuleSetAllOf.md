@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.RuleSetAllOf
+# CompetitionLabsAdminServices.RuleSetAllOf
 
 ## Properties
 

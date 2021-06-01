@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.Role
+# CompetitionLabsAdminServices.Role
 
 ## Enum
 
@@ -9,6 +9,6 @@
 
 * `Web` (value: `"Web"`)
 
-* `user` (value: `"user"`)
+* `User` (value: `"User"`)
 
 

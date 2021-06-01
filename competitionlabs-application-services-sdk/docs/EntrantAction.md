@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.EntrantAction
+# CompetitionLabsAdminServices.EntrantAction
 
 ## Enum
 

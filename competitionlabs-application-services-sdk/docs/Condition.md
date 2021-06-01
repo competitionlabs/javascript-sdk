@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.Condition
+# CompetitionLabsAdminServices.Condition
 
 ## Properties
 

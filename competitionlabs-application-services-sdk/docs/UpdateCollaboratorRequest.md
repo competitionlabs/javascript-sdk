@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.UpdateCollaboratorRequest
+# CompetitionLabsAdminServices.UpdateCollaboratorRequest
 
 ## Properties
 

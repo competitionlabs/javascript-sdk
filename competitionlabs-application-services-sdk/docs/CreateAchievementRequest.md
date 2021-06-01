@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.CreateAchievementRequest
+# CompetitionLabsAdminServices.CreateAchievementRequest
 
 ## Properties
 
@@ -12,10 +12,9 @@ Name | Type | Description | Notes
 **termsAndConditions** | **String** | Terms and conditions of an achievement. Can be translated | [optional] 
 **icon** | **String** | An Icon id that has been pre uploaded to the system to display for Achievement | 
 **ruleSets** | [**[RuleSet]**](RuleSet.md) |  | 
-**dependantOn** | [**DependantOn**](DependantOn.md) |  | [optional] 
+**dependantOn** | [**[Dependancy]**](Dependancy.md) |  | 
 **scheduling** | [**Scheduling**](Scheduling.md) |  | 
 **achievementLiveStatus** | [**AchievementLiveStatus**](AchievementLiveStatus.md) |  | 
-**memberGroups** | **[String]** | A group of members that can receive the achievement | 
 **maxNumberOfissues** | **Number** | Maximum number of issued achievements | [optional] 
 **translations** | **[Object]** |  | [optional] 
 **rewards** | [**[CreateRewardRequest]**](CreateRewardRequest.md) |  | [optional] 

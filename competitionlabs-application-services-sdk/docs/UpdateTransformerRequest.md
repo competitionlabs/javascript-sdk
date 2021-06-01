@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.UpdateTransformerRequest
+# CompetitionLabsAdminServices.UpdateTransformerRequest
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.Entrant
+# CompetitionLabsAdminServices.Entrant
 
 ## Properties
 

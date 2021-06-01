@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.Metadata
+# CompetitionLabsAdminServices.Metadata
 
 ## Properties
 

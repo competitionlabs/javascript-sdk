@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.RangeQuery
+# CompetitionLabsAdminServices.RangeQuery
 
 ## Properties
 

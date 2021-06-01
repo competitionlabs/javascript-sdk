@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.Repository
+# CompetitionLabsAdminServices.Repository
 
 ## Properties
 

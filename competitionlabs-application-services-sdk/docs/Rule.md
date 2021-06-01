@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.Rule
+# CompetitionLabsAdminServices.Rule
 
 ## Properties
 

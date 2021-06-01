@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.HostingOptions
+# CompetitionLabsAdminServices.HostingOptions
 
 ## Properties
 

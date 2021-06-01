@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.TestMessageRequest
+# CompetitionLabsAdminServices.TestMessageRequest
 
 ## Properties
 

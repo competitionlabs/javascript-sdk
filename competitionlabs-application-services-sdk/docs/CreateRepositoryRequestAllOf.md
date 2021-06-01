@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.CreateRepositoryRequestAllOf
+# CompetitionLabsAdminServices.CreateRepositoryRequestAllOf
 
 ## Properties
 

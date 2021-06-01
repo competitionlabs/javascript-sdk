@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.Contact
+# CompetitionLabsAdminServices.Contact
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.MemberMessageAllOf
+# CompetitionLabsAdminServices.MemberMessageAllOf
 
 ## Properties
 

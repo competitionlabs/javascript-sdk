@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.ActionTypeResponse
+# CompetitionLabsAdminServices.ActionTypeResponse
 
 ## Properties
 

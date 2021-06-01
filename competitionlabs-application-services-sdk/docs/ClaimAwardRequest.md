@@ -1,4 +1,4 @@
-# CompetitionLabsApplicationServices.ClaimAwardRequest
+# CompetitionLabsAdminServices.ClaimAwardRequest
 
 ## Properties
 
