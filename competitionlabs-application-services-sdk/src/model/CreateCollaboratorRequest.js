@@ -12,7 +12,6 @@
  */
 
 import ApiClient from '../ApiClient';
-import Role from './Role';
 
 /**
  * The CreateCollaboratorRequest model module.
@@ -24,11 +23,11 @@ class CreateCollaboratorRequest {
      * Constructs a new <code>CreateCollaboratorRequest</code>.
      * @alias module:model/CreateCollaboratorRequest
      * @param email {String} The email of the user to log in
-     * @param role {module:model/Role} 
+     * @param roles {Array.<String>} 
      */
-    constructor(email, role) { 
+    constructor(email, roles) { 
         
-        CreateCollaboratorRequest.initialize(this, email, role);
+        CreateCollaboratorRequest.initialize(this, email, roles);
     }
 
     /**
@@ -36,9 +35,9 @@ class CreateCollaboratorRequest {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, email, role) { 
+    static initialize(obj, email, roles) { 
         obj['email'] = email;
-        obj['role'] = role;
+        obj['roles'] = roles;
     }
 
     /**
@@ -55,8 +54,8 @@ class CreateCollaboratorRequest {
             if (data.hasOwnProperty('email')) {
                 obj['email'] = ApiClient.convertToType(data['email'], 'String');
             }
-            if (data.hasOwnProperty('role')) {
-                obj['role'] = Role.constructFromObject(data['role']);
+            if (data.hasOwnProperty('roles')) {
+                obj['roles'] = ApiClient.convertToType(data['roles'], ['String']);
             }
         }
         return obj;
@@ -72,9 +71,9 @@ class CreateCollaboratorRequest {
 CreateCollaboratorRequest.prototype['email'] = undefined;
 
 /**
- * @member {module:model/Role} role
+ * @member {Array.<String>} roles
  */
-CreateCollaboratorRequest.prototype['role'] = undefined;
+CreateCollaboratorRequest.prototype['roles'] = undefined;
 
 
 

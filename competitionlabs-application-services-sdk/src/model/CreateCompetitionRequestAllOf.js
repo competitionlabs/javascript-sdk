@@ -32,15 +32,16 @@ class CreateCompetitionRequestAllOf {
      * @param numberOfRounds {Number} Number of rounds to be played in a competition
      * @param name {String} A name or a name of a competition. Can be translated
      * @param minNumberOfEntrants {Number} Maximum number of partiipants allowed in a competition
-     * @param dependantOn {Array.<module:model/Dependancy>} 
+     * @param dependantOn {module:model/Dependancy} 
      * @param ruleSets {Array.<module:model/RuleSet>} 
      * @param scheduledStartDate {Date} ISO8601 timestamp for when a Competition should start. All records are stored in UTC time zone
      * @param scheduledEndDate {Date} ISO8601 timestamp for when a Competition should end. All records are stored in UTC time zone
      * @param constraints {Array.<String>} Additional constraints
+     * @param productIds {Array.<String>} 
      */
-    constructor(competitionType, numberOfRounds, name, minNumberOfEntrants, dependantOn, ruleSets, scheduledStartDate, scheduledEndDate, constraints) { 
+    constructor(competitionType, numberOfRounds, name, minNumberOfEntrants, dependantOn, ruleSets, scheduledStartDate, scheduledEndDate, constraints, productIds) { 
         
-        CreateCompetitionRequestAllOf.initialize(this, competitionType, numberOfRounds, name, minNumberOfEntrants, dependantOn, ruleSets, scheduledStartDate, scheduledEndDate, constraints);
+        CreateCompetitionRequestAllOf.initialize(this, competitionType, numberOfRounds, name, minNumberOfEntrants, dependantOn, ruleSets, scheduledStartDate, scheduledEndDate, constraints, productIds);
     }
 
     /**
@@ -48,7 +49,7 @@ class CreateCompetitionRequestAllOf {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, competitionType, numberOfRounds, name, minNumberOfEntrants, dependantOn, ruleSets, scheduledStartDate, scheduledEndDate, constraints) { 
+    static initialize(obj, competitionType, numberOfRounds, name, minNumberOfEntrants, dependantOn, ruleSets, scheduledStartDate, scheduledEndDate, constraints, productIds) { 
         obj['competitionType'] = competitionType;
         obj['numberOfRounds'] = numberOfRounds;
         obj['name'] = name;
@@ -58,6 +59,7 @@ class CreateCompetitionRequestAllOf {
         obj['scheduledStartDate'] = scheduledStartDate;
         obj['scheduledEndDate'] = scheduledEndDate;
         obj['constraints'] = constraints;
+        obj['productIds'] = productIds;
     }
 
     /**
@@ -99,7 +101,7 @@ class CreateCompetitionRequestAllOf {
                 obj['minNumberOfEntrants'] = ApiClient.convertToType(data['minNumberOfEntrants'], 'Number');
             }
             if (data.hasOwnProperty('dependantOn')) {
-                obj['dependantOn'] = ApiClient.convertToType(data['dependantOn'], [Dependancy]);
+                obj['dependantOn'] = Dependancy.constructFromObject(data['dependantOn']);
             }
             if (data.hasOwnProperty('ruleSets')) {
                 obj['ruleSets'] = ApiClient.convertToType(data['ruleSets'], [RuleSet]);
@@ -121,6 +123,9 @@ class CreateCompetitionRequestAllOf {
             }
             if (data.hasOwnProperty('constraints')) {
                 obj['constraints'] = ApiClient.convertToType(data['constraints'], ['String']);
+            }
+            if (data.hasOwnProperty('productIds')) {
+                obj['productIds'] = ApiClient.convertToType(data['productIds'], ['String']);
             }
         }
         return obj;
@@ -182,7 +187,7 @@ CreateCompetitionRequestAllOf.prototype['maxNumberOfEntrants'] = undefined;
 CreateCompetitionRequestAllOf.prototype['minNumberOfEntrants'] = undefined;
 
 /**
- * @member {Array.<module:model/Dependancy>} dependantOn
+ * @member {module:model/Dependancy} dependantOn
  */
 CreateCompetitionRequestAllOf.prototype['dependantOn'] = undefined;
 
@@ -223,6 +228,11 @@ CreateCompetitionRequestAllOf.prototype['rewards'] = undefined;
  * @member {Array.<String>} constraints
  */
 CreateCompetitionRequestAllOf.prototype['constraints'] = undefined;
+
+/**
+ * @member {Array.<String>} productIds
+ */
+CreateCompetitionRequestAllOf.prototype['productIds'] = undefined;
 
 
 

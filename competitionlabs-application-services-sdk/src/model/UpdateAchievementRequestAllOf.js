@@ -29,16 +29,14 @@ class UpdateAchievementRequestAllOf {
      * Constructs a new <code>UpdateAchievementRequestAllOf</code>.
      * @alias module:model/UpdateAchievementRequestAllOf
      * @param name {String} A name for the Achievement. Can be translated
-     * @param icon {String} An Icon id that has been pre uploaded to the system to display for Achievement
      * @param ruleSets {Array.<module:model/RuleSet>} 
-     * @param dependantOn {Array.<module:model/Dependancy>} 
      * @param scheduling {module:model/Scheduling} 
      * @param achievementLiveStatus {module:model/AchievementLiveStatus} 
      * @param constraints {Array.<String>} Additional constraints
      */
-    constructor(name, icon, ruleSets, dependantOn, scheduling, achievementLiveStatus, constraints) { 
+    constructor(name, ruleSets, scheduling, achievementLiveStatus, constraints) { 
         
-        UpdateAchievementRequestAllOf.initialize(this, name, icon, ruleSets, dependantOn, scheduling, achievementLiveStatus, constraints);
+        UpdateAchievementRequestAllOf.initialize(this, name, ruleSets, scheduling, achievementLiveStatus, constraints);
     }
 
     /**
@@ -46,11 +44,9 @@ class UpdateAchievementRequestAllOf {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, name, icon, ruleSets, dependantOn, scheduling, achievementLiveStatus, constraints) { 
+    static initialize(obj, name, ruleSets, scheduling, achievementLiveStatus, constraints) { 
         obj['name'] = name;
-        obj['icon'] = icon;
         obj['ruleSets'] = ruleSets;
-        obj['dependantOn'] = dependantOn;
         obj['scheduling'] = scheduling;
         obj['achievementLiveStatus'] = achievementLiveStatus;
         obj['constraints'] = constraints;
@@ -83,7 +79,7 @@ class UpdateAchievementRequestAllOf {
                 obj['ruleSets'] = ApiClient.convertToType(data['ruleSets'], [RuleSet]);
             }
             if (data.hasOwnProperty('dependantOn')) {
-                obj['dependantOn'] = ApiClient.convertToType(data['dependantOn'], [Dependancy]);
+                obj['dependantOn'] = Dependancy.constructFromObject(data['dependantOn']);
             }
             if (data.hasOwnProperty('scheduling')) {
                 obj['scheduling'] = Scheduling.constructFromObject(data['scheduling']);
@@ -91,8 +87,8 @@ class UpdateAchievementRequestAllOf {
             if (data.hasOwnProperty('achievementLiveStatus')) {
                 obj['achievementLiveStatus'] = AchievementLiveStatus.constructFromObject(data['achievementLiveStatus']);
             }
-            if (data.hasOwnProperty('maxNumberOfissues')) {
-                obj['maxNumberOfissues'] = ApiClient.convertToType(data['maxNumberOfissues'], 'Number');
+            if (data.hasOwnProperty('maxNumberOfIssues')) {
+                obj['maxNumberOfIssues'] = ApiClient.convertToType(data['maxNumberOfIssues'], 'Number');
             }
             if (data.hasOwnProperty('translations')) {
                 obj['translations'] = ApiClient.convertToType(data['translations'], [Object]);
@@ -140,7 +136,7 @@ UpdateAchievementRequestAllOf.prototype['icon'] = undefined;
 UpdateAchievementRequestAllOf.prototype['ruleSets'] = undefined;
 
 /**
- * @member {Array.<module:model/Dependancy>} dependantOn
+ * @member {module:model/Dependancy} dependantOn
  */
 UpdateAchievementRequestAllOf.prototype['dependantOn'] = undefined;
 
@@ -156,9 +152,9 @@ UpdateAchievementRequestAllOf.prototype['achievementLiveStatus'] = undefined;
 
 /**
  * Maximum number of issued achievements
- * @member {Number} maxNumberOfissues
+ * @member {Number} maxNumberOfIssues
  */
-UpdateAchievementRequestAllOf.prototype['maxNumberOfissues'] = undefined;
+UpdateAchievementRequestAllOf.prototype['maxNumberOfIssues'] = undefined;
 
 /**
  * @member {Array.<Object.<String, module:model/TranslationValue>>} translations

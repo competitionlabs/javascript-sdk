@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 **maxNumberOfEntrants** | **Number** | Maximum number of partiipants allowed in a competition | [optional] 
 **minNumberOfEntrants** | **Number** | Maximum number of partiipants allowed in a competition | 
 **entrantMemberType** | **String** |  | [optional] 
-**dependantOn** | [**[Dependancy]**](Dependancy.md) |  | 
+**dependantOn** | [**Dependancy**](Dependancy.md) |  | 
 **ruleSets** | [**[RuleSet]**](RuleSet.md) |  | 
 **scheduledStartDate** | **Date** | ISO8601 timestamp for when a Competition should start. All records are stored in UTC time zone | 
 **scheduledEndDate** | **Date** | ISO8601 timestamp for when a Competition should end. All records are stored in UTC time zone | 
@@ -32,5 +32,6 @@ Name | Type | Description | Notes
 **contests** | [**[ContestReduced]**](ContestReduced.md) |  | [optional] 
 **rewards** | [**[RewardReduced]**](RewardReduced.md) |  | [optional] 
 **constraints** | **[String]** | Additional constraints | 
+**products** | [**[ProductReduced]**](ProductReduced.md) |  | 
 
 

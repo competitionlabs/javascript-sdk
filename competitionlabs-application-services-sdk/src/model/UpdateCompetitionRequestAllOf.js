@@ -35,12 +35,13 @@ class UpdateCompetitionRequestAllOf {
      * @param ruleSets {Array.<module:model/RuleSet>} 
      * @param scheduledStartDate {Date} ISO8601 timestamp for when a Competition should start. All records are stored in UTC time zone
      * @param scheduledEndDate {Date} ISO8601 timestamp for when a Competition should end. All records are stored in UTC time zone
-     * @param dependantOn {Array.<module:model/Dependancy>} 
+     * @param dependantOn {module:model/Dependancy} 
      * @param constraints {Array.<String>} Additional constraints
+     * @param productIds {Array.<String>} 
      */
-    constructor(competitionType, numberOfRounds, name, minNumberOfEntrants, ruleSets, scheduledStartDate, scheduledEndDate, dependantOn, constraints) { 
+    constructor(competitionType, numberOfRounds, name, minNumberOfEntrants, ruleSets, scheduledStartDate, scheduledEndDate, dependantOn, constraints, productIds) { 
         
-        UpdateCompetitionRequestAllOf.initialize(this, competitionType, numberOfRounds, name, minNumberOfEntrants, ruleSets, scheduledStartDate, scheduledEndDate, dependantOn, constraints);
+        UpdateCompetitionRequestAllOf.initialize(this, competitionType, numberOfRounds, name, minNumberOfEntrants, ruleSets, scheduledStartDate, scheduledEndDate, dependantOn, constraints, productIds);
     }
 
     /**
@@ -48,7 +49,7 @@ class UpdateCompetitionRequestAllOf {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, competitionType, numberOfRounds, name, minNumberOfEntrants, ruleSets, scheduledStartDate, scheduledEndDate, dependantOn, constraints) { 
+    static initialize(obj, competitionType, numberOfRounds, name, minNumberOfEntrants, ruleSets, scheduledStartDate, scheduledEndDate, dependantOn, constraints, productIds) { 
         obj['competitionType'] = competitionType;
         obj['numberOfRounds'] = numberOfRounds;
         obj['name'] = name;
@@ -58,6 +59,7 @@ class UpdateCompetitionRequestAllOf {
         obj['scheduledEndDate'] = scheduledEndDate;
         obj['dependantOn'] = dependantOn;
         obj['constraints'] = constraints;
+        obj['productIds'] = productIds;
     }
 
     /**
@@ -108,7 +110,7 @@ class UpdateCompetitionRequestAllOf {
                 obj['scheduledEndDate'] = ApiClient.convertToType(data['scheduledEndDate'], 'Date');
             }
             if (data.hasOwnProperty('dependantOn')) {
-                obj['dependantOn'] = ApiClient.convertToType(data['dependantOn'], [Dependancy]);
+                obj['dependantOn'] = Dependancy.constructFromObject(data['dependantOn']);
             }
             if (data.hasOwnProperty('translations')) {
                 obj['translations'] = ApiClient.convertToType(data['translations'], [Object]);
@@ -121,6 +123,9 @@ class UpdateCompetitionRequestAllOf {
             }
             if (data.hasOwnProperty('constraints')) {
                 obj['constraints'] = ApiClient.convertToType(data['constraints'], ['String']);
+            }
+            if (data.hasOwnProperty('productIds')) {
+                obj['productIds'] = ApiClient.convertToType(data['productIds'], ['String']);
             }
         }
         return obj;
@@ -199,7 +204,7 @@ UpdateCompetitionRequestAllOf.prototype['scheduledStartDate'] = undefined;
 UpdateCompetitionRequestAllOf.prototype['scheduledEndDate'] = undefined;
 
 /**
- * @member {Array.<module:model/Dependancy>} dependantOn
+ * @member {module:model/Dependancy} dependantOn
  */
 UpdateCompetitionRequestAllOf.prototype['dependantOn'] = undefined;
 
@@ -223,6 +228,11 @@ UpdateCompetitionRequestAllOf.prototype['rewards'] = undefined;
  * @member {Array.<String>} constraints
  */
 UpdateCompetitionRequestAllOf.prototype['constraints'] = undefined;
+
+/**
+ * @member {Array.<String>} productIds
+ */
+UpdateCompetitionRequestAllOf.prototype['productIds'] = undefined;
 
 
 

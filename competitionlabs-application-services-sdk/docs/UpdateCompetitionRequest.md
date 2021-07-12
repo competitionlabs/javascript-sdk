@@ -20,10 +20,11 @@ Name | Type | Description | Notes
 **ruleSets** | [**[RuleSet]**](RuleSet.md) |  | 
 **scheduledStartDate** | **Date** | ISO8601 timestamp for when a Competition should start. All records are stored in UTC time zone | 
 **scheduledEndDate** | **Date** | ISO8601 timestamp for when a Competition should end. All records are stored in UTC time zone | 
-**dependantOn** | [**[Dependancy]**](Dependancy.md) |  | 
+**dependantOn** | [**Dependancy**](Dependancy.md) |  | 
 **translations** | **[Object]** |  | [optional] 
 **contests** | [**[UpdateContestRequest]**](UpdateContestRequest.md) |  | [optional] 
 **rewards** | [**[UpdateRewardRequest]**](UpdateRewardRequest.md) |  | [optional] 
 **constraints** | **[String]** | Additional constraints | 
+**productIds** | **[String]** |  | 
 
 

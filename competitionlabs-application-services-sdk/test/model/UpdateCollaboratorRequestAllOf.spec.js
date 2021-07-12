@@ -54,8 +54,14 @@
       //expect(instance).to.be.a(CompetitionLabsAdminServices.UpdateCollaboratorRequestAllOf);
     });
 
-    it('should have the property role (base name: "role")', function() {
-      // uncomment below and update the code to test the property role
+    it('should have the property roles (base name: "roles")', function() {
+      // uncomment below and update the code to test the property roles
+      //var instance = new CompetitionLabsAdminServices.UpdateCollaboratorRequestAllOf();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property email (base name: "email")', function() {
+      // uncomment below and update the code to test the property email
       //var instance = new CompetitionLabsAdminServices.UpdateCollaboratorRequestAllOf();
       //expect(instance).to.be();
     });

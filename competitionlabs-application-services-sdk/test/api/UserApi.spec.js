@@ -48,16 +48,6 @@
   }
 
   describe('UserApi', function() {
-    describe('deleteUser', function() {
-      it('should call deleteUser successfully', function(done) {
-        //uncomment below and update the code to test deleteUser
-        //instance.deleteUser(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
     describe('getUser', function() {
       it('should call getUser successfully', function(done) {
         //uncomment below and update the code to test getUser
@@ -92,16 +82,6 @@
       it('should call markAsRead successfully', function(done) {
         //uncomment below and update the code to test markAsRead
         //instance.markAsRead(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('updateUser', function() {
-      it('should call updateUser successfully', function(done) {
-        //uncomment below and update the code to test updateUser
-        //instance.updateUser(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

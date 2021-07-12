@@ -138,8 +138,8 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property maxNumberOfissues (base name: "maxNumberOfissues")', function() {
-      // uncomment below and update the code to test the property maxNumberOfissues
+    it('should have the property maxNumberOfIssues (base name: "maxNumberOfIssues")', function() {
+      // uncomment below and update the code to test the property maxNumberOfIssues
       //var instance = new CompetitionLabsAdminServices.Achievement();
       //expect(instance).to.be();
     });

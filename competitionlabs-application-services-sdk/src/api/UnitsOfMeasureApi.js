@@ -14,6 +14,7 @@
 
 import ApiClient from "../ApiClient";
 import ApiResponse from '../model/ApiResponse';
+import CollaboratorResponse from '../model/CollaboratorResponse';
 import CreateUnitOfMeasureRequest from '../model/CreateUnitOfMeasureRequest';
 import QueryRequest from '../model/QueryRequest';
 import UnitOfMeasureResponse from '../model/UnitOfMeasureResponse';
@@ -74,6 +75,45 @@ export default class UnitsOfMeasureApi {
       let returnType = ApiResponse;
       return this.apiClient.callApi(
         '/units-of-measure', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the deleteCollaboratorsByQuery operation.
+     * @callback module:api/UnitsOfMeasureApi~deleteCollaboratorsByQueryCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/ApiResponse} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Remove collaborators from account
+     * @param {Object} opts Optional parameters
+     * @param {module:model/QueryRequest} opts.body Remove collaborators from account
+     * @param {module:api/UnitsOfMeasureApi~deleteCollaboratorsByQueryCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/ApiResponse}
+     */
+    deleteCollaboratorsByQuery(opts, callback) {
+      opts = opts || {};
+      let postBody = opts['body'];
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['OAuth2'];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = ApiResponse;
+      return this.apiClient.callApi(
+        '/collaborators/delete/', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
@@ -153,6 +193,45 @@ export default class UnitsOfMeasureApi {
       let returnType = ApiResponse;
       return this.apiClient.callApi(
         '/units-of-measure/delete', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the getCollaboratorsByQuery operation.
+     * @callback module:api/UnitsOfMeasureApi~getCollaboratorsByQueryCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/CollaboratorResponse} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Retrieve collaborators for the account
+     * @param {Object} opts Optional parameters
+     * @param {module:model/QueryRequest} opts.body Retrieve collaborators for the account
+     * @param {module:api/UnitsOfMeasureApi~getCollaboratorsByQueryCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/CollaboratorResponse}
+     */
+    getCollaboratorsByQuery(opts, callback) {
+      opts = opts || {};
+      let postBody = opts['body'];
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['OAuth2'];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = CollaboratorResponse;
+      return this.apiClient.callApi(
+        '/collaborators/query/', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );

@@ -49,6 +49,9 @@ import CloneContestResponse from './model/CloneContestResponse';
 import Collaborator from './model/Collaborator';
 import CollaboratorAllOf from './model/CollaboratorAllOf';
 import CollaboratorResponse from './model/CollaboratorResponse';
+import CollaboratorRolesAvailable from './model/CollaboratorRolesAvailable';
+import CollaboratorRolesAvailableAllOf from './model/CollaboratorRolesAvailableAllOf';
+import CollaboratorRolesResponse from './model/CollaboratorRolesResponse';
 import Competition from './model/Competition';
 import CompetitionAllOf from './model/CompetitionAllOf';
 import CompetitionLeaderboardResponse from './model/CompetitionLeaderboardResponse';
@@ -120,8 +123,6 @@ import CreateSqsConnectionRequestAllOf from './model/CreateSqsConnectionRequestA
 import CreateTagsRequest from './model/CreateTagsRequest';
 import CreateTransformerRequest from './model/CreateTransformerRequest';
 import CreateUnitOfMeasureRequest from './model/CreateUnitOfMeasureRequest';
-import CreateUserRequest from './model/CreateUserRequest';
-import CreateUserRequestAllOf from './model/CreateUserRequestAllOf';
 import CreateWebhookRequest from './model/CreateWebhookRequest';
 import CreateWebhookRequestAllOf from './model/CreateWebhookRequestAllOf';
 import CustomField from './model/CustomField';
@@ -211,6 +212,7 @@ import RepositoryResponse from './model/RepositoryResponse';
 import Result from './model/Result';
 import Reward from './model/Reward';
 import RewardAllOf from './model/RewardAllOf';
+import RewardEntityType from './model/RewardEntityType';
 import RewardReduced from './model/RewardReduced';
 import RewardReducedAllOf from './model/RewardReducedAllOf';
 import RewardResponse from './model/RewardResponse';
@@ -285,6 +287,7 @@ import UpdateContestRequestAllOf from './model/UpdateContestRequestAllOf';
 import UpdateContestStateRequest from './model/UpdateContestStateRequest';
 import UpdateCustomFieldRequest from './model/UpdateCustomFieldRequest';
 import UpdateCustomFieldRequestAllOf from './model/UpdateCustomFieldRequestAllOf';
+import UpdateEntityRewardRequest from './model/UpdateEntityRewardRequest';
 import UpdateFileObjectRequest from './model/UpdateFileObjectRequest';
 import UpdateFileObjectRequestAllOf from './model/UpdateFileObjectRequestAllOf';
 import UpdateKafkaConnectionRequest from './model/UpdateKafkaConnectionRequest';
@@ -304,6 +307,7 @@ import UpdateRabbitMqConnectionRequest from './model/UpdateRabbitMqConnectionReq
 import UpdateRabbitMqConnectionRequestAllOf from './model/UpdateRabbitMqConnectionRequestAllOf';
 import UpdateRepositoryRequest from './model/UpdateRepositoryRequest';
 import UpdateRewardRequest from './model/UpdateRewardRequest';
+import UpdateRewardRequestAllOf from './model/UpdateRewardRequestAllOf';
 import UpdateRewardTypeRequest from './model/UpdateRewardTypeRequest';
 import UpdateRewardTypeRequestAllOf from './model/UpdateRewardTypeRequestAllOf';
 import UpdateSqsConnectionRequest from './model/UpdateSqsConnectionRequest';
@@ -316,8 +320,6 @@ import UpdateTransformerRequest from './model/UpdateTransformerRequest';
 import UpdateTransformerRequestAllOf from './model/UpdateTransformerRequestAllOf';
 import UpdateUnitOfMeasureRequest from './model/UpdateUnitOfMeasureRequest';
 import UpdateUnitOfMeasureRequestAllOf from './model/UpdateUnitOfMeasureRequestAllOf';
-import UpdateUserRequest from './model/UpdateUserRequest';
-import UpdateUserRequestAllOf from './model/UpdateUserRequestAllOf';
 import UpdateWebhookRequest from './model/UpdateWebhookRequest';
 import User from './model/User';
 import UserAllOf from './model/UserAllOf';
@@ -335,6 +337,7 @@ import CompetitionsApi from './api/CompetitionsApi';
 import ConsumersApi from './api/ConsumersApi';
 import ContestsApi from './api/ContestsApi';
 import CustomFieldsApi from './api/CustomFieldsApi';
+import DefaultApi from './api/DefaultApi';
 import EventsApi from './api/EventsApi';
 import FilesApi from './api/FilesApi';
 import LanguagesApi from './api/LanguagesApi';
@@ -350,7 +353,6 @@ import TagsApi from './api/TagsApi';
 import TransformersApi from './api/TransformersApi';
 import UnitsOfMeasureApi from './api/UnitsOfMeasureApi';
 import UserApi from './api/UserApi';
-import UsersApi from './api/UsersApi';
 import WebhooksApi from './api/WebhooksApi';
 
 
@@ -607,6 +609,24 @@ export {
      * @property {module:model/CollaboratorResponse}
      */
     CollaboratorResponse,
+
+    /**
+     * The CollaboratorRolesAvailable model constructor.
+     * @property {module:model/CollaboratorRolesAvailable}
+     */
+    CollaboratorRolesAvailable,
+
+    /**
+     * The CollaboratorRolesAvailableAllOf model constructor.
+     * @property {module:model/CollaboratorRolesAvailableAllOf}
+     */
+    CollaboratorRolesAvailableAllOf,
+
+    /**
+     * The CollaboratorRolesResponse model constructor.
+     * @property {module:model/CollaboratorRolesResponse}
+     */
+    CollaboratorRolesResponse,
 
     /**
      * The Competition model constructor.
@@ -1033,18 +1053,6 @@ export {
      * @property {module:model/CreateUnitOfMeasureRequest}
      */
     CreateUnitOfMeasureRequest,
-
-    /**
-     * The CreateUserRequest model constructor.
-     * @property {module:model/CreateUserRequest}
-     */
-    CreateUserRequest,
-
-    /**
-     * The CreateUserRequestAllOf model constructor.
-     * @property {module:model/CreateUserRequestAllOf}
-     */
-    CreateUserRequestAllOf,
 
     /**
      * The CreateWebhookRequest model constructor.
@@ -1581,6 +1589,12 @@ export {
     RewardAllOf,
 
     /**
+     * The RewardEntityType model constructor.
+     * @property {module:model/RewardEntityType}
+     */
+    RewardEntityType,
+
+    /**
      * The RewardReduced model constructor.
      * @property {module:model/RewardReduced}
      */
@@ -2025,6 +2039,12 @@ export {
     UpdateCustomFieldRequestAllOf,
 
     /**
+     * The UpdateEntityRewardRequest model constructor.
+     * @property {module:model/UpdateEntityRewardRequest}
+     */
+    UpdateEntityRewardRequest,
+
+    /**
      * The UpdateFileObjectRequest model constructor.
      * @property {module:model/UpdateFileObjectRequest}
      */
@@ -2139,6 +2159,12 @@ export {
     UpdateRewardRequest,
 
     /**
+     * The UpdateRewardRequestAllOf model constructor.
+     * @property {module:model/UpdateRewardRequestAllOf}
+     */
+    UpdateRewardRequestAllOf,
+
+    /**
      * The UpdateRewardTypeRequest model constructor.
      * @property {module:model/UpdateRewardTypeRequest}
      */
@@ -2209,18 +2235,6 @@ export {
      * @property {module:model/UpdateUnitOfMeasureRequestAllOf}
      */
     UpdateUnitOfMeasureRequestAllOf,
-
-    /**
-     * The UpdateUserRequest model constructor.
-     * @property {module:model/UpdateUserRequest}
-     */
-    UpdateUserRequest,
-
-    /**
-     * The UpdateUserRequestAllOf model constructor.
-     * @property {module:model/UpdateUserRequestAllOf}
-     */
-    UpdateUserRequestAllOf,
 
     /**
      * The UpdateWebhookRequest model constructor.
@@ -2325,6 +2339,12 @@ export {
     CustomFieldsApi,
 
     /**
+    * The DefaultApi service constructor.
+    * @property {module:api/DefaultApi}
+    */
+    DefaultApi,
+
+    /**
     * The EventsApi service constructor.
     * @property {module:api/EventsApi}
     */
@@ -2413,12 +2433,6 @@ export {
     * @property {module:api/UserApi}
     */
     UserApi,
-
-    /**
-    * The UsersApi service constructor.
-    * @property {module:api/UsersApi}
-    */
-    UsersApi,
 
     /**
     * The WebhooksApi service constructor.

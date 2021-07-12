@@ -15,10 +15,10 @@ Name | Type | Description | Notes
 **termsAndConditions** | **String** | Terms and conditions of an achievement. Can be translated | [optional] 
 **icon** | **String** | An Icon id that has been pre uploaded to the system to display for Achievement | 
 **ruleSets** | [**[RuleSet]**](RuleSet.md) |  | 
-**dependantOn** | [**[Dependancy]**](Dependancy.md) |  | 
+**dependantOn** | [**Dependancy**](Dependancy.md) |  | [optional] 
 **scheduling** | [**Scheduling**](Scheduling.md) |  | 
 **achievementLiveStatus** | [**AchievementLiveStatus**](AchievementLiveStatus.md) |  | 
-**maxNumberOfissues** | **Number** | Maximum number of issued achievements | [optional] 
+**maxNumberOfIssues** | **Number** | Maximum number of issued achievements | [optional] 
 **translations** | **[Object]** |  | [optional] 
 **translatableFields** | **[String]** | Achievements translatable fields | [optional] [readonly] 
 **rewards** | [**[RewardReduced]**](RewardReduced.md) |  | [optional] 

@@ -12,9 +12,7 @@
  */
 
 import ApiClient from '../ApiClient';
-import Role from './Role';
 import UpdateCollaboratorRequestAllOf from './UpdateCollaboratorRequestAllOf';
-import UpdateModelDefault from './UpdateModelDefault';
 
 /**
  * The UpdateCollaboratorRequest model module.
@@ -25,14 +23,13 @@ class UpdateCollaboratorRequest {
     /**
      * Constructs a new <code>UpdateCollaboratorRequest</code>.
      * @alias module:model/UpdateCollaboratorRequest
-     * @implements module:model/UpdateModelDefault
      * @implements module:model/UpdateCollaboratorRequestAllOf
-     * @param id {String} A unique system generated identifier
-     * @param role {module:model/Role} 
+     * @param roles {Array.<String>} 
+     * @param email {String} 
      */
-    constructor(id, role) { 
-        UpdateModelDefault.initialize(this, id);UpdateCollaboratorRequestAllOf.initialize(this, role);
-        UpdateCollaboratorRequest.initialize(this, id, role);
+    constructor(roles, email) { 
+        UpdateCollaboratorRequestAllOf.initialize(this, roles, email);
+        UpdateCollaboratorRequest.initialize(this, roles, email);
     }
 
     /**
@@ -40,9 +37,9 @@ class UpdateCollaboratorRequest {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, id, role) { 
-        obj['id'] = id;
-        obj['role'] = role;
+    static initialize(obj, roles, email) { 
+        obj['roles'] = roles;
+        obj['email'] = email;
     }
 
     /**
@@ -55,14 +52,13 @@ class UpdateCollaboratorRequest {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new UpdateCollaboratorRequest();
-            UpdateModelDefault.constructFromObject(data, obj);
             UpdateCollaboratorRequestAllOf.constructFromObject(data, obj);
 
-            if (data.hasOwnProperty('id')) {
-                obj['id'] = ApiClient.convertToType(data['id'], 'String');
+            if (data.hasOwnProperty('roles')) {
+                obj['roles'] = ApiClient.convertToType(data['roles'], ['String']);
             }
-            if (data.hasOwnProperty('role')) {
-                obj['role'] = Role.constructFromObject(data['role']);
+            if (data.hasOwnProperty('email')) {
+                obj['email'] = ApiClient.convertToType(data['email'], 'String');
             }
         }
         return obj;
@@ -72,28 +68,25 @@ class UpdateCollaboratorRequest {
 }
 
 /**
- * A unique system generated identifier
- * @member {String} id
+ * @member {Array.<String>} roles
  */
-UpdateCollaboratorRequest.prototype['id'] = undefined;
+UpdateCollaboratorRequest.prototype['roles'] = undefined;
 
 /**
- * @member {module:model/Role} role
+ * @member {String} email
  */
-UpdateCollaboratorRequest.prototype['role'] = undefined;
+UpdateCollaboratorRequest.prototype['email'] = undefined;
 
 
-// Implement UpdateModelDefault interface:
-/**
- * A unique system generated identifier
- * @member {String} id
- */
-UpdateModelDefault.prototype['id'] = undefined;
 // Implement UpdateCollaboratorRequestAllOf interface:
 /**
- * @member {module:model/Role} role
+ * @member {Array.<String>} roles
  */
-UpdateCollaboratorRequestAllOf.prototype['role'] = undefined;
+UpdateCollaboratorRequestAllOf.prototype['roles'] = undefined;
+/**
+ * @member {String} email
+ */
+UpdateCollaboratorRequestAllOf.prototype['email'] = undefined;
 
 
 

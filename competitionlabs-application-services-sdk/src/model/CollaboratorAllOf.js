@@ -12,6 +12,7 @@
  */
 
 import ApiClient from '../ApiClient';
+import CollaboratorRolesAvailable from './CollaboratorRolesAvailable';
 
 /**
  * The CollaboratorAllOf model module.
@@ -23,11 +24,10 @@ class CollaboratorAllOf {
      * Constructs a new <code>CollaboratorAllOf</code>.
      * @alias module:model/CollaboratorAllOf
      * @param email {String} The email of the user to log in
-     * @param role {String} The access role of an individual
      */
-    constructor(email, role) { 
+    constructor(email) { 
         
-        CollaboratorAllOf.initialize(this, email, role);
+        CollaboratorAllOf.initialize(this, email);
     }
 
     /**
@@ -35,9 +35,8 @@ class CollaboratorAllOf {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, email, role) { 
+    static initialize(obj, email) { 
         obj['email'] = email;
-        obj['role'] = role;
     }
 
     /**
@@ -51,17 +50,20 @@ class CollaboratorAllOf {
         if (data) {
             obj = obj || new CollaboratorAllOf();
 
-            if (data.hasOwnProperty('name')) {
-                obj['name'] = ApiClient.convertToType(data['name'], 'String');
-            }
-            if (data.hasOwnProperty('surname')) {
-                obj['surname'] = ApiClient.convertToType(data['surname'], 'String');
-            }
             if (data.hasOwnProperty('email')) {
                 obj['email'] = ApiClient.convertToType(data['email'], 'String');
             }
-            if (data.hasOwnProperty('role')) {
-                obj['role'] = ApiClient.convertToType(data['role'], 'String');
+            if (data.hasOwnProperty('roles')) {
+                obj['roles'] = ApiClient.convertToType(data['roles'], ['String']);
+            }
+            if (data.hasOwnProperty('lastName')) {
+                obj['lastName'] = ApiClient.convertToType(data['lastName'], 'String');
+            }
+            if (data.hasOwnProperty('firstName')) {
+                obj['firstName'] = ApiClient.convertToType(data['firstName'], 'String');
+            }
+            if (data.hasOwnProperty('availableRoles')) {
+                obj['availableRoles'] = CollaboratorRolesAvailable.constructFromObject(data['availableRoles']);
             }
         }
         return obj;
@@ -71,18 +73,6 @@ class CollaboratorAllOf {
 }
 
 /**
- * The Name of an individual
- * @member {String} name
- */
-CollaboratorAllOf.prototype['name'] = undefined;
-
-/**
- * The Surname of an individual
- * @member {String} surname
- */
-CollaboratorAllOf.prototype['surname'] = undefined;
-
-/**
  * The email of the user to log in
  * @member {String} email
  */
@@ -90,9 +80,26 @@ CollaboratorAllOf.prototype['email'] = undefined;
 
 /**
  * The access role of an individual
- * @member {String} role
+ * @member {Array.<String>} roles
  */
-CollaboratorAllOf.prototype['role'] = undefined;
+CollaboratorAllOf.prototype['roles'] = undefined;
+
+/**
+ * The Surname of an individual
+ * @member {String} lastName
+ */
+CollaboratorAllOf.prototype['lastName'] = undefined;
+
+/**
+ * The Name of an individual
+ * @member {String} firstName
+ */
+CollaboratorAllOf.prototype['firstName'] = undefined;
+
+/**
+ * @member {module:model/CollaboratorRolesAvailable} availableRoles
+ */
+CollaboratorAllOf.prototype['availableRoles'] = undefined;
 
 
 

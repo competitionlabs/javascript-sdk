@@ -58,10 +58,20 @@
         done();
       });
     });
-    describe('deleteCollaboratorsById', function() {
-      it('should call deleteCollaboratorsById successfully', function(done) {
-        //uncomment below and update the code to test deleteCollaboratorsById
-        //instance.deleteCollaboratorsById(function(error) {
+    describe('deleteCollaborators', function() {
+      it('should call deleteCollaborators successfully', function(done) {
+        //uncomment below and update the code to test deleteCollaborators
+        //instance.deleteCollaborators(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getAvailableRolesForCollaborators', function() {
+      it('should call getAvailableRolesForCollaborators successfully', function(done) {
+        //uncomment below and update the code to test getAvailableRolesForCollaborators
+        //instance.getAvailableRolesForCollaborators(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -72,16 +82,6 @@
       it('should call getCollaborators successfully', function(done) {
         //uncomment below and update the code to test getCollaborators
         //instance.getCollaborators(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('getCollaboratorsById', function() {
-      it('should call getCollaboratorsById successfully', function(done) {
-        //uncomment below and update the code to test getCollaboratorsById
-        //instance.getCollaboratorsById(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

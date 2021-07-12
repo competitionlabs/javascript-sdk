@@ -12,7 +12,6 @@
  */
 
 import ApiClient from '../ApiClient';
-import Contact from './Contact';
 
 /**
  * The UserAllOf model module.
@@ -61,11 +60,11 @@ class UserAllOf {
             if (data.hasOwnProperty('email')) {
                 obj['email'] = ApiClient.convertToType(data['email'], 'String');
             }
-            if (data.hasOwnProperty('contact')) {
-                obj['contact'] = Contact.constructFromObject(data['contact']);
-            }
             if (data.hasOwnProperty('constraints')) {
                 obj['constraints'] = ApiClient.convertToType(data['constraints'], ['String']);
+            }
+            if (data.hasOwnProperty('spaces')) {
+                obj['spaces'] = ApiClient.convertToType(data['spaces'], ['String']);
             }
         }
         return obj;
@@ -93,15 +92,15 @@ UserAllOf.prototype['lastName'] = undefined;
 UserAllOf.prototype['email'] = undefined;
 
 /**
- * @member {module:model/Contact} contact
- */
-UserAllOf.prototype['contact'] = undefined;
-
-/**
  * Additional constraints
  * @member {Array.<String>} constraints
  */
 UserAllOf.prototype['constraints'] = undefined;
+
+/**
+ * @member {Array.<String>} spaces
+ */
+UserAllOf.prototype['spaces'] = undefined;
 
 
 

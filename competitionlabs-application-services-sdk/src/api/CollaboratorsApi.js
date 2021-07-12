@@ -15,6 +15,7 @@
 import ApiClient from "../ApiClient";
 import ApiResponse from '../model/ApiResponse';
 import CollaboratorResponse from '../model/CollaboratorResponse';
+import CollaboratorRolesResponse from '../model/CollaboratorRolesResponse';
 import CreateCollaboratorRequest from '../model/CreateCollaboratorRequest';
 import UpdateCollaboratorRequest from '../model/UpdateCollaboratorRequest';
 
@@ -47,7 +48,7 @@ export default class CollaboratorsApi {
 
     /**
      * Create a new Collaborator in the CompetitionLabs
-     * @param {module:model/CreateCollaboratorRequest} body Create a Collaborator in the CompetitionLabs system
+     * @param {Array.<module:model/CreateCollaboratorRequest>} body Create a Collaborator in the CompetitionLabs system
      * @param {module:api/CollaboratorsApi~createCollaboratorsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ApiResponse}
      */
@@ -79,30 +80,28 @@ export default class CollaboratorsApi {
     }
 
     /**
-     * Callback function to receive the result of the deleteCollaboratorsById operation.
-     * @callback module:api/CollaboratorsApi~deleteCollaboratorsByIdCallback
+     * Callback function to receive the result of the deleteCollaborators operation.
+     * @callback module:api/CollaboratorsApi~deleteCollaboratorsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/ApiResponse} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
-     * Delete the Collaborator for a given identifier specified
-     * @param {String} id Unique identifier of the resource
-     * @param {module:api/CollaboratorsApi~deleteCollaboratorsByIdCallback} callback The callback function, accepting three arguments: error, data, response
+     * Returns a list of Collaborators. This assumes that Users have first been uploaded via a POST request or web console
+     * @param {Object} opts Optional parameters
+     * @param {Array.<String>} opts.emails The list of user emails to search by
+     * @param {module:api/CollaboratorsApi~deleteCollaboratorsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ApiResponse}
      */
-    deleteCollaboratorsById(id, callback) {
+    deleteCollaborators(opts, callback) {
+      opts = opts || {};
       let postBody = null;
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling deleteCollaboratorsById");
-      }
 
       let pathParams = {
-        'id': id
       };
       let queryParams = {
+        'emails': this.apiClient.buildCollectionParam(opts['emails'], 'multi')
       };
       let headerParams = {
       };
@@ -114,7 +113,43 @@ export default class CollaboratorsApi {
       let accepts = ['application/json'];
       let returnType = ApiResponse;
       return this.apiClient.callApi(
-        '/collaborators/{id}', 'DELETE',
+        '/collaborators', 'DELETE',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the getAvailableRolesForCollaborators operation.
+     * @callback module:api/CollaboratorsApi~getAvailableRolesForCollaboratorsCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/CollaboratorRolesResponse} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Returns a list of Collaborators. This assumes that Users have first been uploaded via a POST request or web console
+     * @param {module:api/CollaboratorsApi~getAvailableRolesForCollaboratorsCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/CollaboratorRolesResponse}
+     */
+    getAvailableRolesForCollaborators(callback) {
+      let postBody = null;
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['OAuth2'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = CollaboratorRolesResponse;
+      return this.apiClient.callApi(
+        '/collaborators/available-roles', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
@@ -131,6 +166,7 @@ export default class CollaboratorsApi {
     /**
      * Returns a list of Collaborators. This assumes that Users have first been uploaded via a POST request or web console
      * @param {Object} opts Optional parameters
+     * @param {Array.<String>} opts.emails The list of user emails to search by
      * @param {Number} opts.limit Limit the returned total records found
      * @param {Number} opts.skip Skip the returned records found and return the next batch of records
      * @param {module:api/CollaboratorsApi~getCollaboratorsCallback} callback The callback function, accepting three arguments: error, data, response
@@ -143,6 +179,7 @@ export default class CollaboratorsApi {
       let pathParams = {
       };
       let queryParams = {
+        'emails': this.apiClient.buildCollectionParam(opts['emails'], 'multi'),
         '_limit': opts['limit'],
         '_skip': opts['skip']
       };
@@ -163,48 +200,6 @@ export default class CollaboratorsApi {
     }
 
     /**
-     * Callback function to receive the result of the getCollaboratorsById operation.
-     * @callback module:api/CollaboratorsApi~getCollaboratorsByIdCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/CollaboratorResponse} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Returns a Collaborator by identifier requested. This assumes that Users have first been uploaded via a POST request or web console
-     * @param {String} id Unique identifier of the resource
-     * @param {module:api/CollaboratorsApi~getCollaboratorsByIdCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/CollaboratorResponse}
-     */
-    getCollaboratorsById(id, callback) {
-      let postBody = null;
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling getCollaboratorsById");
-      }
-
-      let pathParams = {
-        'id': id
-      };
-      let queryParams = {
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = ['OAuth2'];
-      let contentTypes = [];
-      let accepts = ['application/json'];
-      let returnType = CollaboratorResponse;
-      return this.apiClient.callApi(
-        '/collaborators/{id}', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
-      );
-    }
-
-    /**
      * Callback function to receive the result of the updateCollaborators operation.
      * @callback module:api/CollaboratorsApi~updateCollaboratorsCallback
      * @param {String} error Error message, if any.
@@ -215,7 +210,7 @@ export default class CollaboratorsApi {
     /**
      * NOT AVAILABLE IN CURRENT RELEASE
      * Update an existing Collaborator in the CompetitionLabs system
-     * @param {module:model/UpdateCollaboratorRequest} body Update a Collaborator in the CompetitionLabs system. * Any Put body Parameters that are excluded in the Request body field will be considered as empty and updated with an empty field
+     * @param {Array.<module:model/UpdateCollaboratorRequest>} body Update a Collaborator in the CompetitionLabs system. * Any Put body Parameters that are excluded in the Request body field will be considered as empty and updated with an empty field
      * @param {module:api/CollaboratorsApi~updateCollaboratorsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ApiResponse}
      */

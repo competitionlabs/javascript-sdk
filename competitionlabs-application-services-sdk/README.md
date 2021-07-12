@@ -156,9 +156,9 @@ Class | Method | HTTP request | Description
 *CompetitionLabsAdminServices.AwardsApi* | [**getAwards**](docs/AwardsApi.md#getAwards) | **GET** /awards | 
 *CompetitionLabsAdminServices.AwardsApi* | [**getAwardsByQuery**](docs/AwardsApi.md#getAwardsByQuery) | **POST** /awards/query | 
 *CompetitionLabsAdminServices.CollaboratorsApi* | [**createCollaborators**](docs/CollaboratorsApi.md#createCollaborators) | **POST** /collaborators | 
-*CompetitionLabsAdminServices.CollaboratorsApi* | [**deleteCollaboratorsById**](docs/CollaboratorsApi.md#deleteCollaboratorsById) | **DELETE** /collaborators/{id} | 
+*CompetitionLabsAdminServices.CollaboratorsApi* | [**deleteCollaborators**](docs/CollaboratorsApi.md#deleteCollaborators) | **DELETE** /collaborators | 
+*CompetitionLabsAdminServices.CollaboratorsApi* | [**getAvailableRolesForCollaborators**](docs/CollaboratorsApi.md#getAvailableRolesForCollaborators) | **GET** /collaborators/available-roles | 
 *CompetitionLabsAdminServices.CollaboratorsApi* | [**getCollaborators**](docs/CollaboratorsApi.md#getCollaborators) | **GET** /collaborators | 
-*CompetitionLabsAdminServices.CollaboratorsApi* | [**getCollaboratorsById**](docs/CollaboratorsApi.md#getCollaboratorsById) | **GET** /collaborators/{id} | 
 *CompetitionLabsAdminServices.CollaboratorsApi* | [**updateCollaborators**](docs/CollaboratorsApi.md#updateCollaborators) | **PUT** /collaborators | NOT AVAILABLE IN CURRENT RELEASE
 *CompetitionLabsAdminServices.CompetitionsApi* | [**createCompetitions**](docs/CompetitionsApi.md#createCompetitions) | **POST** /competitions | NOT AVAILABLE IN CURRENT RELEASE
 *CompetitionLabsAdminServices.CompetitionsApi* | [**getCompetitions**](docs/CompetitionsApi.md#getCompetitions) | **GET** /competitions | NOT AVAILABLE IN CURRENT RELEASE
@@ -194,6 +194,7 @@ Class | Method | HTTP request | Description
 *CompetitionLabsAdminServices.CustomFieldsApi* | [**getCustomFields**](docs/CustomFieldsApi.md#getCustomFields) | **GET** /custom-fields | 
 *CompetitionLabsAdminServices.CustomFieldsApi* | [**getCustomFieldsByQuery**](docs/CustomFieldsApi.md#getCustomFieldsByQuery) | **POST** /custom-fields/query | 
 *CompetitionLabsAdminServices.CustomFieldsApi* | [**updateCustomFields**](docs/CustomFieldsApi.md#updateCustomFields) | **PUT** /custom-fields | 
+*CompetitionLabsAdminServices.DefaultApi* | [**deleteSpace**](docs/DefaultApi.md#deleteSpace) | **DELETE** /spaces | 
 *CompetitionLabsAdminServices.EventsApi* | [**createEvents**](docs/EventsApi.md#createEvents) | **POST** /events | NOT AVAILABLE IN CURRENT RELEASE
 *CompetitionLabsAdminServices.EventsApi* | [**getEvents**](docs/EventsApi.md#getEvents) | **GET** /events | NOT AVAILABLE IN CURRENT RELEASE
 *CompetitionLabsAdminServices.EventsApi* | [**getEventsByQuery**](docs/EventsApi.md#getEventsByQuery) | **POST** /events/query | NOT AVAILABLE IN CURRENT RELEASE
@@ -264,11 +265,11 @@ Class | Method | HTTP request | Description
 *CompetitionLabsAdminServices.RewardsApi* | [**updateRewards**](docs/RewardsApi.md#updateRewards) | **PUT** /rewards | 
 *CompetitionLabsAdminServices.RulesApi* | [**getRulesByRuleScope**](docs/RulesApi.md#getRulesByRuleScope) | **GET** /rules/{ruleScope} | NOT AVAILABLE IN CURRENT RELEASE
 *CompetitionLabsAdminServices.RulesApi* | [**validateRulesByRuleScope**](docs/RulesApi.md#validateRulesByRuleScope) | **POST** /rules/{ruleScope} | NOT AVAILABLE IN CURRENT RELEASE
-*CompetitionLabsAdminServices.SpacesApi* | [**createSpaces**](docs/SpacesApi.md#createSpaces) | **POST** /spaces | 
+*CompetitionLabsAdminServices.SpacesApi* | [**createSpace**](docs/SpacesApi.md#createSpace) | **POST** /spaces | 
 *CompetitionLabsAdminServices.SpacesApi* | [**deleteSpaces**](docs/SpacesApi.md#deleteSpaces) | **DELETE** /spaces/{spaceName} | NOT AVAILABLE IN CURRENT RELEASE
-*CompetitionLabsAdminServices.SpacesApi* | [**getListOfSpacesForUser**](docs/SpacesApi.md#getListOfSpacesForUser) | **GET** /spaces | 
+*CompetitionLabsAdminServices.SpacesApi* | [**getSpaceInfromation**](docs/SpacesApi.md#getSpaceInfromation) | **GET** /spaces | 
 *CompetitionLabsAdminServices.SpacesApi* | [**getSpacesByName**](docs/SpacesApi.md#getSpacesByName) | **GET** /spaces/{spaceName} | 
-*CompetitionLabsAdminServices.SpacesApi* | [**updateSpaces**](docs/SpacesApi.md#updateSpaces) | **PUT** /spaces | 
+*CompetitionLabsAdminServices.SpacesApi* | [**updateSpace**](docs/SpacesApi.md#updateSpace) | **PUT** /spaces | 
 *CompetitionLabsAdminServices.TagsApi* | [**createTags**](docs/TagsApi.md#createTags) | **POST** /tags | 
 *CompetitionLabsAdminServices.TagsApi* | [**deleteTags**](docs/TagsApi.md#deleteTags) | **DELETE** /tags | 
 *CompetitionLabsAdminServices.TagsApi* | [**deleteTagsByQuery**](docs/TagsApi.md#deleteTagsByQuery) | **POST** /tags/delete | 
@@ -282,22 +283,17 @@ Class | Method | HTTP request | Description
 *CompetitionLabsAdminServices.TransformersApi* | [**getTransformersByQuery**](docs/TransformersApi.md#getTransformersByQuery) | **POST** /transformers/query | 
 *CompetitionLabsAdminServices.TransformersApi* | [**updateTransformers**](docs/TransformersApi.md#updateTransformers) | **PUT** /transformers | 
 *CompetitionLabsAdminServices.UnitsOfMeasureApi* | [**createUnitsOfMeasure**](docs/UnitsOfMeasureApi.md#createUnitsOfMeasure) | **POST** /units-of-measure | 
+*CompetitionLabsAdminServices.UnitsOfMeasureApi* | [**deleteCollaboratorsByQuery**](docs/UnitsOfMeasureApi.md#deleteCollaboratorsByQuery) | **POST** /collaborators/delete/ | 
 *CompetitionLabsAdminServices.UnitsOfMeasureApi* | [**deleteUnitsOfMeasure**](docs/UnitsOfMeasureApi.md#deleteUnitsOfMeasure) | **DELETE** /units-of-measure | 
 *CompetitionLabsAdminServices.UnitsOfMeasureApi* | [**deleteUnitsOfMeasureByQuery**](docs/UnitsOfMeasureApi.md#deleteUnitsOfMeasureByQuery) | **POST** /units-of-measure/delete | 
+*CompetitionLabsAdminServices.UnitsOfMeasureApi* | [**getCollaboratorsByQuery**](docs/UnitsOfMeasureApi.md#getCollaboratorsByQuery) | **POST** /collaborators/query/ | 
 *CompetitionLabsAdminServices.UnitsOfMeasureApi* | [**getUnitsOfMeasure**](docs/UnitsOfMeasureApi.md#getUnitsOfMeasure) | **GET** /units-of-measure | 
 *CompetitionLabsAdminServices.UnitsOfMeasureApi* | [**getUnitsOfMeasureByQuery**](docs/UnitsOfMeasureApi.md#getUnitsOfMeasureByQuery) | **POST** /units-of-measure/query | 
 *CompetitionLabsAdminServices.UnitsOfMeasureApi* | [**updateUnitsOfMeasure**](docs/UnitsOfMeasureApi.md#updateUnitsOfMeasure) | **PUT** /units-of-measure | 
-*CompetitionLabsAdminServices.UserApi* | [**deleteUser**](docs/UserApi.md#deleteUser) | **DELETE** /user | NOT AVAILABLE IN CURRENT RELEASE
 *CompetitionLabsAdminServices.UserApi* | [**getUser**](docs/UserApi.md#getUser) | **GET** /user | 
 *CompetitionLabsAdminServices.UserApi* | [**getUserMessages**](docs/UserApi.md#getUserMessages) | **GET** /user/inbox | NOT AVAILABLE IN CURRENT RELEASE
 *CompetitionLabsAdminServices.UserApi* | [**getUserMessagesById**](docs/UserApi.md#getUserMessagesById) | **GET** /user/inbox/{id} | NOT AVAILABLE IN CURRENT RELEASE
 *CompetitionLabsAdminServices.UserApi* | [**markAsRead**](docs/UserApi.md#markAsRead) | **POST** /user/inbox | NOT AVAILABLE IN CURRENT RELEASE
-*CompetitionLabsAdminServices.UserApi* | [**updateUser**](docs/UserApi.md#updateUser) | **PUT** /user | NOT AVAILABLE IN CURRENT RELEASE
-*CompetitionLabsAdminServices.UsersApi* | [**createUser**](docs/UsersApi.md#createUser) | **POST** /users | 
-*CompetitionLabsAdminServices.UsersApi* | [**deleteUserForSpace**](docs/UsersApi.md#deleteUserForSpace) | **DELETE** /users/{id} | 
-*CompetitionLabsAdminServices.UsersApi* | [**getUserForSpace**](docs/UsersApi.md#getUserForSpace) | **GET** /users/{id} | 
-*CompetitionLabsAdminServices.UsersApi* | [**getUsersForSpace**](docs/UsersApi.md#getUsersForSpace) | **GET** /users | 
-*CompetitionLabsAdminServices.UsersApi* | [**updateUserForSpace**](docs/UsersApi.md#updateUserForSpace) | **PUT** /users | 
 *CompetitionLabsAdminServices.WebhooksApi* | [**createWebhooks**](docs/WebhooksApi.md#createWebhooks) | **POST** /webhooks | 
 *CompetitionLabsAdminServices.WebhooksApi* | [**deleteWebhooks**](docs/WebhooksApi.md#deleteWebhooks) | **DELETE** /webhooks | 
 *CompetitionLabsAdminServices.WebhooksApi* | [**deleteWebhooksByQuery**](docs/WebhooksApi.md#deleteWebhooksByQuery) | **POST** /webhooks/delete | 
@@ -346,6 +342,9 @@ Class | Method | HTTP request | Description
  - [CompetitionLabsAdminServices.Collaborator](docs/Collaborator.md)
  - [CompetitionLabsAdminServices.CollaboratorAllOf](docs/CollaboratorAllOf.md)
  - [CompetitionLabsAdminServices.CollaboratorResponse](docs/CollaboratorResponse.md)
+ - [CompetitionLabsAdminServices.CollaboratorRolesAvailable](docs/CollaboratorRolesAvailable.md)
+ - [CompetitionLabsAdminServices.CollaboratorRolesAvailableAllOf](docs/CollaboratorRolesAvailableAllOf.md)
+ - [CompetitionLabsAdminServices.CollaboratorRolesResponse](docs/CollaboratorRolesResponse.md)
  - [CompetitionLabsAdminServices.Competition](docs/Competition.md)
  - [CompetitionLabsAdminServices.CompetitionAllOf](docs/CompetitionAllOf.md)
  - [CompetitionLabsAdminServices.CompetitionLeaderboardResponse](docs/CompetitionLeaderboardResponse.md)
@@ -417,8 +416,6 @@ Class | Method | HTTP request | Description
  - [CompetitionLabsAdminServices.CreateTagsRequest](docs/CreateTagsRequest.md)
  - [CompetitionLabsAdminServices.CreateTransformerRequest](docs/CreateTransformerRequest.md)
  - [CompetitionLabsAdminServices.CreateUnitOfMeasureRequest](docs/CreateUnitOfMeasureRequest.md)
- - [CompetitionLabsAdminServices.CreateUserRequest](docs/CreateUserRequest.md)
- - [CompetitionLabsAdminServices.CreateUserRequestAllOf](docs/CreateUserRequestAllOf.md)
  - [CompetitionLabsAdminServices.CreateWebhookRequest](docs/CreateWebhookRequest.md)
  - [CompetitionLabsAdminServices.CreateWebhookRequestAllOf](docs/CreateWebhookRequestAllOf.md)
  - [CompetitionLabsAdminServices.CustomField](docs/CustomField.md)
@@ -508,6 +505,7 @@ Class | Method | HTTP request | Description
  - [CompetitionLabsAdminServices.Result](docs/Result.md)
  - [CompetitionLabsAdminServices.Reward](docs/Reward.md)
  - [CompetitionLabsAdminServices.RewardAllOf](docs/RewardAllOf.md)
+ - [CompetitionLabsAdminServices.RewardEntityType](docs/RewardEntityType.md)
  - [CompetitionLabsAdminServices.RewardReduced](docs/RewardReduced.md)
  - [CompetitionLabsAdminServices.RewardReducedAllOf](docs/RewardReducedAllOf.md)
  - [CompetitionLabsAdminServices.RewardResponse](docs/RewardResponse.md)
@@ -582,6 +580,7 @@ Class | Method | HTTP request | Description
  - [CompetitionLabsAdminServices.UpdateContestStateRequest](docs/UpdateContestStateRequest.md)
  - [CompetitionLabsAdminServices.UpdateCustomFieldRequest](docs/UpdateCustomFieldRequest.md)
  - [CompetitionLabsAdminServices.UpdateCustomFieldRequestAllOf](docs/UpdateCustomFieldRequestAllOf.md)
+ - [CompetitionLabsAdminServices.UpdateEntityRewardRequest](docs/UpdateEntityRewardRequest.md)
  - [CompetitionLabsAdminServices.UpdateFileObjectRequest](docs/UpdateFileObjectRequest.md)
  - [CompetitionLabsAdminServices.UpdateFileObjectRequestAllOf](docs/UpdateFileObjectRequestAllOf.md)
  - [CompetitionLabsAdminServices.UpdateKafkaConnectionRequest](docs/UpdateKafkaConnectionRequest.md)
@@ -601,6 +600,7 @@ Class | Method | HTTP request | Description
  - [CompetitionLabsAdminServices.UpdateRabbitMqConnectionRequestAllOf](docs/UpdateRabbitMqConnectionRequestAllOf.md)
  - [CompetitionLabsAdminServices.UpdateRepositoryRequest](docs/UpdateRepositoryRequest.md)
  - [CompetitionLabsAdminServices.UpdateRewardRequest](docs/UpdateRewardRequest.md)
+ - [CompetitionLabsAdminServices.UpdateRewardRequestAllOf](docs/UpdateRewardRequestAllOf.md)
  - [CompetitionLabsAdminServices.UpdateRewardTypeRequest](docs/UpdateRewardTypeRequest.md)
  - [CompetitionLabsAdminServices.UpdateRewardTypeRequestAllOf](docs/UpdateRewardTypeRequestAllOf.md)
  - [CompetitionLabsAdminServices.UpdateSqsConnectionRequest](docs/UpdateSqsConnectionRequest.md)
@@ -613,8 +613,6 @@ Class | Method | HTTP request | Description
  - [CompetitionLabsAdminServices.UpdateTransformerRequestAllOf](docs/UpdateTransformerRequestAllOf.md)
  - [CompetitionLabsAdminServices.UpdateUnitOfMeasureRequest](docs/UpdateUnitOfMeasureRequest.md)
  - [CompetitionLabsAdminServices.UpdateUnitOfMeasureRequestAllOf](docs/UpdateUnitOfMeasureRequestAllOf.md)
- - [CompetitionLabsAdminServices.UpdateUserRequest](docs/UpdateUserRequest.md)
- - [CompetitionLabsAdminServices.UpdateUserRequestAllOf](docs/UpdateUserRequestAllOf.md)
  - [CompetitionLabsAdminServices.UpdateWebhookRequest](docs/UpdateWebhookRequest.md)
  - [CompetitionLabsAdminServices.User](docs/User.md)
  - [CompetitionLabsAdminServices.UserAllOf](docs/UserAllOf.md)

@@ -13,6 +13,7 @@
 
 import ApiClient from '../ApiClient';
 import CollaboratorAllOf from './CollaboratorAllOf';
+import CollaboratorRolesAvailable from './CollaboratorRolesAvailable';
 import ModelDefault from './ModelDefault';
 
 /**
@@ -30,11 +31,10 @@ class Collaborator {
      * @param spaceName {String} This is the space name which is linked to the account
      * @param created {Date} ISO8601 timestamp for when a Model was created. All records are stored in UTC time zone
      * @param email {String} The email of the user to log in
-     * @param role {String} The access role of an individual
      */
-    constructor(id, spaceName, created, email, role) { 
-        ModelDefault.initialize(this, id, spaceName, created);CollaboratorAllOf.initialize(this, email, role);
-        Collaborator.initialize(this, id, spaceName, created, email, role);
+    constructor(id, spaceName, created, email) { 
+        ModelDefault.initialize(this, id, spaceName, created);CollaboratorAllOf.initialize(this, email);
+        Collaborator.initialize(this, id, spaceName, created, email);
     }
 
     /**
@@ -42,12 +42,11 @@ class Collaborator {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, id, spaceName, created, email, role) { 
+    static initialize(obj, id, spaceName, created, email) { 
         obj['id'] = id;
         obj['spaceName'] = spaceName;
         obj['created'] = created;
         obj['email'] = email;
-        obj['role'] = role;
     }
 
     /**
@@ -72,17 +71,20 @@ class Collaborator {
             if (data.hasOwnProperty('created')) {
                 obj['created'] = ApiClient.convertToType(data['created'], 'Date');
             }
-            if (data.hasOwnProperty('name')) {
-                obj['name'] = ApiClient.convertToType(data['name'], 'String');
-            }
-            if (data.hasOwnProperty('surname')) {
-                obj['surname'] = ApiClient.convertToType(data['surname'], 'String');
-            }
             if (data.hasOwnProperty('email')) {
                 obj['email'] = ApiClient.convertToType(data['email'], 'String');
             }
-            if (data.hasOwnProperty('role')) {
-                obj['role'] = ApiClient.convertToType(data['role'], 'String');
+            if (data.hasOwnProperty('roles')) {
+                obj['roles'] = ApiClient.convertToType(data['roles'], ['String']);
+            }
+            if (data.hasOwnProperty('lastName')) {
+                obj['lastName'] = ApiClient.convertToType(data['lastName'], 'String');
+            }
+            if (data.hasOwnProperty('firstName')) {
+                obj['firstName'] = ApiClient.convertToType(data['firstName'], 'String');
+            }
+            if (data.hasOwnProperty('availableRoles')) {
+                obj['availableRoles'] = CollaboratorRolesAvailable.constructFromObject(data['availableRoles']);
             }
         }
         return obj;
@@ -110,18 +112,6 @@ Collaborator.prototype['spaceName'] = undefined;
 Collaborator.prototype['created'] = undefined;
 
 /**
- * The Name of an individual
- * @member {String} name
- */
-Collaborator.prototype['name'] = undefined;
-
-/**
- * The Surname of an individual
- * @member {String} surname
- */
-Collaborator.prototype['surname'] = undefined;
-
-/**
  * The email of the user to log in
  * @member {String} email
  */
@@ -129,9 +119,26 @@ Collaborator.prototype['email'] = undefined;
 
 /**
  * The access role of an individual
- * @member {String} role
+ * @member {Array.<String>} roles
  */
-Collaborator.prototype['role'] = undefined;
+Collaborator.prototype['roles'] = undefined;
+
+/**
+ * The Surname of an individual
+ * @member {String} lastName
+ */
+Collaborator.prototype['lastName'] = undefined;
+
+/**
+ * The Name of an individual
+ * @member {String} firstName
+ */
+Collaborator.prototype['firstName'] = undefined;
+
+/**
+ * @member {module:model/CollaboratorRolesAvailable} availableRoles
+ */
+Collaborator.prototype['availableRoles'] = undefined;
 
 
 // Implement ModelDefault interface:
@@ -152,25 +159,29 @@ ModelDefault.prototype['spaceName'] = undefined;
 ModelDefault.prototype['created'] = undefined;
 // Implement CollaboratorAllOf interface:
 /**
- * The Name of an individual
- * @member {String} name
- */
-CollaboratorAllOf.prototype['name'] = undefined;
-/**
- * The Surname of an individual
- * @member {String} surname
- */
-CollaboratorAllOf.prototype['surname'] = undefined;
-/**
  * The email of the user to log in
  * @member {String} email
  */
 CollaboratorAllOf.prototype['email'] = undefined;
 /**
  * The access role of an individual
- * @member {String} role
+ * @member {Array.<String>} roles
  */
-CollaboratorAllOf.prototype['role'] = undefined;
+CollaboratorAllOf.prototype['roles'] = undefined;
+/**
+ * The Surname of an individual
+ * @member {String} lastName
+ */
+CollaboratorAllOf.prototype['lastName'] = undefined;
+/**
+ * The Name of an individual
+ * @member {String} firstName
+ */
+CollaboratorAllOf.prototype['firstName'] = undefined;
+/**
+ * @member {module:model/CollaboratorRolesAvailable} availableRoles
+ */
+CollaboratorAllOf.prototype['availableRoles'] = undefined;
 
 
 

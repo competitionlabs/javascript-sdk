@@ -60,18 +60,6 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property id (base name: "id")', function() {
-      // uncomment below and update the code to test the property id
-      //var instance = new CompetitionLabsAdminServices.UserModelDefault();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property created (base name: "created")', function() {
-      // uncomment below and update the code to test the property created
-      //var instance = new CompetitionLabsAdminServices.UserModelDefault();
-      //expect(instance).to.be();
-    });
-
   });
 
 }));

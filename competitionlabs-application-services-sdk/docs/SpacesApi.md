@@ -4,17 +4,17 @@ All URIs are relative to *https://api.competitionlabs.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createSpaces**](SpacesApi.md#createSpaces) | **POST** /spaces | 
+[**createSpace**](SpacesApi.md#createSpace) | **POST** /spaces | 
 [**deleteSpaces**](SpacesApi.md#deleteSpaces) | **DELETE** /spaces/{spaceName} | NOT AVAILABLE IN CURRENT RELEASE
-[**getListOfSpacesForUser**](SpacesApi.md#getListOfSpacesForUser) | **GET** /spaces | 
+[**getSpaceInfromation**](SpacesApi.md#getSpaceInfromation) | **GET** /spaces | 
 [**getSpacesByName**](SpacesApi.md#getSpacesByName) | **GET** /spaces/{spaceName} | 
-[**updateSpaces**](SpacesApi.md#updateSpaces) | **PUT** /spaces | 
+[**updateSpace**](SpacesApi.md#updateSpace) | **PUT** /spaces | 
 
 
 
-## createSpaces
+## createSpace
 
-> ApiResponse createSpaces(body)
+> ApiResponse createSpace(body)
 
 
 
@@ -30,8 +30,8 @@ let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new CompetitionLabsAdminServices.SpacesApi();
-let body = new CompetitionLabsAdminServices.CreateSpaceRequest(); // CreateSpaceRequest | Create a Space for the user in the CompetitionLabs
-apiInstance.createSpaces(body, (error, data, response) => {
+let body = [new CompetitionLabsAdminServices.CreateSpaceRequest()]; // [CreateSpaceRequest] | 
+apiInstance.createSpace(body, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -45,7 +45,7 @@ apiInstance.createSpaces(body, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CreateSpaceRequest**](CreateSpaceRequest.md)| Create a Space for the user in the CompetitionLabs | 
+ **body** | [**[CreateSpaceRequest]**](CreateSpaceRequest.md)|  | 
 
 ### Return type
 
@@ -110,9 +110,9 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
-## getListOfSpacesForUser
+## getSpaceInfromation
 
-> SpaceResponse getListOfSpacesForUser(opts)
+> SpaceResponse getSpaceInfromation(opts)
 
 
 
@@ -132,7 +132,7 @@ let opts = {
   'limit': 56, // Number | Limit the returned total records found
   'skip': 56 // Number | Skip the returned records found and return the next batch of records
 };
-apiInstance.getListOfSpacesForUser(opts, (error, data, response) => {
+apiInstance.getSpaceInfromation(opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -218,9 +218,9 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
-## updateSpaces
+## updateSpace
 
-> ApiResponse updateSpaces(body)
+> ApiResponse updateSpace(body)
 
 
 
@@ -237,7 +237,7 @@ OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new CompetitionLabsAdminServices.SpacesApi();
 let body = new CompetitionLabsAdminServices.CreateSpaceRequest(); // CreateSpaceRequest | Create a Space for the user in the CompetitionLabs
-apiInstance.updateSpaces(body, (error, data, response) => {
+apiInstance.updateSpace(body, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {

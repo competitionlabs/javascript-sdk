@@ -60,36 +60,6 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property id (base name: "id")', function() {
-      // uncomment below and update the code to test the property id
-      //var instance = new CompetitionLabsAdminServices.User();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property created (base name: "created")', function() {
-      // uncomment below and update the code to test the property created
-      //var instance = new CompetitionLabsAdminServices.User();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property customFields (base name: "customFields")', function() {
-      // uncomment below and update the code to test the property customFields
-      //var instance = new CompetitionLabsAdminServices.User();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property tags (base name: "tags")', function() {
-      // uncomment below and update the code to test the property tags
-      //var instance = new CompetitionLabsAdminServices.User();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property metadata (base name: "metadata")', function() {
-      // uncomment below and update the code to test the property metadata
-      //var instance = new CompetitionLabsAdminServices.User();
-      //expect(instance).to.be();
-    });
-
     it('should have the property firstName (base name: "firstName")', function() {
       // uncomment below and update the code to test the property firstName
       //var instance = new CompetitionLabsAdminServices.User();
@@ -108,14 +78,14 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property contact (base name: "contact")', function() {
-      // uncomment below and update the code to test the property contact
+    it('should have the property constraints (base name: "constraints")', function() {
+      // uncomment below and update the code to test the property constraints
       //var instance = new CompetitionLabsAdminServices.User();
       //expect(instance).to.be();
     });
 
-    it('should have the property constraints (base name: "constraints")', function() {
-      // uncomment below and update the code to test the property constraints
+    it('should have the property spaces (base name: "spaces")', function() {
+      // uncomment below and update the code to test the property spaces
       //var instance = new CompetitionLabsAdminServices.User();
       //expect(instance).to.be();
     });

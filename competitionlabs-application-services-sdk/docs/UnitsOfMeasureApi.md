@@ -5,8 +5,10 @@ All URIs are relative to *https://api.competitionlabs.io*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**createUnitsOfMeasure**](UnitsOfMeasureApi.md#createUnitsOfMeasure) | **POST** /units-of-measure | 
+[**deleteCollaboratorsByQuery**](UnitsOfMeasureApi.md#deleteCollaboratorsByQuery) | **POST** /collaborators/delete/ | 
 [**deleteUnitsOfMeasure**](UnitsOfMeasureApi.md#deleteUnitsOfMeasure) | **DELETE** /units-of-measure | 
 [**deleteUnitsOfMeasureByQuery**](UnitsOfMeasureApi.md#deleteUnitsOfMeasureByQuery) | **POST** /units-of-measure/delete | 
+[**getCollaboratorsByQuery**](UnitsOfMeasureApi.md#getCollaboratorsByQuery) | **POST** /collaborators/query/ | 
 [**getUnitsOfMeasure**](UnitsOfMeasureApi.md#getUnitsOfMeasure) | **GET** /units-of-measure | 
 [**getUnitsOfMeasureByQuery**](UnitsOfMeasureApi.md#getUnitsOfMeasureByQuery) | **POST** /units-of-measure/query | 
 [**updateUnitsOfMeasure**](UnitsOfMeasureApi.md#updateUnitsOfMeasure) | **PUT** /units-of-measure | 
@@ -47,6 +49,57 @@ apiInstance.createUnitsOfMeasure(body, (error, data, response) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **body** | [**[CreateUnitOfMeasureRequest]**](CreateUnitOfMeasureRequest.md)| Create a Unit of measure in the CompetitionLabs database | 
+
+### Return type
+
+[**ApiResponse**](ApiResponse.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## deleteCollaboratorsByQuery
+
+> ApiResponse deleteCollaboratorsByQuery(opts)
+
+
+
+Remove collaborators from account
+
+### Example
+
+```javascript
+import CompetitionLabsAdminServices from 'competition_labs_admin_services';
+let defaultClient = CompetitionLabsAdminServices.ApiClient.instance;
+// Configure OAuth2 access token for authorization: OAuth2
+let OAuth2 = defaultClient.authentications['OAuth2'];
+OAuth2.accessToken = 'YOUR ACCESS TOKEN';
+
+let apiInstance = new CompetitionLabsAdminServices.UnitsOfMeasureApi();
+let opts = {
+  'body': new CompetitionLabsAdminServices.QueryRequest() // QueryRequest | Remove collaborators from account
+};
+apiInstance.deleteCollaboratorsByQuery(opts, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**QueryRequest**](QueryRequest.md)| Remove collaborators from account | [optional] 
 
 ### Return type
 
@@ -153,6 +206,57 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ApiResponse**](ApiResponse.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## getCollaboratorsByQuery
+
+> CollaboratorResponse getCollaboratorsByQuery(opts)
+
+
+
+Retrieve collaborators for the account
+
+### Example
+
+```javascript
+import CompetitionLabsAdminServices from 'competition_labs_admin_services';
+let defaultClient = CompetitionLabsAdminServices.ApiClient.instance;
+// Configure OAuth2 access token for authorization: OAuth2
+let OAuth2 = defaultClient.authentications['OAuth2'];
+OAuth2.accessToken = 'YOUR ACCESS TOKEN';
+
+let apiInstance = new CompetitionLabsAdminServices.UnitsOfMeasureApi();
+let opts = {
+  'body': new CompetitionLabsAdminServices.QueryRequest() // QueryRequest | Retrieve collaborators for the account
+};
+apiInstance.getCollaboratorsByQuery(opts, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**QueryRequest**](QueryRequest.md)| Retrieve collaborators for the account | [optional] 
+
+### Return type
+
+[**CollaboratorResponse**](CollaboratorResponse.md)
 
 ### Authorization
 

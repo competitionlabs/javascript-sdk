@@ -12,11 +12,11 @@
  */
 
 import ApiClient from '../ApiClient';
-import CreateRewardRequestAllOf from './CreateRewardRequestAllOf';
 import Metadata from './Metadata';
 import TranslationValue from './TranslationValue';
 import UpdateModelDefault from './UpdateModelDefault';
 import UpdateOptParamModels from './UpdateOptParamModels';
+import UpdateRewardRequestAllOf from './UpdateRewardRequestAllOf';
 
 /**
  * The UpdateRewardRequest model module.
@@ -29,17 +29,16 @@ class UpdateRewardRequest {
      * @alias module:model/UpdateRewardRequest
      * @implements module:model/UpdateModelDefault
      * @implements module:model/UpdateOptParamModels
-     * @implements module:model/CreateRewardRequestAllOf
+     * @implements module:model/UpdateRewardRequestAllOf
      * @param id {String} A unique system generated identifier
      * @param name {String} The name of a reward
      * @param rewardRank {String} If used in the context of contest this will associate with the rank of the leaderboard
      * @param rewardValue {Number} Numerical value of the reward that will be issued based on the reward type
-     * @param rewardType {String} A unique id of the Reward Type
      * @param constraints {Array.<String>} Additional constraints
      */
-    constructor(id, name, rewardRank, rewardValue, rewardType, constraints) { 
-        UpdateModelDefault.initialize(this, id);UpdateOptParamModels.initialize(this);CreateRewardRequestAllOf.initialize(this, name, rewardRank, rewardValue, rewardType, constraints);
-        UpdateRewardRequest.initialize(this, id, name, rewardRank, rewardValue, rewardType, constraints);
+    constructor(id, name, rewardRank, rewardValue, constraints) { 
+        UpdateModelDefault.initialize(this, id);UpdateOptParamModels.initialize(this);UpdateRewardRequestAllOf.initialize(this, name, rewardRank, rewardValue, constraints);
+        UpdateRewardRequest.initialize(this, id, name, rewardRank, rewardValue, constraints);
     }
 
     /**
@@ -47,12 +46,11 @@ class UpdateRewardRequest {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, id, name, rewardRank, rewardValue, rewardType, constraints) { 
+    static initialize(obj, id, name, rewardRank, rewardValue, constraints) { 
         obj['id'] = id;
         obj['name'] = name;
         obj['rewardRank'] = rewardRank;
         obj['rewardValue'] = rewardValue;
-        obj['rewardType'] = rewardType;
         obj['constraints'] = constraints;
     }
 
@@ -68,7 +66,7 @@ class UpdateRewardRequest {
             obj = obj || new UpdateRewardRequest();
             UpdateModelDefault.constructFromObject(data, obj);
             UpdateOptParamModels.constructFromObject(data, obj);
-            CreateRewardRequestAllOf.constructFromObject(data, obj);
+            UpdateRewardRequestAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'String');
@@ -94,8 +92,8 @@ class UpdateRewardRequest {
             if (data.hasOwnProperty('rewardValue')) {
                 obj['rewardValue'] = ApiClient.convertToType(data['rewardValue'], 'Number');
             }
-            if (data.hasOwnProperty('rewardType')) {
-                obj['rewardType'] = ApiClient.convertToType(data['rewardType'], 'String');
+            if (data.hasOwnProperty('rewardTypeId')) {
+                obj['rewardTypeId'] = ApiClient.convertToType(data['rewardTypeId'], 'String');
             }
             if (data.hasOwnProperty('icon')) {
                 obj['icon'] = ApiClient.convertToType(data['icon'], 'String');
@@ -174,9 +172,9 @@ UpdateRewardRequest.prototype['rewardValue'] = undefined;
 
 /**
  * A unique id of the Reward Type
- * @member {String} rewardType
+ * @member {String} rewardTypeId
  */
-UpdateRewardRequest.prototype['rewardType'] = undefined;
+UpdateRewardRequest.prototype['rewardTypeId'] = undefined;
 
 /**
  * An Icon id that has been pre uploaded to the system to display for reward
@@ -241,66 +239,66 @@ UpdateOptParamModels.prototype['tags'] = undefined;
  * @member {Array.<module:model/Metadata>} metadata
  */
 UpdateOptParamModels.prototype['metadata'] = undefined;
-// Implement CreateRewardRequestAllOf interface:
+// Implement UpdateRewardRequestAllOf interface:
 /**
  * The name of a reward
  * @member {String} name
  */
-CreateRewardRequestAllOf.prototype['name'] = undefined;
+UpdateRewardRequestAllOf.prototype['name'] = undefined;
 /**
  * The description of a Reward
  * @member {String} description
  */
-CreateRewardRequestAllOf.prototype['description'] = undefined;
+UpdateRewardRequestAllOf.prototype['description'] = undefined;
 /**
  * If used in the context of contest this will associate with the rank of the leaderboard
  * @member {String} rewardRank
  */
-CreateRewardRequestAllOf.prototype['rewardRank'] = undefined;
+UpdateRewardRequestAllOf.prototype['rewardRank'] = undefined;
 /**
  * Numerical value of the reward that will be issued based on the reward type
  * @member {Number} rewardValue
  */
-CreateRewardRequestAllOf.prototype['rewardValue'] = undefined;
+UpdateRewardRequestAllOf.prototype['rewardValue'] = undefined;
 /**
  * A unique id of the Reward Type
- * @member {String} rewardType
+ * @member {String} rewardTypeId
  */
-CreateRewardRequestAllOf.prototype['rewardType'] = undefined;
+UpdateRewardRequestAllOf.prototype['rewardTypeId'] = undefined;
 /**
  * An Icon id that has been pre uploaded to the system to display for reward
  * @member {String} icon
  */
-CreateRewardRequestAllOf.prototype['icon'] = undefined;
+UpdateRewardRequestAllOf.prototype['icon'] = undefined;
 /**
  * how many of thsese rewards are
  * @member {Number} issueLimit
  */
-CreateRewardRequestAllOf.prototype['issueLimit'] = undefined;
+UpdateRewardRequestAllOf.prototype['issueLimit'] = undefined;
 /**
  * Delay of issuing a reward in minutes
  * @member {Number} delay
  */
-CreateRewardRequestAllOf.prototype['delay'] = undefined;
+UpdateRewardRequestAllOf.prototype['delay'] = undefined;
 /**
  * ISO8601 timestamp for when a Reward is available until a specific point in time. All records are stored in UTC time zone
  * @member {Date} pointInTime
  */
-CreateRewardRequestAllOf.prototype['pointInTime'] = undefined;
+UpdateRewardRequestAllOf.prototype['pointInTime'] = undefined;
 /**
  * Reward available for a period of time from issuing in minutes
  * @member {Number} period
  */
-CreateRewardRequestAllOf.prototype['period'] = undefined;
+UpdateRewardRequestAllOf.prototype['period'] = undefined;
 /**
  * @member {Array.<Object.<String, module:model/TranslationValue>>} translations
  */
-CreateRewardRequestAllOf.prototype['translations'] = undefined;
+UpdateRewardRequestAllOf.prototype['translations'] = undefined;
 /**
  * Additional constraints
  * @member {Array.<String>} constraints
  */
-CreateRewardRequestAllOf.prototype['constraints'] = undefined;
+UpdateRewardRequestAllOf.prototype['constraints'] = undefined;
 
 
 

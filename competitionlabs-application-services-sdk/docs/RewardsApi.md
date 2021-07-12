@@ -400,7 +400,7 @@ let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new CompetitionLabsAdminServices.RewardsApi();
-let body = [new CompetitionLabsAdminServices.UpdateRewardRequest()]; // [UpdateRewardRequest] | Update Reward details in the CompetitionLabs database.
+let body = [new CompetitionLabsAdminServices.UpdateEntityRewardRequest()]; // [UpdateEntityRewardRequest] | Update Reward details in the CompetitionLabs database.
 apiInstance.updateRewards(body, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -415,7 +415,7 @@ apiInstance.updateRewards(body, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**[UpdateRewardRequest]**](UpdateRewardRequest.md)| Update Reward details in the CompetitionLabs database. | 
+ **body** | [**[UpdateEntityRewardRequest]**](UpdateEntityRewardRequest.md)| Update Reward details in the CompetitionLabs database. | 
 
 ### Return type
 

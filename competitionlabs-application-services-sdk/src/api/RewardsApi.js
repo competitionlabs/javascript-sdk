@@ -17,7 +17,7 @@ import ApiResponse from '../model/ApiResponse';
 import CreateEntityRewardRequest from '../model/CreateEntityRewardRequest';
 import QueryRequest from '../model/QueryRequest';
 import RewardResponse from '../model/RewardResponse';
-import UpdateRewardRequest from '../model/UpdateRewardRequest';
+import UpdateEntityRewardRequest from '../model/UpdateEntityRewardRequest';
 
 /**
 * Rewards service.
@@ -347,7 +347,7 @@ export default class RewardsApi {
 
     /**
      * Update existing Rewards in the CompetitionLabs database
-     * @param {Array.<module:model/UpdateRewardRequest>} body Update Reward details in the CompetitionLabs database.
+     * @param {Array.<module:model/UpdateEntityRewardRequest>} body Update Reward details in the CompetitionLabs database.
      * @param {module:api/RewardsApi~updateRewardsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ApiResponse}
      */

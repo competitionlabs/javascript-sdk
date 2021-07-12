@@ -26,10 +26,11 @@ class CollaboratorResponse {
      * Constructs a new <code>CollaboratorResponse</code>.
      * @alias module:model/CollaboratorResponse
      * @param meta {module:model/MetaExtended} 
+     * @param results {Array.<module:model/Collaborator>} 
      */
-    constructor(meta) { 
+    constructor(meta, results) { 
         
-        CollaboratorResponse.initialize(this, meta);
+        CollaboratorResponse.initialize(this, meta, results);
     }
 
     /**
@@ -37,8 +38,9 @@ class CollaboratorResponse {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, meta) { 
+    static initialize(obj, meta, results) { 
         obj['meta'] = meta;
+        obj['results'] = results;
     }
 
     /**

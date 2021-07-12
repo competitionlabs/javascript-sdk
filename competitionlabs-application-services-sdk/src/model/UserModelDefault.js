@@ -23,12 +23,10 @@ class UserModelDefault {
      * Constructs a new <code>UserModelDefault</code>.
      * @alias module:model/UserModelDefault
      * @param objectType {String} 
-     * @param id {String} A unique system generated identifier
-     * @param created {Date} ISO8601 timestamp for when a Model was created. All records are stored in UTC time zone
      */
-    constructor(objectType, id, created) { 
+    constructor(objectType) { 
         
-        UserModelDefault.initialize(this, objectType, id, created);
+        UserModelDefault.initialize(this, objectType);
     }
 
     /**
@@ -36,10 +34,8 @@ class UserModelDefault {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, objectType, id, created) { 
+    static initialize(obj, objectType) { 
         obj['objectType'] = objectType;
-        obj['id'] = id;
-        obj['created'] = created;
     }
 
     /**
@@ -56,12 +52,6 @@ class UserModelDefault {
             if (data.hasOwnProperty('objectType')) {
                 obj['objectType'] = ApiClient.convertToType(data['objectType'], 'String');
             }
-            if (data.hasOwnProperty('id')) {
-                obj['id'] = ApiClient.convertToType(data['id'], 'String');
-            }
-            if (data.hasOwnProperty('created')) {
-                obj['created'] = ApiClient.convertToType(data['created'], 'Date');
-            }
         }
         return obj;
     }
@@ -73,18 +63,6 @@ class UserModelDefault {
  * @member {String} objectType
  */
 UserModelDefault.prototype['objectType'] = undefined;
-
-/**
- * A unique system generated identifier
- * @member {String} id
- */
-UserModelDefault.prototype['id'] = undefined;
-
-/**
- * ISO8601 timestamp for when a Model was created. All records are stored in UTC time zone
- * @member {Date} created
- */
-UserModelDefault.prototype['created'] = undefined;
 
 
 

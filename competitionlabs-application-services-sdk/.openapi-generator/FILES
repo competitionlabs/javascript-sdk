@@ -43,6 +43,9 @@ docs/CloneContestResponse.md
 docs/Collaborator.md
 docs/CollaboratorAllOf.md
 docs/CollaboratorResponse.md
+docs/CollaboratorRolesAvailable.md
+docs/CollaboratorRolesAvailableAllOf.md
+docs/CollaboratorRolesResponse.md
 docs/CollaboratorsApi.md
 docs/Competition.md
 docs/CompetitionAllOf.md
@@ -118,8 +121,6 @@ docs/CreateSqsConnectionRequestAllOf.md
 docs/CreateTagsRequest.md
 docs/CreateTransformerRequest.md
 docs/CreateUnitOfMeasureRequest.md
-docs/CreateUserRequest.md
-docs/CreateUserRequestAllOf.md
 docs/CreateWebhookRequest.md
 docs/CreateWebhookRequestAllOf.md
 docs/CustomField.md
@@ -128,6 +129,7 @@ docs/CustomFieldReduced.md
 docs/CustomFieldReducedAllOf.md
 docs/CustomFieldResponse.md
 docs/CustomFieldsApi.md
+docs/DefaultApi.md
 docs/Dependancy.md
 docs/DependantOn.md
 docs/EntityType.md
@@ -217,6 +219,7 @@ docs/RepositoryResponse.md
 docs/Result.md
 docs/Reward.md
 docs/RewardAllOf.md
+docs/RewardEntityType.md
 docs/RewardReduced.md
 docs/RewardReducedAllOf.md
 docs/RewardResponse.md
@@ -298,6 +301,7 @@ docs/UpdateContestRequestAllOf.md
 docs/UpdateContestStateRequest.md
 docs/UpdateCustomFieldRequest.md
 docs/UpdateCustomFieldRequestAllOf.md
+docs/UpdateEntityRewardRequest.md
 docs/UpdateFileObjectRequest.md
 docs/UpdateFileObjectRequestAllOf.md
 docs/UpdateKafkaConnectionRequest.md
@@ -317,6 +321,7 @@ docs/UpdateRabbitMqConnectionRequest.md
 docs/UpdateRabbitMqConnectionRequestAllOf.md
 docs/UpdateRepositoryRequest.md
 docs/UpdateRewardRequest.md
+docs/UpdateRewardRequestAllOf.md
 docs/UpdateRewardTypeRequest.md
 docs/UpdateRewardTypeRequestAllOf.md
 docs/UpdateSqsConnectionRequest.md
@@ -329,15 +334,12 @@ docs/UpdateTransformerRequest.md
 docs/UpdateTransformerRequestAllOf.md
 docs/UpdateUnitOfMeasureRequest.md
 docs/UpdateUnitOfMeasureRequestAllOf.md
-docs/UpdateUserRequest.md
-docs/UpdateUserRequestAllOf.md
 docs/UpdateWebhookRequest.md
 docs/User.md
 docs/UserAllOf.md
 docs/UserApi.md
 docs/UserModelDefault.md
 docs/UserResponse.md
-docs/UsersApi.md
 docs/Webhook.md
 docs/WebhookAllOf.md
 docs/WebhookResponse.md
@@ -355,6 +357,7 @@ src/api/CompetitionsApi.js
 src/api/ConsumersApi.js
 src/api/ContestsApi.js
 src/api/CustomFieldsApi.js
+src/api/DefaultApi.js
 src/api/EventsApi.js
 src/api/FilesApi.js
 src/api/LanguagesApi.js
@@ -370,7 +373,6 @@ src/api/TagsApi.js
 src/api/TransformersApi.js
 src/api/UnitsOfMeasureApi.js
 src/api/UserApi.js
-src/api/UsersApi.js
 src/api/WebhooksApi.js
 src/index.js
 src/model/Achievement.js
@@ -409,6 +411,9 @@ src/model/CloneContestResponse.js
 src/model/Collaborator.js
 src/model/CollaboratorAllOf.js
 src/model/CollaboratorResponse.js
+src/model/CollaboratorRolesAvailable.js
+src/model/CollaboratorRolesAvailableAllOf.js
+src/model/CollaboratorRolesResponse.js
 src/model/Competition.js
 src/model/CompetitionAllOf.js
 src/model/CompetitionLeaderboardResponse.js
@@ -480,8 +485,6 @@ src/model/CreateSqsConnectionRequestAllOf.js
 src/model/CreateTagsRequest.js
 src/model/CreateTransformerRequest.js
 src/model/CreateUnitOfMeasureRequest.js
-src/model/CreateUserRequest.js
-src/model/CreateUserRequestAllOf.js
 src/model/CreateWebhookRequest.js
 src/model/CreateWebhookRequestAllOf.js
 src/model/CustomField.js
@@ -571,6 +574,7 @@ src/model/RepositoryResponse.js
 src/model/Result.js
 src/model/Reward.js
 src/model/RewardAllOf.js
+src/model/RewardEntityType.js
 src/model/RewardReduced.js
 src/model/RewardReducedAllOf.js
 src/model/RewardResponse.js
@@ -645,6 +649,7 @@ src/model/UpdateContestRequestAllOf.js
 src/model/UpdateContestStateRequest.js
 src/model/UpdateCustomFieldRequest.js
 src/model/UpdateCustomFieldRequestAllOf.js
+src/model/UpdateEntityRewardRequest.js
 src/model/UpdateFileObjectRequest.js
 src/model/UpdateFileObjectRequestAllOf.js
 src/model/UpdateKafkaConnectionRequest.js
@@ -664,6 +669,7 @@ src/model/UpdateRabbitMqConnectionRequest.js
 src/model/UpdateRabbitMqConnectionRequestAllOf.js
 src/model/UpdateRepositoryRequest.js
 src/model/UpdateRewardRequest.js
+src/model/UpdateRewardRequestAllOf.js
 src/model/UpdateRewardTypeRequest.js
 src/model/UpdateRewardTypeRequestAllOf.js
 src/model/UpdateSqsConnectionRequest.js
@@ -676,8 +682,6 @@ src/model/UpdateTransformerRequest.js
 src/model/UpdateTransformerRequestAllOf.js
 src/model/UpdateUnitOfMeasureRequest.js
 src/model/UpdateUnitOfMeasureRequestAllOf.js
-src/model/UpdateUserRequest.js
-src/model/UpdateUserRequestAllOf.js
 src/model/UpdateWebhookRequest.js
 src/model/User.js
 src/model/UserAllOf.js
@@ -695,6 +699,7 @@ test/api/CompetitionsApi.spec.js
 test/api/ConsumersApi.spec.js
 test/api/ContestsApi.spec.js
 test/api/CustomFieldsApi.spec.js
+test/api/DefaultApi.spec.js
 test/api/EventsApi.spec.js
 test/api/FilesApi.spec.js
 test/api/LanguagesApi.spec.js
@@ -710,7 +715,6 @@ test/api/TagsApi.spec.js
 test/api/TransformersApi.spec.js
 test/api/UnitsOfMeasureApi.spec.js
 test/api/UserApi.spec.js
-test/api/UsersApi.spec.js
 test/api/WebhooksApi.spec.js
 test/model/Achievement.spec.js
 test/model/AchievementAllOf.spec.js
@@ -748,6 +752,9 @@ test/model/CloneContestResponse.spec.js
 test/model/Collaborator.spec.js
 test/model/CollaboratorAllOf.spec.js
 test/model/CollaboratorResponse.spec.js
+test/model/CollaboratorRolesAvailable.spec.js
+test/model/CollaboratorRolesAvailableAllOf.spec.js
+test/model/CollaboratorRolesResponse.spec.js
 test/model/Competition.spec.js
 test/model/CompetitionAllOf.spec.js
 test/model/CompetitionLeaderboardResponse.spec.js
@@ -819,8 +826,6 @@ test/model/CreateSqsConnectionRequestAllOf.spec.js
 test/model/CreateTagsRequest.spec.js
 test/model/CreateTransformerRequest.spec.js
 test/model/CreateUnitOfMeasureRequest.spec.js
-test/model/CreateUserRequest.spec.js
-test/model/CreateUserRequestAllOf.spec.js
 test/model/CreateWebhookRequest.spec.js
 test/model/CreateWebhookRequestAllOf.spec.js
 test/model/CustomField.spec.js
@@ -910,6 +915,7 @@ test/model/RepositoryResponse.spec.js
 test/model/Result.spec.js
 test/model/Reward.spec.js
 test/model/RewardAllOf.spec.js
+test/model/RewardEntityType.spec.js
 test/model/RewardReduced.spec.js
 test/model/RewardReducedAllOf.spec.js
 test/model/RewardResponse.spec.js
@@ -984,6 +990,7 @@ test/model/UpdateContestRequestAllOf.spec.js
 test/model/UpdateContestStateRequest.spec.js
 test/model/UpdateCustomFieldRequest.spec.js
 test/model/UpdateCustomFieldRequestAllOf.spec.js
+test/model/UpdateEntityRewardRequest.spec.js
 test/model/UpdateFileObjectRequest.spec.js
 test/model/UpdateFileObjectRequestAllOf.spec.js
 test/model/UpdateKafkaConnectionRequest.spec.js
@@ -1003,6 +1010,7 @@ test/model/UpdateRabbitMqConnectionRequest.spec.js
 test/model/UpdateRabbitMqConnectionRequestAllOf.spec.js
 test/model/UpdateRepositoryRequest.spec.js
 test/model/UpdateRewardRequest.spec.js
+test/model/UpdateRewardRequestAllOf.spec.js
 test/model/UpdateRewardTypeRequest.spec.js
 test/model/UpdateRewardTypeRequestAllOf.spec.js
 test/model/UpdateSqsConnectionRequest.spec.js
@@ -1015,8 +1023,6 @@ test/model/UpdateTransformerRequest.spec.js
 test/model/UpdateTransformerRequestAllOf.spec.js
 test/model/UpdateUnitOfMeasureRequest.spec.js
 test/model/UpdateUnitOfMeasureRequestAllOf.spec.js
-test/model/UpdateUserRequest.spec.js
-test/model/UpdateUserRequestAllOf.spec.js
 test/model/UpdateWebhookRequest.spec.js
 test/model/User.spec.js
 test/model/UserAllOf.spec.js

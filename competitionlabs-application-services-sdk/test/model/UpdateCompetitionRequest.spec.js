@@ -180,6 +180,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property productIds (base name: "productIds")', function() {
+      // uncomment below and update the code to test the property productIds
+      //var instance = new CompetitionLabsAdminServices.UpdateCompetitionRequest();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

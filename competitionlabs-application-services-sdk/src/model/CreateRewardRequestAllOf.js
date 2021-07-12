@@ -26,12 +26,12 @@ class CreateRewardRequestAllOf {
      * @param name {String} The name of a reward
      * @param rewardRank {String} If used in the context of contest this will associate with the rank of the leaderboard
      * @param rewardValue {Number} Numerical value of the reward that will be issued based on the reward type
-     * @param rewardType {String} A unique id of the Reward Type
      * @param constraints {Array.<String>} Additional constraints
+     * @param rewardTypeId {String} A unique id of the Reward Type
      */
-    constructor(name, rewardRank, rewardValue, rewardType, constraints) { 
+    constructor(name, rewardRank, rewardValue, constraints, rewardTypeId) { 
         
-        CreateRewardRequestAllOf.initialize(this, name, rewardRank, rewardValue, rewardType, constraints);
+        CreateRewardRequestAllOf.initialize(this, name, rewardRank, rewardValue, constraints, rewardTypeId);
     }
 
     /**
@@ -39,12 +39,12 @@ class CreateRewardRequestAllOf {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, name, rewardRank, rewardValue, rewardType, constraints) { 
+    static initialize(obj, name, rewardRank, rewardValue, constraints, rewardTypeId) { 
         obj['name'] = name;
         obj['rewardRank'] = rewardRank;
         obj['rewardValue'] = rewardValue;
-        obj['rewardType'] = rewardType;
         obj['constraints'] = constraints;
+        obj['rewardTypeId'] = rewardTypeId;
     }
 
     /**
@@ -70,9 +70,6 @@ class CreateRewardRequestAllOf {
             if (data.hasOwnProperty('rewardValue')) {
                 obj['rewardValue'] = ApiClient.convertToType(data['rewardValue'], 'Number');
             }
-            if (data.hasOwnProperty('rewardType')) {
-                obj['rewardType'] = ApiClient.convertToType(data['rewardType'], 'String');
-            }
             if (data.hasOwnProperty('icon')) {
                 obj['icon'] = ApiClient.convertToType(data['icon'], 'String');
             }
@@ -93,6 +90,9 @@ class CreateRewardRequestAllOf {
             }
             if (data.hasOwnProperty('constraints')) {
                 obj['constraints'] = ApiClient.convertToType(data['constraints'], ['String']);
+            }
+            if (data.hasOwnProperty('rewardTypeId')) {
+                obj['rewardTypeId'] = ApiClient.convertToType(data['rewardTypeId'], 'String');
             }
         }
         return obj;
@@ -124,12 +124,6 @@ CreateRewardRequestAllOf.prototype['rewardRank'] = undefined;
  * @member {Number} rewardValue
  */
 CreateRewardRequestAllOf.prototype['rewardValue'] = undefined;
-
-/**
- * A unique id of the Reward Type
- * @member {String} rewardType
- */
-CreateRewardRequestAllOf.prototype['rewardType'] = undefined;
 
 /**
  * An Icon id that has been pre uploaded to the system to display for reward
@@ -171,6 +165,12 @@ CreateRewardRequestAllOf.prototype['translations'] = undefined;
  * @member {Array.<String>} constraints
  */
 CreateRewardRequestAllOf.prototype['constraints'] = undefined;
+
+/**
+ * A unique id of the Reward Type
+ * @member {String} rewardTypeId
+ */
+CreateRewardRequestAllOf.prototype['rewardTypeId'] = undefined;
 
 
 

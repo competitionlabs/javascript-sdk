@@ -14,8 +14,8 @@
 import ApiClient from '../ApiClient';
 import CreateEntityRewardRequestAllOf from './CreateEntityRewardRequestAllOf';
 import CreateOptParamModels from './CreateOptParamModels';
-import EntityType from './EntityType';
 import Metadata from './Metadata';
+import RewardEntityType from './RewardEntityType';
 import TranslationValue from './TranslationValue';
 
 /**
@@ -29,17 +29,17 @@ class CreateEntityRewardRequest {
      * @alias module:model/CreateEntityRewardRequest
      * @implements module:model/CreateOptParamModels
      * @implements module:model/CreateEntityRewardRequestAllOf
-     * @param entityType {module:model/EntityType} 
+     * @param entityType {module:model/RewardEntityType} 
      * @param entityId {String} A unique identifier of an achievement or contest. Dependant on entityType
      * @param name {String} The name of a reward
      * @param rewardRank {String} If used in the context of contest this will associate with the rank of the leaderboard
      * @param rewardValue {Number} Numerical value of the reward that will be issued based on the reward type
-     * @param rewardType {String} A unique id of the Reward Type
      * @param constraints {Array.<String>} Additional constraints
+     * @param rewardTypeId {String} A unique id of the Reward Type
      */
-    constructor(entityType, entityId, name, rewardRank, rewardValue, rewardType, constraints) { 
-        CreateOptParamModels.initialize(this);CreateEntityRewardRequestAllOf.initialize(this, entityType, entityId, name, rewardRank, rewardValue, rewardType, constraints);
-        CreateEntityRewardRequest.initialize(this, entityType, entityId, name, rewardRank, rewardValue, rewardType, constraints);
+    constructor(entityType, entityId, name, rewardRank, rewardValue, constraints, rewardTypeId) { 
+        CreateOptParamModels.initialize(this);CreateEntityRewardRequestAllOf.initialize(this, entityType, entityId, name, rewardRank, rewardValue, constraints, rewardTypeId);
+        CreateEntityRewardRequest.initialize(this, entityType, entityId, name, rewardRank, rewardValue, constraints, rewardTypeId);
     }
 
     /**
@@ -47,14 +47,14 @@ class CreateEntityRewardRequest {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, entityType, entityId, name, rewardRank, rewardValue, rewardType, constraints) { 
+    static initialize(obj, entityType, entityId, name, rewardRank, rewardValue, constraints, rewardTypeId) { 
         obj['entityType'] = entityType;
         obj['entityId'] = entityId;
         obj['name'] = name;
         obj['rewardRank'] = rewardRank;
         obj['rewardValue'] = rewardValue;
-        obj['rewardType'] = rewardType;
         obj['constraints'] = constraints;
+        obj['rewardTypeId'] = rewardTypeId;
     }
 
     /**
@@ -80,7 +80,7 @@ class CreateEntityRewardRequest {
                 obj['metadata'] = ApiClient.convertToType(data['metadata'], [Metadata]);
             }
             if (data.hasOwnProperty('entityType')) {
-                obj['entityType'] = EntityType.constructFromObject(data['entityType']);
+                obj['entityType'] = RewardEntityType.constructFromObject(data['entityType']);
             }
             if (data.hasOwnProperty('entityId')) {
                 obj['entityId'] = ApiClient.convertToType(data['entityId'], 'String');
@@ -96,9 +96,6 @@ class CreateEntityRewardRequest {
             }
             if (data.hasOwnProperty('rewardValue')) {
                 obj['rewardValue'] = ApiClient.convertToType(data['rewardValue'], 'Number');
-            }
-            if (data.hasOwnProperty('rewardType')) {
-                obj['rewardType'] = ApiClient.convertToType(data['rewardType'], 'String');
             }
             if (data.hasOwnProperty('icon')) {
                 obj['icon'] = ApiClient.convertToType(data['icon'], 'String');
@@ -120,6 +117,9 @@ class CreateEntityRewardRequest {
             }
             if (data.hasOwnProperty('constraints')) {
                 obj['constraints'] = ApiClient.convertToType(data['constraints'], ['String']);
+            }
+            if (data.hasOwnProperty('rewardTypeId')) {
+                obj['rewardTypeId'] = ApiClient.convertToType(data['rewardTypeId'], 'String');
             }
         }
         return obj;
@@ -146,7 +146,7 @@ CreateEntityRewardRequest.prototype['tags'] = undefined;
 CreateEntityRewardRequest.prototype['metadata'] = undefined;
 
 /**
- * @member {module:model/EntityType} entityType
+ * @member {module:model/RewardEntityType} entityType
  */
 CreateEntityRewardRequest.prototype['entityType'] = undefined;
 
@@ -179,12 +179,6 @@ CreateEntityRewardRequest.prototype['rewardRank'] = undefined;
  * @member {Number} rewardValue
  */
 CreateEntityRewardRequest.prototype['rewardValue'] = undefined;
-
-/**
- * A unique id of the Reward Type
- * @member {String} rewardType
- */
-CreateEntityRewardRequest.prototype['rewardType'] = undefined;
 
 /**
  * An Icon id that has been pre uploaded to the system to display for reward
@@ -227,6 +221,12 @@ CreateEntityRewardRequest.prototype['translations'] = undefined;
  */
 CreateEntityRewardRequest.prototype['constraints'] = undefined;
 
+/**
+ * A unique id of the Reward Type
+ * @member {String} rewardTypeId
+ */
+CreateEntityRewardRequest.prototype['rewardTypeId'] = undefined;
+
 
 // Implement CreateOptParamModels interface:
 /**
@@ -245,7 +245,7 @@ CreateOptParamModels.prototype['tags'] = undefined;
 CreateOptParamModels.prototype['metadata'] = undefined;
 // Implement CreateEntityRewardRequestAllOf interface:
 /**
- * @member {module:model/EntityType} entityType
+ * @member {module:model/RewardEntityType} entityType
  */
 CreateEntityRewardRequestAllOf.prototype['entityType'] = undefined;
 /**
@@ -273,11 +273,6 @@ CreateEntityRewardRequestAllOf.prototype['rewardRank'] = undefined;
  * @member {Number} rewardValue
  */
 CreateEntityRewardRequestAllOf.prototype['rewardValue'] = undefined;
-/**
- * A unique id of the Reward Type
- * @member {String} rewardType
- */
-CreateEntityRewardRequestAllOf.prototype['rewardType'] = undefined;
 /**
  * An Icon id that has been pre uploaded to the system to display for reward
  * @member {String} icon
@@ -312,6 +307,11 @@ CreateEntityRewardRequestAllOf.prototype['translations'] = undefined;
  * @member {Array.<String>} constraints
  */
 CreateEntityRewardRequestAllOf.prototype['constraints'] = undefined;
+/**
+ * A unique id of the Reward Type
+ * @member {String} rewardTypeId
+ */
+CreateEntityRewardRequestAllOf.prototype['rewardTypeId'] = undefined;
 
 
 

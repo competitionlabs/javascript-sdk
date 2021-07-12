@@ -72,14 +72,14 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property contact (base name: "contact")', function() {
-      // uncomment below and update the code to test the property contact
+    it('should have the property constraints (base name: "constraints")', function() {
+      // uncomment below and update the code to test the property constraints
       //var instance = new CompetitionLabsAdminServices.UserAllOf();
       //expect(instance).to.be();
     });
 
-    it('should have the property constraints (base name: "constraints")', function() {
-      // uncomment below and update the code to test the property constraints
+    it('should have the property spaces (base name: "spaces")', function() {
+      // uncomment below and update the code to test the property spaces
       //var instance = new CompetitionLabsAdminServices.UserAllOf();
       //expect(instance).to.be();
     });

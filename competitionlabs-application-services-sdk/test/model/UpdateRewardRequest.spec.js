@@ -102,8 +102,8 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property rewardType (base name: "rewardType")', function() {
-      // uncomment below and update the code to test the property rewardType
+    it('should have the property rewardTypeId (base name: "rewardTypeId")', function() {
+      // uncomment below and update the code to test the property rewardTypeId
       //var instance = new CompetitionLabsAdminServices.UpdateRewardRequest();
       //expect(instance).to.be();
     });

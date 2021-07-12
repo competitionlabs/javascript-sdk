@@ -37,8 +37,8 @@ export default class SpacesApi {
 
 
     /**
-     * Callback function to receive the result of the createSpaces operation.
-     * @callback module:api/SpacesApi~createSpacesCallback
+     * Callback function to receive the result of the createSpace operation.
+     * @callback module:api/SpacesApi~createSpaceCallback
      * @param {String} error Error message, if any.
      * @param {module:model/ApiResponse} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -46,15 +46,15 @@ export default class SpacesApi {
 
     /**
      * Create a new Space for the user in the CompetitionLabs
-     * @param {module:model/CreateSpaceRequest} body Create a Space for the user in the CompetitionLabs
-     * @param {module:api/SpacesApi~createSpacesCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {Array.<module:model/CreateSpaceRequest>} body 
+     * @param {module:api/SpacesApi~createSpaceCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ApiResponse}
      */
-    createSpaces(body, callback) {
+    createSpace(body, callback) {
       let postBody = body;
       // verify the required parameter 'body' is set
       if (body === undefined || body === null) {
-        throw new Error("Missing the required parameter 'body' when calling createSpaces");
+        throw new Error("Missing the required parameter 'body' when calling createSpace");
       }
 
       let pathParams = {
@@ -121,8 +121,8 @@ export default class SpacesApi {
     }
 
     /**
-     * Callback function to receive the result of the getListOfSpacesForUser operation.
-     * @callback module:api/SpacesApi~getListOfSpacesForUserCallback
+     * Callback function to receive the result of the getSpaceInfromation operation.
+     * @callback module:api/SpacesApi~getSpaceInfromationCallback
      * @param {String} error Error message, if any.
      * @param {module:model/SpaceResponse} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -133,10 +133,10 @@ export default class SpacesApi {
      * @param {Object} opts Optional parameters
      * @param {Number} opts.limit Limit the returned total records found
      * @param {Number} opts.skip Skip the returned records found and return the next batch of records
-     * @param {module:api/SpacesApi~getListOfSpacesForUserCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/SpacesApi~getSpaceInfromationCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/SpaceResponse}
      */
-    getListOfSpacesForUser(opts, callback) {
+    getSpaceInfromation(opts, callback) {
       opts = opts || {};
       let postBody = null;
 
@@ -211,8 +211,8 @@ export default class SpacesApi {
     }
 
     /**
-     * Callback function to receive the result of the updateSpaces operation.
-     * @callback module:api/SpacesApi~updateSpacesCallback
+     * Callback function to receive the result of the updateSpace operation.
+     * @callback module:api/SpacesApi~updateSpaceCallback
      * @param {String} error Error message, if any.
      * @param {module:model/ApiResponse} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -221,14 +221,14 @@ export default class SpacesApi {
     /**
      * Update a  Space for the user in the CompetitionLabs
      * @param {module:model/CreateSpaceRequest} body Create a Space for the user in the CompetitionLabs
-     * @param {module:api/SpacesApi~updateSpacesCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/SpacesApi~updateSpaceCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ApiResponse}
      */
-    updateSpaces(body, callback) {
+    updateSpace(body, callback) {
       let postBody = body;
       // verify the required parameter 'body' is set
       if (body === undefined || body === null) {
-        throw new Error("Missing the required parameter 'body' when calling updateSpaces");
+        throw new Error("Missing the required parameter 'body' when calling updateSpace");
       }
 
       let pathParams = {

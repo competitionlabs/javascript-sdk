@@ -54,26 +54,32 @@
       //expect(instance).to.be.a(CompetitionLabsAdminServices.CollaboratorAllOf);
     });
 
-    it('should have the property name (base name: "name")', function() {
-      // uncomment below and update the code to test the property name
-      //var instance = new CompetitionLabsAdminServices.CollaboratorAllOf();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property surname (base name: "surname")', function() {
-      // uncomment below and update the code to test the property surname
-      //var instance = new CompetitionLabsAdminServices.CollaboratorAllOf();
-      //expect(instance).to.be();
-    });
-
     it('should have the property email (base name: "email")', function() {
       // uncomment below and update the code to test the property email
       //var instance = new CompetitionLabsAdminServices.CollaboratorAllOf();
       //expect(instance).to.be();
     });
 
-    it('should have the property role (base name: "role")', function() {
-      // uncomment below and update the code to test the property role
+    it('should have the property roles (base name: "roles")', function() {
+      // uncomment below and update the code to test the property roles
+      //var instance = new CompetitionLabsAdminServices.CollaboratorAllOf();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property lastName (base name: "lastName")', function() {
+      // uncomment below and update the code to test the property lastName
+      //var instance = new CompetitionLabsAdminServices.CollaboratorAllOf();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property firstName (base name: "firstName")', function() {
+      // uncomment below and update the code to test the property firstName
+      //var instance = new CompetitionLabsAdminServices.CollaboratorAllOf();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property availableRoles (base name: "availableRoles")', function() {
+      // uncomment below and update the code to test the property availableRoles
       //var instance = new CompetitionLabsAdminServices.CollaboratorAllOf();
       //expect(instance).to.be();
     });

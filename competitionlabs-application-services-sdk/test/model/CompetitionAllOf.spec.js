@@ -186,6 +186,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property products (base name: "products")', function() {
+      // uncomment below and update the code to test the property products
+      //var instance = new CompetitionLabsAdminServices.CompetitionAllOf();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

@@ -4,58 +4,11 @@ All URIs are relative to *https://api.competitionlabs.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**deleteUser**](UserApi.md#deleteUser) | **DELETE** /user | NOT AVAILABLE IN CURRENT RELEASE
 [**getUser**](UserApi.md#getUser) | **GET** /user | 
 [**getUserMessages**](UserApi.md#getUserMessages) | **GET** /user/inbox | NOT AVAILABLE IN CURRENT RELEASE
 [**getUserMessagesById**](UserApi.md#getUserMessagesById) | **GET** /user/inbox/{id} | NOT AVAILABLE IN CURRENT RELEASE
 [**markAsRead**](UserApi.md#markAsRead) | **POST** /user/inbox | NOT AVAILABLE IN CURRENT RELEASE
-[**updateUser**](UserApi.md#updateUser) | **PUT** /user | NOT AVAILABLE IN CURRENT RELEASE
 
-
-
-## deleteUser
-
-> ApiResponse deleteUser()
-
-NOT AVAILABLE IN CURRENT RELEASE
-
-Delete the current user from the CompetitionLabs
-
-### Example
-
-```javascript
-import CompetitionLabsAdminServices from 'competition_labs_admin_services';
-let defaultClient = CompetitionLabsAdminServices.ApiClient.instance;
-// Configure OAuth2 access token for authorization: OAuth2
-let OAuth2 = defaultClient.authentications['OAuth2'];
-OAuth2.accessToken = 'YOUR ACCESS TOKEN';
-
-let apiInstance = new CompetitionLabsAdminServices.UserApi();
-apiInstance.deleteUser((error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-});
-```
-
-### Parameters
-
-This endpoint does not need any parameter.
-
-### Return type
-
-[**ApiResponse**](ApiResponse.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
 
 
 ## getUser
@@ -245,55 +198,6 @@ apiInstance.markAsRead(body, (error, data, response) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **body** | [**CreateMessageRequest**](CreateMessageRequest.md)| Mark User messages as read | 
-
-### Return type
-
-[**ApiResponse**](ApiResponse.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-
-## updateUser
-
-> ApiResponse updateUser(body)
-
-NOT AVAILABLE IN CURRENT RELEASE
-
-Update the current user in the CompetitionLabs system
-
-### Example
-
-```javascript
-import CompetitionLabsAdminServices from 'competition_labs_admin_services';
-let defaultClient = CompetitionLabsAdminServices.ApiClient.instance;
-// Configure OAuth2 access token for authorization: OAuth2
-let OAuth2 = defaultClient.authentications['OAuth2'];
-OAuth2.accessToken = 'YOUR ACCESS TOKEN';
-
-let apiInstance = new CompetitionLabsAdminServices.UserApi();
-let body = new CompetitionLabsAdminServices.UpdateUserRequest(); // UpdateUserRequest | Update a User in the CompetitionLabs system. * Any Put body Parameters that are excluded in the Request body field will be considered as empty and updated with an empty field
-apiInstance.updateUser(body, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-});
-```
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**UpdateUserRequest**](UpdateUserRequest.md)| Update a User in the CompetitionLabs system. * Any Put body Parameters that are excluded in the Request body field will be considered as empty and updated with an empty field | 
 
 ### Return type
 

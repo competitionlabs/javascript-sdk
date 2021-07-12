@@ -12,7 +12,6 @@
  */
 
 import ApiClient from '../ApiClient';
-import Role from './Role';
 
 /**
  * The UpdateCollaboratorRequestAllOf model module.
@@ -23,11 +22,12 @@ class UpdateCollaboratorRequestAllOf {
     /**
      * Constructs a new <code>UpdateCollaboratorRequestAllOf</code>.
      * @alias module:model/UpdateCollaboratorRequestAllOf
-     * @param role {module:model/Role} 
+     * @param roles {Array.<String>} 
+     * @param email {String} 
      */
-    constructor(role) { 
+    constructor(roles, email) { 
         
-        UpdateCollaboratorRequestAllOf.initialize(this, role);
+        UpdateCollaboratorRequestAllOf.initialize(this, roles, email);
     }
 
     /**
@@ -35,8 +35,9 @@ class UpdateCollaboratorRequestAllOf {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, role) { 
-        obj['role'] = role;
+    static initialize(obj, roles, email) { 
+        obj['roles'] = roles;
+        obj['email'] = email;
     }
 
     /**
@@ -50,8 +51,11 @@ class UpdateCollaboratorRequestAllOf {
         if (data) {
             obj = obj || new UpdateCollaboratorRequestAllOf();
 
-            if (data.hasOwnProperty('role')) {
-                obj['role'] = Role.constructFromObject(data['role']);
+            if (data.hasOwnProperty('roles')) {
+                obj['roles'] = ApiClient.convertToType(data['roles'], ['String']);
+            }
+            if (data.hasOwnProperty('email')) {
+                obj['email'] = ApiClient.convertToType(data['email'], 'String');
             }
         }
         return obj;
@@ -61,9 +65,14 @@ class UpdateCollaboratorRequestAllOf {
 }
 
 /**
- * @member {module:model/Role} role
+ * @member {Array.<String>} roles
  */
-UpdateCollaboratorRequestAllOf.prototype['role'] = undefined;
+UpdateCollaboratorRequestAllOf.prototype['roles'] = undefined;
+
+/**
+ * @member {String} email
+ */
+UpdateCollaboratorRequestAllOf.prototype['email'] = undefined;
 
 
 

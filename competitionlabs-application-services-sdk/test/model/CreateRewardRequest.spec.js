@@ -96,12 +96,6 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property rewardType (base name: "rewardType")', function() {
-      // uncomment below and update the code to test the property rewardType
-      //var instance = new CompetitionLabsAdminServices.CreateRewardRequest();
-      //expect(instance).to.be();
-    });
-
     it('should have the property icon (base name: "icon")', function() {
       // uncomment below and update the code to test the property icon
       //var instance = new CompetitionLabsAdminServices.CreateRewardRequest();
@@ -140,6 +134,12 @@
 
     it('should have the property constraints (base name: "constraints")', function() {
       // uncomment below and update the code to test the property constraints
+      //var instance = new CompetitionLabsAdminServices.CreateRewardRequest();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property rewardTypeId (base name: "rewardTypeId")', function() {
+      // uncomment below and update the code to test the property rewardTypeId
       //var instance = new CompetitionLabsAdminServices.CreateRewardRequest();
       //expect(instance).to.be();
     });

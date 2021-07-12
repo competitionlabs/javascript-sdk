@@ -58,6 +58,16 @@
         done();
       });
     });
+    describe('deleteCollaboratorsByQuery', function() {
+      it('should call deleteCollaboratorsByQuery successfully', function(done) {
+        //uncomment below and update the code to test deleteCollaboratorsByQuery
+        //instance.deleteCollaboratorsByQuery(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('deleteUnitsOfMeasure', function() {
       it('should call deleteUnitsOfMeasure successfully', function(done) {
         //uncomment below and update the code to test deleteUnitsOfMeasure
@@ -72,6 +82,16 @@
       it('should call deleteUnitsOfMeasureByQuery successfully', function(done) {
         //uncomment below and update the code to test deleteUnitsOfMeasureByQuery
         //instance.deleteUnitsOfMeasureByQuery(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getCollaboratorsByQuery', function() {
+      it('should call getCollaboratorsByQuery successfully', function(done) {
+        //uncomment below and update the code to test getCollaboratorsByQuery
+        //instance.getCollaboratorsByQuery(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

@@ -21,6 +21,7 @@ import Dependancy from './Dependancy';
 import Metadata from './Metadata';
 import ModelDefault from './ModelDefault';
 import OptParamModels from './OptParamModels';
+import ProductReduced from './ProductReduced';
 import RewardReduced from './RewardReduced';
 import RuleSet from './RuleSet';
 import TagsReduced from './TagsReduced';
@@ -45,16 +46,17 @@ class Competition {
      * @param numberOfRounds {Number} Number of rounds to be played in a competition
      * @param name {String} A name or a name of a competition. Can be translated
      * @param minNumberOfEntrants {Number} Maximum number of partiipants allowed in a competition
-     * @param dependantOn {Array.<module:model/Dependancy>} 
+     * @param dependantOn {module:model/Dependancy} 
      * @param ruleSets {Array.<module:model/RuleSet>} 
      * @param scheduledStartDate {Date} ISO8601 timestamp for when a Competition should start. All records are stored in UTC time zone
      * @param scheduledEndDate {Date} ISO8601 timestamp for when a Competition should end. All records are stored in UTC time zone
      * @param status {module:model/CompetitionStatus} 
      * @param constraints {Array.<String>} Additional constraints
+     * @param products {Array.<module:model/ProductReduced>} 
      */
-    constructor(id, spaceName, created, competitionType, numberOfRounds, name, minNumberOfEntrants, dependantOn, ruleSets, scheduledStartDate, scheduledEndDate, status, constraints) { 
-        ModelDefault.initialize(this, id, spaceName, created);OptParamModels.initialize(this);CompetitionAllOf.initialize(this, competitionType, numberOfRounds, name, minNumberOfEntrants, dependantOn, ruleSets, scheduledStartDate, scheduledEndDate, status, constraints);
-        Competition.initialize(this, id, spaceName, created, competitionType, numberOfRounds, name, minNumberOfEntrants, dependantOn, ruleSets, scheduledStartDate, scheduledEndDate, status, constraints);
+    constructor(id, spaceName, created, competitionType, numberOfRounds, name, minNumberOfEntrants, dependantOn, ruleSets, scheduledStartDate, scheduledEndDate, status, constraints, products) { 
+        ModelDefault.initialize(this, id, spaceName, created);OptParamModels.initialize(this);CompetitionAllOf.initialize(this, competitionType, numberOfRounds, name, minNumberOfEntrants, dependantOn, ruleSets, scheduledStartDate, scheduledEndDate, status, constraints, products);
+        Competition.initialize(this, id, spaceName, created, competitionType, numberOfRounds, name, minNumberOfEntrants, dependantOn, ruleSets, scheduledStartDate, scheduledEndDate, status, constraints, products);
     }
 
     /**
@@ -62,7 +64,7 @@ class Competition {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, id, spaceName, created, competitionType, numberOfRounds, name, minNumberOfEntrants, dependantOn, ruleSets, scheduledStartDate, scheduledEndDate, status, constraints) { 
+    static initialize(obj, id, spaceName, created, competitionType, numberOfRounds, name, minNumberOfEntrants, dependantOn, ruleSets, scheduledStartDate, scheduledEndDate, status, constraints, products) { 
         obj['id'] = id;
         obj['spaceName'] = spaceName;
         obj['created'] = created;
@@ -76,6 +78,7 @@ class Competition {
         obj['scheduledEndDate'] = scheduledEndDate;
         obj['status'] = status;
         obj['constraints'] = constraints;
+        obj['products'] = products;
     }
 
     /**
@@ -138,7 +141,7 @@ class Competition {
                 obj['entrantMemberType'] = ApiClient.convertToType(data['entrantMemberType'], 'String');
             }
             if (data.hasOwnProperty('dependantOn')) {
-                obj['dependantOn'] = ApiClient.convertToType(data['dependantOn'], [Dependancy]);
+                obj['dependantOn'] = Dependancy.constructFromObject(data['dependantOn']);
             }
             if (data.hasOwnProperty('ruleSets')) {
                 obj['ruleSets'] = ApiClient.convertToType(data['ruleSets'], [RuleSet]);
@@ -175,6 +178,9 @@ class Competition {
             }
             if (data.hasOwnProperty('constraints')) {
                 obj['constraints'] = ApiClient.convertToType(data['constraints'], ['String']);
+            }
+            if (data.hasOwnProperty('products')) {
+                obj['products'] = ApiClient.convertToType(data['products'], [ProductReduced]);
             }
         }
         return obj;
@@ -270,7 +276,7 @@ Competition.prototype['minNumberOfEntrants'] = undefined;
 Competition.prototype['entrantMemberType'] = undefined;
 
 /**
- * @member {Array.<module:model/Dependancy>} dependantOn
+ * @member {module:model/Dependancy} dependantOn
  */
 Competition.prototype['dependantOn'] = undefined;
 
@@ -340,6 +346,11 @@ Competition.prototype['rewards'] = undefined;
  * @member {Array.<String>} constraints
  */
 Competition.prototype['constraints'] = undefined;
+
+/**
+ * @member {Array.<module:model/ProductReduced>} products
+ */
+Competition.prototype['products'] = undefined;
 
 
 // Implement ModelDefault interface:
@@ -417,7 +428,7 @@ CompetitionAllOf.prototype['minNumberOfEntrants'] = undefined;
  */
 CompetitionAllOf.prototype['entrantMemberType'] = undefined;
 /**
- * @member {Array.<module:model/Dependancy>} dependantOn
+ * @member {module:model/Dependancy} dependantOn
  */
 CompetitionAllOf.prototype['dependantOn'] = undefined;
 /**
@@ -475,6 +486,10 @@ CompetitionAllOf.prototype['rewards'] = undefined;
  * @member {Array.<String>} constraints
  */
 CompetitionAllOf.prototype['constraints'] = undefined;
+/**
+ * @member {Array.<module:model/ProductReduced>} products
+ */
+CompetitionAllOf.prototype['products'] = undefined;
 
 
 

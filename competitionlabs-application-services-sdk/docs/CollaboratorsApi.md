@@ -5,9 +5,9 @@ All URIs are relative to *https://api.competitionlabs.io*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**createCollaborators**](CollaboratorsApi.md#createCollaborators) | **POST** /collaborators | 
-[**deleteCollaboratorsById**](CollaboratorsApi.md#deleteCollaboratorsById) | **DELETE** /collaborators/{id} | 
+[**deleteCollaborators**](CollaboratorsApi.md#deleteCollaborators) | **DELETE** /collaborators | 
+[**getAvailableRolesForCollaborators**](CollaboratorsApi.md#getAvailableRolesForCollaborators) | **GET** /collaborators/available-roles | 
 [**getCollaborators**](CollaboratorsApi.md#getCollaborators) | **GET** /collaborators | 
-[**getCollaboratorsById**](CollaboratorsApi.md#getCollaboratorsById) | **GET** /collaborators/{id} | 
 [**updateCollaborators**](CollaboratorsApi.md#updateCollaborators) | **PUT** /collaborators | NOT AVAILABLE IN CURRENT RELEASE
 
 
@@ -30,7 +30,7 @@ let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new CompetitionLabsAdminServices.CollaboratorsApi();
-let body = new CompetitionLabsAdminServices.CreateCollaboratorRequest(); // CreateCollaboratorRequest | Create a Collaborator in the CompetitionLabs system
+let body = [new CompetitionLabsAdminServices.CreateCollaboratorRequest()]; // [CreateCollaboratorRequest] | Create a Collaborator in the CompetitionLabs system
 apiInstance.createCollaborators(body, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -45,7 +45,7 @@ apiInstance.createCollaborators(body, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CreateCollaboratorRequest**](CreateCollaboratorRequest.md)| Create a Collaborator in the CompetitionLabs system | 
+ **body** | [**[CreateCollaboratorRequest]**](CreateCollaboratorRequest.md)| Create a Collaborator in the CompetitionLabs system | 
 
 ### Return type
 
@@ -61,13 +61,13 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
-## deleteCollaboratorsById
+## deleteCollaborators
 
-> ApiResponse deleteCollaboratorsById(id)
+> ApiResponse deleteCollaborators(opts)
 
 
 
-Delete the Collaborator for a given identifier specified
+Returns a list of Collaborators. This assumes that Users have first been uploaded via a POST request or web console
 
 ### Example
 
@@ -79,8 +79,10 @@ let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new CompetitionLabsAdminServices.CollaboratorsApi();
-let id = "id_example"; // String | Unique identifier of the resource
-apiInstance.deleteCollaboratorsById(id, (error, data, response) => {
+let opts = {
+  'emails': ["null"] // [String] | The list of user emails to search by
+};
+apiInstance.deleteCollaborators(opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -94,11 +96,56 @@ apiInstance.deleteCollaboratorsById(id, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **String**| Unique identifier of the resource | 
+ **emails** | [**[String]**](String.md)| The list of user emails to search by | [optional] 
 
 ### Return type
 
 [**ApiResponse**](ApiResponse.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## getAvailableRolesForCollaborators
+
+> CollaboratorRolesResponse getAvailableRolesForCollaborators()
+
+
+
+Returns a list of Collaborators. This assumes that Users have first been uploaded via a POST request or web console
+
+### Example
+
+```javascript
+import CompetitionLabsAdminServices from 'competition_labs_admin_services';
+let defaultClient = CompetitionLabsAdminServices.ApiClient.instance;
+// Configure OAuth2 access token for authorization: OAuth2
+let OAuth2 = defaultClient.authentications['OAuth2'];
+OAuth2.accessToken = 'YOUR ACCESS TOKEN';
+
+let apiInstance = new CompetitionLabsAdminServices.CollaboratorsApi();
+apiInstance.getAvailableRolesForCollaborators((error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+[**CollaboratorRolesResponse**](CollaboratorRolesResponse.md)
 
 ### Authorization
 
@@ -129,6 +176,7 @@ OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new CompetitionLabsAdminServices.CollaboratorsApi();
 let opts = {
+  'emails': ["null"], // [String] | The list of user emails to search by
   'limit': 56, // Number | Limit the returned total records found
   'skip': 56 // Number | Skip the returned records found and return the next batch of records
 };
@@ -146,57 +194,9 @@ apiInstance.getCollaborators(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **emails** | [**[String]**](String.md)| The list of user emails to search by | [optional] 
  **limit** | **Number**| Limit the returned total records found | [optional] 
  **skip** | **Number**| Skip the returned records found and return the next batch of records | [optional] 
-
-### Return type
-
-[**CollaboratorResponse**](CollaboratorResponse.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-
-## getCollaboratorsById
-
-> CollaboratorResponse getCollaboratorsById(id)
-
-
-
-Returns a Collaborator by identifier requested. This assumes that Users have first been uploaded via a POST request or web console
-
-### Example
-
-```javascript
-import CompetitionLabsAdminServices from 'competition_labs_admin_services';
-let defaultClient = CompetitionLabsAdminServices.ApiClient.instance;
-// Configure OAuth2 access token for authorization: OAuth2
-let OAuth2 = defaultClient.authentications['OAuth2'];
-OAuth2.accessToken = 'YOUR ACCESS TOKEN';
-
-let apiInstance = new CompetitionLabsAdminServices.CollaboratorsApi();
-let id = "id_example"; // String | Unique identifier of the resource
-apiInstance.getCollaboratorsById(id, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-});
-```
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **String**| Unique identifier of the resource | 
 
 ### Return type
 
@@ -230,7 +230,7 @@ let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new CompetitionLabsAdminServices.CollaboratorsApi();
-let body = new CompetitionLabsAdminServices.UpdateCollaboratorRequest(); // UpdateCollaboratorRequest | Update a Collaborator in the CompetitionLabs system. * Any Put body Parameters that are excluded in the Request body field will be considered as empty and updated with an empty field
+let body = [new CompetitionLabsAdminServices.UpdateCollaboratorRequest()]; // [UpdateCollaboratorRequest] | Update a Collaborator in the CompetitionLabs system. * Any Put body Parameters that are excluded in the Request body field will be considered as empty and updated with an empty field
 apiInstance.updateCollaborators(body, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -245,7 +245,7 @@ apiInstance.updateCollaborators(body, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**UpdateCollaboratorRequest**](UpdateCollaboratorRequest.md)| Update a Collaborator in the CompetitionLabs system. * Any Put body Parameters that are excluded in the Request body field will be considered as empty and updated with an empty field | 
+ **body** | [**[UpdateCollaboratorRequest]**](UpdateCollaboratorRequest.md)| Update a Collaborator in the CompetitionLabs system. * Any Put body Parameters that are excluded in the Request body field will be considered as empty and updated with an empty field | 
 
 ### Return type
 

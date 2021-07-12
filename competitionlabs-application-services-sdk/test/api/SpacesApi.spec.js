@@ -48,10 +48,10 @@
   }
 
   describe('SpacesApi', function() {
-    describe('createSpaces', function() {
-      it('should call createSpaces successfully', function(done) {
-        //uncomment below and update the code to test createSpaces
-        //instance.createSpaces(function(error) {
+    describe('createSpace', function() {
+      it('should call createSpace successfully', function(done) {
+        //uncomment below and update the code to test createSpace
+        //instance.createSpace(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -68,10 +68,10 @@
         done();
       });
     });
-    describe('getListOfSpacesForUser', function() {
-      it('should call getListOfSpacesForUser successfully', function(done) {
-        //uncomment below and update the code to test getListOfSpacesForUser
-        //instance.getListOfSpacesForUser(function(error) {
+    describe('getSpaceInfromation', function() {
+      it('should call getSpaceInfromation successfully', function(done) {
+        //uncomment below and update the code to test getSpaceInfromation
+        //instance.getSpaceInfromation(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -88,10 +88,10 @@
         done();
       });
     });
-    describe('updateSpaces', function() {
-      it('should call updateSpaces successfully', function(done) {
-        //uncomment below and update the code to test updateSpaces
-        //instance.updateSpaces(function(error) {
+    describe('updateSpace', function() {
+      it('should call updateSpace successfully', function(done) {
+        //uncomment below and update the code to test updateSpace
+        //instance.updateSpace(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**role** | [**Role**](Role.md) |  | 
+**roles** | **[String]** |  | 
+**email** | **String** |  | 
 
 

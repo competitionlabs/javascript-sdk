@@ -12,11 +12,6 @@
  */
 
 import ApiClient from '../ApiClient';
-import Contact from './Contact';
-import CustomFieldReduced from './CustomFieldReduced';
-import Metadata from './Metadata';
-import OptParamModels from './OptParamModels';
-import TagsReduced from './TagsReduced';
 import UserAllOf from './UserAllOf';
 import UserModelDefault from './UserModelDefault';
 
@@ -30,17 +25,14 @@ class User {
      * Constructs a new <code>User</code>.
      * @alias module:model/User
      * @implements module:model/UserModelDefault
-     * @implements module:model/OptParamModels
      * @implements module:model/UserAllOf
      * @param objectType {String} 
-     * @param id {String} A unique system generated identifier
-     * @param created {Date} ISO8601 timestamp for when a Model was created. All records are stored in UTC time zone
      * @param email {String} The email of the user to log in
      * @param constraints {Array.<String>} Additional constraints
      */
-    constructor(objectType, id, created, email, constraints) { 
-        UserModelDefault.initialize(this, objectType, id, created);OptParamModels.initialize(this);UserAllOf.initialize(this, email, constraints);
-        User.initialize(this, objectType, id, created, email, constraints);
+    constructor(objectType, email, constraints) { 
+        UserModelDefault.initialize(this, objectType);UserAllOf.initialize(this, email, constraints);
+        User.initialize(this, objectType, email, constraints);
     }
 
     /**
@@ -48,10 +40,8 @@ class User {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, objectType, id, created, email, constraints) { 
+    static initialize(obj, objectType, email, constraints) { 
         obj['objectType'] = objectType;
-        obj['id'] = id;
-        obj['created'] = created;
         obj['email'] = email;
         obj['constraints'] = constraints;
     }
@@ -67,26 +57,10 @@ class User {
         if (data) {
             obj = obj || new User();
             UserModelDefault.constructFromObject(data, obj);
-            OptParamModels.constructFromObject(data, obj);
             UserAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('objectType')) {
                 obj['objectType'] = ApiClient.convertToType(data['objectType'], 'String');
-            }
-            if (data.hasOwnProperty('id')) {
-                obj['id'] = ApiClient.convertToType(data['id'], 'String');
-            }
-            if (data.hasOwnProperty('created')) {
-                obj['created'] = ApiClient.convertToType(data['created'], 'Date');
-            }
-            if (data.hasOwnProperty('customFields')) {
-                obj['customFields'] = ApiClient.convertToType(data['customFields'], [CustomFieldReduced]);
-            }
-            if (data.hasOwnProperty('tags')) {
-                obj['tags'] = ApiClient.convertToType(data['tags'], [TagsReduced]);
-            }
-            if (data.hasOwnProperty('metadata')) {
-                obj['metadata'] = ApiClient.convertToType(data['metadata'], [Metadata]);
             }
             if (data.hasOwnProperty('firstName')) {
                 obj['firstName'] = ApiClient.convertToType(data['firstName'], 'String');
@@ -97,11 +71,11 @@ class User {
             if (data.hasOwnProperty('email')) {
                 obj['email'] = ApiClient.convertToType(data['email'], 'String');
             }
-            if (data.hasOwnProperty('contact')) {
-                obj['contact'] = Contact.constructFromObject(data['contact']);
-            }
             if (data.hasOwnProperty('constraints')) {
                 obj['constraints'] = ApiClient.convertToType(data['constraints'], ['String']);
+            }
+            if (data.hasOwnProperty('spaces')) {
+                obj['spaces'] = ApiClient.convertToType(data['spaces'], ['String']);
             }
         }
         return obj;
@@ -114,34 +88,6 @@ class User {
  * @member {String} objectType
  */
 User.prototype['objectType'] = undefined;
-
-/**
- * A unique system generated identifier
- * @member {String} id
- */
-User.prototype['id'] = undefined;
-
-/**
- * ISO8601 timestamp for when a Model was created. All records are stored in UTC time zone
- * @member {Date} created
- */
-User.prototype['created'] = undefined;
-
-/**
- * @member {Array.<module:model/CustomFieldReduced>} customFields
- */
-User.prototype['customFields'] = undefined;
-
-/**
- * A list of id's used to tag models
- * @member {Array.<module:model/TagsReduced>} tags
- */
-User.prototype['tags'] = undefined;
-
-/**
- * @member {Array.<module:model/Metadata>} metadata
- */
-User.prototype['metadata'] = undefined;
 
 /**
  * The Name of an individual
@@ -162,15 +108,15 @@ User.prototype['lastName'] = undefined;
 User.prototype['email'] = undefined;
 
 /**
- * @member {module:model/Contact} contact
- */
-User.prototype['contact'] = undefined;
-
-/**
  * Additional constraints
  * @member {Array.<String>} constraints
  */
 User.prototype['constraints'] = undefined;
+
+/**
+ * @member {Array.<String>} spaces
+ */
+User.prototype['spaces'] = undefined;
 
 
 // Implement UserModelDefault interface:
@@ -178,30 +124,6 @@ User.prototype['constraints'] = undefined;
  * @member {String} objectType
  */
 UserModelDefault.prototype['objectType'] = undefined;
-/**
- * A unique system generated identifier
- * @member {String} id
- */
-UserModelDefault.prototype['id'] = undefined;
-/**
- * ISO8601 timestamp for when a Model was created. All records are stored in UTC time zone
- * @member {Date} created
- */
-UserModelDefault.prototype['created'] = undefined;
-// Implement OptParamModels interface:
-/**
- * @member {Array.<module:model/CustomFieldReduced>} customFields
- */
-OptParamModels.prototype['customFields'] = undefined;
-/**
- * A list of id's used to tag models
- * @member {Array.<module:model/TagsReduced>} tags
- */
-OptParamModels.prototype['tags'] = undefined;
-/**
- * @member {Array.<module:model/Metadata>} metadata
- */
-OptParamModels.prototype['metadata'] = undefined;
 // Implement UserAllOf interface:
 /**
  * The Name of an individual
@@ -219,14 +141,14 @@ UserAllOf.prototype['lastName'] = undefined;
  */
 UserAllOf.prototype['email'] = undefined;
 /**
- * @member {module:model/Contact} contact
- */
-UserAllOf.prototype['contact'] = undefined;
-/**
  * Additional constraints
  * @member {Array.<String>} constraints
  */
 UserAllOf.prototype['constraints'] = undefined;
+/**
+ * @member {Array.<String>} spaces
+ */
+UserAllOf.prototype['spaces'] = undefined;
 
 
 
